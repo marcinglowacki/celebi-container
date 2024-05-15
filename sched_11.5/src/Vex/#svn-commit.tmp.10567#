@@ -1,0 +1,17 @@
+Added support for satellites
+
+The .key file can specify satellites but the scheduler currently
+ignores them.  The added logic has it emit in the source definition a
+source_type statement of the form:
+
+source_type = file : id;
+
+where the file is either a TLE or a BSP file.  The ID is an integer
+that identifies the object within the file.  This is a misuse of the
+source_type statement in current vex syntax but it's currently not
+used in its defined meaning and was ignored in vex2script.
+
+
+--This line, and those below, will be ignored--
+
+M    vxsudt.f

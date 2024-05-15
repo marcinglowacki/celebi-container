@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>THE SCHED USER MANUAL
+Version 11.5, Released September 2018</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<div class="maketitle">
+                                                                                
+                                                                                
+
+<h2 class="titleHead">THE SCHED USER MANUAL<br />
+Version 11.5, Released September 2018</h2>
+<div class="author" ><span 
+class="cmr-12">R.C. Walker</span></div><br />
+<div class="date" ><span 
+class="cmr-12">September 17, 2018</span></div>
+                                                                                
+                                                                                
+</div>
+<!--l. 144--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is a program for planning and scheduling Very Long Baseline Array (VLBA), High Sensitivity
+Array (HSA), Global Very Long Baseline Interferometry (Global VLBI), European VLBI Network
+(EVN), Long Baseline Array (LBA; Australia), Korean VLBI Network (KVN), VLBI on the Karl G.
+Jansky Very Large Array (VLA) and other VLBI observations. It writes VEX files that describe the
+details of an observation and are becoming the near universal format for distribution of schedules to
+VLBI telescopes and correlators.
+<!--l. 153--><p class="noindent" >This manual describes how to use the program, provides extensive information on all possible inputs,
+and gives considerable information and advice on many aspects of scheduling VLBI observations. The
+<a 
+href="labelCHPINTROINTRODUCTION.html#x5-40001">INTRODUCTION</a> gives an overview of the program and is the only chapter that a new user should
+read before starting to use the program. The rest of the manual can be treated as a reference to be
+consulted to answer questions.
+<!--l. 161--><p class="noindent" >Scheduling with <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>involves creating an input file with a text editor, and then running the
+program on that file. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>creates a variety of <a 
+href="labelSECFILESSCHEDInputandOutputFiles.html#x8-70001.3">output files</a> that provide summary and detailed
+information to the scheduler and telescope control information for the VLBI station. The easiest way to
+create an input file is to copy one of the <a 
+href="labelSECEXAMPLESExamples.html#x9-80001.4">examples</a> and modify it for your particular project. All of the
+examples are complete, working files. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is not interactive unless <a 
+href="labelSECPLOTPlotting.html#x10-110001.5">plots</a> are being made, in
+which case there is a convenient, interactive interface to control the plotting. The plotting
+capabilities should be very useful, especially during proposal writing and while planning
+observations.
+<!--l. 176--><p class="noindent" >This edition of the manual corresponds to the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>version as indicated in the title. Please be sure
+that you have the latest major version of the code and catalogs to be sure your schedule files are
+valid. Please check the <a 
+href="labelSECCURRENTRecentReleases.html#x40-3100005.1">notes on the current release</a> to be sure that you don&#8217;t need a more
+recent minor release than the one you have (these are usually bug fixes). The distribution
+files for the latest releases are available on anonymous ftp at <a 
+href="ftp://ftp.aoc.nrao.edu/pub/sched" ><span 
+class="cmsl-10">ftp.aoc.nrao.edu</span></a> in directory
+<span 
+class="cmsl-10">pub/sched</span>.
+<!--l. 187--><p class="noindent" >In several places in this manual, there are links to text files that come with the manual. Some browsers
+just display those files without issue. But, since the files typically don&#8217;t have a <span 
+class="cmsl-10">.txt </span>extension,
+sometimes the browser won&#8217;t display them natively and won&#8217;t give an option to do so. I
+encountered this with Firefox on a Mac. It thinks the <span 
+class="cmsl-10">.key </span>files are Keynote files. I found
+an add-on called &#8220;open in Browser&#8221; that deals with the situation. You can find it with a
+search.
+<!--l. 196--><p class="noindent" >For general, and NRAO specific, comments and questions, please contact the help desk
+(helpdesk@nrao.edu) or Amy Mioduszewski. For EVN, Mark IV and non-VLBA VEX format issues,
+contact Des Small at small@jive.nl. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>was written by Craig Walker of NRAO with significant
+contributions from Huib van Langevelde, Cormac Reynolds, Antonios Polatidis, Friso Olnon, and
+Des Small of JIVE, and Franco Tinarelli of CNR in Bologna. Craig Walker retired at the
+end of 2014 and Amy Mioduszewski is now the main NRAO based <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>supporter.
+Des Small and Cormac Reynolds are the main active non-NRAO supporters. Craig will
+continue a low level of involvement but should not be the first person to contact with issues.
+The manual is long and has been supported mainly by one person, so, in this period of
+rapid changes in hardware, please excuse occasional sections that are not entirely up to
+date.
+                                                                                
+                                                                                
+<div class="tableofcontents">
+<span class="likechapterToc" ><a 
+href="contentsname.html#x2-1000" id="QQ2-2-1">Contents</a></span>
+<br />&#x00A0;<span class="sectionToc" >0.1 <a 
+href="labelSECNOTESImportantNotesPleasecheckthese.html#x3-20000.1" id="QQ2-3-2"> Important Notes - Please check these</a></span>
+<br />&#x00A0;<span class="sectionToc" >0.2 <a 
+href="labelSECLINKSLinkstoManualSectionsandtoExternalInformation.html#x4-30000.2" id="QQ2-4-3">Links to Manual Sections and to External Information.</a></span>
+<br /><span class="chapterToc" >1 <a 
+href="labelCHPINTROINTRODUCTION.html#x5-40001" id="QQ2-5-4">INTRODUCTION</a></span>
+<br />&#x00A0;<span class="sectionToc" >1.1 <a 
+href="labelSECINTROOverview.html#x6-50001.1" id="QQ2-6-5">Overview</a></span>
+<br />&#x00A0;<span class="sectionToc" >1.2 <a 
+href="labelSECKEYINKeyinFreeformatInput.html#x7-60001.2" id="QQ2-7-6">Keyin Free-format Input</a></span>
+<br />&#x00A0;<span class="sectionToc" >1.3 <a 
+href="labelSECFILESSCHEDInputandOutputFiles.html#x8-70001.3" id="QQ2-8-7"> SCHED Input and Output Files</a></span>
+<br />&#x00A0;<span class="sectionToc" >1.4 <a 
+href="labelSECEXAMPLESExamples.html#x9-80001.4" id="QQ2-9-8">Examples</a></span>
+<br />&#x00A0;<span class="sectionToc" >1.5 <a 
+href="labelSECPLOTPlotting.html#x10-110001.5" id="QQ2-10-11">Plotting</a></span>
+<br /><span class="chapterToc" >2 <a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#x11-130002" id="QQ2-11-13">INFORMATION AND ADVICE ON SPECIFIC TOPICS</a></span>
+<br />&#x00A0;<span class="sectionToc" >2.1 <a 
+href="labelSECPLANNINGUsingSCHEDforProjectPlanning.html#x12-140002.1" id="QQ2-12-14">Using SCHED for Project Planning</a></span>
+<br />&#x00A0;<span class="sectionToc" >2.2 <a 
+href="labelSECTIPSSchedulingTips.html#x13-150002.2" id="QQ2-13-15">Scheduling Tips</a></span>
+<br />&#x00A0;<span class="sectionToc" >2.3 <a 
+href="labelSECRECSYSRecordingSystems.html#x14-220002.3" id="QQ2-14-22">Recording Systems.</a></span>
+<br />&#x00A0;<span class="sectionToc" >2.4 <a 
+href="labelSECWIDEWideBandObservingRDBEDBBCVLBAandMarkIVModes.html#x15-290002.4" id="QQ2-15-29">Wide Band Observing: RDBE, DBBC, VLBA and Mark IV Modes</a></span>
+<br />&#x00A0;<span class="sectionToc" >2.5 <a 
+href="labelSECLINESpectralLineObservations.html#x16-330002.5" id="QQ2-16-34">Spectral Line Observations</a></span>
+<br />&#x00A0;<span class="sectionToc" >2.6 <a 
+href="labelSECREFPOINTReferencePointing.html#x17-340002.6" id="QQ2-17-35">Reference Pointing</a></span>
+<br />&#x00A0;<span class="sectionToc" >2.7 <a 
+href="labelSECMULTIPLECENTERSMultiplePhaseCenters.html#x18-350002.7" id="QQ2-18-36">Multiple Phase Centers</a></span>
+<br />&#x00A0;<span class="sectionToc" >2.8 <a 
+href="labelSECGEOSEGAutomaticInsertionofGeodeticSegments.html#x19-360002.8" id="QQ2-19-37">Automatic Insertion of Geodetic Segments</a></span>
+<br />&#x00A0;<span class="sectionToc" >2.9 <a 
+href="labelSECVLASchedulingtheVLA.html#x20-370002.9" id="QQ2-20-38">Scheduling the VLA</a></span>
+<br />&#x00A0;<span class="sectionToc" >2.10 <a 
+href="labelSECINDIVSpecialConcernsforSpecificObservatories.html#x21-380002.10" id="QQ2-21-39">Special Concerns for Specific Observatories</a></span>
+<br />&#x00A0;<span class="sectionToc" >2.11 <a 
+href="labelSECSPECIALVLBASingleDishVLBAObserving.html#x22-400002.11" id="QQ2-22-41">Single Dish VLBA Observing</a></span>
+<br />&#x00A0;<span class="sectionToc" >2.12 <a 
+href="labelSECCONFIGConfigurationStudies.html#x23-410002.12" id="QQ2-23-42">Configuration Studies</a></span>
+<br />&#x00A0;<span class="sectionToc" >2.13 <a 
+href="labelSECSATELSatelliteTracking.html#x24-420002.13" id="QQ2-24-43">Satellite Tracking</a></span>
+<br /><span class="chapterToc" >3 <a 
+href="labelCHPINPUTTHESCHEDINPUTFILESIncludesparameterlists.html#x25-430003" id="QQ2-25-44">THE SCHED INPUT FILES (Includes parameter lists)</a></span>
+<br />&#x00A0;<span class="sectionToc" >3.1 <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-440003.1" id="QQ2-26-45">The Schedule File</a></span>
+<br />&#x00A0;<span class="sectionToc" >3.2 <a 
+href="labelSECSRCCATSourceCatalog.html#x27-2300003.2" id="QQ2-27-231">Source Catalog</a></span>
+<br />&#x00A0;<span class="sectionToc" >3.3 <a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3" id="QQ2-28-232">Station Catalog and Locations Catalog</a></span>
+<br />&#x00A0;<span class="sectionToc" >3.4 <a 
+href="labelSECTPINITapeInitializationFile.html#x29-2320003.4" id="QQ2-29-233">Tape Initialization File</a></span>
+<br />&#x00A0;<span class="sectionToc" >3.5 <a 
+href="labelSECFRQCATFrequencyCatalog.html#x30-2450003.5" id="QQ2-30-246">Frequency Catalog</a></span>
+<br />&#x00A0;<span class="sectionToc" >3.6 <a 
+href="labelSECSETUPSSetupFiles.html#x31-2470003.6" id="QQ2-31-248">Setup Files</a></span>
+<br />&#x00A0;<span class="sectionToc" >3.7 <a 
+href="labelSECSATINITSatelliteInitialization.html#x32-3000003.7" id="QQ2-32-301">Satellite Initialization.</a></span>
+<br /><span class="chapterToc" >4 <a 
+href="labelCHPSYSTEMINSTALLINGANDRUNNINGSCHED.html#x33-3010004" id="QQ2-33-302">INSTALLING, AND RUNNING SCHED</a></span>
+<br />&#x00A0;<span class="sectionToc" >4.1 <a 
+href="labelSECINSTALLInstallingSCHED.html#x34-3020004.1" id="QQ2-34-303">Installing SCHED</a></span>
+<br />&#x00A0;<span class="sectionToc" >4.2 <a 
+href="labelSECRUNSCHEDRunningSCHED.html#x35-3030004.2" id="QQ2-35-304">Running SCHED</a></span>
+<br />&#x00A0;<span class="sectionToc" >4.3 <a 
+href="labelSECDISFILDistributionofScheduleFiles.html#x36-3060004.3" id="QQ2-36-307">Distribution of Schedule Files</a></span>
+<br />&#x00A0;<span class="sectionToc" >4.4 <a 
+href="labelSECRELATEDPROGRAMSRelatedPrograms.html#x37-3070004.4" id="QQ2-37-308">Related Programs</a></span>
+<br />&#x00A0;<span class="sectionToc" >4.5 <a 
+href="labelSECRELEASEReleaseInstructions.html#x38-3080004.5" id="QQ2-38-309">Release Instructions.</a></span>
+<br /><span class="chapterToc" >5 <a 
+href="labelCHPCHANGRELEASENOTES.html#x39-3090005" id="QQ2-39-310">RELEASE NOTES</a></span>
+<br />&#x00A0;<span class="sectionToc" >5.1 <a 
+href="labelSECCURRENTRecentReleases.html#x40-3100005.1" id="QQ2-40-311">Recent Releases</a></span>
+<br />&#x00A0;<span class="sectionToc" >5.2 <a 
+href="labelSSECOLDRELEASEOldReleases.html#x41-3170005.2" id="QQ2-41-318">Old Releases</a></span>
+<br />&#x00A0;<span class="sectionToc" >5.3 <a 
+href="labelSSECWISHWishList.html#x42-3510005.3" id="QQ2-42-352">Wish List</a></span>
+                                                                                
+                                                                                
+<br /><span class="appendixToc" >A <a 
+href="labelAPPAPPENDICESAPPENDICES.html#x43-352000A" id="QQ2-43-353">APPENDICES</a></span>
+<br />&#x00A0;<span class="sectionToc" >A.1 <a 
+href="labelAPPSTACODESStationCodes.html#x44-353000A.1" id="QQ2-44-354">Station Codes</a></span>
+<br />&#x00A0;<span class="sectionToc" >A.2 <a 
+href="labelSECHISTHistoricalNotes.html#x45-354000A.2" id="QQ2-45-355">Historical Notes</a></span>
+<br /><span class="appendixToc" >B <a 
+href="labelAPPOBSOLETEOBSOLETESECTIONS.html#x46-355000B" id="QQ2-46-356">OBSOLETE SECTIONS</a></span>
+<br />&#x00A0;<span class="sectionToc" >B.1 <a 
+href="labelSECOLDVLAOldVLA.html#x47-356000B.1" id="QQ2-47-357">Old VLA</a></span>
+<br />&#x00A0;<span class="sectionToc" >B.2 <a 
+href="labelSSECTAPEMANAGEMENTTapeManagement.html#x48-362000B.2" id="QQ2-48-363">Tape Management</a></span>
+<br />&#x00A0;<span class="sectionToc" >B.3 <a 
+href="labelSECMKIIIMarkIIIObservations.html#x49-371000B.3" id="QQ2-49-372">Mark&#x00A0;III Observations</a></span>
+<br />&#x00A0;<span class="sectionToc" >B.4 <a 
+href="labelSECMKIISchedulingMarkIIObservations.html#x50-372000B.4" id="QQ2-50-373">Scheduling Mark II Observations</a></span>
+<br />&#x00A0;<span class="sectionToc" >B.5 <a 
+href="labelAPPHEADHeadPositionsandTrackAssignments.html#x51-373000B.5" id="QQ2-51-374">Head Positions and Track Assignments</a></span>
+<br />&#x00A0;<span class="sectionToc" >B.6 <a 
+href="labelSSECS2S2.html#x52-374000B.6" id="QQ2-52-375">S2</a></span>
+<br />&#x00A0;<span class="sectionToc" >B.7 <a 
+href="labelSSECGBGreenBank140.html#x53-375000B.7" id="QQ2-53-376">Green Bank 140&#8217;.</a></span>
+<br />&#x00A0;<span class="sectionToc" >B.8 <a 
+href="labelAPPMac2003InstallationonMacOSX103in2003.html#x54-376000B.8" id="QQ2-54-377">Installation on Mac OSX 10.3 in 2003.</a></span>
+</div>
+                                                                                
+                                                                                
+
+                                                                                
+                                                                                
+
+                                                                                
+                                                                                
+
+                                                                                
+                                                                                
+
+                                                                                
+                                                                                
+
+                                                                                
+                                                                                
+<a 
+ id="x1-351001r310"></a>
+                                                                                
+                                                                                
+<a 
+ id="x1-354001r310"></a> 
+</body></html> 
+
+                                                                                
+
+

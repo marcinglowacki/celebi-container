@@ -1,0 +1,750 @@
+  COVER INFORMATION 
+
+ Station:    VLBA_HN   (Code Hn ) 
+ Experiment: STARTUP pointing
+ Exp. Code:  ptg     
+
+
+Schedule Version:       1.00
+Processed by SCHED version:  11.40  Release 11.4.  March 14, 2015
+
+PI:       Operations
+
+Address:  AOC
+ 
+ 
+ 
+
+Phone:    505 835 7251
+EMAIL:    vlbaops@nrao.edu
+Fax:      505 835 7027
+Phone during observation: 505 835 7251
+
+Observing mode: Multi-frequency pointing observations.
+
+Notes:
+ 
+ 
+ 
+
+Schedule for VLBA_HN   (Code Hn )                                   Page   2
+               STARTUP pointing
+  UP:  D => Below limits;  H => Below horizon mask;  W => still slewing at end;  blank => Up.
+  Early: Seconds between end of slew and start.   Dwell: On source seconds. 
+  Disk: GBytes recorded to this point.
+  TPStart:  Recording start time.  Frequencies are LO sum (band edge).
+  SYNC: Time correlator is expected to sync up.
+----------------------------------------------------------------------------------------
+Start UT  Source               Start / Stop                 Early    Disk   TPStart
+Stop UT                  LST      EL    AZ   HA  UP   ParA  Dwell   GBytes    SYNC
+----------------------------------------------------------------------------------------
+
+ --- Fri  25 Oct 1996   Day 299 ---
+
+ Next scan frequencies:  324.49  324.49  608.99  608.99
+ Next BBC frequencies:   824.49  824.49  608.99  608.99
+ Next scan bandwidths:     4.00    4.00    4.00    4.00
+
+00 00 00  CYGA         21 26 42  73.6 269.7  1.5      75.1     0        0   23 59 55
+00 05 45  ---          21 32 28  72.6 270.7  1.6      75.1   345        0   23 59 55
+
+ Next scan frequencies:  8410.99  8410.99
+ Next BBC frequencies:    810.99   810.99
+ Next scan bandwidths:     16.00    16.00
+
+00 07 28  3C454.3      21 34 11  58.3 141.5 -1.3     -28.3     0        0   00 07 23
+00 13 13  ---          21 39 57  58.9 143.9 -1.2     -26.7   345        0   00 07 23
+
+ Next scan frequencies:  1430.49  1430.49  1650.49  1650.49
+ Next BBC frequencies:    969.51   969.51   749.51   749.51
+ Next scan bandwidths:     16.00    16.00    16.00    16.00
+
+00 13 19  3C454.3      21 40 03  58.9 143.9 -1.2     -26.7     0        0   No stop 
+00 19 04  ---          21 45 49  59.5 146.4 -1.1     -25.0   345        0   00 13 13
+
+ Next scan frequencies:  4984.99  4984.99
+ Next BBC frequencies:    884.99   884.99
+ Next scan bandwidths:     16.00    16.00
+
+00 19 10  3C454.3      21 45 55  59.5 146.4 -1.1     -24.9     0        0   No stop 
+00 24 55  ---          21 51 41  60.1 148.9 -1.0     -23.2   345        0   00 19 04
+
+ Next scan frequencies:  2260.99  2260.99
+ Next BBC frequencies:    839.01   839.01
+
+00 25 01  3C454.3      21 51 47  60.1 149.0 -1.0     -23.1     0        0   No stop 
+00 30 46  ---          21 57 33  60.6 151.6 -0.9     -21.3   345        0   00 24 55
+
+ Next scan frequencies:  8410.99  8410.99  2260.99  2260.99
+ Next BBC frequencies:    810.99   810.99   839.01   839.01
+ Next scan bandwidths:     16.00    16.00    16.00    16.00
+
+00 30 52  3C454.3      21 57 39  60.6 151.6 -0.9     -21.2     0        0   No stop 
+00 36 37  ---          22 03 25  61.1 154.3 -0.8     -19.3   345        0   00 30 46
+
+ Next scan frequencies:  22228.49  22228.49  22278.49  22278.49
+ Next BBC frequencies:     728.49    728.49    778.49    778.49
+
+00 38 14  DR21         22 05 02  74.2 275.2  1.4      80.5     0        0   00 38 09
+00 43 59  ---          22 10 48  73.1 275.8  1.5      80.1   345        0   00 38 09
+Schedule for VLBA_HN   (Code Hn )                                   Page   3
+               STARTUP pointing
+  UP:  D => Below limits;  H => Below horizon mask;  W => still slewing at end;  blank => Up.
+  Early: Seconds between end of slew and start.   Dwell: On source seconds. 
+  Disk: GBytes recorded to this point.
+  TPStart:  Recording start time.  Frequencies are LO sum (band edge).
+  SYNC: Time correlator is expected to sync up.
+----------------------------------------------------------------------------------------
+Start UT  Source               Start / Stop                 Early    Disk   TPStart
+Stop UT                  LST      EL    AZ   HA  UP   ParA  Dwell   GBytes    SYNC
+----------------------------------------------------------------------------------------
+
+ --- Fri  25 Oct 1996   Day 299 ---
+
+ Next scan frequencies:  23793.49  23793.49
+ Next BBC frequencies:     793.49    793.49
+ Next scan bandwidths:      16.00     16.00
+
+00 44 05  DR21         22 10 54  73.1 275.8  1.5      80.1     0        0   No stop 
+00 49 50  ---          22 16 40  72.1 276.4  1.6      79.7   345        0   00 43 59
+
+ Next scan frequencies:  15354.99  15354.99
+ Next BBC frequencies:     754.99    754.99
+
+00 49 56  DR21         22 16 46  72.1 276.4  1.6      79.7     0        0   No stop 
+00 55 41  ---          22 22 32  71.0 277.0  1.7      79.3   345        0   00 49 50
+
+ Next scan frequencies:  43115.99  43115.99  43215.99  43215.99
+ Next BBC frequencies:     715.99    715.99    815.99    815.99
+ Next scan bandwidths:      16.00     16.00     16.00     16.00
+
+00 55 47  DR21         22 22 38  71.0 277.1  1.7      79.3     0        0   No stop 
+01 01 32  ---          22 28 24  69.9 277.7  1.8      78.9   345        0   00 55 41
+
+ Next scan frequencies:  43118.39  43118.39  43218.38  43218.38
+ Next BBC frequencies:     718.39    718.39    818.38    818.38
+ Next scan bandwidths:       2.00      2.00      2.00      2.00
+
+01 03 20  RCAS         22 30 12  72.9 412.8 -1.5    -110.9     0        0   01 03 15
+01 09 05  ---          22 35 58  73.7 411.6 -1.4    -113.2   345        0   01 03 15
+
+ Next scan frequencies:  22228.49  22228.49  22278.49  22278.49
+ Next BBC frequencies:     728.49    728.49    778.49    778.49
+ Next scan bandwidths:      16.00     16.00     16.00     16.00
+
+01 10 30  3C84         22 37 23  39.3 425.9 -4.7     -63.2     0        0   01 10 25
+01 16 15  ---          22 43 09  40.3 426.6 -4.6     -63.8   345        0   01 10 25
+
+ Next scan frequencies:  23793.49  23793.49
+ Next BBC frequencies:     793.49    793.49
+ Next scan bandwidths:      16.00     16.00
+
+01 16 21  3C84         22 43 15  40.3 426.6 -4.6     -63.8     0        0   No stop 
+01 22 06  ---          22 49 01  41.3 427.2 -4.5     -64.3   345        0   01 16 15
+
+ Next scan frequencies:  15354.99  15354.99
+ Next BBC frequencies:     754.99    754.99
+
+01 22 12  3C84         22 49 07  41.3 427.2 -4.5     -64.3     0        0   No stop 
+01 27 57  ---          22 54 53  42.3 427.8 -4.4     -64.9   345        0   01 22 06
+Schedule for VLBA_HN   (Code Hn )                                   Page   4
+               STARTUP pointing
+  UP:  D => Below limits;  H => Below horizon mask;  W => still slewing at end;  blank => Up.
+  Early: Seconds between end of slew and start.   Dwell: On source seconds. 
+  Disk: GBytes recorded to this point.
+  TPStart:  Recording start time.  Frequencies are LO sum (band edge).
+  SYNC: Time correlator is expected to sync up.
+----------------------------------------------------------------------------------------
+Start UT  Source               Start / Stop                 Early    Disk   TPStart
+Stop UT                  LST      EL    AZ   HA  UP   ParA  Dwell   GBytes    SYNC
+----------------------------------------------------------------------------------------
+
+ --- Fri  25 Oct 1996   Day 299 ---
+
+ Next scan frequencies:  43115.99  43115.99  43215.99  43215.99
+ Next BBC frequencies:     715.99    715.99    815.99    815.99
+ Next scan bandwidths:      16.00     16.00     16.00     16.00
+
+01 28 03  3C84         22 54 59  42.3 427.8 -4.4     -64.9     0        0   No stop 
+01 33 48  ---          23 00 45  43.3 428.5 -4.3     -65.4   345        0   01 27 57
+
+01 37 16  SATURN       23 04 14  43.0 156.8 -1.1     -16.7     0        0   01 37 11
+01 43 01  ---          23 10 00  43.4 158.7 -1.0     -15.4   345        0   01 37 11
+
+ Next scan frequencies:  324.49  324.49  608.99  608.99
+ Next BBC frequencies:   824.49  824.49  608.99  608.99
+ Next scan bandwidths:     4.00    4.00    4.00    4.00
+
+01 44 41  CYGA         23 11 40  54.6 283.3  3.2      70.1     0        0   01 44 36
+01 50 26  ---          23 17 26  53.6 283.9  3.3      69.7   345        0   01 44 36
+
+ Next scan frequencies:  8410.99  8410.99
+ Next BBC frequencies:    810.99   810.99
+ Next scan bandwidths:     16.00    16.00
+
+01 51 41  3C454.3      23 18 41  62.7 193.1  0.4       9.9     0        0   01 51 36
+01 57 26  ---          23 24 27  62.4 196.0  0.5      12.2   345        0   01 51 36
+
+ Next scan frequencies:  1430.49  1430.49  1650.49  1650.49
+ Next BBC frequencies:    969.51   969.51   749.51   749.51
+ Next scan bandwidths:     16.00    16.00    16.00    16.00
+
+01 57 32  3C454.3      23 24 33  62.4 196.1  0.5      12.2     0        0   No stop 
+02 03 17  ---          23 30 19  62.1 199.0  0.6      14.4   345        0   01 57 26
+
+ Next scan frequencies:  4984.99  4984.99
+ Next BBC frequencies:    884.99   884.99
+ Next scan bandwidths:     16.00    16.00
+
+02 03 23  3C454.3      23 30 25  62.1 199.0  0.6      14.4     0        0   No stop 
+02 09 08  ---          23 36 10  61.7 201.9  0.7      16.5   345        0   02 03 17
+
+ Next scan frequencies:  2260.99  2260.99
+ Next BBC frequencies:    839.01   839.01
+
+02 09 14  3C454.3      23 36 17  61.7 201.9  0.7      16.5     0        0   No stop 
+02 14 59  ---          23 42 02  61.3 204.7  0.8      18.6   345        0   02 09 08
+
+ Next scan frequencies:  8410.99  8410.99  2260.99  2260.99
+ Next BBC frequencies:    810.99   810.99   839.01   839.01
+ Next scan bandwidths:     16.00    16.00    16.00    16.00
+
+02 15 05  3C454.3      23 42 08  61.3 204.7  0.8      18.6     0        0   No stop 
+02 20 50  ---          23 47 54  60.8 207.4  0.9      20.6   345        0   02 14 59
+Schedule for VLBA_HN   (Code Hn )                                   Page   5
+               STARTUP pointing
+  UP:  D => Below limits;  H => Below horizon mask;  W => still slewing at end;  blank => Up.
+  Early: Seconds between end of slew and start.   Dwell: On source seconds. 
+  Disk: GBytes recorded to this point.
+  TPStart:  Recording start time.  Frequencies are LO sum (band edge).
+  SYNC: Time correlator is expected to sync up.
+----------------------------------------------------------------------------------------
+Start UT  Source               Start / Stop                 Early    Disk   TPStart
+Stop UT                  LST      EL    AZ   HA  UP   ParA  Dwell   GBytes    SYNC
+----------------------------------------------------------------------------------------
+
+ --- Fri  25 Oct 1996   Day 299 ---
+
+ Next scan frequencies:  22228.49  22228.49  22278.49  22278.49
+ Next BBC frequencies:     728.49    728.49    778.49    778.49
+
+02 21 55  DR21         23 49 00  55.5 285.7  3.2      72.5     0        0   02 21 50
+02 27 40  ---          23 54 46  54.5 286.2  3.3      71.9   345        0   02 21 50
+
+ Next scan frequencies:  23793.49  23793.49
+ Next BBC frequencies:     793.49    793.49
+ Next scan bandwidths:      16.00     16.00
+
+02 27 46  DR21         23 54 52  54.5 286.2  3.3      71.9     0        0   No stop 
+02 33 31  ---          00 00 38  53.5 286.8  3.4      71.4   345        0   02 27 40
+
+ Next scan frequencies:  15354.99  15354.99
+ Next BBC frequencies:     754.99    754.99
+
+02 33 37  DR21         00 00 44  53.4 286.8  3.4      71.4     0        0   No stop 
+02 39 22  ---          00 06 30  52.4 287.4  3.5      70.9   345        0   02 33 31
+
+ Next scan frequencies:  43115.99  43115.99  43215.99  43215.99
+ Next BBC frequencies:     715.99    715.99    815.99    815.99
+ Next scan bandwidths:      16.00     16.00     16.00     16.00
+
+02 39 28  DR21         00 06 36  52.4 287.4  3.5      70.9     0        0   No stop 
+02 45 13  ---          00 12 22  51.4 288.0  3.6      70.4   345        0   02 39 22
+
+ Next scan frequencies:  43118.39  43118.39  43218.38  43218.38
+ Next BBC frequencies:     718.39    718.39    818.38    818.38
+ Next scan bandwidths:       2.00      2.00      2.00      2.00
+
+02 46 28  RCAS         00 13 37  81.2 344.2  0.3     161.4     0        0   02 46 23
+02 52 13  ---          00 19 23  80.8 338.9  0.4     155.0   345        0   02 46 23
+
+ Next scan frequencies:  324.49  324.49  608.99  608.99
+ Next BBC frequencies:   824.49  824.49  608.99  608.99
+ Next scan bandwidths:     4.00    4.00    4.00    4.00
+
+02 54 30  TAUA         00 21 40  23.2 440.9 -5.2     -51.2     0        0   02 54 25
+03 00 15  ---          00 27 26  24.3 441.8 -5.1     -51.4   345        0   02 54 25
+
+ Next scan frequencies:  8410.99  8410.99
+ Next BBC frequencies:    810.99   810.99
+ Next scan bandwidths:     16.00    16.00
+
+03 00 57  3C123        00 28 08  39.3 443.6 -4.1     -56.9     0        0   03 00 52
+03 06 42  ---          00 33 54  40.4 444.5 -4.0     -57.0   345        0   03 00 52
+Schedule for VLBA_HN   (Code Hn )                                   Page   6
+               STARTUP pointing
+  UP:  D => Below limits;  H => Below horizon mask;  W => still slewing at end;  blank => Up.
+  Early: Seconds between end of slew and start.   Dwell: On source seconds. 
+  Disk: GBytes recorded to this point.
+  TPStart:  Recording start time.  Frequencies are LO sum (band edge).
+  SYNC: Time correlator is expected to sync up.
+----------------------------------------------------------------------------------------
+Start UT  Source               Start / Stop                 Early    Disk   TPStart
+Stop UT                  LST      EL    AZ   HA  UP   ParA  Dwell   GBytes    SYNC
+----------------------------------------------------------------------------------------
+
+ --- Fri  25 Oct 1996   Day 299 ---
+
+ Next scan frequencies:  1430.49  1430.49  1650.49  1650.49
+ Next BBC frequencies:    969.51   969.51   749.51   749.51
+ Next scan bandwidths:     16.00    16.00    16.00    16.00
+
+03 06 48  3C123        00 34 00  40.4 444.5 -4.0     -57.0     0        0   No stop 
+03 12 33  ---          00 39 46  41.5 445.4 -4.0     -57.1   345        0   03 06 42
+
+ Next scan frequencies:  4984.99  4984.99
+ Next BBC frequencies:    884.99   884.99
+ Next scan bandwidths:     16.00    16.00
+
+03 12 39  3C123        00 39 52  41.5 445.4 -4.0     -57.1     0        0   No stop 
+03 18 24  ---          00 45 38  42.5 446.3 -3.9     -57.2   345        0   03 12 33
+
+ Next scan frequencies:  2260.99  2260.99
+ Next BBC frequencies:    839.01   839.01
+
+03 18 30  3C123        00 45 44  42.5 446.4 -3.9     -57.2     0        0   No stop 
+03 24 15  ---          00 51 30  43.6 447.3 -3.8     -57.3   345        0   03 18 24
+
+ Next scan frequencies:  8410.99  8410.99  2260.99  2260.99
+ Next BBC frequencies:    810.99   810.99   839.01   839.01
+ Next scan bandwidths:     16.00    16.00    16.00    16.00
+
+03 24 21  3C123        00 51 36  43.6 447.3 -3.8     -57.3     0        0   No stop 
+03 30 06  ---          00 57 22  44.7 448.2 -3.7     -57.4   345        0   03 24 15
+
+ Next scan frequencies:  22228.49  22228.49  22278.49  22278.49
+ Next BBC frequencies:     728.49    728.49    778.49    778.49
+
+03 30 57  3C84         00 58 13  64.0 440.9 -2.4     -74.9     0        0   03 30 52
+03 36 42  ---          01 03 59  65.0 441.6 -2.3     -75.2   345        0   03 30 52
+
+ Next scan frequencies:  23793.49  23793.49
+ Next BBC frequencies:     793.49    793.49
+ Next scan bandwidths:      16.00     16.00
+
+03 36 48  3C84         01 04 05  65.0 441.6 -2.3     -75.3     0        0   No stop 
+03 42 33  ---          01 09 51  66.1 442.3 -2.2     -75.6   345        0   03 36 42
+
+ Next scan frequencies:  15354.99  15354.99
+ Next BBC frequencies:     754.99    754.99
+
+03 42 39  3C84         01 09 57  66.1 442.3 -2.2     -75.6     0        0   No stop 
+03 48 24  ---          01 15 43  67.1 442.9 -2.1     -76.0   345        0   03 42 33
+
+ Next scan frequencies:  43115.99  43115.99  43215.99  43215.99
+ Next BBC frequencies:     715.99    715.99    815.99    815.99
+ Next scan bandwidths:      16.00     16.00     16.00     16.00
+
+03 48 30  3C84         01 15 49  67.2 443.0 -2.1     -76.0     0        0   No stop 
+03 54 15  ---          01 21 35  68.2 443.6 -2.0     -76.3   345        0   03 48 24
+
+
+SETUP FILE INFORMATION:
+   NOTE: If DOPPLER, FREQ, or BW were used, see the individual scans for the final BBC settings.
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt90cm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v5090n
+
+   Setup group:    1         Station: VLBA_HN           Total bit rate:    64
+   Format: NONE              Bits per sample: 2         Sample rate:  8.000
+   Number of channels:  4    DBE type:         
+
+   1st LO=   -500.00   -500.00      0.00      0.00
+   Net SB=         U         U         U         U
+   IF SB =         U         U         U         U
+   Pol.  =      RCP       LCP       RCP       LCP 
+   BBC   =         1         2         3         4
+   BBC SB=         U         U         U         U
+   IF    =        B         D         B         D 
+
+   VLBA FE=     omit     90cm     omit     90cm
+   VLBA Synth=  15.4     15.4     15.4
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   1  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   324.49  324.49  608.99  608.99
+   BBC fr=   824.49  824.49  608.99  608.99
+   Bandwd=     4.00    4.00    4.00    4.00
+    Matching frequency sets:   1
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt4cm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v4cm_3
+
+   Setup group:    2         Station: VLBA_HN           Total bit rate:   128
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  2    DBE type:         
+
+   1st LO=   7600.00   7600.00
+   Net SB=         U         U
+   IF SB =         U         U
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         U         U
+   IF    =        B         D 
+
+   VLBA FE=     omit     4cm      omit     4cm 
+   VLBA Synth=   7.6     15.1     15.1
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   2  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   8410.99  8410.99
+   BBC fr=    810.99   810.99
+   Bandwd=     16.00    16.00
+    Matching frequency sets:   2
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt18cm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v20cm_2         FD filtered above 1760.  SC filtered above 1740.
+
+   Setup group:    3         Station: VLBA_HN           Total bit rate:   256
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  4    DBE type:         
+
+   1st LO=   2400.00   2400.00   2400.00   2400.00
+   Net SB=         U         U         U         U
+   IF SB =         L         L         L         L
+   Pol.  =      RCP       LCP       RCP       LCP 
+   BBC   =         1         2         3         4
+   BBC SB=         L         L         L         L
+   IF    =        A         C         A         C 
+
+   VLBA FE=     20cm     omit     20cm     omit
+   VLBA Synth=  14.6      2.4     14.6
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   3  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   1430.49  1430.49  1650.49  1650.49
+   BBC fr=    969.51   969.51   749.51   749.51
+   Bandwd=     16.00    16.00    16.00    16.00
+    Matching frequency sets:   3
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt6cm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     vc_d
+
+   Setup group:    4         Station: VLBA_HN           Total bit rate:   128
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  2    DBE type:         
+
+   1st LO=   4100.00   4100.00
+   Net SB=         U         U
+   IF SB =         U         U
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         U         U
+   IF    =        A         C 
+
+   VLBA FE=     6cm      omit     6cm      omit
+   VLBA Synth=  13.6      4.1     13.6
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   4  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   4984.99  4984.99
+   BBC fr=    884.99   884.99
+   Bandwd=     16.00    16.00
+    Matching frequency sets:   4
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt13cm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v13cm_2         Most only 2200-2400
+
+   Setup group:    5         Station: VLBA_HN           Total bit rate:   128
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  2    DBE type:         
+
+   1st LO=   3100.00   3100.00
+   Net SB=         U         U
+   IF SB =         L         L
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         L         L
+   IF    =        A         C 
+
+   VLBA FE=     13cm     omit     13cm     omit
+   VLBA Synth=  15.4      3.1     15.4
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   5  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   2260.99  2260.99
+   BBC fr=    839.01   839.01
+   Bandwd=     16.00    16.00
+    Matching frequency sets:   5
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt4cmsx.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     vsx_22
+
+   Setup group:    6         Station: VLBA_HN           Total bit rate:   256
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  4    DBE type:         
+
+   1st LO=   7600.00   7600.00   3100.00   3100.00
+   Net SB=         U         U         U         U
+   IF SB =         U         U         L         L
+   Pol.  =      RCP       LCP       RCP       LCP 
+   BBC   =         1         2         3         4
+   BBC SB=         U         U         L         L
+   IF    =        B         D         A         C 
+
+   VLBA FE=     13cm     4cm      13cm     4cm 
+   VLBA Synth=   7.6      3.1     12.6
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   6  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   8410.99  8410.99  2260.99  2260.99
+   BBC fr=    810.99   810.99   839.01   839.01
+   Bandwd=     16.00    16.00    16.00    16.00
+    Matching frequency sets:   6
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt1cm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v1cm_b3
+
+   Setup group:    7         Station: VLBA_HN           Total bit rate:   256
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  4    DBE type:         
+
+   1st LO=  21500.00  21500.00  21500.00  21500.00
+   Net SB=         U         U         U         U
+   IF SB =         U         U         U         U
+   Pol.  =      RCP       LCP       RCP       LCP 
+   BBC   =         1         2         3         4
+   BBC SB=         U         U         U         U
+   IF    =        B         D         B         D 
+
+   VLBA FE=     omit     1cm      omit     1cm 
+   VLBA Synth=   9.1      6.1     12.4
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   7  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   22228.49  22228.49  22278.49  22278.49
+   BBC fr=     728.49    728.49    778.49    778.49
+   Bandwd=      16.00     16.00     16.00     16.00
+    Matching frequency sets:   7
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt24ghz.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v1cm_a10
+
+   Setup group:    8         Station: VLBA_HN           Total bit rate:   128
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  2    DBE type:         
+
+   1st LO=  23000.00  23000.00
+   Net SB=         U         U
+   IF SB =         U         U
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         U         U
+   IF    =        B         D 
+
+   VLBA FE=     omit     1cm      omit     1cm 
+   VLBA Synth=   8.9      5.9     14.1
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   8  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   23793.49  23793.49
+   BBC fr=     793.49    793.49
+   Bandwd=      16.00     16.00
+    Matching frequency sets:   8
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt2cm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v2cm_d3         Fourth 2cm filter
+
+   Setup group:    9         Station: VLBA_HN           Total bit rate:   128
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  2    DBE type:         
+
+   1st LO=  14600.00  14600.00
+   Net SB=         U         U
+   IF SB =         U         U
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         U         U
+   IF    =        B         D 
+
+   VLBA FE=     omit     2cm      omit     2cm 
+   VLBA Synth=  14.6     10.9     10.9
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   9  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   15354.99  15354.99
+   BBC fr=     754.99    754.99
+   Bandwd=      16.00     16.00
+    Matching frequency sets:   9
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt7mm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v7mm_c8
+
+   Setup group:   10         Station: VLBA_HN           Total bit rate:   256
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  4    DBE type:         
+
+   1st LO=  42400.00  42400.00  42400.00  42400.00
+   Net SB=         U         U         U         U
+   IF SB =         U         U         U         U
+   Pol.  =      RCP       LCP       RCP       LCP 
+   BBC   =         1         2         3         4
+   BBC SB=         U         U         U         U
+   IF    =        A         C         A         C 
+
+   VLBA FE=     7mm      omit     7mm      omit
+   VLBA Synth=   3.9      7.6     11.6
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:  10  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   43115.99  43115.99  43215.99  43215.99
+   BBC fr=     715.99    715.99    815.99    815.99
+   Bandwd=      16.00     16.00     16.00     16.00
+    Matching frequency sets:  10
+
+  Frequency Set:  11  Based on FREQ, BW, and/or DOPPLER in schedule.  Used with PCAL = 1MHz
+   LO sum=   43118.39  43118.39  43218.38  43218.38
+   BBC fr=     718.39    718.39    818.38    818.38
+   Bandwd=       2.00      2.00      2.00      2.00
+    Matching frequency sets:  11
+
+ POSITIONS OF SOURCES USED IN RECORDING SCANS
+
+   Source                         Source position (RA/Dec)                        Error
+                        (B1950)             (J2000)             (Date)            (mas)
+
+   SIO-RCAS          23 55 52.000023   * 23 58 24.734000     23 58 17.446020       0.00
+ * RCAS              51 06 37.75889    * 51 23 19.57000      51 22 29.14834        0.00
+                     /users/cwalker/files/sched_work/catalogs/sources.pointing
+                     Also not in P-, but is used in startup pointing.
+                     Doppler based on LSR frame and radio definition.  Velocities:
+                         24.00    24.00    24.00    24.00
+
+ * 3C84              03 16 29.567167   * 03 19 48.160000     03 19 37.540547       0.00
+                     41 19 51.92287    * 41 30 42.11000      41 29 56.22024        0.00
+                     /users/cwalker/files/sched_work/catalogs/sources.pointing
+                     From low accuracy pointing list - do not use for VLBI
+
+ * 3C123           * 04 33 55.200000     04 37 04.374990     04 36 53.711885       0.00
+                   * 29 34 14.00000      29 40 15.12271      29 39 44.85003        0.00
+                     /users/cwalker/files/sched_work/catalogs/sources.pointing
+                     From low accuracy pointing list - do not use for VLBI
+
+ * DR21            * 20 37 14.200000     20 39 01.208159     20 38 54.907140       0.00
+                   * 42 08 57.00000      42 19 34.78182      42 19 19.09128        0.00
+                     /users/cwalker/files/sched_work/catalogs/sources.pointing
+                     From low accuracy pointing list - do not use for VLBI
+
+ * 3C454.3         * 22 51 29.521000     22 53 57.749205     22 53 49.342040       0.00
+                   * 15 52 54.31000      16 08 53.52285      16 08 05.93306        0.00
+                     /users/cwalker/files/sched_work/catalogs/sources.pointing
+                     From low accuracy pointing list - do not use for VLBI
+
+ * TAUA            * 05 31 31.000000     05 34 31.553637     05 34 21.043993       0.00
+                   * 21 59 17.00000      22 01 14.68396      22 00 59.68834        0.00
+                     /users/cwalker/files/sched_work/catalogs/sources.pointing
+                     From low accuracy pointing list - do not use for VLBI
+
+ * CYGA            * 19 57 45.000000     19 59 28.910149     19 59 22.418164       0.00
+                   * 40 36 00.00000      40 44 15.76902      40 44 09.66679        0.00
+                     /users/cwalker/files/sched_work/catalogs/sources.pointing
+                     From low accuracy pointing list - do not use for VLBI
+
+ * SATURN            00 08 45.322643   * 00 11 19.002676     00 11 10.329066       0.00
+                    -01 52 43.32380    *-01 36 02.11382     -01 36 59.47879        0.00
+                     Planet.  Position is for scan 1, center Earth.
+                     Planetary motion used.  Ref. MJD:   50381.0000
+                        Rates: RA = -0.13854E+02 s/day   Dec = -0.81633E+02 arcsec/day
+                     EPHFILE: /users/cwalker/PLANETDATA/Linux/JPLEPH.405.2
+
+
+
+SOURCE SCAN SUMMARY FOR SOURCES LISTED ABOVE
+
+     Scan hours are for recording scans only. 
+     Baseline hours are only counted for scans above horizon at both ends.
+  Source       Setup file             Frequency sets                  Observing hours
+                                   (duplicates not shown)              Scan  Baseline
+  RCAS       work/setups/pt7mm.set 11                                0.192     0.000
+  3C84       work/setups/pt1cm.set 7                                 0.192     0.000
+             rk/setups/pt24ghz.set 8                                 0.192     0.000
+             work/setups/pt2cm.set 9                                 0.192     0.000
+             work/setups/pt7mm.set 10                                0.192     0.000
+  3C123      work/setups/pt4cm.set 2                                 0.096     0.000
+             ork/setups/pt18cm.set 3                                 0.096     0.000
+             work/setups/pt6cm.set 4                                 0.096     0.000
+             ork/setups/pt13cm.set 5                                 0.096     0.000
+             rk/setups/pt4cmsx.set 6                                 0.096     0.000
+  DR21       work/setups/pt1cm.set 7                                 0.192     0.000
+             rk/setups/pt24ghz.set 8                                 0.192     0.000
+             work/setups/pt2cm.set 9                                 0.192     0.000
+             work/setups/pt7mm.set 10                                0.192     0.000
+  3C454.3    work/setups/pt4cm.set 2                                 0.192     0.000
+             ork/setups/pt18cm.set 3                                 0.192     0.000
+             work/setups/pt6cm.set 4                                 0.192     0.000
+             ork/setups/pt13cm.set 5                                 0.192     0.000
+             rk/setups/pt4cmsx.set 6                                 0.192     0.000
+  TAUA       ork/setups/pt90cm.set 1                                 0.096     0.000
+  CYGA       ork/setups/pt90cm.set 1                                 0.192     0.000
+  SATURN     work/setups/pt7mm.set 10                                0.096     0.000
+
+
+EFFECT OF SOLAR CORONA
+
+  The solar corona can cause unstable phases for sources too close to the Sun.
+  SCHED provides warnings at individual scans for distances less than 10 degrees.
+  The distance from the Sun to each source in this schedule is:
+    Source         Sun distance (deg) 
+   RCAS               133.8
+   3C84               145.8
+   3C123              139.5
+   DR21               105.5
+   3C454.3            135.0
+   TAUA               127.9
+   CYGA                97.9
+   SATURN             149.9
+
+  Barry Clark estimates from predictions by Ketan Desai of IPM scattering sizes 
+  that the Sun will cause amplitude reductions on the  longest VLBA baselines 
+  at a solar distance of 60deg F^(-0.6) where F is in GHz. 
+  For common VLBI bands, this is: 
+       327 MHz        117. deg 
+       610 MHz         81. deg 
+       1.6 GHz         45. deg 
+       2.3 GHz         36. deg 
+       5.0 GHz         23. deg 
+       8.4 GHz         17. deg 
+      15.0 GHz         12. deg 
+      22.0 GHz          9. deg 
+      43.0 GHz          6. deg 
+

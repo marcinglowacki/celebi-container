@@ -1,0 +1,425 @@
+                    SUMMARY FILE FOR PROJECT: to999   
+
+COVER INFORMATION: 
+
+  Experiment: novme satellite test 1
+  Exp. Code:  to999   
+  Start Day 177 is Tue  26 Jun 2018   MJD  58295          
+
+  Schedule Version:       1.00
+  Processed by SCHED version:  11.50  Development version 11.5. Started Apr. 2
+
+  PI:       Walter Brisken
+
+  Address:  DSOC
+   
+   
+   
+
+  Phone:    505-234-5912
+  EMAIL:    wbrisken@lbo.us
+  Fax:      575-835-2027
+  Phone during observation: 575-835-7133
+
+  Observing mode: DDC
+
+  Notes:
+   
+   
+   
+
+
+No cover letter provided.
+
+CORRELATION REQUESTS (Defaults in parentheses):
+
+  Correlator (Required if recording):          VLBADIFX    (VLBA DiFX software correlator)
+  Correlator average time (2 sec):               1.000 sec.
+    Alternate average time (for spacecraft).     0.000 sec.
+  Output spectral channels per baseband (16):         128
+     Correlator FFT size (128):                       128
+  Number of antennas to be correlated:                  8
+  Polarization (ON):                           OFF
+  Correlator weighting function (UNIFORM):     UNIFORM
+  Distribution tape (DAT):                     FTP
+
+  Distribution format (FITS):                  FITS
+  Source positions from:
+  NOT SPECIFIED.
+  Shipping address for correlator output:
+      Walter Brisken
+
+
+
+
+  Correlator Notes: No correlation needed, but data copy desired
+
+
+
+
+
+
+
+DERIVED INFORMATION FOR CORRELATION: 
+                                                All scans
+  Elapsed time for project (hours):                 0.66
+  Total time in scheduled scans (hours):            0.33
+  Total time in recording scans (hours):            0.33
+  Total baseline hours (recording scans):           1.00
+  Projected max correlator output rate (kB/s):       6.1
+  Projected correlator output data size (MB):        7.4
+ NOTES:  Above numbers assume the same correlator parameters are used for all data.
+         The 'baseline hours' include the autocorrelations (for data size calculations).
+         The correlator output data rate is for real-time processing.
+         Above numbers assume the same correlator parameters are used for all data.
+         The recordings for a scan are assumed to start at the scan START minus PRESTART.
+         Some stations (VLA, VLBA/MARK5C) wait for good data so the estimates may be high.
+
+
+
+STATIONS USED IN SCHEDULE:
+
+   Station  Code   Latitude Longitude  Elevation       X            Y            Z       Axis
+                                                                                       Offset
+
+   VLBA_KP   Kp   31.95630  111.61242    1902.   -1995678.840 -5037317.697  3357328.025  2.131
+   VLBA_LA   La   35.77512  106.24560    1962.   -1449752.584 -4975298.576  3709123.846  2.132
+
+
+   Plate tectonic motion adjustments for MJD  58295
+   Station  Code      Station motions (m/yr)             Adjusted positions 
+                     X       Y       Z     MJD0        X            Y            Z 
+   VLBA_KP   Kp  -0.0137  0.0008 -0.0062  56293  -1995678.916 -5037317.692  3357327.991
+   VLBA_LA   La  -0.0144  0.0006 -0.0047  56293  -1449752.663 -4975298.573  3709123.820
+
+
+
+BASELINE LENGTHS (km)
+
+          Kp    La
+
+   Kp      0   652
+   La    652     0
+
+
+RECORDING SYSTEM AND CALIBRATION INFORMATION:
+
+  List of scan-dependent controls seen for recording timing.
+   MINPAUSE:    0.
+   PRESTART:    0.
+
+  DISKS - Stations potentially recording on disks.
+   Station    Drive type   DAR     NBBC    Tsys
+   VLBA_KP      MARK5C     RDBE2    16     CONT
+   VLBA_LA      MARK5C     RDBE2    16     CONT
+
+
+
+
+EXPERIMENT SUMMARY:
+  Number of input scans:         20
+  Number of scans scheduled:     20
+  Number of stations:             2
+  Number of sources input:        2
+  Number of setup files used:     2
+
+
+STATION SCAN SUMMARIES:
+  Station  Control   Scans   Scan   Record  Record   Gbytes
+                            Hours   Hours   Scans
+  VLBA_KP    VLBA      20    0.33    0.33      20      116.
+  VLBA_LA    VLBA      20    0.33    0.33      20      116.
+
+  Notes on the station scan summaries: 
+
+    "Record Scans" are periods of recording with no gap.  The Mark5A disk systems 
+    have a limit of 1024 such scans.  There are often multiple projects on a disk pack.
+    If using MARK5A, try to keep above about 6 GB per record scan by using MINPAUSE 
+    and PRESTART to prevent short gaps.  However, also try to prevent record scans 
+    of more than an hour to minimize risk to data from playback problems.
+    MARK5C will have one observe scan per record scan and there is no limit to the number.
+
+
+
+
+
+
+ SETUP FILES:
+
+
+The following setup groups are the same as group   1 below.
+   2:VLBA_LA
+
+
+ ======== Setup file: DDC1
+   Matching groups in /home/orion/lbo/sched/trunk/sched/catalogs/freq_RDBE.dat:
+     v20cm_1         FD and KP filtered below 1330. SC filtered above 1440
+
+   Setup group:    1         Station: VLBA_KP           Total bit rate:   512
+   Format: VDIF              Bits per sample: 2         Sample rate:128.000
+   Number of channels:  2    DBE type: RDBE_DDC         Speedup factor:   1.00
+
+   Disk used to record data.
+
+   1st LO=   2100.00   2100.00
+   Net SB=         U         U
+   IF SB =         L         L
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         L         L
+   IF    =        A         C 
+
+   VLBA FE=     20cm     omit     20cm     omit
+   VLBA Synth=  12.9      2.1     12.9
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   1  Setup file default.  Used with PCAL = off
+   LO sum=   1524.00  1524.00
+   BBC fr=    576.00   576.00
+   Bandwd=     64.00    64.00
+   VLBA legacy crd files using  2 channels based on RDBE channels:   1  2
+   CRD fr=     552.00    552.00
+   CRD bw=      16.00     16.00
+    Matching frequency sets:   1   2
+
+   Track assignments are: 
+    track1=   1,  2
+    barrel=roll_off 
+
+
+The following setup groups are the same as group   3 below.
+   4:VLBA_LA
+
+
+ ======== Setup file: DDC2
+   Matching groups in /home/orion/lbo/sched/trunk/sched/catalogs/freq_RDBE.dat:
+     vc_a            Potential problems above 4150 see note in freq file.
+
+   Setup group:    3         Station: VLBA_KP           Total bit rate:  1024
+   Format: VDIF              Bits per sample: 2         Sample rate:256.000
+   Number of channels:  2    DBE type: RDBE_DDC         Speedup factor:   1.00
+
+   Disk used to record data.
+
+   1st LO=   3400.00   3400.00
+   Net SB=         U         U
+   IF SB =         U         U
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         U         U
+   IF    =        A         C 
+
+   VLBA FE=     6cm      omit     6cm      omit
+   VLBA Synth=  15.9      3.4     15.9
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   3  Setup file default.  Used with PCAL = off
+   LO sum=   4072.25  4072.25
+   BBC fr=    672.25   672.25
+   Bandwd=    128.00   128.00
+   VLBA legacy crd files using  2 channels based on RDBE channels:   1  2
+   CRD fr=     728.25    728.25
+   CRD bw=      16.00     16.00
+    Matching frequency sets:   3   4
+
+   Track assignments are: 
+    track1=   1,  2
+    barrel=roll_off 
+
+
+ SCAN SUMMARY for experiment to999   novme satellite test 1
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Average elevation.
+     Bottom item is: Seconds antenna is on source during scan. 0 shown if down, rise, or set
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 177 is Tue  26 Jun 2018   MJD  58295          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Kp    La
+
+   1  177 18:30:00 0528+134      -    71    68
+      177 18:31:00 DDC1          -    60    60
+
+   2  177 18:32:04 GALAXY15      -    46    40
+      177 18:33:04 -             -    60    60
+
+   3  177 18:34:09 0528+134      -    72    67
+      177 18:35:09 DDC2          -    60    60
+
+   4  177 18:36:13 GALAXY15      -    46    40
+      177 18:37:13 -             -    60    60
+
+   5  177 18:38:17 0528+134      -    72    67
+      177 18:39:17 DDC1          -    60    60
+
+   6  177 18:40:21 GALAXY15      -    46    40
+      177 18:41:21 -             -    60    60
+
+   7  177 18:42:25 0528+134      -    72    67
+      177 18:43:25 DDC2          -    60    60
+
+   8  177 18:44:28 GALAXY15      -    46    40
+      177 18:45:28 -             -    60    60
+
+   9  177 18:46:32 0528+134      -    71    67
+      177 18:47:32 DDC1          -    60    60
+
+  10  177 18:48:35 GALAXY15      -    46    40
+      177 18:49:35 -             -    60    60
+
+  11  177 18:50:37 0528+134      -    71    67
+      177 18:51:37 DDC2          -    60    60
+
+  12  177 18:52:40 GALAXY15      -    46    40
+      177 18:53:40 -             -    60    60
+
+  13  177 18:54:42 0528+134      -    71    66
+      177 18:55:42 DDC1          -    60    60
+
+  14  177 18:56:43 GALAXY15      -    46    40
+      177 18:57:43 -             -    60    60
+
+  15  177 18:58:45 0528+134      -    71    66
+      177 18:59:45 DDC2          -    60    60
+
+  16  177 19:00:46 GALAXY15      -    46    40
+      177 19:01:46 -             -    60    60
+
+
+
+ SCAN SUMMARY for experiment to999   novme satellite test 1
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Average elevation.
+     Bottom item is: Seconds antenna is on source during scan. 0 shown if down, rise, or set
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 177 is Tue  26 Jun 2018   MJD  58295          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Kp    La
+
+  17  177 19:02:46 0528+134      -    71    66
+      177 19:03:46 DDC1          -    60    60
+
+  18  177 19:04:47 GALAXY15      -    46    40
+      177 19:05:47 -             -    60    60
+
+  19  177 19:06:46 0528+134      -    70    65
+      177 19:07:46 DDC2          -    60    60
+
+  20  177 19:08:46 GALAXY15      -    46    40
+      177 19:09:46 -             -    60    60
+
+
+
+ TIME RANGE OF RECORDINGS and TOTAL BYTES:
+
+                Obs. start time.     Obs. end time.      Total 
+ Station          Day    Time         Day    Time        GBytes
+                     (UT)                 (UT)
+  VLBA_KP        177  18:30:00       177  19:09:46        115.9
+  VLBA_LA        177  18:30:00       177  19:09:46        115.9
+
+ POSITIONS OF SOURCES USED IN RECORDING SCANS
+     Catalog positions marked with *. 
+     Precession of date coordinates is based on stop time of first scan.
+     Names used in schedule marked with *. 
+     Observation date used in B1950/J2000 coordinate conversion (PRECDATE):  1979.900
+     No adjustments are made for rates (DRA, DDEC).
+
+   Source                         Source position (RA/Dec)                        Error
+                        (B1950)             (J2000)             (Date)            (mas)
+
+ * 0528+134          05 28 06.759216   * 05 30 56.416747     05 31 56.888421       0.21
+   J0530+1331        13 29 42.28885    * 13 31 55.14952      13 32 34.02804        0.24
+   J0530+13          /home/orion/lbo/sched/trunk/sched/catalogs/sources.gsfc
+                     GSFC 2015a astro solution, unpublished 135789 observations.
+
+ * GALAXY15          03 53 48.689780   * 03 56 22.338043     03 57 17.240422       0.00
+                    -00 10 21.97693    *-00 01 42.41034      00 01 19.76385        0.00
+                     Satellite. Position is for scan 1, center Earth.
+                     Planetary motion used.  Ref. MJD:   58295.7708
+                        Rates: RA =  0.86662E+05 s/day   Dec =  0.23847E+04 arcsec/day
+                     KERFILE: current.tls
+                     TLEFILE: galaxy15.tle
+
+
+
+SOURCE SCAN SUMMARY FOR SOURCES LISTED ABOVE
+
+     Scan hours are for recording scans only. 
+     Baseline hours are only counted for scans above horizon at both ends.
+  Source       Setup file             Frequency sets                  Observing hours
+                                   (duplicates not shown)              Scan  Baseline
+  0528+134   DDC1                  1                                 0.083     0.083
+             DDC2                  3                                 0.083     0.083
+  GALAXY15   DDC1                  1                                 0.083     0.083
+             DDC2                  3                                 0.083     0.083
+
+
+EFFECT OF SOLAR CORONA
+
+  The solar corona can cause unstable phases for sources too close to the Sun.
+  SCHED provides warnings at individual scans for distances less than 10 degrees.
+  The distance from the Sun to each source in this schedule is:
+    Source         Sun distance (deg) 
+   0528+134            15.4
+   GALAXY15            42.2
+
+  Barry Clark estimates from predictions by Ketan Desai of IPM scattering sizes 
+  that the Sun will cause amplitude reductions on the  longest VLBA baselines 
+  at a solar distance of 60deg F^(-0.6) where F is in GHz. 
+  For common VLBI bands, this is: 
+       327 MHz        117. deg 
+       610 MHz         81. deg 
+       1.6 GHz         45. deg 
+       2.3 GHz         36. deg 
+       5.0 GHz         23. deg 
+       8.4 GHz         17. deg 
+      15.0 GHz         12. deg 
+      22.0 GHz          9. deg 
+      43.0 GHz          6. deg 
+
+ SOURCE SEPARATIONS
+
+ Source separations in degrees for pairs closer than  30.00 degrees.
+
+     0528+134      GALAXY15       27.0600
+
+
+CATALOGS, FILES, and CODE VERSIONS
+
+Catalogs: 
+  Station:   /home/orion/lbo/sched/trunk/sched/catalogs/stations_RDBE.dat
+                 Version:  2015Mar03-18:50:14
+  Location:  /home/orion/lbo/sched/trunk/sched/catalogs/locations.dat
+                 Version:  2015Feb26-16:00:00
+  Frequency: /home/orion/lbo/sched/trunk/sched/catalogs/freq_RDBE.dat
+                 Version:  2015Mar03-18:50:14
+  Source:   /home/orion/lbo/sched/trunk/sched/catalogs/sources.gsfc
+                 Version:  Not given
+  Source2:  NONE
+                 Version:   ---
+
+
+Other external files: 
+  Ephemeris: NONE
+  PEAKFILE:  /home/orion/lbo/sched/trunk/sched/catalogs/peak.cmd
+  MSGFILE:   /home/orion/lbo/sched/trunk/sched/catalogs/messages.txt
+  SATNAME:   GALAXY15
+     TLEFILE:   gala
+     KERFILE:   current.tls
+
+
+Code versions: 
+  Release version:           11.50  Development version 11.5. Started Apr. 2
+  Version of VEX standard:   1.50
+  Version of VEX code:       0.87
+  Version of plot code:      1.06
+  Version of ephemeris code: 1.01
+  Version of PGPLOT:        v5.3.1
+
+This schedule produced on: Tue Jun 26 11:34:02 2018      

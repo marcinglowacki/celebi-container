@@ -1,0 +1,1531 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Source Catalog</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 10509--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html" >next</a>] [<a 
+href="labelSECSCHPARTheScheduleFile.html" >prev</a>] [<a 
+href="labelSECSCHPARTheScheduleFile.html#taillabelSECSCHPARTheScheduleFile.html" >prev-tail</a>] [<a 
+href="#taillabelSECSRCCATSourceCatalog.html">tail</a>] [<a 
+href="labelCHPINPUTTHESCHEDINPUTFILESIncludesparameterlists.html#labelSECSRCCATSourceCatalog.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">3.2   </span> <a 
+ id="x27-2300003.2"></a>Source Catalog</h3>
+<!--l. 10511--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>uses catalogs to get source information such as names, positions, and velocities. These
+catalogs are in keyin format. Entries are terminated with a &#8220;/&#8221;. Some or all of the catalog may be
+included in a section in the <span 
+class="cmcsc-10">SCHED</span>&#x00A0;input file. <span 
+class="cmcsc-10">SCHED</span>&#x00A0;will look there first for sources, and then go to
+the two possible external catalogs to find the rest (or all). Please note that the source catalog, along
+with the locations catalog of station positions, is updated approximately annually to new solutions. All
+source positions will change, although likely by small amounts. But relative astrometry
+projects should either use their own source positions to keep them constant over long times, or
+include processing steps that account for any changes in the catalog positions (the preferred
+solution).
+<!--l. 10525--><p class="noindent" >As of Feb. 2015, there are two catalogs (plus older versions) included with the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>distribution.
+One contains a recent astrometry solution from the Goddard Space Flight Center geodetic group.
+There is a symbolic link to it called sources.gsfc in $SCHED/catalogs. Another contains
+a recent solution provided by Leonid Petrov. The symbolic link for the latest of these is
+sources.petrov. The Petrov file typically has very nearly all of the sources in the Goddard solution
+(they are working from the same data sets) plus a significant number more &#8212; over 9000
+in total. There used to be a third file, <span 
+class="cmsl-10">sources.vlba </span>that contained all sources in either of
+the above plus around 500 others from JVAS and an old VLA calibrator list. As the first
+two lists got large, the remaining extra sources in <span 
+class="cmsl-10">sources.vlba </span>become more suspect as
+VLBI targets. Plus maintenance of the combined list was somewhat problematic, so it was
+dropped in Feb. 2015. If there is a <span 
+class="cmsl-10">sources.vlba </span>in the distribution, it is either out of date,
+or is actually a symbolic link to one of the main files, put there to try not to break old
+schedules.
+<!--l. 10543--><p class="noindent" >The sources in the catalogs from the geodetic solutions are based on the International Celestial
+Reference Frame version 2 or ICRF2 (these have <span 
+class="cmtt-10">CALCODE=V</span>). These have positional errors of a fraction
+of a milliarcsecond to a few milliarcseconds. They include sources from the standard geodetic observing
+program, sources from the VLBA calibrator survey, the Australian LBA survey, and various sources
+specially observed in the RDV project on the VLBA.
+<!--l. 10551--><p class="noindent" >Users of accurate positions from the geodetic catalog are encouraged to reference the original papers,
+some of which are listed in the catalog headers. Information about, and data from, the GSFC solutions
+can be found at <a 
+href="http://vlbi.gsfc.nasa.gov/dataresults_main.htm" >http://vlbi.gsfc.nasa.gov/dataresults_main.htm</a>. Catalogs and much other useful
+information provided by Leonid Petrov can be found at <a 
+href="http://astrogeo.org/" >http://astrogeo.org/</a>.
+<!--l. 10559--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input parameters <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1970003.1.2"><span 
+class="cmtt-10">SRCFILE</span></a> and <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1980003.1.2"><span 
+class="cmtt-10">SRCFILE2</span></a> are used to point to any desired external catalogs. A
+file name of up to 80 characters can be specified. The default source file is:
+<!--l. 10564--><p class="noindent" ><span 
+class="cmtt-10">SRCFILE=$SCHED/catalogs/sources.petrov</span>.
+<!--l. 10564--><p class="noindent" >On unix systems with the environment variable SCHED properly defined, this is the standard catalog
+distributed with <span 
+class="cmcsc-10">SCHED</span>. Users of the html version of the manual can read the catalog by clicking
+<a 
+href="catalogs/sources.gsfc" >GSFC</a> or <a 
+href="catalogs/sources.petrov" >Petrov</a>.
+<!--l. 10571--><p class="noindent" >Source catalog information can be given in the main <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>keyin file. If the keyword <span 
+class="cmtt-10">SRCCAT</span>
+appears, all input after the next &#8220;/&#8221; is assumed to consist of source catalog entries until a line
+containing the keyword <span 
+class="cmtt-10">ENDCAT </span>and a &#8220;/&#8221; is encountered (don&#8217;t combine this keyword with a catalog
+entry). Such &#8220;in-line&#8221; catalogs may appear anywhere in a <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>keyin file, although it is probably
+best to put them near the beginning. <span 
+class="cmcsc-10">SCHED </span>will look in the external catalog for any source not found
+in an in-line catalog. If you wish to prevent <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>from looking in external catalogs,
+                                                                                
+                                                                                
+specify <span 
+class="cmtt-10">SRCFILE=NONE </span>(<span 
+class="cmtt-10">SRCFILE2 </span>is not used at all unless specified.). It is common to provide
+in-line source catalog entries for unique program sources, but let <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>find the fringe
+finders and other calibrators in the standard catalog. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will look in the in-line catalog
+first, then in <span 
+class="cmtt-10">SRCFILE</span>, then in <span 
+class="cmtt-10">SRCFILE2</span>. It will use data from the first place a source is
+found.
+<!--l. 10587--><p class="noindent" >The parameters for each entry in the source catalog are below. Lower case letters in this list are
+optional. All catalog parameters except <span 
+class="cmtt-10">EQUINOX </span>and <span 
+class="cmtt-10">EPOCH </span>revert to a default unless specified for a
+source. <span 
+class="cmtt-10">EQUINOX </span>and <span 
+class="cmtt-10">EPOCH </span>default to the last specified.
+<!--l. 10592--><p class="noindent" >Note that the <a 
+href="labelSECPLOTPlotting.html#x10-110001.5">plotting capabilities</a> of <span 
+class="cmcsc-10">SCHED</span>, specifically the RD plots, can be used to examine the
+distribution of sources in the catalog and to find catalog near any desired location. This is useful, for
+example, for finding phase calibrators near target sources.
+<!--l. 10599--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will use whichever equinox coordinates are provided in the catalog and determine J2000,
+B1950, and DATE coordinates. All of these coordinates are listed in the <span 
+class="cmsl-10">.sum </span>file. Various stations
+require different equinox coordinates. For example, the VLBA only understands J2000 coordinates while
+some other sites only understand B1950, although those may all be gone by now. Sched uses the
+SLALIB routines to make the coordinate conversions.
+<!--l. 10607--><p class="noindent" >The J2000 and B1950 coordinates systems move relative to each other so an &#8220;observe&#8221; date is needed to
+make an accurate conversion. This is the date at which the coordinates of the reference sources were
+determined. For example, the VLA calibrator list coordinates were determined in 1979.9
+originally, and all subsequent updates, based mainly on J2000 positions, were precessed to B1950
+using an assumed &#8220;observe&#8221; date of 1979.9. A similar situation exists at MERLIN, where
+observing is done in B1950 coordinates. There, the calibrator positions (based again on positions
+provided originally in J2000) are precessed to B1950 using an &#8220;observe&#8221; date of 1950.0.
+Any B1950 source position determined on MERLIN should be precessed to other systems
+using that date. The user can specify the &#8220;observe&#8221; date using the main schedule parameter
+<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1760003.1.2"><span 
+class="cmtt-10">PRECDATE</span></a> which defaults to 1979.9, the correct value for use with B1950 source positions
+determined on the VLA. For purposes of pointing antennas, the value of this date that is
+used is not very important. But if you are trying to phase reference, phase the VLA at a
+high frequency, or derive positions for correlation, this is an issue that should be dealt with
+properly.
+<!--l. 10628--><p class="noindent" >The parameters of the source catalog are:
+     <dl class="description"><dt class="description">
+<span 
+class="cmtt-10">Source</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     This
+     is
+     the
+     name
+     of
+     the
+     source.
+     Up
+     to
+     10
+     source
+     names
+     (increased
+     from
+     5
+                                                                                
+                                                                                
+     on
+     Sept.
+     2010)
+     can
+     be
+     provided
+     to
+     handle
+     aliases.
+     The
+     names
+     can
+     have
+     up
+     to
+     12
+     characters
+     each,
+     although,
+     as
+     noted
+     below,
+     some
+     downstream
+     software
+     may
+     not
+     like
+     that
+     much.
+     No
+     software
+     we
+     know
+     of
+     requires
+     less
+     than
+     8
+     characters.
+     <!--l. 10638--><p class="noindent" >Be
+     a
+     bit
+     careful
+     about
+     special
+     characters
+     included
+     in
+     source
+     names.
+                                                                                
+                                                                                
+     Some
+     are
+     benign.
+     But,
+     for
+     example,
+     the
+     *
+     and
+     ?
+     characters
+     are
+     used
+     as
+     wild
+     cards
+     in
+     many
+     programs
+     so,
+     if
+     either
+     ends
+     up
+     in
+     a
+     file
+     name
+     (as
+     it
+     will
+     after
+     SPLIT
+     in
+     AIPS),
+     it
+     could
+     cause
+     problems.
+     The
+     temptation
+     to
+     use
+     *
+     is
+     high
+     because
+     of
+     sources
+     such
+     as
+                                                                                
+                                                                                
+     SgrA*.
+     But
+     the
+     conservative
+     approach
+     is
+     to
+     avoid
+     it.
+     Also,
+     do
+     not
+     include
+     imbedded
+     blanks
+     in
+     source
+     names,
+     as
+     they
+     cause
+     problems
+     at
+     a
+     variety
+     of
+     places
+     in
+     processing.
+     Minus
+     signs
+     (dashes),
+     plus
+     signs,
+     underscores,
+     and
+     parentheses
+     should
+     not
+     cause
+     problems
+     and
+     are
+     the
+     commonly
+     desired
+     characters.
+     <!--l. 10649--><p class="noindent" >Note
+     that
+     the
+     number
+                                                                                
+                                                                                
+     of
+     characters
+     you
+     can
+     have
+     may
+     be
+     limited
+     by
+     downstream
+     software.
+     Snap
+     files
+     require
+     source
+     names
+     of
+     10
+     characters
+     or
+     less,
+     but
+     are
+     not
+     normally
+     written
+     by
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>any
+     more.
+     Finally,
+     beware
+     that
+     the
+     Mark&#x00A0;III
+     correlators
+     and
+     the
+     geodetic
+     software
+     have
+     8
+     character
+     source
+     name
+     limits.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">Ra</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Right
+     ascension.
+                                                                                
+                                                                                
+     Remember
+     that
+     the
+     VLA
+     and
+     Westerbork
+     need
+     sub-arcsecond
+     positions
+     for
+     phasing.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">RAERR</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     coordinate
+     error
+     in
+     the
+     RA
+     direction
+     in
+     but
+     in
+     milliarcseconds.
+     Note
+     that
+     for
+     RA,
+     this
+     is
+     15
+     times
+     the
+     coordinate
+     value
+     error.
+     It
+     is
+     the
+     coordinate
+     error
+     in
+     the
+     sense
+     that,
+     to
+     get
+     the
+     position
+                                                                                
+                                                                                
+     error
+     in
+     angle
+     on
+     the
+     sky,
+     one
+     would
+     need
+     to
+     divide
+     by
+     cos(Dec).
+     Prior
+     to
+     Dec
+     2014,
+     this
+     manual
+     description
+     indicated
+     that
+     RAERR
+     was
+     the
+     angle
+     on
+     the
+     sky,
+     but
+     in
+     practice
+     for
+     some
+     time
+     before
+     that
+     (forever?),
+     it
+     had
+     been
+     the
+     coordinate
+     error
+     in
+     milliarcseconds.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">Dec</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Declination.
+                                                                                
+                                                                                
+     </dd><dt class="description">
+<span 
+class="cmtt-10">DECERR</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     angular
+     error
+     in
+     the
+     declination
+     direction
+     in
+     milliarcseconds.
+     For
+     dec,
+     this
+     is
+     the
+     same
+     as
+     the
+     coordinate
+     error.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">EQuinox</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Epoch
+     of
+     the
+     observations.
+     Allowed
+     values
+     are
+     <span 
+class="cmtt-10">B1950</span>,
+     <span 
+class="cmtt-10">J2000</span>,
+     and
+     <span 
+class="cmtt-10">DATE</span>.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">Calcode</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Single-character
+     calcode
+     used
+     for
+     VLBA
+     control
+     files.
+     It
+     is
+     used
+     by
+                                                                                
+                                                                                
+     postprocessing
+     packages
+     to
+     identify
+     types
+     of
+     sources,
+     usually
+     types
+     of
+     calibrators.
+     The
+     <span 
+class="cmtt-10">CALCODE</span>
+     is
+     optional
+     for
+     <span 
+class="cmcsc-10">SCHED</span>.
+     <span 
+class="cmtt-10">CALCODE=&#8217;G&#8217;</span>
+     is
+     reserved
+     for
+     pulsar
+     observations.
+     This
+     calcode
+     will
+     trigger
+     the
+     use
+     of
+     the
+     pulsar
+     gate
+     on
+     the
+     VLBA
+     correlator.
+     Think
+     of
+     <span 
+class="cmtt-10">G</span>
+     as
+     &#8220;Gate&#8221;.
+     <span 
+class="cmtt-10">CALCODE=&#8217;L&#8217;</span>
+     triggers
+     on-line/off-line
+     channel
+     differences
+     to
+     be
+     used
+     for
+                                                                                
+                                                                                
+     pointing
+     data
+     analysis.
+     <span 
+class="cmtt-10">CALCODE=&#8217;Z&#8217;</span>
+     indicates
+     that
+     the
+     source
+     is
+     a
+     satellite
+     and
+     that
+     ephemeris
+     data
+     are
+     needed
+     for
+     correlation
+     (<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will
+     set
+     this
+     one
+     for
+     any
+     satellite).
+     </dd><dt class="description">
+<span 
+class="cmtt-10">VElocity</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Velocity
+     (km/s)
+     of
+     a
+     spectral
+     line
+     source.
+     Up
+     to
+     8
+     (16?)
+     values
+     can
+     be
+     given,
+     one
+     per
+     base
+     band
+     channel.
+     The
+                                                                                
+                                                                                
+     value
+     for
+     the
+     first
+     base
+     band
+     channel
+     will
+     be
+     used
+     for
+     any
+     other
+     channels
+     for
+     which
+     no
+     velocity
+     is
+     specified.
+     The
+     reference
+     frame
+     (eg
+     LSR,
+     Heliocentric...)
+     and
+     definition
+     (radio,
+     optical
+     or
+     redshift)
+     are
+     given
+     by
+     <span 
+class="cmtt-10">VREF</span>
+     and
+     <span 
+class="cmtt-10">VDEF</span>.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">VRef</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     reference
+     frame
+     for
+     velocity
+     calculations.
+     Supported
+     options
+     so
+                                                                                
+                                                                                
+     far
+     are
+     <span 
+class="cmtt-10">&#8217;L&#8217;</span>
+     for
+     LSR,
+     <span 
+class="cmtt-10">&#8217;H&#8217;</span>
+     for
+     heliocentric
+     and
+     <span 
+class="cmtt-10">&#8217;G&#8217;</span>
+     for
+     geocentric.
+     LSR
+     is
+     the
+     default.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">VDef</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     definition
+     of
+     the
+     velocity.
+     Supported
+     options
+     are
+     <span 
+class="cmtt-10">&#8217;R&#8217;</span>
+     for
+     radio
+     definition
+     (<span 
+class="cmmi-10">V </span>= <span 
+class="cmmi-10">c</span>(<span 
+class="cmmi-10">&#x03BD;</span><sub><span 
+class="cmr-7">0</span></sub> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">&#x03BD;</span>)<span 
+class="cmmi-10">&#x2215;&#x03BD;</span><sub><span 
+class="cmr-7">0</span></sub>),
+     <span 
+class="cmtt-10">&#8217;O&#8217;</span>
+     for
+     optical
+     definition
+     (
+     <span 
+class="cmmi-10">V </span>= <span 
+class="cmmi-10">c</span>(<span 
+class="cmmi-10">&#x03BD;</span><sub><span 
+class="cmr-7">0</span></sub> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">&#x03BD;</span>)<span 
+class="cmmi-10">&#x2215;&#x03BD; </span>= <span 
+class="cmmi-10">c</span>(<span 
+class="cmmi-10">&#x03BB; </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">&#x03BB;</span><sub><span 
+class="cmr-7">0</span></sub>)<span 
+class="cmmi-10">&#x2215;&#x03BB;</span><sub><span 
+class="cmr-7">0</span></sub> = <span 
+class="cmmi-10">zc</span>
+     ),
+     and
+     <span 
+class="cmtt-10">&#8217;Z&#8217;</span>
+     if
+     the
+     redshift
+     is
+     given
+     directly.
+     The
+     default
+     is
+                                                                                
+                                                                                
+     the
+     radio
+     definition.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">PMEPOCH</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     For
+     planetary
+     motion,
+     the
+     offset
+     from
+     the
+     <span 
+class="cmtt-10">RA</span>
+     and
+     <span 
+class="cmtt-10">DEC</span>
+     are
+     assumed
+     to
+     be
+     zero
+     at
+     this
+     time.
+     The
+     format
+     is
+     <span 
+class="cmtt-10">PMEPOCH</span>
+     <span 
+class="cmtt-10">=</span>
+     <span 
+class="cmtt-10">yyyy,mm,dd,hh:mm:ss</span>;
+     for
+     example,
+     <span 
+class="cmtt-10">PMEPOCH</span>
+     <span 
+class="cmtt-10">=</span>
+     <span 
+class="cmtt-10">1995,12,7,15:0:0</span>
+     for
+     15
+     hours
+     UT
+     on
+     1995
+     December
+     7.
+     I
+     appologize
+     for
+     any
+     confusion
+     caused
+     by
+                                                                                
+                                                                                
+     <span 
+class="cmtt-10">PMEPOCH</span>
+     not
+     being
+     the
+     zero
+     time
+     for
+     <span 
+class="cmtt-10">PMRA</span>
+     and
+     <span 
+class="cmtt-10">PMDEC</span>
+     instead
+     of
+     <span 
+class="cmtt-10">DRA</span>
+     and
+     <span 
+class="cmtt-10">DDEC</span>.
+     The
+     <span 
+class="cmcsc-10">SCHED</span>usage
+     for
+     planetary
+     motion
+     was
+     established
+     long
+     before
+     the
+     proper
+     motions
+     were
+     added
+     to
+     the
+     program
+     and
+     I
+     did
+     not
+     want
+     to
+     change
+     the
+     meaning
+     of
+     <span 
+class="cmtt-10">PMEPOCH</span>.
+     Also
+     <span 
+class="cmtt-10">EPOCH</span>
+     is
+     the
+     standard
+     throughout
+     astronomy
+     for
+                                                                                
+                                                                                
+     the
+     zero
+     time
+     of
+     proper
+     motion,
+     which
+     is
+     why
+     it&#8217;s
+     meaning
+     was
+     changed
+     from
+     what
+     is
+     now
+     <span 
+class="cmtt-10">EQUINOX</span>.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">DRA</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Rate
+     of
+     change
+     of
+     <span 
+class="cmtt-10">RA</span>
+     in
+     seconds
+     of
+     time
+     per
+     UT
+     day.
+     This
+     acts
+     in
+     coordinates
+     of
+     date.
+     Note
+     that
+     this
+     is
+     the
+     rate
+     of
+     change
+     of
+     the
+     coordinate
+                                                                                
+                                                                                
+     value,
+     not
+     the
+     angular
+     rate
+     which
+     would
+     be
+     smaller
+     by
+     cos(dec).
+     The
+     zero
+     offset
+     time
+     is
+     given
+     by
+     <span 
+class="cmtt-10">PMEPOCH</span>.
+     Use
+     <span 
+class="cmtt-10">DRA</span>
+     and
+     <span 
+class="cmtt-10">DDEC</span>
+     for
+     fast
+     moving
+     objects
+     like
+     planets.
+     Use
+     <span 
+class="cmtt-10">PMRA</span>
+     and
+     <span 
+class="cmtt-10">PMDEC</span>
+     for
+     slow
+     moving
+     objects
+     like
+     stars.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">DDEC</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Rate
+     of
+     change
+     of
+     <span 
+class="cmtt-10">DEC</span>
+     in
+     arcseconds
+     per
+                                                                                
+                                                                                
+     UT
+     day.
+     Note
+     that
+     the
+     azimuth
+     and
+     elevation
+     reported
+     by
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will
+     not
+     take
+     into
+     account
+     <span 
+class="cmtt-10">DRA</span>
+     and
+     <span 
+class="cmtt-10">DDEC</span>.
+     This
+     acts
+     in
+     coordinates
+     of
+     date.
+     The
+     zero
+     offset
+     time
+     is
+     given
+     by
+     <span 
+class="cmtt-10">PMEPOCH</span>.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">PMRA</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     proper
+     motion
+     in
+     RA
+     in
+     milli
+     arcseconds
+     per
+     year.
+     This
+     is
+     an
+     angular
+     value
+                                                                                
+                                                                                
+     and
+     is
+     1/cos(dec)
+     times
+     the
+     change
+     in
+     coordinate
+     value.
+     The
+     zero
+     offset
+     time
+     is
+     given
+     by
+     <span 
+class="cmtt-10">EPOCH</span>.
+     When
+     <span 
+class="cmtt-10">PMRA</span>,
+     <span 
+class="cmtt-10">PMDEC</span>,
+     or
+     <span 
+class="cmtt-10">PARALLAX</span>
+     is
+     used,
+     the
+     source
+     coordinates
+     are
+     shifted
+     from
+     the
+     time
+     specified
+     by
+     <span 
+class="cmtt-10">EPOCH</span>
+     to
+     a
+     time
+     that
+     is
+     the
+     stop
+     time
+     of
+     the
+     first
+     scan
+     or,
+     if
+     it
+     is
+                                                                                
+                                                                                
+     given,
+     <span 
+class="cmtt-10">PMEPOCH</span>.
+     <span 
+class="cmtt-10">PMRA</span>,
+     <span 
+class="cmtt-10">PMDEC</span>
+     are
+     added
+     to
+     <span 
+class="cmtt-10">DRA</span>
+     and
+     <span 
+class="cmtt-10">DDEC</span>
+     respectively
+     so
+     that
+     small
+     motions
+     during
+     the
+     observation
+     of
+     fast
+     moving
+     stars
+     can
+     be
+     accommodated.
+     The
+     proper
+     motion
+     and
+     planetary
+     motion
+     parameters
+     can
+     both
+     be
+     used
+     together,
+     if
+     one
+     is
+     mad
+     enough
+     to
+     want
+     to
+     do
+     so.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">PMDEC</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+                                                                                
+                                                                                
+     The
+     proper
+     motion
+     in
+     Dec
+     in
+     milli
+     arcseconds
+     per
+     year.
+     The
+     zero
+     offset
+     time
+     is
+     given
+     by
+     <span 
+class="cmtt-10">EPOCH</span>.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">EPoch</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     zero
+     point
+     for
+     proper
+     motion
+     expressed
+     as
+     a
+     fractional
+     year
+     such
+     as
+     1993.6.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">PARALLAX</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     parallax
+     in
+     milli
+     arcseconds.
+     Synonym
+     <span 
+class="cmtt-10">PARALAX</span>
+     for
+     backward
+     compatibility
+     (yes,
+     I
+                                                                                
+                                                                                
+     misspelled
+     it
+     the
+     first
+     time
+     so
+     backwards
+     compatibility
+     is
+     an
+     issue).
+     </dd><dt class="description">
+<span 
+class="cmtt-10">FLUX</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Flux
+     densities
+     at
+     up
+     to
+     10
+     frequencies
+     for
+     the
+     source.
+     The
+     arguments
+     (up
+     to
+     30)
+     are
+     in
+     triplets
+     with
+     the
+     first
+     being
+     the
+     frequency
+     in
+     GHz,
+     the
+     second
+     is
+     the
+     total
+     flux
+     density
+     in
+     some
+     image,
+                                                                                
+                                                                                
+     and
+     the
+     third
+     is
+     the
+     unresolved
+     (peak)
+     flux
+     density
+     &#8212;
+     what
+     you
+     are
+     likely
+     to
+     see
+     on
+     long
+     baselines.
+     These
+     values
+     are
+     typically
+     taken
+     as
+     a
+     byproduct
+     of
+     geodetic
+     observations
+     and
+     should
+     be
+     taken
+     as
+     approximate.
+     All
+     compact
+     source
+     vary
+     to
+     some
+     degree
+     &#8212;
+     most
+     by
+     a
+     lot
+     &#8212;
+     so
+     the
+                                                                                
+                                                                                
+     source
+     may
+     well
+     prove
+     to
+     have
+     a
+     different
+     strength
+     when
+     used
+     than
+     is
+     shown.
+     But
+     these
+     flux
+     densities
+     should
+     help
+     distinguish
+     the
+     strong
+     from
+     the
+     weak
+     calibrators.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">FLUXREF</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     A
+     text
+     string
+     that
+     indicated
+     where
+     the
+     flux
+     density
+     information
+     came
+     from.
+     It
+     is
+     likely
+     to
+     match
+     one
+     of
+     the
+                                                                                
+                                                                                
+     catalog
+     names
+     from
+     which
+     positions
+     of
+     some
+     sources
+     were
+     obtained.
+     It
+     may
+     not
+     match
+     the
+     position
+     catalog
+     for
+     an
+     individual
+     source.
+     A
+     typical
+     case,
+     at
+     the
+     time
+     this
+     parameter
+     was
+     added,
+     is
+     that
+     the
+     flux
+     densities
+     come
+     from
+     one
+     of
+     Petrov&#8217;s
+     catalogs
+     while
+     many
+     of
+     the
+     sources
+     use
+     positions
+     from
+     a
+                                                                                
+                                                                                
+     GSFC
+     solution.
+     </dd></dl>
+<!--l. 10772--><p class="noindent" >Below is a sample of a few sources from the March 2005 source catalog, slightly reformatted to fit the
+page width.
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-10">
+SOURCE=&#8217;J1629-2026&#8217;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;RA=16:29:03.0298580&#x00A0;DEC=&#x00A0;-20:26:55.100570
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;RAERR=&#x00A0;&#x00A0;29.510&#x00A0;DECERR=&#x00A0;&#x00A0;13.450&#x00A0;CALCODE=&#8217;V&#8217;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;REMARKS=&#8217;VLBA&#x00A0;Calib&#x00A0;Survey&#x00A0;-&#x00A0;GSFC&#x00A0;sols.&#x00A0;-&#x00A0;VCS2&#x00A0;-&#x00A0;created&#x00A0;2004&#8217;&#x00A0;/
+&#x00A0;<br />SOURCE=&#8217;J1630+2131&#8217;,&#8217;1628+216&#8217;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;RA=16:30:11.2308370&#x00A0;DEC=&#x00A0;&#x00A0;21:31:34.310260
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;RAERR=&#x00A0;&#x00A0;&#x00A0;4.370&#x00A0;DECERR=&#x00A0;&#x00A0;&#x00A0;5.380&#x00A0;CALCODE=&#8217;V&#8217;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;REMARKS=&#8217;VLBA&#x00A0;Calib&#x00A0;Survey&#x00A0;-&#x00A0;GSFC&#x00A0;sols.&#x00A0;-&#x00A0;VCS2&#x00A0;-&#x00A0;created&#x00A0;2004&#8217;&#x00A0;/
+&#x00A0;<br />SOURCE=&#8217;J1631+1052&#8217;,&#8217;1628+109&#8217;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;RA=16:31:18.7777000&#x00A0;DEC=&#x00A0;&#x00A0;10:52:02.460000
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;RAERR=&#x00A0;&#x00A0;&#x00A0;4.370&#x00A0;DECERR=&#x00A0;&#x00A0;&#x00A0;5.380&#x00A0;CALCODE=&#8217;M&#8217;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;REMARKS=&#8217;JVAS-Browne&#x00A0;etal.&#x00A0;1998,&#x00A0;mnras,&#x00A0;293,&#x00A0;257;&#x00A0;S8.4GHz=&#x00A0;72&#x00A0;mJy&#8217;&#x00A0;/
+&#x00A0;<br />SOURCE=&#8217;J1631+4927&#8217;,&#8217;1629+495&#8217;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;RA=16:31:16.5398860&#x00A0;DEC=&#x00A0;&#x00A0;49:27:39.515680
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;RAERR=&#x00A0;&#x00A0;&#x00A0;0.520&#x00A0;DECERR=&#x00A0;&#x00A0;&#x00A0;0.630&#x00A0;CALCODE=&#8217;V&#8217;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;REMARKS=&#8217;VLBA&#x00A0;Calib&#x00A0;Survey&#x00A0;-&#x00A0;GSFC&#x00A0;sols.&#x00A0;-&#x00A0;VCS2&#x00A0;-&#x00A0;created&#x00A0;2004&#8217;&#x00A0;/
+</div>
+<!--l. 10792--><p class="nopar" >
+                                                                                
+                                                                                
+<!--l. 10795--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html" >next</a>] [<a 
+href="labelSECSCHPARTheScheduleFile.html" >prev</a>] [<a 
+href="labelSECSCHPARTheScheduleFile.html#taillabelSECSCHPARTheScheduleFile.html" >prev-tail</a>] [<a 
+href="labelSECSRCCATSourceCatalog.html" >front</a>] [<a 
+href="labelCHPINPUTTHESCHEDINPUTFILESIncludesparameterlists.html#labelSECSRCCATSourceCatalog.html" >up</a>] </p></div>
+<!--l. 10795--><p class="noindent" ><a 
+ id="taillabelSECSRCCATSourceCatalog.html"></a>  
+</body></html> 

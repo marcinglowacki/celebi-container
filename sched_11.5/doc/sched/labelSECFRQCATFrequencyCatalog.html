@@ -1,0 +1,1080 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Frequency Catalog</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 11626--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECSETUPSSetupFiles.html" >next</a>] [<a 
+href="labelSECTPINITapeInitializationFile.html" >prev</a>] [<a 
+href="labelSECTPINITapeInitializationFile.html#taillabelSECTPINITapeInitializationFile.html" >prev-tail</a>] [<a 
+href="#taillabelSECFRQCATFrequencyCatalog.html">tail</a>] [<a 
+href="labelCHPINPUTTHESCHEDINPUTFILESIncludesparameterlists.html#labelSECFRQCATFrequencyCatalog.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">3.5   </span> <a 
+ id="x30-2450003.5"></a>Frequency Catalog</h3>
+<!--l. 11628--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is able to fill in many items in setup files based on knowledge of possible frequency setups at
+the stations as described in the frequency catalog. This allows the user to only specify basic
+information. A reasonable minimum set is: <a 
+href="labelSECSETUPSSetupFiles.html#x31-2780003.6.4"><span 
+class="cmtt-10">NCHAN</span></a>, <a 
+href="labelSECSETUPSSetupFiles.html#x31-2550003.6.4"><span 
+class="cmtt-10">BBFILTER</span></a>, <a 
+href="labelSECSETUPSSetupFiles.html#x31-2590003.6.4"><span 
+class="cmtt-10">BITS</span></a>, <a 
+href="labelSECSETUPSSetupFiles.html#x31-2860003.6.4"><span 
+class="cmtt-10">POL</span></a> (can be <span 
+class="cmtt-10">DUAL</span>), and either
+<a 
+href="labelSECSETUPSSetupFiles.html#x31-2680003.6.4"><span 
+class="cmtt-10">FREQREF</span></a> (and <a 
+href="labelSECSETUPSSetupFiles.html#x31-2670003.6.4"><span 
+class="cmtt-10">FREQOFF</span></a>) or <a 
+href="labelSECSETUPSSetupFiles.html#x31-2530003.6.4"><span 
+class="cmtt-10">BAND</span></a>. The frequency catalog also allows <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to check user specified
+values against standard sets to warn of any oddities.
+<!--l. 11642--><p class="noindent" >Most users will not touch the frequency catalog. If they need a setup that does not conform to what is
+in the catalog, they should just make the necessary <a 
+href="labelSECSETUPSSetupFiles.html#x31-2470003.6"><span 
+class="cmtt-10">setup files</span></a> and ignore the warnings after making
+sure that the special files are correct. Be very careful doing this. There are filters on many of the LO
+and IF cables, at least on the VLBA, that most users probably are not aware of. Any special setup files
+that do not match one of the standards should be shown to Craig Walker for approval. If it is a good
+one, it may be added to the standards. However, the standard set is essentially complete for
+the VLBA. If <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>complains about yours, it is likely to be in error. If a user really
+wants his/her own frequency catalog, use the input parameter <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1000003.1.2"><span 
+class="cmtt-10">FREQFILE</span></a> to specify the file
+name.
+<!--l. 11657--><p class="noindent" >There is a lot of information about available frequencies, receivers, frequency ranges, filters etc,
+especially at the VLBA, in the standard frequency catalog. A table of information about possible setups
+for observations within a frequency range can be made by running <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>with <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1010003.1.2"><span 
+class="cmtt-10">FREQLIST</span></a> <span 
+class="cmtt-10">=</span>
+<span 
+class="cmtt-10">lowfreq, highfreq </span>(eg <span 
+class="cmtt-10">freqlist=4800,8900</span>) as the only input. The frequencies are in MHz. If only
+one frequency is given, the second will be set equal to the first. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will produce a table in
+file <span 
+class="cmsl-10">frequencies.list </span>containing details of the information available on how to set up these
+frequencies at all known sites. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will then quit. Note that it is not necessary to
+transfer this information to your setup files &#8212; <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will do that automatically based on
+your frequency and polarization requests in the setup file. To examine the catalog itself,
+look at <span 
+class="cmtt-10">$SCHED/catalogs/freq.dat </span>or, if reading the html version of the manual, click
+<a 
+href="catalogs/freq.dat" >here.</a>.
+<!--l. 11676--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">3.5.1   </span> <a 
+ id="x30-2460003.5.1"></a>List of Frequency File Parameters</h4>
+<!--l. 11678--><p class="noindent" >The parameters of the frequency file tell <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>over what frequency range the group if usable and on
+which stations. Most of the parameters are the same as parameters in the setup file since they are
+meant for direct substitution once the correct frequency group has been identified. There is no
+defaulting between groups of inputs &#8212; all parameters are reset to zero, blank, or some equivalent
+value.
+<!--l. 11685--><p class="noindent" >For the VLA, IF&#8217;s A and C will be assumed to apply to VLA27 while IF&#8217;s B and D will be assumed to
+apply to VLA1. All standard frequency groups will have both VLA IF&#8217;s on the same frequency.
+Anything more complicated requires a setup file from the user.
+     <dl class="description"><dt class="description">
+<span 
+class="cmtt-10">STATIONs</span> </dt><dd 
+class="description">
+     Up
+                                                                                
+                                                                                
+     to
+     10
+     stations
+     with
+     this
+     setup.
+     This
+     will
+     be
+     matched
+     against
+     the
+     station
+     name
+     in
+     the
+     setup
+     file.
+     The
+     name
+     <span 
+class="cmtt-10">VLBA</span>
+     will
+     be
+     a
+     default
+     for
+     all
+     VLBA
+     stations.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">PRIOrity</span> </dt><dd 
+class="description">
+     A
+     ranking
+     with
+     low
+     values
+     prefered.
+     This
+     allows
+     preference
+     of
+     one
+     setup
+     over
+     another
+     if
+     both
+     match
+     the
+                                                                                
+                                                                                
+     required
+     frequencies.
+     For
+     example,
+     the
+     narrow
+     band
+     50
+     cm
+     receiver
+     would
+     be
+     chosen
+     over
+     the
+     wide
+     band
+     one
+     for
+     narrow
+     band
+     observations
+     despite
+     the
+     fact
+     that
+     both
+     would
+     match
+     the
+     requested
+     frequencies.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">NAME</span> </dt><dd 
+class="description">
+     A
+     name
+     for
+     the
+     frequency
+     group.
+     It
+     is
+     used
+     in
+     listing
+     and
+     error
+     notes
+     to
+                                                                                
+                                                                                
+     help
+     the
+     user
+     find
+     the
+     right
+     one.
+     Up
+     to
+     12
+     characters
+     long.
+     Any
+     string
+     ok.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">NOTE</span> </dt><dd 
+class="description">
+     A
+     comment
+     about
+     the
+     setup
+     that
+     will
+     go
+     to
+     various
+     listings.
+     It
+     is
+     wise
+     to
+     note
+     any
+     limitations
+     here
+     that
+     might
+     not
+     be
+     obvious
+     to
+     a
+     user.
+     Up
+     to
+     80
+     characters.
+     </dd><dt class="description">
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">IFNAME</span> </dt><dd 
+class="description">
+     The
+     name
+     of
+     the
+     IF
+     for
+     up
+     to
+     8
+     IF
+     descriptions
+     (eg.
+     A,
+     B,
+     C,
+     D).
+     There
+     are
+     a
+     larger
+     number
+     than
+     there
+     are
+     phsical
+     IFs
+     to
+     allow
+     description
+     of
+     such
+     systems
+     as
+     the
+     VLBA
+     50/90
+     cm
+     system
+     where
+     there
+     are
+     more
+     than
+     one
+     signal
+     in
+     each
+     IF.
+     <!--l. 11715--><p class="noindent" >For
+                                                                                
+                                                                                
+     antennas
+     in
+     the
+     EVN
+     that
+     have
+     VLBA(4)
+     DARs,
+     the
+     codes
+     in
+     use
+     are
+     usually
+     A
+     and
+     C
+     (LCP
+     and
+     RCP).
+     For
+     MkIV
+     antennas
+     there
+     are
+     two
+     IF
+     distributors
+     that
+     can
+     one
+     can
+     choose
+     to
+     connect
+     to
+     either
+     IF
+     channel.
+     Each
+     distributor
+     is
+     connected
+     to
+     a
+     fixed
+     subset
+     of
+     the
+     BBC&#8217;s,
+     either
+                                                                                
+                                                                                
+     the
+     odds
+     or
+     the
+     evens.
+     The
+     normal
+     situation
+     has
+     IF
+     1N
+     on
+     LCP
+     and
+     2N
+     on
+     RCP,
+     but
+     alternate
+     channels
+     1A
+     or
+     2A
+     can
+     be
+     connected
+     if
+     more
+     than
+     the
+     first
+     7
+     BBC&#8217;s
+     need
+     to
+     be
+     set
+     to
+     a
+     single
+     polarization.
+     <!--l. 11723--><p class="noindent" >For
+     the
+     <a 
+href="labelSECWIDEWideBandObservingRDBEDBBCVLBAandMarkIVModes.html#x15-310002.4.2"><span 
+class="cmtt-10">DBBC</span></a>,
+     <span 
+class="cmtt-10">IFNAME</span>
+     contains
+     two
+     characters.
+     The
+     first
+     (A-D)
+                                                                                
+                                                                                
+     gives
+     the
+     conditioning
+     module
+     to
+     be
+     used,
+     the
+     second
+     (1-4)
+     determines
+     which
+     of
+     the
+     switchable
+     inputs
+     on
+     that
+     conditioning
+     module
+     is
+     to
+     be
+     selected.
+     The
+     signal
+     available
+     on
+     each
+     input
+     depends
+     on
+     the
+     local
+     station
+     wiring,
+     so
+     careful
+     catalogue
+     maintenance
+     is
+     required.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">ALTIFN</span> </dt><dd 
+class="description">
+     An
+     alternate
+     IF
+     name
+     for
+                                                                                
+                                                                                
+     this
+     frequency
+     setup.
+     For
+     the
+     Mark
+     IV
+     systems,
+     the
+     odd
+     BBC&#8217;s
+     are
+     attached
+     to
+     IF&#8217;s
+     1N
+     and
+     1A.
+     The
+     even
+     BBC&#8217;s
+     are
+     attached
+     to
+     2N
+     and
+     2A.
+     Generally
+     the
+     same
+     signal
+     is
+     put
+     on
+     1N
+     and
+     2A
+     while
+     another
+     (other
+     polarization)
+     is
+     put
+     on
+     2N
+     and
+     1A.
+     When
+     assigning
+     IF
+     names
+                                                                                
+                                                                                
+     using
+     frequency
+     table
+     information,
+     sched
+     will
+     pick
+     <span 
+class="cmtt-10">IFNAME</span>
+     or
+     <span 
+class="cmtt-10">ALTIFN</span>
+     depending
+     on
+     whether
+     the
+     BBC
+     is
+     even
+     or
+     odd
+     and
+     on
+     the
+     first
+     digit
+     of
+     the
+     names.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">RF1</span> </dt><dd 
+class="description">
+     The
+     low
+     edge
+     of
+     the
+     RF
+     frequency
+     range
+     covered
+     by
+     each
+     IF.
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will
+     try
+     to
+     find
+     the
+     group
+     with
+     all
+                                                                                
+                                                                                
+     the
+     channels
+     best
+     centered
+     in
+     the
+     IF.
+     However,
+     some
+     channels
+     will
+     allowed
+     to
+     be
+     outside
+     the
+     range
+     if
+     necessary,
+     as
+     is
+     common
+     on
+     the
+     VLA.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">RF2</span> </dt><dd 
+class="description">
+     The
+     high
+     edge
+     of
+     the
+     RF
+     frequency
+     range
+     covered
+     by
+     each
+     IF.
+     <!--l. 11748--><p class="noindent" >For
+     Mark&#x00A0;IV
+     systems,
+     the
+     frequency
+     ranges
+     in
+     the
+     frequency
+     catalog
+                                                                                
+                                                                                
+     are
+     calculated
+     with
+     the
+     constraint
+     that
+     the
+     complete
+     range
+     can
+     be
+     obtained
+     with
+     the
+     station
+     preferred
+     patching,
+     i.e.&#x00A0;with
+     consistently
+     using
+     high
+     or
+     low
+     output
+     on
+     the
+     IF
+     distributor.
+     More
+     frequency
+     coverage
+     can
+     be
+     obtained
+     with
+     detailed
+     knowledge
+     and
+     requires
+     a
+     manual
+     setup.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">CH1RF1</span> </dt><dd 
+class="description">
+     The
+     lowest
+     RF
+     frequency
+     for
+                                                                                
+                                                                                
+     channel
+     1.
+     If
+     non-zero,
+     channel
+     1
+     will
+     be
+     required
+     to
+     fall
+     in
+     the
+     range
+     specified
+     by
+     <span 
+class="cmtt-10">CH1RF1</span>
+     and
+     <span 
+class="cmtt-10">CH1RF2</span>.
+     This
+     is
+     mainly
+     to
+     be
+     sure
+     that
+     the
+     right
+     filter
+     is
+     used
+     at
+     2cm
+     on
+     the
+     VLBA.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">CH1RF2</span> </dt><dd 
+class="description">
+     The
+     highest
+     frequency
+     for
+     channel
+     1.
+     See
+     <span 
+class="cmtt-10">CH1RF1</span>
+     </dd><dt class="description">
+<span 
+class="cmtt-10">LO1</span> </dt><dd 
+class="description">
+                                                                                
+                                                                                
+     The
+     <a 
+href="labelSECSETUPSSetupFiles.html#x31-2650003.6.4"><span 
+class="cmtt-10">FIRSTLO</span></a>
+     for
+     each
+     IF
+     channel.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">FE</span> </dt><dd 
+class="description">
+     The
+     <a 
+href="labelSECSETUPSSetupFiles.html#x31-2630003.6.4"><span 
+class="cmtt-10">FE</span></a>
+     (receiver
+     specification)
+     for
+     each
+     channel.
+     Use
+     <span 
+class="cmtt-10">omit</span>
+     for
+     unused
+     channels.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">POL</span> </dt><dd 
+class="description">
+     The
+     polarization
+     of
+     the
+     channel
+     (RCP
+     or
+     LCP).
+     </dd><dt class="description">
+<span 
+class="cmtt-10">SYN</span> </dt><dd 
+class="description">
+     The
+     <a 
+href="labelSECSETUPSSetupFiles.html#x31-2940003.6.4"><span 
+class="cmtt-10">SYNTH</span></a>
+     setting
+     for
+     each
+     of
+     the
+     three
+     front
+     end
+     synthesizers
+     on
+     the
+     VLBA.
+                                                                                
+                                                                                
+     </dd><dt class="description">
+<span 
+class="cmtt-10">DUALX</span> </dt><dd 
+class="description">
+     Use
+     the
+     wideband
+     scheme
+     at
+     4
+     cm
+     on
+     the
+     VLBA.
+     See
+     the
+     setup
+     parameter
+     <a 
+href="labelSECSETUPSSetupFiles.html#x31-2610003.6.4"><span 
+class="cmtt-10">DUALX</span></a>.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">LCP50CM</span> </dt><dd 
+class="description">
+     Setting
+     for
+     the
+     50
+     cm
+     filter.
+     See
+     setup
+     file
+     parameter
+     <a 
+href="labelSECSETUPSSetupFiles.html#x31-2750003.6.4"><span 
+class="cmtt-10">LCP50CM</span></a>
+     </dd><dt class="description">
+<span 
+class="cmtt-10">RCP50CM</span> </dt><dd 
+class="description">
+     Setting
+     for
+     the
+     50
+     cm
+     filter.
+     See
+     setup
+     file
+     parameter
+     <a 
+href="labelSECSETUPSSetupFiles.html#x31-2750003.6.4"><span 
+class="cmtt-10">RCP50CM</span></a>
+     </dd><dt class="description">
+<span 
+class="cmtt-10">CHNSTA</span> </dt><dd 
+class="description">
+                                                                                
+                                                                                
+     Only
+     use
+     this
+     IF
+     if
+     <span 
+class="cmtt-10">CHNSTA</span>
+     matches
+     the
+     station
+     name.
+     This
+     allows
+     the
+     same
+     groups
+     to
+     be
+     used
+     for
+     VLA1
+     and
+     VLA27,
+     but
+     to
+     differ
+     in
+     the
+     IFNAME.
+     Options
+     are
+     the
+     station
+     name
+     or
+     <span 
+class="cmtt-10">BOTH</span>.
+     This
+     facility
+     has
+     been
+     disabled
+     and
+     may
+     be
+     removed.
+     It
+     has
+     been
+     made
+     obsolete
+     by
+     the
+                                                                                
+                                                                                
+     new
+     digital
+     patch
+     panel
+     at
+     the
+     VLA
+     and
+     the
+     effort
+     by
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to
+     determine
+     which
+     IF&#8217;s
+     are
+     to
+     be
+     used
+     for
+     the
+     each
+     setup
+     depending
+     on
+     the
+     specified
+     modes
+     in
+     the
+     schedule.
+     Modes
+     <span 
+class="cmtt-10">VA,</span>
+     <span 
+class="cmtt-10">VR</span>
+     and
+     <span 
+class="cmtt-10">VL</span>
+     require
+     different
+     IF
+     restrictions.
+     </dd></dl>
+<!--l. 11800--><p class="noindent" >The following are OBSOLETE VLA parameters that should not be used.
+     <dl class="description"><dt class="description">
+<span 
+class="cmtt-10">VLABAND</span> </dt><dd 
+class="description">
+     The
+     VLA
+     frequency
+     band.
+                                                                                
+                                                                                
+     See
+     setup
+     file
+     parameter
+     <span 
+class="cmtt-10">VLABAND</span>
+     </dd><dt class="description">
+<span 
+class="cmtt-10">VLABW</span> </dt><dd 
+class="description">
+     The
+     VLA
+     bandwidth
+     codes.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">VLAFEAB</span> </dt><dd 
+class="description">
+     The
+     VLA
+     first
+     LO.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">VLAFECD</span> </dt><dd 
+class="description">
+     The
+     other
+     VLA
+     first
+     LO.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">VLAIF</span> </dt><dd 
+class="description">
+     The
+     VLA
+     gain
+     file
+     name.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">VLAROT</span> </dt><dd 
+class="description">
+     The
+     VLA
+     ROT
+     file
+     name.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">VLASYNA</span> </dt><dd 
+class="description">
+     The
+                                                                                
+                                                                                
+     VLA
+     AC
+     F6
+     setting.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">VLASYNB</span> </dt><dd 
+class="description">
+     The
+     VLA
+     BD
+     F6
+     setting.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">FEFILTER</span> </dt><dd 
+class="description">
+     The
+     VLA
+     BD
+     F6
+     setting.
+     </dd></dl>
+                                                                                
+                                                                                
+<!--l. 11828--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECSETUPSSetupFiles.html" >next</a>] [<a 
+href="labelSECTPINITapeInitializationFile.html" >prev</a>] [<a 
+href="labelSECTPINITapeInitializationFile.html#taillabelSECTPINITapeInitializationFile.html" >prev-tail</a>] [<a 
+href="labelSECFRQCATFrequencyCatalog.html" >front</a>] [<a 
+href="labelCHPINPUTTHESCHEDINPUTFILESIncludesparameterlists.html#labelSECFRQCATFrequencyCatalog.html" >up</a>] </p></div>
+<!--l. 11828--><p class="noindent" ><a 
+ id="taillabelSECFRQCATFrequencyCatalog.html"></a>  
+</body></html> 

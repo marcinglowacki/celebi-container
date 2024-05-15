@@ -1,0 +1,3805 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Single Dish VLBA Observing</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 4267--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECCONFIGConfigurationStudies.html" >next</a>] [<a 
+href="labelSECINDIVSpecialConcernsforSpecificObservatories.html" >prev</a>] [<a 
+href="labelSECINDIVSpecialConcernsforSpecificObservatories.html#taillabelSECINDIVSpecialConcernsforSpecificObservatories.html" >prev-tail</a>] [<a 
+href="#taillabelSECSPECIALVLBASingleDishVLBAObserving.html">tail</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECSPECIALVLBASingleDishVLBAObserving.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">2.11   </span> <a 
+ id="x22-400002.11"></a>Single Dish VLBA Observing</h3>
+<!--l. 4269--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is used primarily to schedule VLBI observations on the VLBA and most of the rest of this
+manual is devoted to details of how to do that. However, there are a variety of types of observations
+that are rather different. These are mainly single antenna observations usually done to measure system
+performance. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is able to make the schedules for these observations. Such observations are not
+likely to be of interest to users other than NRAO staff involved in the testing and maintenance of the
+instrument.
+<!--l. 4278--><p class="noindent" >Some items of special interest for VLBA scheduling are:
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4282--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1950003.1.2"><span 
+class="cmtt-10">SOURCE:</span></a>
+     The
+     source
+     name
+     is
+     used
+     in
+     the
+     usual
+     way.
+     However,
+     for
+     pointing,
+     there
+     is
+     a
+     useful
+     capability
+     to
+     specify
+     the
+     name
+     of
+     a
+     Solar
+     System
+     object
+     and
+     have
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>determine
+     its
+     location
+     from
+                                                                                
+                                                                                
+     a
+     JPL
+     ephemeris.
+     See
+     the
+     description
+     of
+     <span 
+class="cmtt-10">SOURCE</span>
+     for
+     more
+     details.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4289--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1410003.1.2"><span 
+class="cmtt-10">OBSTYPE:</span></a>
+     This
+     should
+     be
+     set
+     to
+     <span 
+class="cmtt-10">NONE</span>
+     for
+     single
+     dish
+     observations.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4293--><p class="noindent" ><a 
+href="labelSECSRCCATSourceCatalog.html#x27-2300003.2"><span 
+class="cmtt-10">CALCODE:</span></a>
+     If
+     set
+     to
+     &#8220;<span 
+class="cmtt-10">L</span>&#8221;,
+     pointing
+     data
+     will
+     be
+     processed
+     using
+     differences
+     between
+     the
+     on-line
+     and
+     off-line
+     channels.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4298--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1820003.1.2"><span 
+class="cmtt-10">PTVLBA:</span></a>
+     This
+                                                                                
+                                                                                
+     can
+     be
+     specified
+     on
+     a
+     scan
+     basis
+     and
+     causes
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to
+     write
+     out
+     a
+     pointing
+     pattern.
+     It
+     can
+     be
+     turned
+     off
+     with
+     <span 
+class="cmtt-10">NOPTVLBA</span>
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4303--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2110003.1.2"><span 
+class="cmtt-10">TAVLBA:</span></a>
+     This
+     can
+     also
+     be
+     specific
+     on
+     a
+     scan
+     basis,
+     but
+     not
+     for
+     a
+     scan
+     with
+     <span 
+class="cmtt-10">PTVLBA</span>.
+     It
+     is
+     another
+     special
+     mode,
+     very
+     similar
+     to
+     PTVLBA,
+                                                                                
+                                                                                
+     for
+     measuring
+     antenna
+     temperatures.
+     It
+     can
+     be
+     turned
+     off
+     with
+     <span 
+class="cmtt-10">NOTAVLBA</span>.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4309--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1750003.1.2"><span 
+class="cmtt-10">PN3DB:</span></a>
+     This
+     can
+     be
+     specified
+     on
+     a
+     scan
+     basis
+     and
+     causes
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to
+     write
+     out
+     half
+     power
+     tracking
+     test
+     pattern.
+     It
+     can
+     be
+     turned
+     off
+     with
+     <span 
+class="cmtt-10">NOPN3DB</span>
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4314--><p class="noindent" ><a 
+href="labelSECSETUPSSetupFiles.html#x31-2520003.6.4"><span 
+class="cmtt-10">AZCOLIM:</span></a>
+     This
+     specifies
+     a
+     pointing
+     offset
+     in
+     arcminutes
+                                                                                
+                                                                                
+     in
+     the
+     azimuth
+     direction.
+     It
+     is
+     equivalent
+     to
+     the
+     term
+     used
+     in
+     the
+     pointing
+     equations
+     to
+     account
+     for
+     feed
+     offsets
+     so
+     it
+     is
+     a
+     constant
+     angle
+     on
+     the
+     sky.
+     The
+     actual
+     change
+     in
+     azimuth
+     increases
+     at
+     high
+     elevation
+     because
+     of
+     the
+     cos(El)
+     dependence
+     of
+     the
+     angular
+     effect
+     of
+     an
+     azimuth
+     change.
+                                                                                
+                                                                                
+     It
+     is
+     available
+     both
+     <a 
+href="labelSECSETUPSSetupFiles.html#x31-2520003.6.4">in
+     the
+     setup
+     file</a>
+     and
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-500003.1.2">in
+     the
+     main
+     schedule.</a>
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4324--><p class="noindent" ><a 
+href="labelSECSETUPSSetupFiles.html#x31-2620003.6.4"><span 
+class="cmtt-10">ELCOLIM:</span></a>
+     This
+     specifies
+     a
+     pointing
+     offset
+     in
+     arcminutes
+     in
+     the
+     elevation
+     direction.
+     It
+     is
+     equivalent
+     to
+     the
+     term
+     used
+     in
+     the
+     pointing
+     equations
+     to
+     account
+     for
+     feed
+     offsets
+     and
+     encoder
+     offsets,
+     which
+     are
+     equivalent
+     for
+                                                                                
+                                                                                
+     elevation.
+     It
+     is
+     in
+     the
+     setup
+     file.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4331--><p class="noindent" ><a 
+href="labelSECSETUPSSetupFiles.html#x31-2870003.6.4"><span 
+class="cmtt-10">PTINCR:</span></a>
+     This
+     is
+     the
+     jump
+     in
+     arc
+     minutes
+     between
+     the
+     on-source
+     and
+     half-power
+     pointing
+     positions
+     for
+     use
+     in
+     setting
+     up
+     pointing
+     patterns.
+     It
+     is
+     used
+     in
+     <span 
+class="cmtt-10">PTVLBA</span>,
+     <span 
+class="cmtt-10">PN3DB</span>
+     and
+     <span 
+class="cmtt-10">TAVLBA</span>
+     modes.
+     This
+     is
+     a
+     setup
+     file
+     parameter.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4337--><p class="noindent" ><a 
+href="labelSECSETUPSSetupFiles.html#x31-2880003.6.4"><span 
+class="cmtt-10">PTOFF:</span></a>
+                                                                                
+                                                                                
+     This
+     is
+     the
+     jump
+     in
+     arc
+     minutes
+     between
+     the
+     on-source
+     and
+     off-source
+     pointing
+     positions
+     for
+     use
+     in
+     setting
+     up
+     pointing
+     patterns.
+     It
+     is
+     used
+     in
+     <span 
+class="cmtt-10">PTVLBA</span>,
+     <span 
+class="cmtt-10">PN3DB</span>,
+     and
+     <span 
+class="cmtt-10">TAVLBA</span>
+     modes.
+     The
+     default
+     is
+     6
+     times
+     <span 
+class="cmtt-10">PTINCR</span>.
+     This
+     is
+     a
+     setup
+     file
+     parameter.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4344--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1800003.1.2"><span 
+class="cmtt-10">PTDUR:</span></a>
+     This
+     parameter
+     is
+     a
+     time
+                                                                                
+                                                                                
+     (in
+     the
+     usual
+     time
+     format)
+     that
+     specifies
+     the
+     time
+     spent
+     in
+     each
+     pointing
+     position
+     of
+     a
+     pointing
+     pattern.
+     A
+     reasonable
+     value
+     is
+     15
+     seconds.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4349--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1810003.1.2"><span 
+class="cmtt-10">PTSLEW:</span></a>
+     This
+     parameter
+     specifies
+     the
+     time
+     to
+     allow
+     to
+     slew
+     to
+     the
+     source.
+     It
+     is
+     specified
+     in
+     the
+     usual
+     time
+     units
+     (seconds).
+     With
+     dwell
+                                                                                
+                                                                                
+     time
+     scheduling
+     or
+     schedule
+     optimization,
+     it
+     should
+     be
+     kept
+     small,
+     often
+     equal
+     to
+     <span 
+class="cmtt-10">PTDUR</span>.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4355--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-980003.1.2"><span 
+class="cmtt-10">FOCUS:</span></a>
+     This
+     is
+     used
+     to
+     increment
+     the
+     subreflector
+     focus
+     position.
+     The
+     value
+     is
+     added
+     to
+     the
+     nominal
+     value
+     known
+     to
+     the
+     on-line
+     system
+     for
+     the
+     particular
+     receiver.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4360--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1880003.1.2"><span 
+class="cmtt-10">ROTATION:</span></a>
+     This
+     is
+     used
+                                                                                
+                                                                                
+     to
+     increment
+     the
+     subreflector
+     rotation
+     position.
+     The
+     value
+     is
+     added
+     to
+     the
+     nominal
+     value
+     known
+     to
+     the
+     on-line
+     system
+     for
+     the
+     particular
+     receiver.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4365--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1890003.1.2"><span 
+class="cmtt-10">ROTPAT:</span></a>
+     This
+     triggers
+     generation
+     of
+     a
+     focus-rotation
+     test
+     pattern
+     of
+     pointing
+     observations.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4369--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1900003.1.2"><span 
+class="cmtt-10">ROTOFF:</span></a>
+     This
+     is
+     used
+     to
+     specify
+     the
+     rotation
+     offset
+     positions
+                                                                                
+                                                                                
+     of
+     a
+     focus-rotation
+     pattern.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4373--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-970003.1.2"><span 
+class="cmtt-10">FOCOFF:</span></a>
+     This
+     is
+     used
+     to
+     specify
+     the
+     focus
+     offset
+     positions
+     of
+     a
+     focus-rotation
+     pattern.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 4377--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-910003.1.2"><span 
+class="cmtt-10">EPHFILE:</span></a>
+     This
+     is
+     the
+     name
+     of
+     the
+     ephemeris
+     file
+     to
+     use
+     if
+     planets
+     are
+     included
+     in
+     the
+     pointing,
+     as
+     they
+     typically
+     are
+     at
+     high
+     frequencies.
+     At
+     the
+                                                                                
+                                                                                
+     AOC,
+     the
+     ephemeris
+     files
+     are
+     typically
+     kept
+     in
+     a
+     directory
+     assigned
+     the
+     environment
+     variable
+     <span 
+class="cmtt-10">PLANET</span><span 
+class="cmtt-10">_DATA</span>.
+     That
+     assignment
+     can
+     depend
+     on
+     computer
+     architecture
+     because
+     the
+     files
+     are
+     binary.
+     </dd></dl>
+<!--l. 4386--><p class="noindent" >There are a number of setup files among the standard setups that are for VLBA test observations.
+Those that start with <span 
+class="cmsl-10">pt </span>are for pointing or antenna temperature observations. Those that start with <span 
+class="cmsl-10">pc</span>
+are for pulse cal tests.
+<!--l. 4391--><p class="noindent" >In addition to the above parameters, it is often best to make use of one of the optimization modes to
+make the actual schedules. <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1600003.1.2"><span 
+class="cmtt-10">OPTMODE=SCANS</span></a> is perhaps the most useful. With this mode, only a few
+template scans need be specified and <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will pick the ones appropriate for use in the desired time
+range. Below is an example of a script, including everything necessary to run <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>on each VLBA
+station, for making pointing and gain check observations. This example is at a somewhat higher level of
+complexity than most in this document, but it shows what can be done with the program. It actually
+makes a different schedule for each station, taking into account the different portions of the sky that
+can be seen.
+<div class="verbatiminput">
+<span 
+class="cmtt-10">#!/bin/csh</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Try</span><span 
+class="cmtt-10">&#x00A0;with</span><span 
+class="cmtt-10">&#x00A0;VEX</span><span 
+class="cmtt-10">&#x00A0;file</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;=====</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Script</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;make</span><span 
+class="cmtt-10">&#x00A0;pointing</span><span 
+class="cmtt-10">&#x00A0;files</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;VLBA</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=====</span>
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Set</span><span 
+class="cmtt-10">&#x00A0;stations</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;processed.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Note</span><span 
+class="cmtt-10">&#x00A0;that</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;case</span><span 
+class="cmtt-10">&#x00A0;used</span><span 
+class="cmtt-10">&#x00A0;here</span><span 
+class="cmtt-10">&#x00A0;will</span><span 
+class="cmtt-10">&#x00A0;appear</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;sum</span><span 
+class="cmtt-10">&#x00A0;and</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;vex</span><span 
+class="cmtt-10">&#x00A0;file</span><span 
+class="cmtt-10">&#x00A0;names,</span><span 
+class="cmtt-10">&#x00A0;so</span><span 
+class="cmtt-10">&#x00A0;it</span><span 
+class="cmtt-10">&#x00A0;is</span><span 
+class="cmtt-10">&#x00A0;better</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;use</span><span 
+class="cmtt-10">&#x00A0;lower.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;The</span><span 
+class="cmtt-10">&#x00A0;schedules</span><span 
+class="cmtt-10">&#x00A0;need</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;different</span><span 
+class="cmtt-10">&#x00A0;depending</span><span 
+class="cmtt-10">&#x00A0;on</span><span 
+class="cmtt-10">&#x00A0;whether</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;a</span><span 
+class="cmtt-10">&#x00A0;3mm</span><span 
+class="cmtt-10">&#x00A0;receiver</span><span 
+class="cmtt-10">&#x00A0;is</span><span 
+class="cmtt-10">&#x00A0;present.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Examples:</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;set</span><span 
+class="cmtt-10">&#x00A0;stalist_3mm="hn</span><span 
+class="cmtt-10">&#x00A0;nl</span><span 
+class="cmtt-10">&#x00A0;fd</span><span 
+class="cmtt-10">&#x00A0;la</span><span 
+class="cmtt-10">&#x00A0;pt</span><span 
+class="cmtt-10">&#x00A0;kp</span><span 
+class="cmtt-10">&#x00A0;ov</span><span 
+class="cmtt-10">&#x00A0;mk"</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;set</span><span 
+class="cmtt-10">&#x00A0;stalist_no3mm="br</span><span 
+class="cmtt-10">&#x00A0;sc"</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;set</span><span 
+class="cmtt-10">&#x00A0;stalist_no3mm=""</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;eg</span><span 
+class="cmtt-10">&#x00A0;use</span><span 
+class="cmtt-10">&#x00A0;blank</span><span 
+class="cmtt-10">&#x00A0;if</span><span 
+class="cmtt-10">&#x00A0;no</span><span 
+class="cmtt-10">&#x00A0;stations</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;this</span><span 
+class="cmtt-10">&#x00A0;type.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">set</span><span 
+class="cmtt-10">&#x00A0;stalist_3mm="pt</span><span 
+class="cmtt-10">&#x00A0;hn"</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">set</span><span 
+class="cmtt-10">&#x00A0;stalist_no3mm="hn"</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Set</span><span 
+class="cmtt-10">&#x00A0;times</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;experiment</span><span 
+class="cmtt-10">&#x00A0;code</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">echo</span><span 
+class="cmtt-10">&#x00A0;Sched</span><span 
+class="cmtt-10">&#x00A0;environment</span><span 
+class="cmtt-10">&#x00A0;variable</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;$SCHED</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">echo</span><span 
+class="cmtt-10">&#x00A0;PLANET_DATA</span><span 
+class="cmtt-10">&#x00A0;environoment</span><span 
+class="cmtt-10">&#x00A0;variable</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;$PLANET_DATA</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">cat</span><span 
+class="cmtt-10">&#x00A0;&#x003C;&#x003C;eofp</span><span 
+class="cmtt-10">&#x00A0;&#x003E;!</span><span 
+class="cmtt-10">&#x00A0;times.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;year</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;1996</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;month</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;10</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;day</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;25</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;start</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;0:00:00</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;opdur</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;4:00:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Total</span><span 
+class="cmtt-10">&#x00A0;project</span><span 
+class="cmtt-10">&#x00A0;duration</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">eofp</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">set</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;expcode="ptg"</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;=====================================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;=====================================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;======</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;======</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;======</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Changes</span><span 
+class="cmtt-10">&#x00A0;not</span><span 
+class="cmtt-10">&#x00A0;normally</span><span 
+class="cmtt-10">&#x00A0;needed</span><span 
+class="cmtt-10">&#x00A0;below</span><span 
+class="cmtt-10">&#x00A0;this</span><span 
+class="cmtt-10">&#x00A0;line.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;======</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;======</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;======</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;=====================================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;=====================================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;Specify</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;location</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;setup</span><span 
+class="cmtt-10">&#x00A0;files.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setenv</span><span 
+class="cmtt-10">&#x00A0;SETDIR</span><span 
+class="cmtt-10">&#x00A0;$SCHED/setups</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;Put</span><span 
+class="cmtt-10">&#x00A0;much</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;generic</span><span 
+class="cmtt-10">&#x00A0;setup</span><span 
+class="cmtt-10">&#x00A0;information</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;ptg_setup.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">cat</span><span 
+class="cmtt-10">&#x00A0;&#x003C;&#x003C;eofs</span><span 
+class="cmtt-10">&#x00A0;&#x003E;!</span><span 
+class="cmtt-10">&#x00A0;ptg_setup.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;---------------------------------------------------------------------</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;SCHED</span><span 
+class="cmtt-10">&#x00A0;input</span><span 
+class="cmtt-10">&#x00A0;file</span><span 
+class="cmtt-10">&#x00A0;setup</span><span 
+class="cmtt-10">&#x00A0;stuff</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;used</span><span 
+class="cmtt-10">&#x00A0;with</span><span 
+class="cmtt-10">&#x00A0;pointing</span><span 
+class="cmtt-10">&#x00A0;proceedure</span><span 
+class="cmtt-10">&#x00A0;doptg.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;-----</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Cover</span><span 
+class="cmtt-10">&#x00A0;information</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">version</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;1</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">expt</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;STARTUP</span><span 
+class="cmtt-10">&#x00A0;pointing&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">obstype</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;PTVLBA</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">obsmode</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;Multi-frequency</span><span 
+class="cmtt-10">&#x00A0;pointing</span><span 
+class="cmtt-10">&#x00A0;observations.&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">piname</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;Operations&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">phone</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;505</span><span 
+class="cmtt-10">&#x00A0;835</span><span 
+class="cmtt-10">&#x00A0;7251&#8217;</span>
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">obsphone</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;505</span><span 
+class="cmtt-10">&#x00A0;835</span><span 
+class="cmtt-10">&#x00A0;7251&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">fax</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;505</span><span 
+class="cmtt-10">&#x00A0;835</span><span 
+class="cmtt-10">&#x00A0;7027&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">email</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;vlbaops@nrao.edu&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">address1</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;AOC&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;-----</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Catalogs</span><span 
+class="cmtt-10">&#x00A0;etc.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">srcfile</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;$SCHED/catalogs/sources.pointing&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">stafile</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;$SCHED/catalogs/stations.dat&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">ephfile</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;$PLANET_DATA/JPLEPH.405.2&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!ephfile</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;$SCHED/catalogs/JPLEPH.405.2.Linux&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;-----</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Schedule</span><span 
+class="cmtt-10">&#x00A0;instructions</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">sumitem</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;EL1,</span><span 
+class="cmtt-10">&#x00A0;AZ1</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;Start</span><span 
+class="cmtt-10">&#x00A0;elevation</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;azimuth</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;summary.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">ptvlba</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">ptdur</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;15</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;=&#x003E;</span><span 
+class="cmtt-10">&#x00A0;scan</span><span 
+class="cmtt-10">&#x00A0;length</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;ptslew</span><span 
+class="cmtt-10">&#x00A0;+</span><span 
+class="cmtt-10">&#x00A0;2*ptdur</span><span 
+class="cmtt-10">&#x00A0;+</span><span 
+class="cmtt-10">&#x00A0;N*10*ptdur</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;The</span><span 
+class="cmtt-10">&#x00A0;autoleveling</span><span 
+class="cmtt-10">&#x00A0;scan</span><span 
+class="cmtt-10">&#x00A0;is</span><span 
+class="cmtt-10">&#x00A0;2*ptdur</span><span 
+class="cmtt-10">&#x00A0;long</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;pcx.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;Here</span><span 
+class="cmtt-10">&#x00A0;we</span><span 
+class="cmtt-10">&#x00A0;have</span><span 
+class="cmtt-10">&#x00A0;15+30+2*150</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;345s</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:45</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">dwell</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:45</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">ptslew</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;15</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">optmode</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;SCANS</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;Select</span><span 
+class="cmtt-10">&#x00A0;scans</span><span 
+class="cmtt-10">&#x00A0;that</span><span 
+class="cmtt-10">&#x00A0;are</span><span 
+class="cmtt-10">&#x00A0;above</span><span 
+class="cmtt-10">&#x00A0;minimum</span><span 
+class="cmtt-10">&#x00A0;elevation.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">opminel</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;20.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;Minimum</span><span 
+class="cmtt-10">&#x00A0;elevation.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">eofs</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Now</span><span 
+class="cmtt-10">&#x00A0;make</span><span 
+class="cmtt-10">&#x00A0;a</span><span 
+class="cmtt-10">&#x00A0;file</span><span 
+class="cmtt-10">&#x00A0;with</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;actual</span><span 
+class="cmtt-10">&#x00A0;schedule</span><span 
+class="cmtt-10">&#x00A0;info</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;3mm</span><span 
+class="cmtt-10">&#x00A0;sites.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Any</span><span 
+class="cmtt-10">&#x00A0;imbedded</span><span 
+class="cmtt-10">&#x00A0;catalogs</span><span 
+class="cmtt-10">&#x00A0;etc</span><span 
+class="cmtt-10">&#x00A0;must</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;here.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">cat</span><span 
+class="cmtt-10">&#x00A0;&#x003C;&#x003C;eofs</span><span 
+class="cmtt-10">&#x00A0;&#x003E;!</span><span 
+class="cmtt-10">&#x00A0;ptg_3mm.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;-----</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Spectral</span><span 
+class="cmtt-10">&#x00A0;lines</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;-----</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Set</span><span 
+class="cmtt-10">&#x00A0;up</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;channels</span><span 
+class="cmtt-10">&#x00A0;-</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;on</span><span 
+class="cmtt-10">&#x00A0;line,</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;off.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">lineinit</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;lineset</span><span 
+class="cmtt-10">&#x00A0;=&#8217;H2O&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;restfreq=22235.08,22235.08,22285.08,22285.08</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;lineset</span><span 
+class="cmtt-10">&#x00A0;=&#8217;SiO431&#8217;</span><span 
+class="cmtt-10">&#x00A0;restfreq=43122.03,43122.03,43222.03,43222.03</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;lineset</span><span 
+class="cmtt-10">&#x00A0;=&#8217;SiO862&#8217;</span><span 
+class="cmtt-10">&#x00A0;restfreq=86243.4,</span><span 
+class="cmtt-10">&#x00A0;86243.4,</span><span 
+class="cmtt-10">&#x00A0;86343.4,</span><span 
+class="cmtt-10">&#x00A0;86343.4</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">endlines</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;-----</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;The</span><span 
+class="cmtt-10">&#x00A0;detailed</span><span 
+class="cmtt-10">&#x00A0;schedule</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;The</span><span 
+class="cmtt-10">&#x00A0;frequencies</span><span 
+class="cmtt-10">&#x00A0;are</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;an</span><span 
+class="cmtt-10">&#x00A0;order</span><span 
+class="cmtt-10">&#x00A0;reasonable</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;FRM.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;50/90</span><span 
+class="cmtt-10">&#x00A0;cm</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;CYGA,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;TAUA,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;3C274</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;20-4</span><span 
+class="cmtt-10">&#x00A0;cm</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;3C454.3,</span><span 
+class="cmtt-10">&#x00A0;3C123,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;3C274</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;2,</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;cm</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;DR21,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;3C84,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;3C274</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;7</span><span 
+class="cmtt-10">&#x00A0;mm</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RCAS,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RLEO,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;WHYA,</span><span 
+class="cmtt-10">&#x00A0;DR21,</span><span 
+class="cmtt-10">&#x00A0;3C84,</span><span 
+class="cmtt-10">&#x00A0;3C273,</span><span 
+class="cmtt-10">&#x00A0;planets</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;3</span><span 
+class="cmtt-10">&#x00A0;mm</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RCAS,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RLEO,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;WHYA,</span><span 
+class="cmtt-10">&#x00A0;planets</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Group</span><span 
+class="cmtt-10">&#x00A0;must</span><span 
+class="cmtt-10">&#x00A0;equal</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;number</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;scans</span><span 
+class="cmtt-10">&#x00A0;below.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;(Group*rep)</span><span 
+class="cmtt-10">&#x00A0;must</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;less</span><span 
+class="cmtt-10">&#x00A0;than</span><span 
+class="cmtt-10">&#x00A0;2000</span><span 
+class="cmtt-10">&#x00A0;(as</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;18</span><span 
+class="cmtt-10">&#x00A0;Apr</span><span 
+class="cmtt-10">&#x00A0;1996).</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;The</span><span 
+class="cmtt-10">&#x00A0;7mm</span><span 
+class="cmtt-10">&#x00A0;line</span><span 
+class="cmtt-10">&#x00A0;sources</span><span 
+class="cmtt-10">&#x00A0;used</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;have</span><span 
+class="cmtt-10">&#x00A0;qual=50.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;This</span><span 
+class="cmtt-10">&#x00A0;used</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;way</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;trigger</span><span 
+class="cmtt-10">&#x00A0;line</span><span 
+class="cmtt-10">&#x00A0;processing.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Now</span><span 
+class="cmtt-10">&#x00A0;CALCODE=&#8217;L&#8217;</span><span 
+class="cmtt-10">&#x00A0;does</span><span 
+class="cmtt-10">&#x00A0;it.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Note</span><span 
+class="cmtt-10">&#x00A0;that</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;a</span><span 
+class="cmtt-10">&#x00A0;peak=1</span><span 
+class="cmtt-10">&#x00A0;scan,</span><span 
+class="cmtt-10">&#x00A0;no</span><span 
+class="cmtt-10">&#x00A0;reference</span><span 
+class="cmtt-10">&#x00A0;pointing</span><span 
+class="cmtt-10">&#x00A0;will</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;done</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;if</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;slew</span><span 
+class="cmtt-10">&#x00A0;takes</span><span 
+class="cmtt-10">&#x00A0;longer</span><span 
+class="cmtt-10">&#x00A0;than</span><span 
+class="cmtt-10">&#x00A0;40</span><span 
+class="cmtt-10">&#x00A0;seconds.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;That</span><span 
+class="cmtt-10">&#x00A0;is</span><span 
+class="cmtt-10">&#x00A0;partly</span><span 
+class="cmtt-10">&#x00A0;why</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;there</span><span 
+class="cmtt-10">&#x00A0;is</span><span 
+class="cmtt-10">&#x00A0;a</span><span 
+class="cmtt-10">&#x00A0;second</span><span 
+class="cmtt-10">&#x00A0;peak</span><span 
+class="cmtt-10">&#x00A0;scan.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">group=(10*3+8*3)</span><span 
+class="cmtt-10">&#x00A0;rep=50</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt90cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;CYGA&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt4cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C454.3&#8217;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt18cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C454.3&#8217;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt6cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C454.3&#8217;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt13cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C454.3&#8217;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt4cmsx.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C454.3&#8217;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt1cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;DR21&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt24ghz.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;DR21&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt2cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;DR21&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;DR21&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;JUPITER&#8217;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;qual=0</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;noptvlba</span><span 
+class="cmtt-10">&#x00A0;peak=1</span><span 
+class="cmtt-10">&#x00A0;dwell=01:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;noptvlba</span><span 
+class="cmtt-10">&#x00A0;peak=1</span><span 
+class="cmtt-10">&#x00A0;dwell=01:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nopeak</span><span 
+class="cmtt-10">&#x00A0;ptvlba</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:45</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;setup=&#8217;$SETDIR/pt3mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nopeak</span><span 
+class="cmtt-10">&#x00A0;ptvlba</span><span 
+class="cmtt-10">&#x00A0;dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:45</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;RCAS&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;doppler</span><span 
+class="cmtt-10">&#x00A0;bw=2,2</span><span 
+class="cmtt-10">&#x00A0;qual=0</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;linename=&#8217;SiO431&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;noptvlba</span><span 
+class="cmtt-10">&#x00A0;peak=1</span><span 
+class="cmtt-10">&#x00A0;dwell=01:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;noptvlba</span><span 
+class="cmtt-10">&#x00A0;peak=1</span><span 
+class="cmtt-10">&#x00A0;dwell=01:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nopeak</span><span 
+class="cmtt-10">&#x00A0;ptvlba</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:45</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;setup=&#8217;$SETDIR/pt3mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nopeak</span><span 
+class="cmtt-10">&#x00A0;ptvlba</span><span 
+class="cmtt-10">&#x00A0;dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:45</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;linename=&#8217;SiO862&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt90cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;TAUA&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt4cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C123&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt18cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C123&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt6cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C123&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt13cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C123&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt4cmsx.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C123&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt1cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C84&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt24ghz.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C84&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt2cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C84&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C84&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;RLEO&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;doppler</span><span 
+class="cmtt-10">&#x00A0;bw=2,2</span><span 
+class="cmtt-10">&#x00A0;qual=0</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;linename=&#8217;SiO431&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;noptvlba</span><span 
+class="cmtt-10">&#x00A0;peak=1</span><span 
+class="cmtt-10">&#x00A0;dwell=01:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;noptvlba</span><span 
+class="cmtt-10">&#x00A0;peak=1</span><span 
+class="cmtt-10">&#x00A0;dwell=01:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nopeak</span><span 
+class="cmtt-10">&#x00A0;ptvlba</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:45</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;setup=&#8217;$SETDIR/pt3mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nopeak</span><span 
+class="cmtt-10">&#x00A0;ptvlba</span><span 
+class="cmtt-10">&#x00A0;dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:45</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;linename=&#8217;SiO862&#8217;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;VENUS&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;qual=0</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;noptvlba</span><span 
+class="cmtt-10">&#x00A0;peak=1</span><span 
+class="cmtt-10">&#x00A0;dwell=01:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;noptvlba</span><span 
+class="cmtt-10">&#x00A0;peak=1</span><span 
+class="cmtt-10">&#x00A0;dwell=01:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nopeak</span><span 
+class="cmtt-10">&#x00A0;ptvlba</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:45</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;setup=&#8217;$SETDIR/pt3mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nopeak</span><span 
+class="cmtt-10">&#x00A0;ptvlba</span><span 
+class="cmtt-10">&#x00A0;dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:45</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt90cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt4cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt18cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt6cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt13cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt4cmsx.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt1cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt24ghz.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt2cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C273&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;WHYA&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;doppler</span><span 
+class="cmtt-10">&#x00A0;bw=2,2</span><span 
+class="cmtt-10">&#x00A0;qual=0</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;linename=&#8217;SiO431&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;noptvlba</span><span 
+class="cmtt-10">&#x00A0;peak=1</span><span 
+class="cmtt-10">&#x00A0;dwell=01:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;noptvlba</span><span 
+class="cmtt-10">&#x00A0;peak=1</span><span 
+class="cmtt-10">&#x00A0;dwell=01:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nopeak</span><span 
+class="cmtt-10">&#x00A0;ptvlba</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:45</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;setup=&#8217;$SETDIR/pt3mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nopeak</span><span 
+class="cmtt-10">&#x00A0;ptvlba</span><span 
+class="cmtt-10">&#x00A0;dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:45</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;linename=&#8217;SiO862&#8217;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;SATURN&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;qual=0</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;noptvlba</span><span 
+class="cmtt-10">&#x00A0;peak=1</span><span 
+class="cmtt-10">&#x00A0;dwell=01:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;noptvlba</span><span 
+class="cmtt-10">&#x00A0;peak=1</span><span 
+class="cmtt-10">&#x00A0;dwell=01:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nopeak</span><span 
+class="cmtt-10">&#x00A0;ptvlba</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:45</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;setup=&#8217;$SETDIR/pt3mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nopeak</span><span 
+class="cmtt-10">&#x00A0;ptvlba</span><span 
+class="cmtt-10">&#x00A0;dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:45</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;---------------------------------------------------------------------</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">eofs</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Now</span><span 
+class="cmtt-10">&#x00A0;make</span><span 
+class="cmtt-10">&#x00A0;a</span><span 
+class="cmtt-10">&#x00A0;file</span><span 
+class="cmtt-10">&#x00A0;with</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;actual</span><span 
+class="cmtt-10">&#x00A0;schedule</span><span 
+class="cmtt-10">&#x00A0;info</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;sites</span><span 
+class="cmtt-10">&#x00A0;without</span><span 
+class="cmtt-10">&#x00A0;3mm.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Any</span><span 
+class="cmtt-10">&#x00A0;imbedded</span><span 
+class="cmtt-10">&#x00A0;catalogs</span><span 
+class="cmtt-10">&#x00A0;etc</span><span 
+class="cmtt-10">&#x00A0;must</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;here.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">cat</span><span 
+class="cmtt-10">&#x00A0;&#x003C;&#x003C;eofs</span><span 
+class="cmtt-10">&#x00A0;&#x003E;!</span><span 
+class="cmtt-10">&#x00A0;ptg_no3mm.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;-----</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Spectral</span><span 
+class="cmtt-10">&#x00A0;lines</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;-----</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Set</span><span 
+class="cmtt-10">&#x00A0;up</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;channels</span><span 
+class="cmtt-10">&#x00A0;-</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;on</span><span 
+class="cmtt-10">&#x00A0;line,</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;off.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">lineinit</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;lineset</span><span 
+class="cmtt-10">&#x00A0;=&#8217;H2O&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;restfreq=22235.08,22235.08,22285.08,22285.08</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;lineset</span><span 
+class="cmtt-10">&#x00A0;=&#8217;SiO431&#8217;</span><span 
+class="cmtt-10">&#x00A0;restfreq=43122.03,43122.03,43222.03,43222.03</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;lineset</span><span 
+class="cmtt-10">&#x00A0;=&#8217;SiO862&#8217;</span><span 
+class="cmtt-10">&#x00A0;restfreq=86243.4,</span><span 
+class="cmtt-10">&#x00A0;86243.4,</span><span 
+class="cmtt-10">&#x00A0;86243.4,</span><span 
+class="cmtt-10">&#x00A0;86243.4</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">endlines</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;-----</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;The</span><span 
+class="cmtt-10">&#x00A0;detailed</span><span 
+class="cmtt-10">&#x00A0;schedule</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;The</span><span 
+class="cmtt-10">&#x00A0;frequencies</span><span 
+class="cmtt-10">&#x00A0;are</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;an</span><span 
+class="cmtt-10">&#x00A0;order</span><span 
+class="cmtt-10">&#x00A0;reasonable</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;FRM.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;50/90</span><span 
+class="cmtt-10">&#x00A0;cm</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;CYGA,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;TAUA,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;3C274</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;20-4</span><span 
+class="cmtt-10">&#x00A0;cm</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;3C454.3,</span><span 
+class="cmtt-10">&#x00A0;3C123,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;3C274</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;2,</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;cm</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;DR21,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;3C84,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;3C274</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;7</span><span 
+class="cmtt-10">&#x00A0;mm</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RCAS,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RLEO,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;WHYA,</span><span 
+class="cmtt-10">&#x00A0;DR21,</span><span 
+class="cmtt-10">&#x00A0;3C84,</span><span 
+class="cmtt-10">&#x00A0;3C273,</span><span 
+class="cmtt-10">&#x00A0;planets</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Group</span><span 
+class="cmtt-10">&#x00A0;must</span><span 
+class="cmtt-10">&#x00A0;equal</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;number</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;scans</span><span 
+class="cmtt-10">&#x00A0;below.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;(Group*rep)</span><span 
+class="cmtt-10">&#x00A0;must</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;less</span><span 
+class="cmtt-10">&#x00A0;than</span><span 
+class="cmtt-10">&#x00A0;2000</span><span 
+class="cmtt-10">&#x00A0;(as</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;18</span><span 
+class="cmtt-10">&#x00A0;Apr</span><span 
+class="cmtt-10">&#x00A0;1996).</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;The</span><span 
+class="cmtt-10">&#x00A0;7mm</span><span 
+class="cmtt-10">&#x00A0;line</span><span 
+class="cmtt-10">&#x00A0;sources</span><span 
+class="cmtt-10">&#x00A0;used</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;have</span><span 
+class="cmtt-10">&#x00A0;qual=50.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;This</span><span 
+class="cmtt-10">&#x00A0;used</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;way</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;trigger</span><span 
+class="cmtt-10">&#x00A0;line</span><span 
+class="cmtt-10">&#x00A0;processing.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Now</span><span 
+class="cmtt-10">&#x00A0;CALCODE=&#8217;L&#8217;</span><span 
+class="cmtt-10">&#x00A0;does</span><span 
+class="cmtt-10">&#x00A0;it.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">linename=&#8217;SiO431&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">group=(12*3)</span><span 
+class="cmtt-10">&#x00A0;rep=60</span>
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt90cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;CYGA&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt4cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C454.3&#8217;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt18cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C454.3&#8217;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt6cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C454.3&#8217;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt13cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C454.3&#8217;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt4cmsx.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C454.3&#8217;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt1cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;DR21&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt24ghz.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;DR21&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt2cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;DR21&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;DR21&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;RCAS&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;doppler</span><span 
+class="cmtt-10">&#x00A0;bw=2,2</span><span 
+class="cmtt-10">&#x00A0;qual=0</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;JUPITER&#8217;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;qual=0</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt90cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;TAUA&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt4cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C123&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt18cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C123&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt6cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C123&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt13cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C123&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt4cmsx.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C123&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt1cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C84&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt24ghz.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C84&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt2cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C84&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C84&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;RLEO&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;doppler</span><span 
+class="cmtt-10">&#x00A0;bw=2,2</span><span 
+class="cmtt-10">&#x00A0;qual=0</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;VENUS&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;qual=0</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt90cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt4cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt18cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt6cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt13cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt4cmsx.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt1cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt24ghz.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt2cm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C274&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C273&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;WHYA&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;doppler</span><span 
+class="cmtt-10">&#x00A0;bw=2,2</span><span 
+class="cmtt-10">&#x00A0;qual=0</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setup=&#8217;$SETDIR/pt7mm.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;&#8217;SATURN&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nodop</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bw=0,0</span><span 
+class="cmtt-10">&#x00A0;qual=0</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;---------------------------------------------------------------------</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">eofs</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;Now</span><span 
+class="cmtt-10">&#x00A0;run</span><span 
+class="cmtt-10">&#x00A0;sched</span><span 
+class="cmtt-10">&#x00A0;separately</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;each</span><span 
+class="cmtt-10">&#x00A0;3mm</span><span 
+class="cmtt-10">&#x00A0;station.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">foreach</span><span 
+class="cmtt-10">&#x00A0;station</span><span 
+class="cmtt-10">&#x00A0;(</span><span 
+class="cmtt-10">&#x00A0;$stalist_3mm[1*]</span><span 
+class="cmtt-10">&#x00A0;)</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;echo</span><span 
+class="cmtt-10">&#x00A0;station=vlba_$station</span><span 
+class="cmtt-10">&#x00A0;&#x003E;!</span><span 
+class="cmtt-10">&#x00A0;station.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;echo</span><span 
+class="cmtt-10">&#x00A0;expcode=$expcode</span><span 
+class="cmtt-10">&#x00A0;&#x003E;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;station.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;$SCHED/bin/sched</span><span 
+class="cmtt-10">&#x00A0;&#x003C;&#x003C;eofst</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;@times.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;@station.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;@ptg_setup.par</span>
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;sch</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;ptg_3mm.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;overwrit</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">eofst</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Make</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;sum</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;vex</span><span 
+class="cmtt-10">&#x00A0;files</span><span 
+class="cmtt-10">&#x00A0;station</span><span 
+class="cmtt-10">&#x00A0;dependent.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/bin/mv</span><span 
+class="cmtt-10">&#x00A0;ptg.sum</span><span 
+class="cmtt-10">&#x00A0;ptg.$station.sum</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/bin/mv</span><span 
+class="cmtt-10">&#x00A0;ptg.vex</span><span 
+class="cmtt-10">&#x00A0;ptg.$station.vex</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">end</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;Finally</span><span 
+class="cmtt-10">&#x00A0;run</span><span 
+class="cmtt-10">&#x00A0;sched</span><span 
+class="cmtt-10">&#x00A0;separately</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;each</span><span 
+class="cmtt-10">&#x00A0;no</span><span 
+class="cmtt-10">&#x00A0;3mm</span><span 
+class="cmtt-10">&#x00A0;station.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">foreach</span><span 
+class="cmtt-10">&#x00A0;station</span><span 
+class="cmtt-10">&#x00A0;(</span><span 
+class="cmtt-10">&#x00A0;$stalist_no3mm[1*]</span><span 
+class="cmtt-10">&#x00A0;)</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;echo</span><span 
+class="cmtt-10">&#x00A0;station=vlba_$station</span><span 
+class="cmtt-10">&#x00A0;&#x003E;!</span><span 
+class="cmtt-10">&#x00A0;station.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;echo</span><span 
+class="cmtt-10">&#x00A0;expcode=$expcode</span><span 
+class="cmtt-10">&#x00A0;&#x003E;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;station.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;$SCHED/bin/sched</span><span 
+class="cmtt-10">&#x00A0;&#x003C;&#x003C;eofst</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;@times.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;@station.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;@ptg_setup.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;sch</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;ptg_no3mm.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;overwrit</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">eofst</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Make</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;sum</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;vex</span><span 
+class="cmtt-10">&#x00A0;files</span><span 
+class="cmtt-10">&#x00A0;station</span><span 
+class="cmtt-10">&#x00A0;dependent.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/bin/mv</span><span 
+class="cmtt-10">&#x00A0;$expcode.sum</span><span 
+class="cmtt-10">&#x00A0;$expcode.$station.sum</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/bin/mv</span><span 
+class="cmtt-10">&#x00A0;$expcode.vex</span><span 
+class="cmtt-10">&#x00A0;$expcode.$station.vex</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">end</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Some</span><span 
+class="cmtt-10">&#x00A0;clean</span><span 
+class="cmtt-10">&#x00A0;up.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#/bin/rm</span><span 
+class="cmtt-10">&#x00A0;times.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#/bin/rm</span><span 
+class="cmtt-10">&#x00A0;ptg_setup.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#/bin/rm</span><span 
+class="cmtt-10">&#x00A0;ptg_3mm.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#/bin/rm</span><span 
+class="cmtt-10">&#x00A0;ptg_no3mm.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#/bin/rm</span><span 
+class="cmtt-10">&#x00A0;station.par</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">#</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;END</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+</div>
+                                                                                
+                                                                                
+<!--l. 4406--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECCONFIGConfigurationStudies.html" >next</a>] [<a 
+href="labelSECINDIVSpecialConcernsforSpecificObservatories.html" >prev</a>] [<a 
+href="labelSECINDIVSpecialConcernsforSpecificObservatories.html#taillabelSECINDIVSpecialConcernsforSpecificObservatories.html" >prev-tail</a>] [<a 
+href="labelSECSPECIALVLBASingleDishVLBAObserving.html" >front</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECSPECIALVLBASingleDishVLBAObserving.html" >up</a>] </p></div>
+<!--l. 4406--><p class="noindent" ><a 
+ id="taillabelSECSPECIALVLBASingleDishVLBAObserving.html"></a>  
+</body></html> 

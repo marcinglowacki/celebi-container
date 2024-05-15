@@ -1,0 +1,326 @@
+!*  Schedule for VLBA_KP   *!
+!*  Experiment pb002c   *!
+!* Schedule Version:       1.00 *!
+!* Processed by SCHED version:  11.50  Development version 11.5. Started Apr. 2 *!
+!* PI:       Walter Brisken *!
+!* Address:  DSOC *!
+!*  *!
+!*  *!
+!*  *!
+!* Phone:    505-234-5912 *!
+!* EMAIL:    wbrisken@lbo.us *!
+!* Fax:      575-835-2027 *!
+!* Phone during observation: 575-835-7133 *!
+!* Observing mode: DDC *!
+!* Notes: *!
+!*  *!
+!*  *!
+!*  *!
+!*  Start at 15h30m00s     Tue, 2018 Apr 10  Day of year  100   *!
+program=pb002c  
+
+diskformat=mark5c
+media=(1,disk)
+
+!* The first scan is preceeded by a setup scan *!
+!* that ends at the start time of the first scan  *!
+
+!* --- Scan from 15h30m05s to 15h40m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN16'  ra=23h17m18.326640s  dec= 09d25'42.04713"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=15h30m00s dra=     113576.39 ddec=    2727848.75
+maxcaltime= 120
+fe=(1,20cm),(3,20cm)
+fexfer=(2,norm)
+noise=(1,low-s),(2,low-s),(3,low-s),(4,low-s)
+synth=( 1,12.9),( 2,-2.1),( 3,12.9)
+logging=STANDARD
+nchan= 2
+format=VLBA1:4
+ifdistr=(1,0),(2,0),(3,0),(4,0)
+baseband=(1,1),(2,2)
+ifchan=(1,A),(2,C)
+sideband=(1,L),(2,L)
+bits=(1,2),(2,2)
+period=(1,1),(2,1)
+level=(1,-1),(2,-1)
+azcolim=   0.00  elcolim=   0.00
+bbsynth=( 1,552.00),( 2,552.00)
+bbfilter=(1,16M),(2,16M)
+pcal=OFF
+pcalxbit1=(1,S1),(2,S2),(3,OFF),(4,OFF),(5,OFF),(6,OFF),(7,OFF),(8,OFF)
+pcalxbit2=(1,M1),(2,M2),(3,OFF),(4,OFF),(5,OFF),(6,OFF),(7,OFF),(8,OFF)
+pcalxfreq1=(1,0),(2,0),(3,0),(4,0),(5,0),(6,0),(7,0),(8,0)
+pcalxfreq2=(1,0),(2,0),(3,0),(4,0),(5,0),(6,0),(7,0),(8,0)
+samplerate=32M
+disk=off
+  date = 2018Apr10
+stop=15h30m05s   !NEXT!        
+qual=  0
+disk=off
+stop=15h40m00s   !NEXT!
+
+!* --- Scan from 15h40m05s to 15h50m00s   Tue, 2018 Apr 10 --- *!
+sname='3C454.3'  ra=22h53m57.747938s  dec= 16d08'53.56093"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+synth=( 2,-2.1)
+bbsynth=( 1,552.01),( 2,552.01)
+pcal=1MHZ
+pcalxbit1=(2,S1),(3,S1),(4,S2),(5,S1)
+pcalxbit2=(1,S2),(2,S2),(3,M1),(4,M2),(5,S2)
+pcalxfreq1=(1,10),(2,13010),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(5,1010)
+disk=off
+stop=15h40m05s   !NEXT!        
+qual=  0
+disk=off
+stop=15h50m00s   !NEXT!
+
+!* --- Scan from 15h50m05s to 16h00m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN133'  ra=22h40m15.668530s  dec=-06d47'46.07397"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=15h50m00s dra=  86619.32 ddec=  68356.73
+synth=( 2,-2.1)
+bbsynth=( 1,552.00),( 2,552.00)
+pcal=OFF
+pcalxbit1=(2,S2),(3,OFF),(4,OFF),(5,OFF)
+pcalxbit2=(1,M1),(2,M2),(3,OFF),(4,OFF),(5,OFF)
+pcalxfreq1=(1,0),(2,0),(5,0)
+pcalxfreq2=(1,0),(2,0),(5,0)
+disk=off
+stop=15h50m05s   !NEXT!        
+qual=  0
+disk=off
+stop=16h00m00s   !NEXT!
+
+!* --- Scan from 16h00m05s to 16h10m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN135'  ra=20h09m58.799399s  dec=-05d13'35.07643"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=16h00m00s dra=  86668.66 ddec=  -3025.21
+disk=off
+stop=16h00m05s   !NEXT!        
+qual=  0
+disk=off
+stop=16h10m00s   !NEXT!
+
+!* --- Scan from 16h10m05s to 16h20m00s   Tue, 2018 Apr 10 --- *!
+sname='3C454.3'  ra=22h53m57.747938s  dec= 16d08'53.56093"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+disk=off
+stop=16h10m05s   !NEXT!        
+qual=  0
+disk=off
+stop=16h20m00s   !NEXT!
+
+!* --- Scan from 16h20m05s to 16h30m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN133'  ra=23h10m19.480099s  dec=-06d23'16.44271"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=16h20m00s dra=  86598.26 ddec=  72561.09
+disk=off
+stop=16h20m05s   !NEXT!        
+qual=  0
+disk=off
+stop=16h30m00s   !NEXT!
+
+!* --- Scan from 16h30m05s to 16h40m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN16'  ra=01h00m13.947739s  dec= 39d13'33.23511"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=16h30m00s dra=     200973.05 ddec=    2241571.50
+disk=off
+stop=16h30m05s   !NEXT!        
+qual=  0
+disk=off
+stop=16h40m00s   !NEXT!
+
+!* --- Scan from 16h40m05s to 16h50m00s   Tue, 2018 Apr 10 --- *!
+sname='3C454.3'  ra=22h53m57.747938s  dec= 16d08'53.56093"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+synth=( 2,-2.1)
+bbsynth=( 1,552.01),( 2,552.01)
+pcal=1MHZ
+pcalxbit1=(2,S1),(3,S1),(4,S2),(5,S1)
+pcalxbit2=(1,S2),(2,S2),(3,M1),(4,M2),(5,S2)
+pcalxfreq1=(1,10),(2,13010),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(5,1010)
+disk=off
+stop=16h40m05s   !NEXT!        
+qual=  0
+disk=off
+stop=16h50m00s   !NEXT!
+
+!* --- Scan from 16h50m05s to 17h00m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN133'  ra=23h40m22.918748s  dec=-05d57'32.02114"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=16h50m00s dra=  86583.76 ddec=  75526.10
+synth=( 2,-2.1)
+bbsynth=( 1,552.00),( 2,552.00)
+pcal=OFF
+pcalxbit1=(2,S2),(3,OFF),(4,OFF),(5,OFF)
+pcalxbit2=(1,M1),(2,M2),(3,OFF),(4,OFF),(5,OFF)
+pcalxfreq1=(1,0),(2,0),(5,0)
+pcalxfreq2=(1,0),(2,0),(5,0)
+disk=off
+stop=16h50m05s   !NEXT!        
+qual=  0
+disk=off
+stop=17h00m00s   !NEXT!
+
+!* --- Scan from 17h00m05s to 17h10m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN16'  ra=02h24m36.714301s  dec= 50d08'40.33413"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=17h00m00s dra=     288320.12 ddec=    1449154.25
+disk=off
+stop=17h00m05s   !NEXT!        
+qual=  0
+disk=off
+stop=17h10m00s   !NEXT!
+
+!* --- Scan from 17h10m05s to 17h20m00s   Tue, 2018 Apr 10 --- *!
+sname='3C454.3'  ra=22h53m57.747938s  dec= 16d08'53.56093"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+disk=off
+stop=17h10m05s   !NEXT!        
+qual=  0
+disk=off
+stop=17h20m00s   !NEXT!
+
+!* --- Scan from 17h20m05s to 17h30m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN133'  ra=00h10m26.134899s  dec=-05d30'59.21706"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=17h20m00s dra=  86577.04 ddec=  77198.52
+disk=off
+stop=17h20m05s   !NEXT!        
+qual=  0
+disk=off
+stop=17h30m00s   !NEXT!
+
+!* --- Scan from 17h30m05s to 17h40m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN135'  ra=21h40m14.484715s  dec=-05d16'20.23074"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=17h30m00s dra=  86680.40 ddec=  -2216.15
+disk=off
+stop=17h30m05s   !NEXT!        
+qual=  0
+disk=off
+stop=17h40m00s   !NEXT!
+
+!* --- Scan from 17h40m05s to 17h50m00s   Tue, 2018 Apr 10 --- *!
+sname='3C454.3'  ra=22h53m57.747938s  dec= 16d08'53.56093"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+synth=( 2,-2.1)
+bbsynth=( 1,552.01),( 2,552.01)
+pcal=1MHZ
+pcalxbit1=(2,S1),(3,S1),(4,S2),(5,S1)
+pcalxbit2=(1,S2),(2,S2),(3,M1),(4,M2),(5,S2)
+pcalxfreq1=(1,10),(2,13010),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(5,1010)
+disk=off
+stop=17h40m05s   !NEXT!        
+qual=  0
+disk=off
+stop=17h50m00s   !NEXT!
+
+!* --- Scan from 17h50m05s to 18h00m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN133'  ra=00h40m29.298105s  dec=-05d04'05.32433"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=17h50m00s dra=  86578.73 ddec=  77546.68
+synth=( 2,-2.1)
+bbsynth=( 1,552.00),( 2,552.00)
+pcal=OFF
+pcalxbit1=(2,S2),(3,OFF),(4,OFF),(5,OFF)
+pcalxbit2=(1,M1),(2,M2),(3,OFF),(4,OFF),(5,OFF)
+pcalxfreq1=(1,0),(2,0),(5,0)
+pcalxfreq2=(1,0),(2,0),(5,0)
+disk=off
+stop=17h50m05s   !NEXT!        
+qual=  0
+disk=off
+stop=18h00m00s   !NEXT!
+
+!* --- Scan from 18h00m05s to 18h10m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN08'  ra=02h23m20.311059s  dec=-07d20'15.46357"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=18h00m00s dra=     101306.85 ddec=    2549376.25
+disk=off
+stop=18h00m05s   !NEXT!        
+qual=  0
+disk=off
+stop=18h10m00s   !NEXT!
+
+!* --- Scan from 18h10m05s to 18h20m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN135'  ra=22h20m21.674729s  dec=-05d17'14.99581"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=18h10m00s dra=  86684.70 ddec=  -1738.52
+disk=off
+stop=18h10m05s   !NEXT!        
+qual=  0
+disk=off
+stop=18h20m00s   !NEXT!
+
+!* --- Scan from 18h20m05s to 18h30m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN133'  ra=01h10m32.584353s  dec=-04d37'18.06611"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=18h20m00s dra=  86588.81 ddec=  76561.17
+disk=off
+stop=18h20m05s   !NEXT!        
+qual=  0
+disk=off
+stop=18h30m00s   !NEXT!
+
+!* --- Scan from 18h30m05s to 18h40m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN08'  ra=03h00m10.916115s  dec= 07d35'22.02845"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=18h30m00s dra=     113094.32 ddec=    2591131.50
+disk=off
+stop=18h30m05s   !NEXT!        
+qual=  0
+disk=off
+stop=18h40m00s   !NEXT!
+
+!* --- Scan from 18h40m05s to 18h50m00s   Tue, 2018 Apr 10 --- *!
+sname='3C454.3'  ra=22h53m57.747938s  dec= 16d08'53.56093"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+synth=( 2,-2.1)
+bbsynth=( 1,552.01),( 2,552.01)
+pcal=1MHZ
+pcalxbit1=(2,S1),(3,S1),(4,S2),(5,S1)
+pcalxbit2=(1,S2),(2,S2),(3,M1),(4,M2),(5,S2)
+pcalxfreq1=(1,10),(2,13010),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(5,1010)
+disk=off
+stop=18h40m05s   !NEXT!        
+qual=  0
+disk=off
+stop=18h50m00s   !NEXT!
+
+!* --- Scan from 18h50m05s to 19h00m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN133'  ra=01h40m36.163643s  dec=-04d11'05.12578"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=18h50m00s dra=  86606.71 ddec=  74255.25
+synth=( 2,-2.1)
+bbsynth=( 1,552.00),( 2,552.00)
+pcal=OFF
+pcalxbit1=(2,S2),(3,OFF),(4,OFF),(5,OFF)
+pcalxbit2=(1,M1),(2,M2),(3,OFF),(4,OFF),(5,OFF)
+pcalxfreq1=(1,0),(2,0),(5,0)
+pcalxfreq2=(1,0),(2,0),(5,0)
+disk=off
+stop=18h50m05s   !NEXT!        
+qual=  0
+disk=off
+stop=19h00m00s   !NEXT!
+
+!* --- Scan from 19h00m05s to 19h10m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN08'  ra=03h43m35.097459s  dec= 22d22'31.70647"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=19h00m00s dra=     139978.86 ddec=    2488231.75
+disk=off
+stop=19h00m05s   !NEXT!        
+qual=  0
+disk=off
+stop=19h10m00s   !NEXT!
+
+!* --- Scan from 19h10m05s to 19h20m00s   Tue, 2018 Apr 10 --- *!
+sname='3C454.3'  ra=22h53m57.747938s  dec= 16d08'53.56093"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+disk=off
+stop=19h10m05s   !NEXT!        
+qual=  0
+disk=off
+stop=19h20m00s   !NEXT!
+
+!* --- Scan from 19h20m05s to 19h30m00s   Tue, 2018 Apr 10 --- *!
+sname='PRN133'  ra=02h10m40.187088s  dec=-03d45'53.67365"  qual=999  calib='Z'
+ epochd=2018Apr10 epocht=19h20m00s dra=  86631.21 ddec=  70664.91
+disk=off
+stop=19h20m05s   !NEXT!        
+qual=  0
+disk=off
+stop=19h30m00s   !NEXT!
+disk=off
+stop=19h30m05s   !NEXT!
+     !QUIT! 

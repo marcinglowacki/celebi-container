@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Recording Systems.</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 2482--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECWIDEWideBandObservingRDBEDBBCVLBAandMarkIVModes.html" >next</a>] [<a 
+href="labelSECTIPSSchedulingTips.html" >prev</a>] [<a 
+href="labelSECTIPSSchedulingTips.html#taillabelSECTIPSSchedulingTips.html" >prev-tail</a>] [<a 
+href="#taillabelSECRECSYSRecordingSystems.html">tail</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECRECSYSRecordingSystems.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">2.3   </span> <a 
+ id="x14-220002.3"></a>Recording Systems.</h3>
+<!--l. 2484--><p class="noindent" >VLBI observations require the transmission of raw data samples over very long distances. Progress is
+being made toward an ultimate goal of doing this in real time over fiber networks. But EVLBI, as such
+a system is called, is still only used for a small portion of VLBI observing and that is not likely to
+change in some regions until more affordable access to high bandwidth networks can be
+obtained.
+<!--l. 2491--><p class="noindent" >Most VLBI relies on recording the raw data on magnetic media, and then shipping that media to a
+correlator where it is processed days to months after the observations are made. Managing those
+recordings, and the specification of the data streams to be recorded, is a major part of
+scheduling with <span 
+class="cmcsc-10">SCHED</span>. This section provides background on the various recording systems in
+use.
+<!--l. 2498--><p class="noindent" >Please be aware that recording systems are a technology under rapid development. It is entirely possible
+that some of the sections here are not entirely up to date.
+<!--l. 2502--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">2.3.1   </span> <a 
+ id="x14-230002.3.1"></a>Recording Systems History and Background</h4>
+<!--l. 2504--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>was originally written in about 1979 as the scheduling program for global VLBI observations
+using the Mark II recording system. That was a system capable of recording 4 Mbps on video tape
+recorders. It was in use in some parts of the world much longer than expected (at least to 2003),
+but is now gone as far as we know. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>version 9.4 and later does not support Mark
+II.
+<!--l. 2511--><p class="noindent" >The wide band recording system in use for VLBI for many years was the Mark&#x00A0;III system.
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>was never a general purpose scheduling program for Mark&#x00A0;III observations. Programs <span 
+class="cmcsc-10">SKED</span>
+and <span 
+class="cmcsc-10">PC-SCHED </span>served that role. However, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>was capable of scheduling Mark&#x00A0;III observations
+on systems that used the VLBA control files (VLBA, VLA, and Green Bank). In fact, the output of
+<span 
+class="cmcsc-10">SKED </span>and <span 
+class="cmcsc-10">PC-SCHED </span>was normally processed through <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to produce the telescope control
+files for these antennas for all except geodetic projects. Mark&#x00A0;III is also obsolete, although one
+Mark&#x00A0;III schedule is still in the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>test suite. I am not aware of any Mark&#x00A0;III systems remaining
+in use.
+<!--l. 2522--><p class="noindent" >The Mark&#x00A0;III system was replaced by several other systems with greater capabilities. These include the
+VLBA, VLBA4, Mark&#x00A0;IV, S2, and K4 tape systems. There were correlators associated with each
+system, and there was a considerable amount of cross compatibility, either directly or through the use of
+translation machines. The Mark&#x00A0;III, VLBA, VLBA4, and Mark&#x00A0;IV systems all used the same tape
+transport, although with different electronics. In their native modes, they used different
+data formats, but the VLBA and Mark&#x00A0;IV systems were capable of reading and writing
+Mark&#x00A0;III data. More importantly, the VLBA and Mark&#x00A0;IV systems have a wide range of
+compatible recording modes that could be correlated together on the VLBA, JIVE, and other
+correlators.
+<!--l. 2534--><p class="noindent" >By 2007, the tape systems were replaced by disk based recording systems nearly everywhere. The early
+disk systems were plug compatible replacements for the tape drives so most of the data configuration
+remained unchanged.
+<!--l. 2539--><p class="noindent" >The Mark5A system was the most widespread early disk system. It was developed by Haystack
+Observatory and the Conduant Corporation. As a plug replacement for the tape drives, the Mark5A
+                                                                                
+                                                                                
+system still has the concept of tracks.
+<!--l. 2544--><p class="noindent" >The Mark5B system is an enhancement that uses the VSI standard interface to record the data
+channels without all the formatting baggage left over from the tape systems. The Mark5A+ system
+allows Mark5B recordings to be played on Mark5A playback units, but a minor glitch that nobody is in
+a position to fix is preventing its use on the VLBA. The Mark5B+ system uses a faster interface and
+can handle up to 2 Gbps.
+<!--l. 2552--><p class="noindent" >The Mark5C system was being deployed in 2011 and is meant to record up to 4 Gbps, although it
+the initial configuration can be used at a maximum of 2 Gbps. The Mark5C- system is a
+scheme for allowing lesser Mark5 hardware to pretend to be a Mark5C system for system
+development.
+<!--l. 2558--><p class="noindent" >As of early 2013, the VLBA winding down use of the Mark5A system and is moving most projects over
+to the Mark5C system. Some other observatories are also moving to Mark5C, but usually with different
+electronics.
+<!--l. 2563--><p class="noindent" >There are other recording systems in use. The Japanese have a K5 system. The Australians are using a
+variant on the PCEVN system. Also a variety of groups are testing real time VLBI over the
+fiber networks. This can involve real time correlation, or recording at sites remote from the
+telescope.
+<!--l. 2569--><p class="noindent" >Meanwhile, other potential future recording systems are being investigated.
+<!--l. 2573--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">2.3.2   </span> <a 
+ id="x14-240002.3.2"></a>Recording Systems Control</h4>
+<!--l. 2575--><p class="noindent" >The profusion of recording systems described in the last section is further complicated by the the
+possibility of mixing elements of the different systems. There are three elements of each system that
+must be specified in order to make proper schedules. These are specified in the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span><a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3">station
+catalog</a> with the parameters <span 
+class="cmtt-10">CONTROL</span>, <span 
+class="cmtt-10">DAR</span>, <span 
+class="cmtt-10">RECORDER </span>and <span 
+class="cmtt-10">DISK</span>. The first element is the
+control system &#8212; what software (and hardware) is used to control the recording system.
+The options that <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can handle for wide band VLBI observations are VLBA and
+VEX. Formally, these actually refer to the control file type, although each type currently
+implies a specific computer and software system. Note that the <span 
+class="cmtt-10">CONTROL </span>variable has other
+options, but they imply one of the above two, plus some specific other telescope control
+files.
+<!--l. 2590--><p class="noindent" >The original VLBA control system runs on VME computers using software mainly written for the
+VLBA. A few other sites (VLA, Green Bank, and one of the systems at Effelsberg) have such systems
+to control their VLBI hardware. Systems controlled by the VLBA software always consist of VLBA
+data acquisition racks (DAR &#8212; BBCs, formatter etc) and Mark5 disks. During 2010, new Digital
+Backends (RDBE) and Mark5C recorders began to be introduced on the VLBA. These major changes
+are being used as an opportunity to upgrade the telescope control systems. The new system is based on
+the EVLA Executor control system and runs on a standard Linux computer. Information is
+passed to this system from <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>via the VEX file. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>now writes VEX files for all
+observations as a result. The new control system will initially just control the new data
+acquisition system and recorder. A new C-band (6cm) receiver is under construction and it, along
+with all of the LO/IF switching will be placed under control of the new computer. Over
+the course of the next few years, all VLBA systems will be moved to the new control. In
+the meantime, both crd files for the old system and VEX files for the new system will be
+required.
+<!--l. 2609--><p class="noindent" >The VEX option for <span 
+class="cmtt-10">CONTROL </span>causes <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to generate a schedule file in the VEX format, as does
+the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-860003.1.2"><span 
+class="cmtt-10">DOVEX</span></a> main schedule input parameter (now the default). This is the schedule distribution file
+format developed mainly for the PC Field System (PCFS) and the Mark&#x00A0;IV correlators. It is now used
+by the DiFX software correlator in use at the VLBA and other places, so it is now needed by
+most if not all projects. It also is needed to control all new hardware being installed on the
+                                                                                
+                                                                                
+VLBA.
+<!--l. 2619--><p class="noindent" >The PCFS, running on Linux PCs, is used to control VLBA, VLBA4, Mark&#x00A0;IV, S2, and MARK5 VLBI
+hardware at many non-VLBA stations including all of the EVN. It is the descendant of, and
+replacement for, the control system for Mark&#x00A0;III systems. Sometimes this system is referred
+to as FS9, for &#8220;Field System 9&#8221;, referring to the earliest version that could handle VEX
+input.
+<!--l. 2626--><p class="noindent" >Systems controlled by the PCFS can consist of a VLBA, VLBA4 or Mark&#x00A0;IV DAR connected to a
+VLBA4, VLBA, Mark&#x00A0;IV, S2, or Mark5 recorder. Each combination has slightly different capabilities
+and requirements. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>understands a considerable amount about what these capabilities and
+requirements are and attempts to insure that the requested observations are possible. However, when
+doing a large observation with many diverse telescopes, it is best to stick to standard, well
+tested, observing modes and use the frequencies selected using the setup file parameter
+<a 
+href="labelSECSETUPSSetupFiles.html#x31-2530003.6.4"><span 
+class="cmtt-10">BAND</span></a>.
+<!--l. 2637--><p class="noindent" >During the transitions between recording systems, it may not be obvious when the schedules are made
+which system a station will have. Or stations may have both and want to run observations on one or
+the other depending on the supply of media. Because of this situation, a separate input, called <span 
+class="cmtt-10">DISK </span>can
+be specified in addition to <span 
+class="cmtt-10">RECORDER </span>in the station catalog. It tells <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>that the station has a disk
+system and schedules can be made for it. There is another new parameter, <span 
+class="cmtt-10">MEDIADEF</span>, which can be
+<span 
+class="cmtt-10">TAPE </span>or <span 
+class="cmtt-10">DISK</span>, that can be used to set the default medium for the station while both are available. The
+<span 
+class="cmtt-10">MEDIA </span>parameter in the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2090003.1.2"><span 
+class="cmtt-10">TAPEINI</span></a> section can be used to override the default. ¿From this description, it
+is clear that this scheme was designed for the transition from tape to disk which was finished a
+few years ago. As new varieties of disk or real-time systems are implemented, changes are
+likely.
+<!--l. 2654--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">2.3.3   </span> <a 
+ id="x14-250002.3.3"></a>MARK5 and EVLBI</h4>
+<!--l. 2656--><p class="noindent" >The Mark5 disk-based system has replaced the various tape based VLBI recording systems. This system
+is a major advance on many fronts including scheduling. To a much greater degree than with previous
+tape systems, schedulers can ignore the recording system other than making sure that they
+are not scheduling to record more data than can fit on the disk space that they have been
+allocated.
+<!--l. 2663--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>supports Mark5 on the VLBA by including the required commands in the telescope control
+files (the <span 
+class="cmsl-10">crd </span>files). For systems controlled by the Field System (PCFS), <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>writes a <span 
+class="cmtt-10">.vex </span>file in
+VEX format with the necessary commands to control Mark5. The Mark5A system is meant as a plug
+replacement for MarkIV or VLBA tape recorders. It still records the same tracks that would be
+recorded on a tape system so <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>must still be aware of management of such issues. Such concerns
+will be less, or at least different, for more advanced versions of the disk based recording
+systems.
+<!--l. 2673--><p class="noindent" >There are a few controls needed to schedule Mark5 natively. First, the <a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3">station catalog</a> must show that
+the station has a disk system. That is done with the <span 
+class="cmtt-10">DISK </span>keyword. This is separate from the <span 
+class="cmtt-10">RECORDER</span>
+keyword to allow a station entry to cover both tape and disk systems during the transition period.
+There is a station catalog keyword <span 
+class="cmtt-10">MEDIADEF </span>that sets the default medium to use at each station.
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will use that default in the absence of an overriding <span 
+class="cmtt-10">MEDIA </span>command in the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2090003.1.2"><span 
+class="cmtt-10">TAPEINI</span></a> section.
+Schedulers for most VLBA observations should probably ignore the problem and let operations deal
+with getting the recording system right by rerunning <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>just before the observations.
+For EVN and Global sessions, it should be clear before the session which system will be
+used.
+<!--l. 2689--><p class="noindent" >The examples <span 
+class="cmsl-10">egmk5vlba.key </span>and <span 
+class="cmsl-10">egmk5vex.key </span>show how to set up Mark5 observations. Now that the
+conversion to disk is complete all other examples have been, or will soon be, switched to
+disk.
+                                                                                
+                                                                                
+<!--l. 2695--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>supports VLBI over networks. This can involve real time correlation in which case the data
+are routed directly to the Network. An alternative might be called ftp VLBI. In this case, the data are
+recorded at the station, then read back through the Network, or alternatively, sent over the Network
+and recorded at the correlator, or both. There are a few parameters meant to help control eVLBI
+observation <span 
+class="cmtt-10">DATAPATH, GRABTO, GRABTIME, GRABGAP</span>. This documentation needs to be updated more
+on how eVLBI is actually controlled. eVLBI is in regular use in Europe, but not on the VLBA,
+mainly because of differences in the availability of affordable network connections of adequate
+bandwidth.
+<!--l. 2708--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">2.3.4   </span> <a 
+ id="x14-260002.3.4"></a>VLBA</h4>
+<!--l. 2710--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is the primary program for scheduling observations on the VLBA and other systems
+that use the VLBA control system. Not much will be said in this section about the VLBA
+systems because they are the &#8220;native&#8221; systems for <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>and are discussed extensively
+elsewhere.
+<!--l. 2716--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">2.3.5   </span> <a 
+ id="x14-270002.3.5"></a>MARK&#x00A0;IV (PCFS)</h4>
+<!--l. 2718--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>supports Mark&#x00A0;IV observations on Mark&#x00A0;IV (and VLBA4) antennas equipped with the Field
+System (PCFS). This is done by creating a <span 
+class="cmtt-10">*.vex </span>file in the VEX format. The VEX file is a global and
+self-contained description of the experiment that is scheduled. The <span 
+class="cmtt-10">*.vex </span>file can be read by the control
+system (PCFS) and translated (by a program called <span 
+class="cmcsc-10">D<span 
+class="small-caps">r</span><span 
+class="small-caps">u</span><span 
+class="small-caps">d</span><span 
+class="small-caps">g</span></span>) into a list of commands for the telescope,
+data acquisition system and recorder.
+<!--l. 2726--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>produces VEX files with &#8220;adaptive&#8221; recorder control that enables continuous recording on
+PCFS controlled telescopes, but can only be correctly interpreted by FS9.3.11 (and higher). This aided
+the VLBA hardware correlator in synchronizing playback, but is no longer of much interest as the sync
+time with Mark5 disk systems and current correlators, including the DiFX software correlator on the
+VLBA, do not take more than a second to sync.
+<!--l. 2734--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>now writes VEX files by default. It can be prevented using the input parameter
+<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-860003.1.2"><span 
+class="cmtt-10">DOVEX</span></a>.
+<!--l. 2738--><p class="noindent" >Mark&#x00A0;IV (MkIV) telescopes are characterized by <span 
+class="cmtt-10">DAR = MKIV </span>in the <a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3">station catalog</a> and can only be
+requested to record in any of the MkIV FORMATs. Most MkIV telescopes only support specific BBC&#8217;s
+(called Video Converters) to be connected to certain IF distribution boxes. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>supports
+&#8220;astronomical patching&#8221; or a version of geodetic patching &#8212; see <a 
+href="labelSECSETUPSSetupFiles.html#x31-2760003.6.4"><span 
+class="cmtt-10">M4PATCH</span></a>. The astronomical patching
+requires odd BBC&#8217;s to be connected to either <span 
+class="cmtt-10">IFCHAN = 1N </span>(normal input, usually LCP) or <span 
+class="cmtt-10">IFCHAN =</span>
+<span 
+class="cmtt-10">1A </span>(alternate, usually RCP). Even BBC&#8217;s have to be connected to <span 
+class="cmtt-10">IFCHAN = 2N </span>(usually RCP) or
+<span 
+class="cmtt-10">IFCHAN = 2A </span>for LCP. Also, you must use at least one of IFCHAN = 1N or IFCHAN = 2N (i.e. a
+schedule that uses both IFCHAN = 1A and IFCHAN = 2A is not permitted). This can be controlled by
+explicitly setting <span 
+class="cmtt-10">BBC</span>. See the details about <a 
+href="labelSECSETUPSSetupFiles.html#x31-2760003.6.4"><span 
+class="cmtt-10">M4PATCH</span></a> for the setup implied by the geodetic
+patching.
+<!--l. 2756--><p class="noindent" >In December 2000 the capability to record 512 Mb/s was introduced. This is achieved by recording 64
+tracks simultaneously on the tapes or Mark5A. It requires <span 
+class="cmtt-10">NHEADS = 2 </span>in the station catalogue. All
+MkIV stations now record using the Mark5 disk-based system. MkIV Stations equipped with
+Mk5 systems can record data at up to 1&#x00A0;Gbps. This requires <span 
+class="cmtt-10">DISK = MARK5A </span>in the station
+catalogue.
+<!--l. 2763--><p class="noindent" >Several features are not yet available or supported for MkIV (and MarkIV based Mark5 systems). Some
+as of late 2004 (some updates in early 2008) are:
+<!--l. 2767--><p class="noindent" >
+                                                                                
+                                                                                
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 2769--><p class="noindent" >Continuous
+     recording
+     has
+     been
+     used
+     widely,
+     however
+     the
+     ability
+     to
+     acquire
+     the
+     information
+     needed
+     to
+     flag
+     data
+     which
+     is
+     recorded
+     during
+     slewing
+     is
+     not
+     universal
+     (though
+     is
+     standard
+     for
+     EVN
+     stations).
+     The
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>output
+     <span 
+class="cmsl-10">.flg</span>
+     file
+     can
+     be
+     used
+     by
+     the
+     AIPS
+     task
+     <span 
+class="cmtt-10">UVFLG</span>
+     if
+     telescope
+     flagging
+     data
+     are
+                                                                                
+                                                                                
+     not
+     available.
+     In
+     addition
+     users
+     need
+     to
+     insert
+     gaps
+     during
+     continuous
+     recording
+     whenever
+     they
+     want
+     calibration
+     data.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 2777--><p class="noindent" >Phase
+     Cal
+     detection
+     at
+     the
+     telescopes
+     is
+     not
+     implemented.
+     This
+     will
+     likely
+     become
+     available
+     with
+     the
+     new
+     digital
+     backends.
+     Also,
+     DiFX
+     is
+     acquiring
+     the
+     ability
+     to
+     detect
+     phase
+     cal
+     tones.
+     </dd><dt class="list">
+                                                                                
+                                                                                
+     </dt><dd 
+class="list">
+     <!--l. 2781--><p class="noindent" >For
+     MkIV
+     (VLBA4)
+     telescopes
+     there
+     is
+     flexibility
+     for
+     controlling
+     when
+     Tsys
+     measurements
+     will
+     be
+     made.
+     Tsys
+     measurements
+     will
+     typically
+     be
+     made
+     at
+     the
+     beginning
+     of
+     a
+     scan
+     if
+     there
+     is
+     a
+     gap
+     in
+     the
+     recording.
+     When
+     scheduling
+     long
+     scans
+     or
+     continuous
+     recording,
+     one
+     may
+     need
+     to
+     insert
+     gaps
+     in
+                                                                                
+                                                                                
+     order
+     to
+     obtain
+     Tsys
+     data.
+     </dd></dl>
+<!--l. 2794--><p class="noindent" >In addition to requiring use of tested modes, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will not allow speedup factor changes during
+mixed VLBA and Mark&#x00A0;IV mode observations. This is because of track bit rate dependent delays that
+are different in the two formats. The correlator would require different clocks for different modes, which
+is not yet available. Fairly soon, this restriction will be relaxed. Again, MODETEST will turn off the
+test.
+<!--l. 2802--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">2.3.6   </span> <a 
+ id="x14-280002.3.6"></a>NON&#8211;VLBA Telescopes with VLBA Recorders</h4>
+<!--l. 2804--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>supports observations on telescopes that have VLBA recorders but are controlled
+through PCFS. This is also done by creating a <span 
+class="cmtt-10">*.vex </span>file in the VEX format (see section on
+<a 
+href="#x14-270002.3.5"><span 
+class="cmtt-10">MkIV</span></a>).
+<!--l. 2809--><p class="noindent" >The telescopes are characterized by <span 
+class="cmtt-10">DAR = VLBA </span>and <span 
+class="cmtt-10">RECORDER = VLBA</span>, but <span 
+class="cmtt-10">CONTROL = VEX</span>. They can
+have a flexible number of BBCs, and usually have only 2 IF channels: A &amp; C. The telescopes can only
+be requested to record in any of the VLBA FORMATs.
+<!--l. 2815--><p class="noindent" >In addition <span 
+class="cmtt-10">DAR = VLBA4 </span>and <span 
+class="cmtt-10">RECORDER = VLBA4 </span>systems have been introduced. These use the
+flexible <span 
+class="cmtt-10">VLBA </span>data acquisition rack, but (<span 
+class="cmtt-10">DAR = VLBA4</span>) have a Mark&#x00A0;IV formatter mounted
+for recording up to 1Gb/s. Note that these systems write Mark&#x00A0;IV formatted data and
+have been created to resemble Mark&#x00A0;IV systems. In this sense their name is misleading.
+These systems required a <span 
+class="cmtt-10">RECORDER = VLBA4 </span>in the tape era in order to accommodate 2
+recording heads (optional), but now all Mark5A systems can record the requisite number of
+tracks.
+<!--l. 2825--><p class="noindent" >Most of the VLBA racks controlled by the field system have what is known as the &#8220;geodetic
+wiring&#8221;. This means that not all of the BBCs can see all IFs. Also, there are not enough
+sampler inputs do use 2 bit samples from more than the first 8 BBCs. In fact, switching
+between lots of BBCs at one bit and 8 BBCs at 2 bits requires moving connectors that really
+weren&#8217;t designed to be moved often. This is an invitation for trouble. The IF restrictions
+are such that BBCs 1-8 can see IFs A and C while BBCs 1, 2, and 9-14 can see B and D.
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>understands these restrictions in it&#8217;s automatic BBC assignment section. Note that, in
+some cases, the stations will put the same signals on IFs A and B and on C and D. This
+can be dealt with in the frequency catalog by giving B as the ALTIFN for A and D as the
+ALTIFN for C (or visa versa). Or, or course, you can specify IFCHAN explicitly in the setup
+file.
+                                                                                
+                                                                                
+<!--l. 2842--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECWIDEWideBandObservingRDBEDBBCVLBAandMarkIVModes.html" >next</a>] [<a 
+href="labelSECTIPSSchedulingTips.html" >prev</a>] [<a 
+href="labelSECTIPSSchedulingTips.html#taillabelSECTIPSSchedulingTips.html" >prev-tail</a>] [<a 
+href="labelSECRECSYSRecordingSystems.html" >front</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECRECSYSRecordingSystems.html" >up</a>] </p></div>
+<!--l. 2842--><p class="noindent" ><a 
+ id="taillabelSECRECSYSRecordingSystems.html"></a>  
+</body></html> 

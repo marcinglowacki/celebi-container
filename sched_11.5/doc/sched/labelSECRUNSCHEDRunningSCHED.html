@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Running SCHED</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 14127--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECDISFILDistributionofScheduleFiles.html" >next</a>] [<a 
+href="labelSECINSTALLInstallingSCHED.html" >prev</a>] [<a 
+href="labelSECINSTALLInstallingSCHED.html#taillabelSECINSTALLInstallingSCHED.html" >prev-tail</a>] [<a 
+href="#taillabelSECRUNSCHEDRunningSCHED.html">tail</a>] [<a 
+href="labelCHPSYSTEMINSTALLINGANDRUNNINGSCHED.html#labelSECRUNSCHEDRunningSCHED.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">4.2   </span> <a 
+ id="x35-3030004.2"></a>Running SCHED</h3>
+<!--l. 14129--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">4.2.1   </span> <a 
+ id="x35-3040004.2.1"></a>Running SCHED under UNIX or LINUX</h4>
+<!--l. 14131--><p class="noindent" >To run <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>on a UNIX machine such as a SUN or a PC under LINUX, prepare the keyin file
+without system level commands. Then type, for example,
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-19">
+sched&#x00A0;&#x003C;&#x00A0;input.key
+</div>
+<!--l. 14136--><p class="nopar" >Alternatively, if plotting is wanted, for example, type:
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-20">
+sched
+&#x00A0;<br />&#x003C;SCHED&#x00A0;will&#x00A0;write&#x00A0;a&#x00A0;number&#x00A0;of&#x00A0;instructive&#x00A0;lines&#x003E;
+&#x00A0;<br />*&#x00A0;plot&#x00A0;schedule=input.key&#x00A0;/
+</div>
+<!--l. 14142--><p class="nopar" >where the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>executable file is assumed to be in the default directory or path and the
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input commands are in <span 
+class="cmsl-10">input.key </span>in the default directory. The &#8220;<span 
+class="cmtt-10">&#x003C;</span>&#8221; pipes the information in
+<span 
+class="cmsl-10">input.key </span>to <span 
+class="cmcsc-10">SCHED</span>. The &#8220;*&#8221; is the prompt from <span 
+class="cmcsc-10">SCHED</span>. Remember that, in UNIX, file names and
+commands are case sensitive. Also, there is a complication for users of the tc shell for versions after
+mid 1995: there is a built-in shell command &#8220;sched&#8221; that the shell takes instead of running
+<span 
+class="cmcsc-10">SCHED</span>. So to use <span 
+class="cmcsc-10">SCHED</span>, either alias &#8220;sched&#8221; to mean this program or else specify the full
+path name of the execute module. The files output by <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will appear in the default
+directory.
+<!--l. 14155--><p class="noindent" >If your version of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is linked with the <span 
+class="cmcsc-10">PGPLOT </span>libraries (has plotting capability), you
+will need to set the environment variables <span 
+class="cmtt-10">PGPLOT</span><span 
+class="cmtt-10">_DIR </span>to the location of the <span 
+class="cmcsc-10">PGPLOT</span>
+libraries and <span 
+class="cmtt-10">PGPLOT</span><span 
+class="cmtt-10">_FONT </span>to the location of the <span 
+class="cmcsc-10">PGPLOT </span>font files. If you use <span 
+class="cmcsc-10">PGPLOT </span>for
+other reasons (programming, DIFFMAP etc), then this is likely to be part of your standard
+setup.
+<!--l. 14163--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">4.2.2   </span> <a 
+ id="x35-3050004.2.2"></a>Running SCHED on a VAX with VMS</h4>
+<!--l. 14165--><p class="noindent" >Note that I am not aware of anyone using <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>on VAXes any more.
+<!--l. 14167--><p class="noindent" >To run <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>on a VAX, make a VMS command file, called <span 
+class="cmtt-10">INPUT.COM </span>for example, which begins
+with a VMS command that causes <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to be executed. For systems with a fully installed Caltech
+package, the command &#8220;$ <span 
+class="cmcsc-10">SCHED</span>&#8221; should work. Otherwise use a command of the form &#8220;$ RUN
+UMA3:[VPGM.CIT.VLB]<span 
+class="cmcsc-10">SCHED</span>&#8221;, where you will need to substitute the correct directory
+specification. The command file should end with &#8220;$ EXIT&#8221;, although this is not necessary. The
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>command file is run by typing, for example,
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-21">
+@INPUT.COM
+</div>
+<!--l. 14177--><p class="nopar" >The files output by <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will appear in the default directory.
+<!--l. 14180--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>has not been tested under VMS since the plotting capabilities were added.
+<!--l. 14185--><p class="noindent" >It has been a very long time since I was aware of anyone running <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>on an MS-DOS machine, or
+a Windows machine for that matter.
+<!--l. 14188--><p class="noindent" >To run <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>on a PC (MS DOS), prepare the input file without system level commands. Then
+type, for example,
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-22">
+\CODE\SCHEDB&#x00A0;&#x003C;&#x00A0;INPUT.KEY
+</div>
+<!--l. 14192--><p class="nopar" >where the SCHED.EXE executable file is assumed to be in the CODE directory (substitute whatever is
+correct for your system) and the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input commands are in INPUT.KEY in the default
+directory. The &#8220;<span 
+class="cmmi-10">&#x003C;</span>&#8221; pipes the information in INPUT.KEY to the program (note the similarity to
+UNIX). The files output by <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will appear in the default directory.
+<!--l. 14200--><p class="noindent" >It has been a long time since <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>was ported to DOS. It has never been ported to Windows. It
+seriously outgrew DOS, but should work in Windows if someone were to take the effort to install
+it.
+                                                                                
+                                                                                
+<!--l. 14205--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECDISFILDistributionofScheduleFiles.html" >next</a>] [<a 
+href="labelSECINSTALLInstallingSCHED.html" >prev</a>] [<a 
+href="labelSECINSTALLInstallingSCHED.html#taillabelSECINSTALLInstallingSCHED.html" >prev-tail</a>] [<a 
+href="labelSECRUNSCHEDRunningSCHED.html" >front</a>] [<a 
+href="labelCHPSYSTEMINSTALLINGANDRUNNINGSCHED.html#labelSECRUNSCHEDRunningSCHED.html" >up</a>] </p></div>
+<!--l. 14205--><p class="noindent" ><a 
+ id="taillabelSECRUNSCHEDRunningSCHED.html"></a>  
+</body></html> 

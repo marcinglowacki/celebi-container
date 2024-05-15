@@ -1,0 +1,1343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Tape Initialization File</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 11211--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECFRQCATFrequencyCatalog.html" >next</a>] [<a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html" >prev</a>] [<a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#taillabelSECSTACATStationCatalogandLocationsCatalog.html" >prev-tail</a>] [<a 
+href="#taillabelSECTPINITapeInitializationFile.html">tail</a>] [<a 
+href="labelCHPINPUTTHESCHEDINPUTFILESIncludesparameterlists.html#labelSECTPINITapeInitializationFile.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">3.4   </span> <a 
+ id="x29-2320003.4"></a>Tape Initialization File</h3>
+<!--l. 11213--><p class="noindent" >The tape initialization file is mostly obsolete. It is possible that the ability to select the
+media type for particular stations will be of use in the future during transitions between
+recording systems. But all tape positioning capabilities became obsolete along with the tape
+systems. The highly unlikely that a tape initialization section is needed in any schedule file.
+If one is present, it is probably an artifact of the use of old templates and it should be
+removed.
+<!--l. 11221--><p class="noindent" >The tape initialization information can be used to select what type of recording to make at a station
+and to give details about the tape recordings if tape is used.
+<!--l. 11225--><p class="noindent" >During the transition to Mark5, there was a period where both tape and disk systems will be available
+at stations. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>needs a way to select which to use. For each station, a default can be set with
+<span 
+class="cmtt-10">MEDIADEF </span>in the station catalog. To override that default, the <span 
+class="cmtt-10">MEDIA </span>parameter is provided here to tell
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>whether to assume that the data transmission system is specified by <a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3"><span 
+class="cmtt-10">RECORDER</span></a> or <a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3"><span 
+class="cmtt-10">DISK</span></a> in the
+<a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3">station catalog</a>.
+<!--l. 11236--><p class="noindent" >The following is retain for historical reasons and should not concern most users.
+<!--l. 11239--><p class="noindent" >If you are not using the <span 
+class="cmtt-10">MEDIA </span>parameter, then you almost certainly should not be using a tape
+initialization section <span 
+class="cmtt-10">TAPEINI </span>or tape initialization file. All the parameters have good defaults for nearly
+all cases so explicitly setting them is more likely to get you into trouble than to help. The capability
+provided by the file is only retained for special test observations. Even the <span 
+class="cmtt-10">MEDIA </span>parameter is not
+normally needed. If your <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input file contains a <span 
+class="cmtt-10">TAPEINI </span>section, you are probably an old time
+VLBI observer using ancient templates.
+<!--l. 11249--><p class="noindent" >When using a tape system, the tape initialization information tells <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>details about the tapes to
+be used at each site. In nearly all cases, the defaults are appropriate and very few users need to specify
+any of this information. Other than for test observations which the user may wish to start in the middle
+of a tape, the only exceptions are for observations that use thick tapes on Mark III or Mark IV
+systems. But since such tapes are no longer allowed at most stations, this should be very
+rare. If tape initialization information is needed, the information can be specified in an
+external file, the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2080003.1.2"><span 
+class="cmtt-10">TAPEFILE</span></a>, or can be imbedded in the main file following the parameter
+<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2090003.1.2"><span 
+class="cmtt-10">TAPEINI</span></a>.
+<!--l. 11263--><p class="noindent" >The capability to have a separate <span 
+class="cmtt-10">TAPEFILE </span>was originally part of an attempt to deal with the
+general case of VLBA tape handling. Such a file could have been used to schedule multiple
+projects per tape by specifying where each project starts. The file would have one full set
+of inputs per project. But the automatic tape allocation by the on-line system now deals
+with this situation in a cleaner manner. Automatic tape allocation and automatic reversals
+can be requested using <span 
+class="cmcsc-10">SCHED</span>&#8217;s <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-490003.1.2"><span 
+class="cmtt-10">AUTOTAPE</span></a> parameter; however, these options only apply
+to sites with VLBA control systems and more than one tape drive and can only be used
+for projects to be correlated on the VLBA correlator. When automatic tape handling is
+requested, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>puts the appropriate commands in the control files. It also attempts to
+predict what the tapes will do assuming that they start in the place specified in the tape
+initialization file. Users should be aware that these predictions may be not be accurate
+because tape lengths can vary and the tape start position may depend on the preceding
+project.
+<!--l. 11282--><p class="noindent" >Note that the number of heads in use at a time (8, 16, or 32), which determines the number of passes
+per head index position (1, 2, or 4 as specified by <a 
+href="labelSECSETUPSSetupFiles.html#x31-2950003.6.4"><span 
+class="cmtt-10">TPMODE</span></a> in the <a 
+href="labelSECSETUPSSetupFiles.html#x31-2470003.6"><span 
+class="cmsl-10">setup file</span></a>, is not allowed to change
+                                                                                
+                                                                                
+during a project at a station, although different stations may use different values for <span 
+class="cmtt-10">TPMODE</span>. This
+restriction avoids a the bookkeeping nightmare raised by the more general case. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>checks all the
+requested setups for a station and remembers the largest number of heads (smallest <span 
+class="cmtt-10">TPMODE</span>) and
+allocates tape for all scans as if that value were in use. This is wasteful of tape, but allows some tests to
+be done with mode switching.
+<!--l. 11296--><p class="noindent" >The following are some capabilities supported through the tape initialization file:
+<!--l. 11299--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x29-232002x1">
+     Different
+     tape
+     lengths
+     at
+     different
+     stations.
+     </li>
+     <li 
+  class="enumerate" id="x29-232004x2">
+     Different
+     bit
+     densities,
+     and
+     hence
+     tape
+     speeds,
+     at
+     different
+     stations.
+     </li>
+     <li 
+  class="enumerate" id="x29-232006x3">
+     Tape
+     drive
+     and
+     index
+     position
+     at
+     program
+     start
+     specified
+     for
+     each
+     station.
+     </li>
+     <li 
+  class="enumerate" id="x29-232008x4">
+     Tape
+     speed,
+                                                                                
+                                                                                
+     bandwidth,
+     and
+     sample
+     rate
+     can
+     change
+     during
+     run.
+     Beware
+     of
+     operational
+     restrictions
+     on
+     the
+     use
+     of
+     this
+     capability.
+     See
+     the
+     <a 
+href="http://www.aoc.nrao.edu/vlba/obstatus/guidelines.ps" >guidelines
+     for
+     preparing
+     observing
+     schedules</a>
+     available
+     from
+     the
+     NRAO
+     WWW
+     home
+     page
+     under
+     VLBA.
+     </li>
+     <li 
+  class="enumerate" id="x29-232010x5">
+     Different
+     number
+     of
+     tape
+     drives
+     at
+     each
+     station.</li></ol>
+<!--l. 11317--><p class="noindent" >A single set of tape initialization conditions can be specified in the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>keyin file using <span 
+class="cmtt-10">TAPEINI</span>
+followed by a &#8220;/&#8221;, in much the same way that in-line catalogs are given. This is the normal way that the
+tape initialization information is provided. Unlike the source and station catalogs, only one input group
+will be read and that group will be terminated by a &#8220;/&#8221;. No <span 
+class="cmtt-10">ENDCAT </span>or equivalent is required, or even
+allowed.
+                                                                                
+                                                                                
+<!--l. 11325--><p class="noindent" >The input parameters of the <span 
+class="cmtt-10">TAPEFILE </span>are:
+<!--l. 11327--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+   &#x00A0; </dt><dd 
+class="list">
+     <!--l. 11328--><p class="noindent" ><a 
+href="#x29-2340003.4.1"><span 
+class="cmtt-10">MEDIA:</span></a><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span>
+     Which
+     record
+     system
+     to
+     use.
+     </dd><dt class="list">
+   &#x00A0; </dt><dd 
+class="list">
+     <!--l. 11329--><p class="noindent" ><a 
+href="#x29-2350003.4.1"><span 
+class="cmtt-10">NDRIVES:</span></a><span 
+class="cmtt-10">&#x00A0;</span>
+     Number
+     of
+     drives
+     at
+     the
+     site.
+     </dd><dt class="list">
+   &#x00A0; </dt><dd 
+class="list">
+     <!--l. 11330--><p class="noindent" ><a 
+href="#x29-2360003.4.1"><span 
+class="cmtt-10">NHEADPOS:</span></a>
+     Number
+     of
+     head
+     positions
+     in
+     use
+     at
+     site.
+     </dd><dt class="list">
+   &#x00A0; </dt><dd 
+class="list">
+     <!--l. 11331--><p class="noindent" ><a 
+href="#x29-2370003.4.1"><span 
+class="cmtt-10">OBSCODE:</span></a><span 
+class="cmtt-10">&#x00A0;</span>
+     Experiment
+     code
+     for
+     this
+     observation.
+     </dd><dt class="list">
+   &#x00A0; </dt><dd 
+class="list">
+     <!--l. 11332--><p class="noindent" ><a 
+href="#x29-2380003.4.1"><span 
+class="cmtt-10">TPSTA:</span></a><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span>
+     Station
+     name
+     for
+     this
+     group
+                                                                                
+                                                                                
+     of
+     parameters.
+     </dd><dt class="list">
+   &#x00A0; </dt><dd 
+class="list">
+     <!--l. 11333--><p class="noindent" ><a 
+href="#x29-2390003.4.1"><span 
+class="cmtt-10">TPDRIVE:</span></a><span 
+class="cmtt-10">&#x00A0;</span>
+     The
+     drive
+     to
+     begin
+     the
+     observation
+     on.
+     </dd><dt class="list">
+   &#x00A0; </dt><dd 
+class="list">
+     <!--l. 11334--><p class="noindent" ><a 
+href="#x29-2400003.4.1"><span 
+class="cmtt-10">TPINDEX:</span></a><span 
+class="cmtt-10">&#x00A0;</span>
+     The
+     tape
+     index
+     at
+     which
+     to
+     start
+     the
+     observations.
+     </dd><dt class="list">
+   &#x00A0; </dt><dd 
+class="list">
+     <!--l. 11335--><p class="noindent" ><a 
+href="#x29-2410003.4.1"><span 
+class="cmtt-10">TPLENGTH:</span></a>
+     The
+     length
+     of
+     the
+     tapes
+     to
+     be
+     used
+     at
+     the
+     site.
+     </dd><dt class="list">
+   &#x00A0; </dt><dd 
+class="list">
+     <!--l. 11336--><p class="noindent" ><a 
+href="#x29-2420003.4.1"><span 
+class="cmtt-10">DENSITY:</span></a><span 
+class="cmtt-10">&#x00A0;</span>
+     Are
+     tapes
+     at
+     sites
+     high
+     or
+                                                                                
+                                                                                
+     low
+     density.
+     </dd><dt class="list">
+   &#x00A0; </dt><dd 
+class="list">
+     <!--l. 11337--><p class="noindent" ><a 
+href="#x29-2430003.4.1"><span 
+class="cmtt-10">TPTIME:</span></a><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span>
+     Mark
+     II
+     tape
+     length
+     in
+     time.
+     </dd><dt class="list">
+   &#x00A0; </dt><dd 
+class="list">
+     <!--l. 11338--><p class="noindent" ><a 
+href="#x29-2440003.4.1"><span 
+class="cmtt-10">HEADMODE:</span></a>
+     Indicator
+     of
+     head
+     positions
+     to
+     use.</dd></dl>
+<!--l. 11341--><p class="noindent" >The first example shows a tapeini section that might be used during the transition to MARK5. Note
+that <span 
+class="cmtt-10">BOTH </span>means create a schedule with both types of control information so that operations can pick
+which to use. This works for the VLBA, but not for stations controlled by the VEX file. For this
+example, all tape parameter will take their default values.
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-12">
+&#x00A0;<br />tapeini&#x00A0;/
+&#x00A0;<br />tpsta&#x00A0;&#x00A0;&#x00A0;&#x00A0;=&#x00A0;vlba_sc,&#x00A0;vlba_hn,&#x00A0;vlba_nl,&#x00A0;vlba_fd,&#x00A0;vlba_la,&#x00A0;vlba_pt,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;vlba_kp,&#x00A0;vlba_ov,&#x00A0;vlba_br,&#x00A0;vlba_mk,&#x00A0;gb_vlba,&#x00A0;medicina,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;noto,&#x00A0;&#x00A0;&#x00A0;&#x00A0;onsala60
+&#x00A0;<br />MEDIA&#x00A0;&#x00A0;&#x00A0;&#x00A0;=&#x00A0;TAPE,&#x00A0;&#x00A0;&#x00A0;&#x00A0;TAPE,&#x00A0;&#x00A0;&#x00A0;&#x00A0;TAPE,&#x00A0;&#x00A0;&#x00A0;&#x00A0;DISK,&#x00A0;&#x00A0;&#x00A0;&#x00A0;DISK,&#x00A0;&#x00A0;&#x00A0;&#x00A0;DISK,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;DISK,&#x00A0;&#x00A0;&#x00A0;&#x00A0;TAPE,&#x00A0;&#x00A0;&#x00A0;&#x00A0;DISK,&#x00A0;&#x00A0;&#x00A0;&#x00A0;TAPE,&#x00A0;&#x00A0;&#x00A0;&#x00A0;TAPE,&#x00A0;&#x00A0;&#x00A0;&#x00A0;DISK,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;TAPE,&#x00A0;&#x00A0;&#x00A0;&#x00A0;DISK
+&#x00A0;<br />&#x00A0;&#x00A0;/
+</div>
+<!--l. 11358--><p class="nopar" >
+<!--l. 11360--><p class="noindent" >The second example of a tape initialization group shows the usage for specifying the tape system. Note
+the <span 
+class="cmtt-10">NDRIVES </span>is not given so that it is picked up from the <a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3">station catalog</a>. Note that the <a 
+href="labelSECOLDVLAOldVLA.html#x47-358000B.1.1">example file for
+VLBI at the VLA</a> contains a tape initialization group to show what it is like. Usually it should be
+reasonable to take the defaults.
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-13">
+&#x00A0;<br />obscode&#x00A0;=&#8217;default&#8217;
+&#x00A0;<br />tpsta&#x00A0;&#x00A0;&#x00A0;=&#8217;vlba&#8217;,&#x00A0;&#8217;vla1&#8217;,&#x00A0;&#8217;vla27&#8217;,&#x00A0;&#8217;eb_vlba&#8217;,&#x00A0;&#8217;gb_vlba&#8217;,&#x00A0;&#8217;default&#8217;
+&#x00A0;<br />tpdrive&#x00A0;=1,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1
+&#x00A0;<br />tpindex&#x00A0;=1,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1
+&#x00A0;<br />tplength=17600,&#x00A0;&#x00A0;17600,&#x00A0;&#x00A0;17600,&#x00A0;&#x00A0;&#x00A0;17600,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;17600,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;8800
+&#x00A0;<br />nheadpos=14,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;14,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;14,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;14,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;14,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;14
+&#x00A0;<br />density&#x00A0;=H,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;H,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;H,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;H,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;H,&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;L
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />
+</div>
+<!--l. 11381--><p class="nopar" >
+<!--l. 11383--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">3.4.1   </span> <a 
+ id="x29-2330003.4.1"></a>Details of Tape Initialization Parameters</h4>
+<!--l. 11385--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x29-2340003.4.1"></a><span 
+class="cmtt-10">MEDIA</span></h5>
+<!--l. 11387--><p class="noindent" ><span 
+class="cmtt-10">MEDIA </span>is used to specify how the data are to be transmitted to the correlator. This is mainly useful
+when a station has alternatives, such as both a tape system ( <a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3">station catalog</a> parameter <span 
+class="cmtt-10">RECORDER</span>) and
+a disk system (<a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3">station catalog</a> parameter <span 
+class="cmtt-10">DISK</span>) and the default needs to be overridden. Valid arguments
+are blank (use the default), <span 
+class="cmtt-10">TAPE </span>(use the tape system), and <span 
+class="cmtt-10">DISK </span>(use the disk system). Eventually
+other options such as real time may be added.
+<!--l. 11398--><p class="noindent" >If an option is specified that is not consistent with what is available at the station, an error will
+occur.
+<!--l. 11401--><p class="noindent" >Note that most, if not all, stations now have ways to convert tape to disk files so it is essentially never
+necessary to specify <span 
+class="cmtt-10">MEDIA</span>, and, in fact, is essentially never necessary to have a tape initialization
+section.
+<!--l. 11415--><p class="noindent" >
+               <dl class="list1"><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11415--><p class="noindent" ><span 
+class="cmbx-10">Argument:</span>
+               An
+               array
+               of
+               character
+               strings
+               of
+               up
+               to
+               8
+                                                                                
+                                                                                
+               characters
+               each,
+               one
+               per
+               station.
+               Not
+               case
+               sensitive.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11415--><p class="noindent" ><span 
+class="cmbx-10">Options:</span>
+               One
+               of
+               <span 
+class="cmsl-10">Blank</span>,
+               <span 
+class="cmtt-10">TAPE,</span>
+               <span 
+class="cmtt-10">DISK,</span>
+               <span 
+class="cmtt-10">TAPEDISK,</span>
+               <span 
+class="cmtt-10">DISKTAPE</span>.
+               Must
+               have
+               corresponding
+               <span 
+class="cmtt-10">RECORDER</span>
+               or
+               <span 
+class="cmtt-10">DISK</span>
+               in
+               the
+               station
+               catalog.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11415--><p class="noindent" ><span 
+class="cmbx-10">Default:</span>
+               <span 
+class="cmtt-10">TAPEDISK</span>
+               for
+               the
+               VLBA
+               controlled
+               systems,
+               <span 
+class="cmtt-10">TAPE</span>
+               for
+               others.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11415--><p class="noindent" ><span 
+class="cmbx-10">Usage:</span>
+               Defaults
+               to
+               the
+                                                                                
+                                                                                
+               previous
+               group.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11415--><p class="noindent" ><span 
+class="cmbx-10">Example:</span>
+               <span 
+class="cmtt-10">MEDIA=DISK,</span>
+               <span 
+class="cmtt-10">TAPE,</span>
+               <span 
+class="cmtt-10">TAPEDISK,</span>
+               <span 
+class="cmtt-10">DISK</span></dd></dl>
+<!--l. 11418--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x29-2350003.4.1"></a><span 
+class="cmtt-10">NDRIVES</span></h5>
+<!--l. 11420--><p class="noindent" ><span 
+class="cmtt-10">NDRIVES </span>if the number of tape drives at each station. This parameter can also be given in the station
+catalog and only need be given here for abnormal configurations. The value in the tape initialization
+information will override the number in the station catalog.
+<!--l. 11426--><p class="noindent" >The VLBA sites and the VLA normally have 2 drives. Other sites will usually have 1.
+<!--l. 11429--><p class="noindent" >Note that the schedule can be forced to use a single tape drive other than number 1 by setting
+<span 
+class="cmtt-10">NDRIVES=1 </span>and <span 
+class="cmtt-10">TPDRIVE=N </span>where <span 
+class="cmtt-10">N </span>is the desired drive (usually 2). This is useful if, for example, tape
+drive 1 is out of service.
+<!--l. 11434--><p class="noindent" >For S2 stations <span 
+class="cmtt-10">NDRIVES </span>indicates the number of transports in the S2 recorder (usually
+8).
+<!--l. 11437--><p class="noindent" ><span 
+class="cmtt-10">NDRIVES </span>will not be allowed to exceed the number specified in the station catalog.
+<!--l. 11446--><p class="noindent" >
+               <dl class="list1"><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11446--><p class="noindent" ><span 
+class="cmbx-10">Argument:</span>
+               An
+               array
+               of
+               up
+               to
+               30
+               integers,
+               one
+               for
+               each
+               station
+               in
+               the
+               <span 
+class="cmtt-10">TPSTA</span>
+               list.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11446--><p class="noindent" ><span 
+class="cmbx-10">Options:</span>
+                                                                                
+                                                                                
+               <span 
+class="cmtt-10">1</span>
+               or
+               <span 
+class="cmtt-10">2</span>
+               are
+               the
+               likely
+               choices.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11446--><p class="noindent" ><span 
+class="cmbx-10">Default:</span>
+               <span 
+class="cmtt-10">2</span>
+               for
+               the
+               VLBA
+               and
+               VLA,
+               <span 
+class="cmtt-10">1</span>
+               for
+               others.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11446--><p class="noindent" ><span 
+class="cmbx-10">Usage:</span>
+               Defaults
+               to
+               the
+               previous
+               group.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11446--><p class="noindent" ><span 
+class="cmbx-10">Example:</span>
+               <span 
+class="cmtt-10">NDRIVES=1,1,2,2,1,2</span></dd></dl>
+<!--l. 11448--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x29-2360003.4.1"></a><span 
+class="cmtt-10">NHEADPOS</span></h5>
+<!--l. 11450--><p class="noindent" ><span 
+class="cmtt-10">NHEADPOS </span>is the number of head positions to use at the station. The traditional number for Mark&#x00A0;IIIa
+sites is 12. However, the VLBA uses a head position sequence with 14 positions. This allows more data
+to be put on a tape. This input is provided mainly to allow the number of head positions to be forced to
+12 to match a schedule made to allow time for tape changes every 12 head positions. This is likely to be
+common for Mark&#x00A0;III projects.
+<!--l. 11458--><p class="noindent" >The MkIV schedules are currently scheduled with similar transverse tape format as the VLBA;
+normally the same 14 head positions are used. For recordings made with 2 heads, 6 head positions is the
+default. For S2 recorders this parameter is ignored, the different groups in an S2 format can be set by
+<span 
+class="cmtt-10">TPMODE</span>.
+<!--l. 11473--><p class="noindent" >
+                                                                                
+                                                                                
+               <dl class="list1"><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11473--><p class="noindent" ><span 
+class="cmbx-10">Argument:</span>
+               An
+               array
+               of
+               up
+               to
+               30
+               integers,
+               one
+               for
+               each
+               station
+               in
+               the
+               <span 
+class="cmtt-10">TPSTA</span>
+               list.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11473--><p class="noindent" ><span 
+class="cmbx-10">Options:</span>
+               <span 
+class="cmtt-10">12</span>
+               or
+               <span 
+class="cmtt-10">14</span>
+               are
+               the
+               likely
+               choices
+               but
+               the
+               program
+               will
+               take
+               any
+               value.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11473--><p class="noindent" ><span 
+class="cmbx-10">Default:</span>
+               <span 
+class="cmtt-10">14</span>
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11473--><p class="noindent" ><span 
+class="cmbx-10">Usage:</span>
+               Defaults
+               to
+                                                                                
+                                                                                
+               previous
+               group.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11473--><p class="noindent" ><span 
+class="cmbx-10">Example:</span>
+               <span 
+class="cmtt-10">NHEADPOS=12,12,14,14,12,14</span></dd></dl>
+<!--l. 11475--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x29-2370003.4.1"></a><span 
+class="cmtt-10">OBSCODE</span></h5>
+<!--l. 11477--><p class="noindent" ><span 
+class="cmtt-10">OBSCODE </span>is the Project code for the project for which this group of inputs applies.
+<!--l. 11486--><p class="noindent" >
+               <dl class="list1"><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11486--><p class="noindent" ><span 
+class="cmbx-10">Argument:</span>
+               Character
+               of
+               length
+               8.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11486--><p class="noindent" ><span 
+class="cmbx-10">Options:</span>
+               Any
+               valid
+               project
+               code.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11486--><p class="noindent" ><span 
+class="cmbx-10">Default:</span>
+               <span 
+class="cmtt-10">DEFAULT</span>.
+               Implies
+               that
+               this
+               group
+               will
+               give
+               the
+               default
+               information.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+                                                                                
+                                                                                
+               <!--l. 11486--><p class="noindent" ><span 
+class="cmbx-10">Usage:</span>
+               Defaults
+               to
+               previous
+               group,
+               which
+               is
+               not
+               likely
+               to
+               be
+               useful.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11486--><p class="noindent" ><span 
+class="cmbx-10">Example:</span>
+               <span 
+class="cmtt-10">OBSCODE=&#8217;BW005B&#8217;</span></dd></dl>
+<!--l. 11488--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x29-2380003.4.1"></a><span 
+class="cmtt-10">TPSTA</span></h5>
+<!--l. 11490--><p class="noindent" ><span 
+class="cmtt-10">TPSTA </span>is an array of up to 30 station names. One can be <span 
+class="cmtt-10">&#8217;DEFAULT&#8217; </span>which means that the
+corresponding parameters will be used for stations not explicitly in the list. A station <span 
+class="cmtt-10">VLBA </span>will
+match any VLBA stations that are not specified explicitly. Actually it matches any stations
+with the first four characters &#8220;VLBA&#8221;. A station <span 
+class="cmtt-10">VLA </span>matches any station with the first 3
+characters &#8220;VLA&#8221; that is not otherwise specified explicitly. For example, it matches &#8220;VLA1&#8221; and
+&#8220;VLA27&#8221;.
+<!--l. 11507--><p class="noindent" >
+               <dl class="list1"><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11507--><p class="noindent" ><span 
+class="cmbx-10">Argument:</span>
+               Character
+               of
+               length
+               8.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11507--><p class="noindent" ><span 
+class="cmbx-10">Options:</span>
+               Any
+               station
+               name.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11507--><p class="noindent" ><span 
+class="cmbx-10">Default:</span>
+               Blank
+                                                                                
+                                                                                
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11507--><p class="noindent" ><span 
+class="cmbx-10">Usage:</span>
+               Defaults
+               to
+               previous
+               value
+               if
+               none
+               are
+               specified.
+               This
+               is
+               likely
+               to
+               be
+               the
+               normal
+               mode
+               of
+               use
+               with
+               the
+               station
+               list
+               only
+               given
+               for
+               the
+               first
+               observation.
+               If
+               any
+               stations
+               are
+               given,
+               it
+               is
+               assumed
+               that
+               a
+               complete
+               new
+               list
+               is
+               being
+               given.
+               </dd><dt class="list">
+                                                                                
+                                                                                
+      </dt><dd 
+class="list">
+               <!--l. 11507--><p class="noindent" ><span 
+class="cmbx-10">Example:</span>
+               <span 
+class="cmtt-10">TPSTA=&#8217;VLBA</span><span 
+class="cmtt-10">_PT&#8217;,&#8217;VLBA</span><span 
+class="cmtt-10">_KP&#8217;,&#8217;VLA27&#8217;</span></dd></dl>
+<!--l. 11509--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x29-2390003.4.1"></a><span 
+class="cmtt-10">TPDRIVE</span></h5>
+<!--l. 11511--><p class="noindent" ><span 
+class="cmtt-10">TPDRIVE </span>is the tape drive on which to start the project. Each element in the array applies to the station
+in the corresponding element in the <span 
+class="cmtt-10">TPSTA </span>array. If <span 
+class="cmtt-10">NDRIVES=1</span>, the schedule will use the tape
+drive specified by <span 
+class="cmtt-10">TPDRIVE </span>for all scans. This is useful for cases when tape drive 1 is out of
+service.
+<!--l. 11522--><p class="noindent" >
+               <dl class="list1"><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11522--><p class="noindent" ><span 
+class="cmbx-10">Argument:</span>
+               An
+               array
+               of
+               30
+               integers.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11522--><p class="noindent" ><span 
+class="cmbx-10">Options:</span>
+               <span 
+class="cmtt-10">1</span>
+               or
+               <span 
+class="cmtt-10">2</span>
+               for
+               VLBA
+               sites.
+               <span 
+class="cmtt-10">1</span>
+               for
+               most
+               others.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11522--><p class="noindent" ><span 
+class="cmbx-10">Default:</span>
+               1
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11522--><p class="noindent" ><span 
+class="cmbx-10">Usage:</span>
+               Defaults
+               to
+               previous
+                                                                                
+                                                                                
+               value.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11522--><p class="noindent" ><span 
+class="cmbx-10">Example:</span>
+               <span 
+class="cmtt-10">TPDRIVE=2,1,1</span></dd></dl>
+<!--l. 11524--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x29-2400003.4.1"></a><span 
+class="cmtt-10">TPINDEX</span></h5>
+<!--l. 11526--><p class="noindent" ><span 
+class="cmtt-10">TPINDEX </span>is the head index position on which to start. It will be assumed that there are no previously
+recorded data at this index position. A value for each station in <span 
+class="cmtt-10">TPSTA</span>. With the new head position
+sequence all forward passes start on odd numbered index positions. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will require <span 
+class="cmtt-10">TPINDEX </span>be
+odd and will add 1 to any even value.
+<!--l. 11538--><p class="noindent" >
+               <dl class="list1"><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11538--><p class="noindent" ><span 
+class="cmbx-10">Argument:</span>
+               An
+               array
+               of
+               30
+               odd
+               integers.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11538--><p class="noindent" ><span 
+class="cmbx-10">Options:</span>
+               Integer
+               between
+               <span 
+class="cmtt-10">1</span>
+               and
+               <span 
+class="cmtt-10">13</span>.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11538--><p class="noindent" ><span 
+class="cmbx-10">Default:</span>
+               1
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11538--><p class="noindent" ><span 
+class="cmbx-10">Usage:</span>
+               Defaults
+               to
+               previous
+               value.
+                                                                                
+                                                                                
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11538--><p class="noindent" ><span 
+class="cmbx-10">Example:</span>
+               <span 
+class="cmtt-10">TPINDEX=5,6,2</span></dd></dl>
+<!--l. 11540--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x29-2410003.4.1"></a><span 
+class="cmtt-10">TPLENGTH</span></h5>
+<!--l. 11542--><p class="noindent" ><span 
+class="cmtt-10">TPLENGTH </span>is the length of the tapes in use at each site. For VLBA, Mark&#x00A0;III, and Mark IV tapes, the
+length is in feet. Thick tapes, which are still in use within the EVN but are not allowed at the VLBA
+correlator, have roughly 8800 feet of usable length(see the <a 
+href="labelSSECTAPEMANAGEMENTTapeManagement.html#x48-365000B.2.3">section on tape lengths</a>). Thin tapes used for
+most VLBA and Mark IV observations usually have 17600 feet of usable tape. The VLBA operations
+staff tries to make sure that all thin tapes have at least 17400 feet of usable tape by splicing in extra
+when needed. Note that the 200 ft difference amounts to 30 seconds at 80 ips (the speed for
+speed-up-factor 2 observations).
+<!--l. 11555--><p class="noindent" >Note that changing the length of the tape is not sufficient to switch from thick to thin tape. In that case
+one usually also needs to modify <a 
+href="#x29-2420003.4.1">the recording density</a>
+<!--l. 11559--><p class="noindent" >S2 tape length should be given in seconds, corresponding to Standard Play in a US VCR. A tape with
+label ST-120 (or SE-180) should be scheduled with TPLENGTH = 7200
+<!--l. 11569--><p class="noindent" >
+               <dl class="list1"><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11569--><p class="noindent" ><span 
+class="cmbx-10">Argument:</span>
+               An
+               array
+               of
+               30
+               integers
+               giving
+               tape
+               lengths
+               in
+               feet.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11569--><p class="noindent" ><span 
+class="cmbx-10">Options:</span>
+               Any
+               value,
+               but
+               8800
+               and
+               17600
+               are
+               likely
+               to
+                                                                                
+                                                                                
+               be
+               the
+               true
+               values.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11569--><p class="noindent" ><span 
+class="cmbx-10">Default:</span>
+               17600
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11569--><p class="noindent" ><span 
+class="cmbx-10">Usage:</span>
+               Defaults
+               to
+               previous
+               value.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11569--><p class="noindent" ><span 
+class="cmbx-10">Example:</span>
+               <span 
+class="cmtt-10">TPLENGTH=17600,00,8800</span></dd></dl>
+<!--l. 11571--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x29-2420003.4.1"></a><span 
+class="cmtt-10">DENSITY</span></h5>
+<!--l. 11573--><p class="noindent" ><span 
+class="cmtt-10">DENSITY </span>specifies whether the tape is to be written at high or low density. The tape speeds
+corresponding to each density can be specified in the setup file using <span 
+class="cmtt-10">TPSPEEDH </span>SP:TPSPEEDH and
+<span 
+class="cmtt-10">TPSPEEDL</span>SP:TPSPEEDL or, better, they can be allowed to default.
+<!--l. 11579--><p class="noindent" >For S2 tapes, density &#8220;<span 
+class="cmtt-10">H</span>&#8221; refers to <span 
+class="cmtt-10">SLP </span>and &#8220;<span 
+class="cmtt-10">L</span>&#8221; to <span 
+class="cmtt-10">LP</span>.
+<!--l. 11589--><p class="noindent" >
+               <dl class="list1"><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11589--><p class="noindent" ><span 
+class="cmbx-10">Argument:</span>
+               An
+               array
+               of
+               character
+               strings
+               of
+               up
+               to
+               8
+               characters
+               each,
+               of
+                                                                                
+                                                                                
+               which
+               only
+               the
+               first
+               character
+               will
+               be
+               used.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11589--><p class="noindent" ><span 
+class="cmbx-10">Options:</span>
+               The
+               first
+               letter
+               of
+               each
+               string
+               must
+               be
+               &#8220;<span 
+class="cmtt-10">H</span>&#8221;
+               or
+               &#8220;<span 
+class="cmtt-10">L</span>&#8221;
+               (not
+               case
+               sensitive).
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11589--><p class="noindent" ><span 
+class="cmbx-10">Default:</span>
+               <span 
+class="cmtt-10">H</span>
+               for
+               the
+               VLBA
+               and
+               VLA,
+               <span 
+class="cmtt-10">L</span>
+               for
+               others
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11589--><p class="noindent" ><span 
+class="cmbx-10">Usage:</span>
+               Defaults
+               to
+               the
+               previous
+               value.
+                                                                                
+                                                                                
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11589--><p class="noindent" ><span 
+class="cmbx-10">Example:</span>
+               <span 
+class="cmtt-10">DENSITY=H,L,L</span></dd></dl>
+<!--l. 11591--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x29-2430003.4.1"></a><span 
+class="cmtt-10">TPTIME</span></h5>
+<!--l. 11593--><p class="noindent" ><span 
+class="cmtt-10">TPTIME. </span>This is for Mark&#x00A0;II. It specifies the reference time for tape changes at each site. The tapes at
+the station will be changed an integral number of 4 hour intervals before or after this time. In effect, it
+is a station dependent <span 
+class="cmtt-10">TPREF</span>. This value, if specified, will override <span 
+class="cmtt-10">TPREF </span>for the corresponding
+station.
+<!--l. 11605--><p class="noindent" >
+               <dl class="list1"><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11605--><p class="noindent" ><span 
+class="cmbx-10">Argument:</span>
+               An
+               array
+               of
+               30
+               times
+               in
+               <span 
+class="cmtt-10">hh:mm:ss</span>
+               format.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11605--><p class="noindent" ><span 
+class="cmbx-10">Options:</span>
+               Any
+               valid
+               time
+               between
+               <span 
+class="cmtt-10">0</span>
+               and
+               <span 
+class="cmtt-10">24</span>
+               hours.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11605--><p class="noindent" ><span 
+class="cmbx-10">Default:</span>
+               <span 
+class="cmtt-10">-1</span>
+               which
+               causes
+               it
+               not
+               to
+                                                                                
+                                                                                
+               be
+               used.
+               <span 
+class="cmtt-10">TPREF</span>
+               or
+               the
+               first
+               scan
+               of
+               the
+               project
+               will
+               be
+               used
+               instead.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11605--><p class="noindent" ><span 
+class="cmbx-10">Usage:</span>
+               Defaults
+               to
+               previous
+               value.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11605--><p class="noindent" ><span 
+class="cmbx-10">Example:</span>
+               <span 
+class="cmtt-10">TPTIME=2:0:0,3:0:0,2:0:0</span></dd></dl>
+<!--l. 11607--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x29-2440003.4.1"></a><span 
+class="cmtt-10">HEADMODE</span></h5>
+<!--l. 11609--><p class="noindent" ><span 
+class="cmtt-10">HEADMODE. </span>This allows the user to set the head usage mode. Such a mode includes the head positions
+for each pass and the sequence of head positions to use for passes. There are two options and a default.
+Use of anything except the default (blank) is only recommended for system tests. The first option is
+VLBA14 which is the standard VLBA/MARKIV sequence with 14 head positions. The other option is
+MKIV2H which is appropriate for Mark IV wide band observations that use two headstacks. If
+MKIV2H is set by the user, or more likely by the program when in TWOHEAD mode, NEADHDPOS
+is forced to 6.
+<!--l. 11624--><p class="noindent" >
+               <dl class="list1"><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11624--><p class="noindent" ><span 
+class="cmbx-10">Argument:</span>
+               A
+               character
+               string
+               of
+               up
+                                                                                
+                                                                                
+               to
+               8
+               characters
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11624--><p class="noindent" ><span 
+class="cmbx-10">Options:</span>
+               &#8217;
+               &#8217;,
+               &#8217;VLBA14&#8217;,
+               or
+               &#8217;MKIV2H&#8217;
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11624--><p class="noindent" ><span 
+class="cmbx-10">Default:</span>
+               &#8217;
+               &#8217;,
+               which
+               tells
+               the
+               program
+               to
+               figure
+               it
+               out.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11624--><p class="noindent" ><span 
+class="cmbx-10">Usage:</span>
+               Defaults
+               to
+               previous
+               value.
+               </dd><dt class="list">
+      </dt><dd 
+class="list">
+               <!--l. 11624--><p class="noindent" ><span 
+class="cmbx-10">Example:</span>
+               <span 
+class="cmtt-10">HEADMODE=MKIV2H</span></dd></dl>
+                                                                                
+                                                                                
+<!--l. 11626--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECFRQCATFrequencyCatalog.html" >next</a>] [<a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html" >prev</a>] [<a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#taillabelSECSTACATStationCatalogandLocationsCatalog.html" >prev-tail</a>] [<a 
+href="labelSECTPINITapeInitializationFile.html" >front</a>] [<a 
+href="labelCHPINPUTTHESCHEDINPUTFILESIncludesparameterlists.html#labelSECTPINITapeInitializationFile.html" >up</a>] </p></div>
+<!--l. 11626--><p class="noindent" ><a 
+ id="taillabelSECTPINITapeInitializationFile.html"></a>   
+</body></html> 

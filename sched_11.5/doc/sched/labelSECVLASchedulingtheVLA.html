@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Scheduling the VLA</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 4067--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECINDIVSpecialConcernsforSpecificObservatories.html" >next</a>] [<a 
+href="labelSECGEOSEGAutomaticInsertionofGeodeticSegments.html" >prev</a>] [<a 
+href="labelSECGEOSEGAutomaticInsertionofGeodeticSegments.html#taillabelSECGEOSEGAutomaticInsertionofGeodeticSegments.html" >prev-tail</a>] [<a 
+href="#taillabelSECVLASchedulingtheVLA.html">tail</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECVLASchedulingtheVLA.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">2.9   </span> <a 
+ id="x20-370002.9"></a>Scheduling the VLA</h3>
+<!--l. 4069--><p class="noindent" >For much detailed information on VLBI at the VLA, follow the links to the <a 
+href="https://science.nrao.edu/facilities/vla/docs/manuals/obsguide/modes/vlbi" >VLBI at the VLA
+guide</a>.
+<!--l. 4073--><p class="noindent" >The WIDAR correlator is capable of providing phased array output from the VLA in a VDIF format to
+be recorded on a Mark5C disk recording unit. Such data can be played back on the DiFX correlators, at
+least. Since recorder ready data are provided by WIDAR, none of the normal VLBI backends are used.
+But the properties of the correlator are rather similar to the RDBE so, in fact, scheduling
+the VLA has become more similar to scheduling other antennas than it was with the old
+system.
+<!--l. 4082--><p class="noindent" >The <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>output used by the VLA is the VEX file. In many ways, the setups are similar to those
+for the VLBA. The user does not need to worry about the details of the internal VLA LO setup,
+although the front end name ( <a 
+href="labelSECSETUPSSetupFiles.html#x31-2630003.6.4"><span 
+class="cmtt-10">FE</span></a>) does need to be provided as there can be ambiguities. The software
+involved in translating the VEX file and making the VLA scheduling blocks (vex2opt) takes care of
+most details. The important factor is that the LO and baseband frequency specifications, taking into
+account the IF sideband, add up to the RF frequency of the bottom edge of the desired
+baseband. The bottom edge is required because the EVLA phased output is always net upper
+sideband.
+<!--l. 4095--><p class="noindent" >As for setups, the VLA is fairly similar to a VLBA antenna. But there are several crucial differences.
+The VLA is now compatible with everything that the VLBA can produce (RDBE/PFB,
+RDBE/DDC-4 and RDBE/DDC-8). The channels on the VLA must come in polarization
+pairs. Each baseband must come from a separate IF with RCP in A or B and LCP in C or
+D. There are some cases above 18 GHz where the BD pair must be at a lower frequency
+than AC, but that mainly affects Ka band (&#x00A0;30 GHz), which is not available on the VLBA.
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will not try to protect against that although the hooks are in the code in case of future
+need.
+<!--l. 4105--><p class="noindent" >The restriction to net upper sideband needs to be considered when using the RDBE with the PFB
+personality on the VLBA. Either the VLBA LO needs to be above the RF frequency, or the sideband
+inverting capability of DiFX needs to be invoked. For some bands, a high VLBA LO is
+not possible so the DiFX mode will be needed. If the LO/sideband combination from a
+station for a channel spans the same RF range as the LO/sideband combination at another
+station, despite opposite sidebands, SCHED will detect the overlap and schedule for sideband
+inversion.
+<!--l. 4115--><p class="noindent" >Sample schedules that include the VLA have been provided. One using the PFB personality of the
+RDBE at the VLBA is <a 
+href="examples/jvla.key" ><span 
+class="cmsl-10">jvla.key</span></a> (modify for 16 channels!). The WIDAR baseband channels can have
+much wider bandwidths than the PFB 32 MHz channels. They can be up to 128 MHz wide so, with 4,
+there is enough bandwidth to feed 2 Gbps, matching the output of the VLBA stations when they use
+the DDC personality of the RDBE. For an example of using 128 MHz bandwidths with WIDAR and
+the RDBE/DDC, see <a 
+href="examples/vladdc.key" ><span 
+class="cmsl-10">vladdc.key</span></a>.
+<!--l. 4126--><p class="noindent" >For scheduling, the user should be aware that the VLA slews at 40 deg/min in azimuth and 20 deg/min
+in elevation, which is about half the speed of the VLBA. This can be an issue for widely separated
+sources. It is, however, faster than some other HSA or Global VLBI antennas. The use of
+<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-880003.1.2"><span 
+class="cmtt-10">DWELL</span></a> for scheduling should insure that adequate on-source time is obtained with the slower
+antennas.
+<!--l. 4135--><p class="noindent" >Another issue is that, each time a frequency is seen for the first time, there needs to be a one minute
+                                                                                
+                                                                                
+dummy scan during which the levels of the analog signals into the samplers are set. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can
+handle this when using <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-880003.1.2"><span 
+class="cmtt-10">DWELL</span></a> scheduling by inserting the appropriate amount of time as a gap before
+the first scan with each frequency. The time required is given by the antenna catalog parameter
+<span 
+class="cmtt-10">TLEVSET</span>. <span 
+class="cmsl-10">VEX2OPT </span>will insert the required dummy scan in this gap. Alternatively, the user can
+explicitly insert DUMMY scans. These are scans that are not recording, not doing pointing, and not
+doing phasing and are at least as long as <span 
+class="cmtt-10">TLEVSET </span>(1 minute for the VLA). <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will not try to
+insert a gap, or claim a late on-source time, based on <span 
+class="cmtt-10">TLEVSET </span>before such a scan. It is
+traditional to put a series of such DUMMY scans at the start of the observing block, stepping
+through all the frequencies that will be used in the observing block. Note that an enhancement
+needed for the DUMMY scans on the VLA is to avoid needing DUMMY scans even for small
+frequency changes such as those associated with different Doppler frequencies for different
+sources.
+<!--l. 4155--><p class="noindent" ><span 
+class="cmbx-10">ARRAY PHASING:</span>
+<!--l. 4157--><p class="noindent" >An important concern unique to the VLA and other interferometers used in phased array mode to
+generate a single data stream for VLBI is the need to adjust the individual antenna phases so that the
+signals add coherently when summed. The instructions to actively phase during a scan, to
+hold phase from a previous active scan, or not apply phase offsets are given in the VEX
+file in &#8220;intents&#8221;. The relevant intents are <span 
+class="cmtt-10">AUTOPHASE</span><span 
+class="cmtt-10">_DETERMINE</span>, <span 
+class="cmtt-10">AUTOPHASE</span><span 
+class="cmtt-10">_APPLY</span>, and
+<span 
+class="cmtt-10">AUTOPHASE</span><span 
+class="cmtt-10">_OFF</span>. Each can be preceded by <span 
+class="cmtt-10">VLA: </span>(eg <span 
+class="cmtt-10">VLA:AUTOPHASE</span><span 
+class="cmtt-10">_DETERMINE </span>if there is a reason to
+make them specific to the VLA. They can be provided directly using the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1270003.1.2"><span 
+class="cmtt-10">INTENTs</span></a> input to
+<span 
+class="cmcsc-10">SCHED</span>, but <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will also generate them as needed based on <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2200003.1.2"><span 
+class="cmtt-10">VLAMODE</span></a> parameter if that
+is used, which is recommended. The use of <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2200003.1.2"><span 
+class="cmtt-10">VLAMODE</span></a> is preferred because the defaulting
+behavior between scans is cleaner &#8212; it does not get tangled with other uses of <span 
+class="cmtt-10">INTENTs</span>.
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will not allow the use of both phasing <span 
+class="cmtt-10">INTENTs </span>and <span 
+class="cmtt-10">VLAMODES </span>as then can step on each
+other.
+<!--l. 4177--><p class="noindent" >Phasing scans can be added simply as additional VLBI scans, or the VLA can be sent to a source not
+observed by the rest of the antennas and for which no recording is made.
+<!--l. 4181--><p class="noindent" >For successful phasing of the array, a source must be greater than about 0.1 Jy (That is an old VLA
+number but is probably still reasonable. See the guide referenced above for details) and have a position
+that is good to a fraction of the VLA synthesized beam (enhanced sensitivity is only obtained over this
+area). It must have small structure phases and not have other sources of comparable strength
+in the primary beam that might confuse the phasing algorithm. The position accuracy is
+especially important if a calibrator is being used to phase the array for observations of another
+source.
+<!--l. 4191--><p class="noindent" >Adding phasing sources is tricky, because it is desirable to spend a minimum amount of time on them,
+but if they are missed, the rest of the data will be bad. When phasing, the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>scan during
+which the phasing occurs is broken into subscans by the VLA as only one solution is done
+per subscan. The <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>scan should be long enough for at least 4 such subscans. The
+length of the subscans is set by the scan-dependent parameter <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2220003.1.2"><span 
+class="cmtt-10">VLAPTIME</span></a> in seconds. The
+default is 10 seconds which is reasonable for most good phasing sources and is the minimum
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will allow. If it is necessary to phase on a weak source, this could be extended. With
+the default subscan length, the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>scan for phasing should be at least 40 seconds
+on-source.
+<!--l. 4205--><p class="noindent" >The interval between phasing scans depends on the observing frequency, the VLA configuration, and
+the weather. Intervals between 15 and 30 minutes are typical.
+<!--l. 4209--><p class="noindent" ><span 
+class="cmtt-10">REFERENCE POINTING</span>
+<!--l. 4211--><p class="noindent" >At frequencies greater than 15 GHz, the VLA a priori pointing is not good enough so reference pointing
+must be used. That is also controlled through use of <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1270003.1.2"><span 
+class="cmtt-10">INTENsT</span></a>.
+<!--l. 4216--><p class="noindent" >****** Document how to insert pointing scans, and the use of automatic insertion of pointing
+scans.
+<!--l. 4219--><p class="noindent" >The old parameter <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2240003.1.2"><span 
+class="cmtt-10">VLAPSRC</span></a> allowed automatic insertion of VLA phasing scans in the observe files. That
+                                                                                
+                                                                                
+scheme no longer works. But an item on the to-do list is to make that parameter insert VLA phasing
+scans. That has not yet been done.
+<!--l. 4226--><p class="noindent" ><span 
+class="cmbx-10">OTHER CONSIDERATIONS</span>
+<!--l. 4228--><p class="noindent" >If doing DELZN segments to measure the tropospheric delay, it is best to use a single dish mode as the
+phasing can take time and can confuse the troposphere solution algorithm.
+<!--l. 4232--><p class="noindent" >It is still early days for VLBI observations using the WIDAR correlator to generate the phased array
+output data. This section will likely need more information eventually.
+<!--l. 4236--><p class="noindent" >Note that normal output from the WIDAR correlator will be obtained during VLBI observations. Such
+observations may be useful for determination of large scale structure, total flux density, polarization, or
+absolute amplitude calibration. The user may need some VLA specific scans, such as on a flux
+calibrator, to make full use of such data.
+<!--l. 4242--><p class="noindent" >This section has changed drastically with the advent of the upgrade to the VLA and the use of
+the WIDAR correlator. If you have a perverse interest in the old system, see the obsolete
+sections.
+                                                                                
+                                                                                
+<!--l. 4247--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECINDIVSpecialConcernsforSpecificObservatories.html" >next</a>] [<a 
+href="labelSECGEOSEGAutomaticInsertionofGeodeticSegments.html" >prev</a>] [<a 
+href="labelSECGEOSEGAutomaticInsertionofGeodeticSegments.html#taillabelSECGEOSEGAutomaticInsertionofGeodeticSegments.html" >prev-tail</a>] [<a 
+href="labelSECVLASchedulingtheVLA.html" >front</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECVLASchedulingtheVLA.html" >up</a>] </p></div>
+<!--l. 4247--><p class="noindent" ><a 
+ id="taillabelSECVLASchedulingtheVLA.html"></a>  
+</body></html> 

@@ -1,0 +1,266 @@
+  COVER INFORMATION 
+
+ Station:    VLBA_KP   (Code Kp ) 
+ Experiment: rincon
+ Exp. Code:  pb002c  
+
+
+Schedule Version:       1.00
+Processed by SCHED version:  11.50  Development version 11.5. Started Apr. 2
+
+PI:       Walter Brisken
+
+Address:  DSOC
+ 
+ 
+ 
+
+Phone:    505-234-5912
+EMAIL:    wbrisken@lbo.us
+Fax:      575-835-2027
+Phone during observation: 575-835-7133
+
+Observing mode: DDC
+
+Notes:
+ 
+ 
+ 
+
+Schedule for VLBA_KP   (Code Kp )                                   Page   2
+               rincon
+  UP:  D => Below limits;  H => Below horizon mask;  W => still slewing at end;  blank => Up.
+  Early: Seconds between end of slew and start.   Dwell: On source seconds. 
+  Disk: GBytes recorded to this point.
+  TPStart:  Recording start time.  Frequencies are LO sum (band edge).
+  SYNC: Time correlator is expected to sync up.
+----------------------------------------------------------------------------------------
+Start UT  Source               Start / Stop                 Early    Disk   TPStart
+Stop UT                  LST      EL    AZ   HA  UP   ParA  Dwell   GBytes    SYNC
+----------------------------------------------------------------------------------------
+
+ --- Tue  10 Apr 2018   Day 100 ---
+
+ Next scan frequencies:  1524.00  1524.00
+ Next BBC frequencies:    576.00   576.00
+ Next scan bandwidths:     64.00    64.00
+
+15 30 00  PRN16        21 18 49  54.4 122.5 -2.0     -46.5     0        0   15 30 05
+15 40 00  ---          21 28 50  56.2 125.5 -1.8     -44.4   600       38   15 30 05
+
+15 40 00  3C454.3      21 28 50  65.0 123.8 -1.4     -47.3   -26       38   15 40 26
+15 50 00  ---          21 38 52  66.7 127.9 -1.3     -44.2   574       75   15 40 26
+
+15 50 00  PRN133       21 38 52  48.6 156.2 -1.0     -20.1   -45       75   15 50 45
+16 00 00  ---          21 48 54  49.4 159.8 -0.9     -17.1   555      111   15 50 45
+
+16 00 00  PRN135       21 48 54  46.2 216.6  1.6      30.5   -50      111   16 00 50
+16 10 00  ---          21 58 55  44.8 219.6  1.8      32.9   550      146   16 00 50
+
+16 10 00  3C454.3      21 58 55  69.8 137.8 -0.9     -36.4   -68      146   16 11 08
+16 20 00  ---          22 08 57  71.1 143.8 -0.8     -31.5   532      181   16 11 08
+
+16 20 00  PRN133       22 08 57  49.0 156.0 -1.0     -20.3   -53      181   16 20 53
+16 30 00  ---          22 18 58  49.8 159.6 -0.9     -17.3   547      216   16 20 53
+
+16 30 00  PRN16        22 18 58  56.5  65.8 -2.7     -89.9   -78      216   16 31 18
+16 40 00  ---          22 29 00  58.5  65.7 -2.5     -91.5   522      250   16 31 18
+
+16 40 00  3C454.3      22 29 00  73.2 158.0 -0.4     -19.3   -77      250   16 41 17
+16 50 00  ---          22 39 02  73.9 166.2 -0.3     -12.2   523      283   16 41 17
+
+16 50 00  PRN133       22 39 02  49.4 155.8 -1.0     -20.5   -58      283   16 50 58
+17 00 00  ---          22 49 03  50.2 159.4 -0.9     -17.4   542      318   16 50 58
+
+17 00 00  PRN16        22 49 03  46.4  48.8 -3.6     -93.6   -90      318   17 01 30
+17 10 00  ---          22 59 05  48.0  48.6 -3.4     -95.6   510      351   17 01 30
+
+17 10 00  3C454.3      22 59 05  74.3 183.8  0.1       3.3  -109      351   17 11 49
+17 20 00  ---          23 09 07  74.0 192.5  0.2      11.0   491      383   17 11 49
+
+17 20 00  PRN133       23 09 07  49.8 155.6 -1.0     -20.6   -57      383   17 20 57
+17 30 00  ---          23 19 08  50.6 159.3 -0.9     -17.6   543      418   17 20 57
+
+17 30 00  PRN135       23 19 08  46.1 216.6  1.6      30.5   -51      418   17 30 51
+17 40 00  ---          23 29 10  44.8 219.6  1.8      32.9   549      453   17 30 51
+
+17 40 00  3C454.3      23 29 10  72.5 208.4  0.6      24.8   -64      453   17 41 04
+17 50 00  ---          23 39 12  71.3 215.2  0.7      30.7   536      488   17 41 04
+Schedule for VLBA_KP   (Code Kp )                                   Page   3
+               rincon
+  UP:  D => Below limits;  H => Below horizon mask;  W => still slewing at end;  blank => Up.
+  Early: Seconds between end of slew and start.   Dwell: On source seconds. 
+  Disk: GBytes recorded to this point.
+  TPStart:  Recording start time.  Frequencies are LO sum (band edge).
+  SYNC: Time correlator is expected to sync up.
+----------------------------------------------------------------------------------------
+Start UT  Source               Start / Stop                 Early    Disk   TPStart
+Stop UT                  LST      EL    AZ   HA  UP   ParA  Dwell   GBytes    SYNC
+----------------------------------------------------------------------------------------
+
+ --- Tue  10 Apr 2018   Day 100 ---
+
+17 50 00  PRN133       23 39 12  50.2 155.3 -1.0     -20.8   -52      488   17 50 52
+18 00 00  ---          23 49 13  51.0 159.1 -0.9     -17.7   548      523   17 50 52
+
+18 00 00  PRN08        23 49 13  36.1 129.8 -2.6     -41.1   -38      523   18 00 38
+18 10 00  ---          23 59 15  37.7 132.1 -2.4     -39.4   562      559   18 00 38
+
+18 10 00  PRN135       23 59 15  46.1 216.6  1.6      30.5   -71      559   18 11 11
+18 20 00  ---          00 09 17  44.8 219.6  1.8      32.9   529      593   18 11 11
+
+18 20 00  PRN133       00 09 17  50.6 155.1 -1.0     -21.0   -55      593   18 20 55
+18 30 00  ---          00 19 18  51.5 158.8 -0.9     -17.9   545      628   18 20 55
+
+18 30 00  PRN08        00 19 18  45.3 114.0 -2.7     -51.5   -41      628   18 30 41
+18 40 00  ---          00 29 20  47.2 116.3 -2.5     -50.2   559      664   18 30 41
+
+18 40 00  3C454.3      00 29 20  63.4 239.3  1.6      49.5  -100      664   18 41 40
+18 50 00  ---          00 39 21  61.6 242.6  1.7      51.7   500      696   18 41 40
+
+18 50 00  PRN133       00 39 21  51.0 154.9 -1.0     -21.2   -73      696   18 51 13
+19 00 00  ---          00 49 23  51.9 158.6 -0.9     -18.0   527      730   18 51 13
+
+19 00 00  PRN08        00 49 23  50.2  92.6 -2.9     -66.5   -57      730   19 00 57
+19 10 00  ---          00 59 25  52.3  94.1 -2.8     -66.3   543      765   19 00 57
+
+19 10 00  3C454.3      00 59 25  57.7 248.3  2.1      55.2  -123      765   19 12 03
+19 20 00  ---          01 09 26  55.7 250.8  2.2      56.5   477      796   19 12 03
+
+19 20 00  PRN133       01 09 26  51.4 154.6 -1.0     -21.4   -79      796   19 21 19
+19 30 00  ---          01 19 28  52.3 158.4 -0.9     -18.2   521      830   19 21 19
+
+
+SETUP FILE INFORMATION:
+   NOTE: If DOPPLER, FREQ, or BW were used, see the individual scans for the final BBC settings.
+
+
+ ======== Setup file: DDC1
+   Matching groups in /home/orion/lbo/sched/trunk/sched/catalogs/freq_RDBE.dat:
+     v20cm_1         FD and KP filtered below 1330. SC filtered above 1440
+
+   Setup group:    1         Station: VLBA_KP           Total bit rate:   512
+   Format: VDIF              Bits per sample: 2         Sample rate:128.000
+   Number of channels:  2    DBE type: RDBE_DDC         Speedup factor:   1.00
+
+   Disk used to record data.
+
+   1st LO=   2100.00   2100.00
+   Net SB=         U         U
+   IF SB =         L         L
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         L         L
+   IF    =        A         C 
+
+   VLBA FE=     20cm     omit     20cm     omit
+   VLBA Synth=  12.9      2.1     12.9
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   1  Setup file default.  Used with PCAL = off
+   LO sum=   1524.00  1524.00
+   BBC fr=    576.00   576.00
+   Bandwd=     64.00    64.00
+   VLBA legacy crd files using  2 channels based on RDBE channels:   1  2
+   CRD fr=     552.00    552.00
+   CRD bw=      16.00     16.00
+    Matching frequency sets:   1
+
+   Frequency Set:   2  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   1524.00  1524.00
+   BBC fr=    576.00   576.00
+   Bandwd=     64.00    64.00
+   VLBA legacy crd files using  2 channels based on RDBE channels:   1  2
+   CRD fr=     552.01    552.01
+   CRD bw=      16.00     16.00
+    Matching frequency sets:   2
+
+   Track assignments are: 
+    track1=   1,  2
+    barrel=roll_off 
+
+ POSITIONS OF SOURCES USED IN RECORDING SCANS
+
+   Source                         Source position (RA/Dec)                        Error
+                        (B1950)             (J2000)             (Date)            (mas)
+
+ * 3C454.3           22 51 29.519738   * 22 53 57.747938     22 54 50.189873       0.67
+   J2253+1608        15 52 54.34810    * 16 08 53.56093      16 14 30.66457        0.70
+   2251+158          /home/orion/lbo/sched/trunk/sched/catalogs/sources.gsfc
+   J2253+16          GSFC 2015a astro solution, unpublished  40748 observations.
+
+ * PRN16             22 50 37.692386   * 22 53 06.302605     22 53 58.878947       0.00
+                     14 39 17.97773    * 14 55 16.10153      15 00 53.02240        0.00
+                     Satellite. Position is for scan 1, center Earth.
+                     Planetary motion used.  Ref. MJD:   58218.6458
+                        Rates: RA =  0.10439E+06 s/day   Dec =  0.21773E+07 arcsec/day
+                     KERFILE: current.tls
+                     TLEFILE: prn016.tle
+
+ * PRN133            22 09 49.978267   * 22 12 24.699199     22 13 19.497005       0.00
+                    -01 53 17.84590    *-01 38 26.65194     -01 33 09.29879        0.00
+                     Satellite. Position is for scan 1, center Earth.
+                     Planetary motion used.  Ref. MJD:   58218.6458
+                        Rates: RA =  0.86619E+05 s/day   Dec =  0.57501E+05 arcsec/day
+                     KERFILE: current.tls
+                     TLEFILE: prn133.tle
+
+ * PRN135            19 49 39.411482   * 19 52 13.310236     19 53 08.516206       0.00
+                    -00 10 22.51151    *-00 02 36.10989      00 00 11.56519        0.00
+                     Satellite. Position is for scan 1, center Earth.
+                     Planetary motion used.  Ref. MJD:   58218.6458
+                        Rates: RA =  0.86643E+05 s/day   Dec = -0.28102E+04 arcsec/day
+                     KERFILE: current.tls
+                     TLEFILE: prn135.tle
+
+ * PRN08             21 33 05.074990   * 21 36 30.786704     21 37 42.931567       0.00
+                    -52 48 42.16862    *-52 35 14.32431     -52 30 10.16094        0.00
+                     Satellite. Position is for scan 1, center Earth.
+                     Planetary motion used.  Ref. MJD:   58218.6458
+                        Rates: RA =  0.26666E+06 s/day   Dec =  0.95772E+06 arcsec/day
+                     KERFILE: current.tls
+                     TLEFILE: prn008.tle
+
+
+
+SOURCE SCAN SUMMARY FOR SOURCES LISTED ABOVE
+
+     Scan hours are for recording scans only. 
+     Baseline hours are only counted for scans above horizon at both ends.
+  Source       Setup file             Frequency sets                  Observing hours
+                                   (duplicates not shown)              Scan  Baseline
+  3C454.3    DDC1                  1 2                               1.167     0.000
+  PRN16      DDC1                  1                                 0.500     0.000
+  PRN133     DDC1                  1                                 1.333     0.000
+  PRN135     DDC1                  1                                 0.500     0.000
+  PRN08      DDC1                  1                                 0.500     0.000
+
+
+EFFECT OF SOLAR CORONA
+
+  The solar corona can cause unstable phases for sources too close to the Sun.
+  SCHED provides warnings at individual scans for distances less than 10 degrees.
+  The distance from the Sun to each source in this schedule is:
+    Source         Sun distance (deg) 
+   3C454.3             35.6
+   PRN16               35.6
+   PRN133              46.8
+   PRN135              81.0
+   PRN08               76.4
+
+  Barry Clark estimates from predictions by Ketan Desai of IPM scattering sizes 
+  that the Sun will cause amplitude reductions on the  longest VLBA baselines 
+  at a solar distance of 60deg F^(-0.6) where F is in GHz. 
+  For common VLBI bands, this is: 
+       327 MHz        117. deg 
+       610 MHz         81. deg 
+       1.6 GHz         45. deg 
+       2.3 GHz         36. deg 
+       5.0 GHz         23. deg 
+       8.4 GHz         17. deg 
+      15.0 GHz         12. deg 
+      22.0 GHz          9. deg 
+      43.0 GHz          6. deg 
+

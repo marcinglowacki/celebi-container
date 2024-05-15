@@ -1,0 +1,2374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Station Catalog and Locations Catalog</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 10795--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECTPINITapeInitializationFile.html" >next</a>] [<a 
+href="labelSECSRCCATSourceCatalog.html" >prev</a>] [<a 
+href="labelSECSRCCATSourceCatalog.html#taillabelSECSRCCATSourceCatalog.html" >prev-tail</a>] [<a 
+href="#taillabelSECSTACATStationCatalogandLocationsCatalog.html">tail</a>] [<a 
+href="labelCHPINPUTTHESCHEDINPUTFILESIncludesparameterlists.html#labelSECSTACATStationCatalogandLocationsCatalog.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">3.3   </span> <a 
+ id="x28-2310003.3"></a>Station Catalog and Locations Catalog</h3>
+<!--l. 10797--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>uses a catalog to get station information such as names, positions, horizons, slew
+characteristics and more. This catalog is in keyin format. Station positions may be stored separately in
+a Locations Catalog. There are standard Station and Location Catalogs which will almost certainly
+have all stations used by a project. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will find these catalogs by default or their locations may
+be specified. Any or all of the Station Catalog entries may be given in the main <span 
+class="cmcsc-10">SCHED </span>input if
+desired. In any case, the scheduler should consult the catalog to be sure that the right station names
+are being used in the schedule. The catalog associated with this release of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is at
+<a 
+href="catalogs/stations.dat" ><span 
+class="cmtt-10">$SCHED/catalogs/stations.dat</span></a>.
+<!--l. 10810--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input parameter <span 
+class="cmtt-10">STAFILE </span>is used to point to any desired external catalog. A file
+name of up to 80 characters can be specified. The default is the standard catalog for digital
+backends:
+<!--l. 10813--><p class="noindent" ><span 
+class="cmtt-10">STAFILE=$SCHED/catalogs/stations</span><span 
+class="cmtt-10">_RDBE.dat</span>. Eventually that will be set back to
+<span 
+class="cmtt-10">STAFILE=$SCHED/catalogs/stations.dat </span>once the conversion of documentation and examples is
+complete.
+<!--l. 10817--><p class="noindent" >Station catalog information can be given in the main <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>keyin file. If the keyword <span 
+class="cmtt-10">STACAT</span>
+appears, all input after the next &#8220;/&#8221; is assumed to consist of station catalog entries until a line
+containing the keyword <span 
+class="cmtt-10">ENDCAT </span>and a &#8220;/&#8221; is encountered (don&#8217;t combine this keyword with a catalog
+entry). Such &#8220;in-line&#8221; catalogs must appear in the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>keyin file before the all of the input for
+the first scan is complete. This allows the use of station codes to specify stations in each
+scan.
+<!--l. 10826--><p class="noindent" >Both in-line catalog entries and an external catalog may be used for the station catalog. This
+would mainly be useful if there is a non-standard antenna in the schedule. That antenna&#8217;s
+parameters can be put in the in-line catalog while all other antennas are picked up from the
+external catalog. If you wish to prevent <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>from looking in external catalogs, specify
+<span 
+class="cmtt-10">STAFILE=NONE</span>.
+<!--l. 10833--><p class="noindent" >It is only necessary to give one of <span 
+class="cmtt-10">X</span>, <span 
+class="cmtt-10">Y</span>, and <span 
+class="cmtt-10">Z </span>or <span 
+class="cmtt-10">ELev</span>, <span 
+class="cmtt-10">LAT</span>, and <span 
+class="cmtt-10">LONG</span>. The missing set will be calculated.
+If both are given, the provided values will be used. If a conversion is done, the WGS84 ellipsoid is used
+and the calculations are accurate at the cm level. Since WGS84 is tied to the ITRF, this
+should be a good way to convert GPS coordinates to the Earth centered coordinates used in
+VLBI.
+<!--l. 10841--><p class="noindent" >Some of the information that can be given in the station catalog can also be provided through a
+locations catalog. This is mostly position information. The locations catalog can be specified by
+<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1310003.1.2"><span 
+class="cmtt-10">LOCFILE</span></a>. See the description of that parameter for a list of the station parameter that can be in the
+locations catalog. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will read and store the locations catalog before reading the
+stations catalog. If the station position is missing from the stations catalog, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will
+search for a station in the locations catalog with the name specified with <span 
+class="cmtt-10">DBNAME </span>in the
+stations catalog. If a match is found, the associated coordinates will be used. The locations
+catalog is used because, in the standard catalogs, the station locations are from the VLBA
+correlator data base while all the other information is from other places. It is much easier to
+maintain separate catalogs. Users will probably not need to worry about all this, except
+perhaps to specify <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1310003.1.2"><span 
+class="cmtt-10">LOCFILE</span></a> if they keep the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>standard catalogs in a non-standard
+place.
+<!--l. 10861--><p class="noindent" >The parameters of the station catalog are given below. Items that can be in the locations catalog are
+                                                                                
+                                                                                
+noted. Lower case letters are optional. Entries for a station in the Station Catalog are terminated with
+a &#8220;/&#8221;.
+<!--l. 10866--><p class="noindent" >Version and station names:
+     <dl class="description"><dt class="description">
+<span 
+class="cmtt-10">VERSION</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Catalog
+     version.
+     Actually
+     set
+     to
+     the
+     date
+     when
+     all
+     the
+     master
+     catalog
+     segments
+     were
+     last
+     gathered
+     to
+     form
+     a
+     full
+     catalog.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">STAtion</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Station
+     name.
+     Up
+     to
+     8
+     characters.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">STCode</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Station
+     code.
+     Up
+     to
+     3
+     characters.
+     Usually
+     there
+     are
+                                                                                
+                                                                                
+     2
+     characters.
+     See
+     Appendix
+     <a 
+href="labelAPPSTACODESStationCodes.html#x44-353000A.1">A.1<!--tex4ht:ref: APP:STACODES --></a>
+     for
+     a
+     list
+     of
+     codes.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">DBNAME</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     station
+     name
+     used
+     in
+     the
+     VLBA
+     correlator
+     data
+     base.
+     Might
+     not
+     be
+     the
+     same
+     as
+     <span 
+class="cmtt-10">STAtion</span>.
+     <span 
+class="cmtt-10">DBNAME</span>
+     is
+     used
+     to
+     associate
+     entries
+     in
+     the
+     locations
+     catalog
+     with
+     station
+     catalog
+     entries.
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>uses
+     <span 
+class="cmtt-10">STAtion</span>
+     for
+     almost
+     everything
+     else.
+                                                                                
+                                                                                
+     This
+     name
+     distinguishes
+     each
+     pad
+     of
+     the
+     interferometers.
+     There
+     is
+     a
+     matching
+     parameter
+     with
+     the
+     same
+     name
+     in
+     the
+     locations
+     catalog.
+     Up
+     to
+     10
+     characters.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">DBCODE</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     station
+     code
+     used
+     in
+     the
+     VLBA
+     correlator
+     data
+     base.
+     May
+     not
+     be
+     the
+     same
+     as
+     <span 
+class="cmtt-10">STCode</span>.
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>uses
+     <span 
+class="cmtt-10">STCode</span>
+     for
+     almost
+     everything.
+                                                                                
+                                                                                
+     This
+     code
+     distinguishes
+     each
+     pad
+     of
+     the
+     interferometers
+     so
+     contains
+     more
+     information
+     than
+     the
+     usual
+     2
+     letter
+     codes
+     given
+     in
+     <span 
+class="cmtt-10">STCode</span>.
+     Can
+     be
+     put
+     in
+     the
+     locations
+     catalog.
+     </dd></dl>
+<!--l. 10896--><p class="noindent" >Station location:
+     <dl class="description"><dt class="description">
+<span 
+class="cmtt-10">FRAME</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     A
+     character
+     string
+     indicating
+     the
+     origin
+     of
+     the
+     station
+     location
+     information.
+     Can
+     be
+     put
+     in
+     the
+                                                                                
+                                                                                
+     locations
+     catalog.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">ELev</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Station
+     elevation
+     in
+     meters
+     above
+     (mean?)
+     sea
+     level
+     for
+     geodetic
+     coordinates
+     or
+     meters
+     from
+     the
+     center
+     of
+     the
+     Earth
+     for
+     geocentric
+     coordinates;
+     these
+     cases
+     are
+     distinguished
+     by
+     value
+     magnitude.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">LAT</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Station
+     latitude,
+     either
+     geodetic
+     or
+     geocentric.
+     The
+     format
+     is
+     <span 
+class="cmtt-10">dd:mm:ss</span>.
+     Positive
+     in
+     Northern
+                                                                                
+                                                                                
+     Hemisphere.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">LONG</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Station
+     longitude,
+     either
+     geodetic
+     or
+     geocentric.
+     The
+     format
+     is
+     <span 
+class="cmtt-10">ddd:mm:ss</span>.
+     Positive
+     in
+     Western
+     Hemisphere.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">ZALim</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Zenith
+     angle
+     limit
+     in
+     degrees.
+     Can
+     be
+     used
+     to
+     limit
+     elevation
+     coverage
+     for
+     stations
+     with
+     other
+     than
+     AZEL
+     mounts.
+     The
+     antenna
+     will
+     be
+     assumed
+     to
+     point
+     below
+     this
+     limit
+                                                                                
+                                                                                
+     to
+     whatever
+     limits
+     are
+     specified
+     with
+     <span 
+class="cmtt-10">AX1LIM</span>
+     and
+     <span 
+class="cmtt-10">AX2LIM</span>
+     for
+     purposes
+     of
+     slew
+     calculations.
+     However,
+     if
+     the
+     antenna
+     is
+     below
+     this
+     limit,
+     the
+     source
+     will
+     be
+     considered
+     to
+     be
+     down
+     during
+     any
+     optimizations.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">X</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Station
+     X
+     coordinate
+     in
+     meters.
+     This
+     is
+     in
+     the
+     direction
+     of
+     the
+     Greenwich
+     meridian.
+                                                                                
+                                                                                
+     Can
+     be
+     put
+     in
+     the
+     locations
+     catalog.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">Y</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Station
+     Y
+     coordinate
+     in
+     meters.
+     This
+     makes
+     a
+     right
+     handed
+     coordinate
+     system
+     with
+     X
+     and
+     Z.
+     Can
+     be
+     put
+     in
+     the
+     locations
+     catalog.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">Z</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Station
+     Z
+     coordinate
+     in
+     meters.
+     This
+     is
+     in
+     the
+     direction
+     of
+     the
+     north
+     pole.
+                                                                                
+                                                                                
+     Can
+     be
+     put
+     in
+     the
+     locations
+     catalog.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">DXDT</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Station
+     rate
+     of
+     change
+     of
+     the
+     X
+     coordinate
+     in
+     meters
+     per
+     year.
+     Can
+     be
+     put
+     in
+     the
+     locations
+     catalog.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">DYDT</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Station
+     rate
+     of
+     change
+     of
+     the
+     Y
+     coordinate
+     in
+     meters
+     per
+     year.
+     Can
+     be
+     put
+     in
+     the
+     locations
+                                                                                
+                                                                                
+     catalog.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">DZDT</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Station
+     rate
+     of
+     change
+     of
+     the
+     Z
+     coordinate
+     in
+     meters
+     per
+     year.
+     Can
+     be
+     put
+     in
+     the
+     locations
+     catalog.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">EPOCH</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     epoch
+     in
+     MJD
+     at
+     which
+     the
+     X,
+     Y,
+     Z
+     coordinates
+     apply.
+     In
+     other
+     words,
+     when
+     the
+     offsets
+     due
+     to
+     the
+     rates
+     is
+     zero.
+                                                                                
+                                                                                
+     Can
+     be
+     put
+     in
+     the
+     locations
+     catalog.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">DEScrip</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Any
+     text
+     up
+     to
+     80
+     characters
+     (not
+     used
+     by
+     <span 
+class="cmcsc-10">SCHED</span>).
+     </dd></dl>
+<!--l. 10951--><p class="noindent" >Hardware types:
+     <dl class="description"><dt class="description">
+<span 
+class="cmtt-10">CONtrol</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Telescope
+     control
+     file
+     type.
+     <span 
+class="cmtt-10">VEX</span>
+     files
+     are
+     produced
+     for
+     all
+     projects
+     because
+     most
+     antennas
+     are
+     converting
+     to
+     using
+     them
+     for
+     telescope
+     control
+     (including
+                                                                                
+                                                                                
+     the
+     VLBA)
+     and
+     most
+     of
+     the
+     correlators
+     (DiFX,
+     JIVE,
+     MarkIV)
+     need
+     such
+     files
+     to
+     control
+     correlation.
+     Other
+     <span 
+class="cmtt-10">CONTROL</span>
+     options
+     imply
+     that
+     other
+     format
+     files
+     are
+     written
+     in
+     addition
+     to
+     the
+     <span 
+class="cmtt-10">VEX</span>
+     file.
+     Valid
+     option
+     are
+     <span 
+class="cmtt-10">VLBA</span>
+     for
+     VLBA
+     control
+     files,
+     <span 
+class="cmtt-10">VEX</span>
+     for
+     stations
+     that
+     don&#8217;t
+     need
+     any
+     other
+     formats,
+     <span 
+class="cmtt-10">VLA</span>
+     for
+                                                                                
+                                                                                
+     VLA
+     observe
+     files
+     (obsolete),
+     <span 
+class="cmtt-10">NONE</span>
+     for
+     no
+     control
+     file
+     -
+     the
+     default.
+     A
+     <span 
+class="cmtt-10">&#8217;V&#8217;</span>
+     in
+     the
+     5th
+     character
+     will
+     cause
+     a
+     VLBA
+     control
+     file
+     to
+     be
+     produced
+     with
+     only
+     the
+     DAS
+     (Data
+     Aquisition
+     System
+     &#8212;
+     BBC&#8217;s,
+     formatter,
+     recorder
+     etc)
+     parameters.
+     It
+     is
+     meant
+     for
+     cases
+     with
+     a
+     VLBA
+     style
+     VLBI
+     backend,
+                                                                                
+                                                                                
+     but
+     something
+     else
+     for
+     telescope
+     control.
+     If
+     the
+     first
+     4
+     characters
+     are
+     VLBA,
+     this
+     will
+     be
+     the
+     only
+     file.
+     If
+     they
+     are
+     something
+     else,
+     both
+     the
+     other
+     type
+     of
+     file
+     and
+     the
+     reduced
+     VLBA
+     file
+     will
+     be
+     produced.
+     This
+     is
+     the
+     default
+     when
+     <span 
+class="cmtt-10">CONTROL</span>
+     <span 
+class="cmtt-10">=</span>
+     <span 
+class="cmtt-10">VLA</span>.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">DAR</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Gives
+                                                                                
+                                                                                
+     the
+     type
+     of
+     Data
+     Acquisition
+     Rack
+     present.
+     This
+     is
+     mainly
+     to
+     identify
+     the
+     type
+     of
+     formatter
+     is
+     at
+     the
+     station
+     which
+     will
+     let
+     the
+     program
+     know
+     about
+     the
+     capabilities
+     available.
+     Valid
+     types
+     are:
+     <span 
+class="cmtt-10">VLBA</span>,
+     <span 
+class="cmtt-10">RDBE</span>,
+     <span 
+class="cmtt-10">RDBE2</span>,
+     <span 
+class="cmtt-10">DBBC</span>,
+     <span 
+class="cmtt-10">MKIV</span>,
+     <span 
+class="cmtt-10">VLBA4</span>,
+     <span 
+class="cmtt-10">MKIII</span>,
+     <span 
+class="cmtt-10">S2</span>,
+     <span 
+class="cmtt-10">K4</span>,
+     <span 
+class="cmtt-10">K5</span>,
+     <span 
+class="cmtt-10">VERA</span>,
+     <span 
+class="cmtt-10">VSOP</span>,
+     <span 
+class="cmtt-10">LBA</span>
+     and
+     <span 
+class="cmtt-10">NONE</span>
+     (the
+     default).
+     Note
+                                                                                
+                                                                                
+     that
+     for
+     Mark
+     II
+     scheduling
+     (now
+     obsolete),
+     any
+     site
+     scheduled
+     will
+     be
+     assumed
+     to
+     have
+     Mark
+     II
+     equipment.
+     The
+     main
+     non-obvious
+     option
+     above
+     is
+     <span 
+class="cmtt-10">VLBA4</span>,
+     which
+     is
+     a
+     VLBA
+     DAR
+     but
+     with
+     a
+     Mark
+     IV
+     formatter
+     installed.
+     This
+     will
+     have
+     VLBA
+     BBC&#8217;s
+     and
+     IF
+     switching,
+     but
+     Mark
+     IV
+     formatting
+     characteristics.
+     The
+                                                                                
+                                                                                
+     <span 
+class="cmtt-10">RDBE</span>
+     and
+     <span 
+class="cmtt-10">DBBC</span>
+     are
+     digital
+     systems
+     containing
+     FPGA
+     chips
+     that
+     can
+     support
+     multiple
+     personalities.
+     Those
+     personalities
+     are
+     specified
+     in
+     the
+     setup
+     file
+     since
+     they
+     can
+     change
+     between
+     schedules,
+     or
+     even
+     scans.
+     The
+     personalities
+     are
+     specified
+     with
+     <a 
+href="labelSECSETUPSSetupFiles.html#x31-2600003.6.4"><span 
+class="cmtt-10">DBE</span></a>
+     setup
+     file
+     parameter.
+     <!--l. 10991--><p class="noindent" >The
+     <span 
+class="cmtt-10">RDBE2</span>
+     option
+     is
+     the
+     same
+     as
+     the
+     <span 
+class="cmtt-10">RDBE</span>
+     except
+     that
+                                                                                
+                                                                                
+     the
+     presence
+     of
+     2
+     RDBE
+     units
+     is
+     assumed
+     allowing
+     twice
+     as
+     many
+     channels
+     with
+     the
+     DDC
+     personality.
+     To
+     use
+     2
+     RDBEs
+     with
+     one
+     MARK5C
+     unit
+     required
+     the
+     use
+     of
+     the
+     VDIF
+     format
+     which
+     is
+     not
+     yet
+     available
+     for
+     the
+     PFB
+     personality.
+     Also
+     the
+     PFB
+     personality
+     puts
+     out
+     a
+     fixed
+     2
+     Gbps
+                                                                                
+                                                                                
+     which
+     is
+     twice
+     the
+     capacity
+     of
+     the
+     current
+     MARK5C
+     recorders.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">DBBCVER</span><span 
+class="cmbx-10">:</span>  </dt><dd 
+class="description">Gives the version of the DBBC. Currently supported versions are:
+         <ul class="itemize1">
+         <li class="itemize">
+         <span 
+class="cmtt-10">ASTRO</span>
+         is
+         the
+         default
+         <span 
+class="cmtt-10">DBBCVER</span>.
+         It
+         has
+         4
+         IFs,
+         with
+         the
+         following
+         fixed
+         patching:
+         ifa=bbc01
+         to
+         bbc04;
+         ifb=bbc05
+         to
+         bbc08;
+         ifc=bbc09
+         to
+         bbc12;
+         ifd=bbc13
+         to
+         bbc16.
+         </li>
+         <li class="itemize">
+         <span 
+class="cmtt-10">GEO</span>
+         has
+         2
+         IFs
+         with
+         the
+                                                                                
+                                                                                
+         following
+         fixed
+         patching:
+         ifa=bbc01
+         to
+         bbc08;
+         ifb=bbc09
+         to
+         bbc16.
+         </li>
+         <li class="itemize">
+         <span 
+class="cmtt-10">HYBRID</span>
+         has
+         3
+         IFs
+         with
+         the
+         following
+         fixed
+         patching:
+         ifa=bbc01
+         to
+         bbc04;
+         ifb=bbc05
+         to
+         bbc08;
+         ifc=bbc09
+         to
+         bbc16.</li></ul>
+     </dd><dt class="description">
+<span 
+class="cmtt-10">RECORDER</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">Gives the type of tape recorder(s) present Valid options are: <span 
+class="cmtt-10">VLBA</span>, <span 
+class="cmtt-10">MKIV</span>, <span 
+class="cmtt-10">VLBA4</span>, <span 
+class="cmtt-10">MKIII</span>, <span 
+class="cmtt-10">S2</span>,
+     <span 
+class="cmtt-10">K4</span>, <span 
+class="cmtt-10">K5</span>, <span 
+class="cmtt-10">VERA</span>, <span 
+class="cmtt-10">VSOP</span>, <span 
+class="cmtt-10">MARK5A</span>, <span 
+class="cmtt-10">MARK5B</span>, <span 
+class="cmtt-10">MARK5C</span>, and <span 
+class="cmtt-10">NONE </span>(the default). The <span 
+class="cmtt-10">VLBA4 </span>option is for
+     VLBA recorders which have been modified for 16 Mbps per track operation and can be
+     equipped with 2 recording heads. They are usually associated with <span 
+class="cmtt-10">MKIV </span>or <span 
+class="cmtt-10">VLBA4</span>
+     DARs.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">NBBC</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">Tells <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>how many BBC&#8217;s or VC&#8217;s are at the site.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">NDRIVES</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">Gives the number of tape drives at the sites. Most have only 1 but all VLBA sites, for
+     example, have 2. This can be overridden for a schedule using the NDRIVES parameter
+     in the tape initialization information. Note that, even with Mark5A disks, this may
+     need to be set to 2 to allow 512 Mbps recording, which requires two heads or two
+     drives to give 64 tracks. <span 
+class="cmtt-10">NDRIVES </span>should be the maximum number of drives at the
+     station. If less are in service, the <a 
+href="labelSECTPINITapeInitializationFile.html#x29-2320003.4">tape initialization</a> input, <a 
+href="labelSECTPINITapeInitializationFile.html#x29-2350003.4.1"><span 
+class="cmtt-10">NDRIVES</span></a> can be used to
+     specify the smaller number. For S2 sites, NDRIVES should be the number of individual
+     recorders.
+     </dd><dt class="description">
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">NHEADS</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">Gives the number of recording head blocks on each VLBA or MKIV drive. This will be useful
+     mainly for MKIV (and VLBA4) which will at some point have 2.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">DISK</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">Used to indicate that a disk based recording system is available at the station. Which system to
+     use depends on the value of the <a 
+href="labelSECTPINITapeInitializationFile.html#x29-2340003.4.1"><span 
+class="cmtt-10">MEDIA</span></a> parameter in the <a 
+href="labelSECTPINITapeInitializationFile.html#x29-2320003.4">tape initialization information</a>. For VLBA
+     systems, commands for both <span 
+class="cmtt-10">RECORDER </span>and <span 
+class="cmtt-10">DISK </span>can be included in the control file. Valid
+     arguments to <span 
+class="cmtt-10">DISK </span>for now are restricted to <span 
+class="cmtt-10">MARK5A</span>, <span 
+class="cmtt-10">MARK5B</span>, <span 
+class="cmtt-10">LBADR </span>and <span 
+class="cmtt-10">NONE </span>(the
+     default).
+     </dd><dt class="description">
+<span 
+class="cmtt-10">MEDIADEF</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">Gives the default recording system to use. It can be overridden by <span 
+class="cmtt-10">MEDIA </span>in the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2090003.1.2"><span 
+class="cmtt-10">TAPEINI</span></a>
+     section. The options are <span 
+class="cmtt-10">TAPE </span>and <span 
+class="cmtt-10">DISK</span>. This is meant to facilitate VLBA operations during the
+     transition from tape to disk.
+     </dd></dl>
+<!--l. 11059--><p class="noindent" >Horizon:
+     <dl class="description"><dt class="description">
+<span 
+class="cmtt-10">HOR</span><span 
+class="cmtt-10">_AZ</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Up
+     to
+     200
+     azimuths
+     at
+     which
+     horizon
+     elevations
+     are
+     given
+     in
+     <span 
+class="cmtt-10">HOR</span><span 
+class="cmtt-10">_EL</span>.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">HOR</span><span 
+class="cmtt-10">_EL</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Up
+     to
+     200
+     elevations
+     for
+     the
+     horizon
+     at
+     the
+     azimuths
+     specified
+     by
+     <span 
+class="cmtt-10">HOR</span><span 
+class="cmtt-10">_AZ</span>.
+     <span 
+class="cmcsc-10">SCHED</span>&#8217;s
+     down,
+                                                                                
+                                                                                
+     rise,
+     and
+     set
+     notes
+     will
+     take
+     these
+     horizons
+     into
+     account.
+     They
+     will
+     also
+     be
+     used
+     in
+     the
+     optimization
+     mode.
+     </dd></dl>
+<!--l. 11073--><p class="noindent" >Mount details and performance:
+     <dl class="description"><dt class="description">
+<span 
+class="cmtt-10">MOUNT</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     type
+     of
+     mount.
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>uses
+     this,
+     along
+     with
+     the
+     axis
+     limits
+     and
+     rates,
+     to
+     calculate
+     slew
+     times.
+     The
+     understood
+     options
+     are
+     <span 
+class="cmtt-10">ALTAZ</span>,
+     <span 
+class="cmtt-10">EQUAT</span>,
+     <span 
+class="cmtt-10">XYEW</span>
+     and
+                                                                                
+                                                                                
+     <span 
+class="cmtt-10">XYNS</span>.
+     Note
+     that
+     <span 
+class="cmtt-10">XYNS</span>
+     is
+     for
+     an
+     XY
+     axis
+     system
+     with
+     the
+     fixed
+     axis
+     in
+     the
+     north-south
+     direction
+     (for
+     example,
+     Fairbanks).
+     <span 
+class="cmtt-10">XYEW</span>
+     is
+     for
+     the
+     other
+     orientation
+     (for
+     example,
+     Hobart).
+     </dd><dt class="description">
+<span 
+class="cmtt-10">AXISTYPE</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     axis
+     type
+     as
+     recorded
+     in
+     the
+     VLBA
+     correlator
+     data
+     base.
+     There
+     are
+     different
+     keywords
+     here
+     than
+                                                                                
+                                                                                
+     for
+     <span 
+class="cmtt-10">MOUNT</span>.
+     Some
+     day
+     this
+     should
+     be
+     cleaned
+     up.
+     Can
+     be
+     put
+     in
+     the
+     locations
+     catalog.
+     Will
+     go
+     to
+     the
+     VEX
+     file.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">AXISOFF</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     axis
+     offset
+     in
+     meters.
+     Can
+     be
+     put
+     in
+     the
+     locations
+     catalog.
+     Will
+     go
+     to
+     the
+     VEX
+     file
+     for
+     correlation.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">AX1LIM</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     slew
+                                                                                
+                                                                                
+     limits
+     for
+     the
+     first
+     axis
+     which
+     is
+     usually
+     azimuth,
+     hour
+     angle
+     or
+     X.
+     The
+     units
+     are
+     degrees
+     for
+     azimuth
+     or
+     X
+     and
+     hours
+     for
+     equatatorial
+     mounts.
+     There
+     are
+     up
+     to
+     3
+     pairs
+     of
+     numbers
+     giving
+     the
+     lower
+     and
+     upper
+     limits
+     for
+     3
+     different
+     parts
+     of
+     the
+     sky.
+     This
+     is
+     required
+     to
+                                                                                
+                                                                                
+     describe
+     the
+     limits
+     for
+     the
+     140&#8217;
+     at
+     Green
+     Bank
+     and
+     for
+     XY
+     antennas
+     such
+     as
+     Hobart.
+     Only
+     the
+     first
+     set
+     will
+     be
+     used
+     for
+     altaz
+     antennas.
+     For
+     altaz
+     antennas,
+     the
+     zero
+     for
+     azimuth
+     is
+     to
+     the
+     north
+     and
+     positive
+     is
+     clockwise
+     looking
+     down
+     on
+     the
+     antenna.
+     For
+     XY
+     antennas,
+     positive
+     is
+                                                                                
+                                                                                
+     to
+     the
+     north
+     or
+     east.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">AX2LIM</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     slew
+     limits
+     for
+     the
+     second
+     axis
+     which
+     is
+     usually
+     elevation,
+     declination,
+     or
+     Y.
+     The
+     units
+     are
+     degrees
+     in
+     all
+     cases.
+     There
+     are
+     3
+     pairs
+     of
+     numbers
+     which
+     define
+     the
+     three
+     parts
+     of
+     the
+     sky
+     over
+     which
+     the
+     3
+     pairs
+     of
+     <span 
+class="cmtt-10">AX1LIM</span>s
+                                                                                
+                                                                                
+     apply.
+     The
+     ranges
+     for
+     altaz
+     antennas
+     should
+     not
+     overlap,
+     although
+     they
+     can
+     touch.
+     For
+     XY
+     antennas,
+     overlaps
+     are
+     ok.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">AX1RATE</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     slew
+     rate
+     for
+     the
+     first
+     axis
+     in
+     degrees
+     per
+     minute
+     for
+     all
+     mount
+     types.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">AX2RATE</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     slew
+     rate
+     for
+     the
+     second
+     axis
+     in
+     degrees
+     per
+                                                                                
+                                                                                
+     minute.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">AX1ACC</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     acceleration
+     for
+     the
+     first
+     axis
+     in
+     degrees
+     per
+     second
+     squared
+     for
+     all
+     mount
+     types.
+     If
+     one
+     value
+     is
+     given,
+     it
+     is
+     assumed
+     to
+     apply
+     to
+     both
+     acceleration
+     and
+     deceleration.
+     If
+     two
+     values
+     are
+     given,
+     the
+     first
+     is
+     for
+     acceleration
+     and
+     the
+     second
+     for
+     deceleration
+     (although
+                                                                                
+                                                                                
+     for
+     the
+     calculations,
+     they
+     are
+     interchangeable).
+     </dd><dt class="description">
+<span 
+class="cmtt-10">AX2ACC</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     acceleration
+     for
+     the
+     second
+     axis
+     in
+     degrees
+     per
+     second
+     squared.
+     If
+     one
+     value
+     is
+     given,
+     it
+     is
+     assumed
+     to
+     apply
+     to
+     both
+     acceleration
+     and
+     deceleration.
+     </dd></dl>
+<!--l. 11128--><p class="noindent" >Scan timing information:
+     <dl class="description"><dt class="description">
+<span 
+class="cmtt-10">TSETTLE</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     time
+     in
+     seconds
+     (or
+     mm:ss
+     etc)
+     to
+                                                                                
+                                                                                
+     add
+     to
+     the
+     slew
+     time
+     for
+     dwell
+     time
+     scheduling
+     to
+     determine
+     when
+     the
+     antenna
+     is
+     ready
+     to
+     observe.
+     This
+     will
+     include
+     any
+     computer
+     overhead,
+     and
+     time
+     to
+     make
+     calibration
+     observations.
+     Acceleration
+     and
+     deceleration
+     will
+     be
+     calculated
+     explicitly
+     if
+     the
+     above
+     acceleration
+     parameters
+     are
+     provided
+     in
+     the
+     station
+     catalog.
+     </dd><dt class="description">
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">MINSETUP</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     minimum
+     interval
+     between
+     scans
+     when
+     using
+     dwell
+     time
+     scheduling.
+     If
+     the
+     slew
+     time
+     plus
+     the
+     settling
+     time
+     drops
+     below
+     <span 
+class="cmtt-10">MINSETUP</span>,
+     <span 
+class="cmtt-10">MINSETUP</span>
+     will
+     be
+     used
+     as
+     the
+     interval
+     between
+     scans.
+     This
+     is
+     required
+     because
+     some
+     antennas
+     have
+     a
+     minimum
+     scan
+     setup
+     time
+     but
+     the
+     actions
+     that
+     take
+     that
+     time
+     can
+                                                                                
+                                                                                
+     overlap
+     with
+     the
+     slew.
+     When
+     the
+     slew
+     is
+     long,
+     the
+     extra
+     time
+     does
+     not
+     need
+     to
+     be
+     added.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">TSCAL</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Lets
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>know
+     when
+     the
+     station
+     measures
+     system
+     temperatures.
+     Arguments
+     are
+     text
+     of
+     4
+     characters.
+     The
+     viable
+     options
+     so
+     far
+     are
+     &#8220;gap&#8221;
+     and
+     &#8220;cont&#8221;
+     that
+     indicate
+     the
+     system
+     temperature
+     measurements,
+                                                                                
+                                                                                
+     or
+     at
+     least
+     cal
+     measurements,
+     are
+     done
+     in
+     the
+     gap
+     between
+     scans
+     or
+     continuously
+     during
+     observing.
+     The
+     VLBA
+     uses
+     an
+     80Hz
+     cal
+     switch
+     and
+     measures
+     cal-on
+     and
+     cal-off
+     powers
+     from
+     which,
+     using
+     a
+     known
+     cal
+     temperature,
+     the
+     system
+     temperature
+     can
+     be
+     derived.
+     Typical
+     field
+     system
+     controlled
+     stations
+     fire
+     the
+     cal
+     once
+                                                                                
+                                                                                
+     at
+     the
+     start
+     of
+     a
+     scan
+     and
+     measure
+     the
+     on
+     and
+     off
+     power.
+     <span 
+class="cmcsc-10">SCHED</span>
+     will
+     warn
+     if
+     there
+     is
+     inadequate
+     time
+     to
+     do
+     this
+     if
+     TSCAL=GAP,
+     but
+     not
+     when
+     TSCAL=CONT.
+     This
+     facility
+     is
+     still
+     not
+     fully
+     installed
+     as
+     of
+     Nov.
+     5,
+     2008.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">MAXSRCHR</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     The
+     maximum
+     number
+     of
+     sources
+                                                                                
+                                                                                
+     per
+     hour.
+     This
+     is
+     originally
+     intended
+     to
+     enable
+     enforcement
+     of
+     the
+     limit
+     in
+     the
+     number
+     of
+     slews
+     per
+     hour
+     on
+     the
+     Mark1
+     telescope
+     at
+     Jodrell.
+     They
+     are
+     very
+     worried
+     about
+     fatigue
+     and
+     will
+     refuse
+     to
+     run
+     fast
+     switching
+     schedules.
+     The
+     default
+     is
+     1.E6
+     which
+     should
+     be
+     more
+     than
+     anyone
+     would
+     try
+                                                                                
+                                                                                
+     to
+     schedule.
+     </dd><dt class="description">
+<span 
+class="cmtt-10">TLEVSET</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     This
+     is
+     a
+     time
+     to
+     be
+     added
+     to
+     the
+     slew
+     calculation
+     to
+     allow
+     for
+     the
+     set-and-remember
+     power
+     level
+     adjustments
+     that
+     happen
+     on
+     the
+     VLBA
+     (RDBE)
+     or
+     VLA
+     the
+     first
+     time
+     a
+     particular
+     setup
+     is
+     seen.
+     Like
+     <span 
+class="cmtt-10">MINSETUP</span>,
+     the
+     time
+     can
+     overlap
+     with
+     slews
+     so
+     functionally,
+                                                                                
+                                                                                
+     this
+     parameter
+     acts
+     exactly
+     like
+     <span 
+class="cmtt-10">MINSETUP</span>
+     but
+     only
+     for
+     the
+     first
+     scan
+     with
+     a
+     particular
+     setup.
+     The
+     VLBA
+     needs
+     15
+     seconds.
+     The
+     VLA
+     needs
+     60
+     seconds.
+     As
+     of
+     Nov.
+     2012,
+     the
+     VLA
+     actually
+     needs
+     this
+     every
+     time
+     there
+     is
+     a
+     slight
+     frequency
+     change
+     (like
+     new
+     Doppler
+     shift),
+     but
+     we
+     will
+     try
+                                                                                
+                                                                                
+     to
+     get
+     that
+     changed
+     to
+     be
+     only
+     for
+     more
+     major
+     changes.
+     Note
+     that,
+     if
+     the
+     first
+     scan
+     with
+     a
+     setup
+     is
+     non-recording,
+     non-pointing,
+     and
+     non-phasing,
+     the
+     scan
+     itself
+     will
+     be
+     accepted
+     as
+     the
+     level
+     setting
+     (DUMMY
+     on
+     the
+     VLA)
+     scan.
+     This
+     allows
+     for
+     explicit
+     insertion
+     of
+     DUMMY
+     scans.
+     </dd></dl>
+<!--l. 11183--><p class="noindent" >Below is a sample entry from the RDBE based version of the standard station catalog. The full catalog
+                                                                                
+                                                                                
+a can be examined <a 
+href="catalogs/stations.dat" >here</a> for the version that uses MARK5A at the VLBA and <a 
+href="catalogs/stations_RDBE.dat" >here</a> for the RDBE based
+version.
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-11">
+&#x00A0;<br />&#x00A0;STATION=VLBA_MK&#x00A0;&#x00A0;&#x00A0;STCODE=Mk&#x00A0;&#x00A0;CONTROL=VLBA
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;DBNAME&#x00A0;=&#x00A0;MK-VLBA
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;MOUNT=ALTAZ&#x00A0;&#x00A0;AX1LIM=-90,450&#x00A0;AX2LIM=2.25,90&#x00A0;AX1RATE=86.8&#x00A0;AX2RATE=28.3
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;AX1ACC=0.75&#x00A0;&#x00A0;AX2ACC=0.25
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;TSETTLE=6&#x00A0;TLEVSET=5&#x00A0;MINSETUP=5&#x00A0;&#x00A0;DAR=RDBE&#x00A0;&#x00A0;NBBC=16
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;DISK=MARK5C&#x00A0;&#x00A0;&#x00A0;MEDIADEF=DISK&#x00A0;&#x00A0;&#x00A0;&#x00A0;TSCAL=CONT
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;MK&#x00A0;&#x00A0;&#x00A0;&#x00A0;From&#x00A0;150&#x00A0;K&#x00A0;Ts&#x00A0;line&#x00A0;by&#x00A0;Beasley&#x00A0;and&#x00A0;Medcalf&#x00A0;&#x00A0;Aug&#x00A0;1992.
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;HOR_AZ&#x00A0;=&#x00A0;&#x00A0;&#x00A0;0,&#x00A0;&#x00A0;5,&#x00A0;10,&#x00A0;15,&#x00A0;20,120,125,130,135,140,145,150,155,160,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;165,170,175,185,190,195,200,205,210,215,220,255,260,270,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;275,280,285,290,295,300,305,310,315,320,325,330,335,340,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;345,350,355,360
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;HOR_EL&#x00A0;=&#x00A0;&#x00A0;&#x00A0;5,&#x00A0;&#x00A0;4,&#x00A0;&#x00A0;3,&#x00A0;&#x00A0;3,&#x00A0;&#x00A0;2,&#x00A0;&#x00A0;2,&#x00A0;&#x00A0;4,&#x00A0;&#x00A0;5,&#x00A0;&#x00A0;5,&#x00A0;&#x00A0;4,&#x00A0;&#x00A0;4,&#x00A0;&#x00A0;6,&#x00A0;&#x00A0;8,&#x00A0;&#x00A0;8,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;11,&#x00A0;12,&#x00A0;13,&#x00A0;13,&#x00A0;11,&#x00A0;11,&#x00A0;&#x00A0;9,&#x00A0;&#x00A0;7,&#x00A0;&#x00A0;5,&#x00A0;&#x00A0;3,&#x00A0;&#x00A0;2,&#x00A0;&#x00A0;2,&#x00A0;&#x00A0;3,&#x00A0;&#x00A0;3,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;5,&#x00A0;&#x00A0;6,&#x00A0;&#x00A0;8,&#x00A0;10,&#x00A0;12,&#x00A0;14,&#x00A0;12,&#x00A0;11,&#x00A0;&#x00A0;9,&#x00A0;10,&#x00A0;11,&#x00A0;10,&#x00A0;12,&#x00A0;14,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;12,&#x00A0;&#x00A0;9,&#x00A0;&#x00A0;7,&#x00A0;&#x00A0;5
+&#x00A0;<br />&#x00A0;&#x00A0;/
+&#x00A0;<br />
+</div>
+<!--l. 11209--><p class="nopar" >
+                                                                                
+                                                                                
+<!--l. 11211--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECTPINITapeInitializationFile.html" >next</a>] [<a 
+href="labelSECSRCCATSourceCatalog.html" >prev</a>] [<a 
+href="labelSECSRCCATSourceCatalog.html#taillabelSECSRCCATSourceCatalog.html" >prev-tail</a>] [<a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html" >front</a>] [<a 
+href="labelCHPINPUTTHESCHEDINPUTFILESIncludesparameterlists.html#labelSECSTACATStationCatalogandLocationsCatalog.html" >up</a>] </p></div>
+<!--l. 11211--><p class="noindent" ><a 
+ id="taillabelSECSTACATStationCatalogandLocationsCatalog.html"></a>  
+</body></html> 

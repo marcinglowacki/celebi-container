@@ -1,0 +1,350 @@
+!*  Schedule for VLBA_HN   *!
+!*  Experiment tlesat   *!
+!* Schedule Version:       1.00 *!
+!* Processed by SCHED version:  11.40  Release 11.4.  March 14, 2015 *!
+!* PI:       Walter Brisken *!
+!* Address:  DSOC *!
+!*  *!
+!*  *!
+!*  *!
+!* Phone:    651-644-1677 *!
+!* EMAIL:    wbrisken@nrao.edu *!
+!* Fax:      575-835-2027 *!
+!* Phone during observation: 575-838-0502 *!
+!* Observing mode: GPS L2 and L1 *!
+!* Notes: *!
+!*  *!
+!*  *!
+!*  *!
+!*  Start at 16h00m00s     Mon, 2014 Dec 08  Day of year  342   *!
+program=tlesat  
+
+diskformat=mark5c
+media=(1,disk)
+
+!* The first scan is preceeded by a setup scan *!
+!* that ends at the start time of the first scan  *!
+
+!* --- Scan from 16h00m05s to 16h01m00s   Mon, 2014 Dec 08 --- *!
+sname='J0117+8928'  ra=01h17m16.402465s  dec= 89d28'47.97531"  qual=999  calib='V'
+maxcaltime= 120
+fe=(1,20cm),(3,20cm)
+fexfer=(2,norm)
+noise=(1,low-s),(2,low-s),(3,low-s),(4,low-s)
+synth=( 1,12.9),( 2,-2.1),( 3,12.9)
+logging=STANDARD
+nchan= 2
+format=VLBA1:1
+ifdistr=(1,0),(2,0),(3,0),(4,0)
+baseband=(1,1),(2,2)
+ifchan=(1,A),(2,A)
+sideband=(1,L),(2,L)
+bits=(1,2),(2,2)
+period=(1,1),(2,1)
+level=(1,-1),(2,-1)
+azcolim=   0.00  elcolim=   0.00
+bbsynth=( 1,874.50),( 2,526.50)
+bbfilter=(1,4M),(2,4M)
+pcal=1MHZ
+pcalxbit1=(1,S1),(2,S1),(3,S1),(4,S2),(5,S1),(6,OFF),(7,OFF),(8,OFF)
+pcalxbit2=(1,S2),(2,S2),(3,M1),(4,M2),(5,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxfreq1=(1,500),(2,2500),(3,0),(4,0),(5,1500),(6,0),(7,0),(8,0)
+pcalxfreq2=(1,500),(2,2500),(3,0),(4,0),(5,1500),(6,0),(7,0),(8,0)
+samplerate=8M
+disk=off
+  date = 2014Dec08
+stop=16h00m05s   !NEXT!        
+qual=  0
+disk=off
+stop=16h01m00s   !NEXT!
+
+!* --- Scan from 16h52m05s to 16h53m00s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=10h08m54.948163s  dec= 22d32'47.62507"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=16h52m00s dra=     120731.05 ddec=    1894802.88
+disk=off
+stop=16h52m05s   !NEXT!        
+qual=  0
+disk=off
+stop=16h53m00s   !NEXT!
+
+!* --- Scan from 16h56m05s to 16h57m00s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=10h14m34.633481s  dec= 24d00'14.47737"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=16h56m00s dra=     123860.13 ddec=    1883225.00
+disk=off
+stop=16h56m05s   !NEXT!        
+qual=  0
+disk=off
+stop=16h57m00s   !NEXT!
+
+!* --- Scan from 17h00m05s to 17h01m00s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=10h20m23.395978s  dec= 25d27'06.98334"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=17h00m00s dra=     127269.42 ddec=    1870082.88
+disk=off
+stop=17h00m05s   !NEXT!        
+qual=  0
+disk=off
+stop=17h01m00s   !NEXT!
+
+!* --- Scan from 17h04m05s to 17h05m00s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=10h26m22.036203s  dec= 26d53'20.58444"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=17h04m00s dra=     130975.18 ddec=    1855221.00
+disk=off
+stop=17h04m05s   !NEXT!        
+qual=  0
+disk=off
+stop=17h05m00s   !NEXT!
+
+!* --- Scan from 17h24m57s to 17h25m52s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=11h00m47.483423s  dec= 34d08'52.96030"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=17h24m52s dra=     155786.66 ddec=    1742182.63
+disk=off
+stop=17h24m57s   !NEXT!        
+qual=  0
+disk=off
+stop=17h25m52s   !NEXT!
+
+!* --- Scan from 17h28m57s to 17h29m52s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=11h08m08.410058s  dec= 35d28'49.87567"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=17h28m52s dra=     161726.27 ddec=    1711872.50
+disk=off
+stop=17h28m57s   !NEXT!        
+qual=  0
+disk=off
+stop=17h29m52s   !NEXT!
+
+!* --- Scan from 17h32m57s to 17h33m52s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=11h15m46.410579s  dec= 36d47'17.77996"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=17h32m52s dra=     168083.00 ddec=    1678071.63
+disk=off
+stop=17h32m57s   !NEXT!        
+qual=  0
+disk=off
+stop=17h33m52s   !NEXT!
+
+!* --- Scan from 17h36m57s to 17h37m52s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=11h23m42.657807s  dec= 38d04'06.49276"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=17h36m52s dra=     174866.77 ddec=    1640428.75
+disk=off
+stop=17h36m57s   !NEXT!        
+qual=  0
+disk=off
+stop=17h37m52s   !NEXT!
+
+!* --- Scan from 17h41m58s to 17h42m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS18'  ra=12h45m44.941254s  dec=-02d23'54.85917"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=17h41m53s dra=     102139.29 ddec=    2121955.00
+disk=off
+stop=17h41m58s   !NEXT!        
+qual=  0
+disk=off
+stop=17h42m53s   !NEXT!
+
+!* --- Scan from 17h45m58s to 17h46m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS18'  ra=12h50m28.639184s  dec=-00d45'31.53171"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=17h45m53s dra=     102168.48 ddec=    2128220.50
+disk=off
+stop=17h45m58s   !NEXT!        
+qual=  0
+disk=off
+stop=17h46m53s   !NEXT!
+
+!* --- Scan from 17h49m58s to 17h50m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS18'  ra=12h55m12.656761s  dec= 00d53'08.12415"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=17h49m53s dra=     102364.26 ddec=    2133632.25
+disk=off
+stop=17h49m58s   !NEXT!        
+qual=  0
+disk=off
+stop=17h50m53s   !NEXT!
+
+!* --- Scan from 17h53m58s to 17h54m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS18'  ra=12h59m57.443249s  dec= 02d32'01.38255"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=17h53m53s dra=     102729.31 ddec=    2138182.50
+disk=off
+stop=17h53m58s   !NEXT!        
+qual=  0
+disk=off
+stop=17h54m53s   !NEXT!
+
+!* --- Scan from 17h57m58s to 17h58m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=12h11m12.636380s  dec= 44d12'25.52948"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=17h57m53s dra=     217392.58 ddec=    1363525.88
+disk=off
+stop=17h57m58s   !NEXT!        
+qual=  0
+disk=off
+stop=17h58m53s   !NEXT!
+
+!* --- Scan from 18h01m58s to 18h02m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=12h21m29.233227s  dec= 45d13'54.54299"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=18h01m53s dra=     226597.03 ddec=    1292546.38
+disk=off
+stop=18h01m58s   !NEXT!        
+qual=  0
+disk=off
+stop=18h02m53s   !NEXT!
+
+!* --- Scan from 18h05m58s to 18h06m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=12h32m11.712424s  dec= 46d11'56.89867"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=18h05m53s dra=     236017.58 ddec=    1214696.00
+disk=off
+stop=18h05m58s   !NEXT!        
+qual=  0
+disk=off
+stop=18h06m53s   !NEXT!
+
+!* --- Scan from 18h09m58s to 18h10m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=12h43m20.540577s  dec= 47d06'13.00619"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=18h09m53s dra=     245554.09 ddec=    1129616.38
+disk=off
+stop=18h09m58s   !NEXT!        
+qual=  0
+disk=off
+stop=18h10m53s   !NEXT!
+
+!* --- Scan from 18h13m58s to 18h14m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS18'  ra=13h24m10.116069s  dec= 10d48'28.24276"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=18h13m53s dra=     107253.44 ddec=    2147374.50
+disk=off
+stop=18h13m58s   !NEXT!        
+qual=  0
+disk=off
+stop=18h14m53s   !NEXT!
+
+!* --- Scan from 18h17m58s to 18h18m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS18'  ra=13h29m10.033713s  dec= 12d27'51.51778"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=18h17m53s dra=     108744.19 ddec=    2146279.50
+disk=off
+stop=18h17m58s   !NEXT!        
+qual=  0
+disk=off
+stop=18h18m53s   !NEXT!
+
+!* --- Scan from 18h21m58s to 18h22m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS18'  ra=13h34m14.388871s  dec= 14d07'10.19350"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=18h21m53s dra=     110450.89 ddec=    2144096.75
+disk=off
+stop=18h21m58s   !NEXT!        
+qual=  0
+disk=off
+stop=18h22m53s   !NEXT!
+
+!* --- Scan from 18h25m58s to 18h26m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS18'  ra=13h39m23.796620s  dec= 15d46'21.15825"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=18h25m53s dra=     112384.89 ddec=    2140761.50
+disk=off
+stop=18h25m58s   !NEXT!        
+qual=  0
+disk=off
+stop=18h26m53s   !NEXT!
+
+!* --- Scan from 18h29m58s to 18h30m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=13h45m30.635106s  dec= 50d28'46.26822"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=18h29m53s dra=     289796.75 ddec=     589790.63
+disk=off
+stop=18h29m58s   !NEXT!        
+qual=  0
+disk=off
+stop=18h30m53s   !NEXT!
+
+!* --- Scan from 18h33m58s to 18h34m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=13h59m05.319786s  dec= 50d53'03.79144"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=18h33m53s dra=     296647.31 ddec=     459751.97
+disk=off
+stop=18h33m58s   !NEXT!        
+qual=  0
+disk=off
+stop=18h34m53s   !NEXT!
+
+!* --- Scan from 18h37m58s to 18h38m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=14h12m57.484527s  dec= 51d11'11.27452"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=18h37m53s dra=     302357.97 ddec=     323493.09
+disk=off
+stop=18h37m58s   !NEXT!        
+qual=  0
+disk=off
+stop=18h38m53s   !NEXT!
+
+!* --- Scan from 18h41m58s to 18h42m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=14h27m03.704218s  dec= 51d22'52.64688"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=18h41m53s dra=     306747.34 ddec=     181912.19
+disk=off
+stop=18h41m58s   !NEXT!        
+qual=  0
+disk=off
+stop=18h42m53s   !NEXT!
+
+!* --- Scan from 18h45m58s to 18h46m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS18'  ra=14h06m50.728944s  dec= 23d58'16.01761"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=18h45m53s dra=     125963.49 ddec=    2103693.50
+disk=off
+stop=18h45m58s   !NEXT!        
+qual=  0
+disk=off
+stop=18h46m53s   !NEXT!
+
+!* --- Scan from 18h49m58s to 18h50m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS18'  ra=14h12m45.535566s  dec= 25d35'22.09588"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=18h49m53s dra=     129582.99 ddec=    2091381.75
+disk=off
+stop=18h49m58s   !NEXT!        
+qual=  0
+disk=off
+stop=18h50m53s   !NEXT!
+
+!* --- Scan from 18h53m58s to 18h54m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS18'  ra=14h18m50.874647s  dec= 27d11'51.19872"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=18h53m53s dra=     133552.28 ddec=    2077083.13
+disk=off
+stop=18h53m58s   !NEXT!        
+qual=  0
+disk=off
+stop=18h54m53s   !NEXT!
+
+!* --- Scan from 18h57m58s to 18h58m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS18'  ra=14h25m07.751224s  dec= 28d47'37.55119"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=18h57m53s dra=     137895.58 ddec=    2060604.25
+disk=off
+stop=18h57m58s   !NEXT!        
+qual=  0
+disk=off
+stop=18h58m53s   !NEXT!
+
+!* --- Scan from 19h01m58s to 19h02m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=15h38m40.542654s  dec= 50d39'01.93163"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=19h01m53s dra=     305457.41 ddec=    -563527.94
+disk=off
+stop=19h01m58s   !NEXT!        
+qual=  0
+disk=off
+stop=19h02m53s   !NEXT!
+
+!* --- Scan from 19h05m58s to 19h06m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=15h52m42.490102s  dec= 50d09'29.94991"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=19h05m53s dra=     300622.97 ddec=    -710711.63
+disk=off
+stop=19h05m58s   !NEXT!        
+qual=  0
+disk=off
+stop=19h06m53s   !NEXT!
+
+!* --- Scan from 19h09m58s to 19h10m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=16h06m29.213356s  dec= 49d33'13.93578"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=19h09m53s dra=     294531.13 ddec=    -854282.25
+disk=off
+stop=19h09m58s   !NEXT!        
+qual=  0
+disk=off
+stop=19h10m53s   !NEXT!
+
+!* --- Scan from 19h13m58s to 19h14m53s   Mon, 2014 Dec 08 --- *!
+sname='GPS21'  ra=16h19m57.479719s  dec= 48d50'25.39833"  qual=999  calib='Z'
+ epochd=2014Dec08 epocht=19h13m53s dra=     287372.56 ddec=    -993211.63
+disk=off
+stop=19h13m58s   !NEXT!        
+qual=  0
+disk=off
+stop=19h14m53s   !NEXT!
+disk=off
+stop=19h14m58s   !NEXT!
+     !QUIT! 

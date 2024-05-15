@@ -1,0 +1,2 @@
+#! /bin/csh
+  setenv SCHED_STD /Users/cwalker/code/sched_work

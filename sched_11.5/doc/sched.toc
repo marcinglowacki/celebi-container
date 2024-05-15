@@ -1,0 +1,375 @@
+\contentsline {section}{\numberline {0.1} Important Notes - Please check these}{5}{section.0.1}
+\contentsline {section}{\numberline {0.2}Links to Manual Sections and to External Information.}{5}{section.0.2}
+\contentsline {chapter}{\numberline {1}INTRODUCTION}{7}{chapter.1}
+\contentsline {section}{\numberline {1.1}Overview}{7}{section.1.1}
+\contentsline {section}{\numberline {1.2}Keyin Free-format Input}{8}{section.1.2}
+\contentsline {section}{\numberline {1.3} SCHED Input and Output Files}{10}{section.1.3}
+\contentsline {section}{\numberline {1.4}Examples}{13}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}A Basic VLBA Schedule.}{18}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}A Minimal Schedule for Planning.}{21}{subsection.1.4.2}
+\contentsline {section}{\numberline {1.5}Plotting}{22}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Keyin Input for Plotting (obsolete)}{23}{subsection.1.5.1}
+\contentsline {chapter}{\numberline {2}INFORMATION AND ADVICE ON SPECIFIC TOPICS}{26}{chapter.2}
+\contentsline {section}{\numberline {2.1}Using SCHED for Project Planning}{26}{section.2.1}
+\contentsline {section}{\numberline {2.2}Scheduling Tips}{26}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Observing Strategy}{26}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Scan Times}{30}{subsection.2.2.2}
+\contentsline {subsubsection}{Dealing with Formatter Reconfigurations}{32}{section*.2}
+\contentsline {subsubsection}{Adjusting the Scan or Recording Start Time}{32}{section*.3}
+\contentsline {subsection}{\numberline {2.2.3}Dynamic Scheduling}{34}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Management of Data Recordings}{34}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}Recording Systems.}{35}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Recording Systems History and Background}{35}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Recording Systems Control}{36}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}MARK5 and EVLBI}{37}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}VLBA}{38}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}MARK\nobreakspace {}IV (PCFS)}{38}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.6}NON--VLBA Telescopes with VLBA Recorders}{39}{subsection.2.3.6}
+\contentsline {section}{\numberline {2.4}Wide Band Observing: RDBE, DBBC, VLBA and Mark IV Modes}{39}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}The RDBE system}{40}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}DBBC:}{43}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}OTHER DIGITAL BACKENDS:}{44}{subsection.2.4.3}
+\contentsline {section}{\numberline {2.5}Spectral Line Observations}{44}{section.2.5}
+\contentsline {section}{\numberline {2.6}Reference Pointing}{52}{section.2.6}
+\contentsline {section}{\numberline {2.7}Multiple Phase Centers}{55}{section.2.7}
+\contentsline {section}{\numberline {2.8}Automatic Insertion of Geodetic Segments}{56}{section.2.8}
+\contentsline {section}{\numberline {2.9}Scheduling the VLA}{58}{section.2.9}
+\contentsline {section}{\numberline {2.10}Special Concerns for Specific Observatories}{60}{section.2.10}
+\contentsline {subsection}{\numberline {2.10.1}Green Bank Telescope.}{61}{subsection.2.10.1}
+\contentsline {section}{\numberline {2.11}Single Dish VLBA Observing}{61}{section.2.11}
+\contentsline {section}{\numberline {2.12}Configuration Studies}{68}{section.2.12}
+\contentsline {section}{\numberline {2.13}Satellite Tracking}{71}{section.2.13}
+\contentsline {chapter}{\numberline {3}THE SCHED INPUT FILES (Includes parameter lists)}{73}{chapter.3}
+\contentsline {section}{\numberline {3.1}The Schedule File}{73}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Summary List of SCHED Parameters}{74}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Details of SCHED Parameters}{78}{subsection.3.1.2}
+\contentsline {subsubsection}{ {\tt ADDRESS1, ADDRESS2, ADDRESS3} and {\tt ADDRESS4}}{78}{section*.4}
+\contentsline {subsubsection}{{\tt AUTOPEAK}}{79}{section*.5}
+\contentsline {subsubsection}{{\tt AUTOTAPE}}{79}{section*.6}
+\contentsline {subsubsection}{\tt AZCOLIM}{81}{section*.7}
+\contentsline {subsubsection}{{\tt BW}}{81}{section*.8}
+\contentsline {subsubsection}{{\tt CALTIME}}{81}{section*.9}
+\contentsline {subsubsection}{{\tt CENTERS}}{82}{section*.10}
+\contentsline {subsubsection}{{\tt COMMENT}}{82}{section*.11}
+\contentsline {subsubsection}{{\tt CORAVG}}{82}{section*.12}
+\contentsline {subsubsection}{{\tt CORAVG2}}{83}{section*.13}
+\contentsline {subsubsection}{{\tt CORCHAN}}{83}{section*.14}
+\contentsline {subsubsection}{{\tt CORDFMT}}{84}{section*.15}
+\contentsline {subsubsection}{{\tt CORNANT}}{85}{section*.16}
+\contentsline {subsubsection}{ {\tt CORNOTE1, CORNOTE2, CORNOTE3,} and {\tt CORNOTE4}}{85}{section*.17}
+\contentsline {subsubsection}{{\tt CORPOL}}{85}{section*.18}
+\contentsline {subsubsection}{{\tt CORREL}}{86}{section*.19}
+\contentsline {subsubsection}{{\tt CORSRCS}}{86}{section*.20}
+\contentsline {subsubsection}{ {\tt CORSHIP1, CORSHIP2, CORSHIP3,} and {\tt CORSHIP4}}{86}{section*.21}
+\contentsline {subsubsection}{{\tt CORTAPE}}{87}{section*.22}
+\contentsline {subsubsection}{{\tt CORWTFN}}{87}{section*.23}
+\contentsline {subsubsection}{{\tt COVERLET}}{88}{section*.24}
+\contentsline {subsubsection}{{\tt CRDBW}}{88}{section*.25}
+\contentsline {subsubsection}{{{\tt CRDDOP} and {\tt CRDNODOP}}}{89}{section*.26}
+\contentsline {subsubsection}{{\tt CRDLINE}}{89}{section*.27}
+\contentsline {subsubsection}{{\tt CRDCH1}}{89}{section*.28}
+\contentsline {subsubsection}{{\tt CRDNCH}}{90}{section*.29}
+\contentsline {subsubsection}{{\tt CRDFREQ}}{90}{section*.30}
+\contentsline {subsubsection}{{\tt CRDSETCH}}{91}{section*.31}
+\contentsline {subsubsection}{{\tt DATAPATH}}{91}{section*.32}
+\contentsline {subsubsection}{{\tt DAY}}{92}{section*.33}
+\contentsline {subsubsection}{{\tt DEBUG}}{92}{section*.34}
+\contentsline {subsubsection}{{\tt DODOWN}}{92}{section*.35}
+\contentsline {subsubsection}{{\tt DOMKA}}{93}{section*.36}
+\contentsline {subsubsection}{{\tt DOPCAL}}{93}{section*.37}
+\contentsline {subsubsection}{{\tt DOPINCR}}{93}{section*.38}
+\contentsline {subsubsection}{{\tt DOPPLER} and {\tt NODOP}}{93}{section*.39}
+\contentsline {subsubsection}{{\tt DOSCANS}}{94}{section*.40}
+\contentsline {subsubsection}{{\tt DOPSRC}}{94}{section*.41}
+\contentsline {subsubsection}{{\tt DOSTA}}{95}{section*.42}
+\contentsline {subsubsection}{{\tt DOVEX}}{95}{section*.43}
+\contentsline {subsubsection}{{\tt DURation}}{95}{section*.44}
+\contentsline {subsubsection}{{\tt DWELL}}{96}{section*.45}
+\contentsline {subsubsection}{\tt ELCOLIM}{97}{section*.46}
+\contentsline {subsubsection}{{\tt EMAIL}}{97}{section*.47}
+\contentsline {subsubsection}{{\tt EPHFILE}}{98}{section*.48}
+\contentsline {subsubsection}{{\tt EXIT}}{98}{section*.49}
+\contentsline {subsubsection}{{\tt EXPT}}{99}{section*.50}
+\contentsline {subsubsection}{{\tt EXPCODE}}{99}{section*.51}
+\contentsline {subsubsection}{{\tt FASTFOR}}{99}{section*.52}
+\contentsline {subsubsection}{{\tt FAX}}{99}{section*.53}
+\contentsline {subsubsection}{\tt FOCOFF}{100}{section*.54}
+\contentsline {subsubsection}{\tt FOCUS}{100}{section*.55}
+\contentsline {subsubsection}{{\tt FREQ}}{100}{section*.56}
+\contentsline {subsubsection}{{\tt FREQFILE}}{101}{section*.57}
+\contentsline {subsubsection}{{\tt FREQLIST}}{101}{section*.58}
+\contentsline {subsubsection}{{\tt GAP}}{101}{section*.59}
+\contentsline {subsubsection}{{\tt GEOBACK}}{102}{section*.60}
+\contentsline {subsubsection}{{\tt GEOHIEL}}{102}{section*.61}
+\contentsline {subsubsection}{{\tt GEOLOWEL}}{103}{section*.62}
+\contentsline {subsubsection}{{\tt GEOPRT}}{103}{section*.63}
+\contentsline {subsubsection}{{\tt GEOSEG}}{103}{section*.64}
+\contentsline {subsubsection}{{\tt GEOSLEW}}{104}{section*.65}
+\contentsline {subsubsection}{{\tt GEOSLOW}}{104}{section*.66}
+\contentsline {subsubsection}{{\tt GEOSRCS}}{104}{section*.67}
+\contentsline {subsubsection}{{\tt GEOSREP}}{106}{section*.68}
+\contentsline {subsubsection}{{\tt GEOTRIES}}{106}{section*.69}
+\contentsline {subsubsection}{{\tt GRABTO}}{107}{section*.70}
+\contentsline {subsubsection}{{\tt GRABTIME}}{107}{section*.71}
+\contentsline {subsubsection}{{\tt GRABGAP}}{107}{section*.72}
+\contentsline {subsubsection}{{\tt GRIDMIN}}{108}{section*.73}
+\contentsline {subsubsection}{{\tt GRIDMAX}}{108}{section*.74}
+\contentsline {subsubsection}{{\tt GRIDMEAS}}{108}{section*.75}
+\contentsline {subsubsection}{{\tt GRIDNR}}{108}{section*.76}
+\contentsline {subsubsection}{{\tt GRIDNT}}{109}{section*.77}
+\contentsline {subsubsection}{{\tt GRIDSTEP}}{109}{section*.78}
+\contentsline {subsubsection}{{\tt GRIDVLA}}{109}{section*.79}
+\contentsline {subsubsection}{{\tt GRIDW0}}{110}{section*.80}
+\contentsline {subsubsection}{{\tt GROUP}}{110}{section*.81}
+\contentsline {subsubsection}{{\tt HIGROUP}}{110}{section*.82}
+\contentsline {subsubsection}{{\tt IATUTC}}{110}{section*.83}
+\contentsline {subsubsection}{{\tt INTENTs}}{111}{section*.84}
+\contentsline {subsubsection}{{\tt LINEINIT}}{112}{section*.85}
+\contentsline {subsubsection}{{\tt LINENAME}}{112}{section*.86}
+\contentsline {subsubsection}{{\tt LINEPG}}{113}{section*.87}
+\contentsline {subsubsection}{{\tt LOCFILE}}{113}{section*.88}
+\contentsline {subsubsection}{{\tt LST}}{113}{section*.89}
+\contentsline {subsubsection}{{\tt MAPLIM}}{114}{section*.90}
+\contentsline {subsubsection}{{\tt MINPAUSE}}{114}{section*.91}
+\contentsline {subsubsection}{{\tt MONTH}}{116}{section*.92}
+\contentsline {subsubsection}{{\tt NCHAN}}{116}{section*.93}
+\contentsline {subsubsection}{{\tt NOSETUP}}{116}{section*.94}
+\contentsline {subsubsection}{{\tt NOTE1, NOTE2, NOTE3, and NOTE4}}{116}{section*.95}
+\contentsline {subsubsection}{{\tt OBSMODE}}{117}{section*.96}
+\contentsline {subsubsection}{{\tt OBSPHONE}}{117}{section*.97}
+\contentsline {subsubsection}{{\tt OBSTYPE}}{117}{section*.98}
+\contentsline {subsubsection}{{\tt OPDUR}}{118}{section*.99}
+\contentsline {subsubsection}{{\tt OPELPRIO}}{118}{section*.100}
+\contentsline {subsubsection}{{\tt OPHA}}{119}{section*.101}
+\contentsline {subsubsection}{{\tt OPHMAXDT}}{119}{section*.102}
+\contentsline {subsubsection}{{\tt OPHAWID}}{120}{section*.103}
+\contentsline {subsubsection}{{\tt OPHAWT}}{120}{section*.104}
+\contentsline {subsubsection}{{\tt OPHASTA}}{120}{section*.105}
+\contentsline {subsubsection}{{\tt OPHLIMTI}}{120}{section*.106}
+\contentsline {subsubsection}{{\tt OPHLIMWT}}{121}{section*.107}
+\contentsline {subsubsection}{{\tt OPMINSEP}}{121}{section*.108}
+\contentsline {subsubsection}{{\tt OPMISS}}{121}{section*.109}
+\contentsline {subsubsection}{{\tt OPMINEL}}{122}{section*.110}
+\contentsline {subsubsection}{{\tt OPMINANT}}{122}{section*.111}
+\contentsline {subsubsection}{{\tt OPNOSUB}}{122}{section*.112}
+\contentsline {subsubsection}{{\tt OPPRTLEV}}{123}{section*.113}
+\contentsline {subsubsection}{{\tt OPSKIP}}{123}{section*.114}
+\contentsline {subsubsection}{{\tt OPSLEWTI}}{123}{section*.115}
+\contentsline {subsubsection}{{\tt OPSLEWWT}}{124}{section*.116}
+\contentsline {subsubsection}{{\tt OPTMODE}}{124}{section*.117}
+\contentsline {subsubsection}{{\tt OPTLOWT}}{127}{section*.118}
+\contentsline {subsubsection}{{\tt OPTSLEW}}{127}{section*.119}
+\contentsline {subsubsection}{{\tt OVERRIDE}}{127}{section*.120}
+\contentsline {subsubsection}{{\tt OVERwrit}}{128}{section*.121}
+\contentsline {subsubsection}{{\tt PCAL}}{128}{section*.122}
+\contentsline {subsubsection}{{\tt PCENTERS}}{128}{section*.123}
+\contentsline {subsubsection}{{\tt PEAK} and {\tt NOPEAK}}{129}{section*.124}
+\contentsline {subsubsection}{{\tt PEAKFILE}}{129}{section*.125}
+\contentsline {subsubsection}{{\tt PEAKINIT}}{130}{section*.126}
+\contentsline {subsubsection}{{\tt PHONE}}{130}{section*.127}
+\contentsline {subsubsection}{{\tt PINAME}}{130}{section*.128}
+\contentsline {subsubsection}{{\tt PKWATCH}}{131}{section*.129}
+\contentsline {subsubsection}{{\tt PLOT}}{131}{section*.130}
+\contentsline {subsubsection}{{\tt POINT}}{131}{section*.131}
+\contentsline {subsubsection}{{\tt PN3DB} and {\tt NOPN3DB}}{132}{section*.132}
+\contentsline {subsubsection}{{\tt PRECDATE}}{132}{section*.133}
+\contentsline {subsubsection}{{\tt PREEMPT}}{133}{section*.134}
+\contentsline {subsubsection}{{\tt PRESCAN}}{134}{section*.135}
+\contentsline {subsubsection}{{\tt PRESTART}}{135}{section*.136}
+\contentsline {subsubsection}{{\tt PTDUR}}{136}{section*.137}
+\contentsline {subsubsection}{{\tt PTSLEW}}{136}{section*.138}
+\contentsline {subsubsection}{{\tt PTVLBA} and {\tt NOPTVLBA}}{136}{section*.139}
+\contentsline {subsubsection}{{\tt QUAL}}{136}{section*.140}
+\contentsline {subsubsection}{{\tt RECord} and {\tt NORECord}}{137}{section*.141}
+\contentsline {subsubsection}{{\tt REPeat}}{137}{section*.142}
+\contentsline {subsubsection}{{\tt REVERSE}}{137}{section*.143}
+\contentsline {subsubsection}{{\tt REWIND}}{138}{section*.144}
+\contentsline {subsubsection}{\tt ROTATION}{138}{section*.145}
+\contentsline {subsubsection}{\tt ROTPAT}{138}{section*.146}
+\contentsline {subsubsection}{\tt ROTOFF}{139}{section*.147}
+\contentsline {subsubsection}{\tt SCANTAG}{139}{section*.148}
+\contentsline {subsubsection}{\tt SCHedule}{139}{section*.149}
+\contentsline {subsubsection}{{\tt SETINIT}}{140}{section*.150}
+\contentsline {subsubsection}{{\tt SETUP}}{140}{section*.151}
+\contentsline {subsubsection}{{\tt SOURCE}}{140}{section*.152}
+\contentsline {subsubsection}{{\tt SRCCAT}}{141}{section*.153}
+\contentsline {subsubsection}{{\tt SRCFILE}}{141}{section*.154}
+\contentsline {subsubsection}{{\tt SRCFILE2}}{142}{section*.155}
+\contentsline {subsubsection}{{\tt STACAT}}{142}{section*.156}
+\contentsline {subsubsection}{{\tt STAFILE}}{142}{section*.157}
+\contentsline {subsubsection}{{\tt START}}{143}{section*.158}
+\contentsline {subsubsection}{{\tt STATions}}{143}{section*.159}
+\contentsline {subsubsection}{{\tt STOP}}{144}{section*.160}
+\contentsline {subsubsection}{{\tt SUMITEM}}{144}{section*.161}
+\contentsline {subsubsection}{{\tt TANT1 and TANT2}}{145}{section*.162}
+\contentsline {subsubsection}{{\tt TANTSTA1 and TANTSTA2}}{146}{section*.163}
+\contentsline {subsubsection}{{\tt TAPE}}{146}{section*.164}
+\contentsline {subsubsection}{{\tt TAPEFILE}}{146}{section*.165}
+\contentsline {subsubsection}{{\tt TAPEINI}}{147}{section*.166}
+\contentsline {subsubsection}{{\tt TAPESYNC}}{147}{section*.167}
+\contentsline {subsubsection}{{\tt TAVLBA} and {\tt NOTAVLBA}}{148}{section*.168}
+\contentsline {subsubsection}{{\tt TELEX}}{148}{section*.169}
+\contentsline {subsubsection}{{\tt TPREF}}{148}{section*.170}
+\contentsline {subsubsection}{{\tt TSYS} and {\tt NOTSYS}}{149}{section*.171}
+\contentsline {subsubsection}{{\tt UVMFS}}{149}{section*.172}
+\contentsline {subsubsection}{{\tt VERSION}}{150}{section*.173}
+\contentsline {subsubsection}{{\tt VEXTEST}}{150}{section*.174}
+\contentsline {subsubsection}{{\tt VLABAND} and {\tt VLABW}}{150}{section*.175}
+\contentsline {subsubsection}{{\tt VLAINTEG}}{150}{section*.176}
+\contentsline {subsubsection}{{\tt VLAMODE}}{151}{section*.177}
+\contentsline {subsubsection}{{\tt VLAPEAK}}{151}{section*.178}
+\contentsline {subsubsection}{{\tt VLAPTIME}}{152}{section*.179}
+\contentsline {subsubsection}{{\tt VLATSYS and VLANTSYS}}{152}{section*.180}
+\contentsline {subsubsection}{{\tt VLAPSRC}}{153}{section*.181}
+\contentsline {subsubsection}{{\tt VLARFANT}}{153}{section*.182}
+\contentsline {subsubsection}{{\tt VLATYPE}}{154}{section*.183}
+\contentsline {subsubsection}{{\tt VLAUSERN}}{154}{section*.184}
+\contentsline {subsubsection}{{\tt WRAP24}}{154}{section*.185}
+\contentsline {subsubsection}{{\tt YEAR}}{154}{section*.186}
+\contentsline {section}{\numberline {3.2}Source Catalog}{155}{section.3.2}
+\contentsline {section}{\numberline {3.3}Station Catalog and Locations Catalog}{159}{section.3.3}
+\contentsline {section}{\numberline {3.4}Tape Initialization File}{164}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Details of Tape Initialization Parameters}{166}{subsection.3.4.1}
+\contentsline {subsubsection}{{\tt MEDIA}}{166}{section*.187}
+\contentsline {subsubsection}{{\tt NDRIVES}}{167}{section*.188}
+\contentsline {subsubsection}{{\tt NHEADPOS}}{167}{section*.189}
+\contentsline {subsubsection}{{\tt OBSCODE}}{167}{section*.190}
+\contentsline {subsubsection}{{\tt TPSTA}}{168}{section*.191}
+\contentsline {subsubsection}{{\tt TPDRIVE}}{168}{section*.192}
+\contentsline {subsubsection}{{\tt TPINDEX}}{168}{section*.193}
+\contentsline {subsubsection}{{\tt TPLENGTH}}{168}{section*.194}
+\contentsline {subsubsection}{{\tt DENSITY}}{169}{section*.195}
+\contentsline {subsubsection}{{\tt TPTIME}}{169}{section*.196}
+\contentsline {subsubsection}{{\tt HEADMODE}}{169}{section*.197}
+\contentsline {section}{\numberline {3.5}Frequency Catalog}{170}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}List of Frequency File Parameters}{170}{subsection.3.5.1}
+\contentsline {section}{\numberline {3.6}Setup Files}{172}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Standard Setup Files}{173}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Examples of Setup Files}{174}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Summary List of Setup File Parameters}{178}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}Details of Setup File Parameters}{180}{subsection.3.6.4}
+\contentsline {subsubsection}{{\tt AZCOLIM}}{180}{section*.198}
+\contentsline {subsubsection}{{\tt BAND}}{180}{section*.199}
+\contentsline {subsubsection}{{\tt BARREL}}{181}{section*.200}
+\contentsline {subsubsection}{{\tt BBFILTER}}{182}{section*.201}
+\contentsline {subsubsection}{{\tt BBC}}{182}{section*.202}
+\contentsline {subsubsection}{{\tt BBSYN}}{183}{section*.203}
+\contentsline {subsubsection}{{\tt BBSYN2}}{184}{section*.204}
+\contentsline {subsubsection}{{\tt BITS}}{184}{section*.205}
+\contentsline {subsubsection}{{\tt DBE}}{185}{section*.206}
+\contentsline {subsubsection}{{\tt DUALX}}{186}{section*.207}
+\contentsline {subsubsection}{{\tt ELCOLIM}}{186}{section*.208}
+\contentsline {subsubsection}{{\tt FE}}{186}{section*.209}
+\contentsline {subsubsection}{{\tt FIRMFILE}}{187}{section*.210}
+\contentsline {subsubsection}{{\tt FIRSTLO}}{187}{section*.211}
+\contentsline {subsubsection}{{\tt FORMAT}}{188}{section*.212}
+\contentsline {subsubsection}{{\tt FREQOFF}}{189}{section*.213}
+\contentsline {subsubsection}{{\tt FREQREF}}{190}{section*.214}
+\contentsline {subsubsection}{{\tt FRSWITCH}}{190}{section*.215}
+\contentsline {subsubsection}{{\tt IFCHAN}}{191}{section*.216}
+\contentsline {subsubsection}{{\tt IFDIST}}{191}{section*.217}
+\contentsline {subsubsection}{{\tt LCHAN} and {\tt RCHAN}}{192}{section*.218}
+\contentsline {subsubsection}{{\tt LEVEL}}{192}{section*.219}
+\contentsline {subsubsection}{{\tt LOGGING}}{192}{section*.220}
+\contentsline {subsubsection}{{\tt LCP50CM} and {\tt RCP50CM}}{193}{section*.221}
+\contentsline {subsubsection}{{\tt M4PATCH}}{193}{section*.222}
+\contentsline {subsubsection}{{\tt MODETEST}}{194}{section*.223}
+\contentsline {subsubsection}{{\tt NCHAN}}{194}{section*.224}
+\contentsline {subsubsection}{{\tt NETSIDE}}{194}{section*.225}
+\contentsline {subsubsection}{{\tt NOISE}}{195}{section*.226}
+\contentsline {subsubsection}{{\tt NOISEFRQ}}{195}{section*.227}
+\contentsline {subsubsection}{{\tt PERIOD}}{195}{section*.228}
+\contentsline {subsubsection}{{\tt PCAL}}{196}{section*.229}
+\contentsline {subsubsection}{{\tt PCALFR1} and {\tt PCALFR2}}{196}{section*.230}
+\contentsline {subsubsection}{{\tt PCALXB1} and {\tt PCALXB2}}{197}{section*.231}
+\contentsline {subsubsection}{{\tt POL}}{197}{section*.232}
+\contentsline {subsubsection}{{\tt PTINCR}}{198}{section*.233}
+\contentsline {subsubsection}{{\tt PTOFF}}{198}{section*.234}
+\contentsline {subsubsection}{{\tt SAMPRATE}}{198}{section*.235}
+\contentsline {subsubsection}{{\tt SIDEBAND}}{199}{section*.236}
+\contentsline {subsubsection}{{\tt STATION}}{199}{section*.237}
+\contentsline {subsubsection}{ {\tt STRING1, STRING2, STRING3,} and {\tt STRING4}}{199}{section*.238}
+\contentsline {subsubsection}{{\tt SWTCHDUR}}{200}{section*.239}
+\contentsline {subsubsection}{{\tt SYNTH}}{200}{section*.240}
+\contentsline {subsubsection}{{\tt TPMODE}}{201}{section*.241}
+\contentsline {subsubsection}{{\tt TPSPEED}}{201}{section*.242}
+\contentsline {subsubsection}{{\tt TPSPEEDH}}{202}{section*.243}
+\contentsline {subsubsection}{{\tt TPSPEEDL}}{203}{section*.244}
+\contentsline {subsubsection}{ {\tt TRACK1, TRACK2, ... , TRACK7,} and {\tt TRACK8}}{203}{section*.245}
+\contentsline {section}{\numberline {3.7}Satellite Initialization.}{203}{section.3.7}
+\contentsline {chapter}{\numberline {4}INSTALLING, AND RUNNING SCHED}{205}{chapter.4}
+\contentsline {section}{\numberline {4.1}Installing SCHED}{205}{section.4.1}
+\contentsline {section}{\numberline {4.2}Running SCHED}{208}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Running SCHED under UNIX or LINUX}{208}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Running SCHED on a VAX with VMS}{209}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Distribution of Schedule Files}{209}{section.4.3}
+\contentsline {section}{\numberline {4.4}Related Programs}{210}{section.4.4}
+\contentsline {section}{\numberline {4.5}Release Instructions.}{210}{section.4.5}
+\contentsline {chapter}{\numberline {5}RELEASE NOTES}{220}{chapter.5}
+\contentsline {section}{\numberline {5.1}Recent Releases}{220}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Version 11.5 development}{220}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Version 11.4}{220}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Version 11.3}{222}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Version 11.2}{224}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}Version 11.0}{229}{subsection.5.1.5}
+\contentsline {subsection}{\numberline {5.1.6}Version 10.2}{233}{subsection.5.1.6}
+\contentsline {section}{\numberline {5.2}Old Releases}{234}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Version 10.1}{234}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Version 10.0}{237}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Version 9.4}{238}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Version 9.3}{241}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.5}Version 9.2}{242}{subsection.5.2.5}
+\contentsline {subsection}{\numberline {5.2.6}Version 9.0}{243}{subsection.5.2.6}
+\contentsline {subsection}{\numberline {5.2.7}Version 8.1}{244}{subsection.5.2.7}
+\contentsline {subsection}{\numberline {5.2.8}Version 8.0}{245}{subsection.5.2.8}
+\contentsline {subsection}{\numberline {5.2.9}Version 6.05}{247}{subsection.5.2.9}
+\contentsline {subsection}{\numberline {5.2.10}Version 6.04}{247}{subsection.5.2.10}
+\contentsline {subsection}{\numberline {5.2.11}Version 6.02 (Released 29 July 2005)}{249}{subsection.5.2.11}
+\contentsline {subsection}{\numberline {5.2.12}Version 6.01}{250}{subsection.5.2.12}
+\contentsline {subsection}{\numberline {5.2.13}Version 6.0 - Released March 8, 2005}{250}{subsection.5.2.13}
+\contentsline {subsection}{\numberline {5.2.14}Release of 18 September 2003.}{253}{subsection.5.2.14}
+\contentsline {subsection}{\numberline {5.2.15}Release of 02 July 2002.}{254}{subsection.5.2.15}
+\contentsline {subsection}{\numberline {5.2.16}Release of 16 October 2001.}{255}{subsection.5.2.16}
+\contentsline {subsection}{\numberline {5.2.17}Release of 12 February 2001.}{256}{subsection.5.2.17}
+\contentsline {subsection}{\numberline {5.2.18}Release of 30 January 2001.}{257}{subsection.5.2.18}
+\contentsline {subsection}{\numberline {5.2.19}Release of 12 January 2001.}{258}{subsection.5.2.19}
+\contentsline {subsection}{\numberline {5.2.20}Release of 28 April 2000.}{260}{subsection.5.2.20}
+\contentsline {subsection}{\numberline {5.2.21}Release of 1 July 1999.}{262}{subsection.5.2.21}
+\contentsline {subsection}{\numberline {5.2.22}Release of 1 Dec. 1998.}{264}{subsection.5.2.22}
+\contentsline {subsection}{\numberline {5.2.23}Release of 30 March 1998.}{265}{subsection.5.2.23}
+\contentsline {subsection}{\numberline {5.2.24}Release of 18 Nov. 1997.}{266}{subsection.5.2.24}
+\contentsline {subsection}{\numberline {5.2.25}Release of 18 August 1997.}{268}{subsection.5.2.25}
+\contentsline {subsection}{\numberline {5.2.26}Release of 1 Aug. 1997}{268}{subsection.5.2.26}
+\contentsline {subsection}{\numberline {5.2.27}Release of 10 Feb. 1997}{271}{subsection.5.2.27}
+\contentsline {subsection}{\numberline {5.2.28}Release of 14 Jan. 1997}{271}{subsection.5.2.28}
+\contentsline {subsection}{\numberline {5.2.29}Release of 4 Dec. 1996}{272}{subsection.5.2.29}
+\contentsline {subsection}{\numberline {5.2.30}Release of 26 June 1996}{275}{subsection.5.2.30}
+\contentsline {subsection}{\numberline {5.2.31}Release of 13 Apr 1996}{276}{subsection.5.2.31}
+\contentsline {subsection}{\numberline {5.2.32}Release of 22 Feb 1996}{276}{subsection.5.2.32}
+\contentsline {subsection}{\numberline {5.2.33}Release of 16 May 1995}{279}{subsection.5.2.33}
+\contentsline {section}{\numberline {5.3}Wish List}{279}{section.5.3}
+\contentsline {chapter}{\numberline {A}APPENDICES}{284}{appendix.A}
+\contentsline {section}{\numberline {A.1}Station Codes}{284}{section.A.1}
+\contentsline {section}{\numberline {A.2}Historical Notes}{286}{section.A.2}
+\contentsline {chapter}{\numberline {B}OBSOLETE SECTIONS}{288}{appendix.B}
+\contentsline {section}{\numberline {B.1}Old VLA}{288}{section.B.1}
+\contentsline {subsection}{\numberline {B.1.1}VLBI at the VLA - old system}{289}{subsection.B.1.1}
+\contentsline {subsubsection}{An Example}{291}{section*.246}
+\contentsline {subsection}{\numberline {B.1.2}VLA-Only Project Example}{291}{subsection.B.1.2}
+\contentsline {subsection}{\numberline {B.1.3}Parameters Specific to the VLA}{291}{subsection.B.1.3}
+\contentsline {subsection}{\numberline {B.1.4}VLA Standard Bands.}{293}{subsection.B.1.4}
+\contentsline {section}{\numberline {B.2}Tape Management}{294}{section.B.2}
+\contentsline {subsection}{\numberline {B.2.1}GENERAL CONCERNS}{294}{subsection.B.2.1}
+\contentsline {subsection}{\numberline {B.2.2}TAPE HANDLING at SCAN BOUNDARIES}{295}{subsection.B.2.2}
+\contentsline {subsection}{\numberline {B.2.3}TAPE LENGTHS and PASS TIMES}{296}{subsection.B.2.3}
+\contentsline {subsection}{\numberline {B.2.4}NUMBER of PASSES}{297}{subsection.B.2.4}
+\contentsline {subsection}{\numberline {B.2.5}READBACK TESTS}{299}{subsection.B.2.5}
+\contentsline {subsection}{\numberline {B.2.6}TAPE CHANGES}{299}{subsection.B.2.6}
+\contentsline {subsection}{\numberline {B.2.7}POSTPASSES}{300}{subsection.B.2.7}
+\contentsline {subsection}{\numberline {B.2.8}AUTOMATIC TAPE ALLOCATION}{300}{subsection.B.2.8}
+\contentsline {section}{\numberline {B.3}Mark\nobreakspace {}III Observations}{301}{section.B.3}
+\contentsline {section}{\numberline {B.4}Scheduling Mark II Observations}{303}{section.B.4}
+\contentsline {section}{\numberline {B.5}Head Positions and Track Assignments}{306}{section.B.5}
+\contentsline {section}{\numberline {B.6}S2}{309}{section.B.6}
+\contentsline {section}{\numberline {B.7}Green Bank 140'.}{309}{section.B.7}
+\contentsline {section}{\numberline {B.8}Installation on Mac OSX 10.3 in 2003.}{310}{section.B.8}

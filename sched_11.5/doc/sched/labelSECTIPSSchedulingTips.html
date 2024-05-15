@@ -1,0 +1,3006 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Scheduling Tips</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 1799--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECRECSYSRecordingSystems.html" >next</a>] [<a 
+href="labelSECPLANNINGUsingSCHEDforProjectPlanning.html" >prev</a>] [<a 
+href="labelSECPLANNINGUsingSCHEDforProjectPlanning.html#taillabelSECPLANNINGUsingSCHEDforProjectPlanning.html" >prev-tail</a>] [<a 
+href="#taillabelSECTIPSSchedulingTips.html">tail</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECTIPSSchedulingTips.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">2.2   </span> <a 
+ id="x13-150002.2"></a>Scheduling Tips</h3>
+<!--l. 1801--><p class="noindent" >This section contains subsections with detailed discussions and advice on various aspects of scheduling.
+It surely is not complete, but much basic advice is available.
+<!--l. 1805--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">2.2.1   </span> <a 
+ id="x13-160002.2.1"></a>Observing Strategy</h4>
+<!--l. 1807--><p class="noindent" >A tremendous amount could be said about observing strategy. See the article by Joan Wrobel in the
+book &#8220;Very Long Baseline Interferometry and the VLBA&#8221; (1995: ASP) for a good discussion. That
+book also contains a lot of information about VLBI and is a good reference for all observers to have.
+Other important sources of information are the &#8220;VLBA Observational Status Summary&#8221;
+and &#8220;General Instructions on Observation Preparation&#8221; (which is sent to scheduled users).
+These and many other useful documents can be accessed on the Internet from the <a 
+href="http://www.vlba.nrao.edu/astro" >&#8220;VLBA
+Information for Astronomers&#8221;</a> page. This section of the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>Manual will be limited to a
+few important concepts to keep in mind while scheduling. It is assumed that the observer
+already has a reasonable idea of how much time is needed per source, what frequencies to
+observe, etc. The suggestions here are more oriented toward smooth observing, processing, and
+calibration.
+<!--l. 1824--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 1826--><p class="noindent" ><span 
+class="cmbx-10">Fringe</span>
+     <span 
+class="cmbx-10">finders:</span>
+     In
+     order
+     for
+     the
+     staff
+     at
+     a
+     VLBI
+     correlator
+     to
+     tell
+     if
+     the
+     correlation
+     has
+     gone
+     well,
+     it
+     is
+                                                                                
+                                                                                
+     necessary
+     to
+     have
+     occasional
+     scans
+     on
+     sources
+     that
+     will
+     provide
+     strong
+     fringes.
+     A
+     minimum
+     of
+     two
+     such
+     scans
+     should
+     be
+     provided
+     and,
+     for
+     longer
+     projects,
+     there
+     should
+     be
+     one
+     every
+     4-6
+     hours
+     at
+     a
+     minimum.
+     The
+     &#8220;VLBA
+     Observational
+     Status
+     Summary&#8221;
+     and
+     &#8220;General
+     Instructions
+     on
+     How
+     to
+     Prepare
+     for
+     Observing&#8221;
+     documents
+     mentioned
+                                                                                
+                                                                                
+     above
+     have
+     lists
+     of
+     appropriate
+     sources.
+     <!--l. 1835--><p class="noindent" >The
+     fringe
+     finders
+     can
+     also
+     be
+     used
+     for
+     &#8220;manual
+     phase
+     cal&#8221;.
+     This
+     is
+     the
+     process
+     of
+     aligning
+     the
+     phases
+     and
+     delays
+     on
+     all
+     individual
+     IFs.
+     This
+     is
+     simply
+     done
+     by
+     running
+     the
+     fringe
+     fitting
+     program
+     on
+     the
+     calibrator
+     and
+     applying
+     the
+     results
+     to
+     all
+                                                                                
+                                                                                
+     data.
+     For
+     this
+     purpose,
+     it
+     helps
+     to
+     have
+     a
+     scan
+     with
+     all
+     antennas
+     at
+     reasonably
+     high
+     elevations
+     simultaneously.
+     <!--l. 1842--><p class="noindent" >Finally
+     the
+     fringe
+     finders
+     typically
+     make
+     good
+     bandpass
+     calibrators
+     because
+     then
+     have
+     good
+     SNR
+     in
+     each
+     spectral
+     channel.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 1845--><p class="noindent" ><span 
+class="cmbx-10">Setting</span>
+     <span 
+class="cmbx-10">the</span>
+     <span 
+class="cmbx-10">flux</span>
+     <span 
+class="cmbx-10">scale:</span>
+     Setting
+     the
+     flux
+     scale
+     of
+     VLBI
+                                                                                
+                                                                                
+     images
+     is
+     not
+     trivial.
+     Ideally,
+     one
+     would
+     have
+     a
+     compact
+     source
+     of
+     known
+     flux
+     density
+     that
+     could
+     be
+     used,
+     as
+     3C286
+     and
+     3C48
+     are
+     on
+     the
+     VLA,
+     to
+     calibrate
+     the
+     flux
+     densities.
+     However,
+     by
+     their
+     nature,
+     sources
+     that
+     are
+     compact
+     to
+     VLBI
+     (essentially
+     none
+     are
+     unresolved)
+     are
+     variable
+     and,
+     therefore,
+     do
+                                                                                
+                                                                                
+     not
+     make
+     good
+     flux
+     calibrators.
+     There
+     are
+     two
+     ways
+     to
+     deal
+     with
+     this.
+     <!--l. 1853--><p class="noindent" >One
+     is
+     to
+     try
+     to
+     obtain
+     the
+     flux
+     density
+     of
+     a
+     compact
+     calibrator
+     at
+     a
+     close
+     enough
+     time
+     to
+     the
+     VLBI
+     observations
+     that
+     variations
+     will
+     not
+     be
+     significant.
+     At
+     the
+     time
+     of
+     the
+     VLBI
+     observations,
+     some
+     of
+                                                                                
+                                                                                
+     the
+     larger
+     antennas
+     can
+     be
+     asked
+     to
+     measure
+     flux
+     densities
+     of
+     sources
+     being
+     observed
+     (see
+     the
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2050003.1.2"><span 
+class="cmtt-10">TANT</span></a>
+     command.
+     Better
+     yet,
+     if
+     you
+     have
+     a
+     phased
+     array,
+     such
+     as
+     the
+     VLA,
+     or
+     can
+     get
+     an
+     hour
+     or
+     so
+     of
+     VLA
+     test
+     time,
+     accurate
+     flux
+     densities
+     of
+     your
+     VLBI
+     calibrators
+     can
+     be
+     measured.
+                                                                                
+                                                                                
+     In
+     order
+     to
+     do
+     this,
+     be
+     sure
+     to
+     include
+     a
+     VLA
+     flux
+     calibrator
+     (usually
+     3C286
+     or
+     3C48)
+     in
+     the
+     VLA
+     schedule.
+     You
+     don&#8217;t
+     need
+     to
+     record
+     VLBI
+     data
+     on
+     it.
+     This
+     method
+     can
+     go
+     awry
+     if
+     the
+     calibrator
+     has
+     intermediate
+     scale
+     structure
+     that
+     is
+     compact
+     to
+     the
+     interferometer
+     but
+     resolved
+     out
+                                                                                
+                                                                                
+     by
+     VLBI.
+     <!--l. 1867--><p class="noindent" >It
+     is
+     also
+     possible,
+     and
+     perhaps
+     preferable,
+     to
+     rely
+     on
+     the
+     apriori
+     calibration
+     of
+     the
+     VLBI
+     antennas.
+     For
+     this,
+     it
+     is
+     best
+     to
+     look
+     carefully
+     at
+     your
+     data
+     and
+     determine
+     which
+     subset
+     of
+     antennas
+     is
+     giving
+     consistent
+     calibration.
+     With
+     the
+     VLBA
+     at
+     intermediate
+     frequencies,
+     it
+     is
+     possible
+     to
+                                                                                
+                                                                                
+     get
+     the
+     flux
+     scale
+     right
+     to
+     within
+     a
+     few
+     percent
+     this
+     way.
+     You
+     just
+     have
+     to
+     be
+     sure
+     not
+     to
+     let
+     any
+     antennas
+     with
+     bad
+     weather
+     or
+     other
+     problems
+     contribute
+     to
+     the
+     flux
+     scale.
+     In
+     the
+     AIPS
+     calibration
+     task
+     CALIB,
+     use
+     ANTUSE
+     to
+     limit
+     the
+     gain
+     normalization
+     to
+     the
+     antennas
+     whose
+                                                                                
+                                                                                
+     gains
+     you
+     trust.
+     Also
+     specify
+     a
+     generous
+     minimum
+     elevation,
+     such
+     as
+     30
+     degrees,
+     for
+     the
+     gain
+     normalization.
+     <!--l. 1879--><p class="noindent" >When
+     using
+     the
+     apriori
+     gains
+     for
+     absolute
+     flux
+     calibration,
+     care
+     must
+     be
+     taken
+     with
+     bandpass
+     calibration
+     and
+     channel
+     selection.
+     The
+     gains
+     are
+     measured
+     using
+     the
+     full
+     bandwidth
+     of
+     the
+     baseband
+     channel
+     -
+     they
+                                                                                
+                                                                                
+     are
+     based
+     on
+     total
+     power
+     measurements
+     from
+     the
+     baseband
+     converters.
+     Such
+     gains
+     apply
+     to
+     the
+     average
+     across
+     the
+     full
+     baseband.
+     If
+     you
+     attempt
+     to
+     apply
+     such
+     gains
+     to
+     a
+     data
+     set
+     with
+     the
+     edge
+     channels
+     removed,
+     there
+     will
+     be
+     an
+     error
+     of
+     a
+     few
+     percent
+     because
+     those
+     edge
+     channels
+     typically
+     have
+                                                                                
+                                                                                
+     lower
+     gain
+     (which
+     is
+     probably
+     why
+     you
+     removed
+     them)
+     and
+     the
+     average
+     for
+     the
+     remaining
+     channels
+     will
+     be
+     higher.
+     You
+     can
+     deal
+     with
+     this
+     either
+     by
+     doing
+     the
+     calibration
+     including
+     all
+     edge
+     channels,
+     or
+     by
+     doing
+     a
+     bandpass
+     calibration
+     based
+     on
+     all
+     channels.
+     Bandpass
+     calibration
+     brings
+     all
+     channels
+     to
+     the
+     average
+                                                                                
+                                                                                
+     level.
+     <!--l. 1892--><p class="noindent" >If
+     you
+     are
+     going
+     to
+     rely
+     on
+     apriori
+     calibration,
+     be
+     sure
+     to
+     obtain
+     some
+     data
+     at
+     close
+     to
+     the
+     frequencies
+     at
+     which
+     antenna
+     gains
+     have
+     been
+     measured.
+     These
+     frequencies
+     are
+     given
+     in
+     the
+     <span 
+class="cmsl-10">vlba</span><span 
+class="cmsl-10">_gains.key</span>
+     available
+     by
+     anonymous
+     ftp
+     to
+     ftp.aoc.nrao.edu.
+     This
+     is
+     the
+     file
+     that
+     you
+     will
+     need
+     for
+                                                                                
+                                                                                
+     VLBA
+     calibration.
+     At
+     those
+     frequencies,
+     the
+     Tsys
+     used
+     in
+     calibration
+     and
+     the
+     gain
+     are
+     based
+     on
+     the
+     same
+     values
+     of
+     Tcal
+     so
+     the
+     Tcal
+     value
+     cancels
+     out.
+     If
+     you
+     observe
+     at
+     other
+     frequencies,
+     you
+     will
+     be
+     depending
+     on
+     the
+     Tcal
+     values
+     being
+     correct
+     (or
+     at
+     least
+     having
+     the
+     right
+     ratio)
+     at
+                                                                                
+                                                                                
+     your
+     frequency
+     and
+     the
+     frequency
+     where
+     the
+     gains
+     are
+     measured.
+     That
+     is
+     not
+     assured.
+     <!--l. 1903--><p class="noindent" >For
+     any
+     of
+     these
+     methods
+     to
+     work,
+     it
+     is
+     best
+     to
+     include
+     a
+     strong,
+     compact
+     calibrator
+     and
+     to
+     observe
+     it
+     several
+     times
+     to
+     check
+     consistency.
+     <!--l. 1907--><p class="noindent" >There
+     appears
+     to
+     be
+     an
+     offset
+     of
+     on
+     the
+     order
+     of
+                                                                                
+                                                                                
+     6.5%
+     between
+     Tsys
+     values
+     measured
+     with
+     the
+     legacy
+     VLBA
+     system&#8217;s
+     baseband
+     converters
+     and
+     Tsys
+     measured
+     with
+     the
+     new,
+     wide-band
+     RDBE.
+     The
+     cause
+     of
+     that
+     offset
+     is
+     not
+     yet
+     understood,
+     but
+     is
+     thought
+     to
+     be
+     some
+     issue
+     with
+     the
+     old
+     system.
+     During
+     the
+     transition,
+     the
+     gains
+     distributed
+     are
+     for
+     the
+     old
+     system.
+                                                                                
+                                                                                
+     An
+     adjustment
+     appears
+     to
+     be
+     required
+     to
+     for
+     data
+     data
+     calibrated
+     using
+     Tsys
+     measured
+     either
+     by
+     the
+     RDBE
+     or
+     by
+     DiFX
+     and
+     gains
+     derived
+     from
+     the
+     old
+     system
+     (all
+     gains
+     distributed
+     so
+     far
+     as
+     of
+     July
+     2012).
+     For
+     a
+     discussion
+     of
+     this
+     effect,
+     see
+     /htmladdnormallinkVLBA
+     Senesitivity
+     Upgrade
+     Memo
+     34
+     https://science.nrao.edu/facilities/vlba/publications/memos/sensitivity-upgrade/index.sensimemo34.pdf.
+     Stay
+                                                                                
+                                                                                
+     tuned
+     on
+     developments
+     in
+     this
+     area.
+     <!--l. 1920--><p class="noindent" ><a 
+href="http://www.vlba.nrao.edu/astro" >&#8220;VLBA
+     Information
+     for
+     Astronomers&#8221;</a>
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 1922--><p class="noindent" ><span 
+class="cmbx-10">Setting</span>
+     <span 
+class="cmbx-10">the</span>
+     <span 
+class="cmbx-10">relative</span>
+     <span 
+class="cmbx-10">gains</span>
+     <span 
+class="cmbx-10">of</span>
+     <span 
+class="cmbx-10">antennas:</span>
+     Another
+     invaluable
+     use
+     of
+     a
+     strong,
+     compact
+     calibrator
+     is
+     to
+     help
+     ensure
+     that
+     all
+     antennas
+     and
+     all
+     IFs
+     have
+     consistent
+     calibration.
+     After
+     apriori
+     calibration
+     and
+     setting
+     of
+     the
+     flux
+     scale
+                                                                                
+                                                                                
+     has
+     been
+     done,
+     a
+     model
+     of
+     the
+     calibrator
+     can
+     be
+     used
+     to
+     derive
+     whatever
+     additional
+     gain
+     adjustments
+     are
+     needed.
+     These
+     can
+     be
+     applied
+     to
+     the
+     whole
+     observation
+     to
+     obtain
+     the
+     best
+     possible
+     calibration,
+     short
+     of
+     self-cal.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 1931--><p class="noindent" ><span 
+class="cmbx-10">Scan</span>
+     <span 
+class="cmbx-10">Gaps,</span>
+     <span 
+class="cmbx-10">&#8220;Readback</span>
+     <span 
+class="cmbx-10">tests&#8221;,</span>
+     <span 
+class="cmbx-10">and</span>
+     <span 
+class="cmbx-10">module-swap</span>
+     <span 
+class="cmbx-10">gaps:</span>
+     Before
+     the
+     Mark5C
+     era,
+                                                                                
+                                                                                
+     one
+     had
+     to
+     be
+     very
+     careful
+     about
+     scan
+     gaps
+     to
+     avoid
+     data
+     loss
+     due
+     to
+     resync
+     times,
+     but
+     also
+     not
+     to
+     put
+     the
+     data
+     at
+     risk
+     through
+     excessively
+     long
+     record
+     scans
+     (period
+     of
+     no
+     media
+     stoppage).
+     With
+     the
+     Mark5C,
+     most
+     of
+     these
+     issues
+     go
+     away.
+     The
+     media
+     are
+     stopped
+     from
+     the
+                                                                                
+                                                                                
+     end
+     of
+     one
+     scan
+     to
+     the
+     expected
+     time
+     of
+     good
+     data
+     at
+     that
+     station
+     in
+     the
+     next
+     scan.
+     Resyncs
+     don&#8217;t
+     take
+     time
+     with
+     the
+     software
+     correlator.
+     <!--l. 1939--><p class="noindent" >With
+     the
+     older
+     media
+     (including
+     currently
+     (2012)
+     in
+     use
+     Mark5B
+     and
+     VLBA
+     disk
+     recording),
+     the
+     recording
+     media
+     should
+     be
+     stopped
+     occasionally
+     to
+     help
+     prevent
+                                                                                
+                                                                                
+     major
+     amounts
+     of
+     data
+     loss
+     if
+     something
+     should
+     go
+     wrong
+     and,
+     on
+     non-VLBA
+     controlled
+     stations,
+     to
+     allow
+     disk
+     bank
+     changes.
+     Two
+     minute
+     gaps
+     every
+     hour
+     or
+     two
+     used
+     to
+     be
+     used
+     for
+     readback
+     tests
+     with
+     the
+     tape
+     systems.
+     Tape
+     is
+     no
+     longer
+     used,
+     but
+     an
+     equivalent
+     data
+     integrity
+     test
+     is
+     likely
+                                                                                
+                                                                                
+     to
+     be
+     built
+     into
+     the
+     disk
+     based
+     systems
+     in
+     the
+     future.
+     Also,
+     if
+     the
+     disks
+     are
+     not
+     stopped,
+     all
+     the
+     data
+     ends
+     up
+     in
+     one
+     file.
+     If
+     there
+     are
+     problems
+     closing
+     the
+     file,
+     the
+     data
+     can
+     become
+     unreadable.
+     As
+     of
+     early
+     2008,
+     it
+     is
+     recommended
+     that
+     a
+     gap
+     of
+     30s
+     or
+                                                                                
+                                                                                
+     more
+     be
+     inserted
+     every
+     hour
+     or
+     two.
+     In
+     fact,
+     any
+     pause
+     in
+     recording
+     will
+     start
+     a
+     new
+     recording
+     scan,
+     but
+     beware
+     that
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>prevents
+     gaps
+     of
+     less
+     than
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1340003.1.2"><span 
+class="cmtt-10">MINPAUSE</span></a>
+     seconds.
+     For
+     field
+     system
+     controlled
+     stations,
+     (most
+     non-VLBA
+     stations)
+     gaps
+     should
+     also
+     be
+     inserted
+     to
+     allow
+     bank
+     changes.
+     The
+     VLBA
+     can
+     switch
+     between
+                                                                                
+                                                                                
+     mounted
+     disk
+     banks
+     (modules)
+     on
+     the
+     fly,
+     but
+     the
+     field
+     systems
+     need
+     a
+     pause
+     in
+     the
+     data
+     recording.
+     Such
+     gaps
+     should
+     be
+     inserted
+     every
+     22
+     minutes
+     for
+     recordings
+     at
+     1
+     Gbps
+     and
+     proportionally
+     less
+     often
+     at
+     lower
+     bit
+     rates.
+     These
+     gaps
+     need
+     to
+     be
+     more
+     than
+     10s
+     long.
+     </dd><dt class="list">
+                                                                                
+                                                                                
+     </dt><dd 
+class="list">
+     <!--l. 1962--><p class="noindent" ><span 
+class="cmbx-10">Phased</span>
+     <span 
+class="cmbx-10">VLA:</span>
+     The
+     phased
+     VLA
+     has
+     special
+     calibration
+     needs.
+     If
+     the
+     target
+     source
+     is
+     either
+     too
+     weak
+     or
+     too
+     resolved
+     to
+     be
+     used
+     for
+     phasing
+     up
+     the
+     array,
+     special
+     scans
+     on
+     a
+     calibrator
+     must
+     be
+     inserted
+     for
+     this
+     purpose.
+     This
+     can
+     be
+     done
+     with
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>.
+     Or
+     it
+     might
+     be
+                                                                                
+                                                                                
+     possible
+     to
+     do
+     it
+     with
+     the
+     VLA
+     scheduling
+     software,
+     but
+     it
+     is
+     probably
+     better
+     to
+     explicitly
+     include
+     the
+     calibrators
+     in
+     the
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>files.
+     (see
+     <a 
+href="labelSECVLASchedulingtheVLA.html#x20-370002.9">the
+     section
+     on
+     VLBI
+     at
+     the
+     VLA</a>
+     for
+     details).
+     <!--l. 1972--><p class="noindent" >Also,
+     the
+     effective
+     beam
+     of
+     the
+     phased
+     VLA
+     (or
+     any
+     other
+     phased
+     interferometer
+     such
+     as
+     Westerbork)
+     is
+     the
+                                                                                
+                                                                                
+     synthesized
+     beam.
+     This
+     can
+     be
+     less
+     than
+     an
+     arcsecond
+     in
+     the
+     worst
+     cases.
+     This
+     places
+     far
+     greater
+     demands
+     on
+     source
+     positions
+     required
+     for
+     observing
+     than
+     is
+     typical
+     at
+     single
+     antennas.
+     Be
+     sure
+     to
+     provide
+     positions
+     of
+     sufficient
+     accuracy,
+     which
+     can
+     mean
+     0.1
+     arcsecond.
+     <!--l. 1979--><p class="noindent" >Anyone
+     using
+     the
+     VLA
+     for
+     VLBI
+     should
+                                                                                
+                                                                                
+     consult
+     the
+     <a 
+href="http://www.vla.nrao.edu/astro/guides/vlbivla/current/" >VLBI
+     at
+     the
+     VLA
+     guide</a>.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 1982--><p class="noindent" ><span 
+class="cmbx-10">Calibrator</span>
+     <span 
+class="cmbx-10">scans:</span>
+     Except
+     for
+     phase
+     or
+     fringe
+     reference
+     calibrators,
+     there
+     will
+     typically
+     be
+     only
+     2
+     or
+     a
+     few
+     more
+     scans
+     on
+     each
+     calibrator
+     of
+     the
+     types
+     discussed
+     above.
+     It
+     is
+     tempting
+     to
+     put
+     these
+     scans
+     at
+     the
+     beginning
+     and
+     end
+                                                                                
+                                                                                
+     of
+     the
+     scheduled
+     observing
+     time.
+     However
+     this
+     is
+     quite
+     risky
+     as
+     those
+     are
+     the
+     time
+     periods
+     most
+     likely
+     to
+     experience
+     problems.
+     The
+     beginning
+     is
+     especially
+     risky
+     because,
+     if
+     there
+     are
+     any
+     problems
+     at
+     a
+     site,
+     they
+     may
+     not
+     have
+     been
+     fixed
+     yet.
+     The
+     end
+     is
+     ok,
+     except
+     at
+     sites
+     where
+     the
+                                                                                
+                                                                                
+     main
+     target
+     source
+     has
+     been
+     down
+     for
+     a
+     while
+     and
+     the
+     antenna
+     has
+     been
+     idle.
+     It
+     may
+     not
+     wake
+     up
+     again
+     cleanly
+     for
+     the
+     calibration
+     scans.
+     It
+     is
+     best
+     to
+     take
+     time
+     (a
+     few
+     minutes
+     on
+     each
+     calibrator)
+     out
+     of
+     the
+     middle
+     of
+     the
+     schedule
+     a
+     couple
+     of
+     times
+     to
+     get
+                                                                                
+                                                                                
+     the
+     calibration
+     data.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 1995--><p class="noindent" ><span 
+class="cmbx-10">Protected</span>
+     <span 
+class="cmbx-10">scans:</span>
+     Starting
+     in
+     Oct.
+     2011,
+     ongoing
+     VLBA
+     observations
+     will
+     be
+     preempted
+     at
+     the
+     Pie
+     Town
+     and
+     Mauna
+     Kea
+     stations
+     once
+     per
+     day
+     for
+     up
+     to
+     1.5
+     hours
+     for
+     Earth
+     Orientation
+     Observations.
+     This
+     is
+     in
+     return
+     for
+     operations
+     funding
+     from
+     the
+     USNO.
+     There
+     is
+                                                                                
+                                                                                
+     some
+     flexibility
+     in
+     the
+     exact
+     times
+     of
+     the
+     preemption.
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>parameter
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1770003.1.2"><span 
+class="cmtt-10">PREEMPT</span></a>
+     can
+     be
+     used
+     to
+     protect
+     key
+     scans
+     such
+     as
+     special
+     calibrators
+     or
+     geodetic
+     segments.
+     See
+     the
+     writeup
+     for
+     that
+     parameter
+     for
+     more
+     details.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 2004--><p class="noindent" ><span 
+class="cmbx-10">24</span>
+     <span 
+class="cmbx-10">hour</span>
+     <span 
+class="cmbx-10">schedules:</span>
+     With
+     dynamic
+     scheduling,
+     it
+     is
+     useful
+     if
+     24
+     hour
+     schedules
+                                                                                
+                                                                                
+     can
+     be
+     &#8220;wrapped&#8221;
+     by
+     starting
+     part
+     way
+     through,
+     then
+     picking
+     up
+     the
+     first
+     scans
+     at
+     the
+     end.
+     If
+     you
+     have
+     a
+     24
+     hour
+     schedule,
+     it
+     would
+     help
+     the
+     process
+     if
+     you
+     insert
+     a
+     unique
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-540003.1.2"><span 
+class="cmtt-10">COMMENT</span></a>
+     at
+     the
+     logical
+     places
+     for
+     wrapping
+     the
+     schedule.
+     The
+     scheduler
+     will
+     use
+     the
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2280003.1.2"><span 
+class="cmtt-10">WRAP24</span></a>
+     switch
+     to
+                                                                                
+                                                                                
+     cause
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to
+     copy
+     the
+     scans
+     onto
+     the
+     end
+     of
+     the
+     schedule
+     to
+     create
+     a
+     48
+     hour
+     schedule.
+     He/she
+     will
+     then
+     use
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-540003.1.2"><span 
+class="cmtt-10">DOSCANS</span></a>
+     to
+     select
+     the
+     desired
+     24
+     hour
+     block.
+     Unique
+     comments
+     help
+     find
+     the
+     same
+     place
+     in
+     the
+     two
+     copies
+     of
+     the
+     schedule.
+     Example
+     <a 
+href="examples/eg24.key" ><span 
+class="cmsl-10">eg24.key</span></a>
+     demonstrates
+     such
+     a
+     schedule.
+     </dd><dt class="list">
+                                                                                
+                                                                                
+     </dt><dd 
+class="list">
+     <!--l. 2020--><p class="noindent" ><span 
+class="cmbx-10">Set-and-remember:</span>
+     Both
+     the
+     VLBA
+     (RDBE)
+     and
+     the
+     VLA
+     new
+     systems
+     require
+     the
+     power
+     levels
+     for
+     the
+     analog
+     signals
+     to
+     be
+     set
+     before
+     the
+     wide
+     band
+     samplers.
+     Changing
+     the
+     attenuators
+     can
+     cause
+     phase
+     errors,
+     but
+     there
+     is
+     a
+     lot
+     of
+     dynamic
+     range
+     in
+     the
+     allowed
+     levels.
+     Therefore
+     the
+     attenuators
+                                                                                
+                                                                                
+     are
+     only
+     set
+     once
+     for
+     each
+     frequency
+     setup
+     per
+     observation.
+     Time
+     needs
+     to
+     be
+     left
+     for
+     that
+     operation.
+     The
+     RDBE
+     needs
+     5
+     seconds.
+     The
+     VLA
+     needs
+     60
+     seconds.
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will
+     warn
+     when
+     inadequate
+     time
+     is
+     provided.
+     Also,
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will
+     schedule
+     in
+     the
+     required
+     time
+     automatically
+     using
+     the
+     numbers
+     in
+     the
+     station
+     catalog
+     parameter
+                                                                                
+                                                                                
+     <span 
+class="cmtt-10">TLEVSET</span>
+     when
+     using
+     dwell
+     time
+     scheduling
+     when
+     the
+     scan
+     itself
+     is
+     a
+     recording
+     scan,
+     a
+     pointing
+     scan,
+     or
+     a
+     phasing
+     scan
+     (VLA)
+     or
+     is
+     not
+     long
+     enough.
+     After
+     the
+     first
+     scan
+     with
+     a
+     setup,
+     the
+     RDBE/PFB
+     needs
+     about
+     2
+     seconds
+     at
+     the
+     start
+     of
+     each
+     scan
+     to
+     set
+     the
+     levels
+     for
+                                                                                
+                                                                                
+     the
+     final
+     down-sampler
+     to
+     2
+     bits.
+     That
+     time
+     will
+     be
+     provided
+     automatically
+     for
+     if
+     the
+     station
+     file
+     parameter
+     <span 
+class="cmtt-10">TSETTLE</span>
+     is
+     higher,
+     which
+     it
+     normally
+     is
+     for
+     other
+     reasons.
+     For
+     the
+     DDC
+     personality,
+     the
+     level
+     setting
+     will
+     be
+     adjusted
+     regularly
+     during
+     the
+     scan.
+     The
+     VLA
+     doesn&#8217;t
+     need
+     extra
+     time
+     for
+     that,
+     although
+                                                                                
+                                                                                
+     that
+     operation
+     is
+     done.
+     </dd></dl>
+<!--l. 2045--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">2.2.2   </span> <a 
+ id="x13-170002.2.2"></a>Scan Times</h4>
+<!--l. 2047--><p class="noindent" >Scans have a nominal start time and a stop time that may be set explicitly by the user or derived by
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>based on a variety of criteria. Scans have a separate start time, often offset from the
+nominal start time, that <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>assigns for the start of recording. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>also has a
+reasonably good idea of when good data will start to be available after any required slews and
+setup times are completed. Throughout most of <span 
+class="cmcsc-10">SCHED</span>, the scan times presented to the
+user are the nominal start and stop times. On the other hand, the recording start time is
+what will be given in the files sent to the telescopes and correlators. The VEX file, which is
+becoming dominant as the telescope and correlator control file, uses the recorder start time
+as the scan time, but contains the offset from that to the good data start. Some systems,
+including the VLBA and VLA now use the good data start as the time to start recording or
+correlation. This section describes how all this is controlled using a number of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input
+parameters.
+<!--l. 2064--><p class="noindent" >There are a variety of ways to set the nominal times of a scan. A <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2010003.1.2"><span 
+class="cmtt-10">START</span></a> time must always be set for the
+first scan of a schedule &#8212; <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>obviously has to know when to start. After that, the ways to set
+the nominal scan times are:
+<!--l. 2069--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 2071--><p class="noindent" >Set
+     the
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2010003.1.2"><span 
+class="cmtt-10">START</span></a>
+     time
+     and
+     the
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2030003.1.2"><span 
+class="cmtt-10">STOP</span></a>
+     time.
+     This
+     is
+     uncommon
+     except
+     with
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>inputs
+     derived
+     automatically
+     from
+     other
+     sorts
+     of
+     schedules.
+                                                                                
+                                                                                
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 2076--><p class="noindent" >Set
+     just
+     the
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2030003.1.2"><span 
+class="cmtt-10">STOP</span></a>
+     time.
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will
+     use
+     the
+     previous
+     scan&#8217;s
+     stop
+     time
+     plus
+     any
+     gap
+     as
+     this
+     scan&#8217;s
+     start
+     time.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 2081--><p class="noindent" >Set
+     the
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2010003.1.2"><span 
+class="cmtt-10">START</span></a>
+     time
+     and
+     the
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-870003.1.2"><span 
+class="cmtt-10">DURation</span></a>.
+     Sched
+     will
+     set
+     the
+     start
+     time
+     as
+     requested
+     and
+     the
+     stop
+     time
+     to
+     the
+     start
+     time
+     plus
+     the
+                                                                                
+                                                                                
+     duration.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 2086--><p class="noindent" >Set
+     a
+     duration
+     using
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-870003.1.2"><span 
+class="cmtt-10">DURation</span></a>.
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will
+     set
+     the
+     start
+     time
+     to
+     the
+     previous
+     scan&#8217;s
+     stop
+     time
+     pus
+     any
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1020003.1.2"><span 
+class="cmtt-10">GAP</span></a>
+     and
+     the
+     stop
+     time
+     to
+     the
+     start
+     time
+     plus
+     the
+     duration.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 2092--><p class="noindent" >Set
+     a
+     duration
+     using
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-880003.1.2"><span 
+class="cmtt-10">DWELL</span></a>.
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will
+     set
+     the
+     start
+     time
+     to
+     the
+     previous
+     scan&#8217;s
+                                                                                
+                                                                                
+     stop
+     time
+     plus
+     the
+     time
+     it
+     takes
+     to
+     get
+     the
+     antennas
+     on
+     source
+     and
+     observing.
+     Then
+     it
+     will
+     set
+     the
+     stop
+     time
+     to
+     the
+     start
+     time
+     plus
+     the
+     requested
+     dwell
+     time.
+     Note
+     that
+     this
+     option
+     does
+     not
+     yet
+     take
+     into
+     account
+     the
+     time
+     to
+     switch
+     between
+     frequency
+     bands
+     (say
+     7mm
+     to
+                                                                                
+                                                                                
+     2cm).
+     There
+     is
+     an
+     option,
+     with
+     a
+     second
+     argument
+     to
+     <span 
+class="cmtt-10">DWELL</span>,
+     to
+     not
+     wait
+     for
+     the
+     last,
+     or
+     last
+     few
+     antennas.
+     This
+     can
+     be
+     useful
+     when
+     there
+     is
+     a
+     slow
+     antenna
+     involved
+     or
+     when
+     some
+     antenna
+     is
+     too
+     close
+     to
+     the
+     zenith.
+     A
+     third
+     argument
+     can
+     be
+     used
+     to
+     insure
+     that
+                                                                                
+                                                                                
+     the
+     slow
+     antennas
+     get
+     some
+     time
+     on
+     source.
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1020003.1.2"><span 
+class="cmtt-10">GAP</span></a>
+     can
+     be
+     used
+     to
+     set
+     the
+     minimum
+     interval
+     between
+     the
+     scans.
+     This
+     is
+     the
+     most
+     recommended
+     scan
+     scheduling
+     scheme.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 2108--><p class="noindent" >Use
+     any
+     of
+     the
+     above
+     to
+     set
+     the
+     start
+     and
+     stop
+     times,
+     and
+     then
+     offset
+     the
+     resulting
+     start
+     time
+     with
+                                                                                
+                                                                                
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1780003.1.2"><span 
+class="cmtt-10">PRESCAN</span></a>.
+     Only
+     the
+     start
+     time,
+     not
+     the
+     stop
+     time,
+     is
+     affected
+     by
+     <span 
+class="cmtt-10">PRESCAN</span>.
+     If
+     <span 
+class="cmtt-10">PRESCAN</span>
+     is
+     positive,
+     the
+     start
+     time
+     is
+     delayed.
+     If
+     <span 
+class="cmtt-10">PRESCAN</span>
+     is
+     negative,
+     the
+     start
+     time
+     is
+     moved
+     earlier
+     by
+     the
+     requested
+     amount,
+     although
+     it
+     will
+     not
+     be
+     moved
+     into
+     the
+     previous
+     scan.
+     This
+     used
+     to
+     be
+     the
+                                                                                
+                                                                                
+     primary
+     scheme
+     for
+     controlling
+     time
+     provided
+     for
+     media
+     acceleration
+     and
+     correlator
+     synchronization,
+     but
+     has
+     been
+     superceded
+     by
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1020003.1.2"><span 
+class="cmtt-10">GAP</span></a>,
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1790003.1.2"><span 
+class="cmtt-10">PRESTART</span></a>,
+     and
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1340003.1.2"><span 
+class="cmtt-10">MINPAUSE</span></a>.
+     A
+     still-useful
+     function
+     is
+     to
+     delay
+     the
+     start
+     of
+     scans
+     scheduled
+     with
+     <span 
+class="cmtt-10">DWELL</span>
+     somewhat
+     to
+     be
+     more
+     sure
+     that
+     the
+     first
+     recorded
+     data
+     will
+     be
+     good.
+     </dd></dl>
+<!--l. 2126--><p class="noindent" >The calculation of the time required for an antenna to start delivering good data is based on on
+information in the <a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3">station catalog</a>. See the section on that catalog for details of the parameters
+mentioned here. The slew time is calculated based on the pointing direction at the previous and
+                                                                                
+                                                                                
+next sources along with the slew rates and accelerations for the antenna. An additional
+time <span 
+class="cmtt-10">TSETTLE </span>is added to the slew time for the antenna to settle and the electronics to get
+ready. Additional time might be added for digital systems to set power levels based on
+<span 
+class="cmtt-10">TLEVSET </span>for the first time a setup is seen (VLBA and VLA). The total time to be ready
+will not be less than <span 
+class="cmtt-10">MINSETUP</span>, even if the slew is fast and the settling time (<span 
+class="cmtt-10">TSETTLE</span>) is
+short.
+<!--l. 2139--><p class="noindent" >The slew time calculator tries to take into account the need for cable wraps. The algorithm is simply &#8212;
+the shortest path to the next source will be taken even if that turns out not to be optimal later. Early
+VLBA experience suggested that a simple, predictable algorithm was preferred over a more optimal,
+but hard to predict, algorithm.
+<!--l. 2145--><p class="noindent" >After the nominal times are determined, the recording start time is adjusted as described in the
+<a 
+href="#x13-190002.2.2">Adjusting the Scan or Recording Start Time section</a> below using <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1790003.1.2"><span 
+class="cmtt-10">PRESTART</span></a>, and <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1340003.1.2"><span 
+class="cmtt-10">MINPAUSE</span></a>. Such
+adjustments were used to allow time for the recording media to get up to speed, formatters to
+reconfigure between scans with different setups, and for playback to synchronize on correlation. These
+were significant issues with the old tape systems, and to a lesser extent with the MARK5A system. The
+newer MARK5C recording system and DiFX correlators, and perhaps others, are able to record
+and correlate data beginning right at the assigned start time so such adjustments are not
+required.
+<!--l. 2160--><p class="noindent" >The date specification for a scan is for the scan stop time, regardless of how the scan times are
+specified. If there is a scan that crosses midnight, this can cause some confusion, especially if it is the
+first scan of the experiment and the date is being specified along with <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2010003.1.2"><span 
+class="cmtt-10">START</span></a>. If a schedule crosses a day
+boundary and <span 
+class="cmtt-10">START </span>or <span 
+class="cmtt-10">STOP </span>times are being specified, the new day should be specified. However, if
+midnight is crossed during any form of duration scheduling, the day will be incremented
+automatically.
+<!--l. 2171--><p class="noindent" >All scans for a given station must be specified in time order. However, it is not necessary
+for scans for different stations to be in time order. This allows, for example, for the scans
+for one antenna to be specified separately from the scans for another antenna. While this
+works, it is not recommended because <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>does not try to identify scans that can be
+correlated together. Anything that depends on knowing what the whole array is doing is
+likely to fail. <span 
+class="cmtt-10">DWELL </span>time scheduling is one such item because <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>must know how
+long the slews are for all antennas in a scan. Plotting of u-v coverage is another because
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>only plots u-v points for baselines between antennas in the same scan. The estimates
+of data volumes and rates from the correlator, given in the summary file, are yet another
+because they depend on counts of baselines. Finally, any VEX file produced in such a way is
+likely to cause problems at a correlator that depends on it, such as DiFX (VLBA and many
+others).
+<!--l. 2187--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>allows sidereal time scheduling by means of the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1320003.1.2"><span 
+class="cmtt-10">LST</span></a> parameter. For VLBI, the concept of LST
+needs a bit more specification since it is different for each element of the array. <span 
+class="cmtt-10">LST </span>can take an
+argument which is the station whose LST is to be used. If there is no argument, that station is assumed
+to be the VLA since LST scheduling was most commonly used for VLA schedules when the capability
+was first added to <span 
+class="cmcsc-10">SCHED</span>. Now that dynamic scheduling is being used on the VLBA, many
+users will want to set <span 
+class="cmtt-10">LST=VLBA</span><span 
+class="cmtt-10">_PT </span>to conform to the style of scheduling requested for such
+projects.
+<!--l. 2199--><p class="noindent" >If <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1320003.1.2"><span 
+class="cmtt-10">LST</span></a> is specified, there are two ways to set the date. With the original method, the year and month
+are ignored and the day is assumed to be the (modified?) julian sidereal day number. Finding the LST
+day can be a bit painful, but a rough estimate can be had from the fact that LST day 60501 was 2006
+Feb. 16. The estimate can be put in <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to narrow down to the right date. The second
+method is much easier and the scheme normally used. It is to specify the UT day in the usual
+manner. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will attempt to figure out the LST day number, taking into account the
+fact that 0 hours LST is sometime in the middle of the UT day. It will also check if your
+start time is in the approximately 3.9 minutes where the result is ambiguous (LST days are
+                                                                                
+                                                                                
+shorter than UT days) and request specification of the LST day number &#8212; giving you the
+options.
+<!--l. 2214--><p class="noindent" >If sidereal time scheduling is requested, most times and durations are assumed to be in sidereal units.
+Some exceptions are <span 
+class="cmtt-10">PRESCAN </span>and <span 
+class="cmtt-10">MINPAUSE</span>.
+<!--l. 2218--><p class="noindent" >It is a very good idea, when using LST scheduling, to check the final output schedules, which are all in
+UT, to be sure that they are for the right day.
+<!--l. 2222--><p class="noindent" >When dynamic scheduling, it is often difficult to mesh projects together perfectly. This can lead to gaps
+in scientific observing which causes an under-utilization of the array. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>supports two features
+that are meant to help with this situation. The first is that the user can specify optional scans on the
+ends of the project by setting <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1770003.1.2"><span 
+class="cmtt-10">PREEMPT</span></a> <span 
+class="cmtt-10">= EXTRA </span>for those scans. The scans will appear in the
+summary file so their properties are clear, but will not be passed to the machine readable files
+used to control the antennas. To activate them, so they are on the control files, parameter
+<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-830003.1.2"><span 
+class="cmtt-10">DOSCANS</span></a> can be used to select the scan range to be used. The second option applies to 24
+hour schedules which could be started at times other than in the original schedule and
+wrapped around the day. Parameter <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2280003.1.2"><span 
+class="cmtt-10">WRAP24</span></a> causes <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to copy the scans onto the end of
+the original scans to make a 48 hour schedule. <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-830003.1.2"><span 
+class="cmtt-10">DOSCANS</span></a> is then used to select the desired
+24 hour block. It is expected that <span 
+class="cmtt-10">DOSCANS </span>and <span 
+class="cmtt-10">WRAP24 </span>will be used mainly by operations
+personnel.
+<!--l. 2247--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x13-180002.2.2"></a>Dealing with Formatter Reconfigurations</h5>
+<!--l. 2249--><p class="noindent" >NOTE: Concerns about formatter reconfigurations will disappear when the digital backends take over.
+About half of VLBA projects use the new system as of the start of 2013 and that should go to all
+during the year, so soon this section will be obsolete.
+<!--l. 2254--><p class="noindent" >A factor to consider when planning scan times is legacy formatter reconfigurations. These happen when
+the internal switching and setup of the formatter at the station has to be changed. Such changes
+happen when any of a number of parameters, including the number of channels, the sample rate, the
+BBC assignments, the BBC sidebands, and the pulse cal detector setup, are modified. A formatter
+reconfiguration takes about 8 seconds on the VLBA and during that time the formatter is not sending
+valid time codes to the recorder. If this happens during recording, it knocks the correlator out of sync
+for both the duration of the reconfigure plus the time to resync. In practice, it also seemed to
+confuse the old VLBA hardware correlator somehow for maybe one or two stations and
+they can take over a minute to resync. This is not likely to be the case for the software
+correlator.
+<!--l. 2269--><p class="noindent" >It is best to avoid reconfigurations if possible. In the rare cases where that is not possible, try to provide
+a gap between scans of sufficient length to do the reconfiguration. The formatter configuration
+requested during a gap is the same as that during the following scan, so this only requires using the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1020003.1.2"><span 
+class="cmtt-10">GAP</span></a>
+command (or any other mechanism for having one scan start a while after another ends). Common
+reasons that reconfigurations occur in schedules are changes in the sample rate, changes in the BBC
+sideband (remember for net upper sideband, the 20cm and 13cm systems on the VLBA use lower
+sideband at the BBC), and changes in the kHz part of the frequency which changes the pcal detector
+frequency (changes in the MHz part will not change the pcal setup and will not trigger a
+reconfigure).
+<!--l. 2285--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x13-190002.2.2"></a>Adjusting the Scan or Recording Start Time</h5>
+<!--l. 2287--><p class="noindent" >The nominal scan start time, if set using <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-880003.1.2"><span 
+class="cmtt-10">DWELL</span></a>, is the time good data is expected to be available. If
+recording and correlation could start instantly, that would also be a good time to start the recorders.
+The more modern systems, especially the Mark5C recorders and the software correlators, approach this
+                                                                                
+                                                                                
+ideal and the recordings are started at the time specified in the VEX file for the start of good data.
+That time is calculated based on the expected slew rates and on any extra time, specified using the
+<span 
+class="cmtt-10">TSETTLE, MINSETUP </span>and <span 
+class="cmtt-10">TLEVSET </span>parameters in the <a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3">station catalog</a>. The start can also be
+postponed with <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1020003.1.2"><span 
+class="cmtt-10">GAP</span></a> or <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1780003.1.2"><span 
+class="cmtt-10">PRESCAN</span></a>. With fixed scheduling (<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-870003.1.2"><span 
+class="cmtt-10">DUR</span></a>, <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2010003.1.2"><span 
+class="cmtt-10">START</span></a>, etc), the nominal scan
+starts are forced by <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>, but the time of good data, if later than the scheduled scan
+start, is still set by the actual expected slews and additions and that is believed by the
+Mark5C control software and the correlator. Parameters <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1340003.1.2"><span 
+class="cmtt-10">MINPAUSE</span></a> and <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1790003.1.2"><span 
+class="cmtt-10">PRESTART</span></a>, discussed
+below have no actual effect if the derived start time is before the expected start of good
+data.
+<!--l. 2312--><p class="noindent" >With older systems, including the MARK5A systems that are still in use at least part time at the
+beginning of 2013, it can take a small amount of time to get the the recording going at the stations and
+the correlation fully synced up. With previous generation correlators and tape recorders, this was a
+serious issue and it was advisable to start the recordings at least 20 seconds before good data.
+Modern (2010) correlators are faster so the total time needed for both starting recording and
+synchronizing is only a few seconds, or less. Another reason for possibly starting recordings
+early, or even recording continuously between scans is that the Mark5A disk system can
+only handle up to 1024 recording scans. A recording scan is the time between stops of the
+recording media. There might be several source scans in a recording scan. Fast-switching,
+phase-referencing observations with the older systems could run into this issue so the default <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1340003.1.2"><span 
+class="cmtt-10">MINPAUSE</span></a>
+(see below) has been set to prevent recording gaps during the fast-switching in appropriate
+cases. This section describes the tools in <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to allow the recordings to be started
+early.
+<!--l. 2332--><p class="noindent" >The schemes described in the <a 
+href="#x13-170002.2.2">scan times section</a> (parent of this section) are used to set the times of the
+scans as reported in the output files meant for human consumption. But the telescope control files
+actually give the times for the recording to start and stop. For the legacy (Mark5A) systems, those
+times are in the <span 
+class="cmsl-10">crd.xx </span>files for VLBA systems and as the uncommented scan-wide start time in the
+$SCHED section of the VEX file. For the RDBE (VLBA etc) and WIDAR (VLA) systems, it is
+the data good time in the VEX file, shown for each telescope as an offset from the start
+time.
+<!--l. 2344--><p class="noindent" >There are two primary parameters that can affect the recording start time used for the legacy systems.
+They are <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1790003.1.2"><span 
+class="cmtt-10">PRESTART</span></a>, and <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1340003.1.2"><span 
+class="cmtt-10">MINPAUSE</span></a>. <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1790003.1.2"><span 
+class="cmtt-10">PRESTART</span></a> is used to request that the recording be started the
+requested amount of time (record time) before the scan start time. If that time is earlier than the
+previous stop time, the recorder will be left running.
+<!--l. 2354--><p class="noindent" >The extreme, and often useful, case of a pre-start is to not stop recording between scans. This is
+especially useful if you have many short scans with short intervals between them, such as when phase
+referencing. <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1340003.1.2"><span 
+class="cmtt-10">MINPAUSE</span></a> sets the smallest gap between scans for which the recording will be stopped. If
+the gap is smaller, the recorder will be left running. <span 
+class="cmtt-10">MINPAUSE </span>used to be in units of playback time, so it
+was multiplied by the speed up factor to get the effect at record time. The speedup factor is no longer a
+simple concept so that adjustment has been removed and now <span 
+class="cmtt-10">MINPAUSE </span>applies to the record
+time.
+<!--l. 2366--><p class="noindent" >The default value for <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1790003.1.2"><span 
+class="cmtt-10">PRESTART</span></a> is 5 seconds when the <span 
+class="cmtt-10">DAR </span>is the legacy VLBA system or the MKIV
+system. Otherwise it is zero, which will be the case with the modern digital systems. The default value
+for <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1340003.1.2"><span 
+class="cmtt-10">MINPAUSE</span></a> is 10 seconds when using the Field System or the legacy VLBA DAR. Otherwise it is zero
+which is the case for the new VLBA digital system. The Field System with the DBBC may be switched
+to zero in the future.
+<!--l. 2376--><p class="noindent" ><span 
+class="cmtt-10">PRESTART </span>is applied before <span 
+class="cmtt-10">MINPAUSE</span>. First the recording start time is shifted earlier, then the interval
+from the last stop time is examined to determine if the recording should be left running. The defaults
+of <span 
+class="cmtt-10">PRESTART=5, MINPAUSE=10 </span>should be ok in most situations (they are also in a state
+of flux as of the end of 2010, so it is possible they have changed since this was written).
+Users should not need to worry about these parameters most of the time. The offset of the
+recording start time from the scan start time can be displayed in the summary file by adding
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">PTSTART </span>to the arguments of <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2040003.1.2"><span 
+class="cmtt-10">SUMITEM</span></a>. The recording start time is also available in the <span 
+class="cmsl-10">sch.</span>
+files.
+<!--l. 2390--><p class="noindent" >Another way to shift the recording start time is to use the parameter <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1780003.1.2"><span 
+class="cmtt-10">PRESCAN</span></a>. This parameter was the
+original way of introducing gaps between scans, but was considered obsolete in recent years. However, it
+may have a use as a way of increasing the time allowed between scans beyond what would be given with
+the station parameter <span 
+class="cmtt-10">TSETTLE</span>, although a negative <span 
+class="cmtt-10">PRESTART </span>can do the same thing. <span 
+class="cmtt-10">PRESCAN </span>shifts
+the start time in either direction (positive shifts to later times) after the other parameters
+discussed above set the time. If a positive <span 
+class="cmtt-10">PRESCAN </span>is given, and the <span 
+class="cmtt-10">DURation </span>or <span 
+class="cmtt-10">DWELL </span>is
+increased by the same amount, the whole scan can be shifted farther from the period of
+the slew, allowing somewhat increased confidence that the recording will start with good
+data.
+<!--l. 2404--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">2.2.3   </span> <a 
+ id="x13-200002.2.3"></a>Dynamic Scheduling</h4>
+<!--l. 2406--><p class="noindent" >All of projects on the VLBA that do not involve other antennas or special constraints are scheduled
+dynamically. That means that they are put into a special queue, along with information about their
+minimum requirements, and then are run at an appropriate time given the weather and condition of the
+equipment. This increases the overall quality of VLBA output by avoiding observations at times when it
+is clear that the results will be poor, even if it also introduces inefficiencies in scheduling that mean that
+there is some idle time (projects don&#8217;t mesh together perfectly). For example, there is not
+much point in observing at 43 GHz when there is bad weather at many sites. But a 1.6
+GHz observation at the same time might be fine. Dynamic scheduling also allows more
+flexible response to targets of opportunity. Galactic sources, in particular, tend to have
+short periods of enhanced activity so it is best to be able to observe when they are high.
+Of course, it is possible that some projects in the dynamic scheduling queue will never be
+scheduled.
+<!--l. 2423--><p class="noindent" >The PI for a dynamically scheduled project will be given a window in LST at the VLBA_PT (Pie
+Town) that will be scheduled, if the observation is done. It is useful slotting projects together if the PI
+allows some flexibility in the actual start time. The PI should prepare a schedule using the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1320003.1.2">LST</a>
+parameter with Pie Town as an argument (<span 
+class="cmtt-10">LST=VLBA</span><span 
+class="cmtt-10">_PT</span>).
+<!--l. 2431--><p class="noindent" >When a program is selected for a dynamically scheduled time slot, VLBA operations personnel will
+modify the date (calendar or lst day number) to match the scheduled day. This last minute modification
+is necessary because the stations do not have an LST concept and the machine readable files delivered
+by <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>must be in UT. The files will then be loaded to the sites with instructions about the time
+window to use, which may well be a subset of what is actually in the schedules. Because of this last
+minute modification of the date, it is best to minimize the use of dates in the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input. Use
+durations instead.
+<!--l. 2442--><p class="noindent" >To provide flexibility in the start time, it is useful to schedule using <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-880003.1.2">DWELL</a> to set the
+scan lengths. Then <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can adjust the gaps between scans to allow for the slew times
+that will be experienced by the actual observations. If doing an astrometric project with
+&#8220;DELZN&#8221; segments (geodetic type observing all over the sky to solve for the zenith atmospheric
+delay), it is useful to use the ability of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to <a 
+href="labelSECGEOSEGAutomaticInsertionofGeodeticSegments.html#x19-360002.8">construct such segments automatically</a>.
+Since such segments depend on observing sources near rise and set, they cannot be moved
+around, so without the automatic construction of the segments, the start time cannot be
+changed.
+<!--l. 2457--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">2.2.4   </span> <a 
+ id="x13-210002.2.4"></a>Management of Data Recordings</h4>
+                                                                                
+                                                                                
+<!--l. 2459--><p class="noindent" >For most VLBI observations, the data are recorded at the stations and played back later at the
+correlator. It is not yet possible for the recording process to be totally transparent to the user, but
+dealing with it is now much less of a burden than it was in the tape era. A top level issue is that a user
+is typically allocated a total amount of recording media that he/she is allowed to use. This number may
+be less than the total that could be recorded during the observation. It is required because the overall
+media supply may not be large enough to allow full time recording at the maximum bit rate and the
+scheduling committees need to apportion the resources according to the project needs and
+priorities.
+<!--l. 2471--><p class="noindent" >Beyond the overall amount of data recorded, the disk-based systems still require the user to pay
+attention to the need for data quality checks, to maximum reasonable recording scan lengths, to the
+need for time at non-VLBA stations for module swaps, and to dealing with the fact that the
+correlatable data is not provided starting at the exact time specified for starting the recording. These
+topics are discussed in the <a 
+href="#x13-160002.2.1">Observing Strategy</a> and <a 
+href="#x13-170002.2.2">Scan Times section</a> and will not be discussed in
+detail here.
+                                                                                
+                                                                                
+<!--l. 2482--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECRECSYSRecordingSystems.html" >next</a>] [<a 
+href="labelSECPLANNINGUsingSCHEDforProjectPlanning.html" >prev</a>] [<a 
+href="labelSECPLANNINGUsingSCHEDforProjectPlanning.html#taillabelSECPLANNINGUsingSCHEDforProjectPlanning.html" >prev-tail</a>] [<a 
+href="labelSECTIPSSchedulingTips.html" >front</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECTIPSSchedulingTips.html" >up</a>] </p></div>
+<!--l. 2482--><p class="noindent" ><a 
+ id="taillabelSECTIPSSchedulingTips.html"></a>  
+</body></html> 

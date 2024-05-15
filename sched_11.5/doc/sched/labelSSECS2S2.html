@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>S2</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 20958--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSSECGBGreenBank140.html" >next</a>] [<a 
+href="labelAPPHEADHeadPositionsandTrackAssignments.html" >prev</a>] [<a 
+href="labelAPPHEADHeadPositionsandTrackAssignments.html#taillabelAPPHEADHeadPositionsandTrackAssignments.html" >prev-tail</a>] [<a 
+href="#taillabelSSECS2S2.html">tail</a>] [<a 
+href="labelAPPOBSOLETEOBSOLETESECTIONS.html#labelSSECS2S2.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">B.6   </span> <a 
+ id="x52-374000B.6"></a>S2</h3>
+<!--l. 20960--><p class="noindent" >The S2 system is no longer in use. This subsection of the recording systems section has been moved
+here for historical reasons.
+<!--l. 20963--><p class="noindent" >The S2 system has been developed in Canada to support the Orbiting VLBI missions VSOP and
+Radioastron, in addition to ground based astronomy. It is based on VCR technology and is relatively
+inexpensive. It is being used in Australia on the AT and at a number of other sites around the
+world.
+<!--l. 20969--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>supports observations on telescopes that have S2 recorders and are controlled through the
+Field System (FS9.3.7 or higher). This is also done by creating a <span 
+class="cmtt-10">*.vex </span>file in the VEX format (see
+section on <a 
+href="labelSECRECSYSRecordingSystems.html#x14-270002.3.5"><span 
+class="cmtt-10">MkIV</span></a>).
+<!--l. 20975--><p class="noindent" >The telescopes are characterized by <span 
+class="cmtt-10">RECORDER = S2 </span>and <span 
+class="cmtt-10">CONTROL = VEX</span>. Currently <span 
+class="cmtt-10">DAR = VLBA </span>is
+completely supported (it could be possible to also implement <span 
+class="cmtt-10">DAR = MKIV</span>). For any other <span 
+class="cmtt-10">DAR</span>
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will attempt to schedule the observation with a &#8220;standard&#8221; S2 mode, not using any
+knowledge on the content of the &#8220;user signal&#8221;.
+<!--l. 20982--><p class="noindent" >The modes supported for <span 
+class="cmtt-10">DAR = VLBA </span>can be derived from a document &#8220;Compatibility of
+S2 and VSOPT recordings at S2 and VSOPT Correlators&#8221; by R.&#x00A0;Wietfeldt, available at
+ftp::s2.sgl.ists.ca:pub/s2/svlbi/s2vsop_compat_memo_v*.ps.Z.
+<!--l. 20990--><p class="noindent" >Because the S2 recorders work in a way conceptually different from VLBA (or MkIV) recorders, the
+user should bear the following in mind when scheduling for S2 recorders.
+<!--l. 20994--><p class="noindent" >Please note that no operational tests with <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>and S2 recorders have been completed yet, except
+for VSOP recording. Recently (Dec 2000) it was discovered that observations that use more than 1
+group of transports (thus not VSOP modes) would not switch groups. This should have been
+fixed.
+<!--l. 21000--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 21002--><p class="noindent" >The
+     S2
+     recorder
+     internally
+     works
+     with
+     a
+     number
+     of
+     recorders
+     which
+     each
+     have
+     one
+     head
+     and
+     track.
+                                                                                
+                                                                                
+     The
+     S2
+     box
+     uses
+     1,
+     2,
+     4
+     or
+     8
+     recorders
+     depending
+     of
+     the
+     mode.
+     In
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>this
+     is
+     characterized
+     by
+     setting
+     <span 
+class="cmtt-10">TPMODE</span>
+     to
+     the
+     number
+     of
+     groups
+     will
+     be
+     used
+     by
+     the
+     S2
+     recorder.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 21008--><p class="noindent" >The
+     concept
+     of
+     fan&#8211;in
+     or
+     fan&#8211;out
+     does
+     not
+     apply
+     to
+     S2
+     recorders
+     in
+     <span 
+class="cmcsc-10">SCHED</span>.
+     </dd><dt class="list">
+                                                                                
+                                                                                
+     </dt><dd 
+class="list">
+     <!--l. 21011--><p class="noindent" >Tape
+     lengths
+     for
+     S2
+     tapes
+     are
+     specified
+     as
+     the
+     length
+     for
+     standard
+     <span 
+class="cmsl-10">US</span>
+     <span 
+class="cmsl-10">VCR</span>
+     recording
+     in
+     seconds.
+     Thus,
+     when
+     the
+     VCR
+     cassette
+     has
+     120
+     (minutes)
+     on
+     the
+     label
+     the
+     tape
+     lengths
+     is
+     7200
+     (ft)
+     in
+     <span 
+class="cmcsc-10">SCHED</span>.
+     European
+     buyers
+     should
+     be
+     careful;
+     a
+     ST-120
+     tape
+     presumably
+     is
+     labeled
+     SE-180,
+     but
+                                                                                
+                                                                                
+     should
+     still
+     be
+     scheduled
+     with
+     TPLENGTH
+     =
+     7200.
+     The
+     S2
+     LP
+     is
+     obtained
+     by
+     using
+     low
+     density
+     for
+     which
+     the
+     <span 
+class="cmtt-10">TPSPEEDL</span>
+     <span 
+class="cmtt-10">=</span>
+     <span 
+class="cmtt-10">6.3</span>
+     (ips)
+     and
+     SLP
+     by
+     using
+     <span 
+class="cmtt-10">TPSPEEDH</span>
+     <span 
+class="cmtt-10">=</span>
+     <span 
+class="cmtt-10">4.2</span>
+     (ips).
+     These
+     speeds
+     are
+     chosen
+     in
+     order
+     to
+     simulate
+     that
+     a
+     120
+     minute
+     cassette
+     will
+     last
+     for
+     7200*12/(6.3*60)=229
+     minutes,
+     consistent
+                                                                                
+                                                                                
+     with
+     the
+     S2
+     documentation.
+     For
+     high
+     density
+     the
+     same
+     tape
+     lasts
+     for
+     343
+     minutes
+     per
+     group
+     (multiply
+     by
+     <span 
+class="cmtt-10">TPMODE</span>
+     to
+     get
+     the
+     total
+     time).
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 21027--><p class="noindent" >S2
+     tape
+     motion
+     is
+     supposed
+     to
+     be
+     &#8220;adaptive&#8221;.
+     The
+     S2
+     recorders
+     should
+     start
+     2.5
+     minutes
+     before
+     a
+     scan,
+     stop
+     only
+     0.1
+     minutes
+     after
+     the
+                                                                                
+                                                                                
+     scan
+     and
+     generally
+     continue
+     to
+     spin
+     if
+     any
+     gaps
+     are
+     shorter
+     than
+     2.6
+     minutes.
+     This
+     is
+     the
+     default
+     and
+     only
+     mode
+     of
+     control
+     for
+     S2
+     recorders
+     through
+     <span 
+class="cmcsc-10">SCHED</span>.
+     </dd></dl>
+                                                                                
+                                                                                
+<!--l. 21035--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSSECGBGreenBank140.html" >next</a>] [<a 
+href="labelAPPHEADHeadPositionsandTrackAssignments.html" >prev</a>] [<a 
+href="labelAPPHEADHeadPositionsandTrackAssignments.html#taillabelAPPHEADHeadPositionsandTrackAssignments.html" >prev-tail</a>] [<a 
+href="labelSSECS2S2.html" >front</a>] [<a 
+href="labelAPPOBSOLETEOBSOLETESECTIONS.html#labelSSECS2S2.html" >up</a>] </p></div>
+<!--l. 21035--><p class="noindent" ><a 
+ id="taillabelSSECS2S2.html"></a>  
+</body></html> 

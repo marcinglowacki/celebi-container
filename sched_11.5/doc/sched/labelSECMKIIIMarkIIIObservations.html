@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Mark III Observations</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 20566--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECMKIISchedulingMarkIIObservations.html" >next</a>] [<a 
+href="labelSSECTAPEMANAGEMENTTapeManagement.html" >prev</a>] [<a 
+href="labelSSECTAPEMANAGEMENTTapeManagement.html#taillabelSSECTAPEMANAGEMENTTapeManagement.html" >prev-tail</a>] [<a 
+href="#taillabelSECMKIIIMarkIIIObservations.html">tail</a>] [<a 
+href="labelAPPOBSOLETEOBSOLETESECTIONS.html#labelSECMKIIIMarkIIIObservations.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">B.3   </span> <a 
+ id="x49-371000B.3"></a>Mark&#x00A0;III Observations</h3>
+<!--l. 20568--><p class="noindent" >To schedule Mark&#x00A0;III projects using non-VLBA control file stations or a Mark&#x00A0;III correlator, it is best
+to use <span 
+class="cmcsc-10">PC-SCHED</span>, written by Alan Rogers and Dave Schultz at Haystack (unrelated to <span 
+class="cmcsc-10">SCHED</span>), or
+<span 
+class="cmcsc-10">SKED</span>, written by Nancy Vandenberg at Goddard Space Flight Center. <span 
+class="cmcsc-10">PC-SCHED </span>can read a very
+basic <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>keyin file to get scan times and generate Mark&#x00A0;III schedules. This is mainly useful to
+help get the files needed by a Mark&#x00A0;III correlator to process a Mark III observation on the
+VLBA that was scheduled with <span 
+class="cmcsc-10">SCHED</span>. <span 
+class="cmcsc-10">PC-SCHED </span>and <span 
+class="cmcsc-10">SKED </span>produce a &#8220;Standard
+Schedule File Format&#8221; file, which is also known as the &#8220;sked file&#8221;, &#8220;.vex file&#8221;, &#8220;.drg file&#8221;,
+or &#8220;drudg file&#8221;. This single file contains a complete description of the experiment for all
+stations.
+<!--l. 20581--><p class="noindent" >There is a program called <span 
+class="cmcsc-10">DRUDG</span>, associated with the Mark&#x00A0;III systems, that is used to
+convert the &#8220;.drg file&#8221; into snap files to control the antennas and tape systems. <span 
+class="cmcsc-10">DRUDG </span>can
+produce VLBA control files and is used to do so regularily by the geodetic groups. It is
+rarely used to make schedules for non-geodetic projects. <span 
+class="cmcsc-10">PC-SCHED </span>also is able to produce
+VLBA control files, but this capability has not been kept up-to-date and should not be
+used.
+<!--l. 20589--><p class="noindent" >An NRAO program called <span 
+class="cmcsc-10">SKEDCONV </span>exists to convert &#8220;.drg files&#8221; files into <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>keyin files. It
+is recommended that most VLBA Mark&#x00A0;III observers send their &#8220;.drg files&#8221; files to the AOC, where the
+staff will use <span 
+class="cmcsc-10">SKEDCONV </span>and <span 
+class="cmcsc-10">SCHED</span>, along with current setup files, to make the VLBA control
+files. Instructions on how to submit schedules are provided to observers when they are allocated
+observing time.
+<!--l. 20597--><p class="noindent" >There are no definite plans to support Mark&#x00A0;III observations fully with <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>because the system
+will soon be obsolete. It will be replaced by the <a 
+href="labelSECRECSYSRecordingSystems.html#x14-270002.3.5">Mark&#x00A0;IV system</a>, which is basically an upgrade that
+uses the same tape recorders (upgraded) and heads, but a new formatter and wider bandwidths from
+the video converters. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>supports the Mark&#x00A0;IV system through the VEX control files. However,
+as mentioned elsewhere, the Japanese systems related to VSOP have been designed around the
+&#8220;.drg file&#8221;. Hooks have been provided in <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>where they can attach routines to write
+&#8220;.drg file&#8221; output. If this project is completed, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>may acquire at limited Mark&#x00A0;III
+capability.
+<!--l. 20610--><p class="noindent" >Mark&#x00A0;III observations on stations that use VLBA control files (VLBA, VLA, and Green Bank) can be
+scheduled directly with <span 
+class="cmcsc-10">SCHED</span>. The only difference between Mark&#x00A0;III and VLBA format projects
+on these antennas is the data format on the tape (see the setup file input <a 
+href="labelSECSETUPSSetupFiles.html#x31-2660003.6.4"><span 
+class="cmtt-10">FORMAT</span></a>) and
+various details in the setup files. Mark&#x00A0;III observations have a one-to-one correspondence
+between tracks and channels, use one bit samples, and do not barrel roll. They typically
+use 7 or 14 channels, although Mark&#x00A0;III format can be used on any project with no fan
+out. Anyone scheduling Mark&#x00A0;III observations should either use <a 
+href="labelSECSETUPSSetupFiles.html#x31-2480003.6.1">standard setup files</a> or, if
+making their own, should start with a standard file as a template. Such observations can be
+correlated on the VLBA correlator, but require production of a &#8220;.drg file&#8221; if sent to a Mark&#x00A0;III
+correlator.
+<!--l. 20626--><p class="noindent" >The PCFS can control Mark&#x00A0;III observations on Mark&#x00A0;III, Mark&#x00A0;IV, and VLBA hardware. However, it
+will only do this with a Mark&#x00A0;III type &#8220;.drg file&#8221; for input. Since <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>does not produce such files,
+it cannot currently schedule Mark&#x00A0;III format observations on systems that do not use the
+VLBA control files (e.g.&#x00A0;the EVN). The &#8220;.drg file&#8221; is also required to control Mark&#x00A0;III
+correlators, and therefore <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>cannot be used to control experiments that are destinated
+                                                                                
+                                                                                
+for such correlators without causing considerable extra effort to generate such a file later.
+A possible future upgrade to the PCFS and <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>would allow the use of VEX files
+to control observations on Mark&#x00A0;III hardware or configure Mark&#x00A0;III modes on Mark&#x00A0;IV
+hardware.
+<!--l. 20638--><p class="noindent" >The VLBA correlator is capable of correlating VLBA, Mark&#x00A0;IV, and Mark&#x00A0;III formats against each
+other as long as the sample rates and recording speeds were the same. Therefore the VLBA and
+Mark&#x00A0;IV stations of a global observation that also involves Mark&#x00A0;III stations could be scheduled
+with <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>if it were to be processed in Socorro. Of course, the Mark&#x00A0;III stations would
+still have to be scheduled somehow, so one of the other programs would probably be used
+anyway.
+                                                                                
+                                                                                
+<!--l. 20647--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECMKIISchedulingMarkIIObservations.html" >next</a>] [<a 
+href="labelSSECTAPEMANAGEMENTTapeManagement.html" >prev</a>] [<a 
+href="labelSSECTAPEMANAGEMENTTapeManagement.html#taillabelSSECTAPEMANAGEMENTTapeManagement.html" >prev-tail</a>] [<a 
+href="labelSECMKIIIMarkIIIObservations.html" >front</a>] [<a 
+href="labelAPPOBSOLETEOBSOLETESECTIONS.html#labelSECMKIIIMarkIIIObservations.html" >up</a>] </p></div>
+<!--l. 20647--><p class="noindent" ><a 
+ id="taillabelSECMKIIIMarkIIIObservations.html"></a>  
+</body></html> 

@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Keyin Free-format Input</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 577--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECFILESSCHEDInputandOutputFiles.html" >next</a>] [<a 
+href="labelSECINTROOverview.html" >prev</a>] [<a 
+href="labelSECINTROOverview.html#taillabelSECINTROOverview.html" >prev-tail</a>] [<a 
+href="#taillabelSECKEYINKeyinFreeformatInput.html">tail</a>] [<a 
+href="labelCHPINTROINTRODUCTION.html#labelSECKEYINKeyinFreeformatInput.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">1.2   </span> <a 
+ id="x7-60001.2"></a>Keyin Free-format Input</h3>
+<!--l. 579--><p class="noindent" >All input parameters to <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>are in the keyin free format, named after Tim Pearson&#8217;s
+subroutine that is used to read it. The important features of that format for <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>are
+described here. This description is not complete and users of the Caltech package should refer to
+other documentation for useful capabilities of keyin input that are not normally used for
+<span 
+class="cmcsc-10">SCHED</span>.
+<!--l. 586--><p class="noindent" >Input via keyin format is of the form <span 
+class="cmtt-10">keyword = value</span>. Different sets of <span 
+class="cmtt-10">keywords </span>and <span 
+class="cmtt-10">values </span>are
+separated by spaces or line breaks. The equal sign is optional as long as its absence does not lead to
+ambiguity. The input <span 
+class="cmtt-10">keywords </span>are not case sensitive. Most of the <span 
+class="cmtt-10">values </span>required by <span 
+class="cmcsc-10">SCHED</span>,
+except for file names in case sensitive systems like unix, are also not case sensitive. <span 
+class="cmtt-10">keywords</span>
+are, in all cases, limited to 8 characters in length. Character string <span 
+class="cmtt-10">values </span>can be much
+longer.
+<!--l. 595--><p class="noindent" >A few <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span><span 
+class="cmtt-10">keywords </span>may be abbreviated. In the parameter descriptions in this manual, the
+required characters will be shown in upper case while the optional ones will be shown in lower case.
+Any characters beyond the required ones must match the optional ones. As an example,
+the <span 
+class="cmtt-10">keyword DURation </span>can be typed as <span 
+class="cmtt-10">DUR, dur, DURATION, duration, durat, Dur</span>
+<span 
+class="cmtt-10">....</span>.
+<!--l. 602--><p class="noindent" >A <span 
+class="cmtt-10">value </span>can be an array, with elements of the array separated by commas. If the last character on a
+line is a comma, the input array is assumed to continue on the next line.
+<!--l. 606--><p class="noindent" >The <span 
+class="cmtt-10">value </span>can be a number or a character string. Quotation marks are required for a character string if
+it can be mistaken for a number or if it contains blanks or commas. Also, because of possible ambiguity
+with other <span 
+class="cmtt-10">keywords</span>, character string <span 
+class="cmtt-10">values </span>must be in quotes if the equal sign is left
+out.
+<!--l. 612--><p class="noindent" >If the <span 
+class="cmtt-10">value </span>is a number, the decimal point and fractional part are optional. The parser
+converts all numbers to double precision real so the program will not know if you specify
+&#8220;5&#8221; or &#8220;5.0&#8221; etc. The value can be an arithmetic expression enclosed in parentheses. An
+example would be <span 
+class="cmtt-10">(5.5*4)</span>. The expression cannot contain blanks or the parser will get
+confused.
+<!--l. 619--><p class="noindent" >If <span 
+class="cmtt-10">value </span>is a time or angle, it can be written in <span 
+class="cmtt-10">hh:mm:ss.ss </span>or <span 
+class="cmtt-10">dd:mm:ss.ss </span>format. Each colon causes
+all values to the left to be multiplied by 60, giving a result to the program that is in seconds. Values less
+than an hour or degree can be written <span 
+class="cmtt-10">mm:ss.ss </span>or just <span 
+class="cmtt-10">ss.ss</span>. The decimal and fractional seconds are
+optional. However, even hours or degrees require the colons; for example, 2 degrees is written as 2:0:0.
+Numbers larger then 60 are allowed for the minutes and seconds; for example, 2:40 and
+160 are equivalent. No imbedded blanks or signs are allowed. A negative or positive sign is
+allowed in front and applies to the final total number of seconds (i.e., -1:20 is returned as
+-80).
+<!--l. 631--><p class="noindent" >A <span 
+class="cmtt-10">keyword </span>can be specified without a value. This is equivalent, as far as the program knows, to
+specifying a value of zero. Some <span 
+class="cmtt-10">keywords </span>are used in this way as logical switches to cause something to
+happen. <span 
+class="cmtt-10">DOVEX</span>, <span 
+class="cmtt-10">DOPPLER</span>, and <span 
+class="cmtt-10">PTVLBA </span>are examples from <span 
+class="cmcsc-10">SCHED</span>. Usually the effect of such a switch
+can be reversed by specifying a non-zero value. For several such switches, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>has
+a corresponding variable <span 
+class="cmtt-10">keyword </span>that has the opposite effect (for example: <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1840003.1.2"><span 
+class="cmtt-10">RECord</span></a> and
+<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1840003.1.2"><span 
+class="cmtt-10">NORECord</span></a>).
+<!--l. 642--><p class="noindent" >An exclamation mark (&#8220;!&#8221;) causes all items on the rest of the line to be ignored. This is useful for
+adding comments.
+                                                                                
+                                                                                
+<!--l. 645--><p class="noindent" >The parser collects all input, regardless of how many lines it is on, up to the line on which it finds the
+&#8220;Endmark&#8221;, which in the case of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>and most other programs is a &#8220;/&#8221; . For <span 
+class="cmcsc-10">SCHED</span>,
+these groups correspond to scans in the main input, or a station or a source in the main
+catalogs.
+<!--l. 651--><p class="noindent" >Some examples of valid, if not very consistent, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input are:
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-1">
+&#x00A0;&#x00A0;SOURCE=&#8217;0235+164&#8217;&#x00A0;&#x00A0;YEar&#x00A0;=&#x00A0;1988&#x00A0;&#x00A0;day&#x00A0;67&#x00A0;&#x00A0;Stat&#x00A0;=&#x00A0;&#8217;OVRO&#8217;,NRAO,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;vla,vlba_pt&#x00A0;&#x00A0;stop&#x00A0;03:35:00&#x00A0;&#x00A0;dur&#x00A0;=&#x00A0;15:00
+&#x00A0;<br />&#x00A0;&#x00A0;comment&#x00A0;&#8217;Quotes&#x00A0;are&#x00A0;needed&#x00A0;for&#x00A0;more&#x00A0;than&#x00A0;one&#x00A0;word.&#8217;&#x00A0;&#x00A0;/
+</div>
+<!--l. 657--><p class="nopar" >
+<!--l. 659--><p class="noindent" >When a program that uses keyin is run interactively, the user can obtain a list of inputs by typing
+&#8220;<span 
+class="cmtt-10">HELP /</span>&#8221; and can obtain a list of the current values of all input variables by typing &#8220;<span 
+class="cmtt-10">SHOW /</span>&#8221;. The
+input of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is rarely, if ever, given interactively.
+<!--l. 664--><p class="noindent" >Keyin values can be mathematical statements in parenthesis; for example,
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-2">
+&#x00A0;&#x00A0;dur&#x00A0;=&#x00A0;15
+&#x00A0;<br />&#x00A0;&#x00A0;rep&#x00A0;=&#x00A0;(4*5)
+</div>
+<!--l. 669--><p class="nopar" >This example shows the most likely way in which this capability might be used in <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input files.
+These two commands mean that the scan, which is 15 seconds long, should be repeated 20 times. By
+using the <span 
+class="cmtt-10">(4*5)</span>, it makes it clear that the repetition lasts for 5 minutes since there are 4 scans per
+minute.
+                                                                                
+                                                                                
+<!--l. 676--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECFILESSCHEDInputandOutputFiles.html" >next</a>] [<a 
+href="labelSECINTROOverview.html" >prev</a>] [<a 
+href="labelSECINTROOverview.html#taillabelSECINTROOverview.html" >prev-tail</a>] [<a 
+href="labelSECKEYINKeyinFreeformatInput.html" >front</a>] [<a 
+href="labelCHPINTROINTRODUCTION.html#labelSECKEYINKeyinFreeformatInput.html" >up</a>] </p></div>
+<!--l. 676--><p class="noindent" ><a 
+ id="taillabelSECKEYINKeyinFreeformatInput.html"></a>  
+</body></html> 

@@ -1,0 +1,269 @@
+!*  Schedule for VLBA_KP   *!
+!*  Experiment to999    *!
+!* Schedule Version:       1.00 *!
+!* Processed by SCHED version:  11.50  Development version 11.5. Started Apr. 2 *!
+!* PI:       Walter Brisken *!
+!* Address:  DSOC *!
+!*  *!
+!*  *!
+!*  *!
+!* Phone:    505-234-5912 *!
+!* EMAIL:    wbrisken@lbo.us *!
+!* Fax:      575-835-2027 *!
+!* Phone during observation: 575-835-7133 *!
+!* Observing mode: DDC *!
+!* Notes: *!
+!*  *!
+!*  *!
+!*  *!
+!*  Start at 18h30m00s     Tue, 2018 Jun 26  Day of year  177   *!
+program=to999   
+
+diskformat=mark5c
+media=(1,disk)
+
+!* The first scan is preceeded by a setup scan *!
+!* that ends at the start time of the first scan  *!
+
+!* --- Scan from 18h30m00s to 18h31m00s   Tue, 2018 Jun 26 --- *!
+sname='0528+134'  ra=05h30m56.416747s  dec= 13d31'55.14952"  qual=999  calib='V'
+maxcaltime= 120
+fe=(1,20cm),(3,20cm)
+fexfer=(2,norm)
+noise=(1,low-s),(2,low-s),(3,low-s),(4,low-s)
+synth=( 1,12.9),( 2,-2.1),( 3,12.9)
+logging=STANDARD
+nchan= 2
+format=VLBA1:4
+ifdistr=(1,0),(2,0),(3,0),(4,0)
+baseband=(1,1),(2,2)
+ifchan=(1,A),(2,C)
+sideband=(1,L),(2,L)
+bits=(1,2),(2,2)
+period=(1,1),(2,1)
+level=(1,-1),(2,-1)
+azcolim=   0.00  elcolim=   0.00
+bbsynth=( 1,552.00),( 2,552.00)
+bbfilter=(1,16M),(2,16M)
+pcal=OFF
+pcalxbit1=(1,S1),(2,S2),(3,OFF),(4,OFF),(5,OFF),(6,OFF),(7,OFF),(8,OFF)
+pcalxbit2=(1,M1),(2,M2),(3,OFF),(4,OFF),(5,OFF),(6,OFF),(7,OFF),(8,OFF)
+pcalxfreq1=(1,0),(2,0),(3,0),(4,0),(5,0),(6,0),(7,0),(8,0)
+pcalxfreq2=(1,0),(2,0),(3,0),(4,0),(5,0),(6,0),(7,0),(8,0)
+samplerate=32M
+disk=off
+  date = 2018Jun26
+stop=18h30m00s   !NEXT!        
+qual=  0
+disk=off
+stop=18h31m00s   !NEXT!
+
+!* --- Scan from 18h32m04s to 18h33m04s   Tue, 2018 Jun 26 --- *!
+sname='GALAXY15'  ra=03h46m08.161089s  dec=-05d11'28.90776"  qual=999  calib='Z'
+ epochd=2018Jun26 epocht=18h32m04s dra=  86685.98 ddec=   2659.77
+disk=off
+stop=18h32m04s   !NEXT!        
+qual=  0
+disk=off
+stop=18h33m04s   !NEXT!
+
+!* --- Scan from 18h34m09s to 18h35m09s   Tue, 2018 Jun 26 --- *!
+sname='0528+134'  ra=05h30m56.416747s  dec= 13d31'55.14952"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+fe=(1,6cm),(3,6cm)
+synth=( 1,15.9),( 2, 3.4),( 3,15.9)
+sideband=(1,U),(2,U)
+bbsynth=( 1,728.25),( 2,728.25)
+disk=off
+stop=18h34m09s   !NEXT!        
+qual=  0
+disk=off
+stop=18h35m09s   !NEXT!
+
+!* --- Scan from 18h36m13s to 18h37m13s   Tue, 2018 Jun 26 --- *!
+sname='GALAXY15'  ra=03h50m17.679058s  dec=-05d11'21.18826"  qual=999  calib='Z'
+ epochd=2018Jun26 epocht=18h36m13s dra=  86686.36 ddec=   2672.48
+disk=off
+stop=18h36m13s   !NEXT!        
+qual=  0
+disk=off
+stop=18h37m13s   !NEXT!
+
+!* --- Scan from 18h38m17s to 18h39m17s   Tue, 2018 Jun 26 --- *!
+sname='0528+134'  ra=05h30m56.416747s  dec= 13d31'55.14952"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+fe=(1,20cm),(3,20cm)
+synth=( 1,12.9),( 2,-2.1),( 3,12.9)
+sideband=(1,L),(2,L)
+bbsynth=( 1,552.00),( 2,552.00)
+disk=off
+stop=18h38m17s   !NEXT!        
+qual=  0
+disk=off
+stop=18h39m17s   !NEXT!
+
+!* --- Scan from 18h40m21s to 18h41m21s   Tue, 2018 Jun 26 --- *!
+sname='GALAXY15'  ra=03h54m26.471449s  dec=-05d11'13.45578"  qual=999  calib='Z'
+ epochd=2018Jun26 epocht=18h40m21s dra=  86686.73 ddec=   2684.27
+disk=off
+stop=18h40m21s   !NEXT!        
+qual=  0
+disk=off
+stop=18h41m21s   !NEXT!
+
+!* --- Scan from 18h42m25s to 18h43m25s   Tue, 2018 Jun 26 --- *!
+sname='0528+134'  ra=05h30m56.416747s  dec= 13d31'55.14952"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+fe=(1,6cm),(3,6cm)
+synth=( 1,15.9),( 2, 3.4),( 3,15.9)
+sideband=(1,U),(2,U)
+bbsynth=( 1,728.25),( 2,728.25)
+disk=off
+stop=18h42m25s   !NEXT!        
+qual=  0
+disk=off
+stop=18h43m25s   !NEXT!
+
+!* --- Scan from 18h44m28s to 18h45m28s   Tue, 2018 Jun 26 --- *!
+sname='GALAXY15'  ra=03h58m34.391913s  dec=-05d11'05.71773"  qual=999  calib='Z'
+ epochd=2018Jun26 epocht=18h44m28s dra=  86687.09 ddec=   2695.15
+disk=off
+stop=18h44m28s   !NEXT!        
+qual=  0
+disk=off
+stop=18h45m28s   !NEXT!
+
+!* --- Scan from 18h46m32s to 18h47m32s   Tue, 2018 Jun 26 --- *!
+sname='0528+134'  ra=05h30m56.416747s  dec= 13d31'55.14952"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+fe=(1,20cm),(3,20cm)
+synth=( 1,12.9),( 2,-2.1),( 3,12.9)
+sideband=(1,L),(2,L)
+bbsynth=( 1,552.00),( 2,552.00)
+disk=off
+stop=18h46m32s   !NEXT!        
+qual=  0
+disk=off
+stop=18h47m32s   !NEXT!
+
+!* --- Scan from 18h48m35s to 18h49m35s   Tue, 2018 Jun 26 --- *!
+sname='GALAXY15'  ra=04h02m41.300286s  dec=-05d10'57.98137"  qual=999  calib='Z'
+ epochd=2018Jun26 epocht=18h48m35s dra=  86687.43 ddec=   2705.10
+disk=off
+stop=18h48m35s   !NEXT!        
+qual=  0
+disk=off
+stop=18h49m35s   !NEXT!
+
+!* --- Scan from 18h50m37s to 18h51m37s   Tue, 2018 Jun 26 --- *!
+sname='0528+134'  ra=05h30m56.416747s  dec= 13d31'55.14952"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+fe=(1,6cm),(3,6cm)
+synth=( 1,15.9),( 2, 3.4),( 3,15.9)
+sideband=(1,U),(2,U)
+bbsynth=( 1,728.25),( 2,728.25)
+disk=off
+stop=18h50m37s   !NEXT!        
+qual=  0
+disk=off
+stop=18h51m37s   !NEXT!
+
+!* --- Scan from 18h52m40s to 18h53m40s   Tue, 2018 Jun 26 --- *!
+sname='GALAXY15'  ra=04h06m47.063150s  dec=-05d10'50.25374"  qual=999  calib='Z'
+ epochd=2018Jun26 epocht=18h52m40s dra=  86687.77 ddec=   2714.13
+disk=off
+stop=18h52m40s   !NEXT!        
+qual=  0
+disk=off
+stop=18h53m40s   !NEXT!
+
+!* --- Scan from 18h54m42s to 18h55m42s   Tue, 2018 Jun 26 --- *!
+sname='0528+134'  ra=05h30m56.416747s  dec= 13d31'55.14952"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+fe=(1,20cm),(3,20cm)
+synth=( 1,12.9),( 2,-2.1),( 3,12.9)
+sideband=(1,L),(2,L)
+bbsynth=( 1,552.00),( 2,552.00)
+disk=off
+stop=18h54m42s   !NEXT!        
+qual=  0
+disk=off
+stop=18h55m42s   !NEXT!
+
+!* --- Scan from 18h56m43s to 18h57m43s   Tue, 2018 Jun 26 --- *!
+sname='GALAXY15'  ra=04h10m51.554734s  dec=-05d10'42.54165"  qual=999  calib='Z'
+ epochd=2018Jun26 epocht=18h56m43s dra=  86688.10 ddec=   2722.26
+disk=off
+stop=18h56m43s   !NEXT!        
+qual=  0
+disk=off
+stop=18h57m43s   !NEXT!
+
+!* --- Scan from 18h58m45s to 18h59m45s   Tue, 2018 Jun 26 --- *!
+sname='0528+134'  ra=05h30m56.416747s  dec= 13d31'55.14952"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+fe=(1,6cm),(3,6cm)
+synth=( 1,15.9),( 2, 3.4),( 3,15.9)
+sideband=(1,U),(2,U)
+bbsynth=( 1,728.25),( 2,728.25)
+disk=off
+stop=18h58m45s   !NEXT!        
+qual=  0
+disk=off
+stop=18h59m45s   !NEXT!
+
+!* --- Scan from 19h00m46s to 19h01m46s   Tue, 2018 Jun 26 --- *!
+sname='GALAXY15'  ra=04h14m54.656822s  dec=-05d10'34.85165"  qual=999  calib='Z'
+ epochd=2018Jun26 epocht=19h00m46s dra=  86688.41 ddec=   2729.47
+disk=off
+stop=19h00m46s   !NEXT!        
+qual=  0
+disk=off
+stop=19h01m46s   !NEXT!
+
+!* --- Scan from 19h02m46s to 19h03m46s   Tue, 2018 Jun 26 --- *!
+sname='0528+134'  ra=05h30m56.416747s  dec= 13d31'55.14952"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+fe=(1,20cm),(3,20cm)
+synth=( 1,12.9),( 2,-2.1),( 3,12.9)
+sideband=(1,L),(2,L)
+bbsynth=( 1,552.00),( 2,552.00)
+disk=off
+stop=19h02m46s   !NEXT!        
+qual=  0
+disk=off
+stop=19h03m46s   !NEXT!
+
+!* --- Scan from 19h04m47s to 19h05m47s   Tue, 2018 Jun 26 --- *!
+sname='GALAXY15'  ra=04h18m56.259338s  dec=-05d10'27.18999"  qual=999  calib='Z'
+ epochd=2018Jun26 epocht=19h04m47s dra=  86688.73 ddec=   2735.80
+disk=off
+stop=19h04m47s   !NEXT!        
+qual=  0
+disk=off
+stop=19h05m47s   !NEXT!
+
+!* --- Scan from 19h06m46s to 19h07m46s   Tue, 2018 Jun 26 --- *!
+sname='0528+134'  ra=05h30m56.416747s  dec= 13d31'55.14952"  qual=999  calib='V'
+   dra=0.0  ddec=0.0 
+fe=(1,6cm),(3,6cm)
+synth=( 1,15.9),( 2, 3.4),( 3,15.9)
+sideband=(1,U),(2,U)
+bbsynth=( 1,728.25),( 2,728.25)
+disk=off
+stop=19h06m46s   !NEXT!        
+qual=  0
+disk=off
+stop=19h07m46s   !NEXT!
+
+!* --- Scan from 19h08m46s to 19h09m46s   Tue, 2018 Jun 26 --- *!
+sname='GALAXY15'  ra=04h22m56.260210s  dec=-05d10'19.56262"  qual=999  calib='Z'
+ epochd=2018Jun26 epocht=19h08m46s dra=  86689.02 ddec=   2741.23
+disk=off
+stop=19h08m46s   !NEXT!        
+qual=  0
+disk=off
+stop=19h09m46s   !NEXT!
+disk=off
+stop=19h09m51s   !NEXT!
+     !QUIT! 

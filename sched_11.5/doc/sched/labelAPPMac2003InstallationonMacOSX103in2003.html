@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Installation on Mac OSX 10.3 in 2003.</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 21077--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSSECGBGreenBank140.html" >prev</a>] [<a 
+href="labelSSECGBGreenBank140.html#taillabelSSECGBGreenBank140.html" >prev-tail</a>] [<a 
+href="#taillabelAPPMac2003InstallationonMacOSX103in2003.html">tail</a>] [<a 
+href="labelAPPOBSOLETEOBSOLETESECTIONS.html#labelAPPMac2003InstallationonMacOSX103in2003.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">B.8   </span> <a 
+ id="x54-376000B.8"></a>Installation on Mac OSX 10.3 in 2003.</h3>
+<!--l. 21079--><p class="noindent" >For those with older systems, here are a few details for Mac OS X users based on my experience
+installing <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>on a Mac iBook G4 system in Dec 2003 with OS X version 10.3 (Panther). Note
+that, for OSX 10.5, the installation was somewhat smoother with the main issue being a need to switch
+from g77 to gfortran. PGPLOT could be downloaded from the Fink. For OSX 10.3, before installing
+<span 
+class="cmcsc-10">SCHED</span>, the code tools had to be installed (the installation package was already on disk, but not yet
+installed) and X windows had to be installed from the OS X installation CD 3 (not CD 2 as
+some documentation stated). The code tools include gcc, but not g77 (why?). A binary
+version of g77 compatible with Panther was obtained from hpc.sourceforge.net. It installed
+itself on download and simply worked. PGPLOT was installed. There was no PGPLOT
+configuration file (<span 
+class="cmsl-10">.conf </span>file) provided for OS X (there probably is one now). I made a <span 
+class="cmsl-10">local.conf</span>
+file starting with the one from <span 
+class="cmsl-10">../src/sys</span><span 
+class="cmsl-10">_bsd/g77</span><span 
+class="cmsl-10">_gcc.conf</span>. The following two lines were
+different:
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-57">
+&#x00A0;FFLAGD="-fno-backslash"
+&#x00A0;<br />&#x00A0;LIBS="-L/usr/lib&#x00A0;-lgcc&#x00A0;-L/usr/X11R6/lib&#x00A0;-lX11"
+</div>
+<!--l. 21098--><p class="nopar" >
+<!--l. 21100--><p class="noindent" >The routine that makes the font file (pgpack) caused some trouble while I was messing with various
+variants on the above, but eventually worked. I suspect problems with big vs little endian byte
+orders, but I&#8217;m not sure. Note that pgplot version 5.3 has OS X as a standard OS type. This
+version was not released as of Aug 2008 (may never be), but might be available if you ask
+nicely.
+<!--l. 21107--><p class="noindent" >Once the X windows environment, gcc/g77, and PGPLOT were ready, SCHED compiled and ran with
+the Makefile set up for Linux/g77 and the and the following two modified lines (one just depends on the
+location of PGPLOT and the other helps it find the gcc libraries): XLD = -L/usr/lib -lgcc
+-L/usr/X11R6/lib -lX11 # Mac OS X (ie DARWIN) LPGPLOT = /usr/local/pgplot The architecture
+still claimed to be LINUX and the g77 compiler flags were the same. That&#8217;s all it took! It
+compiled and passed the verification tests. If you are using FINK, some details may be
+different.
+<!--l. 21117--><p class="noindent" >If you run into problems with some missing .h files, you might have a mismatched OS version and
+XCODE version, as I did.
+<!--l. 21120--><p class="noindent" >I now have <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>on a Powerbook G4 (OSX 10.3 still) and that is now one of the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>development
+platforms.
+<!--l. 21124--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSSECGBGreenBank140.html" >prev</a>] [<a 
+href="labelSSECGBGreenBank140.html#taillabelSSECGBGreenBank140.html" >prev-tail</a>] [<a 
+href="labelAPPMac2003InstallationonMacOSX103in2003.html" >front</a>] [<a 
+href="labelAPPOBSOLETEOBSOLETESECTIONS.html#labelAPPMac2003InstallationonMacOSX103in2003.html" >up</a>] </p></div>
+<!--l. 21124--><p class="noindent" ><a 
+ id="taillabelAPPMac2003InstallationonMacOSX103in2003.html"></a>  
+</body></html> 

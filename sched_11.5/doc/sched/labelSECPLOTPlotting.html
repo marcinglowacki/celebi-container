@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Plotting</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 1479--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECEXAMPLESExamples.html" >prev</a>] [<a 
+href="labelSECEXAMPLESExamples.html#taillabelSECEXAMPLESExamples.html" >prev-tail</a>] [<a 
+href="#taillabelSECPLOTPlotting.html">tail</a>] [<a 
+href="labelCHPINTROINTRODUCTION.html#labelSECPLOTPlotting.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">1.5   </span> <a 
+ id="x10-110001.5"></a>Plotting</h3>
+<!--l. 1482--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>has the ability to plot the u-v coverage and beam of sources in a schedule and to plot
+azimuth, elevation, hour angle, or paralactic angle against any of those quantities or against UT or GST
+for one to all stations in a schedule. These plots are useful for assessing the quality of the schedule.
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can also plot the positions of the sources in a schedule in RA and DEC and plot the positions
+of all other sources in the specified catalog. The latter is useful for identifying candidate calibrators.
+The plots can be very useful for planning observations, both at the proposal stage and as the
+schedule is prepared. For this use, see the section on <a 
+href="labelSECPLANNINGUsingSCHEDforProjectPlanning.html#x12-140002.1">planning</a> and for a very simple example
+schedule for obtaining plots of hypothetical schedules, see the <a 
+href="labelSECEXAMPLESExamples.html#x9-100001.4.2">second example</a> in the <a 
+href="labelSECEXAMPLESExamples.html#x9-80001.4">Examples
+section</a>. Some of the other examples are also oriented toward planning VLBA and VLA
+observations.
+<!--l. 1501--><p class="noindent" >To cause <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to make plots, specify <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1730003.1.2"><span 
+class="cmtt-10">PLOT</span></a> somewhere in the input. Since it is unlikely that this will
+be desired in the final run of the program, it is best to start a plotting session interactively and then
+specify <span 
+class="cmtt-10">PLOT </span>and use <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1920003.1.2"><span 
+class="cmtt-10">SCHedule</span></a> to specify the input file. Thus, you would type (on a unix box,
+anyway):
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-4">
+sched
+&#x00A0;<br />plot&#x00A0;&#x00A0;schedule=bv016d.key&#x00A0;/
+</div>
+<!--l. 1512--><p class="nopar" >
+<!--l. 1514--><p class="noindent" >(substituting your file for the <span 
+class="cmtt-10">bv016d.key</span>.
+<!--l. 1516--><p class="noindent" >The plotting utilizes the <a 
+href="http://www.astro.caltech.edu/~tjp/pgplot/" ><span 
+class="cmcsc-10">PGPLOT </span>subroutine library</a> written by Tim Pearson used by the other
+Caltech Package programs and in wide use in astronomy. Be sure that the environment
+variables <span 
+class="cmtt-10">PGPLOT</span><span 
+class="cmtt-10">_DIR </span>is set to the location of the <span 
+class="cmcsc-10">PGPLOT </span>libraries on your system and that
+<span 
+class="cmtt-10">PGPLOT</span><span 
+class="cmtt-10">_FONT </span>is set the the location of the <span 
+class="cmcsc-10">PGPLOT </span>font files if that is different from
+<span 
+class="cmtt-10">PGPLOT</span><span 
+class="cmtt-10">_DIR</span>.
+<!--l. 1525--><p class="noindent" >If <span 
+class="cmtt-10">PLOT </span>has been invoked, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will proceed to read all of the input files, check the schedule, and
+do any requested optimization normally. It will write the summary file, but will not write
+the antenna specific files, at least until later. The summary file will be closed and can be
+examined while in the plotting session. This may be useful in studying details of what is being
+plotted.
+<!--l. 1532--><p class="noindent" >When the plotting session begins, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>opens a control panel with a variety of buttons that can be
+clicked with the mouse. It also writes some instructions to the window in which <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is being run.
+On the control panel, the left most column has buttons that either select different control functions
+(items to the right will change) or cause something to happen. The latter options include
+actually drawing a plot (<span 
+class="cmtt-10">PLOT</span>), closing the plot (<span 
+class="cmtt-10">CLOSE</span>), restarting the program to read a new
+input file (<span 
+class="cmtt-10">RESTART</span>), continuing to (<span 
+class="cmtt-10">FINISH</span>) the rest of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>(only allowed if neither
+<span 
+class="cmtt-10">RESTART </span>or <span 
+class="cmtt-10">OPTMODE=UPTIME </span>were used), exit the program (<span 
+class="cmtt-10">EXIT</span>), or revert the the older
+style terminal input (<span 
+class="cmtt-10">TERM</span>) described below. The <span 
+class="cmtt-10">FILES </span>options allows changing output
+from the terminal to postscript or other files and allows restriction of plots to scans with
+specific setup files. The <span 
+class="cmtt-10">OPTIONS </span>button allows selection of colors and line widths. The <span 
+class="cmtt-10">AXIS</span>
+button allows selection plot type and axis scales. The <span 
+class="cmtt-10">SOURCES </span>button (default on wakeup)
+allows selection of antennas and sources. Antennas can be selected both for plotting at all
+and for highlighting in red. The use of the buttons should be fairly intuitive and won&#8217;t be
+documented extensively here. Some information included in the descriptions of the terminal input
+below also applies to interactive operation so it is worth reading through the documentation
+quickly.
+<!--l. 1555--><p class="noindent" >Many thanks to Franco Tinarelli of Bologna for providing the code for the plot control.
+<!--l. 1558--><p class="noindent" >Note that, if elevation is plotted against azimuth, the horizon, as specified in the stations catalog, will
+be plotted in addition to the tracks followed by the sources.
+<!--l. 1562--><p class="noindent" >If the RD Plot option is selected, the location on the sky of each source in the schedule is shown. This
+particular plot option has acquired a number of interactive capabilities. It is possible to zoom in on a
+region, to look for calibrators around a target location, to show (as calibrators) all sources in the
+catalog, not just those listed in the schedule, and to label the source and catalog names. These
+capabilities should be useful in attempts to locate calibrators near reference sources. Currently, a
+rectangular coordinate system is used for the displays, but a more general projection scheme is under
+development.
+<!--l. 1573--><p class="noindent" >Plots are made, of whatever quantities are specified, by drawing a line from the value at the beginning
+of each scan to the value at the end of the scan. Thus, if you have very long scans, the individual line
+segments may become apparent and the plot will not be an exact representation of the data that will be
+collected.
+                                                                                
+                                                                                
+<!--l. 1579--><p class="noindent" >The <span 
+class="cmtt-10">RESTART </span>option is especially interesting for experiment planning. It causes <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to return to
+the beginning of the program, read and process the input file again, and return to the plot section,
+remembering the current plot inputs. If the input file has been changed in any way, those changes will
+be reflected in the new plots. Thus scan times can be changed, new sources specified etc.
+This is useful, for example, in exploring the u-v coverage for various sources (much like the
+Caltech program <span 
+class="cmsl-10">HAZI</span>) or determining the times that various sources are visible (like the
+Caltech program <span 
+class="cmsl-10">UPTIME</span>). It is more flexible than the other programs because you have full
+control of the schedule so, for example, the u-v coverage from multiple snapshots can be
+explored. Because it is possible, by deleting some parameters from the input file, to cause
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to get confused about the value of some of the parameters for which only one value per
+project is accepted, the <span 
+class="cmtt-10">FINISH </span>option is locked out after a <span 
+class="cmtt-10">RESTART</span>. If a <span 
+class="cmtt-10">RESTART </span>option
+has been used, it will be necessary to rerun the program from scratch to get final output
+schedules. Since you have been modifying the input file on each restart, this should not be a
+problem.
+<!--l. 1599--><p class="noindent" >In older versions of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>or if the <span 
+class="cmtt-10">TERMINAL </span>button is pressed, the plot control is from the terminal
+window using KEYIN input as described below. This form of input will probably be removed eventually
+unless there is demand to keep it.
+<!--l. 1604--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">1.5.1   </span> <a 
+ id="x10-120001.5.1"></a>Keyin Input for Plotting (obsolete)</h4>
+<!--l. 1606--><p class="noindent" >This section describes the use of Keyin inputs to control the plotting functions. This has been
+superceded by the control panel scheme of inputs, but the documentation will be retained until the
+capability is removed.
+<!--l. 1611--><p class="noindent" >If the <span 
+class="cmtt-10">TERMINAL </span>button is pressed on the plot control panel, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>reverts to Keyin style input from
+the main window in which it is running to control the plots. First, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>writes a description of the
+possible input parameters, which are also described below, and then prompts for KEYIN style input.
+The user should specify any desired quantities and then type a &#8220;/&#8221;. If the user is on a machine with X
+windows graphics, simply taking all the defaults will cause a u-v plot of all sources and scans in the
+project to appear on the screen.
+<!--l. 1621--><p class="noindent" >The inputs can be used to choose between u-v plots, xy, and Ra-Dec plots. For u-v plots, the scale can
+be specified and a station can be selected for which, on color displays, the baselines to that station will
+be highlighted (displayed in red). Also the source to be plotted can be specified. XY plots
+are a bit more complicated because they are more flexible. The quantity to plot on each
+axis can be selected, the scales specified and the station and source chosen to be one or
+all. See the details of the input parameters below. In addition, the plot can be restricted
+to scans that use one of the setup files. This can be useful for assessing band switching
+observations.
+<!--l. 1632--><p class="noindent" >The input parameters are not reset between runs of the plotting. Thus the user need only specify those
+items that he/she wishes to change. Some of the built in KEYIN capabilities can be useful here. If you
+type <span 
+class="cmtt-10">SHOW</span>, KEYIN will list the input variables and their current values. <span 
+class="cmtt-10">HELP </span>generates a list of the
+variables. Also you can type <span 
+class="cmtt-10">SAVE filename </span>and KEYIN will write a file with name <span 
+class="cmtt-10">filename </span>in the
+default area containing the current parameter settings. Later, perhaps in another run of <span 
+class="cmcsc-10">SCHED</span>, you
+can type <span 
+class="cmtt-10">@filename </span>to recover those parameters. The parameter file can be edited &#8212; it is a normal
+KEYIN input file (actually any file can be read with the <span 
+class="cmtt-10">@filename </span>construct, although only up to the
+first &#8220;/&#8221;).
+<!--l. 1645--><p class="noindent" >Plotting Input Parameters (Terminal):
+<!--l. 1647--><p class="noindent" >The KEYIN inputs to the plotting section of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>are:
+<!--l. 1649--><p class="noindent" ><span 
+class="cmtt-10">PLotfile</span>
+<!--l. 1651--><p class="noindent" ><span 
+class="cmtt-10">PLOTfile </span>gives the output specification for the plot. As with any <span 
+class="cmcsc-10">PGPLOT </span>programs, it is in the form
+<span 
+class="cmtt-10">filename/device</span>. For interactive devices, the filename need not be specified. The default device is <span 
+class="cmtt-10">/xs</span>
+                                                                                
+                                                                                
+which is a good choice for X windows systems. Other devices most likely to be of interest are
+<span 
+class="cmtt-10">/ps </span>for a postscript file and <span 
+class="cmtt-10">/cps </span>for a color postscript file. See <a 
+href="http://www.astro.caltech.edu/~tjp/pgplot/" ><span 
+class="cmcsc-10">PGPLOT </span>documentation</a>
+<span 
+class="cmcsc-10">PGPLOT </span>documentation for other options (more will be listed here in the future). The device
+can be changed at any time. If it is changed, the old one will be closed and the new one
+opened. This allows the plot to be set up interactively, and then put out in postscript for
+printing.
+<!--l. 1665--><p class="noindent" ><span 
+class="cmtt-10">SEtnum</span>
+<!--l. 1667--><p class="noindent" >When the plotting section is entered the first time, information is written to the screen about possible
+input options. Among the information presented is a numbered list of the setup files encountered in the
+input. With <span 
+class="cmtt-10">SEtnum</span>, one of those setup files can be selected by number (avoids lots of typing since
+setup file names often include full paths and can be quite long). Then the plot will only show scans
+which use that setup file.
+<!--l. 1675--><p class="noindent" ><span 
+class="cmtt-10">TYpe</span>
+<!--l. 1677--><p class="noindent" ><span 
+class="cmtt-10">TYpe </span>is used to specify the type of plot. The option are <span 
+class="cmtt-10">UV</span>, which is the default, <span 
+class="cmtt-10">XY</span>, and <span 
+class="cmtt-10">RD</span>. <span 
+class="cmtt-10">UV </span>causes a
+plot of the spatial frequency coverage to be plotted. For now, the scale on the plot is km. An expected
+enhancement eventually is for this to optionally be in wavelengths. For <span 
+class="cmtt-10">XY </span>plots, there are a variety of
+options which are specified with <span 
+class="cmtt-10">XAxis </span>and <span 
+class="cmtt-10">YAxis</span>, which independently specify the quantity plotted on
+each axis. <span 
+class="cmtt-10">RD </span>requests that the locations of the sources in the schedule be plotted in Ra and
+Dec.
+<!--l. 1686--><p class="noindent" ><span 
+class="cmtt-10">XAxis</span>
+<!--l. 1688--><p class="noindent" ><span 
+class="cmtt-10">XAxis </span>specifies the quantity to be plotted on the horizontal axis in a <span 
+class="cmtt-10">TYPE=XY </span>plot. The options are <span 
+class="cmtt-10">el</span>
+for elevation, <span 
+class="cmtt-10">az </span>for azimuth, <span 
+class="cmtt-10">pa </span>for paralactic angle (for polarization), <span 
+class="cmtt-10">ha </span>for hour angle, <span 
+class="cmtt-10">ut </span>for
+universal time, and <span 
+class="cmtt-10">gst </span>for Greenwich Sidereal time.
+<!--l. 1694--><p class="noindent" ><span 
+class="cmtt-10">YAxis</span>
+<!--l. 1696--><p class="noindent" ><span 
+class="cmtt-10">YAxis </span>specifies the quantity to be plotted on the vertical axis in a <span 
+class="cmtt-10">TYPE=XY </span>plot. The options are <span 
+class="cmtt-10">el </span>for
+elevation, <span 
+class="cmtt-10">az </span>for azimuth, <span 
+class="cmtt-10">pa </span>for paralactic angle, and <span 
+class="cmtt-10">ha </span>for hour angle. If <span 
+class="cmtt-10">xaxis=az </span>and <span 
+class="cmtt-10">yaxis=el</span>, the
+antenna horizons will be plotted along with the source tracks.
+<!--l. 1702--><p class="noindent" ><span 
+class="cmtt-10">XLeft </span>and <span 
+class="cmtt-10">XRight</span>
+<!--l. 1704--><p class="noindent" ><span 
+class="cmtt-10">XLeft </span>and <span 
+class="cmtt-10">XRight </span>specify the minimum and maximum for the X axis plot scale. If they are not set, or
+are set to -9999., the axis will be autoscaled. For u-v plots, it is only necessary to specify one value, say
+<span 
+class="cmtt-10">XMax</span>, and it will be used for all 4 limits. If more than one are specified, they are used which allows off
+center plots. For <span 
+class="cmtt-10">XY </span>plots, the limits should be specified in the units of the plots. For the time axis, the
+limits should be in the form <span 
+class="cmtt-10">hh:mm:ss </span>where this is the time offset since the beginning
+of the first day of the experiment for <span 
+class="cmtt-10">UT </span>or is the GST. Note for u-v plots, traditionally,
+the plot has positive to the left so <span 
+class="cmtt-10">XLeft </span>will be greater than <span 
+class="cmtt-10">XRight</span>. For Ra-Dec plots,
+<span 
+class="cmtt-10">XLeft </span>and <span 
+class="cmtt-10">XRight </span>specify the RA range and should be in the form <span 
+class="cmtt-10">hh:mm:ss </span>(eg. <span 
+class="cmtt-10">XL =</span>
+<span 
+class="cmtt-10">5:30:00</span>).
+<!--l. 1718--><p class="noindent" ><span 
+class="cmtt-10">YBottom </span>and <span 
+class="cmtt-10">YTop</span>
+<!--l. 1720--><p class="noindent" ><span 
+class="cmtt-10">YBottom </span>and <span 
+class="cmtt-10">YTop </span>specify the minimum and maximum for the Y axis plot scale. If they are not set, or
+are set to -9999., the axis will be autoscaled. For Ra-Dec plots, <span 
+class="cmtt-10">YBottom </span>and <span 
+class="cmtt-10">YTop </span>specify the
+declination limits and should be in the form <span 
+class="cmtt-10">dd:mm:ss </span>(eg. <span 
+class="cmtt-10">YB = -12:15:00</span>).
+<!--l. 1726--><p class="noindent" ><span 
+class="cmtt-10">SOurce</span>
+<!--l. 1728--><p class="noindent" ><span 
+class="cmtt-10">SOurce </span>can be used to restrict the plots to a single source. The default, which can be specified at any
+time is <span 
+class="cmtt-10">ALL</span>, which will cause all sources to be plotted.
+<!--l. 1732--><p class="noindent" ><span 
+class="cmtt-10">STation</span>
+<!--l. 1734--><p class="noindent" ><span 
+class="cmtt-10">STation </span>can be used to restrict <span 
+class="cmtt-10">TYPE=XY </span>plots to one station. For <span 
+class="cmtt-10">TYPE=UV </span>plots, all stations will be
+plotted, but all baselines to the specified station will be plotted in a contrasting color. The default,
+which may be specified at any time, is <span 
+class="cmtt-10">ALL</span>, which will cause all stations to be plotted or not
+highlighted.
+<!--l. 1740--><p class="noindent" ><span 
+class="cmtt-10">REstart</span>
+<!--l. 1742--><p class="noindent" >See the discussion above for details of the effect of <span 
+class="cmtt-10">REstart</span>. In short, it causes the program to return to
+                                                                                
+                                                                                
+the beginning and reread the input, which may have changed.
+<!--l. 1746--><p class="noindent" ><span 
+class="cmtt-10">FInish</span>
+<!--l. 1748--><p class="noindent" ><span 
+class="cmtt-10">FInish </span>tells <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to close the plot files and produce the station specific output files. <span 
+class="cmtt-10">FInish </span>is
+locked out after a <span 
+class="cmtt-10">REstart </span>to make absolutely sure that the output files really correspond to what is in
+the schedule file. If <span 
+class="cmtt-10">REstart </span>has been used, it will be necessary to <span 
+class="cmtt-10">EXit </span>and rerun <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>from
+scratch to get the station output files.
+<!--l. 1755--><p class="noindent" ><span 
+class="cmtt-10">EXit</span>
+<!--l. 1757--><p class="noindent" ><span 
+class="cmtt-10">EXIT </span>tells <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to close the plot files and exit. Antenna specific files will not be produced.
+                                                                                
+                                                                                
+<!--l. 1761--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECEXAMPLESExamples.html" >prev</a>] [<a 
+href="labelSECEXAMPLESExamples.html#taillabelSECEXAMPLESExamples.html" >prev-tail</a>] [<a 
+href="labelSECPLOTPlotting.html" >front</a>] [<a 
+href="labelCHPINTROINTRODUCTION.html#labelSECPLOTPlotting.html" >up</a>] </p></div>
+<!--l. 1761--><p class="noindent" ><a 
+ id="taillabelSECPLOTPlotting.html"></a>  
+</body></html> 

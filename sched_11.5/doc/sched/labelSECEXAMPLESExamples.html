@@ -1,0 +1,4702 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Examples</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 962--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECPLOTPlotting.html" >next</a>] [<a 
+href="labelSECFILESSCHEDInputandOutputFiles.html" >prev</a>] [<a 
+href="labelSECFILESSCHEDInputandOutputFiles.html#taillabelSECFILESSCHEDInputandOutputFiles.html" >prev-tail</a>] [<a 
+href="#taillabelSECEXAMPLESExamples.html">tail</a>] [<a 
+href="labelCHPINTROINTRODUCTION.html#labelSECEXAMPLESExamples.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">1.4   </span> <a 
+ id="x9-80001.4"></a>Examples</h3>
+<!--l. 964--><p class="noindent" >There are a number of example <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input files distributed with the program. They
+are in the <span 
+class="cmsl-10">examples </span>subdirectory (<span 
+class="cmsl-10">$SCHED/examples </span>if the environment variable is set on
+unix systems). Any can be consulted for information on how to run <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>or for use as
+templates from which to create your own schedule. All should produce valid schedules if
+run as is. In fact, all are used in the <span 
+class="cmsl-10">Verify </span>script that is used to check new installations
+and new versions of <span 
+class="cmcsc-10">SCHED</span>. All of the examples are described briefly and linked here.
+As of Dec. 2013, there were 52 examples. Some consolidation is on the agenda for future
+releases, partly from purging ones most appropriate for the legacy systems no longer in
+use.
+<!--l. 976--><p class="noindent" >The two examples in subsections below show a typical, reasonably simple, schedule and a minimal
+schedule of the type one might use for experiment planning. The latter is likely to be useful when
+writing proposals or doing other conceptual work.
+<!--l. 981--><p class="noindent" >Note that the example suite has grown up over many years and is in some considerable need up
+updating. All are valid schedules that run and could be used. But many features used are dated and
+new features and currently preferred styles are still only seen in a few. Some with recent (After late
+2010) modifications that are especially current are <span 
+class="cmsl-10">manual</span><span 
+class="cmsl-10">_1.key</span>, <span 
+class="cmsl-10">egdelzn.key</span>, <span 
+class="cmsl-10">egrdbe.key</span>, <span 
+class="cmsl-10">egrdbe2.key</span>,
+<span 
+class="cmsl-10">egddc.key</span>, and <span 
+class="cmsl-10">egcent.key </span>which target certain new features, but also show decent scheduling
+style.
+<!--l. 990--><p class="noindent" >See the section of this manual on <a 
+href="labelSECINSTALLInstallingSCHED.html#x34-3020004.1">installation</a> if <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is not yet installed on your computer and if
+your login is not set up to run <span 
+class="cmcsc-10">SCHED</span>. Also see <a 
+href="labelSECRUNSCHEDRunningSCHED.html#x35-3030004.2">the Running <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>section</a> for instructions on how
+to start the program.
+<!--l. 997--><p class="noindent" >If your version of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is linked with the <span 
+class="cmcsc-10">PGPLOT </span>libraries (has plotting capability) and you are
+on a unix system, you will need to set the environment variables <span 
+class="cmtt-10">PGPLOT</span><span 
+class="cmtt-10">_DIR </span>to the location of the
+<span 
+class="cmcsc-10">PGPLOT </span>libraries and <span 
+class="cmtt-10">PGPLOT</span><span 
+class="cmtt-10">_FONT </span>to the location of the <span 
+class="cmcsc-10">PGPLOT </span>font files, if that is not the same
+as <span 
+class="cmtt-10">PGPLOT</span><span 
+class="cmtt-10">_DIR</span>.
+     <dl class="description"><dt class="description">
+ <a 
+href="examples/manual_2.key" ><span 
+class="cmsl-10">manual</span><span 
+class="cmsl-10">_2.key</span></a> </dt><dd 
+class="description">
+     This
+     file
+     is
+     shown
+     below
+     as
+     <a 
+href="#x9-90001.4.1">the
+     first
+     example</a>.
+     It
+     is
+     a
+     fairly
+     typical
+                                                                                
+                                                                                
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input
+     file
+     for
+     a
+     VLBA
+     plus
+     the
+     GBT
+     observation.
+     It
+     uses
+     defaults
+     where
+     it
+     can
+     and
+     is
+     relatively
+     simple.
+     This
+     example
+     is
+     a
+     good
+     file
+     to
+     use
+     as
+     a
+     template
+     for
+     making
+     new
+     schedules.
+     This
+     file
+     has
+     not
+     been
+     updated
+     from
+     MARK5A
+     to
+     MARK5C.
+     </dd><dt class="description">
+ <a 
+href="examples/manual_1.key" ><span 
+class="cmsl-10">manual</span><span 
+class="cmsl-10">_1.key</span></a> </dt><dd 
+class="description">
+     This
+     file
+     will
+                                                                                
+                                                                                
+     produce
+     the
+     same
+     schedule
+     as
+     the
+     first
+     example.
+     However,
+     for
+     demonstration
+     purposes,
+     far
+     more
+     parameters
+     are
+     actually
+     specified
+     in
+     the
+     input
+     file.
+     This
+     includes
+     having
+     at
+     least
+     parts
+     of
+     all
+     auxiliary
+     input
+     files
+     (catalogs
+     etc)
+     imbedded.
+     It
+     is
+     fairly
+     complicated
+     and
+     contains
+     a
+     lot
+     of
+     comments
+     in
+     an
+     attempt
+     to
+     show
+                                                                                
+                                                                                
+     many
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>features
+     and
+     give
+     some
+     advice
+     on
+     scheduling
+     strategy.
+     It
+     has
+     been
+     updated
+     to
+     use
+     the
+     RDBE/DDC
+     system
+     on
+     the
+     VLBA
+     and
+     the
+     WIDAR
+     on
+     the
+     VLA.
+     </dd><dt class="description">
+ <a 
+href="examples/manual_simp.key" ><span 
+class="cmsl-10">manual</span><span 
+class="cmsl-10">_simp.key</span></a> </dt><dd 
+class="description">
+     is
+     <a 
+href="#x9-100001.4.2">the
+     second
+     example</a>
+     below.
+     It
+     is
+     a
+     very
+     simple
+     file
+     that
+     can
+     be
+     used
+     to
+     make
+     plots
+     for
+     experiment
+                                                                                
+                                                                                
+     planning
+     purposes.
+     Because
+     of
+     the
+     lack
+     of
+     cover
+     information
+     and
+     because
+     of
+     the
+     special
+     optimization
+     mode
+     used,
+     it
+     cannot
+     be
+     used
+     to
+     produce
+     telescope
+     control
+     files.
+     </dd><dt class="description">
+ <a 
+href="examples/egplan.key" ><span 
+class="cmsl-10">egplan.key</span></a> </dt><dd 
+class="description">
+     is
+     much
+     like
+     [<span 
+class="cmsl-10">manual</span><span 
+class="cmsl-10">_simp.key</span>].
+     It
+     is
+     a
+     simple
+     schedule
+     to
+     assist
+     in
+     experiment
+     planning.
+     It
+     is
+     a
+     bit
+     more
+     complete
+     than
+                                                                                
+                                                                                
+     <span 
+class="cmsl-10">manual</span><span 
+class="cmsl-10">_simp.key</span>.
+     </dd><dt class="description">
+ <a 
+href="examples/eglst.key" ><span 
+class="cmsl-10">eglst.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     schedule
+     using
+     LST
+     in
+     the
+     way
+     requested
+     for
+     dynamic
+     scheduling
+     projects
+     on
+     the
+     VLBA.
+     </dd><dt class="description">
+ <a 
+href="examples/egvlba.key" ><span 
+class="cmsl-10">egvlba.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     schedule
+     for
+     VLBA
+     observations.
+     It
+     demonstrates
+     band
+     switching
+     and
+     some
+     recording
+     control
+     procedures
+     not
+     in
+     <a 
+href="examples/manual_2.key" ><span 
+class="cmsl-10">manual</span><span 
+class="cmsl-10">_2.key</span></a>.
+     It
+     also
+     demonstrates
+     providing
+     <span 
+class="cmtt-10">PREEMPT=EXTRA</span>
+     scans
+     on
+                                                                                
+                                                                                
+     the
+     ends
+     of
+     the
+     project
+     so
+     that
+     operations
+     might
+     be
+     able
+     to
+     provide
+     extra
+     data
+     if
+     there
+     is
+     a
+     gap
+     that
+     cannot
+     otherwise
+     be
+     filled
+     between
+     projects.
+     </dd><dt class="description">
+ <a 
+href="examples/eg24.key" ><span 
+class="cmsl-10">eg24.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     schedule
+     of
+     a
+     simple
+     project
+     on
+     the
+     VLBA,
+     but
+     one
+     that
+     goes
+     for
+     24
+     hours.
+     For
+     dynamic
+                                                                                
+                                                                                
+     scheduling,
+     it
+     is
+     useful
+     to
+     be
+     able
+     to
+     wrap
+     such
+     schedules
+     to
+     use
+     a
+     different
+     start
+     time.
+     This
+     shows
+     how
+     to
+     put
+     in
+     comments
+     for
+     the
+     schedulers
+     to
+     aid
+     that
+     process
+     and
+     shows
+     how
+     the
+     schedulers
+     can
+     use
+     parameters
+     <span 
+class="cmtt-10">WRAP24</span>
+     <span 
+class="cmtt-10">and</span>
+     <span 
+class="cmtt-10">DOSCANS</span>
+     to
+     simplify
+     the
+     wrapping
+     process.
+     Note,
+     this
+     has
+     not
+                                                                                
+                                                                                
+     yet
+     been
+     updated
+     from
+     MARK5A
+     to
+     MARK5C.
+     </dd><dt class="description">
+ <a 
+href="examples/egOH.key" ><span 
+class="cmsl-10">egOH.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     spectral
+     line
+     file
+     for
+     VLBA
+     observations
+     of
+     several
+     OH
+     masers
+     transitions.
+     </dd><dt class="description">
+ <a 
+href="examples/egcent.key" ><span 
+class="cmsl-10">egcent.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     showing
+     how
+     to
+     specify
+     multiple
+     phase
+     centers
+     for
+     a
+     pointing
+     center
+     for
+     the
+     DiFX
+     correlator.
+     </dd><dt class="description">
+ <a 
+href="examples/egdelzn.key" ><span 
+class="cmsl-10">egdelzn.key</span></a> </dt><dd 
+class="description">
+     demonstrates
+                                                                                
+                                                                                
+     how
+     to
+     use
+     the
+     capability
+     in
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to
+     add
+     automatically
+     short
+     geodetic
+     segments
+     for
+     the
+     purpose
+     of
+     atmospheric
+     calibration
+     delay.
+     Note
+     that
+     similar
+     segments,
+     with
+     very
+     short
+     scans,
+     can
+     be
+     added
+     for
+     tropospheric
+     opacity
+     calibration.
+     This
+     example
+     also
+     shows
+     the
+     use
+     of
+     the
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1770003.1.2"><span 
+class="cmtt-10">PREEMPT</span></a>
+     parameter
+     to
+     protect
+     specific
+     scans
+     from
+     preemption
+     at
+                                                                                
+                                                                                
+     Pie
+     Town
+     and
+     Mauna
+     Kea
+     for
+     daily
+     EOP
+     observations
+     of
+     up
+     to
+     1.5
+     hr.
+     </dd><dt class="description">
+ <a 
+href="examples/dqhiel.key" ><span 
+class="cmsl-10">dqhiel.key</span></a> </dt><dd 
+class="description">
+     demonstrates
+     how
+     to
+     use
+     the
+     <span 
+class="cmtt-10">HIGHEL</span>
+     optimization
+     mode
+     which
+     can
+     pick
+     the
+     scan
+     with
+     the
+     highest
+     elevations
+     across
+     the
+     array
+     from
+     among
+     a
+     group
+     of
+     suggested
+     scans.
+     It
+     is
+     useful
+     for
+     testing
+     but
+                                                                                
+                                                                                
+     also
+     can
+     be
+     useful
+     for
+     picking
+     fringe
+     finders
+     etc.
+     This
+     schedule
+     is
+     based
+     on
+     the
+     regular
+     data
+     quality
+     tests.
+     </dd><dt class="description">
+ <a 
+href="examples/egrdbe2.key" ><span 
+class="cmsl-10">egrdbe2.key</span></a> </dt><dd 
+class="description">
+     demonstrates
+     a
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>file
+     for
+     use
+     with
+     the
+     new
+     digital
+     backend
+     and
+     Mark5C
+     recorders
+     being
+     deployed
+     on
+     the
+     VLBA
+     and
+     elsewhere.
+     This
+     one
+     is
+     relatively
+     simple
+     and
+     uses
+     the
+                                                                                
+                                                                                
+     PFB
+     personality
+     which
+     gives
+     many
+     channels
+     of
+     fixed
+     frequency
+     and
+     bandwidth.
+     It
+     does
+     exercise
+     the
+     mode
+     where
+     one
+     station
+     (GBT)
+     has
+     to
+     observe
+     in
+     the
+     opposite
+     sideband
+     from
+     others.
+     </dd><dt class="description">
+ <a 
+href="examples/rdbepfb.key" ><span 
+class="cmsl-10">rdbepfb.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     stripped
+     down
+     version
+     of
+     <span 
+class="cmsl-10">egrdbe2.key</span>
+     that
+     shows
+     a
+     rather
+     basic
+     schedule
+     for
+     the
+     VLBA
+     only
+     using
+                                                                                
+                                                                                
+     the
+     RDBE
+     with
+     the
+     PFB
+     personality.
+     It
+     uses
+     a
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>standard
+     setup
+     so
+     the
+     user
+     doesn&#8217;t
+     need
+     to
+     set
+     the
+     configuration
+     information.
+     </dd><dt class="description">
+ <a 
+href="examples/egcwide.key" ><span 
+class="cmsl-10">egcwide.key</span></a> </dt><dd 
+class="description">
+     Example
+     sched
+     input
+     for
+     a
+     VLBA
+     using
+     the
+     RDBE
+     with
+     the
+     PFB
+     personality
+     and
+     the
+     wideband
+     6
+     cm
+     receiver.
+     Setups
+     are
+     given
+     that
+     use
+     dual
+     polarization
+                                                                                
+                                                                                
+     in
+     one
+     pair
+     of
+     IFs
+     and
+     that
+     use
+     single
+     polarization
+     in
+     two
+     IFs
+     at
+     very
+     different
+     frequencies.
+     </dd><dt class="description">
+ <a 
+href="examples/egddc.key" ><span 
+class="cmsl-10">egddc.key</span></a> </dt><dd 
+class="description">
+     demonstrates
+     a
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>file
+     for
+     use
+     with
+     the
+     new
+     digital
+     backend
+     and
+     Mark5C
+     recorders
+     being
+     deployed
+     on
+     the
+     VLBA
+     and
+     elsewhere.
+     This
+     one
+     allows
+     flexible
+     baseband
+     frequencies
+     and
+     bandwidths,
+     but
+     provides
+                                                                                
+                                                                                
+     fewer
+     channels
+     than
+     the
+     PFB
+     personality.
+     </dd><dt class="description">
+ <a 
+href="examples/egddc2.key" ><span 
+class="cmsl-10">egddc2.key</span></a> </dt><dd 
+class="description">
+     demonstrates
+     a
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>file
+     for
+     use
+     with
+     2
+     RDBE&#8217;s
+     and
+     8
+     channels
+     from
+     the
+     DDC
+     personality.
+     Otherwise
+     it
+     is
+     a
+     fairly
+     simple
+     VLBA
+     schedule.
+     The
+     deployment
+     of
+     2
+     RDBE&#8217;s
+     is
+     expected
+     in
+     early
+     2013.
+     </dd><dt class="description">
+ <a 
+href="examples/manual_line.key" ><span 
+class="cmsl-10">manual</span><span 
+class="cmsl-10">_line.key</span></a> </dt><dd 
+class="description">
+     is
+     the
+     example
+     that
+     is
+                                                                                
+                                                                                
+     included
+     in
+     the
+     <a 
+href="labelSECLINESpectralLineObservations.html#x16-330002.5">spectral
+     line
+     section</a>
+     of
+     this
+     manual.
+     It
+     is
+     for
+     VLBA
+     and
+     GBT
+     observations
+     of
+     7mm
+     SiO
+     lines.
+     It
+     is
+     more
+     complicated
+     than
+     <a 
+href="examples/egOH.key" ><span 
+class="cmsl-10">egOH.key</span></a>
+     and
+     also
+     demonstrates
+     setting
+     GBT
+     frequencies
+     and
+     many
+     other
+     setup
+     parameters
+     that
+     were
+     defaulted
+     in
+     <span 
+class="cmsl-10">egOH.key</span>.
+     This
+     file
+     has
+     not
+     been
+     updated
+     from
+     MARK5A
+     to
+                                                                                
+                                                                                
+     MARK5C.
+     </dd><dt class="description">
+ <a 
+href="examples/eg512.key" ><span 
+class="cmsl-10">eg512.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     schedule
+     for
+     the
+     VLBA
+     that
+     uses
+     the
+     512
+     Mbps
+     mode.
+     </dd><dt class="description">
+ <a 
+href="examples/eg512g.key" ><span 
+class="cmsl-10">eg512g.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     schedule
+     for
+     the
+     a
+     global
+     observation
+     that
+     uses
+     512
+     Mbps
+     with
+     the
+     RDBE.
+     </dd><dt class="description">
+ <a 
+href="examples/eg1024.key" ><span 
+class="cmsl-10">eg1024.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     schedule
+     for
+     the
+     EVN
+     that
+     uses
+     the
+                                                                                
+                                                                                
+     1024
+     Mbps
+     mode
+     with
+     DBBC,
+     VLBA4,
+     and
+     MKIV
+     systems.
+     </dd><dt class="description">
+ <a 
+href="examples/eg2head.key" ><span 
+class="cmsl-10">eg2head.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     schedule
+     for
+     an
+     EVN
+     observation
+     that
+     uses
+     the
+     512
+     Mbps
+     mode.
+     This
+     uses
+     2
+     heads
+     on
+     one
+     tape
+     drive
+     on
+     Mark
+     IV
+     stations.
+     VLBA4
+     and
+     DBBC
+     stations
+     are
+     included.
+     Note
+     that
+     it
+     is
+     possible
+     to
+                                                                                
+                                                                                
+     do
+     512
+     Mbps
+     on
+     the
+     VLBA
+     and
+     Mark
+     IV
+     stations
+     simultaneously.
+     The
+     VLBA
+     uses
+     2
+     drives
+     while
+     the
+     Mark
+     IV
+     systems
+     use
+     2
+     heads.
+     This
+     is
+     actually
+     based
+     on
+     a
+     network
+     monitoring
+     observation.
+     </dd><dt class="description">
+ <a 
+href="examples/egglobal.key" ><span 
+class="cmsl-10">egglobal.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     file
+     for
+     simple
+     continuum
+     observations
+     involving
+     the
+     VLBA,
+     the
+     EVN,and
+     the
+                                                                                
+                                                                                
+     GBT.
+     The
+     VLA
+     has
+     been
+     removed
+     because
+     this
+     example
+     uses
+     the
+     legacy
+     recording
+     system
+     which
+     is
+     no
+     longer
+     supported
+     at
+     the
+     VLA.
+     This
+     file
+     has
+     not
+     been
+     updated
+     from
+     MARK5A
+     to
+     MARK5C.
+     </dd><dt class="description">
+ <a 
+href="examples/egglobalOH.key" ><span 
+class="cmsl-10">egglobalOH.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     file
+     for
+     line
+     observations
+     involving
+     the
+     VLBA,
+     the
+     EVN,and
+     the
+     GBT.
+     </dd><dt class="description">
+                                                                                
+                                                                                
+ <a 
+href="examples/egvsop.key" ><span 
+class="cmsl-10">egvsop.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     schedule
+     for
+     Mark&#x00A0;IV
+     /
+     VLBA
+     observations
+     specifically
+     using
+     modes
+     appropriate
+     for
+     observations
+     with
+     the
+     Japanese
+     VLBI
+     satellite,
+     VSOP.
+     It
+     will
+     produce
+     VEX
+     format
+     schedules
+     for
+     stations
+     that
+     use
+     the
+     field
+     system
+     and
+     VLBA
+     format
+     files
+     for
+     those
+     stations
+     that
+     need
+     them.
+     VSOP
+     (HALCA)
+     is
+     no
+     longer
+                                                                                
+                                                                                
+     operational,
+     but
+     the
+     VSOP-2
+     project
+     has
+     started
+     so
+     this
+     example
+     has
+     been
+     retained.
+     It
+     will
+     be
+     modified
+     for
+     VSOP-2
+     when
+     that
+     project
+     is
+     far
+     enough
+     along
+     to
+     make
+     it
+     clear
+     what
+     is
+     needed.
+     This
+     file
+     has
+     not
+     been
+     updated
+     from
+     MARK5A
+     to
+     MARK5C.
+     </dd><dt class="description">
+ <a 
+href="examples/eg3mma.key" ><span 
+class="cmsl-10">eg3mma.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     VLBA
+     schedule
+                                                                                
+                                                                                
+     for
+     observations
+     at
+     86
+     GHz.
+     There
+     is
+     special
+     emphasis
+     on
+     <a 
+href="labelSECREFPOINTReferencePointing.html#x17-340002.6">reference
+     pointing</a>,
+     which
+     is
+     done
+     explicitly
+     in
+     this
+     file.
+     This
+     file
+     uses
+     the
+     RDBE_DDC
+     at
+     2
+     Gbps
+     using
+     8
+     channels
+     of
+     64
+     MHz
+     each.
+     </dd><dt class="description">
+ <a 
+href="examples/eg3mmb.key" ><span 
+class="cmsl-10">eg3mmb.key</span></a> </dt><dd 
+class="description">
+     is
+     another
+     2Gbps
+     VLBA
+     schedule
+     for
+     observations
+     at
+     86
+     GHz.
+     There
+     is
+     special
+                                                                                
+                                                                                
+     emphasis
+     on
+     <a 
+href="labelSECREFPOINTReferencePointing.html#x17-340002.6">reference
+     pointing</a>,
+     which
+     is
+     done
+     automatically
+     in
+     this
+     file
+     based
+     on
+     information
+     in
+     the
+     <span 
+class="cmsl-10">peak.cmd</span>
+     file.
+     </dd><dt class="description">
+ <a 
+href="examples/eg3mmc.key" ><span 
+class="cmsl-10">eg3mmc.key</span></a> </dt><dd 
+class="description">
+     is
+     yet
+     a
+     third
+     VLBA
+     3mm
+     schedule,
+     again
+     using
+     automatic
+     insertion
+     of
+     pointing
+     scans.
+     But
+     this
+     time,
+     the
+     file
+     with
+     the
+     commands
+     controlling
+     that
+     insertion
+     is
+     inserted
+     in
+     the
+                                                                                
+                                                                                
+     main
+     schedule
+     file
+     and
+     is
+     somewhat
+     simplified
+     from
+     that
+     in
+     <a 
+href="examples/eg3mmb.key" ><span 
+class="cmsl-10">eg3mmb.key</span></a>
+     This
+     file
+     does
+     not
+     create
+     the
+     separate
+     new
+     and
+     old
+     system
+     files
+     needed
+     for
+     reference
+     pointing
+     on
+     masers
+     while
+     observing
+     with
+     the
+     new
+     RDBE
+     wide
+     band
+     system
+     with
+     the
+     PFB
+     personality.
+     For
+     instructions
+     on
+     how
+     to
+     do
+     that,
+     please
+     see
+                                                                                
+                                                                                
+     <a 
+href="examples/eg3mm_rd2.key" ><span 
+class="cmsl-10">eg3mm</span><span 
+class="cmsl-10">_rd2.key</span></a>.
+     This
+     file
+     has
+     not
+     been
+     updated
+     from
+     MARK5A
+     to
+     MARK5C.
+     </dd><dt class="description">
+ <a 
+href="examples/eg3mm_rd2.key" ><span 
+class="cmsl-10">eg3mm</span><span 
+class="cmsl-10">_rd2.key</span></a> </dt><dd 
+class="description">
+     is
+     similar
+     to
+     <span 
+class="cmsl-10">eg3mmb.key</span>,
+     but
+     shows
+     how
+     to
+     make
+     reference
+     pointing
+     observations,
+     when
+     using
+     the
+     RDBE
+     wide
+     band
+     system
+     with
+     the
+     PFB
+     personality
+     which
+     uses
+     fixed
+     32
+     MHz
+     channels
+     and
+     cannot
+     be
+     fine
+     tuned.
+     It
+     uses
+                                                                                
+                                                                                
+     the
+     crd
+     parameters
+     to
+     specify
+     the
+     allowed
+     bandwidth
+     and
+     frequency,
+     including
+     using
+     Doppler
+     calculations,
+     to
+     set
+     the
+     legacy
+     system
+     as
+     desired.
+     </dd><dt class="description">
+ <a 
+href="examples/vips11.key" ><span 
+class="cmsl-10">vips11.key</span></a> </dt><dd 
+class="description">
+     shows
+     use
+     of
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1600003.1.2"><span 
+class="cmtt-10">OPTMODE=HAS</span></a>
+     for
+     automatic
+     scheduling.
+     This
+     mode
+     tries
+     to
+     obtain
+     a
+     requested
+     number
+     of
+     scans
+     on
+     each
+     source
+     and
+     spread
+     them
+     reasonably
+     evenly
+     over
+                                                                                
+                                                                                
+     the
+     time
+     available.
+     It
+     pays
+     some
+     attention
+     to
+     minimizing
+     slew
+     times.
+     It
+     is
+     meant
+     to
+     simplify
+     scheduling
+     of
+     projects
+     that
+     try
+     to
+     image
+     a
+     number,
+     perhaps
+     large,
+     of
+     sources
+     using
+     multiple
+     snap-shots
+     on
+     each.
+     It
+     was
+     originally
+     provided
+     for
+     the
+     VIPS
+     project
+     but
+     should
+     be
+     useful
+     for
+     many
+     other
+     programs.
+                                                                                
+                                                                                
+     </dd><dt class="description">
+ <a 
+href="examples/evn_cont_strong.key" ><span 
+class="cmsl-10">evn</span><span 
+class="cmsl-10">_cont</span><span 
+class="cmsl-10">_strong.key</span></a> </dt><dd 
+class="description">
+     is
+     an
+     example
+     of
+     EVN
+     observations
+     at
+     18cm.
+     The
+     observing
+     pattern
+     is
+     an
+     11
+     minute
+     cycle
+     with
+     2
+     minutes
+     on
+     a
+     calibrator
+     and
+     9
+     minutes
+     on
+     a
+     target
+     source.
+     This
+     observation
+     is
+     at
+     128
+     Mbps.
+     </dd><dt class="description">
+ <a 
+href="examples/evn_cont_strong_pol.key" ><span 
+class="cmsl-10">evn</span><span 
+class="cmsl-10">_cont</span><span 
+class="cmsl-10">_strong</span><span 
+class="cmsl-10">_pol.key</span></a> </dt><dd 
+class="description">
+     is
+     essentially
+     the
+     same
+     schedule
+     as
+     <a 
+href="examples/evn_cont_strong.key" ><span 
+class="cmsl-10">evn</span><span 
+class="cmsl-10">_cont</span><span 
+class="cmsl-10">_strong.key</span></a>,
+     but
+     with
+                                                                                
+                                                                                
+     a
+     D
+     term
+     calibrator
+     and
+     a
+     polarization
+     position
+     angle
+     calibrator
+     added.
+     </dd><dt class="description">
+ <a 
+href="examples/evn_cont_weak_256.key" ><span 
+class="cmsl-10">evn</span><span 
+class="cmsl-10">_cont</span><span 
+class="cmsl-10">_weak</span><span 
+class="cmsl-10">_256.key</span></a> </dt><dd 
+class="description">
+     is
+     phase
+     referencing
+     schedule
+     for
+     the
+     EVN
+     with
+     a
+     5
+     minute
+     cycle
+     time
+     using
+     256
+     Mbps.
+     </dd><dt class="description">
+ <a 
+href="examples/evn_cont_weak_512.key" ><span 
+class="cmsl-10">evn</span><span 
+class="cmsl-10">_cont</span><span 
+class="cmsl-10">_weak</span><span 
+class="cmsl-10">_512.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     similar
+     phase
+     referencing
+     schedule
+     for
+     the
+     EVN,
+     but
+     uses
+     512
+     Mbps
+     which
+     requires
+     2
+     headstacks.
+                                                                                
+                                                                                
+     </dd><dt class="description">
+ <a 
+href="examples/evn_cont_weak_snap.key" ><span 
+class="cmsl-10">evn</span><span 
+class="cmsl-10">_cont</span><span 
+class="cmsl-10">_weak</span><span 
+class="cmsl-10">_snap.key</span></a> </dt><dd 
+class="description">
+     is
+     an
+     EVN
+     schedule
+     for
+     256
+     Mbps
+     observations
+     of
+     multiple
+     snapshots
+     using
+     phase
+     referencing.
+     </dd><dt class="description">
+ <a 
+href="examples/evn_line_hi.key" ><span 
+class="cmsl-10">evn</span><span 
+class="cmsl-10">_line</span><span 
+class="cmsl-10">_hi.key</span></a> </dt><dd 
+class="description">
+     is
+     for
+     EVN
+     observations
+     of
+     an
+     extragalactic
+     21-cm
+     HI
+     source.
+     </dd><dt class="description">
+ <a 
+href="examples/evn_line_meth.key" ><span 
+class="cmsl-10">evn</span><span 
+class="cmsl-10">_line</span><span 
+class="cmsl-10">_meth.key</span></a> </dt><dd 
+class="description">
+     is
+     for
+     EVN
+     only
+     observations
+     of
+     the
+     6.7
+     GHz
+     line
+     of
+     methanol
+     in
+     a
+     galactic
+     source.
+                                                                                
+                                                                                
+     </dd><dt class="description">
+ <a 
+href="examples/eg5cm.key" ><span 
+class="cmsl-10">eg5cm.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     schedule
+     for
+     the
+     EVN
+     and
+     EVLA
+     that
+     observes
+     near
+     6.7
+     GHz.
+     It
+     is
+     the
+     same
+     as
+     <span 
+class="cmsl-10">evn</span><span 
+class="cmsl-10">_line</span><span 
+class="cmsl-10">_meth.key</span>,
+     but
+     with
+     the
+     EVLA
+     added.
+     </dd><dt class="description">
+ <a 
+href="examples/egmk5vex.key" ><span 
+class="cmsl-10">egmk5vex.key</span></a> </dt><dd 
+class="description">
+     is
+     for
+     EVN
+     only
+     observations
+     using
+     the
+     Mark5
+     system.
+     It
+     is
+     based
+     on
+     a
+     Network
+     Monitoring
+     schedule.
+     Note
+     that
+                                                                                
+                                                                                
+     it
+     is
+     a
+     bit
+     dated
+     in
+     that
+     it
+     uses
+     the
+     Mark5A
+     system
+     for
+     a
+     VLBA
+     station
+     which
+     no
+     longer
+     has
+     that
+     option.
+     </dd><dt class="description">
+ <a 
+href="examples/hsa1cm.key" ><span 
+class="cmsl-10">hsa1cm.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     schedule
+     for
+     the
+     High
+     Sensitivity
+     Array
+     (HSA
+     -
+     VLBA
+     +
+     GBT
+     +
+     Effelsberg)
+     at
+     1cm.
+     This
+     file
+     does
+     not
+     include
+     the
+     VLA
+                                                                                
+                                                                                
+     and
+     Arecibo.
+     </dd><dt class="description">
+ <a 
+href="examples/hsa21cm.key" ><span 
+class="cmsl-10">hsa21cm.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     schedule
+     for
+     the
+     High
+     Sensitivity
+     Array
+     (HSA
+     =
+     VLBA
+     +
+     GBT
+     +
+     Effelsberg
+     +
+     Arecibo
+     (VLA
+     removed))
+     at
+     21cm.
+     The
+     schedule
+     uses
+     the
+     legacy
+     system
+     which
+     is
+     not
+     available
+     at
+     the
+     VLA
+     so
+     the
+     VLA
+     has
+     been
+     taken
+     out
+     for
+     now.
+     </dd><dt class="description">
+                                                                                
+                                                                                
+ <a 
+href="examples/hsaddc.key" ><span 
+class="cmsl-10">hsaddc.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     rather
+     complex
+     example
+     that
+     uses
+     the
+     RDBE
+     with
+     the
+     DDC
+     personality
+     on
+     the
+     VLBA,
+     VLA,
+     GBT,
+     and
+     Effelsberg.
+     There
+     are
+     segments
+     at
+     6cm,
+     1cm,
+     and
+     3mm.
+     It
+     exercises
+     array
+     phasing
+     at
+     the
+     VLA,
+     reference
+     pointing
+     at
+     all
+     of
+     the
+     telescopes,
+     and
+     Doppler
+     tracking.
+     </dd><dt class="description">
+ <a 
+href="examples/lba.key" ><span 
+class="cmsl-10">lba.key</span></a> </dt><dd 
+class="description">
+                                                                                
+                                                                                
+     is
+     a
+     sample
+     schedule
+     for
+     the
+     Long
+     Baseline
+     Array
+     in
+     Australia.
+     </dd><dt class="description">
+ <a 
+href="examples/lba_h2o.key" ><span 
+class="cmsl-10">lba</span><span 
+class="cmsl-10">_h20.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     schedule
+     for
+     the
+     Long
+     Baseline
+     Array
+     in
+     Australia
+     using
+     LBA
+     DAS/Recorder
+     only.
+     Observations
+     are
+     at
+     the
+     22
+     GHz
+     water
+     line.
+     </dd><dt class="description">
+ <a 
+href="examples/lba_oh.key" ><span 
+class="cmsl-10">lba</span><span 
+class="cmsl-10">_oh.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     schedule
+     for
+     the
+     Long
+     Baseline
+     Array
+     in
+                                                                                
+                                                                                
+     Australia
+     using
+     LBA
+     DAS/Recorder
+     only.
+     Observations
+     are
+     at
+     the
+     1.8
+     GHz
+     OH
+     line.
+     </dd><dt class="description">
+ <a 
+href="examples/lba_mk5.key" ><span 
+class="cmsl-10">lba</span><span 
+class="cmsl-10">_mk5.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     schedule
+     for
+     the
+     Long
+     Baseline
+     Array
+     in
+     Australia
+     when
+     some
+     MARK5
+     stations
+     are
+     included.
+     </dd><dt class="description">
+ <a 
+href="examples/planvla.key" ><span 
+class="cmsl-10">planvla.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     planning
+     file
+     similar
+     to
+     the
+     other
+     VLBA
+     planning
+     files,
+     but
+     has
+     all
+                                                                                
+                                                                                
+     27
+     stations
+     of
+     the
+     VLA
+     A
+     configuration.
+     You
+     can
+     use
+     this
+     to
+     explore
+     VLA
+     uv
+     coverage
+     etc.
+     It
+     should
+     still
+     work
+     despite
+     the
+     current
+     (2014)
+     inability
+     to
+     schedule
+     the
+     VLA
+     for
+     other
+     than
+     VLBI.
+     It
+     doesn&#8217;t
+     actually
+     create
+     observing
+     files.
+     </dd><dt class="description">
+ <a 
+href="examples/doptg.com" ><span 
+class="cmsl-10">doptg.com</span></a> </dt><dd 
+class="description">
+     is
+     a
+     script
+     that
+     creates
+     and
+     runs
+                                                                                
+                                                                                
+     VLBA
+     pointing
+     observations.
+     It
+     exercises
+     one
+     of
+     the
+     optimization
+     modes
+     to
+     allow
+     the
+     same
+     script
+     to
+     be
+     used
+     for
+     any
+     time
+     slot
+     for
+     any
+     time
+     of
+     year.
+     This
+     example
+     will
+     not
+     be
+     run
+     by
+     the
+     <span 
+class="cmsl-10">Verify</span>
+     script
+     if
+     the
+     site
+     is
+     not
+     at
+     NRAO
+     because
+     the
+     ephemeris
+     routines
+     used
+     for
+     pointing
+                                                                                
+                                                                                
+     at
+     planets
+     will
+     not
+     generally
+     be
+     available.
+     It
+     is
+     also
+     not
+     of
+     much
+     interest
+     beyond
+     the
+     staff
+     responsible
+     for
+     maintaining
+     the
+     VLBA.
+     </dd><dt class="description">
+ <a 
+href="examples/doptg2.com" ><span 
+class="cmsl-10">doptg2.com</span></a> </dt><dd 
+class="description">
+     is
+     a
+     script
+     that
+     creates
+     and
+     runs
+     VLBA
+     pointing
+     observations.
+     It
+     is
+     very
+     much
+     like
+     <span 
+class="cmsl-10">doptg.com</span>
+     except
+     that
+     it
+     uses
+     the
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-850003.1.2"><span 
+class="cmtt-10">DOSTA</span></a>
+     parameter
+     to
+     allow
+                                                                                
+                                                                                
+     the
+     same
+     script
+     to
+     be
+     used
+     for
+     stations
+     with
+     3mm
+     and
+     stations
+     without
+     3mm.
+     </dd><dt class="description">
+ <a 
+href="examples/egsat.key" ><span 
+class="cmsl-10">egsat.key</span></a> </dt><dd 
+class="description">
+     demonstrates
+     scheduling
+     a
+     satellite
+     observation
+     using
+     both
+     MER-B
+     and
+     Stardust.
+     It
+     also
+     includes
+     Mars
+     to
+     exercise
+     the
+     planet
+     option.
+     These
+     capabilities
+     are
+     unlikely
+     to
+     be
+     of
+     interest
+     outside
+     of
+     the
+     AOC.
+     In
+     fact,
+                                                                                
+                                                                                
+     the
+     required
+     NAIF
+     software
+     libraries
+     would
+     hugely
+     increase
+     the
+     size
+     of
+     the
+     SCHED
+     distribution
+     and
+     are
+     not
+     normally
+     included.
+     This
+     file
+     has
+     not
+     been
+     updated
+     from
+     MARK5A
+     to
+     MARK5C.
+     </dd><dt class="description">
+ <a 
+href="examples/dq415.key" ><span 
+class="cmsl-10">dq415.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     data
+     quality
+     test
+     file
+     from
+     early
+     2014
+     that
+     uses
+     the
+     RDBE
+     and
+     MARK5C.
+     It
+     samples
+     most
+                                                                                
+                                                                                
+     of
+     the
+     RF
+     bands
+     available
+     on
+     the
+     VLBA.
+     </dd><dt class="description">
+ <a 
+href="examples/mt506.key" ><span 
+class="cmsl-10">mt506.key</span></a> </dt><dd 
+class="description">
+     is
+     one
+     of
+     the
+     weekly
+     VLBA
+     integrity
+     check
+     observations
+     from
+     the
+     MARK5A
+     era.
+     It
+     is
+     here
+     mainly
+     to
+     exercise
+     SCHED
+     in
+     a
+     mode
+     that
+     uses
+     lots
+     of
+     setup
+     files.
+     It
+     is
+     similar
+     to
+     the
+     more
+     modern
+     <span 
+class="cmsl-10">dq415.key</span>
+     but
+     uses
+                                                                                
+                                                                                
+     the
+     outdated
+     recording
+     system.
+     It
+     should
+     probably
+     be
+     removed
+     soon.
+     </dd><dt class="description">
+ <a 
+href="examples/jvla.key" ><span 
+class="cmsl-10">jvla.key</span></a> </dt><dd 
+class="description">
+     is
+     an
+     example
+     covering
+     use
+     of
+     the
+     VLA
+     as
+     a
+     phased
+     array
+     for
+     VLBI.
+     This
+     version
+     uses
+     the
+     32
+     MHz
+     output
+     baseband
+     bandwidths
+     of
+     the
+     WIDAR
+     to
+     create
+     recordings
+     that
+     can
+     be
+     played
+     against
+     4
+     of
+     the
+                                                                                
+                                                                                
+     16
+     channels
+     created
+     by
+     the
+     PFB
+     personality
+     of
+     the
+     RDBE
+     on
+     the
+     VLBA.
+     </dd><dt class="description">
+ <a 
+href="examples/n2227.key" ><span 
+class="cmsl-10">n2227.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     USNO
+     Earth
+     Orientation
+     observation
+     using
+     PT
+     and
+     MK.
+     </dd><dt class="description">
+ <a 
+href="examples/pfbsettst.key" ><span 
+class="cmsl-10">pfbsettst.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     vehicle
+     for
+     testing
+     all
+     the
+     new
+     RDBE/MARK5C
+     standard
+     setup
+     files
+     that
+     use
+     the
+     pfb
+     personality.
+     These
+     are
+     the
+                                                                                
+                                                                                
+     setups
+     that
+     start
+     with
+     <span 
+class="cmsl-10">rdbe</span><span 
+class="cmsl-10">_pfb</span>.
+     </dd><dt class="description">
+ <a 
+href="examples/egsat.key" ><span 
+class="cmsl-10">egsat.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     VLBA
+     observation
+     of
+     spacecraft
+     with
+     bsp
+     ephemeris
+     files.
+     Note
+     that
+     the
+     satellite
+     tracking
+     in
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>uses
+     the
+     NAIF
+     software
+     from
+     JPL.
+     The
+     object
+     libraries
+     for
+     linux
+     g77
+     and
+     gfortran
+     are
+     included
+     with
+     SCHED,
+     but
+     may
+     not
+     be
+     usable
+     on
+     all
+                                                                                
+                                                                                
+     machines.
+     The
+     code
+     is
+     not
+     exported.
+     Normally,
+     other
+     than
+     in
+     the
+     AOC,
+     the
+     stub
+     routines
+     are
+     used
+     and
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>cannot
+     deal
+     with
+     satellites.
+     Also,
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>does
+     not
+     have
+     a
+     way
+     to
+     pass
+     the
+     necessary
+     site
+     dependent,
+     moving
+     source
+     positions
+     to
+     non-VLBA
+     stations.
+     </dd><dt class="description">
+ <a 
+href="examples/tlesat.key" ><span 
+class="cmsl-10">tlesat.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     sample
+     VLBA
+     observation
+     of
+     spacecraft
+                                                                                
+                                                                                
+     using
+     TLE
+     ephemeris
+     files.
+     See
+     the
+     note
+     above
+     (egsat.key)
+     about
+     the
+     satellite
+     tracking
+     software.
+     It
+     applies
+     here
+     too.
+     </dd><dt class="description">
+ <a 
+href="examples/newsyn.key" ><span 
+class="cmsl-10">newsyn.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     VLBA
+     test
+     observation
+     to
+     check
+     the
+     performance
+     of
+     the
+     new
+     front
+     end
+     synthesizers
+     being
+     designed
+     in
+     2013-2015.
+     Those
+     synthesizers
+     have
+     finer
+     tuning
+     steps
+     than
+     the
+     current
+     ones
+                                                                                
+                                                                                
+     (10kHz
+     vs
+     200
+     or
+     300
+     MHz).
+     They
+     are
+     not
+     yet
+     deployed
+     except
+     at
+     a
+     couple
+     of
+     sites
+     so
+     this
+     example
+     is
+     not
+     yet
+     of
+     interest
+     to
+     users.
+     </dd><dt class="description">
+ <a 
+href="examples/tstsets.key" ><span 
+class="cmsl-10">tstsets.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     VLBA
+     test
+     observation
+     that
+     tests
+     the
+     standard
+     setups
+     used
+     with
+     the
+     RDBE/DDC.
+     Only
+     bit
+     rates
+     under
+     512
+     Mbps
+                                                                                
+                                                                                
+     are
+     tested.
+     This
+     is
+     not
+     a
+     maintenance
+     schedule,
+     not
+     one
+     users
+     would
+     likely
+     want
+     to
+     emulate.
+     </dd><dt class="description">
+ <a 
+href="examples/piggyback.key" ><span 
+class="cmsl-10">piggyback.key</span></a> </dt><dd 
+class="description">
+     is
+     a
+     VLBA
+     test
+     observation
+     that
+     observes
+     with
+     both
+     the
+     Mark5A
+     and
+     Mark5C
+     systems.
+     As
+     of
+     early
+     2015,
+     only
+     two
+     VLBA
+     stations
+     even
+     have
+     Mark5A
+     so
+     this
+     is
+     only
+     of
+     interest
+                                                                                
+                                                                                
+     to
+     VLBA
+     testers.
+     </dd></dl>
+<!--l. 1435--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">1.4.1   </span> <a 
+ id="x9-90001.4.1"></a>A Basic VLBA Schedule.</h4>
+<!--l. 1437--><p class="noindent" >The following example gives a fairly typical schedule that relies on <span 
+class="cmcsc-10">SCHED</span>&#8217;s defaulting schemes
+and standard catalogs to get most of the required information. The cover and correlator
+information cannot be reduced nor can the individual scan information. All of those inputs are
+unique to the observation. This example is probably the most useful one for users to use as a
+template for making their own VLBA schedules, including for observations that include the
+VLA. It used to produce the same schedule as <a 
+href="examples/manual_1.key" ><span 
+class="cmsl-10">manual</span><span 
+class="cmsl-10">_1.key</span></a> but that example actually
+shows how many items, that are defaulted or taken from standard catalogs here, can be
+specified in the schedule file. More recently (late 2012), <span 
+class="cmsl-10">manual</span><span 
+class="cmsl-10">_1.key </span>was converted to use the
+wideband RDBE system. Note that <span 
+class="cmsl-10">manual</span><span 
+class="cmsl-10">_2.key </span>has not yet been updated from MARK5A to
+MARK5C.
+<div class="verbatiminput">
+<span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;BE002</span><span 
+class="cmtt-10">&#x00A0;example</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;3C84</span><span 
+class="cmtt-10">&#x00A0;observations</span><span 
+class="cmtt-10">&#x00A0;at</span><span 
+class="cmtt-10">&#x00A0;6</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;cm.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;This</span><span 
+class="cmtt-10">&#x00A0;example</span><span 
+class="cmtt-10">&#x00A0;used</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;produce</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;same</span><span 
+class="cmtt-10">&#x00A0;schedule</span><span 
+class="cmtt-10">&#x00A0;as</span><span 
+class="cmtt-10">&#x00A0;manual_1.key</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;but</span><span 
+class="cmtt-10">&#x00A0;uses</span><span 
+class="cmtt-10">&#x00A0;many</span><span 
+class="cmtt-10">&#x00A0;SCHED</span><span 
+class="cmtt-10">&#x00A0;defaults</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;is</span><span 
+class="cmtt-10">&#x00A0;missing</span><span 
+class="cmtt-10">&#x00A0;most</span><span 
+class="cmtt-10">&#x00A0;comments.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;It</span><span 
+class="cmtt-10">&#x00A0;shows</span><span 
+class="cmtt-10">&#x00A0;approximately</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;sort</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;file</span><span 
+class="cmtt-10">&#x00A0;a</span><span 
+class="cmtt-10">&#x00A0;users</span><span 
+class="cmtt-10">&#x00A0;would</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;normally</span><span 
+class="cmtt-10">&#x00A0;make.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Note</span><span 
+class="cmtt-10">&#x00A0;that</span><span 
+class="cmtt-10">&#x00A0;all</span><span 
+class="cmtt-10">&#x00A0;catalogs</span><span 
+class="cmtt-10">&#x00A0;are</span><span 
+class="cmtt-10">&#x00A0;defaulted.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;On</span><span 
+class="cmtt-10">&#x00A0;Nov.</span><span 
+class="cmtt-10">&#x00A0;1,</span><span 
+class="cmtt-10">&#x00A0;2012,</span><span 
+class="cmtt-10">&#x00A0;this</span><span 
+class="cmtt-10">&#x00A0;example</span><span 
+class="cmtt-10">&#x00A0;was</span><span 
+class="cmtt-10">&#x00A0;modified</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;use</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;GBT</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;rather</span><span 
+class="cmtt-10">&#x00A0;than</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;VLA</span><span 
+class="cmtt-10">&#x00A0;which</span><span 
+class="cmtt-10">&#x00A0;can</span><span 
+class="cmtt-10">&#x00A0;no</span><span 
+class="cmtt-10">&#x00A0;longer</span><span 
+class="cmtt-10">&#x00A0;do</span><span 
+class="cmtt-10">&#x00A0;legacy</span><span 
+class="cmtt-10">&#x00A0;style</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;observations.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Eventually</span><span 
+class="cmtt-10">&#x00A0;it,</span><span 
+class="cmtt-10">&#x00A0;like</span><span 
+class="cmtt-10">&#x00A0;manual_2.key,</span><span 
+class="cmtt-10">&#x00A0;will</span><span 
+class="cmtt-10">&#x00A0;be</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;moved</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;new</span><span 
+class="cmtt-10">&#x00A0;wide</span><span 
+class="cmtt-10">&#x00A0;band</span><span 
+class="cmtt-10">&#x00A0;systems.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">overwrit</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;=================</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Cover</span><span 
+class="cmtt-10">&#x00A0;Information</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;====================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">version</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;1</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">expt</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;Example:</span><span 
+class="cmtt-10">&#x00A0;3C84</span><span 
+class="cmtt-10">&#x00A0;6,</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;cm&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">expcode</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;BE002</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">obstype</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;VLBA</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">piname</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;Craig</span><span 
+class="cmtt-10">&#x00A0;Walker&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">address1</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;National</span><span 
+class="cmtt-10">&#x00A0;Radio</span><span 
+class="cmtt-10">&#x00A0;Astronomy</span><span 
+class="cmtt-10">&#x00A0;Observatory&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">address2</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;P.</span><span 
+class="cmtt-10">&#x00A0;O.</span><span 
+class="cmtt-10">&#x00A0;Box</span><span 
+class="cmtt-10">&#x00A0;O&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">address3</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;Socorro,</span><span 
+class="cmtt-10">&#x00A0;New</span><span 
+class="cmtt-10">&#x00A0;Mexico,</span><span 
+class="cmtt-10">&#x00A0;87801&#8217;</span>
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">address4</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;</span><span 
+class="cmtt-10">&#x00A0;U.S.A.</span><span 
+class="cmtt-10">&#x00A0;&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">phone</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;505</span><span 
+class="cmtt-10">&#x00A0;835</span><span 
+class="cmtt-10">&#x00A0;7247</span><span 
+class="cmtt-10">&#x00A0;&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">obsphone</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;505</span><span 
+class="cmtt-10">&#x00A0;835</span><span 
+class="cmtt-10">&#x00A0;7247</span><span 
+class="cmtt-10">&#x00A0;&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">email</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;cwalker@nrao.edu&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">fax</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;505</span><span 
+class="cmtt-10">&#x00A0;835</span><span 
+class="cmtt-10">&#x00A0;7027</span><span 
+class="cmtt-10">&#x00A0;&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">obsmode</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;Continuum&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">correl</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;Socorro&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">note1</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;</span><span 
+class="cmtt-10">&#x00A0;&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==============</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Correlator</span><span 
+class="cmtt-10">&#x00A0;Information</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;==================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">correl</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;Socorro&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">coravg</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;4</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">corchan</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;16</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">cornant</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;10</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">corpol</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;on&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">corwtfn</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;uniform&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">corsrcs</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;SCHED&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">cortape</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;FTP</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">corship1</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;Craig</span><span 
+class="cmtt-10">&#x00A0;Walker&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">corship2</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;P.</span><span 
+class="cmtt-10">&#x00A0;O.</span><span 
+class="cmtt-10">&#x00A0;Box</span><span 
+class="cmtt-10">&#x00A0;O&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">corship3</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;Socorro</span><span 
+class="cmtt-10">&#x00A0;NM</span><span 
+class="cmtt-10">&#x00A0;87801&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">cornote1</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;</span><span 
+class="cmtt-10">&#x00A0;&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;=======</span><span 
+class="cmtt-10">&#x00A0;Standard</span><span 
+class="cmtt-10">&#x00A0;Source</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;Station</span><span 
+class="cmtt-10">&#x00A0;Catalogs</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;============</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;Standard</span><span 
+class="cmtt-10">&#x00A0;source</span><span 
+class="cmtt-10">&#x00A0;catalogs</span><span 
+class="cmtt-10">&#x00A0;are</span><span 
+class="cmtt-10">&#x00A0;sources.gsfc</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;sources.rfc.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;This</span><span 
+class="cmtt-10">&#x00A0;schedule</span><span 
+class="cmtt-10">&#x00A0;uses</span><span 
+class="cmtt-10">&#x00A0;some</span><span 
+class="cmtt-10">&#x00A0;aliases</span><span 
+class="cmtt-10">&#x00A0;only</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;sources.gsfc.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">srcfile</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;$SCHED/catalogs/sources.gsfc</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">stafile</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;$SCHED/catalogs/stations.dat</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">freqfile</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;$SCHED/catalogs/freq.dat</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;====================</span><span 
+class="cmtt-10">&#x00A0;Setup</span><span 
+class="cmtt-10">&#x00A0;Information</span><span 
+class="cmtt-10">&#x00A0;===================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;The</span><span 
+class="cmtt-10">&#x00A0;first</span><span 
+class="cmtt-10">&#x00A0;setup</span><span 
+class="cmtt-10">&#x00A0;file</span><span 
+class="cmtt-10">&#x00A0;shows</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;bare</span><span 
+class="cmtt-10">&#x00A0;minimum</span><span 
+class="cmtt-10">&#x00A0;that</span><span 
+class="cmtt-10">&#x00A0;needs</span><span 
+class="cmtt-10">&#x00A0;to</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;specified.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Essentially</span><span 
+class="cmtt-10">&#x00A0;all</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;this</span><span 
+class="cmtt-10">&#x00A0;information</span><span 
+class="cmtt-10">&#x00A0;would</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;needed</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;choose</span><span 
+class="cmtt-10">&#x00A0;one</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;standard</span><span 
+class="cmtt-10">&#x00A0;setup</span><span 
+class="cmtt-10">&#x00A0;files.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;This</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;one</span><span 
+class="cmtt-10">&#x00A0;would</span><span 
+class="cmtt-10">&#x00A0;correspond</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;v6cm-64-4-1.set,</span><span 
+class="cmtt-10">&#x00A0;with</span><span 
+class="cmtt-10">&#x00A0;a</span><span 
+class="cmtt-10">&#x00A0;possible</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;slight</span><span 
+class="cmtt-10">&#x00A0;frequency</span><span 
+class="cmtt-10">&#x00A0;offset</span><span 
+class="cmtt-10">&#x00A0;between</span><span 
+class="cmtt-10">&#x00A0;what</span><span 
+class="cmtt-10">&#x00A0;is</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;specific</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;"standard</span><span 
+class="cmtt-10">&#x00A0;setups"</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;what</span><span 
+class="cmtt-10">&#x00A0;is</span><span 
+class="cmtt-10">&#x00A0;generated</span><span 
+class="cmtt-10">&#x00A0;using</span><span 
+class="cmtt-10">&#x00A0;BAND=6cm.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setinit</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;v6cm.set</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nchan</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;4</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;band</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;6cm&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bbfilter</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;8.0</span>
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bits</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;1</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;pol</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;dual</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">endset</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;For</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;second</span><span 
+class="cmtt-10">&#x00A0;example</span><span 
+class="cmtt-10">&#x00A0;setup,</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;user</span><span 
+class="cmtt-10">&#x00A0;forces</span><span 
+class="cmtt-10">&#x00A0;the</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;frequencies,</span><span 
+class="cmtt-10">&#x00A0;BBC&#8217;s,</span><span 
+class="cmtt-10">&#x00A0;sidebands,</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;format.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;It</span><span 
+class="cmtt-10">&#x00A0;still</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;relies</span><span 
+class="cmtt-10">&#x00A0;on</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;frequency</span><span 
+class="cmtt-10">&#x00A0;catalog</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;IF</span><span 
+class="cmtt-10">&#x00A0;assignments</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;many</span><span 
+class="cmtt-10">&#x00A0;VLA</span><span 
+class="cmtt-10">&#x00A0;parameters.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;There</span><span 
+class="cmtt-10">&#x00A0;are</span><span 
+class="cmtt-10">&#x00A0;a</span><span 
+class="cmtt-10">&#x00A0;lot</span><span 
+class="cmtt-10">&#x00A0;more</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;parameters</span><span 
+class="cmtt-10">&#x00A0;that</span><span 
+class="cmtt-10">&#x00A0;could</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;forced</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;extreme</span><span 
+class="cmtt-10">&#x00A0;cases.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setinit</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;v4cm.set</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;nchan</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;4</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;freqref</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;8416.99</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;freqoff</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;-3.5,</span><span 
+class="cmtt-10">&#x00A0;-3.5,</span><span 
+class="cmtt-10">&#x00A0;4.5,</span><span 
+class="cmtt-10">&#x00A0;4.5</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bbfilter</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;8.0</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bits</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;1</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bbc</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;1,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;2,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;3,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;4</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;netside</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;U,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;U,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;U,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;U</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;pol</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;RCP,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;LCP,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RCP,</span><span 
+class="cmtt-10">&#x00A0;LCP</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;format</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;VLBA1:4</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">endset</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;========================</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;The</span><span 
+class="cmtt-10">&#x00A0;Scans</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=====================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">year</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;1995</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">month</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;10</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">day</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;22</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">start</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;01:30:00</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Note</span><span 
+class="cmtt-10">&#x00A0;use</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;station</span><span 
+class="cmtt-10">&#x00A0;codes.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Names</span><span 
+class="cmtt-10">&#x00A0;could</span><span 
+class="cmtt-10">&#x00A0;also</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;used.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">stations</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;SC,</span><span 
+class="cmtt-10">&#x00A0;HN,</span><span 
+class="cmtt-10">&#x00A0;NL,</span><span 
+class="cmtt-10">&#x00A0;FD,</span><span 
+class="cmtt-10">&#x00A0;LA,</span><span 
+class="cmtt-10">&#x00A0;PT,</span><span 
+class="cmtt-10">&#x00A0;KP,</span><span 
+class="cmtt-10">&#x00A0;OV,</span><span 
+class="cmtt-10">&#x00A0;BR,</span><span 
+class="cmtt-10">&#x00A0;MK,</span><span 
+class="cmtt-10">&#x00A0;GBT_VLBA</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C454.3</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dur</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:30</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Setup</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;v6cm.set</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C454.3</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:30</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Setup</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;v4cm.set</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">stations</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;SC,</span><span 
+class="cmtt-10">&#x00A0;HN,</span><span 
+class="cmtt-10">&#x00A0;NL,</span><span 
+class="cmtt-10">&#x00A0;FD,</span><span 
+class="cmtt-10">&#x00A0;LA,</span><span 
+class="cmtt-10">&#x00A0;PT,</span><span 
+class="cmtt-10">&#x00A0;KP,</span><span 
+class="cmtt-10">&#x00A0;OV,</span><span 
+class="cmtt-10">&#x00A0;BR,</span><span 
+class="cmtt-10">&#x00A0;GBT_VLBA</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">group</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;rep</span><span 
+class="cmtt-10">&#x00A0;14</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;About</span><span 
+class="cmtt-10">&#x00A0;3</span><span 
+class="cmtt-10">&#x00A0;hours</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;12</span><span 
+class="cmtt-10">&#x00A0;repeats</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;next</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;scans.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C84</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dur</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;gap</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;2:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Setup</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;v6cm.set</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C84</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;gap</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Setup</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;v4cm.set</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;0309+411</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;2:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C84</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Add</span><span 
+class="cmtt-10">&#x00A0;MK</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">stations</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;SC,</span><span 
+class="cmtt-10">&#x00A0;HN,</span><span 
+class="cmtt-10">&#x00A0;NL,</span><span 
+class="cmtt-10">&#x00A0;FD,</span><span 
+class="cmtt-10">&#x00A0;LA,</span><span 
+class="cmtt-10">&#x00A0;PT,</span><span 
+class="cmtt-10">&#x00A0;KP,</span><span 
+class="cmtt-10">&#x00A0;OV,</span><span 
+class="cmtt-10">&#x00A0;BR,</span><span 
+class="cmtt-10">&#x00A0;MK,</span><span 
+class="cmtt-10">&#x00A0;GBT_VLBA</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">group</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;rep</span><span 
+class="cmtt-10">&#x00A0;14</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;About</span><span 
+class="cmtt-10">&#x00A0;3</span><span 
+class="cmtt-10">&#x00A0;hours.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C84</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dur</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;gap</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;2:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Setup</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;v6cm.set</span><span 
+class="cmtt-10">&#x00A0;/</span>
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C84</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;gap</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Setup</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;v4cm.set</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;0309+411</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;2:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C84</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">group</span><span 
+class="cmtt-10">&#x00A0;8</span><span 
+class="cmtt-10">&#x00A0;rep</span><span 
+class="cmtt-10">&#x00A0;15</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;6.5</span><span 
+class="cmtt-10">&#x00A0;hours</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C84</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dur</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;gap</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;2:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Setup</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;v6cm.set</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;0552+398</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;gap</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;0552+398</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;2:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;gap</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Setup</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;v4cm.set</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C84</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;gap</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C84</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dur</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;gap</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;2:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Setup</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;v6cm.set</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C84</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;gap</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Setup</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;v4cm.set</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;0309+411</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;2:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C84</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C273</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dur</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:30</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;gap</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Setup</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;v6cm.set</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">Source</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C273</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dwell</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5:30</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;gap</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;0:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Setup</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;v4cm.set</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;========================</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;End</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;example</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+</div>
+<!--l. 1456--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">1.4.2   </span> <a 
+ id="x9-100001.4.2"></a>A Minimal Schedule for Planning.</h4>
+<!--l. 1458--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input files can be simple for simple situations. The following file is about as simple as a
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>file can get. It is set up for exploring the u-v and sky coverage, and times of availability, of a
+list of sources using the plotting abilities of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>and using the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1600003.1.2"><span 
+class="cmtt-10">UPTIME</span></a> optimization mode to give
+overlapping 24 hour schedules for each source.
+<div class="verbatiminput">
+<span 
+class="cmtt-10">!----------------------------------------------------------------------</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Example</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;very</span><span 
+class="cmtt-10">&#x00A0;simple</span><span 
+class="cmtt-10">&#x00A0;SCHED</span><span 
+class="cmtt-10">&#x00A0;file</span><span 
+class="cmtt-10">&#x00A0;-</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;making</span><span 
+class="cmtt-10">&#x00A0;uv</span><span 
+class="cmtt-10">&#x00A0;etc</span><span 
+class="cmtt-10">&#x00A0;plots.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!----------------------------------------------------------------------</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">overwrit</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Allow</span><span 
+class="cmtt-10">&#x00A0;writing</span><span 
+class="cmtt-10">&#x00A0;over</span><span 
+class="cmtt-10">&#x00A0;old</span><span 
+class="cmtt-10">&#x00A0;output</span><span 
+class="cmtt-10">&#x00A0;files.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">expcode</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;UVCOV</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Needed</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;name</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;summary</span><span 
+class="cmtt-10">&#x00A0;file.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">obstype</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;NONE</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;No</span><span 
+class="cmtt-10">&#x00A0;tape</span><span 
+class="cmtt-10">&#x00A0;recording.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">nosetup</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;No</span><span 
+class="cmtt-10">&#x00A0;setup</span><span 
+class="cmtt-10">&#x00A0;file.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">optmode</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;uptime</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Planning</span><span 
+class="cmtt-10">&#x00A0;mode.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">opdur</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;24:00:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Look</span><span 
+class="cmtt-10">&#x00A0;at</span><span 
+class="cmtt-10">&#x00A0;a</span><span 
+class="cmtt-10">&#x00A0;whole</span><span 
+class="cmtt-10">&#x00A0;day.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">opminant</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Minimum</span><span 
+class="cmtt-10">&#x00A0;number</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;antennas</span><span 
+class="cmtt-10">&#x00A0;that</span><span 
+class="cmtt-10">&#x00A0;must</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;up.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">opminel</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;15</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Don&#8217;t</span><span 
+class="cmtt-10">&#x00A0;include</span><span 
+class="cmtt-10">&#x00A0;scans</span><span 
+class="cmtt-10">&#x00A0;below</span><span 
+class="cmtt-10">&#x00A0;this</span><span 
+class="cmtt-10">&#x00A0;elevation.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">year</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;1996</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;day</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Year</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;day.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">start</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:00:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Start</span><span 
+class="cmtt-10">&#x00A0;time</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;plots.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">dur</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;10:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Ten</span><span 
+class="cmtt-10">&#x00A0;minute</span><span 
+class="cmtt-10">&#x00A0;scans.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">stations</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;SC,</span><span 
+class="cmtt-10">&#x00A0;HN,</span><span 
+class="cmtt-10">&#x00A0;NL,</span><span 
+class="cmtt-10">&#x00A0;FD,</span><span 
+class="cmtt-10">&#x00A0;LA,</span><span 
+class="cmtt-10">&#x00A0;PT,</span><span 
+class="cmtt-10">&#x00A0;KP,</span><span 
+class="cmtt-10">&#x00A0;OV,</span><span 
+class="cmtt-10">&#x00A0;BR,</span><span 
+class="cmtt-10">&#x00A0;MK</span>
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">source</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;DA193</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">source</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3C120</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!----------------------------------------------------------------------</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;End</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;example.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!----------------------------------------------------------------------</span>
+</div>
+<!--l. 1468--><p class="noindent" >If the above file were named <span 
+class="cmsl-10">uvcov.key</span>, it could be run with the commands:
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-3">
+sched
+&#x00A0;<br />plot&#x00A0;sch=uvcov.key&#x00A0;/
+</div>
+<!--l. 1473--><p class="nopar" >When the plot section is reached, a graphical interface will appear that is reasonably obvious how to
+use.
+                                                                                
+                                                                                
+<!--l. 1479--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECPLOTPlotting.html" >next</a>] [<a 
+href="labelSECFILESSCHEDInputandOutputFiles.html" >prev</a>] [<a 
+href="labelSECFILESSCHEDInputandOutputFiles.html#taillabelSECFILESSCHEDInputandOutputFiles.html" >prev-tail</a>] [<a 
+href="labelSECEXAMPLESExamples.html" >front</a>] [<a 
+href="labelCHPINTROINTRODUCTION.html#labelSECEXAMPLESExamples.html" >up</a>] </p></div>
+<!--l. 1479--><p class="noindent" ><a 
+ id="taillabelSECEXAMPLESExamples.html"></a>  
+</body></html> 

@@ -1,0 +1,55 @@
+2023-09-22 03:00:49	INFO	::casa	
+2023-09-22 03:00:49	INFO	::casa	Checking telemetry submission interval
+2023-09-22 03:00:49	INFO	::casa	Telemetry submit interval not reached. Not submitting data.
+2023-09-22 03:00:49	INFO	::casa	Next telemetry data submission in: 6 days, 23:45:06.242498
+2023-09-22 03:00:49	INFO	::casa	CASA Version  5.7.0-134  
+2023-09-22 03:00:50	INFO	::casa	
+2023-09-22 03:00:51	INFO	imstat::::	
+2023-09-22 03:00:51	INFO	imstat::::+	##########################################
+2023-09-22 03:00:51	INFO	imstat::::+	##### Begin Task: imstat             #####
+2023-09-22 03:00:51	INFO	imstat::::	imstat(imagename="test.image",axes=-1,region="",box="",chans="",
+2023-09-22 03:00:51	INFO	imstat::::+	        stokes="",listit=True,verbose=True,mask="",stretch=False,
+2023-09-22 03:00:51	INFO	imstat::::+	        logfile="test.imstats",append=True,algorithm="classic",fence=-1,center="mean",
+2023-09-22 03:00:51	INFO	imstat::::+	        lside=True,zscore=-1,maxiter=-1,clmethod="auto",niter=3)
+2023-09-22 03:00:51	INFO	imstat::CasacRegionManager::fromBCS	No directional region specified. Using full positional plane.
+2023-09-22 03:00:51	INFO	imstat::CasacRegionManager::fromBCS	Using all spectral channels.
+2023-09-22 03:00:51	INFO	imstat::CasacRegionManager::fromBCS	Using polarizations ALL
+2023-09-22 03:00:51	INFO	imstat::image::statistics 	Determining stats for image test.image
+2023-09-22 03:00:51	INFO	imstat::ImageRegion::fromRecord	Selected bounding box : 
+2023-09-22 03:00:51	INFO	imstat::ImageRegion::fromRecord+	    [0, 0, 0, 0] to [127, 127, 0, 0]  (16:00:09.566, -00.39.32.320, I, 863385340.18Hz to 15:59:52.631, -00.35.18.320, I, 863385340.18Hz)
+2023-09-22 03:00:51	INFO	imstat::ImageStatsCalculator::_logStartup	Statistics calculated using Classic algorithm
+2023-09-22 03:00:51	INFO	imstat::ImageStatsCalculator::_logStartup	Regions --- 
+2023-09-22 03:00:51	INFO	imstat::ImageStatsCalculator::_logStartup	         -- bottom-left corner (pixel) [blc]:  [0, 0, 0, 0]
+2023-09-22 03:00:51	INFO	imstat::ImageStatsCalculator::_logStartup	         -- top-right corner (pixel) [trc]:    [127, 127, 0, 0]
+2023-09-22 03:00:51	INFO	imstat::ImageStatsCalculator::_logStartup	         -- bottom-left corner (world) [blcf]: 16:00:09.566, -00.39.32.320, I, 863385340.18Hz
+2023-09-22 03:00:51	INFO	imstat::ImageStatsCalculator::_logStartup	         -- top-right corner (world) [trcf]:   15:59:52.631, -00.35.18.320, I, 863385340.18Hz
+2023-09-22 03:00:51	INFO	imstat::::	Values --- 
+2023-09-22 03:00:51	INFO	imstat::::	         -- flux density [flux]:                    1.70867 Jy
+2023-09-22 03:00:51	INFO	imstat::::	         -- number of points [npts]:                16384
+2023-09-22 03:00:51	INFO	imstat::::	         -- maximum value [max]:                    1.08021 Jy/beam
+2023-09-22 03:00:51	INFO	imstat::::	         -- minimum value [min]:                    -0.0366626 Jy/beam
+2023-09-22 03:00:51	INFO	imstat::::	         -- position of max value (pixel) [maxpos]: [64, 64, 0, 0]
+2023-09-22 03:00:51	INFO	imstat::::	         -- position of min value (pixel) [minpos]: [63, 76, 0, 0]
+2023-09-22 03:00:51	INFO	imstat::::	         -- position of max value (world) [maxposf]: 16:00:01.032, -00.37.24.320, I, 863385340.18Hz
+2023-09-22 03:00:51	INFO	imstat::::	         -- position of min value (world) [minposf]: 16:00:01.165, -00.37.00.320, I, 863385340.18Hz
+2023-09-22 03:00:51	INFO	imstat::::	         -- Sum of pixel values [sum]:               122.226 Jy/beam
+2023-09-22 03:00:51	INFO	imstat::::	         -- Sum of squared pixel values [sumsq]:     45.1048 Jy/beam.Jy/beam
+2023-09-22 03:00:51	INFO	imstat::::	Statistics --- 
+2023-09-22 03:00:51	INFO	imstat::::	        -- Mean of the pixel values [mean]:         0.00746005 Jy/beam
+2023-09-22 03:00:51	INFO	imstat::::	        -- Variance of the pixel values :           0.00269749 Jy/beam
+2023-09-22 03:00:51	INFO	imstat::::	        -- Standard deviation of the Mean [sigma]:  0.0519373 Jy/beam
+2023-09-22 03:00:51	INFO	imstat::::	        -- Root mean square [rms]:                  0.0524688 Jy/beam
+2023-09-22 03:00:51	INFO	imstat::::	        -- Median of the pixel values [median]:     0.00268597 Jy/beam
+2023-09-22 03:00:51	INFO	imstat::::	        -- Median of the deviations [medabsdevmed]: 0.00593578 Jy/beam
+2023-09-22 03:00:51	INFO	imstat::::	        -- IQR [quartile]:                          0.0118491 Jy/beam
+2023-09-22 03:00:51	INFO	imstat::::	        -- First quartile [q1]:                     -0.003074 Jy/beam
+2023-09-22 03:00:51	INFO	imstat::::	        -- Third quartile [q3]:                     0.00877514 Jy/beam
+2023-09-22 03:00:51	INFO	imstat::ImageStatsCalculator::statistics	Sum column unit = Jy/beam
+2023-09-22 03:00:51	INFO	imstat::ImageStatsCalculator::statistics+	Mean column unit = Jy/beam
+2023-09-22 03:00:51	INFO	imstat::ImageStatsCalculator::statistics+	Std_dev column unit = Jy/beam
+2023-09-22 03:00:51	INFO	imstat::ImageStatsCalculator::statistics+	Minimum column unit = Jy/beam
+2023-09-22 03:00:51	INFO	imstat::ImageStatsCalculator::statistics+	Maximum column unit = Jy/beam
+2023-09-22 03:00:51	INFO	imstat::ImageStatsCalculator::statistics	Npts          Sum           Mean          Rms           Std_dev       Minimum       Maximum     
+2023-09-22 03:00:51	INFO	imstat::ImageStatsCalculator::statistics	 1.638400e+04  1.222255e+02  7.460054e-03  5.246881e-02  5.193735e-02 -3.666265e-02  1.080207e+00
+2023-09-22 03:00:51	INFO	imstat::::	##### End Task: imstat               #####
+2023-09-22 03:00:51	INFO	imstat::::+	##########################################

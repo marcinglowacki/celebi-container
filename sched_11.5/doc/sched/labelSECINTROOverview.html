@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Overview</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 450--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECKEYINKeyinFreeformatInput.html" >next</a>] [<a 
+href="#taillabelSECINTROOverview.html">tail</a>] [<a 
+href="labelCHPINTROINTRODUCTION.html#labelSECINTROOverview.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x6-50001.1"></a>Overview</h3>
+<!--l. 452--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is a program for scheduling Very Long Baseline Interferometer (VLBI) Observations. It can
+be used to schedule any observations on antennas that use the VLBA real time control software and to
+schedule Mark IV/VLBA(4)/S2/Mark5 observations on any stations that can read VEX format
+schedules. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is the program used to schedule essentially all non-geodetic VLBA projects and has
+been adopted by the European VLBI Network (EVN) as the standard scheduling program for the
+EVN. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is also a useful tool for planning observations, both at proposal writing time
+and before making detailed schedules. The plotting capabilities are especially useful for
+this.
+<!--l. 463--><p class="noindent" >To use <span 
+class="cmcsc-10">SCHED</span>, one normally creates an input file, using any text editor, that describes the schedule.
+Then <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is run on that file. A number of <a 
+href="labelSECEXAMPLESExamples.html#x9-80001.4">examples</a> are distributed with <span 
+class="cmcsc-10">SCHED</span>. The usual and
+recommended way to make a schedule is to copy one of the examples and modify it according to your
+specific needs. When developing a schedule, it is likely that <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will be run several times before
+everything is to the scheduler&#8217;s satisfaction. The various output files, especially the summary file and
+the optional <a 
+href="labelSECPLOTPlotting.html#x10-110001.5">plots</a>, provide a lot of information about the schedule that can be used to help the user
+with optimization.
+<!--l. 477--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>gets a lot of information, including station locations and equipment, source positions, and
+frequency setups, from a number of catalogs. Most catalogs can be imbedded in the schedule, but it is
+much more common to use the standard ones provided with the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>distribution. An effort has
+been made to put as much information as possible in the catalogs so that the user only need provide
+very generic information specific to the particular project. But if the user wants to do something
+special, it is possible to specify the parameters of an observation in great detail. Documenting all these
+capabilities partially explains the large size of this manual, most of which is not needed by the average
+user.
+<!--l. 489--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>writes several different types of output files, some of which are useful for the scheduler and
+some of which are meant for the computers at the antennas. An outline of the files used by
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can be found in <a 
+href="labelSECFILESSCHEDInputandOutputFiles.html#x8-70001.3">the section on files.</a> The summary file is the most important one for the user.
+It gives the details of the equipment setups at each station and a summary of various items about the
+individual scans.
+<!--l. 498--><p class="noindent" >The beginning user might start by looking at one or more of the <a 
+href="labelSECEXAMPLESExamples.html#x9-80001.4">example files</a> to get a sense of what
+they look like. Then read some of the sections that cover important details, without which it might be
+difficult to understand what is going on. The section on <a 
+href="labelSECKEYINKeyinFreeformatInput.html#x7-60001.2">KEYIN Free Format Input</a> covers the
+capabilities and limitations of the parser used to read all input files. The section on <a 
+href="labelSECFILESSCHEDInputandOutputFiles.html#x8-70001.3">Inpuut and Output
+                                                                                
+                                                                                
+files</a> gives an overview of the information that <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>requires. <a 
+href="labelSECRUNSCHEDRunningSCHED.html#x35-3030004.2">The Running <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>section</a> has
+instructions on how to start the program. And <a 
+href="labelSECEXAMPLESExamples.html#x9-80001.4">the Examples section</a> contains 2 examples of
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input files and quick descriptions of, and links to, most of the rest provided with the
+distribution.
+<!--l. 515--><p class="noindent" >After reading the sections recommended above, it would probably be best to use one of the examples to
+experiment with the program. The examples are complete, working files. In fact, they are all used
+regularly to test <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>modifications. They will work as is, and it can be modified to try other
+features. The easiest way to make a schedule for your project will usually be to select the example
+that is closest to what you are trying to do and modify it to your needs. It is not strictly
+necessary to read the rest of the manual. It can be treated as a reference to help answer
+questions.
+<!--l. 525--><p class="noindent" >The files needed to run <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>are in various subdirectories under the base directory used for the
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>installation. That base directory, on unix systems, should be assigned by you or
+your system administrators to the environment variable <span 
+class="cmsl-10">SCHED</span>. The key subdirectories
+are <span 
+class="cmsl-10">examples</span>, <span 
+class="cmsl-10">setups</span>, <span 
+class="cmsl-10">catalogs</span>, <span 
+class="cmsl-10">doc</span>, <span 
+class="cmsl-10">src</span>, and <span 
+class="cmsl-10">bin </span>and can be referred to, on unix systems,
+using paths such as <span 
+class="cmsl-10">$SCHED/catalogs</span>. For most the contents are obvious from the names.
+<span 
+class="cmsl-10">src </span>contains the code and <span 
+class="cmsl-10">bin </span>contains the executables, perhaps in architecture dependent
+subdirectories. The user should work in a private directory and only refer to files in the
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>standard areas, not modify them. All <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>output files are written in the current working
+directory.
+<!--l. 538--><p class="noindent" >There is a lot of information about <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>and about the process of scheduling VLBI observations in
+the descriptions of the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-440003.1">input parameters</a> and of the <a 
+href="labelSECSETUPSSetupFiles.html#x31-2500003.6.3">parameters for the setup files</a>. There are detailed
+discussions of some specific areas of concern in the <a 
+href="labelSECTIPSSchedulingTips.html#x13-150002.2">Scheduling Tips Section </a>. This section will be
+expanded significantly in the future. All of these sections are worth reading through on some slow day
+for those serious about scheduling.
+<!--l. 550--><p class="noindent" >VLBI projects can also be produced using the NASA Goddard program <span 
+class="cmcsc-10">SKED </span>and VLBA control files
+can be produced using <span 
+class="cmcsc-10">DRUDG</span>. That is the standard path used by the geodesy community, but is rare
+among astronomers.
+<!--l. 555--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>may be obtained by anonymous ftp from <span 
+class="cmsl-10">ftp.aoc.nrao.edu </span>under directory <span 
+class="cmsl-10">pub/sched</span>. For
+more information, see the section on <a 
+href="labelSECINSTALLInstallingSCHED.html#x34-3020004.1">Installing <span 
+class="cmcsc-10">SCHED</span></a>. Users are encouraged to obtained the current
+release of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>before attempting to make schedules. The program is continually evolving to
+support new features and to make it harder to write schedules that won&#8217;t work. It is in your own best
+interests to have the current version. For most users, installing a new version should involve little
+more than copying and unpacking the tar files and copying the executable for their type of
+machine.
+<!--l. 567--><p class="noindent" >A note on notation: the names of computer programs will be given in <span 
+class="cmcsc-10">SMALL CAPS </span>font, the names
+of files will appear in <span 
+class="cmsl-10">slant </span>font, and the names of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>and setup file parameters will appear in
+<span 
+class="cmtt-10">typewriter </span>font. Some parameters may be abbreviated; where both compulsory and optional
+characters are displayed, the compulsory ones will be shown in <span 
+class="cmtt-10">UPPER-CASE TYPEWRITER </span>font and the
+optional ones shown in <span 
+class="cmtt-10">lower-case typewriter </span>font.
+                                                                                
+                                                                                
+<!--l. 577--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECKEYINKeyinFreeformatInput.html" >next</a>] [<a 
+href="labelSECINTROOverview.html" >front</a>] [<a 
+href="labelCHPINTROINTRODUCTION.html#labelSECINTROOverview.html" >up</a>] </p></div>
+<!--l. 577--><p class="noindent" ><a 
+ id="taillabelSECINTROOverview.html"></a>  
+</body></html> 

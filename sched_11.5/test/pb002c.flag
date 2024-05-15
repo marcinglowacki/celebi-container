@@ -1,0 +1,32 @@
+!  Apriori edit data for pb002c
+!  The format is appropriate for UVFLG in AIPS.
+!  There is one flag per station per scan covering time from start of tape 
+!    motion to antenna arrival on source, if that is a positive interval.
+!  These flags are not needed when there are monitor data flags (eg VLBA).
+! 
+opcode = 'FLAG'
+dtimrang = 1  timeoff = 0 
+ant_name='Kp' timerang=100,15,40,04, 100,15,40,26  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,15,50,04, 100,15,50,45  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,16,00,04, 100,16,00,51  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,16,10,04, 100,16,11,09  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,16,20,04, 100,16,20,54  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,16,30,04, 100,16,31,18  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,16,40,04, 100,16,41,18  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,16,50,04, 100,16,50,58  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,17,00,04, 100,17,01,30  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,17,10,04, 100,17,11,50  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,17,20,04, 100,17,20,58  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,17,30,04, 100,17,30,51  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,17,40,04, 100,17,41,05  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,17,50,04, 100,17,50,53  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,18,00,04, 100,18,00,39  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,18,10,04, 100,18,11,11  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,18,20,04, 100,18,20,56  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,18,30,04, 100,18,30,42  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,18,40,04, 100,18,41,40  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,18,50,04, 100,18,51,13  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,19,00,04, 100,19,00,57  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,19,10,04, 100,19,12,03  reason='Slewing expected.' /
+ant_name='Kp' timerang=100,19,20,04, 100,19,21,19  reason='Slewing expected.' /
+

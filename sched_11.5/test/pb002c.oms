@@ -1,0 +1,128 @@
+
+No cover letter provided.
+
+BEGIN = PROJECT_INFO
+
+    PROJECT_CODE       = pb002c  
+    TITLE              = rincon
+    PI_NAME            = Walter Brisken
+    PI_ADDRESS         = DSOC
+    PI_PHONE           = 505-234-5912
+    PI_OBS_PHONE       = 575-835-7133
+    PI_EMAIL           = wbrisken@lbo.us
+    PI_FAX             = 575-835-2027
+    START              = 2018-100/15:30:00
+    STOP               = 2018-100/19:30:00
+    CORRELATOR         = VLBADIFX
+
+END = PROJECT_INFO
+
+
+BEGIN = STATION_SETUP
+
+    STATION            = VLBA    
+    RECORD_SCANS       =   24
+    RECORD_HOURS       =   4.00
+    FE                 =  20cm omit 20cm omit
+    NUM_CHANNELS       =    2
+    FORMAT             = VDIF    
+    SPEEDUP            =  1.00
+    IF                 =  A  C   
+    BBC_SB             =  L  L   
+    NET_SB             =  U  U   
+    POL                =  R  L   
+
+    BEGIN = FREQUENCY_SET
+
+        LO_SUM         =   1524.00  1524.00
+        BBC_FREQUENCY  =    576.00   576.00
+        BANDWIDTH      =     64.00    64.00
+
+    END = FREQUENCY_SET
+
+    BEGIN = FREQUENCY_SET
+
+        LO_SUM         =   1524.00  1524.00
+        BBC_FREQUENCY  =    576.00   576.00
+        BANDWIDTH      =     64.00    64.00
+
+    END = FREQUENCY_SET
+
+END = STATION_SETUP
+
+BEGIN = STATION_INFO
+
+    STATION_ID         = KP 
+    STATION_NAME       = VLBA_KP 
+    TAPES              =   0
+    PASSES             =    0
+    DISK               =   829.6
+    START              = 2018-100/15:30:00
+    STOP               = 2018-100/19:30:00
+
+END = STATION_INFO
+
+
+BEGIN = SOURCE_INFO
+
+    SOURCE_NAME       = 3C454.3
+    CAL_CODE          = V
+    SOURCE_RA         = 22h53m57.747938s
+    SOURCE_DEC        = 16d08'53.56093"
+
+END = SOURCE_INFO
+
+BEGIN = SOURCE_INFO
+
+    SOURCE_NAME       = PRN16
+    CAL_CODE          = Z
+    SOURCE_RA         = 22h53m06.302605s
+    SOURCE_DEC        = 14d55'16.10153"
+
+END = SOURCE_INFO
+
+BEGIN = SOURCE_INFO
+
+    SOURCE_NAME       = PRN133
+    CAL_CODE          = Z
+    SOURCE_RA         = 22h12m24.699199s
+    SOURCE_DEC        = -01d38'26.65194"
+
+END = SOURCE_INFO
+
+BEGIN = SOURCE_INFO
+
+    SOURCE_NAME       = PRN135
+    CAL_CODE          = Z
+    SOURCE_RA         = 19h52m13.310236s
+    SOURCE_DEC        = -00d02'36.10989"
+
+END = SOURCE_INFO
+
+BEGIN = SOURCE_INFO
+
+    SOURCE_NAME       = PRN08
+    CAL_CODE          = Z
+    SOURCE_RA         = 21h36m30.786704s
+    SOURCE_DEC        = -52d35'14.32431"
+
+END = SOURCE_INFO
+
+BEGIN = CORRELATOR_PARAMETERS
+
+    POLARIZATION      = NO 
+    TIME_AVERAGE      =    1.000000
+    TWEAK_INT_TIME    = YES 
+    FFT_SIZE          =      256
+    SPECTRAL_AVERAGE  =    1
+    WINDOW            = UNIFORM         
+    OUTPUT_TAPE       = FTP             
+    OUTPUT_FORMAT     = FITS    
+    SHIPPING          = Walter Brisken
+    NOTE              = No correlation needed, but data copy desired
+    DATA_OUTPUT_RATE  =     2.05
+    DATA_SET_SIZE     =     29.5
+    SOURCE_POS_ORIGIN = NOT SPECIFIED.
+
+END = CORRELATOR_PARAMETERS
+

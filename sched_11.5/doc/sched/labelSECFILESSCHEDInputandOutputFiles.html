@@ -1,0 +1,2166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title> SCHED Input and Output Files</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 676--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECEXAMPLESExamples.html" >next</a>] [<a 
+href="labelSECKEYINKeyinFreeformatInput.html" >prev</a>] [<a 
+href="labelSECKEYINKeyinFreeformatInput.html#taillabelSECKEYINKeyinFreeformatInput.html" >prev-tail</a>] [<a 
+href="#taillabelSECFILESSCHEDInputandOutputFiles.html">tail</a>] [<a 
+href="labelCHPINTROINTRODUCTION.html#labelSECFILESSCHEDInputandOutputFiles.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">1.3   </span> <a 
+ id="x8-70001.3"></a> SCHED Input and Output Files</h3>
+<!--l. 678--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>takes input from several types of files in addition to any interactive input. All of these files
+can be separate, as long as <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can find them, or most of them can be imbedded in the main
+input file. The former is more convenient. But, when the input file is to be sent somewhere else to be
+run again, it may be safer to imbed the catalog information in the main file. All input to <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is in
+the <a 
+href="labelSECKEYINKeyinFreeformatInput.html#x7-60001.2">keyin free format</a> section. This is the same format as is used by all Caltech VLBI package programs.
+The input file types are:
+     <dl class="description"><dt class="description">
+ <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-440003.1"><span 
+class="cmbx-10">Main Schedule Input File</span></a><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     This
+     is
+     the
+     file
+     that
+     contains
+     the
+     details
+     of
+     the
+     particular
+     project.
+     It
+     can
+     have
+     the
+     most
+     of
+     the
+     other
+     files
+     imbedded
+     in
+     it.
+     This
+     file
+     must
+     be
+     created
+     by
+     the
+     user.
+     This
+                                                                                
+                                                                                
+     file
+     should
+     be
+     given
+     a
+     name
+     like
+     <span 
+class="cmsl-10">bv016.key</span>
+     for
+     project
+     BV016.
+     See
+     <a 
+href="examples" >the
+     /schedb
+     examples</a>
+     for
+     numerous
+     samples.
+     </dd><dt class="description">
+ <a 
+href="labelSECSRCCATSourceCatalog.html#x27-2300003.2"><span 
+class="cmbx-10">Source Catalog</span></a><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     These
+     files
+     contain
+     the
+     information
+     about
+     the
+     sources,
+     especially
+     names,
+     positions,
+     and,
+     for
+     line
+     sources,
+     velocities.
+     There
+     are
+     standard
+     source
+     catalogs,
+     although
+     the
+     user
+     may
+     need
+     to
+     add
+     non-standard
+                                                                                
+                                                                                
+     sources.
+     Source
+     catalog
+     entries
+     can
+     be
+     included
+     in
+     the
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-440003.1">Main
+     Schedule
+     Input
+     File</a>.
+     There
+     are
+     two
+     standard
+     source
+     catalogs
+     which
+     are
+     <a 
+href="catalogs/sources.gsfc" ><span 
+class="cmsl-10">$SCHED/catalogs/sources.gsfc</span></a>,
+     and
+     <a 
+href="catalogs/sources.petrov" ><span 
+class="cmsl-10">$SCHED/catalogs/sources.petrov</span></a>,
+     which
+     contains
+     sources
+     respectively
+     from
+     from
+     the
+     Goddard
+     geodesy
+     group
+     and
+     from
+     Leonid
+     Petrov.
+     The
+     links
+     above
+     are
+     actually
+     to
+     symbolic
+     links
+     to
+     the
+     latest
+     catalog
+     from
+                                                                                
+                                                                                
+     each
+     source
+     as
+     of
+     the
+     time
+     of
+     the
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>release.
+     These
+     catalogs
+     contain
+     thousands
+     of
+     sources
+     (near
+     10,000
+     in
+     Petrov&#8217;s
+     case),
+     so
+     the
+     old
+     catalog
+     that
+     contained
+     a
+     few
+     sources
+     from
+     elsewhere
+     has
+     been
+     abandoned.
+     Two
+     external
+     catalogs
+     can
+     be
+     specified
+     if
+     one
+     wishes,
+     for
+     example,
+     to
+     use
+     the
+     standard
+     one
+     for
+                                                                                
+                                                                                
+     calibrators
+     and
+     another
+     for
+     multiple
+     phase
+     centers.
+     <!--l. 721--><p class="noindent" >Please
+     note
+     that
+     this
+     source
+     catalog,
+     along
+     with
+     the
+     locations
+     catalog,
+     is
+     updated
+     approximately
+     annually.
+     It
+     cannot
+     be
+     relied
+     upon
+     to
+     maintain
+     constant
+     positions
+     for
+     a
+     multi-year
+     project.
+     If
+     you
+     need
+     constant
+     positions,
+     include
+     your
+     own
+     set
+     in
+     your
+     schedule.
+     Otherwise,
+     include
+     a
+     step
+                                                                                
+                                                                                
+     in
+     processing
+     that
+     accounts
+     for
+     changes
+     in
+     the
+     assumed
+     calibrator
+     position.
+     Note
+     that
+     the
+     Earth
+     orientation
+     and
+     station
+     locations
+     actually
+     change
+     with
+     time
+     (plate
+     tectonics
+     etc)
+     so
+     exact
+     repeats
+     of
+     the
+     observing
+     geometry
+     are
+     not
+     possible.
+     </dd><dt class="description">
+ <a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3"><span 
+class="cmbx-10">Station Catalog</span></a><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     This
+     file
+     contains
+     information
+     about
+     the
+     antennas
+     including
+     names,
+     positions,
+     slew
+                                                                                
+                                                                                
+     limits,
+     horizons
+     etc.
+     There
+     is
+     a
+     standard
+     station
+     catalog
+     that
+     should
+     suffice
+     for
+     nearly
+     all
+     users.
+     If
+     not,
+     entries
+     can
+     be
+     included
+     in
+     the
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-440003.1">Main
+     Schedule
+     Input
+     File</a>.
+     Station
+     positions
+     may
+     stored
+     separately
+     in
+     the
+     <a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3">Location
+     Catalog</a>.
+     The
+     standard
+     station
+     catalog
+     is
+     <a 
+href="catalogs/stations_RDBE.dat" ><span 
+class="cmsl-10">$SCHED/catalogs/stations</span><span 
+class="cmsl-10">_RDBE.dat</span></a>.
+     The
+     old
+     version
+     for
+     use
+     with
+     the
+     legacy
+                                                                                
+                                                                                
+     VLBA
+     systems
+     is
+     still
+     <a 
+href="catalogs/stations.dat" ><span 
+class="cmsl-10">$SCHED/catalogs/stations.dat</span></a>.
+     By
+     the
+     next
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>release,
+     it
+     is
+     likely
+     that
+     <span 
+class="cmsl-10">stations.dat</span>
+     will
+     be
+     the
+     RDBE
+     version
+     and
+     the
+     legacy
+     version
+     will
+     be
+     renamed
+     or
+     removed.
+     </dd><dt class="description">
+ <a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3"><span 
+class="cmbx-10">Location Catalog</span></a><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     This
+     file
+     contains
+     station
+     locations.
+     The
+     standard
+     version
+     reflects
+     the
+     locations
+     and
+     velocities
+     used
+     on
+     the
+     VLBA
+     correlator.
+     It
+                                                                                
+                                                                                
+     is
+     documented
+     along
+     with
+     the
+     <a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3">Station
+     Catalog</a>
+     because
+     they
+     are
+     tightly
+     coupled.
+     The
+     Locations
+     Catalog
+     is
+     optional
+     since
+     it
+     is
+     not
+     needed
+     if
+     the
+     station
+     locations
+     are
+     specified
+     in
+     the
+     Station
+     Catalog.
+     It
+     exists
+     separately
+     for
+     ease
+     of
+     maintenance.
+     The
+     standard
+     location
+     catalog
+     is
+     <a 
+href="catalogs/locations.dat" ><span 
+class="cmsl-10">$SCHED/catalogs/locations.dat</span></a>.
+     </dd><dt class="description">
+ <a 
+href="labelSECSETUPSSetupFiles.html#x31-2470003.6"><span 
+class="cmbx-10">Setup Files</span></a><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     These
+     files
+                                                                                
+                                                                                
+     contain
+     the
+     details
+     required
+     to
+     configure
+     the
+     hardware
+     at
+     the
+     stations.
+     Different
+     projects
+     using
+     the
+     same
+     hardware
+     configuration
+     can
+     use
+     the
+     same
+     setup
+     files.
+     There
+     are
+     many
+     standard
+     setup
+     files
+     are
+     located
+     in
+     <span 
+class="cmsl-10">$SCHED/setups</span>.
+     </dd><dt class="description">
+ <a 
+href="labelSECFRQCATFrequencyCatalog.html#x30-2450003.5"><span 
+class="cmbx-10">Frequency Catalog</span></a><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     This
+     file
+     contains
+     information
+     about
+     valid
+     frequency
+     setups
+     at
+     the
+     stations.
+     The
+     RF
+                                                                                
+                                                                                
+     ranges
+     that
+     can
+     be
+     covered
+     and
+     the
+     local
+     oscillator
+     and
+     polarization
+     of
+     each
+     IF
+     are
+     given.
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can
+     use
+     this
+     information
+     to
+     provide
+     good
+     defaults
+     for
+     many
+     parameters
+     in
+     the
+     setup
+     files.
+     The
+     standard
+     file
+     should
+     be
+     used.
+     Any
+     non-standard
+     information
+     can
+     be
+     in
+     the
+     setup
+     files.
+     This
+     file
+     cannot
+     be
+     imbedded
+                                                                                
+                                                                                
+     in
+     the
+     main
+     input
+     file.
+     The
+     standard
+     frequency
+     catalog,
+     for
+     use
+     with
+     the
+     RDBE
+     systems,
+     is
+     <a 
+href="catalogs/freq_RDBE.dat" ><span 
+class="cmsl-10">$SCHED/catalogs/freq</span><span 
+class="cmsl-10">_RDBE.dat</span></a>.
+     The
+     legacy
+     version
+     is
+     still
+     available.
+     It
+     is
+     <a 
+href="catalogs/freq.dat" ><span 
+class="cmsl-10">$SCHED/catalogs/freq.dat</span></a>
+     The
+     main
+     difference
+     is
+     that
+     the
+     VLBA
+     IFs
+     are
+     assumed
+     to
+     be
+     between
+     512
+     and
+     1024
+     MHz
+     in
+     the
+     RDBE
+     version,
+     not
+     500
+     and
+     1000
+                                                                                
+                                                                                
+     MHz
+     as
+     in
+     the
+     legacy
+     version.
+     By
+     the
+     next
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>release,
+     the
+     RDBE
+     version
+     will
+     likely
+     become
+     <span 
+class="cmsl-10">$SCHED/catalogs/freq.dat</span>
+     and
+     the
+     legacy
+     version
+     will
+     be
+     renamed
+     or
+     removed.
+     </dd><dt class="description">
+ <a 
+href="labelSECTPINITapeInitializationFile.html#x29-2320003.4"><span 
+class="cmbx-10">Tape Initialization File</span></a><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     This
+     file
+     tells
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>the
+     properties
+     of
+     the
+     tape
+     systems
+     at
+     the
+     stations
+     and
+     where
+     to
+     start
+     on
+     each
+     tape.
+     Since
+     tapes
+                                                                                
+                                                                                
+     are
+     no
+     longer
+     in
+     use,
+     this
+     file
+     is
+     mostly
+     obsolete.
+     However
+     it
+     can
+     be
+     used
+     to
+     specify
+     use
+     of
+     a
+     recording
+     system
+     at
+     a
+     station
+     that
+     is
+     different
+     from
+     what
+     is
+     given
+     as
+     the
+     default
+     in
+     the
+     station
+     catalog.
+     This
+     is
+     generally
+     only
+     useful
+     during
+     periods
+     when
+     stations
+     are
+     transitioning
+     between
+                                                                                
+                                                                                
+     different
+     recording
+     systems.
+     Note
+     that
+     many
+     old
+     files,
+     often
+     used
+     as
+     templates,
+     contain
+     tape
+     initialization
+     sections.
+     These
+     should
+     be
+     removed.
+     </dd><dt class="description">
+ <a 
+href="labelSECREFPOINTReferencePointing.html#x17-340002.6"><span 
+class="cmbx-10">Reference Pointing Control File</span></a><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can
+     insert
+     scans
+     for
+     reference
+     pointing
+     at
+     high
+     frequencies
+     on
+     the
+     VLBA
+     and
+     VLA.
+     This
+     file
+     contains
+     information
+     needed
+     to
+     control
+     that
+     function.
+     It
+     will
+     only
+     be
+                                                                                
+                                                                                
+     of
+     interest
+     for
+     observations
+     above
+     15
+     GHz
+     on
+     the
+     VLA
+     and
+     at
+     86
+     GHz
+     on
+     the
+     VLBA.
+     The
+     standard
+     reference
+     pointing
+     control
+     file
+     is
+     at
+     <a 
+href="catalogs/peak.cmd" ><span 
+class="cmsl-10">$SCHED/catalogs/peak.cmd</span></a>
+     There
+     is
+     a
+     special
+     version
+     related
+     to
+     reference
+     pointing
+     when
+     using
+     the
+     new
+     wideband
+     (RDBE/MARK5C)
+     system
+     on
+     the
+     VLBA.
+     It
+     is
+     <a 
+href="catalogs/peak_RDBE.cmd" ><span 
+class="cmsl-10">$SCHED/catalogs/peak</span><span 
+class="cmsl-10">_RDBE.cmd</span></a>.
+     </dd><dt class="description">
+                                                                                
+                                                                                
+ <a 
+href="labelSECLINESpectralLineObservations.html#x16-330002.5"><span 
+class="cmbx-10">Spectral Line Rest Frequencies</span></a><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can
+     adjust
+     the
+     observing
+     frequency
+     to
+     remove
+     the
+     Doppler
+     shifts
+     due
+     to
+     the
+     motions
+     of
+     the
+     Earth
+     around
+     the
+     Sun
+     and
+     to
+     the
+     Sun
+     with
+     respect
+     to
+     a
+     desired
+     reference
+     frame.
+     To
+     do
+     this,
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>needs
+     to
+     know
+     the
+     rest
+     frequency
+     of
+     the
+     line
+     being
+     observed.
+     This
+     is
+     given
+     in
+     a
+                                                                                
+                                                                                
+     <span 
+class="cmtt-10">lineinit</span>
+     section
+     imbedded
+     either
+     in
+     the
+     main
+     file
+     or
+     in
+     the
+     reference
+     pointing
+     control
+     file.
+     There
+     is
+     a
+     file,
+     <a 
+href="catalogs/linefreqs.dat" ><span 
+class="cmsl-10">$SCHED/catalogs/linefreqs.dat</span></a>,
+     distributed
+     with
+     <span 
+class="cmcsc-10">SCHED</span>,
+     that
+     gives
+     the
+     rest
+     frequencies
+     for
+     many
+     of
+     the
+     maser
+     lines
+     commonly
+     observed
+     with
+     VLBI.
+     </dd><dt class="description">
+ <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-910003.1.2"><span 
+class="cmbx-10">Ephemeris file</span></a><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can
+     be
+     used
+     to
+     schedule
+     observations
+     of
+     planets.
+     To
+                                                                                
+                                                                                
+     do
+     so,
+     it
+     obtains
+     positions
+     from
+     a
+     JPL
+     ephemeris
+     file.
+     Mostly
+     this
+     is
+     used
+     for
+     single-dish
+     calibration
+     observations.
+     </dd><dt class="description">
+ <a 
+href="labelSECSATELSatelliteTracking.html#x24-420002.13"><span 
+class="cmbx-10">Satellite file</span></a><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can
+     also
+     be
+     used
+     to
+     schedule
+     observations
+     of
+     satellites.
+     To
+     do
+     so,
+     it
+     obtains
+     orbital
+     elements
+     from
+     the
+     <span 
+class="cmtt-10">SATFILE</span>
+     or
+     <span 
+class="cmtt-10">TLEFILE</span>
+     which
+     are
+     specified
+     in
+     the
+     <a 
+href="labelSECSATINITSatelliteInitialization.html#x32-3000003.7"><span 
+class="cmtt-10">SATINIT</span></a>
+     section.
+     This
+                                                                                
+                                                                                
+     is
+     used
+     for
+     holography
+     and
+     for
+     spacecraft
+     navigation
+     projects.
+     Satellite
+     tracking
+     is
+     discussed
+     in
+     the
+     <a 
+href="labelSECSATELSatelliteTracking.html#x24-420002.13">Satellite
+     tracking
+     section</a>
+     </dd></dl>
+<!--l. 835--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>processes the input files and creates several output files. Most follow a naming convention
+that starts with the project code (bv016 will be used in the examples here) followed by a file type
+indicator, then a period, then a two letter station code (pt for Pie Town in the examples below). The
+experiment code is read by <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>in the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-940003.1.2"><span 
+class="cmtt-10">EXPCODE</span></a> parameter in the main schedule input. The station
+code comes from the <a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3">station catalog</a> and a list if given in Appendix <a 
+href="labelAPPSTACODESStationCodes.html#x44-353000A.1">A.1<!--tex4ht:ref: APP:STACODES --></a>. The output files
+are:
+     <dl class="description"><dt class="description">
+<span 
+class="cmbx-10">Summary File:</span> </dt><dd 
+class="description">
+     This
+     file
+     gives
+     a
+     rather
+     extensive
+     summary
+     of
+     the
+     setups
+     and
+     observations.
+     This
+     is
+     the
+     most
+     useful
+     output
+     file
+     for
+     the
+                                                                                
+                                                                                
+     user
+     as
+     it
+     shows
+     how
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>has
+     interpreted
+     the
+     input
+     commands.
+     The
+     file
+     will
+     be
+     called,
+     for
+     example,
+     <span 
+class="cmsl-10">bv016.sum</span>.
+     The
+     items
+     displayed
+     for
+     each
+     scan
+     can
+     be
+     controlled
+     with
+     the
+     parameter
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2040003.1.2"><span 
+class="cmtt-10">SUMITEM</span></a>.
+     </dd><dt class="description">
+<span 
+class="cmbx-10">sched.runlog:</span> </dt><dd 
+class="description">
+     This
+     file
+     reflects
+     most
+     of
+     what
+     you
+     see
+     on
+     the
+     screen
+     when
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is
+     running,
+     plus
+     may
+                                                                                
+                                                                                
+     contain
+     additional
+     messages
+     that
+     help
+     debug
+     problems
+     should
+     they
+     occur.
+     </dd><dt class="description">
+<span 
+class="cmbx-10">Operator Schedule Files:</span> </dt><dd 
+class="description">
+     These
+     files,
+     of
+     which
+     there
+     is
+     one
+     per
+     antenna,
+     give
+     much
+     more
+     information
+     about
+     the
+     schedule
+     than
+     can
+     be
+     included
+     in
+     the
+     summary
+     file
+     and
+     are
+     useful
+     when
+     that
+     level
+     of
+     detail
+     is
+     needed.
+     They
+     were
+     originally
+                                                                                
+                                                                                
+     meant
+     for
+     the
+     use
+     of
+     operators
+     of
+     manually
+     controlled
+     antennas,
+     but
+     now
+     most
+     antennas
+     are
+     computer
+     controlled
+     and
+     these
+     files
+     are
+     more
+     useful
+     for
+     the
+     scheduler.
+     The
+     files
+     are
+     named,
+     for
+     example,
+     <span 
+class="cmsl-10">bv016sch.pt</span>.
+     </dd><dt class="description">
+<span 
+class="cmbx-10">VLBA type Antenna Control Files (</span><span 
+class="cmsl-10">crd </span><span 
+class="cmbx-10">files):</span> </dt><dd 
+class="description">
+     These
+     files
+     provide
+     the
+     legacy
+     on-line
+     control
+     systems
+     of
+     the
+     type
+     found
+     at
+     VLBA
+                                                                                
+                                                                                
+     antennas
+     with
+     the
+     information
+     they
+     need
+     to
+     control
+     the
+     observations.
+     There
+     is
+     one
+     file
+     per
+     antenna
+     that
+     uses
+     a
+     VLBA
+     control
+     computer
+     for
+     either
+     full
+     control
+     of
+     the
+     station
+     or
+     for
+     control
+     of
+     just
+     the
+     data
+     acquisition
+     system
+     (data
+     recorders,
+     baseband
+     converters
+     etc.).
+     The
+     files
+     are
+     named,
+     for
+     example,
+     <span 
+class="cmsl-10">bv016crd.pt</span>.
+     Note
+                                                                                
+                                                                                
+     that
+     the
+     VLBA
+     antennas
+     currently
+     are
+     in
+     transition
+     with
+     some
+     items
+     controlled
+     by
+     the
+     legacy
+     system
+     and
+     some
+     by
+     the
+     new
+     control
+     system
+     which
+     is
+     commanded
+     using
+     the
+     VEX
+     file.
+     </dd><dt class="description">
+<span 
+class="cmbx-10">VEX file:</span> </dt><dd 
+class="description">
+     This
+     is
+     the
+     main
+     output
+     file
+     needed
+     by
+     the
+     stations
+     for
+     antenna
+     and
+     recording
+     system
+     control
+     and
+                                                                                
+                                                                                
+     by
+     the
+     correlators
+     to
+     process
+     observations.
+     It
+     is
+     now
+     used
+     by
+     most
+     VLBI
+     systems
+     around
+     the
+     world,
+     not
+     just
+     the
+     Goddard
+     &#8220;Field
+     System&#8221;.
+     For
+     the
+     VLBA,
+     it
+     is
+     used
+     to
+     control
+     the
+     RDBE,
+     MARK5C,
+     and
+     some
+     antenna
+     data
+     path
+     switches.
+     The
+     legacy
+     system,
+     commanded
+     by
+     the
+     crd
+     files
+     described
+     above,
+     still
+                                                                                
+                                                                                
+     controls
+     the
+     antenna
+     pointing
+     among
+     various
+     functions.
+     Both
+     are
+     needed.
+     A
+     single
+     VEX
+     file
+     describes
+     the
+     observations
+     for
+     all
+     antennas.
+     </dd><dt class="description">
+<span 
+class="cmbx-10">V2D file:</span> </dt><dd 
+class="description">
+     This
+     is
+     a
+     template
+     correlator
+     setup
+     file
+     for
+     the
+     (VLBA)
+     DiFX
+     correlator.
+     Information
+     that
+     needs
+     to
+     be
+     modified
+     from
+     what
+     is
+     in
+     the
+     VEX
+     file
+     can
+     be
+                                                                                
+                                                                                
+     specified
+     by
+     the
+     analysts
+     in
+     this
+     file.
+     It
+     is
+     also
+     the
+     path
+     to
+     transmit
+     information
+     about
+     multiple
+     phase
+     centers
+     per
+     pointing
+     to
+     the
+     correlator.
+     </dd><dt class="description">
+<span 
+class="cmbx-10">Flag file:</span> </dt><dd 
+class="description">
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>writes
+     a
+     file
+     with
+     the
+     <span 
+class="cmsl-10">.flag</span>
+     extension
+     that
+     can
+     be
+     helpful
+     in
+     data
+     processing.
+     It
+     contains
+     flag
+     entries,
+     in
+     the
+     format
+     appropriate
+     for
+                                                                                
+                                                                                
+     the
+     AIPS
+     task
+     UVFLG,
+     that
+     cover
+     the
+     times
+     when
+     data
+     are
+     being
+     recorded,
+     but
+     the
+     antenna
+     is
+     expected
+     to
+     be
+     slewing.
+     For
+     the
+     VLBA,
+     the
+     monitor
+     flags
+     would
+     usually
+     take
+     care
+     of
+     such
+     times,
+     but
+     for
+     other
+     types
+     of
+     stations,
+     such
+     information
+     is
+     not
+     always
+     available
+     from
+     the
+     logs.
+     </dd><dt class="description">
+                                                                                
+                                                                                
+<span 
+class="cmbx-10">Preempt file:</span> </dt><dd 
+class="description">
+     Starting
+     in
+     Oct.
+     2011,
+     the
+     VLBA
+     will
+     be
+     providing
+     observations
+     of
+     up
+     to
+     1.5
+     hours
+     on
+     the
+     Pie
+     Town
+     to
+     Mauna
+     Kea
+     baseline
+     to
+     the
+     USNO
+     for
+     EOP
+     determination.
+     This
+     is
+     in
+     return
+     for
+     financial
+     support
+     for
+     operations.
+     These
+     observations
+     will
+     preempt
+     the
+     scheduled
+     project
+     on
+     the
+     two
+     stations.
+                                                                                
+                                                                                
+     There
+     is
+     some
+     flexibility
+     to
+     choose
+     the
+     exact
+     time
+     of
+     the
+     preemption
+     so
+     the
+     user
+     has
+     been
+     given
+     some
+     ability
+     to
+     guide
+     the
+     choice.
+     Important
+     scans
+     can
+     be
+     protected
+     using
+     the
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1770003.1.2"><span 
+class="cmtt-10">PREEMPT</span></a>
+     parameter.
+     Information
+     in
+     the
+     preempt
+     file,
+     which
+     is
+     also
+     in
+     the
+     summary
+     file,
+     is
+     used
+     by
+     operations
+     when
+     picking
+                                                                                
+                                                                                
+     the
+     time
+     for
+     the
+     EOP
+     observations.
+     </dd><dt class="description">
+<span 
+class="cmbx-10">Plots:</span> </dt><dd 
+class="description">
+     Sched
+     can
+     make
+     plots
+     of
+     u-v
+     coverage
+     and
+     of
+     various
+     combinations
+     of
+     azimuth,
+     elevation,
+     paralactic
+     angle,
+     hour
+     angle,
+     UT,
+     and
+     GST
+     against
+     each
+     other.
+     Plots
+     can
+     be
+     made
+     of
+     the
+     time
+     antennas
+     are
+     up.
+     Plots
+     can
+     be
+     made
+     of
+     beams.
+     The
+                                                                                
+                                                                                
+     plot
+     capability
+     can
+     be
+     used
+     to
+     plot
+     the
+     distribution
+     of
+     your
+     sources,
+     and
+     of
+     the
+     all
+     sources
+     in
+     the
+     catalog,
+     on
+     the
+     sky.
+     This
+     is
+     useful
+     for
+     looking
+     for
+     calibrators.
+     In
+     advanced
+     modes,
+     stations
+     can
+     be
+     moved
+     around
+     to
+     explore
+     UV
+     coverages
+     in
+     array
+     configuration
+     design
+     projects.
+     Also
+     quality
+     factors
+     can
+                                                                                
+                                                                                
+     be
+     calculated
+     and
+     plotted
+     with
+     contours
+     over
+     a
+     map
+     of
+     the
+     stations.
+     There
+     is
+     interactive
+     control
+     over
+     the
+     plotting,
+     the
+     only
+     interactive
+     part
+     of
+     SCHED.
+     Much
+     of
+     this
+     capability
+     is
+     mainly
+     useful
+     in
+     experiment
+     planning.
+     </dd><dt class="description">
+<span 
+class="cmbx-10">DiFX configuration file:</span> </dt><dd 
+class="description">
+     When
+     making
+     jobs
+     for
+     the
+     DiFX
+     correlator,
+     especially
+     as
+     used
+     for
+     the
+                                                                                
+                                                                                
+     VLBA,
+     a
+     <span 
+class="cmsl-10">.v2d</span>
+     file
+     is
+     used
+     to
+     give
+     information
+     not
+     readily
+     deduced
+     from
+     the
+     <span 
+class="cmsl-10">.vex</span>
+     file.
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>now
+     writes
+     a
+     template
+     for
+     that
+     file.
+     That
+     file
+     is
+     also
+     be
+     used
+     to
+     pass
+     lists
+     of
+     phase
+     centers
+     when
+     utilizing
+     the
+     DiFX
+     multiple
+     phase
+     center
+     capability.
+     </dd><dt class="description">
+<span 
+class="cmbx-10">Optimized Schedule:</span> </dt><dd 
+class="description">
+     When
+     one
+     of
+     <span 
+class="cmcsc-10">SCHED</span>&#8217;s
+                                                                                
+                                                                                
+     optimization
+     modes
+     is
+     turned
+     on,
+     or
+     geodetic
+     segments
+     are
+     requested,
+     the
+     program
+     writes
+     out
+     a
+     file,
+     such
+     as
+     <span 
+class="cmsl-10">bv016.sch</span>
+     containing
+     the
+     basic
+     scan
+     inputs
+     for
+     a
+     new
+     main
+     schedule
+     file.
+     If
+     desired,
+     the
+     user
+     can
+     use
+     this
+     to
+     construct,
+     and
+     perhaps
+     modify,
+     a
+     new
+     optimized
+     main
+     schedule
+     input.
+     This
+     used
+     to
+                                                                                
+                                                                                
+     be
+     the
+     way
+     all
+     optimized
+     schedules
+     were
+     constructed,
+     but
+     now
+     that
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>fully
+     processes
+     an
+     optimized
+     schedule,
+     it
+     is
+     rarely
+     used
+     or
+     needed.
+     The
+     newer
+     use
+     is
+     to
+     make
+     it
+     easy
+     to
+     reproduce
+     geodetic
+     segments
+     when
+     something
+     else
+     is
+     changed
+     that
+     would
+     otherwise
+     change
+     the
+     results
+     of
+     the
+     optimization.
+     </dd><dt class="description">
+                                                                                
+                                                                                
+<span 
+class="cmsl-10">frequencies.list</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     If
+     the
+     user
+     specifies
+     the
+     parameter
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1010003.1.2"><span 
+class="cmtt-10">FREQLIST</span></a>,
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will
+     read
+     the
+     frequency
+     catalog
+     and
+     make
+     a
+     table
+     of
+     all
+     known
+     setups
+     which
+     can
+     be
+     used
+     to
+     make
+     observations
+     in
+     the
+     specified
+     frequency
+     range.
+     Then
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will
+     quit
+     without
+     doing
+     further
+     processing.
+     This
+     is
+     useful
+     for
+     planning
+     and
+     for
+     information
+     while
+     making
+     setup
+                                                                                
+                                                                                
+     files.
+     </dd></dl>
+                                                                                
+                                                                                
+<!--l. 962--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECEXAMPLESExamples.html" >next</a>] [<a 
+href="labelSECKEYINKeyinFreeformatInput.html" >prev</a>] [<a 
+href="labelSECKEYINKeyinFreeformatInput.html#taillabelSECKEYINKeyinFreeformatInput.html" >prev-tail</a>] [<a 
+href="labelSECFILESSCHEDInputandOutputFiles.html" >front</a>] [<a 
+href="labelCHPINTROINTRODUCTION.html#labelSECFILESSCHEDInputandOutputFiles.html" >up</a>] </p></div>
+<!--l. 962--><p class="noindent" ><a 
+ id="taillabelSECFILESSCHEDInputandOutputFiles.html"></a>  
+</body></html> 

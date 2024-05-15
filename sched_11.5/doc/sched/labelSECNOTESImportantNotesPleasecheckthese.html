@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title> Important Notes - Please check these</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 215--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECLINKSLinkstoManualSectionsandtoExternalInformation.html" >next</a>] [<a 
+href="#taillabelSECNOTESImportantNotesPleasecheckthese.html">tail</a>] [<a 
+href="contentsname.html#labelSECNOTESImportantNotesPleasecheckthese.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">0.1   </span> <a 
+ id="x3-20000.1"></a> Important Notes - Please check these</h3>
+<!--l. 217--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 219--><p class="noindent" >The
+     world
+     of
+     VLBI
+     has
+     mostly
+     converted
+     from
+     the
+     traditional
+     backends
+     to
+     the
+     newer
+     digital
+     backends
+     such
+     as
+     the
+     RDBE
+     and
+     the
+     DBBC
+     and
+     to
+     newer
+     recording
+     systems
+     such
+     as
+     the
+     MARK5C.
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>supports
+     many
+     of
+     the
+     digital
+     backends
+     and
+                                                                                
+                                                                                
+     new
+     recorders.
+     You
+     may
+     encounter
+     some
+     legacy
+     information
+     in
+     the
+     manual
+     and
+     examples
+     that
+     relate
+     to
+     the
+     old
+     systems.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 226--><p class="noindent" >The
+     MARK5A
+     recorders
+     were
+     removed
+     from
+     the
+     VLBA
+     in
+     December
+     2013.
+     All
+     projects
+     must
+     now
+     use
+     the
+     RDBE.
+     All
+     VLBA
+     stations
+     have
+     two
+     RDBE
+     units
+     for
+     a
+     total
+                                                                                
+                                                                                
+     of
+     8
+     channels
+     with
+     the
+     DDC.
+     Most
+     MARK5A
+     setups
+     can
+     be
+     duplicated
+     with
+     this
+     system.
+     Most
+     of
+     the
+     standard
+     setups
+     with
+     names
+     like
+     v6cm...
+     will
+     work
+     with
+     the
+     DDC.
+     As
+     of
+     April,
+     2014,
+     half
+     of
+     the
+     BBCs
+     in
+     the
+     legacy
+     system
+     will
+     be
+     unplugged.
+     The
+     remaining
+     ones
+     are
+     still
+     used
+     to
+                                                                                
+                                                                                
+     collect
+     pointing
+     data
+     and
+     some
+     old
+     style
+     calibration
+     data,
+     mainly
+     for
+     test
+     purposes.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 235--><p class="noindent" >Mark
+     IV
+     users
+     please
+     see
+     the
+     <a 
+href="labelSECRECSYSRecordingSystems.html#x14-270002.3.5">Mark&#x00A0;IV
+     Section</a>
+     for
+     information
+     about
+     mode
+     and
+     mode
+     change
+     restrictions.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 239--><p class="noindent" >If
+     you
+     are
+     using
+     B1950
+     coordinates,
+     you
+     should
+     worry
+     about
+     the
+     &#8220;observe&#8221;
+     date
+                                                                                
+                                                                                
+     to
+     use
+     for
+     precession.
+     Please
+     see
+     the
+     discussion
+     of
+     the
+     input
+     parameter
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1760003.1.2"><span 
+class="cmtt-10">PRECDATE</span></a>.
+     But
+     you
+     really
+     should
+     not
+     be
+     using
+     B1950
+     coordinates!
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 245--><p class="noindent" >Please
+     note
+     that
+     all
+     setup
+     files
+     intended
+     to
+     be
+     used
+     for
+     spectral
+     line
+     observations
+     using
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-820003.1.2"><span 
+class="cmtt-10">DOPPLER</span></a>
+     must
+     have
+     all
+     channels
+     distinguished,
+     in
+     the
+     setup
+     file,
+                                                                                
+                                                                                
+     by
+     frequency
+     and
+     polarization.
+     In
+     the
+     past,
+     it
+     was
+     common
+     practice
+     to
+     set
+     all
+     channels
+     to
+     the
+     same
+     frequency,
+     and
+     let
+     the
+     Doppler
+     calculations
+     separate
+     them.
+     But
+     the
+     requirement
+     to
+     deal
+     reasonably
+     with
+     single
+     polarization
+     sites
+     in
+     dual
+     polarization
+     observations
+     forced
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to
+     be
+     able
+     to
+     relate
+     channels
+     from
+     each
+     station
+     to
+                                                                                
+                                                                                
+     channels
+     from
+     other
+     stations
+     within
+     the
+     setup
+     file.
+     This
+     is
+     mentioned
+     here
+     because
+     it
+     has
+     proven
+     to
+     be
+     the
+     source
+     of
+     considerable
+     confusion.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 257--><p class="noindent" >Try
+     the
+     plot
+     capability
+     (UV,
+     El
+     vs
+     time
+     etc).
+     It&#8217;s
+     easy
+     to
+     use
+     and
+     should
+     help
+     with
+     planning
+     and
+     with
+     understanding
+     what
+     your
+     schedule
+                                                                                
+                                                                                
+     will
+     provide.
+     See
+     the
+     <a 
+href="labelSECPLOTPlotting.html#x10-110001.5">plotting
+     section</a>
+     for
+     details.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 263--><p class="noindent" >This
+     manual
+     is
+     written
+     with
+     LaTeX
+     and
+     converted
+     to
+     html
+     using
+     htlatex.
+     It
+     is
+     meant
+     to
+     be
+     read
+     using
+     a
+     browser.
+     A
+     postscript
+     or
+     pdf
+     version
+     could
+     be
+     generated
+     for
+     printing.
+     But
+     it
+     is
+     over
+     300
+     pages
+     long
+     and
+                                                                                
+                                                                                
+     should
+     be
+     updated
+     with
+     each
+     release.
+     Printing
+     it
+     would
+     be
+     considered
+     unfriendly
+     to
+     the
+     world&#8217;s
+     forests.
+     The
+     authors
+     have
+     not
+     printed
+     it
+     in
+     many
+     years.
+     </dd></dl>
+                                                                                
+                                                                                
+<!--l. 272--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECLINKSLinkstoManualSectionsandtoExternalInformation.html" >next</a>] [<a 
+href="labelSECNOTESImportantNotesPleasecheckthese.html" >front</a>] [<a 
+href="contentsname.html#labelSECNOTESImportantNotesPleasecheckthese.html" >up</a>] </p></div>
+<!--l. 272--><p class="noindent" ><a 
+ id="taillabelSECNOTESImportantNotesPleasecheckthese.html"></a>  
+</body></html> 

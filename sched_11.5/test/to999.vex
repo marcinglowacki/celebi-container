@@ -1,0 +1,531 @@
+VEX_rev = 1.5;
+*    SCHED vers: Development version 11.5. Started Apr. 2
+*    VEX/SCHED:  1.5.87
+*    Other versions: Sched:  11.5  Plot: 1.06  JPL-ephem: 1.01
+*------------------------------------------------------------------------------
+*
+*   ++++  WARNING:  File contains moving sources 
+*          Do no use positions for correlation.
+*          Moving coordinates not described in VEX.
+*
+*------------------------------------------------------------------------------
+$GLOBAL;
+     ref $EXPER = to999;
+*                                                      +------------+
+*                         PI revision number:          |    1.0000  |
+*                                                      +------------+
+*    mode:       DDC
+*------------------------------------------------------------------------------
+$EXPER;
+*
+def to999;
+     exper_name = to999;
+     exper_description = "novme satellite test 1";
+     PI_name = "Walter Brisken";
+     PI_email = wbrisken@lbo.us;
+*    address:   DSOC
+*                
+*                
+*                
+*    phone:     505-234-5912
+*    during obs:575-835-7133
+*    fax:       575-835-2027
+*
+*    year, doy: 2018, 177
+*    date     : Tue 26 Jun 2018
+*    MJD      : 58295
+     exper_nominal_start=2018y177d18h30m00s;
+     exper_nominal_stop=2018y177d19h09m46s;
+*
+     target_correlator = VLBADIFX;
+*
+*    integr_time    :     1.000 s
+*    number_channels:   128
+*    number_antenna :  8
+*    cross_polarize : No
+*    weight_func    : UNIFORM
+*    distrib_medium : FTP
+*    distrib_format : FITS
+*    source_pos_cat : NOT SPECIFIED.
+*    distribute_to  : 
+*                     Walter Brisken
+*    corr_notes : 
+*               No correlation needed, but data copy desired
+*
+enddef;
+*------------------------------------------------------------------------------
+$MODE;
+*
+def DDC1;
+     ref $PROCEDURES = Mode_01;
+     ref $FREQ = 1524.00MHz2x64MHz:Kp:La;
+     ref $IF = LO@2100MHzDPolTone/1:Kp:La;
+     ref $BBC = 2BBCs:Kp:La;
+     ref $TRACKS = VDIF.2Ch2bit1to1:Kp:La;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Kp:La;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = UsbDetect:Kp:La;
+enddef;
+*
+def DDC2;
+     ref $PROCEDURES = Mode_02;
+     ref $FREQ = 4072.25MHz2x128MHz:Kp:La;
+     ref $IF = LO@3400MHzDPolTone/1:Kp:La;
+     ref $BBC = 2BBCs:Kp:La;
+     ref $TRACKS = VDIF.2Ch2bit1to1#02:Kp:La;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Kp:La;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = UsbDetect#02:Kp:La;
+enddef;
+*
+def PulseCalOFF;
+     ref $PROCEDURES = Mode_03;
+     ref $FREQ = 1524.00MHz2x64MHz#02:Kp:La;
+     ref $IF = LO@2100MHzDPolNoTone:Kp:La;
+     ref $BBC = 2BBCs:Kp:La;
+     ref $TRACKS = VDIF.2Ch2bit1to1:Kp:La;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Kp:La;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Kp:La;
+enddef;
+*
+def PulseCalOFF#02;
+     ref $PROCEDURES = Mode_04;
+     ref $FREQ = 4072.25MHz2x128MHz#02:Kp:La;
+     ref $IF = LO@3400MHzDPolNoTone:Kp:La;
+     ref $BBC = 2BBCs:Kp:La;
+     ref $TRACKS = VDIF.2Ch2bit1to1#02:Kp:La;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Kp:La;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect#02:Kp:La;
+enddef;
+*------------------------------------------------------------------------------
+$STATION;
+*
+def Kp;
+     ref $SITE = VLBA_KP;
+     ref $ANTENNA = VLBA_KP;
+     ref $DAS = 2RDBE2+NONE<;
+enddef;
+*
+def La;
+     ref $SITE = VLBA_LA;
+     ref $ANTENNA = VLBA_LA;
+     ref $DAS = 2RDBE2+NONE<;
+enddef;
+*------------------------------------------------------------------------------
+$PROCEDURES;
+*
+def Mode_01;
+     procedure_name_prefix =  "01";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_02;
+     procedure_name_prefix =  "02";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_03;
+     procedure_name_prefix =  "03";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_04;
+     procedure_name_prefix =  "04";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*------------------------------------------------------------------------------
+$SITE;
+*
+def VLBA_KP;
+     site_type = fixed;
+     site_name = VLBA_KP;
+     site_ID = Kp;
+*    elev= 1901.99 long= 111:36:44. lat= 31:57:22.7
+     site_position =-1995678.84020 m:-5037317.69680 m: 3357328.02510 m;
+     site_velocity = -0.013740   m/yr:  0.000790   m/yr: -0.006170  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 2013y001d;
+     site_position_epoch =   56293;
+     horizon_map_az =  0.0 deg:  5.0: 45.0: 50.0: 55.0: 60.0: 65.0: 70.0: 75.0:
+                                80.0: 85.0: 90.0: 95.0:105.0:110.0:115.0:120.0:
+                               150.0:155.0:165.0:170.0:180.0:185.0:215.0:220.0:
+                               225.0:230.0:235.0:240.0:255.0:260.0:265.0:270.0:
+                               360.0;
+     horizon_map_el =  2.0 deg:  2.0:  2.0:  5.0:  6.0:  7.0:  7.0:  8.0:  8.0:
+                                 9.0:  6.0:  3.0:  2.0:  2.0:  3.0:  3.0:  2.0:
+                                 2.0:  3.0:  3.0:  2.0:  2.0:  3.0:  3.0:  4.0:
+                                 4.0:  5.0:  5.0:  4.0:  4.0:  3.0:  3.0:  2.0:
+                                 2.0;
+enddef;
+*
+def VLBA_LA;
+     site_type = fixed;
+     site_name = VLBA_LA;
+     site_ID = La;
+*    elev= 1962.43 long= 106:14:44. lat= 35:46:30.4
+     site_position =-1449752.58390 m:-4975298.57570 m: 3709123.84590 m;
+     site_velocity = -0.014400   m/yr:  0.000550   m/yr: -0.004710  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 2013y001d;
+     site_position_epoch =   56293;
+     horizon_map_az =  0.0 deg:  5.0: 75.0: 80.0: 85.0:130.0:135.0:145.0:150.0:
+                               250.0:255.0:300.0:305.0:315.0:320.0:340.0:345.0:
+                               360.0;
+     horizon_map_el =  2.0 deg:  2.0:  2.0:  3.0:  2.0:  2.0:  3.0:  3.0:  2.0:
+                                 2.0:  3.0:  3.0:  4.0:  4.0:  3.0:  3.0:  2.0:
+                                 2.0;
+enddef;
+*------------------------------------------------------------------------------
+$ANTENNA;
+*
+def VLBA_KP;
+     axis_type = az : el;
+     antenna_motion = el :  29.4 deg/min :  6 sec;  *    0.250 deg/sec/sec
+     antenna_motion = az :  80.8 deg/min :  6 sec;  *    0.750 deg/sec/sec
+     pointing_sector = &ccw  : az : -90.00 deg:  90.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 1
+     pointing_sector = &n    : az :  90.00 deg: 270.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 2
+     pointing_sector = &cw   : az : 270.00 deg: 450.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 3
+     axis_offset =    2.13120 m;
+enddef;
+*
+def VLBA_LA;
+     axis_type = az : el;
+     antenna_motion = el :  29.5 deg/min :  6 sec;  *    0.250 deg/sec/sec
+     antenna_motion = az :  82.0 deg/min :  6 sec;  *    0.750 deg/sec/sec
+     pointing_sector = &ccw  : az : -90.00 deg:  90.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 1
+     pointing_sector = &n    : az :  90.00 deg: 270.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 2
+     pointing_sector = &cw   : az : 270.00 deg: 450.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 3
+     axis_offset =    2.13210 m;
+enddef;
+*------------------------------------------------------------------------------
+$DAS;
+*
+def 2RDBE2+NONE<;
+     record_transport_type = Mark5C;
+     electronics_rack_type = RDBE2;
+     number_drives = 2;
+     headstack = 1 :            : 0 ;
+     headstack = 2 :            : 1 ;
+     tape_motion = adaptive : 0 min: 0 min: 10 sec;
+enddef;
+*------------------------------------------------------------------------------
+$SOURCE;
+*
+def 0528+134;
+     source_name = 0528+134;
+*    this source had calibrator code: V
+*    alternate source name: J0530+1331
+*    alternate source name: J0530+13
+*    GSFC 2015a astro solution, unpublished 135789 observations.
+     ra = 05h30m56.4167465s; dec =  13d31'55.149516"; ref_coord_frame = J2000;
+*    ra = 05h28m06.7592157s; dec =  13d29'42.288849"; ref_coord_frame = B1950;
+*    ra = 05h31m56.8884210s; dec =  13d32'34.028038"; ref_coord_frame = Date;
+enddef;
+*
+def GALAXY15;
+     source_name = GALAXY15;
+*    this source had calibrator code: Z
+*    This source is a satellite; using NRAO extension:  
+*    Do not use the position for pointing or correlation.
+     source_type = galaxy15.tle :    28884;
+     ra = 03h56m22.3380433s; dec = -00d01'42.410338"; ref_coord_frame = J2000;
+*    ra = 03h53m48.6897804s; dec = -00d10'21.976926"; ref_coord_frame = B1950;
+*    ra = 03h57m17.2404217s; dec =  00d01'19.763853"; ref_coord_frame = Date;
+*    velocity_wrt_Geo =       0.00 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*------------------------------------------------------------------------------
+$FREQ;
+*
+def 1524.00MHz2x64MHz;
+* mode =  1    stations =Kp:La
+     sample_rate = 128.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  1524.00 MHz : U :  64.00 MHz : &CH01 : &BBC01 : &U_Cal; *Rcp
+     chan_def = :  1524.00 MHz : U :  64.00 MHz : &CH02 : &BBC02 : &U_Cal; *Lcp
+enddef;
+*
+def 4072.25MHz2x128MHz;
+* mode =  2    stations =Kp:La
+     sample_rate = 256.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  4072.25 MHz : U : 128.00 MHz : &CH01 : &BBC01 : &U_Cal; *Rcp
+     chan_def = :  4072.25 MHz : U : 128.00 MHz : &CH02 : &BBC02 : &U_Cal; *Lcp
+enddef;
+*
+def 1524.00MHz2x64MHz#02;
+* mode =  3    stations =Kp:La
+     sample_rate = 128.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  1524.00 MHz : U :  64.00 MHz : &CH01 : &BBC01 : &NoCal; *Rcp
+     chan_def = :  1524.00 MHz : U :  64.00 MHz : &CH02 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 4072.25MHz2x128MHz#02;
+* mode =  4    stations =Kp:La
+     sample_rate = 256.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  4072.25 MHz : U : 128.00 MHz : &CH01 : &BBC01 : &NoCal; *Rcp
+     chan_def = :  4072.25 MHz : U : 128.00 MHz : &CH02 : &BBC02 : &NoCal; *Lcp
+enddef;
+*------------------------------------------------------------------------------
+$IF;
+*
+def LO@2100MHzDPolTone/1;
+* mode =  1    stations =Kp:La
+     if_def = &IF_A : A : R :  2100.00 MHz : L : 1 MHz ; *   12900.00   2100.00  20cm     0 NA
+     if_def = &IF_C : C : L :  2100.00 MHz : L : 1 MHz ; *   12900.00   2100.00  20cm     0 NA
+enddef;
+*
+def LO@3400MHzDPolTone/1;
+* mode =  2    stations =Kp:La
+     if_def = &IF_A : A : R :  3400.00 MHz : U : 1 MHz ; *   15900.00   3400.00  6cm     0 NA
+     if_def = &IF_C : C : L :  3400.00 MHz : U : 1 MHz ; *   15900.00   3400.00  6cm     0 NA
+enddef;
+*
+def LO@2100MHzDPolNoTone;
+* mode =  3    stations =Kp:La
+     if_def = &IF_A : A : R :  2100.00 MHz : L ; * PCall off!   12900.00   2100.00  20cm     0 NA
+     if_def = &IF_C : C : L :  2100.00 MHz : L ; * PCall off!   12900.00   2100.00  20cm     0 NA
+enddef;
+*
+def LO@3400MHzDPolNoTone;
+* mode =  4    stations =Kp:La
+     if_def = &IF_A : A : R :  3400.00 MHz : U ; * PCall off!   15900.00   3400.00  6cm     0 NA
+     if_def = &IF_C : C : L :  3400.00 MHz : U ; * PCall off!   15900.00   3400.00  6cm     0 NA
+enddef;
+*------------------------------------------------------------------------------
+$BBC;
+*
+def 2BBCs;
+* mode =  1    stations =Kp:La
+* mode =  2    stations =Kp:La
+* mode =  3    stations =Kp:La
+* mode =  4    stations =Kp:La
+     BBC_assign = &BBC01 :  1 : &IF_A;
+     BBC_assign = &BBC02 :  2 : &IF_C;
+enddef;
+*------------------------------------------------------------------------------
+$PHASE_CAL_DETECT;
+*
+def UsbDetect;
+* mode =  1    stations =Kp:La
+     phase_cal_detect = &U_Cal :  2 : 64 :  0 :  3;
+enddef;
+*
+def UsbDetect#02;
+* mode =  2    stations =Kp:La
+     phase_cal_detect = &U_Cal :  1 :128 :  0 :  2;
+enddef;
+*
+def NoDetect;
+* mode =  3    stations =Kp:La
+     phase_cal_detect = &NoCal;
+enddef;
+*
+def NoDetect#02;
+* mode =  4    stations =Kp:La
+     phase_cal_detect = &NoCal;
+enddef;
+*------------------------------------------------------------------------------
+$TRACKS;
+*
+def VDIF.2Ch2bit1to1;
+* mode =  1    stations =Kp:La
+* mode =  3    stations =Kp:La
+*    firmware_type = RDBE_DDC;
+*    format = VDIF, and fan-out = 1
+*    mode requires 128.00Mb/s/tr; stations using disks
+     track_frame_format = VDIF5032;
+     fanout_def =   : &CH01 : sign : 1:  1;
+     fanout_def =   : &CH01 :  mag : 1:  1;
+     fanout_def =   : &CH02 : sign : 1:  2;
+     fanout_def =   : &CH02 :  mag : 1:  2;
+enddef;
+*
+def VDIF.2Ch2bit1to1#02;
+* mode =  2    stations =Kp:La
+* mode =  4    stations =Kp:La
+*    firmware_type = RDBE_DDC;
+*    format = VDIF, and fan-out = 1
+*    mode requires 256.00Mb/s/tr; stations using disks
+     track_frame_format = VDIF5032;
+     fanout_def =   : &CH01 : sign : 1:  1;
+     fanout_def =   : &CH01 :  mag : 1:  1;
+     fanout_def =   : &CH02 : sign : 1:  2;
+     fanout_def =   : &CH02 :  mag : 1:  2;
+enddef;
+*------------------------------------------------------------------------------
+$HEAD_POS;
+def DiskVoid;
+* mode =  1    stations =Kp:La
+* mode =  2    stations =Kp:La
+* mode =  3    stations =Kp:La
+* mode =  4    stations =Kp:La
+*     Head positions irrelevant for Disk: empty def
+enddef;
+*------------------------------------------------------------------------------
+$PASS_ORDER;
+*
+def DiskVoid;
+* mode =  1    stations =Kp:La
+* mode =  2    stations =Kp:La
+* mode =  3    stations =Kp:La
+* mode =  4    stations =Kp:La
+*     Pass orders irrelevant for Disk: empty def
+enddef;
+*------------------------------------------------------------------------------
+$ROLL;
+*
+def NoRoll;
+* mode =  1    stations =Kp:La
+* mode =  2    stations =Kp:La
+* mode =  3    stations =Kp:La
+* mode =  4    stations =Kp:La
+*    barrel-roll set to 'roll_off', so reverse-roll by  0 (1 head)
+     roll = off;
+enddef;
+*------------------------------------------------------------------------------
+$SCHED;
+* schedule section for experiment to999   
+* novme satellite test 1                                                  
+scan No0001;
+     start=2018y177d18h30m00s; mode=PulseCalOFF; source=0528+134;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Kp:    0 sec:   60 sec:    0.000 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:    0.000 GB:   : &n    : 1;
+endscan;
+scan No0002;
+     start=2018y177d18h32m04s; mode=PulseCalOFF; source=GALAXY15;
+     station=Kp:    0 sec:   60 sec:    3.865 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:    3.865 GB:   : &n    : 1;
+endscan;
+scan No0003;
+     start=2018y177d18h34m09s; mode=PulseCalOFF#02; source=0528+134;
+     station=Kp:    0 sec:   60 sec:    7.729 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:    7.729 GB:   : &n    : 1;
+endscan;
+scan No0004;
+     start=2018y177d18h36m13s; mode=PulseCalOFF#02; source=GALAXY15;
+     station=Kp:    0 sec:   60 sec:   15.458 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:   15.458 GB:   : &n    : 1;
+endscan;
+scan No0005;
+     start=2018y177d18h38m17s; mode=PulseCalOFF; source=0528+134;
+     station=Kp:    0 sec:   60 sec:   23.187 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:   23.187 GB:   : &n    : 1;
+endscan;
+scan No0006;
+     start=2018y177d18h40m21s; mode=PulseCalOFF; source=GALAXY15;
+     station=Kp:    0 sec:   60 sec:   27.052 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:   27.052 GB:   : &n    : 1;
+endscan;
+scan No0007;
+     start=2018y177d18h42m25s; mode=PulseCalOFF#02; source=0528+134;
+     station=Kp:    0 sec:   60 sec:   30.917 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:   30.917 GB:   : &n    : 1;
+endscan;
+scan No0008;
+     start=2018y177d18h44m28s; mode=PulseCalOFF#02; source=GALAXY15;
+     station=Kp:    0 sec:   60 sec:   38.646 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:   38.646 GB:   : &n    : 1;
+endscan;
+scan No0009;
+     start=2018y177d18h46m32s; mode=PulseCalOFF; source=0528+134;
+     station=Kp:    0 sec:   60 sec:   46.375 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:   46.375 GB:   : &n    : 1;
+endscan;
+scan No0010;
+     start=2018y177d18h48m35s; mode=PulseCalOFF; source=GALAXY15;
+     station=Kp:    0 sec:   60 sec:   50.239 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:   50.239 GB:   : &n    : 1;
+endscan;
+scan No0011;
+     start=2018y177d18h50m37s; mode=PulseCalOFF#02; source=0528+134;
+     station=Kp:    0 sec:   60 sec:   54.104 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:   54.104 GB:   : &n    : 1;
+endscan;
+scan No0012;
+     start=2018y177d18h52m40s; mode=PulseCalOFF#02; source=GALAXY15;
+     station=Kp:    0 sec:   60 sec:   61.833 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:   61.833 GB:   : &n    : 1;
+endscan;
+scan No0013;
+     start=2018y177d18h54m42s; mode=PulseCalOFF; source=0528+134;
+     station=Kp:    0 sec:   60 sec:   69.562 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:   69.562 GB:   : &n    : 1;
+endscan;
+scan No0014;
+     start=2018y177d18h56m43s; mode=PulseCalOFF; source=GALAXY15;
+     station=Kp:    0 sec:   60 sec:   73.427 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:   73.427 GB:   : &n    : 1;
+endscan;
+scan No0015;
+     start=2018y177d18h58m45s; mode=PulseCalOFF#02; source=0528+134;
+     station=Kp:    0 sec:   60 sec:   77.292 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:   77.292 GB:   : &n    : 1;
+endscan;
+scan No0016;
+     start=2018y177d19h00m46s; mode=PulseCalOFF#02; source=GALAXY15;
+     station=Kp:    0 sec:   60 sec:   85.021 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:   85.021 GB:   : &n    : 1;
+endscan;
+scan No0017;
+     start=2018y177d19h02m46s; mode=PulseCalOFF; source=0528+134;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Kp:    0 sec:   60 sec:   92.750 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:   92.750 GB:   : &n    : 1;
+endscan;
+scan No0018;
+     start=2018y177d19h04m47s; mode=PulseCalOFF; source=GALAXY15;
+     station=Kp:    0 sec:   60 sec:   96.614 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:   96.614 GB:   : &n    : 1;
+endscan;
+scan No0019;
+     start=2018y177d19h06m46s; mode=PulseCalOFF#02; source=0528+134;
+     station=Kp:    0 sec:   60 sec:  100.479 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:  100.479 GB:   : &n    : 1;
+endscan;
+scan No0020;
+     start=2018y177d19h08m46s; mode=PulseCalOFF#02; source=GALAXY15;
+     station=Kp:    0 sec:   60 sec:  108.208 GB:   : &n    : 1;
+     station=La:    0 sec:   60 sec:  108.208 GB:   : &n    : 1;
+endscan;

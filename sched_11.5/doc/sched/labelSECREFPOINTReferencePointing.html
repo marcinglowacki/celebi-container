@@ -1,0 +1,901 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Reference Pointing</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 3500--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECMULTIPLECENTERSMultiplePhaseCenters.html" >next</a>] [<a 
+href="labelSECLINESpectralLineObservations.html" >prev</a>] [<a 
+href="labelSECLINESpectralLineObservations.html#taillabelSECLINESpectralLineObservations.html" >prev-tail</a>] [<a 
+href="#taillabelSECREFPOINTReferencePointing.html">tail</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECREFPOINTReferencePointing.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">2.6   </span> <a 
+ id="x17-340002.6"></a>Reference Pointing</h3>
+<!--l. 3502--><p class="noindent" >At high observing frequencies, it can be difficult to point antennas with sufficient accuracy to keep the
+target source in the beam. One tactic to improve this situation is known as reference pointing. The idea
+is to peak up the pointing on a source prior to the VLBI scan. The source can be the target source, if it
+is sufficiently strong. Otherwise it can be another source. It is best to find a source as close as possible
+to the target, but it may be necessary to go tens of degrees to find one that is suitable. The reference
+pointing is commonly done at a lower frequency than the interferometer observations for improved
+SNR.
+<!--l. 3512--><p class="noindent" >Reference pointing is commonly used at the VLBA for observations at 3mm. The actual pointing
+observations are typically done at 7mm where the sensitivity is greater and the beam is larger. The
+pointing offsets are determined by the on-line system by fitting total power measurements made while
+the antenna is moved over a pattern that includes the nominal on-source, half power, and off-source
+positions. Often this is done on strong SiO maser sources. One minute should be allowed for completion
+of this pattern after the antenna reaches the pointing source. Once a pointing offset has been
+determined, it will be used until another is determined, or the project changes. It cannot be turned off.
+Optimal time intervals between pointing scans and maximum offsets to pointing sources are not yet
+known. But pointing every half hour to hour on sources within about 20 degrees should be
+ok.
+<!--l. 3527--><p class="noindent" >The power data used for the reference pointing is measured by the legacy system baseband converters
+(BBCs) which should be kept in mind when scheduling MARK5C/RDBE observations. More on that
+later.
+<!--l. 3531--><p class="noindent" >Because total power mode is being used for VLBA pointing, sources must be very strong &#8212; more
+than about 10 Jy for continuum sources or about the same flux density averaged over the
+observing bandwidth for line sources (peak Ta of about 2 K). Very few continuum sources
+are strong enough, so most appropriate sources are SiO masers observed with restricted
+bandwidth, usually 2 MHz, centered on the line. See the sample pointing command file
+<a 
+href="catalogs/peak.cmd" ><span 
+class="cmsl-10">$SCHED/catalogs/peak.cmd</span></a>, provided with the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>catalogs and discussed below, for a
+list of possible targets. Most of the SiO line sources are variable. The ones in <span 
+class="cmsl-10">peak.cmd</span>
+were thought to be good at the time the file was made. Information on masers used to be
+found at the <a 
+href="http://www.ls.eso.org/lasilla/Telescopes/SEST/html/telescope-calibration/index.html" >SEST web site</a>. That link is now dead. Please let me know if you know an
+alternative. For information on high frequency flux densities of continuum calibrators, one can
+try the <a 
+href="http://carma.astro.umd.edu/cgi-bin/calfind.cgi" >CalFind</a> tool at the CARMA website. Please recommend other options if you have
+them.
+<!--l. 3552--><p class="noindent" >On the VLA reference pointing must be used for observations utilizing frequencies greater than 15 GHz.
+Reference pointing needs 2.5 minutes on source to get solutions. See the discussion of <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2210003.1.2"><span 
+class="cmtt-10">VLAPEAK</span></a> and the
+comments in the example <a 
+href="examples/hsaddc.key" ><span 
+class="cmsl-10">hsaddc.key</span></a> for more details. Please see the <a 
+href="https://science.nrao.edu/facilities/vla/docs/manuals/obsguide/modes/hifreq/strategy" >VLA&#8217;s high frequency strategy
+guide</a> for more details. For more information on VLBI at the VLA, see <a 
+href="https://science.nrao.edu/facilities/vla/docs/manuals/obsguide/modes/vlbi" >VLBI at the VLA
+guide</a>.
+<!--l. 3564--><p class="noindent" >For the GBT, reference pointing is recommend for frequencies of 8 GHz and higher. The interval should
+be 4-5 hr for 8-10 GHz, 3-4 hr for 12-16 GHz, 1.5-2 hr for 18-26 GHz, and 30-45min for 40-50 GHz. The
+pointing source should be stronger than 0.5 Jy and within 15 degrees of the target. Allow 8 minutes or
+more in a non-recording scan for the pointing. For more on VLBI at the GBT, see <a 
+href="http://www.gb.nrao.edu/~fghigo/gbtdoc/vlbinfo.html" >the GBT
+documentation.</a>
+<!--l. 3572--><p class="noindent" >For Effelsberg, reference pointing should be used for frequencies above 5 GHz. Like the GBT, allow 8
+                                                                                
+                                                                                
+minutes on-source.
+<!--l. 3575--><p class="noindent" >Reference pointing scans can be inserted explicitly by the observer or <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can be requested to
+attempt to do the job automatically. For explicit scan insertion, the user specifies a scan with
+times and a source. Other factors such as the setup can also be specified. The parameters
+<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1670003.1.2"><span 
+class="cmtt-10">PEAK</span></a> and/or <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2210003.1.2"><span 
+class="cmtt-10">VLAPEAK</span></a> will need to be set and the user should consult the documentation
+on those parameters. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can be requested to fill most of the required parameters
+using the same information used for the automatic scan insertion discussed below. See the
+discussion of the parameter <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1740003.1.2"><span 
+class="cmtt-10">POINT</span></a> for information on how to control this semi-automatic
+mode.
+<!--l. 3590--><p class="noindent" >Note that for the VLBA is in a transition period between the legacy control system and a new control
+system similar to that on the VLA. During the transition, both systems are operating in parallel. They
+cannot talk to each other, but are run from <span 
+class="cmsl-10">crd </span>files (legacy) and a <span 
+class="cmsl-10">vex </span>file (new system) written by
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>for the same schedule. For a project using the RDBE and MARK5C, the channel control
+information must be appropriate for those devices. But the antenna control is still in the hands of the
+legacy system for all cases, and reference pointing is based on power measurements made in the legacy
+baseband converters. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>sets the legacy system frequencies and bandwidths to match as well as
+possible those being used in the RDBE. For continuum sources, this is ok for reference
+pointing. But most reference pointing is done on SiO masers using narrow bandwidths and
+with frequencies set using Doppler calculations. With the DDC personality, that is also ok
+because narrow bandwidths at flexible frequencies can be set, and be matched between
+systems.
+<!--l. 3607--><p class="noindent" >For RDBE based observations using the PFB personality, reference pointing becomes a problem. The
+PFB can only use 32 MHz bandwidths at very restricted frequency set points. A scheme has been
+established using the input parameters <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-730003.1.2"><span 
+class="cmtt-10">CRDFREQ</span></a>, <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-690003.1.2"><span 
+class="cmtt-10">CRDDOP</span></a>, <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-680003.1.2"><span 
+class="cmtt-10">CRDBW</span></a>, <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-710003.1.2"><span 
+class="cmtt-10">CRDCH1</span></a>, <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-740003.1.2"><span 
+class="cmtt-10">CRDSETCH</span></a>, and <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-720003.1.2"><span 
+class="cmtt-10">CRDNCH</span></a>
+to allow somewhat independent control of the legacy BBCs. See the descriptions of those
+parameters, and the example <a 
+href="examples/eg3mm_rd2.key" ><span 
+class="cmsl-10">eg3mm</span><span 
+class="cmsl-10">_rd2.key</span></a> for details. As shown in the example, these
+parameters can be used for both explicit pointing scan insertion and for use with automatic
+pointing scan insertion by <span 
+class="cmcsc-10">SCHED</span>. Note that these capabilities have replaced the need
+that existed when the RDBEs were first deployed for separate MARK5A and MARK5C
+schedules.
+<!--l. 3626--><p class="noindent" >Explicit insertion of pointing scans can be a pain and can completely dominate the work involved in
+scheduling high frequency observations. Therefore <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>has a mode where it can do the work. This
+mode is invoked with the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-480003.1.2"><span 
+class="cmtt-10">AUTOPEAK</span></a> command and involves the use of a special set of input
+parameters either from a separate file, the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1680003.1.2"><span 
+class="cmtt-10">PEAKFILE</span></a>, or from in-stream commands, in the main
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input, contained between <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1690003.1.2"><span 
+class="cmtt-10">PEAKINIT</span></a> and <span 
+class="cmtt-10">ENDPEAK</span>. Three standard versions of this file are
+<a 
+href="catalogs/peak.cmd" ><span 
+class="cmsl-10">peak.cmd</span></a> (VLBA legacy system), <a 
+href="catalogs/peak_RDBE_DDC.cmd" ><span 
+class="cmsl-10">peak</span><span 
+class="cmsl-10">_RDBE</span><span 
+class="cmsl-10">_DDC.cmd</span></a> (use with the RDBE using the DDC
+personality), and <a 
+href="catalogs/peak_RDBE_PFB.cmd" ><span 
+class="cmsl-10">peak</span><span 
+class="cmsl-10">_RDBE</span><span 
+class="cmsl-10">_PFB.cmd</span></a> (use with the RDBE using the PFB personality). The
+three files differ only in the setup files they specify and are, in fact, constructed from the
+same master file. The standard files can be used as examples of the format. It is possible to
+watch details of the process by which <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>chooses pointing sources by setting the
+parameter <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1720003.1.2"><span 
+class="cmtt-10">PKWATCH</span></a>. Be warned that this can produce a lot of output to the <span 
+class="cmsl-10">sched.runlog</span>
+file.
+<!--l. 3652--><p class="noindent" >There are several examples that demonstrate the use of reference pointing. The best example for the
+new systems (RDBE/DDC, WIDAR etc) is <a 
+href="examples/hsaddc.key" ><span 
+class="cmsl-10">hsaddc.key</span></a>. That example demonstrates reference
+pointing at the VLBA, VLA, GBT, and Effelsberg, array phasing at the VLA, and Doppler
+setting with the DDC personality. As noted earlier, <a 
+href="examples/eg3mm_rd2.key" ><span 
+class="cmsl-10">eg3mm</span><span 
+class="cmsl-10">_rd2.key</span></a> demonstrates the use of
+the crd parameters to schedule reference pointing when using the RDBE with the PFB
+personality. For reference pointing on the VLBA using the MARK5A systems, see the &#8220;eg3mm&#8221;
+examples. <a 
+href="examples/eg3mma.key" ><span 
+class="cmsl-10">eg3mma.key</span></a> sets up the pointing scans without any help from the automatic
+features in <span 
+class="cmcsc-10">SCHED</span>. <a 
+href="examples/eg3mmb.key" ><span 
+class="cmsl-10">eg3mmb.key</span></a> demonstrates use of the external peak command file.
+<a 
+href="examples/eg3mmc.key" ><span 
+class="cmsl-10">eg3mmc.key</span></a> produces the same results but using <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1690003.1.2"><span 
+class="cmtt-10">PEAKINIT</span></a> and no external file. These examples
+                                                                                
+                                                                                
+only include a few VLBA stations. For the new systems, they are mostly superceded by
+<a 
+href="examples/eg3mm_rd2.key" ><span 
+class="cmsl-10">eg3mm</span><span 
+class="cmsl-10">_rd2.key</span></a>.
+<!--l. 3676--><p class="noindent" >The peaking control information is organized around groups of antennas and lists of possible pointing
+sources. Up to 5 groups of antennas can be specified. For full automatic pointing, separate scans will be
+added for each group (this can add quite a few scans). For each group, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>finds the
+source in the pointing list that can be reached most quickly from the target source, that
+is above a specified minimum elevation at all antennas in the group. Pointing will only
+be added for scans observing at a frequency above a specified cutoff and only when there
+is enough of a gap in the schedule to fit one or two scans plus the slew to the pointing
+source from the previous VLBI source and the slew to the next VLBI source. The parameter
+<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1020003.1.2"><span 
+class="cmtt-10">GAP</span></a> can be used to create such a gap. See the discussion of that parameter for a few more
+details.
+<!--l. 3691--><p class="noindent" >The input parameters for the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1680003.1.2"><span 
+class="cmtt-10">PEAKFILE</span></a> are:
+<!--l. 3694--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3696--><p class="noindent" ><span 
+class="cmtt-10">SRCFILE</span>
+     specifies
+     the
+     file
+     name
+     for
+     a
+     file
+     containing
+     pointing
+     sources.
+     That
+     file
+     is
+     in
+     the
+     same
+     format
+     as
+     the
+     <a 
+href="labelSECSRCCATSourceCatalog.html#x27-2300003.2">main
+     source
+     catalog</a>
+     and,
+     indeed,
+     is
+     appended
+     to
+     the
+     source
+     catalog
+     in
+     the
+     internal
+                                                                                
+                                                                                
+     files
+     in
+     <span 
+class="cmcsc-10">SCHED</span>.
+     The
+     default
+     is
+     <span 
+class="cmsl-10">$SCHED/catalogs/sources.pointing</span>
+     which
+     is
+     a
+     file
+     provided
+     with
+     the
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>distribution.
+     If
+     you
+     don&#8217;t
+     wish
+     that
+     any
+     file
+     is
+     read
+     (ie
+     the
+     pointing
+     sources
+     are
+     in
+     the
+     main
+     source
+     catalog),
+     specify
+     <span 
+class="cmtt-10">NONE</span>.
+     This
+     parameter
+     can
+     only
+     be
+     specified
+     once,
+     or
+     rather
+     the
+     last
+     value
+     specified
+     for
+     all
+                                                                                
+                                                                                
+     groups
+     is
+     used.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3706--><p class="noindent" ><span 
+class="cmtt-10">SETUP</span>
+     specifies
+     the
+     setup
+     file
+     to
+     use
+     for
+     this
+     group
+     for
+     pointing
+     with
+     continuum
+     or
+     very
+     strong
+     line
+     sources.
+     These
+     are
+     sources
+     for
+     which
+     <span 
+class="cmtt-10">CALCODE</span>
+     is
+     not
+     <span 
+class="cmtt-10">&#8217;L&#8217;</span>.
+     If
+     <span 
+class="cmtt-10">SETUP</span>
+     is
+     not
+     specified,
+     it
+     keeps
+     the
+     value
+     set
+     in
+     the
+     previous
+     group.
+     The
+     initial
+     default
+                                                                                
+                                                                                
+     is
+     blank,
+     which
+     will
+     probably
+     produce
+     an
+     error.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3712--><p class="noindent" ><span 
+class="cmtt-10">SETUPL</span>
+     specifies
+     the
+     setup
+     file
+     to
+     use
+     for
+     this
+     group
+     for
+     pointing
+     on
+     spectral
+     line
+     sources
+     with
+     <span 
+class="cmtt-10">CALCODE</span>
+     <span 
+class="cmtt-10">=</span>
+     <span 
+class="cmtt-10">&#8217;L&#8217;</span>.
+     The
+     setup
+     should
+     be
+     one
+     with
+     a
+     2
+     MHz
+     bandwidth
+     specified.
+     If
+     not
+     specified,
+     it
+     keep
+     uses
+     the
+     value
+     of
+                                                                                
+                                                                                
+     <span 
+class="cmtt-10">SETUP</span>.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3717--><p class="noindent" ><span 
+class="cmtt-10">LINEINIT</span>
+     has
+     exactly
+     the
+     same
+     effect
+     as
+     the
+     main
+     program
+     input
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1280003.1.2"><span 
+class="cmtt-10">LINEINIT</span></a>
+     and
+     is
+     used
+     to
+     delimit
+     input
+     of
+     spectral
+     line
+     rest
+     frequencies.
+     This
+     allows
+     the
+     frequencies
+     to
+     be
+     specified
+     in
+     the
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1680003.1.2"><span 
+class="cmtt-10">PEAKFILE</span></a>
+     rather
+     than
+     the
+     main
+     program.
+     It
+     is
+     allowed
+     to
+     have
+     <span 
+class="cmtt-10">LINEINIT</span>
+     sections
+     in
+     both
+                                                                                
+                                                                                
+     the
+     main
+     program
+     and
+     the
+     <span 
+class="cmsl-10">PEAKFILE</span>.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3726--><p class="noindent" ><span 
+class="cmtt-10">MINFREQ</span>
+     is
+     the
+     minimum
+     frequency
+     (MHz)
+     for
+     which
+     attempts
+     will
+     be
+     made
+     to
+     insert
+     pointing
+     scans.
+     The
+     default
+     is
+     60000
+     MHz
+     which
+     is
+     appropriate
+     for
+     the
+     VLBA.
+     This
+     parameter
+     keeps
+     the
+     value
+     of
+     the
+     previous
+     group
+     if
+     not
+     specified.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+                                                                                
+                                                                                
+     <!--l. 3731--><p class="noindent" ><span 
+class="cmtt-10">MINEL</span>
+     is
+     the
+     minimum
+     elevation
+     allowed
+     for
+     a
+     pointing
+     scan.
+     Higher
+     elevation
+     scans
+     will
+     give
+     better
+     results,
+     but
+     to
+     high
+     a
+     <span 
+class="cmtt-10">MINEL</span>
+     may
+     cause
+     <span 
+class="cmcsc-10">SCHED</span>to
+     have
+     to
+     choose
+     a
+     pointing
+     source
+     that
+     is
+     far
+     away.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3735--><p class="noindent" ><span 
+class="cmtt-10">DWELL</span>
+     is
+     the
+     minimum
+     integration
+     time
+     to
+     use
+     for
+     a
+     pointing
+     scan.
+     For
+                                                                                
+                                                                                
+     the
+     VLBA,
+     the
+     default
+     of
+     60
+     seconds
+     is
+     appropriate.
+     For
+     the
+     VLA,
+     it
+     should
+     at
+     least
+     2.5
+     minutes.
+     See
+     the
+     discussion
+     of
+     the
+     schedule
+     parameter
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2210003.1.2"><span 
+class="cmtt-10">VLAPEAK</span></a>
+     for
+     much
+     more
+     information.
+     <span 
+class="cmtt-10">DWELL</span>
+     keeps
+     the
+     value
+     set
+     for
+     the
+     previous
+     group
+     if
+     not
+     set.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3741--><p class="noindent" ><span 
+class="cmtt-10">STATIONS</span>
+     is
+     used
+     to
+     specify
+     the
+                                                                                
+                                                                                
+     stations
+     for
+     the
+     group.
+     As
+     of
+     this
+     writing,
+     the
+     maximum
+     number
+     is
+     30,
+     which
+     is
+     also
+     the
+     maximum
+     number
+     of
+     stations
+     in
+     a
+     schedule.
+     Stations
+     in
+     a
+     group
+     will
+     share
+     a
+     pointing
+     scan
+     while
+     a
+     separate
+     scan,
+     potentially
+     with
+     a
+     separate
+     reference
+     source,
+     will
+     be
+     used
+     for
+     stations
+     in
+     another
+     group.
+                                                                                
+                                                                                
+     It
+     is
+     appropriate
+     to
+     keep
+     stations
+     at
+     each
+     end
+     of
+     the
+     array
+     in
+     separate
+     groups
+     because
+     the
+     appropriate
+     reference
+     source
+     may
+     vary
+     near
+     the
+     time
+     of
+     rise
+     or
+     set
+     of
+     the
+     target
+     source.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3750--><p class="noindent" ><span 
+class="cmtt-10">LINENAME</span>
+     specifies
+     which
+     spectral
+     line
+     to
+     use
+     in
+     a
+     reference
+     pointing
+     scan.
+     It
+     has
+     the
+                                                                                
+                                                                                
+     same
+     meaning
+     as
+     the
+     main
+     schedule
+     parameter
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1290003.1.2"><span 
+class="cmtt-10">LINENAME</span></a>.
+     It
+     defaults
+     to
+     blank
+     which
+     is
+     probably
+     not
+     what
+     you
+     want.
+     It
+     keep
+     the
+     same
+     value
+     as
+     the
+     previous
+     group
+     if
+     not
+     set.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3756--><p class="noindent" ><span 
+class="cmtt-10">VLAMODE</span>
+     specifies
+     the
+     main
+     schedule
+     parameter
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2200003.1.2"><span 
+class="cmtt-10">VLAMODE</span></a>
+     to
+     use
+     for
+     the
+     pointing
+     scans
+     involving
+     the
+     VLA.
+     See
+                                                                                
+                                                                                
+     the
+     descriptions
+     of
+     that
+     parameter
+     and
+     of
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2210003.1.2"><span 
+class="cmtt-10">VLAPEAK</span></a>
+     for
+     details.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3761--><p class="noindent" ><span 
+class="cmtt-10">ENDPEAK</span>
+     is
+     used
+     to
+     terminate
+     peak
+     command
+     input
+     in
+     the
+     main
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>control
+     file.
+     It
+     should
+     be
+     in
+     a
+     group
+     of
+     its
+     own
+     since
+     no
+     other
+     parameters
+     specified
+     with
+     it
+     will
+     be
+     parsed.
+     </dd></dl>
+<!--l. 3767--><p class="noindent" >As with all types of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input, end each group with a &#8220;/&#8221;. The order of parameters within a
+group (between &#8220;/&#8221;s) is not significant.
+                                                                                
+                                                                                
+<!--l. 3770--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECMULTIPLECENTERSMultiplePhaseCenters.html" >next</a>] [<a 
+href="labelSECLINESpectralLineObservations.html" >prev</a>] [<a 
+href="labelSECLINESpectralLineObservations.html#taillabelSECLINESpectralLineObservations.html" >prev-tail</a>] [<a 
+href="labelSECREFPOINTReferencePointing.html" >front</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECREFPOINTReferencePointing.html" >up</a>] </p></div>
+<!--l. 3770--><p class="noindent" ><a 
+ id="taillabelSECREFPOINTReferencePointing.html"></a>  
+</body></html> 

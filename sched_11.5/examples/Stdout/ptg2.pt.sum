@@ -1,0 +1,1095 @@
+                    SUMMARY FILE FOR PROJECT: ptg2    
+
+COVER INFORMATION: 
+
+  Experiment: STARTUP pointing
+  Exp. Code:  ptg2    
+  Start Day 174 is Fri  22 Jun 2012   MJD  56100          
+
+  Schedule Version:       1.00
+  Processed by SCHED version:  11.40  Release 11.4.  March 14, 2015
+
+  PI:       Operations
+
+  Address:  AOC
+   
+   
+   
+
+  Phone:    505 835 7251
+  EMAIL:    vlbaops@nrao.edu
+  Fax:      505 835 7027
+  Phone during observation: 505 835 7251
+
+  Observing mode: Multi-frequency pointing observations.
+
+  Notes:
+   
+   
+   
+
+
+No cover letter provided.
+ 
+ 
+ALLOWED PREEMPTION TIMES
+ 
+ Dynamically scheduled VLBA projects can have optional scans at                 
+ the start and end designated by PREEMPT='EXTRA'.  These can be                 
+ used or not used to help with efficient meshing with previous                  
+ and following projects.  Only the core time range will be used                 
+ for the initial dynamic project selection.  DOSCANScan be used to              
+ restrict the scan range sent to the .vex, .oms, crd., sch., and                
+ .flag files.                                                                   
+ 
+ The schedule can also designate which scans can be preempted at                
+ PT and MK for daily USNO EOP observations using PREEMPT='OK'                   
+ or 'NO'.  For details, see the manual discussion of PREEMPT.                   
+ 
+ Time ranges available for USNO daily EOP observations at PT and MK:            
+  1    (174) 00:45:00  to  (174) 05:27:09
+ 
+ Project times summary:                                                         
+ Core start and stop:         (174) 00:45:00  to  (174) 12:47:00                
+ 
+
+No recordings.  Correlation requests ignored.
+
+
+
+STATIONS USED IN SCHEDULE:
+
+   Station  Code   Latitude Longitude  Elevation       X            Y            Z       Axis
+                                                                                       Offset
+
+   VLBA_PT   Pt   34.30102  108.11919    2365.   -1640953.938 -5014816.024  3575411.792  2.138
+
+
+   Plate tectonic motion adjustments for MJD  56100
+   Station  Code      Station motions (m/yr)             Adjusted positions 
+                     X       Y       Z     MJD0        X            Y            Z 
+   VLBA_PT   Pt  -0.0146 -0.0002 -0.0052  56293  -1640953.931 -5014816.024  3575411.794
+
+
+
+
+EXPERIMENT SUMMARY:
+  Number of input scans:       2850
+  Number of scans scheduled:     56
+  Number of stations:             1
+  Number of sources input:       14
+  Number of setup files used:    12
+
+STATION SCAN SUMMARIES: 
+  Station  Control   Scans 
+  VLBA_PT    VLBA      56
+
+  Notes on the station scan summaries: 
+
+    "Record Scans" are periods of recording with no gap.  The Mark5A disk systems 
+    have a limit of 1024 such scans.  There are often multiple projects on a disk pack.
+    If using MARK5A, try to keep above about 6 GB per record scan by using MINPAUSE 
+    and PRESTART to prevent short gaps.  However, also try to prevent record scans 
+    of more than an hour to minimize risk to data from playback problems.
+    MARK5C will have one observe scan per record scan and there is no limit to the number.
+
+
+    Recording started before scan start time    56 times.  See PRESTART and MINPAUSE.
+    They may have been kept running through short scan gaps.
+    The number can be large because each station/scan combination counts.
+
+
+
+
+
+ SETUP FILES:
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt90cm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v5090n
+
+   Setup group:    1         Station: VLBA_PT           Total bit rate:    64
+   Format: NONE              Bits per sample: 2         Sample rate:  8.000
+   Number of channels:  4    DBE type:         
+
+   1st LO=   -500.00   -500.00      0.00      0.00
+   Net SB=         U         U         U         U
+   IF SB =         U         U         U         U
+   Pol.  =      RCP       LCP       RCP       LCP 
+   BBC   =         1         2         3         4
+   BBC SB=         U         U         U         U
+   IF    =        B         D         B         D 
+
+   VLBA FE=     omit     90cm     omit     90cm
+   VLBA Synth=  15.4     15.4     15.4
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   3  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   324.49  324.49  608.99  608.99
+   BBC fr=   824.49  824.49  608.99  608.99
+   Bandwd=     4.00    4.00    4.00    4.00
+    Matching frequency sets:   3
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt4cm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v4cm_3
+
+   Setup group:    2         Station: VLBA_PT           Total bit rate:   128
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  2    DBE type:         
+
+   1st LO=   7600.00   7600.00
+   Net SB=         U         U
+   IF SB =         U         U
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         U         U
+   IF    =        B         D 
+
+   VLBA FE=     omit     4cm      omit     4cm 
+   VLBA Synth=   7.6     15.1     15.1
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   4  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   8410.99  8410.99
+   BBC fr=    810.99   810.99
+   Bandwd=     16.00    16.00
+    Matching frequency sets:   4
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt18cm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v20cm_2         FD filtered above 1760.  SC filtered above 1740.
+
+   Setup group:    3         Station: VLBA_PT           Total bit rate:   256
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  4    DBE type:         
+
+   1st LO=   2400.00   2400.00   2400.00   2400.00
+   Net SB=         U         U         U         U
+   IF SB =         L         L         L         L
+   Pol.  =      RCP       LCP       RCP       LCP 
+   BBC   =         1         2         3         4
+   BBC SB=         L         L         L         L
+   IF    =        A         C         A         C 
+
+   VLBA FE=     20cm     omit     20cm     omit
+   VLBA Synth=  14.6      2.4     14.6
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   5  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   1430.49  1430.49  1650.49  1650.49
+   BBC fr=    969.51   969.51   749.51   749.51
+   Bandwd=     16.00    16.00    16.00    16.00
+    Matching frequency sets:   5
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt6cm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     vc_d
+
+   Setup group:    4         Station: VLBA_PT           Total bit rate:   128
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  2    DBE type:         
+
+   1st LO=   4100.00   4100.00
+   Net SB=         U         U
+   IF SB =         U         U
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         U         U
+   IF    =        A         C 
+
+   VLBA FE=     6cm      omit     6cm      omit
+   VLBA Synth=  13.6      4.1     13.6
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   6  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   4984.99  4984.99
+   BBC fr=    884.99   884.99
+   Bandwd=     16.00    16.00
+    Matching frequency sets:   6
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt7ghz.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     vc_p
+
+   Setup group:    5         Station: VLBA_PT           Total bit rate:   128
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  2    DBE type:         
+
+   1st LO=   5900.00   5900.00
+   Net SB=         U         U
+   IF SB =         U         U
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         U         U
+   IF    =        A         C 
+
+   VLBA FE=     6cm      omit     6cm      omit
+   VLBA Synth=  15.6      5.9     15.6
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   7  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   6660.49  6660.49
+   BBC fr=    760.49   760.49
+   Bandwd=     16.00    16.00
+    Matching frequency sets:   7
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt13cm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v13cm_2         Most only 2200-2400
+
+   Setup group:    6         Station: VLBA_PT           Total bit rate:   128
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  2    DBE type:         
+
+   1st LO=   3100.00   3100.00
+   Net SB=         U         U
+   IF SB =         L         L
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         L         L
+   IF    =        A         C 
+
+   VLBA FE=     13cm     omit     13cm     omit
+   VLBA Synth=  15.4      3.1     15.4
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   8  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   2260.99  2260.99
+   BBC fr=    839.01   839.01
+   Bandwd=     16.00    16.00
+    Matching frequency sets:   8
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt4cmsx.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     vsx_22
+
+   Setup group:    7         Station: VLBA_PT           Total bit rate:   256
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  4    DBE type:         
+
+   1st LO=   7600.00   7600.00   3100.00   3100.00
+   Net SB=         U         U         U         U
+   IF SB =         U         U         L         L
+   Pol.  =      RCP       LCP       RCP       LCP 
+   BBC   =         1         2         3         4
+   BBC SB=         U         U         L         L
+   IF    =        B         D         A         C 
+
+   VLBA FE=     13cm     4cm      13cm     4cm 
+   VLBA Synth=   7.6      3.1     12.6
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   9  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   8410.99  8410.99  2260.99  2260.99
+   BBC fr=    810.99   810.99   839.01   839.01
+   Bandwd=     16.00    16.00    16.00    16.00
+    Matching frequency sets:   9
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt1cm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v1cm_b3
+
+   Setup group:    8         Station: VLBA_PT           Total bit rate:   256
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  4    DBE type:         
+
+   1st LO=  21500.00  21500.00  21500.00  21500.00
+   Net SB=         U         U         U         U
+   IF SB =         U         U         U         U
+   Pol.  =      RCP       LCP       RCP       LCP 
+   BBC   =         1         2         3         4
+   BBC SB=         U         U         U         U
+   IF    =        B         D         B         D 
+
+   VLBA FE=     omit     1cm      omit     1cm 
+   VLBA Synth=   9.1      6.1     12.4
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:  10  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   22228.49  22228.49  22278.49  22278.49
+   BBC fr=     728.49    728.49    778.49    778.49
+   Bandwd=      16.00     16.00     16.00     16.00
+    Matching frequency sets:  10
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt24ghz.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v1cm_a10
+
+   Setup group:    9         Station: VLBA_PT           Total bit rate:   128
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  2    DBE type:         
+
+   1st LO=  23000.00  23000.00
+   Net SB=         U         U
+   IF SB =         U         U
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         U         U
+   IF    =        B         D 
+
+   VLBA FE=     omit     1cm      omit     1cm 
+   VLBA Synth=   8.9      5.9     14.1
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:  11  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   23793.49  23793.49
+   BBC fr=     793.49    793.49
+   Bandwd=      16.00     16.00
+    Matching frequency sets:  11
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt2cm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v2cm_d3         Fourth 2cm filter
+
+   Setup group:   10         Station: VLBA_PT           Total bit rate:   128
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  2    DBE type:         
+
+   1st LO=  14600.00  14600.00
+   Net SB=         U         U
+   IF SB =         U         U
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         U         U
+   IF    =        B         D 
+
+   VLBA FE=     omit     2cm      omit     2cm 
+   VLBA Synth=  14.6     10.9     10.9
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:  12  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   15354.99  15354.99
+   BBC fr=     754.99    754.99
+   Bandwd=      16.00     16.00
+    Matching frequency sets:  12
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt7mm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v7mm_c8
+
+   Setup group:   11         Station: VLBA_PT           Total bit rate:   256
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  4    DBE type:         
+
+   1st LO=  42400.00  42400.00  42400.00  42400.00
+   Net SB=         U         U         U         U
+   IF SB =         U         U         U         U
+   Pol.  =      RCP       LCP       RCP       LCP 
+   BBC   =         1         2         3         4
+   BBC SB=         U         U         U         U
+   IF    =        A         C         A         C 
+
+   VLBA FE=     7mm      omit     7mm      omit
+   VLBA Synth=   3.9      7.6     11.6
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+  Frequency Set:   1  Based on FREQ, BW, and/or DOPPLER in schedule.  Used with PCAL = 1MHz
+   LO sum=   43116.09  43116.09  43216.07  43216.07
+   BBC fr=     716.09    716.09    816.07    816.07
+   Bandwd=       2.00      2.00      2.00      2.00
+    Matching frequency sets:   1
+
+   Frequency Set:  13  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   43115.99  43115.99  43215.99  43215.99
+   BBC fr=     715.99    715.99    815.99    815.99
+   Bandwd=      16.00     16.00     16.00     16.00
+    Matching frequency sets:  13
+
+  Frequency Set:  14  Based on FREQ, BW, and/or DOPPLER in schedule.  Used with PCAL = 1MHz
+   LO sum=   43112.16  43112.16  43212.14  43212.14
+   BBC fr=     712.16    712.16    812.14    812.14
+   Bandwd=       2.00      2.00      2.00      2.00
+    Matching frequency sets:  14
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/pt3mm.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v3mm_ff
+
+   Setup group:   12         Station: VLBA_PT           Total bit rate:   256
+   Format: NONE              Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  4    DBE type:         
+
+   1st LO=  85500.00  85500.00  85500.00  85500.00
+   Net SB=         U         U         U         U
+   IF SB =         U         U         U         U
+   Pol.  =      RCP       LCP       RCP       LCP 
+   BBC   =         1         2         3         4
+   BBC SB=         U         U         U         U
+   IF    =        B         D         B         D 
+
+   VLBA FE=     omit     3mm      omit     3mm 
+   VLBA Synth=  12.9      4.9     12.1
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+  Frequency Set:   2  Based on FREQ, BW, and/or DOPPLER in schedule.  Used with PCAL = 1MHz
+   LO sum=   86232.51  86232.51  86332.50  86332.50
+   BBC fr=     732.51    732.51    832.50    832.50
+   Bandwd=       2.00      2.00      2.00      2.00
+    Matching frequency sets:   2
+
+  Frequency Set:  15  Based on FREQ, BW, and/or DOPPLER in schedule.  Used with PCAL = 1MHz
+   LO sum=   86224.67  86224.67  86324.65  86324.65
+   BBC fr=     724.67    724.67    824.65    824.65
+   Bandwd=       2.00      2.00      2.00      2.00
+    Matching frequency sets:  15
+
+   Frequency Set:  16  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   86236.99  86236.99  86342.99  86342.99
+   BBC fr=     736.99    736.99    842.99    842.99
+   Bandwd=      16.00     16.00     16.00     16.00
+    Matching frequency sets:  16
+
+
+ SCAN SUMMARY for experiment ptg2    STARTUP pointing
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Start elevation.
+     Bottom item is: Start azimuth.
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 174 is Fri  22 Jun 2012   MJD  56100          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Pt
+
+   1   Skipping scan on CYGA  at El=   -0.11
+
+   2   Skipping scan on 3C454.3  at El=  -38.58
+
+   3   Skipping scan on 3C454.3  at El=  -38.58
+
+   4   Skipping scan on 3C454.3  at El=  -38.58
+
+   5   Skipping scan on 3C454.3  at El=  -38.58
+
+   6   Skipping scan on 3C454.3  at El=  -38.58
+
+   7   Skipping scan on 3C454.3  at El=  -38.58
+
+   8   Skipping scan on DR21  at El=   -3.45
+
+   9   Skipping scan on DR21  at El=   -3.45
+
+  10   Skipping scan on DR21  at El=   -3.45
+
+  11   Skipping scan on DR21  at El=   -3.45
+
+  12   Skipping scan on JUPITER  at El=   -6.67
+
+  13   Skipping scan on JUPITER  at El=   -6.67
+
+  14   Skipping scan on JUPITER  at El=   -6.67
+
+  15   Skipping scan on JUPITER  at El=   -6.67
+
+  16   Skipping scan on RCAS  at El=   -4.08
+
+  17   Skipping scan on RCAS  at El=   -4.08
+
+  18   Skipping scan on RCAS  at El=   -4.08
+
+  19   Skipping scan on RCAS  at El=   -4.08
+
+  20   Skipping scan on TAUA  at El=   12.26
+
+  21   Skipping scan on 3C123  at El=    5.87
+
+  22   Skipping scan on 3C123  at El=    5.87
+
+  23   Skipping scan on 3C123  at El=    5.87
+
+  24   Skipping scan on 3C123  at El=    5.87
+
+
+
+ SCAN SUMMARY for experiment ptg2    STARTUP pointing
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Start elevation.
+     Bottom item is: Start azimuth.
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 174 is Fri  22 Jun 2012   MJD  56100          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Pt
+
+  25   Skipping scan on 3C123  at El=    5.87
+
+  26   Skipping scan on 3C123  at El=    5.87
+
+  27   Skipping scan on 3C84  at El=    1.83
+
+  28   Skipping scan on 3C84  at El=    1.83
+
+  29   Skipping scan on 3C84  at El=    1.83
+
+  30   Skipping scan on 3C84  at El=    1.83
+
+  31  174 00:45:00 RLEO          P    57
+      174 00:46:00 setups/pt7mm  N   233
+
+  32  174 00:46:06 RLEO          P    56
+      174 00:47:06 -             N   233
+
+  33  174 00:47:12 RLEO          P    56
+      174 00:52:57 setups/pt3mm  N   234
+
+  34  174 00:53:03 RLEO          P    55
+      174 00:58:48 setups/pt7mm  N   236
+
+  35   Skipping scan on VENUS  at El=   -5.35
+
+  36   Skipping scan on VENUS  at El=   -5.35
+
+  37   Skipping scan on VENUS  at El=   -5.35
+
+  38   Skipping scan on VENUS  at El=   -5.35
+
+  39  174 00:59:56 3C274         P    66
+      174 01:05:41 etups/pt90cm  N   154
+
+  40  174 01:05:47 3C274         P    67
+      174 01:11:32 setups/pt4cm  N   158
+
+  41  174 01:11:38 3C274         P    67
+      174 01:17:23 etups/pt18cm  N   161
+
+  42  174 01:17:29 3C274         P    67
+      174 01:23:14 setups/pt6cm  N   165
+
+  43  174 01:23:20 3C274         P    68
+      174 01:29:05 etups/pt7ghz  N   168
+
+  44  174 01:29:11 3C274         P    68
+      174 01:34:56 etups/pt13cm  N   172
+
+
+
+ SCAN SUMMARY for experiment ptg2    STARTUP pointing
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Start elevation.
+     Bottom item is: Start azimuth.
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 174 is Fri  22 Jun 2012   MJD  56100          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Pt
+
+  45  174 01:35:02 3C274         P    68
+      174 01:40:47 tups/pt4cmsx  N   176
+
+  46  174 01:40:53 3C274         P    68
+      174 01:46:38 setups/pt1cm  N   180
+
+  47  174 01:46:44 3C274         P    68
+      174 01:52:29 tups/pt24ghz  N   184
+
+  48  174 01:52:35 3C274         P    68
+      174 01:58:20 setups/pt2cm  N   187
+
+  49  174 01:58:50 3C273         P    57
+      174 02:04:35 setups/pt7mm  N   189
+
+  50  174 02:05:46 WHYA          P    26
+      174 02:06:46 -             N   167
+
+  51  174 02:06:52 WHYA          P    26
+      174 02:07:52 -             N   167
+
+  52  174 02:07:58 WHYA          P    26
+      174 02:13:43 setups/pt3mm  N   167
+
+  53  174 02:13:49 WHYA          P    26
+      174 02:19:34 setups/pt7mm  N   169
+
+  54  174 02:20:28 SATURN        P    49
+      174 02:21:28 -             N   173
+
+  55  174 02:21:34 SATURN        P    49
+      174 02:22:34 -             N   174
+
+  56  174 02:22:40 SATURN        P    49
+      174 02:28:25 setups/pt3mm  N   174
+
+  57  174 02:28:31 SATURN        P    49
+      174 02:34:16 setups/pt7mm  N   176
+
+  58   Skipping scan on CYGA  at El=   15.77
+
+  59   Skipping scan on 3C454.3  at El=  -28.17
+
+  60   Skipping scan on 3C454.3  at El=  -28.17
+
+  61   Skipping scan on 3C454.3  at El=  -28.17
+
+  62   Skipping scan on 3C454.3  at El=  -28.17
+
+
+
+ SCAN SUMMARY for experiment ptg2    STARTUP pointing
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Start elevation.
+     Bottom item is: Start azimuth.
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 174 is Fri  22 Jun 2012   MJD  56100          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Pt
+
+  63   Skipping scan on 3C454.3  at El=  -28.17
+
+  64   Skipping scan on 3C454.3  at El=  -28.17
+
+  65   Skipping scan on DR21  at El=   10.58
+
+  66   Skipping scan on DR21  at El=   10.58
+
+  67   Skipping scan on DR21  at El=   10.58
+
+  68   Skipping scan on DR21  at El=   10.58
+
+  69   Skipping scan on JUPITER  at El=  -24.17
+
+  70   Skipping scan on JUPITER  at El=  -24.17
+
+  71   Skipping scan on JUPITER  at El=  -24.17
+
+  72   Skipping scan on JUPITER  at El=  -24.17
+
+  73   Skipping scan on RCAS  at El=   -2.21
+
+  74   Skipping scan on RCAS  at El=   -2.21
+
+  75   Skipping scan on RCAS  at El=   -2.21
+
+  76   Skipping scan on RCAS  at El=   -2.21
+
+  77   Skipping scan on TAUA  at El=   -8.05
+
+  78   Skipping scan on 3C123  at El=  -11.42
+
+  79   Skipping scan on 3C123  at El=  -11.42
+
+  80   Skipping scan on 3C123  at El=  -11.42
+
+  81   Skipping scan on 3C123  at El=  -11.42
+
+  82   Skipping scan on 3C123  at El=  -11.42
+
+  83   Skipping scan on 3C123  at El=  -11.42
+
+  84   Skipping scan on 3C84  at El=   -9.60
+
+  85   Skipping scan on 3C84  at El=   -9.60
+
+  86   Skipping scan on 3C84  at El=   -9.60
+
+
+
+ SCAN SUMMARY for experiment ptg2    STARTUP pointing
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Start elevation.
+     Bottom item is: Start azimuth.
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 174 is Fri  22 Jun 2012   MJD  56100          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Pt
+
+  87   Skipping scan on 3C84  at El=   -9.60
+
+  88  174 02:35:23 RLEO          P    36
+      174 02:36:23 setups/pt7mm  N   259
+
+  89  174 02:36:29 RLEO          P    35
+      174 02:37:29 -             N   259
+
+  90  174 02:37:35 RLEO          P    35
+      174 02:43:20 setups/pt3mm  N   259
+
+  91  174 02:43:26 RLEO          P    34
+      174 02:49:11 setups/pt7mm  N   260
+
+  92   Skipping scan on VENUS  at El=  -23.81
+
+  93   Skipping scan on VENUS  at El=  -23.81
+
+  94   Skipping scan on VENUS  at El=  -23.81
+
+  95   Skipping scan on VENUS  at El=  -23.81
+
+  96  174 02:50:20 3C274         P    63
+      174 02:56:05 etups/pt90cm  N   220
+
+  97  174 02:56:11 3C274         P    62
+      174 03:01:56 setups/pt4cm  N   222
+
+  98  174 03:02:02 3C274         P    61
+      174 03:07:47 etups/pt18cm  N   225
+
+  99  174 03:07:53 3C274         P    60
+      174 03:13:38 setups/pt6cm  N   227
+
+ 100  174 03:13:44 3C274         P    60
+      174 03:19:29 etups/pt7ghz  N   229
+
+ 101  174 03:19:35 3C274         P    59
+      174 03:25:20 etups/pt13cm  N   231
+
+ 102  174 03:25:26 3C274         P    58
+      174 03:31:11 tups/pt4cmsx  N   233
+
+ 103  174 03:31:17 3C274         P    57
+      174 03:37:02 setups/pt1cm  N   235
+
+ 104  174 03:37:08 3C274         P    56
+      174 03:42:53 tups/pt24ghz  N   237
+
+
+
+ SCAN SUMMARY for experiment ptg2    STARTUP pointing
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Start elevation.
+     Bottom item is: Start azimuth.
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 174 is Fri  22 Jun 2012   MJD  56100          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Pt
+
+ 105  174 03:42:59 3C274         P    55
+      174 03:48:44 setups/pt2cm  N   239
+
+ 106  174 03:49:08 3C273         P    46
+      174 03:54:53 setups/pt7mm  N   230
+
+ 107  174 03:55:40 WHYA          P    26
+      174 03:56:40 -             N   194
+
+ 108  174 03:56:46 WHYA          P    26
+      174 03:57:46 -             N   194
+
+ 109  174 03:57:52 WHYA          P    26
+      174 04:03:37 setups/pt3mm  N   194
+
+ 110  174 04:03:43 WHYA          P    25
+      174 04:09:28 setups/pt7mm  N   196
+
+ 111  174 04:10:14 SATURN        P    44
+      174 04:11:14 -             N   213
+
+ 112  174 04:11:20 SATURN        P    44
+      174 04:12:20 -             N   213
+
+ 113  174 04:12:26 SATURN        P    43
+      174 04:18:11 setups/pt3mm  N   213
+
+ 114  174 04:18:17 SATURN        P    43
+      174 04:24:02 setups/pt7mm  N   215
+
+ 115  174 04:26:04 CYGA          P    35
+      174 04:31:49 etups/pt90cm  N    61
+
+ 116   Skipping scan on 3C454.3  at El=   -8.82
+
+ 117   Skipping scan on 3C454.3  at El=   -8.82
+
+ 118   Skipping scan on 3C454.3  at El=   -8.82
+
+ 119   Skipping scan on 3C454.3  at El=   -8.82
+
+ 120   Skipping scan on 3C454.3  at El=   -8.82
+
+ 121   Skipping scan on 3C454.3  at El=   -8.82
+
+ 122  174 04:32:10 DR21          P    30
+      174 04:37:55 setups/pt1cm  N    57
+
+
+
+ SCAN SUMMARY for experiment ptg2    STARTUP pointing
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Start elevation.
+     Bottom item is: Start azimuth.
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 174 is Fri  22 Jun 2012   MJD  56100          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Pt
+
+ 123  174 04:38:01 DR21          P    31
+      174 04:43:46 tups/pt24ghz  N    57
+
+ 124  174 04:43:52 DR21          P    32
+      174 04:49:37 setups/pt2cm  N    57
+
+ 125  174 04:49:43 DR21          P    33
+      174 04:55:28 setups/pt7mm  N    58
+
+ 126   Skipping scan on JUPITER  at El=  -35.68
+
+ 127   Skipping scan on JUPITER  at El=  -35.68
+
+ 128   Skipping scan on JUPITER  at El=  -35.68
+
+ 129   Skipping scan on JUPITER  at El=  -35.68
+
+ 130   Skipping scan on RCAS  at El=    9.13
+
+ 131   Skipping scan on RCAS  at El=    9.13
+
+ 132   Skipping scan on RCAS  at El=    9.13
+
+ 133   Skipping scan on RCAS  at El=    9.13
+
+ 134   Skipping scan on TAUA  at El=  -27.98
+
+ 135   Skipping scan on 3C123  at El=  -24.85
+
+ 136   Skipping scan on 3C123  at El=  -24.85
+
+ 137   Skipping scan on 3C123  at El=  -24.85
+
+ 138   Skipping scan on 3C123  at El=  -24.85
+
+ 139   Skipping scan on 3C123  at El=  -24.85
+
+ 140   Skipping scan on 3C123  at El=  -24.85
+
+ 141   Skipping scan on 3C84  at El=  -13.92
+
+ 142   Skipping scan on 3C84  at El=  -13.92
+
+ 143   Skipping scan on 3C84  at El=  -13.92
+
+ 144   Skipping scan on 3C84  at El=  -13.92
+
+ 145   Skipping scan on RLEO  at El=    6.81
+
+
+
+ SCAN SUMMARY for experiment ptg2    STARTUP pointing
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Start elevation.
+     Bottom item is: Start azimuth.
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 174 is Fri  22 Jun 2012   MJD  56100          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Pt
+
+ 146   Skipping scan on RLEO  at El=    6.81
+
+ 147   Skipping scan on RLEO  at El=    6.81
+
+ 148   Skipping scan on RLEO  at El=    6.81
+
+ 149   Skipping scan on VENUS  at El=  -36.32
+
+ 150   Skipping scan on VENUS  at El=  -36.32
+
+ 151   Skipping scan on VENUS  at El=  -36.32
+
+ 152   Skipping scan on VENUS  at El=  -36.32
+
+ 153  174 04:58:00 3C274         P    40
+      174 05:03:45 etups/pt90cm  N   256
+
+ 154  174 05:03:51 3C274         P    39
+      174 05:09:36 setups/pt4cm  N   257
+
+ 155  174 05:09:42 3C274         P    38
+      174 05:15:27 etups/pt18cm  N   258
+
+ 156  174 05:15:33 3C274         P    37
+      174 05:21:18 setups/pt6cm  N   259
+
+ 157  174 05:21:24 3C274         P    36
+      174 05:27:09 etups/pt7ghz  N   260
+
+ POSITIONS OF SOURCES USED IN RECORDING SCANS
+     Catalog positions marked with *. 
+     Precession of date coordinates is based on stop time of first scan.
+     Names used in schedule marked with *. 
+     Observation date used in B1950/J2000 coordinate conversion (PRECDATE):  1979.900
+     No adjustments are made for rates (DRA, DDEC).
+
+   Source                         Source position (RA/Dec)                        Error
+                        (B1950)             (J2000)             (Date)            (mas)
+
+   P-RLEO            09 44 52.219425   * 09 47 33.490000     09 48 13.869972       0.00
+   SIO-RLEO          11 39 40.09214    * 11 25 43.99000      11 22 10.06611        0.00
+ * RLEO              /users/cwalker/files/sched_work/catalogs/sources.pointing
+                     baudry pos, sest vel.
+                     Doppler based on LSR frame and radio definition.  Velocities:
+                          3.00     3.00     3.00     3.00
+
+   SIO-WHYA        * 13 46 12.200000     13 49 02.211355     13 49 46.604667       0.00
+ * WHYA            *-28 07 07.00000     -28 22 00.78868     -28 25 54.73520        0.00
+                     /users/cwalker/files/sched_work/catalogs/sources.pointing
+                     Not in P- list, but is used in startup pointing!
+                     Doppler based on LSR frame and radio definition.  Velocities:
+                         40.50    40.50    40.50    40.50
+
+ * 3C273             12 26 33.245803   * 12 29 06.699700     12 29 46.084424       0.00
+                     02 19 43.29750    * 02 03 08.59000      01 58 55.87139        0.00
+                     /users/cwalker/files/sched_work/catalogs/sources.pointing
+                     From low accuracy pointing list - do not use for VLBI
+
+ * 3C274             12 28 17.568897   * 12 30 49.423000     12 31 28.335616       0.00
+   VIRA              12 40 01.74518    * 12 23 28.04000      12 19 19.18333        0.00
+                     /users/cwalker/files/sched_work/catalogs/sources.pointing
+                     From low accuracy pointing list - do not use for VLBI
+
+ * DR21            * 20 37 14.200000     20 39 01.208159     20 39 30.155167       0.00
+                   * 42 08 57.00000      42 19 34.78182      42 22 13.88468        0.00
+                     /users/cwalker/files/sched_work/catalogs/sources.pointing
+                     From low accuracy pointing list - do not use for VLBI
+
+ * CYGA            * 19 57 45.000000     19 59 28.910149     19 59 57.148738       0.00
+                   * 40 36 00.00000      40 44 15.76902      40 46 21.24381        0.00
+                     /users/cwalker/files/sched_work/catalogs/sources.pointing
+                     From low accuracy pointing list - do not use for VLBI
+
+ * SATURN            13 24 50.836451   * 13 27 27.293140     13 28 07.849976       0.00
+                    -06 07 24.99671    *-06 22 57.16234     -06 26 55.09447        0.00
+                     Planet.  Position is for scan 1, center Earth.
+                     Planetary motion used.  Ref. MJD:   56100.0313
+                        Rates: RA = -0.18955E+01 s/day   Dec = -0.75598E+01 arcsec/day
+                     EPHFILE: /users/cwalker/PLANETDATA/Linux/JPLEPH.405.2
+
+
+
+SOURCE SCAN SUMMARY FOR SOURCES LISTED ABOVE
+
+     Scan hours are for recording scans only. 
+     Baseline hours are only counted for scans above horizon at both ends.
+  Source       Setup file             Frequency sets                  Observing hours
+                                   (duplicates not shown)              Scan  Baseline
+  RLEO       work/setups/pt7mm.set 1                                 0.258     0.000
+             work/setups/pt3mm.set 2                                 0.192     0.000
+  WHYA       work/setups/pt7mm.set 14                                0.258     0.000
+             work/setups/pt3mm.set 15                                0.192     0.000
+  3C273      work/setups/pt7mm.set 13                                0.192     0.000
+  3C274      ork/setups/pt90cm.set 3                                 0.288     0.000
+             work/setups/pt4cm.set 4                                 0.288     0.000
+             ork/setups/pt18cm.set 5                                 0.288     0.000
+             work/setups/pt6cm.set 6                                 0.288     0.000
+             ork/setups/pt7ghz.set 7                                 0.288     0.000
+             ork/setups/pt13cm.set 8                                 0.192     0.000
+             rk/setups/pt4cmsx.set 9                                 0.192     0.000
+             work/setups/pt1cm.set 10                                0.192     0.000
+             rk/setups/pt24ghz.set 11                                0.192     0.000
+             work/setups/pt2cm.set 12                                0.192     0.000
+  DR21       work/setups/pt1cm.set 10                                0.096     0.000
+             rk/setups/pt24ghz.set 11                                0.096     0.000
+             work/setups/pt2cm.set 12                                0.096     0.000
+             work/setups/pt7mm.set 13                                0.096     0.000
+  CYGA       ork/setups/pt90cm.set 3                                 0.096     0.000
+  SATURN     work/setups/pt7mm.set 13                                0.258     0.000
+             work/setups/pt3mm.set 16                                0.192     0.000
+
+
+EFFECT OF SOLAR CORONA
+
+  The solar corona can cause unstable phases for sources too close to the Sun.
+  SCHED provides warnings at individual scans for distances less than 10 degrees.
+  The distance from the Sun to each source in this schedule is:
+    Source         Sun distance (deg) 
+   RLEO                54.3
+   WHYA               123.1
+   3C273               94.9
+   3C274               91.1
+   DR21               105.1
+   CYGA               110.4
+   SATURN             111.6
+
+  Barry Clark estimates from predictions by Ketan Desai of IPM scattering sizes 
+  that the Sun will cause amplitude reductions on the  longest VLBA baselines 
+  at a solar distance of 60deg F^(-0.6) where F is in GHz. 
+  For common VLBI bands, this is: 
+       327 MHz        117. deg 
+       610 MHz         81. deg 
+       1.6 GHz         45. deg 
+       2.3 GHz         36. deg 
+       5.0 GHz         23. deg 
+       8.4 GHz         17. deg 
+      15.0 GHz         12. deg 
+      22.0 GHz          9. deg 
+      43.0 GHz          6. deg 
+
+ SOURCE SEPARATIONS
+
+ Source separations in degrees for pairs closer than  30.00 degrees.
+
+     WHYA          SATURN         22.5719
+     3C273         3C274          10.3484
+     3C273         SATURN         16.8302
+     3C274         SATURN         23.4656
+     DR21          CYGA            7.5630
+
+
+CATALOGS, FILES, and CODE VERSIONS
+
+Catalogs: 
+  Station:   /users/cwalker/files/sched_work/catalogs/stations.dat
+                 Version:  2015Mar03-18:50:14
+  Location:  /users/cwalker/files/sched_work/catalogs/locations.dat
+                 Version:  2015Feb26-16:00:00
+  Frequency: /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat
+                 Version:  2015Mar03-18:50:14
+  Source:   /users/cwalker/files/sched_work/catalogs/sources.pointing
+                 Version:  Not given
+  Source2:  NONE
+                 Version:   ---
+
+
+Other external files: 
+  Ephemeris: /users/cwalker/PLANETDATA/Linux/JPLEPH.405.2
+  PEAKFILE:  /users/cwalker/files/sched_work/catalogs/peak.cmd
+  MSGFILE:   /users/cwalker/files/sched_work/catalogs/messages.txt
+
+
+Code versions: 
+  Release version:           11.40  Release 11.4.  March 14, 2015
+  Version of VEX standard:   1.50
+  Version of VEX code:       0.87
+  Version of plot code:      1.06
+  Version of ephemeris code: 1.01
+  Version of PGPLOT:        v5.3.1
+
+This schedule produced on: Wed Mar 11 16:48:12 2015      

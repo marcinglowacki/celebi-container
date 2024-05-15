@@ -1,0 +1,1631 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Old VLA</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 19510--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSSECTAPEMANAGEMENTTapeManagement.html" >next</a>] [<a 
+href="#taillabelSECOLDVLAOldVLA.html">tail</a>] [<a 
+href="labelAPPOBSOLETEOBSOLETESECTIONS.html#labelSECOLDVLAOldVLA.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">B.1   </span> <a 
+ id="x47-356000B.1"></a>Old VLA</h3>
+<!--l. 19512--><p class="noindent" >Note that much of what is below applies to the old VLA system and has changed drastically
+with the EVLA upgrade. See the earlier section on VLBI at the VLA for more current
+information.
+<!--l. 19516--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can be used to schedule essentially all types of VLBI observations on the VLA. It can also be
+used instead of <span 
+class="cmcsc-10">OBSERVE </span>to schedule pure VLA observations involving a limited subset of the special
+cards that can be in VLA schedules. This includes most continuum observations. This situation is likely
+to evolve as the EVLA upgrade, which includes a new control system, comes on line, so stay
+tuned. For more information on the VLA, check out the VLA from the NRAO home page at
+<a 
+href="http://www.nrao.edu" ><span 
+class="cmsl-10">http://www.nrao.edu</span></a>. For much detailed information on VLBI at the VLA, follow the links to
+<a 
+href="http://www.vla.nrao.edu/astro/guides/vlbivla/current/" >VLBI at the VLA</a>. The latter document is available in postscript form from the VLA home
+page.
+<!--l. 19531--><p class="noindent" >All observations at the VLA need an observe file that is used by the VLA on-line computers to control
+the antennas and correlator. In addition, all VLBI observations at the VLA also require a VLBA-style
+control file for the VME that controls the VLBA data aquisition rack and recorder. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>produces
+both kinds of files.
+                                                                                
+                                                                                
+<!--l. 19537--><p class="noindent" >The VLBA control file, called <span 
+class="cmsl-10">bq001crd.y </span>by <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>for an example project with <span 
+class="cmtt-10">EXPCODE=bq001</span>, is
+similar to those provided for VLBA stations, except that some VLBA specific commands for receivers,
+etc. are omitted. This file controls BBC settings, when the recorder starts and stops, and other
+recording details.
+<!--l. 19543--><p class="noindent" >The observe file, called <span 
+class="cmsl-10">bq001obs.y </span>by <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>in this example, is the file that is normally created by
+the NRAO program <span 
+class="cmtt-10">OBSERVE </span>(can be found from the <a 
+href="http://www.nrao.edu" >NRAO home page</a>) and given to the VLA
+on-line system. While <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is intended for VLBI scheduling and this output is provided
+mainly for projects that use the VLA for VLBI, there is no reason that it cannot be used
+for scheduling pure VLA projects. In fact, a few parameters of interest only for non-VLBI
+projects are provided for VLA observers, including the ability to schedule in LST. However,
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>has only limited ability to provide the special setup cards, namely those that start with
+&#8220;//&#8221;.
+<!--l. 19556--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can provide &#8220;//LO&#8221; and &#8220;//FI&#8221; cards with parameters to set synthesizers to fixed values.
+The setup file can be used to provide values for the synthesizer settings. If <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-990003.1.2"><span 
+class="cmtt-10">FREQ</span></a> or <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-820003.1.2"><span 
+class="cmtt-10">DOPPLER</span></a> is used, the
+BBC settings will be adjusted to try to reach the right frequency for the VLBI data. Note that this has
+no effect on the VLA observing frequency. &#8220;//LO&#8221; and &#8220;//FI&#8221; cards are provided if, and only if, the
+required information is present in the setup file or could be obtained for the setup file by <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>from
+the frequency catalog. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>also provides the &#8220;//PM&#8221; cards if proper (or planetary) motion is
+present for the source in the source catalog. Since the epoch of zero offset is given in IAT,
+IAT-UTC must be provided with parameter <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1260003.1.2"><span 
+class="cmtt-10">IATUTC</span></a> in the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>keyin file. If other
+&#8220;//&#8221; cards are needed, or other options are needed on the &#8220;//LO&#8221; and &#8220;//FI&#8217; cards, the
+regular VLA <span 
+class="cmsl-10">OBSERVE </span>must be used or they must be edited in by hand. Beware of the fixed
+formats: if values are put in the wrong columns, the VLA on-line system will not behave as
+expected!
+<!--l. 19578--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>checks the ranges of the frequency settings given for the &#8220;//LO&#8221; cards. But the EVLA has
+made it possible to reach frequencies far outside the range of the original VLA hardware. Such
+frequencies can be requested using frequency settings in the style of the VLA, but outside the allowed
+VLA ranges. In addition, the parrameter <span 
+class="cmtt-10">EVLA </span>should be given in the setup file to turn off some of the
+checks of frequency ranges. This is all at a primitive state as of Fall 2007 and will be updated as the
+EVLA matures.
+<!--l. 19588--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">B.1.1   </span> <a 
+ id="x47-357000B.1.1"></a>VLBI at the VLA - old system</h4>
+<!--l. 19590--><p class="noindent" >Note that many of the details of what is below applies to the old VLA system which is no longer in
+use.
+<!--l. 19593--><p class="noindent" >For much detailed information on VLBI at the VLA, follow the links to the <a 
+href="http://www.vla.nrao.edu/astro/guides/vlbivla/current/" >VLBI at the VLA
+guide</a>.
+<!--l. 19597--><p class="noindent" >There are two very different modes in which VLBI can be done at the VLA. These are single dish and
+phased array observations. For single dish VLBI observations, the IF signals from one antenna of the
+array are sent to the VLBI recording equipment (VLBA DAR and recorder). Other than having to
+worry about the VLA&#8217;s rather complicated LO system, such observations are very similar to
+observations at other VLBI observatories. The phased array observations, on the other hand,
+have some very special needs. For such observations, the signals from all VLA antennas are
+summed in the VLA correlator and the summed signal is sent to the VLBI equipment.
+This gives a sensitivity for the &#8220;antenna&#8221; that is increased by about the number of phased
+antennas, <span 
+class="cmti-10">if </span>the array is phased properly. Array phasing is accomplished by the on-line
+control system. Output phases from the correlator are used to derive adjustments to the
+phase of the LO at each antenna that, when applied, will cause the next correlator phases to
+go toward zero. The system can phase up on a calibrator and then freeze the phases on a
+target source when the target source is either too weak, resolved, or confused for successful
+                                                                                
+                                                                                
+phasing.
+<!--l. 19616--><p class="noindent" >The type of VLA observation is distinguished by the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2200003.1.2"><span 
+class="cmtt-10">VLAMODE</span></a>. <span 
+class="cmtt-10">VLAMODE = VS </span>indicates single dish
+observing. <span 
+class="cmtt-10">VLAMODE = VX </span>indicates phased array observing, but using the phases from a previous
+phasing scan. <span 
+class="cmtt-10">VLAMODE = VA </span>indicates phased array observing with phasing on the VLA <span 
+class="cmtt-10">A </span>and <span 
+class="cmtt-10">D </span>IFs
+and is the usual active phasing mode. <span 
+class="cmtt-10">VLAMODE = VB </span>is similar, but with phasing on the VLA <span 
+class="cmtt-10">B </span>and <span 
+class="cmtt-10">C</span>
+IFs. <span 
+class="cmtt-10">VLAMODE = VR </span>or <span 
+class="cmtt-10">VL </span>indicates phased array observing using, respectively, the VLA <span 
+class="cmtt-10">A </span>and <span 
+class="cmtt-10">B </span>or <span 
+class="cmtt-10">C</span>
+and <span 
+class="cmtt-10">D </span>IFs. As might be deduced by this, because of hardware limitations, the VLA can only phase one
+of the <span 
+class="cmtt-10">A </span>and <span 
+class="cmtt-10">C </span>IFs and one of the <span 
+class="cmtt-10">B </span>and <span 
+class="cmtt-10">D </span>IFs. The <span 
+class="cmtt-10">VLAMODE </span>can be changed on a scan-by-scan basis. See
+the description of the setup parameter <a 
+href="labelSECSETUPSSetupFiles.html#x31-2700003.6.4"><span 
+class="cmtt-10">IFCHAN</span></a> for more information on routing VLA IFs
+to VLB IFs. <span 
+class="cmtt-10">VS </span>mode (single dish) can be mixed with the phased array modes, but the
+number of changes back and forth should be limited. Normally this would only be done when
+atmospheric calibration, geodetic-like (DELZN) sections are included in a phase referencing
+project.
+<!--l. 19637--><p class="noindent" >The reference antenna can be controlled with parameter <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2250003.1.2"><span 
+class="cmtt-10">VLARFANT</span></a>. That will be the antenna from
+which data are recorded in single dish mode and the reference antenna (whose phases are not changed)
+for the phased array modes. Normally users should not worry about setting <span 
+class="cmtt-10">VLARFANT </span>because the
+default is usually good, and if not, you will not know in time and the change needs to be made by
+operations.
+<!--l. 19646--><p class="noindent" >For successful phasing of the array, a source must be greater than about 0.1 Jy (see the guide referenced
+above for details) and have a position that is good to a fraction of the VLA synthesized beam
+(enhanced sensitivity is only obtained over this area). It must have small structure phases and not have
+other sources in the primary beam that might confuse the phasing algorithm. The position accuracy is
+especially important if a calibrator is being used to phase the array for observations of another source.
+Adding phasing sources is tricky, because it is desirable to spend a minimum amount of time on them,
+but if they are missed, the rest of the data will be bad. It is possible to try to influence the
+speed of phasing by using <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2190003.1.2"><span 
+class="cmtt-10">VLAINTEG</span></a> to adjust the correlator integration time. The default is
+10 seconds. Use of a shorter time may speed phasing but is done at the expense of added
+noise.
+<!--l. 19662--><p class="noindent" >There are two ways to deal with VLBI observations that require phasing on a source different from the
+target source. The best is probably to simply schedule VLBI scans, with the proper <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2200003.1.2"><span 
+class="cmtt-10">VLAMODE</span></a>, on the
+phasing source. These observations can then also be used to assist the VLBI calibration, assuming an
+appropriate calibrator has been chosen. The other scheme is to insert calibration scans
+into the VLA&#8217;s schedule file (the OBSERVE file), but not the VLBI control file, for the
+phasing operation. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>provides some tools to simplify this operation. It can also be
+done using the <span 
+class="cmcsc-10">VLA OBSERVE </span>program. This is done by the VLA analysts for some
+programs.
+<!--l. 19675--><p class="noindent" >For VLBI observations at the VLA, both an OBSERVE file and a VLBA style control file are needed
+and can be created by <span 
+class="cmcsc-10">SCHED</span>. All of the controls provided for managing recordings for the VLBA also
+work for the VLA. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>also has special capabilities for scheduling VLA observations as described
+below.
+<!--l. 19681--><p class="noindent" >For observations that require phasing on a calibrator, the array must be phased in auto-phasing (
+<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2200003.1.2"><span 
+class="cmtt-10">VLAMODE = VA</span></a>) mode prior to VLBI observations of the target source in extended-phasing ( <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2200003.1.2"><span 
+class="cmtt-10">VLAMODE =</span>
+<span 
+class="cmtt-10">VX</span></a>) mode. These calibrator observations constitute additional scans that must be in the VLA observe
+file, but that no other VLBI observatory or the recorder control file for the VLA needs to know about.
+(Note that Westerbork needs something of the sort, but they have never requested special information
+in <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>output files).
+<!--l. 19693--><p class="noindent" >If it is desired to add phasing scans on a calibrator on which VLBI data will not be recorded and that
+will not be observed at the other VLBI observatories, the parameter <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2240003.1.2"><span 
+class="cmtt-10">VLAPSRC</span></a> can be used. If a <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2240003.1.2"><span 
+class="cmtt-10">VLAPSRC</span></a>
+is given, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will automatically insert phasing observations in the VLA OBSERVE file at
+appropriate times. Note that <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2240003.1.2"><span 
+class="cmtt-10">VLAPSRC</span></a> must be a source in the same catalogs that are searched for
+<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1950003.1.2"><span 
+class="cmtt-10">SOURCE</span></a> and <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-840003.1.2"><span 
+class="cmtt-10">DOPSRC</span></a>. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will add a phasing scan to the observe file which will end either 1
+                                                                                
+                                                                                
+minute before the main VLBI scan starts, or 3 minutes after the previous VLBI scan ends,
+whichever is later. If the latter option is used, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>complains if less than 2 minutes of
+the VLBI scan remains. Also with the latter option, the VLBA-style control file will still
+start the recorder when the main VLBI scan was supposed to start. This keeps recording
+at the VLA and other sites synchronized, although it can lead to the need to flag data
+that won&#8217;t have VLBI fringes. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will not add a phasing scan if the VLBI scan is in
+<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2200003.1.2"><span 
+class="cmtt-10">VLAMODE=VA</span></a> or if <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2240003.1.2"><span 
+class="cmtt-10">VLAPSRC</span></a> is the same as <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1950003.1.2"><span 
+class="cmtt-10">SOURCE</span></a>. This avoids the need to keep respecifying
+<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2240003.1.2"><span 
+class="cmtt-10">VLAPSRC</span></a> whenever a VLBI calibrator is observed in mode <span 
+class="cmtt-10">VA </span>and prevents the addition
+of unnecessary extra scans when the VLBI schedule calls for observations of the phasing
+source.
+<!--l. 19724--><p class="noindent" >It is highly recommended that the NRAO <span 
+class="cmcsc-10">OBSERVE </span>program be used to check the VLA observe file
+for slew and dwell times on the phasing sources. The scan stop times may have to be adjusted with
+<span 
+class="cmcsc-10">OBSERVE </span>to obtain an adequate amount of on-source time for phasing. It is especially critical to be
+careful about slew times for sources near the zenith where long azimuth slews may be needed to go a
+short distance on the sky. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>only recently acquired to ability to calculate slew times
+and this has not yet been extended to the VLA phasing scans. This is an area of future
+construction.
+<!--l. 19734--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is also able to deal with reference pointing using the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1670003.1.2"><span 
+class="cmtt-10">PEAK</span></a> command. Refer to the description
+of <span 
+class="cmtt-10">PEAK </span>for details. The <a 
+href="#x47-359000B.1.2">VLA-only example</a> below uses this capability.
+<!--l. 19740--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x47-358000B.1.1"></a>An Example</h5>
+<!--l. 19742--><p class="noindent" >Below is an example of a file for a VLBI observation that uses the phased VLA. For phasing, a source is
+used that can also be used as a VLBI phase or fringe fitting reference. All antennas are sent to the
+reference and VLBI data is taken on it. This is now the prefered style for phasing. Of course the
+<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2240003.1.2"><span 
+class="cmtt-10">VLAPSRC</span></a> parameter could also have been used if non-recording scans with only the VLA on the
+calibrator had been desired.
+<!--l. 19751--><p class="noindent" >Note that the <a 
+href="labelSECEXAMPLESExamples.html#x9-90001.4.1">main example</a> in the <a 
+href="labelSECEXAMPLESExamples.html#x9-80001.4">Examples</a> section has a single VLA antenna in it and serves as an
+example of that type of observing.
+<!--l. 19758--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">B.1.2   </span> <a 
+ id="x47-359000B.1.2"></a>VLA-Only Project Example</h4>
+<!--l. 19760--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>cannot be used for scheduling the EVLA (yet anyway) and the old VLA system
+has been turned off. So the following section is not of much use now. Once VLBI at the
+EVLA has been established, the capabilities to schedule EVLA runs with <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will be
+revisited.
+<!--l. 19765--><p class="noindent" >This second VLA example demonstrates the use of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to schedule a pure VLA project. The
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input for VLA observations is very much like that for VLBI observations. There are some
+parameters provided, and listed below, to control some of the input information for which the VLBI
+defaults may not be appropriate. The example is a modified version of an actual schedule used to make
+the VLA observations described. The modifications were required by changes in the way in which
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>handles setup files and the parameters <span 
+class="cmtt-10">VLABAND</span>, <span 
+class="cmtt-10">VLABW</span>, <span 
+class="cmtt-10">PEAK</span>, <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2200003.1.2"><span 
+class="cmtt-10">VLAMODE</span></a> (for pointing scans),
+and <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2210003.1.2"><span 
+class="cmtt-10">VLAPEAK</span></a>. Some of these parameters are now read from the setup files, not the main schedule
+input.
+<div class="verbatiminput">
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;-------------------------------------------------------------------</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;EXAMPLE</span><span 
+class="cmtt-10">&#x00A0;setup</span><span 
+class="cmtt-10">&#x00A0;file</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;non-VLBI</span><span 
+class="cmtt-10">&#x00A0;observations</span><span 
+class="cmtt-10">&#x00A0;at</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;VLA</span><span 
+class="cmtt-10">&#x00A0;at</span><span 
+class="cmtt-10">&#x00A0;6cm.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;-------------------------------------------------------------------</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;vla-cc.set</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Non-VLBI</span><span 
+class="cmtt-10">&#x00A0;observations</span><span 
+class="cmtt-10">&#x00A0;at</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;VLA</span><span 
+class="cmtt-10">&#x00A0;at</span><span 
+class="cmtt-10">&#x00A0;C</span><span 
+class="cmtt-10">&#x00A0;band</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">format=none</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;station=VLA</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;vlaband=CC</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;vlabw=&#8217;0000&#8217;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;-------------------------------------------------------------------</span>
+</div>
+<!--l. 19783--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">B.1.3   </span> <a 
+ id="x47-360000B.1.3"></a>Parameters Specific to the VLA</h4>
+<!--l. 19785--><p class="noindent" >The VLA capabilities in SCHED are for the old VLA system that has been shut down. Stay tuned for
+instructions related to running the EVLA (VLA).
+<!--l. 19789--><p class="noindent" >This section gives a brief description of each of the parameters available to <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>that are
+specifically for VLA observations or are especially useful for VLA observations. More general purpose
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>parameters that are also required for other stations are not mentioned. For details on the
+parameters, consult the detailed descriptions of each parameter. The first list is of parameters in the
+main schedule input. The second is of setup parameters.
+<!--l. 19798--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19801--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2260003.1.2"><span 
+class="cmtt-10">VLATYPE:</span></a>
+     Specify
+     the
+     type
+     of
+     observations.
+     Should
+     be
+     provided
+     for
+     non-VLBI
+     observations.
+     Valid
+     options
+     are
+     <span 
+class="cmtt-10">&#8217;VLBI&#8217;</span>,
+     <span 
+class="cmtt-10">&#8217;CONTINUUM&#8217;</span>
+     or
+     <span 
+class="cmtt-10">&#8217;LINE&#8217;</span>.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19806--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2230003.1.2"><span 
+class="cmtt-10">VLATSYS</span>
+     and
+     <span 
+class="cmtt-10">VLANTSYS</span></a>
+     These
+                                                                                
+                                                                                
+     turn
+     on
+     and
+     off
+     the
+     Tsys
+     corrections
+     made
+     to
+     the
+     correlated
+     VLA
+     data.
+     This
+     used
+     to
+     be
+     required
+     in
+     order
+     to
+     obtain
+     calibration
+     data
+     for
+     the
+     VLBI
+     observations.
+     That
+     is
+     no
+     longer
+     true
+     so
+     most
+     observations
+     can
+     be
+     made
+     with
+     the
+     Tsys
+     corrections
+     turned
+     on
+     which
+     is
+     now
+     the
+     default.
+     </dd><dt class="list">
+                                                                                
+                                                                                
+     </dt><dd 
+class="list">
+     <!--l. 19813--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2210003.1.2"><span 
+class="cmtt-10">VLAPEAK</span></a>
+     controls
+     reference
+     pointing
+     on
+     the
+     VLA.
+     It
+     is
+     a
+     good
+     idea
+     to
+     do
+     reference
+     pointing
+     when
+     observing
+     at
+     7
+     mm.
+     See
+     the
+     section
+     on
+     <a 
+href="labelSECREFPOINTReferencePointing.html#x17-340002.6">Reference
+     Pointing</a>
+     to
+     see
+     how
+     to
+     get
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to
+     insert
+     reference
+     pointing
+     scans
+     automatically.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19821--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2270003.1.2"><span 
+class="cmtt-10">VLAUSERN:</span></a>
+     This
+     gives
+     the
+     VLA
+     user
+     number.
+     The
+                                                                                
+                                                                                
+     default
+     of
+     600
+     is
+     reasonable
+     for
+     VLBI
+     but
+     the
+     actual
+     user
+     number
+     should
+     be
+     provided
+     for
+     other
+     types
+     of
+     projects.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19826--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2200003.1.2"><span 
+class="cmtt-10">VLAMODE:</span></a>
+     Specify
+     the
+     VLA
+     mode.
+     Common
+     options
+     for
+     VLBI
+     are
+     <span 
+class="cmtt-10">&#8217;</span>
+     <span 
+class="cmtt-10">&#8217;</span>,
+     <span 
+class="cmtt-10">VA</span>,
+     <span 
+class="cmtt-10">VX</span>,
+     or
+     <span 
+class="cmtt-10">VS</span>.
+     See
+     VLA
+     documentation
+     on
+     the
+     many
+     others
+     that
+     are
+     available
+     for
+     non-VLBI
+                                                                                
+                                                                                
+     observations.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19832--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1320003.1.2"><span 
+class="cmtt-10">LST:</span></a>
+     Schedule
+     is
+     assumed
+     to
+     be
+     in
+     LST.
+     <span 
+class="cmtt-10">LST</span>
+     specified
+     without
+     a
+     value
+     assumes
+     the
+     VLA.
+     A
+     station
+     name
+     can
+     be
+     given
+     as
+     the
+     argument,
+     in
+     which
+     case
+     the
+     <span 
+class="cmtt-10">LST</span>
+     is
+     for
+     that
+     station.
+     When
+     <span 
+class="cmtt-10">LST</span>
+     is
+     specified,
+     the
+     <span 
+class="cmtt-10">DAY</span>
+     must
+     be
+     the
+     modified
+     local
+     sidereal
+     day
+                                                                                
+                                                                                
+     number
+     as
+     found
+     on
+     VLA
+     monthly
+     schedules.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19839--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1320003.1.2"><span 
+class="cmtt-10">DAY:</span></a>
+     Must
+     be
+     the
+     modified
+     local
+     sidereal
+     day
+     number
+     as
+     found
+     on
+     VLA
+     monthly
+     schedules
+     if
+     <span 
+class="cmtt-10">LST</span>
+     is
+     specified.
+     In
+     such
+     cases,
+     <span 
+class="cmtt-10">YEAR</span>
+     and
+     <span 
+class="cmtt-10">MONTH</span>
+     are
+     ignored.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19844--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1260003.1.2"><span 
+class="cmtt-10">IATUTC:</span></a>
+     Difference
+     between
+     IAT
+     and
+     UTC,
+     which
+     is
+     currently
+     about
+     30
+                                                                                
+                                                                                
+     seconds.
+     This
+     is
+     only
+     used
+     for
+     setting
+     the
+     zero
+     offset
+     epoch
+     for
+     the
+     &#8220;//PM&#8221;
+     (proper
+     motion)
+     card.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19849--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1940003.1.2"><span 
+class="cmtt-10">SETUP:</span></a>
+     Specifies
+     the
+     setup
+     file
+     from
+     which
+     information
+     for
+     the
+     &#8220;//LO&#8221;
+     and
+     &#8220;//FI&#8221;
+     cards
+     are
+     taken.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19853--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-990003.1.2"><span 
+class="cmtt-10">FREQ:</span></a>
+     and
+     <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-820003.1.2"><span 
+class="cmtt-10">DOPPLER</span></a>
+     Warning
+     &#8212;
+     these
+     parameters
+     cannot
+     be
+     used
+     for
+     non-VLBI
+                                                                                
+                                                                                
+     observations
+     at
+     the
+     VLA
+     since
+     they
+     are
+     only
+     used
+     to
+     adjust
+     the
+     baseband
+     converter
+     frequencies.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19860--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1840003.1.2"><span 
+class="cmtt-10">RECord:</span>
+     and
+     <span 
+class="cmtt-10">NORECord</span></a>
+     These
+     parameters
+     find
+     one
+     of
+     their
+     main
+     uses
+     in
+     observations
+     that
+     use
+     the
+     VLA,
+     especially
+     the
+     phased
+     array.
+     It
+     is
+     often
+     useful,
+     for
+     both
+     phasing
+     scans
+     and
+     for
+     scans
+     inserted
+                                                                                
+                                                                                
+     just
+     for
+     calibration
+     of
+     the
+     VLA,
+     to
+     be
+     able
+     to
+     turn
+     the
+     VLBI
+     recorders
+     off.
+     <span 
+class="cmtt-10">RECord</span>
+     and
+     <span 
+class="cmtt-10">NORECord</span>
+     can
+     be
+     used
+     to
+     specify
+     which
+     scans
+     should
+     be
+     recorded
+     on
+     the
+     VLBI
+     drives
+     and
+     which
+     should
+     not
+     be.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19869--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2240003.1.2"><span 
+class="cmtt-10">VLAPSRC:</span></a>
+     Phasing
+     source
+     to
+     use
+     before
+     a
+     VX
+     mode
+     scan.
+     This
+                                                                                
+                                                                                
+     is
+     a
+     convenient
+     way
+     to
+     insert
+     VLA
+     phasing
+     scans
+     without
+     having
+     to
+     explicitly
+     include
+     extra
+     scans
+     in
+     a
+     VLBI
+     schedule.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19875--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2250003.1.2"><span 
+class="cmtt-10">VLARFANT:</span></a>
+     Reference
+     antenna
+     to
+     use
+     for
+     single
+     dish
+     data
+     source
+     or
+     as
+     phasing
+     reference
+     for
+     phased
+     array.
+     The
+     default
+     should
+     be
+     good,
+     and,
+     if
+     not,
+     operations
+     is
+     likely
+                                                                                
+                                                                                
+     to
+     need
+     a
+     last
+     minute
+     change,
+     so
+     it
+     is
+     unlikely
+     that
+     users
+     should
+     use
+     this
+     parameter.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19882--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2190003.1.2"><span 
+class="cmtt-10">VLAINTEG:</span></a>
+     This
+     parameter
+     gives
+     the
+     correlator
+     integration
+     time.
+     It
+     would
+     normally
+     be
+     used
+     to
+     give
+     a
+     value
+     less
+     than
+     10
+     seconds
+     to
+     encourage
+     faster
+     phasing.
+     </dd></dl>
+<!--l. 19889--><p class="noindent" >The parameters in the setup file that apply only to the VLA are below. They are used
+to set the band and bandwidths of the VLA and for setting up the &#8220;//FI&#8221; and &#8220;//LO&#8221;
+cards.
+<!--l. 19893--><p class="noindent" >The values for all of these parameters, except <span 
+class="cmtt-10">FLUKESET, VLAIF, and VLAROT,</span>, which are not normally
+needed, can be determined by <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>from the <a 
+href="labelSECFRQCATFrequencyCatalog.html#x30-2460003.5.1">frequency catalog</a>. Therefore most projects do not
+require VLA specific parameters in the setup files.
+                                                                                
+                                                                                
+<!--l. 19900--><p class="noindent" >The setup file parameters are:
+<!--l. 19902--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19904--><p class="noindent" ><span 
+class="cmtt-10">FEFILTER:</span>
+     The
+     front
+     end
+     filters
+     are
+     normally
+     50&#x00A0;MHz
+     wide.
+     If
+     there
+     is
+     strong
+     RFI
+     near
+     the
+     observing
+     frequency,
+     as
+     is
+     common
+     at
+     L
+     and
+     P
+     bands,
+     it
+     may
+     be
+     desirable
+     to
+     use
+     the
+     25&#x00A0;MHz
+     or
+     12.5&#x00A0;MHz
+     front
+     end
+     filters.
+     This
+     parameter
+     is
+     used
+     to
+     request
+     the
+                                                                                
+                                                                                
+     filters
+     to
+     use.
+     It
+     goes
+     on
+     the
+     &#8220;//LO&#8221;
+     card.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19910--><p class="noindent" ><span 
+class="cmtt-10">FLUKESET:</span>
+     Which
+     flukeset
+     (1
+     or
+     2)
+     to
+     be
+     used.
+     Unfortunately
+     there
+     seems
+     to
+     be
+     no
+     good
+     way
+     to
+     predict
+     this
+     reliably.
+     Usually
+     Flukeset
+     1
+     will
+     be
+     used
+     for
+     phased
+     array
+     and
+     normal
+     VLA
+     observations
+     while
+     Flukeset
+     2
+     will
+     be
+                                                                                
+                                                                                
+     used
+     for
+     single
+     antenna
+     VLBI,
+     but
+     this
+     is
+     not
+     always
+     true.
+     The
+     VLA
+     operators
+     should
+     be
+     alerted
+     that
+     Flukeset
+     specified
+     on
+     the
+     &#8220;//FI&#8221;
+     card
+     might
+     have
+     to
+     be
+     changed.
+     If
+     it
+     is
+     not
+     specified,
+     or
+     is
+     set
+     to
+     0,
+     a
+     blank
+     will
+     be
+     given
+     and
+     the
+     VLA
+     operators
+     will
+     set
+     it.
+                                                                                
+                                                                                
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19919--><p class="noindent" ><span 
+class="cmtt-10">VLABAND:</span>
+     Specify
+     the
+     frequency
+     band.
+     Must
+     be
+     one
+     of
+     the
+     defaults
+     without
+     the
+     //LO
+     and
+     //FI
+     cards.
+     Some
+     valid
+     options
+     are
+     <span 
+class="cmtt-10">VP,</span>
+     <span 
+class="cmtt-10">VL,</span>
+     <span 
+class="cmtt-10">VC,</span>
+     <span 
+class="cmtt-10">VX,</span>
+     <span 
+class="cmtt-10">VK,</span>
+     <span 
+class="cmtt-10">PP,</span>
+     <span 
+class="cmtt-10">LL,</span>
+     <span 
+class="cmtt-10">CC,</span>
+     <span 
+class="cmtt-10">XX,</span>
+     <span 
+class="cmtt-10">UU,</span>
+     <span 
+class="cmtt-10">KK,</span>
+     <span 
+class="cmtt-10">HH,</span>
+     or
+     18.
+     For
+     complete
+     information
+     on
+     the
+     standard
+     bands,
+     see
+     the
+     following
+     <a 
+href="#x47-361000B.1.4">section</a>.
+     </dd><dt class="list">
+                                                                                
+                                                                                
+     </dt><dd 
+class="list">
+     <!--l. 19926--><p class="noindent" ><span 
+class="cmtt-10">VLABW:</span>
+     Specify
+     the
+     back
+     end
+     bandwidth
+     for
+     each
+     of
+     the
+     4
+     VLA
+     IFs
+     as
+     a
+     4
+     digit
+     number
+     in
+     quotes
+     (<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>treats
+     it
+     as
+     a
+     character
+     string),
+     with
+     one
+     digit
+     for
+     each
+     IF.
+     The
+     default
+     is
+     <span 
+class="cmtt-10">&#8217;0000&#8217;</span>
+     for
+     50&#x00A0;MHz
+     in
+     each
+     IF.
+     The
+     consequent
+     back
+     end
+     bandwidth
+     is
+     <span 
+class="cmtt-10">50/(2**n)</span>&#x00A0;MHz,
+     where
+     <span 
+class="cmtt-10">n</span>
+                                                                                
+                                                                                
+     is
+     the
+     digit
+     specified.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19933--><p class="noindent" ><span 
+class="cmtt-10">FLUKEA:</span>
+     A
+     Fluke
+     synthesizer
+     frequency.
+     It
+     is
+     usually
+     near
+     100&#x00A0;MHz.
+     See
+     the
+     document
+     &#8220;VLBI
+     at
+     the
+     VLA&#8221;
+     for
+     details
+     on
+     what
+     it
+     should
+     be.
+     See
+     Section&#x00A0;<a 
+href="labelSECLINESpectralLineObservations.html#x16-330002.5">2.5<!--tex4ht:ref: SEC:LINE --></a>
+     for
+     more
+     information
+     on
+     the
+     frequency
+     settings.
+     <!--l. 19938--><p class="noindent" ><span 
+class="cmtt-10">FLUKEB:</span>
+     B
+     Fluke
+     synthesizer
+     frequency.
+     Actually
+     this
+     is
+     the
+     value
+     for
+                                                                                
+                                                                                
+     the
+     &#8220;//FI&#8221;
+     card
+     which
+     is
+     twice
+     the
+     actual
+     synthesizer
+     setting.
+     To
+     get
+     the
+     same
+     frequency
+     on
+     the
+     AC
+     and
+     BD
+     IFs,
+     <span 
+class="cmtt-10">FLUKEB</span>
+     should
+     be
+     <span 
+class="cmtt-10">FLUKEA</span>
+     plus
+     100.0.
+     <!--l. 19943--><p class="noindent" ><span 
+class="cmtt-10">VLAFEAB:</span>
+     1st
+     LO
+     for
+     the
+     VLA
+     observations
+     for
+     the
+     AB
+     (RCP)
+     IFs.
+     For
+     standard
+     VLBI
+     projects,
+     the
+     value
+     should
+     be
+     -3.2
+     for
+     L
+     band,
+                                                                                
+                                                                                
+     0
+     for
+     C
+     band,
+     and
+     17.5
+     for
+     K
+     band.
+     Again
+     see
+     VLA
+     documentation
+     for
+     details
+     of
+     other
+     alternatives.
+     <!--l. 19948--><p class="noindent" ><span 
+class="cmtt-10">VLAFECD:</span>
+     Same
+     as
+     <span 
+class="cmtt-10">VLAFEAB</span>
+     but
+     for
+     the
+     VLA&#8217;s
+     C
+     and
+     D
+     (LCP)
+     IFs.
+     <!--l. 19951--><p class="noindent" ><span 
+class="cmtt-10">VLASYNA:</span>
+     2nd
+     LO
+     for
+     the
+     VLA
+     A
+     and
+     C
+     IFs.
+     On
+     the
+     &#8220;//LO
+     card&#8221;
+     this
+     number
+     is
+     rounded
+     to
+     the
+                                                                                
+                                                                                
+     nearest
+     MHz,
+     but
+     it
+     should
+     be
+     given
+     here
+     exactly.
+     It
+     is
+     usually
+     near
+     3900&#x00A0;MHz.
+     It
+     must
+     be
+     a
+     value
+     of
+     <span 
+class="cmtt-10">N</span>
+     <span 
+class="cmtt-10">*</span>
+     <span 
+class="cmtt-10">50</span>
+     <span 
+class="cmtt-10">+-</span>
+     <span 
+class="cmtt-10">10.1</span>&#x00A0;MHz.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 19956--><p class="noindent" ><span 
+class="cmtt-10">VLASYNB:</span>
+     Same
+     as
+     <span 
+class="cmtt-10">VLASYNA</span>
+     but
+     for
+     the
+     VLA
+     B
+     and
+     D
+     IFs.
+     </dd></dl>
+<!--l. 19961--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">B.1.4   </span> <a 
+ id="x47-361000B.1.4"></a>VLA Standard Bands.</h4>
+<!--l. 19963--><p class="noindent" >All of the below will change with the EVLA, which can reach just about any frequency. The following is
+basically obsolete.
+<!--l. 19966--><p class="noindent" >A total of 19 standard observing bands are defined at the VLA. All projects should specify one of these
+bands, even when frequencies will be modified. This ensures that various defaults at the VLA get set
+properly. Just pick one with similar properties. For VLBI, one of the &#8220;V&#8221; bands should be
+                                                                                
+                                                                                
+chosen.
+<!--l. 19972--><p class="noindent" >The tables below describe the bands. The first show the band names along with the synthesizer
+settings. The column headings are the SCHED names (not necessarily the traditional names in use at
+the VLA) for these parameters. The second table gives the value that <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>would want for the
+VLBI <a 
+href="labelSECSETUPSSetupFiles.html#x31-2650003.6.4"><span 
+class="cmtt-10">FIRSTLO</span></a> parameter when using the standard setup. If the frequencies are modified, <span 
+class="cmtt-10">FIRSTLO</span>
+would need to be altered. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will insure that <span 
+class="cmtt-10">FIRSTLO </span>agrees with the frequency that will be
+obtained with the settings used. The other columns in the second table show the range of sky
+frequencies covered by the VLA band. The observing frequencies must lie in these bands. Note that the
+first frequency is that of the edge converted to DC, and then to 600 MHz in the signal sent to
+the VLBI rack. The other end of the band can be a lower frequency if there is a net lower
+sideband at this point (the BBC&#8217;s can be used in lower sideband mode to get a final net upper
+sideband).
+<!--l. 19994--><p class="noindent" >The VLA band <span 
+class="cmtt-10">VQ </span>will be changed a few months into 2001. The table below gives the frequencies for
+the new version. The old version was 80 MHz higher in frequency and missed the SiO line at 43.122
+GHz. The current plan is to switch <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to the new <span 
+class="cmtt-10">VQ </span>in January 2001, but have <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>always
+write <span 
+class="cmtt-10">LO </span>and <span 
+class="cmtt-10">IF </span>cards in the VLA observe file for 43 GHz observing, even when using the standard
+band. After a few months in which any schedules made with the old scheme are flushed
+through the system, the VLA on-line system will be switch to the new standard. Some
+months after that, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will stop writing the <span 
+class="cmtt-10">LO </span>and <span 
+class="cmtt-10">IF </span>cards for the new standard <span 
+class="cmtt-10">VQ</span>
+band.
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-47">
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;VLA&#x00A0;STANDARD&#x00A0;BANDS&#x00A0;-&#x00A0;VLA&#x00A0;SYNTHESIZER&#x00A0;SETTINGS
+&#x00A0;<br />VLABAND&#x00A0;&#x00A0;VLAFEAB&#x00A0;&#x00A0;VLAFECD&#x00A0;&#x00A0;VLASYNA&#x00A0;&#x00A0;&#x00A0;VLASYNB&#x00A0;&#x00A0;&#x00A0;FLUKEA&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;FLUKEB&#x00A0;&#x00A0;FEFILT
+&#x00A0;<br />&#x00A0;&#x00A0;CC&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;3860.1&#x00A0;&#x00A0;&#x00A0;&#x00A0;3810.1&#x00A0;&#x00A0;100.00000&#x00A0;&#x00A0;200.00000&#x00A0;&#x00A0;0000
+&#x00A0;<br />&#x00A0;&#x00A0;UU&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;19.60&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;19.60&#x00A0;&#x00A0;&#x00A0;&#x00A0;3610.1&#x00A0;&#x00A0;&#x00A0;&#x00A0;3660.1&#x00A0;&#x00A0;100.00000&#x00A0;&#x00A0;200.00000&#x00A0;&#x00A0;0000
+&#x00A0;<br />&#x00A0;&#x00A0;KK&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;17.60&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;17.60&#x00A0;&#x00A0;&#x00A0;&#x00A0;3860.1&#x00A0;&#x00A0;&#x00A0;&#x00A0;3810.1&#x00A0;&#x00A0;100.00000&#x00A0;&#x00A0;200.00000&#x00A0;&#x00A0;0000
+&#x00A0;<br />&#x00A0;&#x00A0;LL&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;-3.20&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;-3.20&#x00A0;&#x00A0;&#x00A0;&#x00A0;3639.9&#x00A0;&#x00A0;&#x00A0;&#x00A0;3560.1&#x00A0;&#x00A0;100.00000&#x00A0;&#x00A0;200.00000&#x00A0;&#x00A0;0000
+&#x00A0;<br />&#x00A0;&#x00A0;XX&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;13.40&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;13.40&#x00A0;&#x00A0;&#x00A0;&#x00A0;3939.9&#x00A0;&#x00A0;&#x00A0;&#x00A0;3889.9&#x00A0;&#x00A0;100.00000&#x00A0;&#x00A0;200.00000&#x00A0;&#x00A0;0000
+&#x00A0;<br />&#x00A0;&#x00A0;QQ&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;51.60&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;13.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;3689.9&#x00A0;&#x00A0;&#x00A0;&#x00A0;3739.9&#x00A0;&#x00A0;100.00000&#x00A0;&#x00A0;200.00000&#x00A0;&#x00A0;0000
+&#x00A0;<br />&#x00A0;&#x00A0;PP&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;-689.9&#x00A0;&#x00A0;&#x00A0;&#x00A0;-710.1&#x00A0;&#x00A0;115.83750&#x00A0;&#x00A0;230.10000&#x00A0;&#x00A0;1111
+&#x00A0;<br />&#x00A0;&#x00A0;44&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;-939.9&#x00A0;&#x00A0;&#x00A0;&#x00A0;-939.9&#x00A0;&#x00A0;112.91875&#x00A0;&#x00A0;212.91875&#x00A0;&#x00A0;0000
+&#x00A0;<br />&#x00A0;&#x00A0;4P&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;-939.9&#x00A0;&#x00A0;&#x00A0;&#x00A0;-689.9&#x00A0;&#x00A0;112.91875&#x00A0;&#x00A0;215.83750&#x00A0;&#x00A0;1111
+&#x00A0;<br />&#x00A0;&#x00A0;LP&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;-3.20&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;3639.9&#x00A0;&#x00A0;&#x00A0;&#x00A0;-689.9&#x00A0;&#x00A0;100.00000&#x00A0;&#x00A0;215.83750&#x00A0;&#x00A0;0101
+&#x00A0;<br />&#x00A0;&#x00A0;18&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;-3.20&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;-3.20&#x00A0;&#x00A0;&#x00A0;&#x00A0;3839.9&#x00A0;&#x00A0;&#x00A0;&#x00A0;3810.1&#x00A0;&#x00A0;100.00000&#x00A0;&#x00A0;200.00000&#x00A0;&#x00A0;0000
+&#x00A0;<br />&#x00A0;&#x00A0;HH&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;-3.20&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;-3.20&#x00A0;&#x00A0;&#x00A0;&#x00A0;3589.9&#x00A0;&#x00A0;&#x00A0;&#x00A0;3639.9&#x00A0;&#x00A0;115.10000&#x00A0;&#x00A0;215.10000&#x00A0;&#x00A0;0000
+&#x00A0;<br />&#x00A0;&#x00A0;VP&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;-689.9&#x00A0;&#x00A0;&#x00A0;&#x00A0;-689.9&#x00A0;&#x00A0;112.50000&#x00A0;&#x00A0;212.50000&#x00A0;&#x00A0;1111
+&#x00A0;<br />&#x00A0;&#x00A0;VL&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;-3.20&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;-3.20&#x00A0;&#x00A0;&#x00A0;&#x00A0;3839.9&#x00A0;&#x00A0;&#x00A0;&#x00A0;3839.9&#x00A0;&#x00A0;100.00000&#x00A0;&#x00A0;200.00000&#x00A0;&#x00A0;0000
+&#x00A0;<br />&#x00A0;&#x00A0;VC&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;3960.1&#x00A0;&#x00A0;&#x00A0;&#x00A0;3960.1&#x00A0;&#x00A0;100.00000&#x00A0;&#x00A0;200.00000&#x00A0;&#x00A0;0000
+&#x00A0;<br />&#x00A0;&#x00A0;VX&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;13.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;13.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;3560.1&#x00A0;&#x00A0;&#x00A0;&#x00A0;3560.1&#x00A0;&#x00A0;100.00000&#x00A0;&#x00A0;200.00000&#x00A0;&#x00A0;0000
+&#x00A0;<br />&#x00A0;&#x00A0;VU&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;19.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;19.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;3510.1&#x00A0;&#x00A0;&#x00A0;&#x00A0;3510.1&#x00A0;&#x00A0;100.00000&#x00A0;&#x00A0;200.00000&#x00A0;&#x00A0;0000
+&#x00A0;<br />&#x00A0;&#x00A0;VK&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;17.50&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;17.50&#x00A0;&#x00A0;&#x00A0;&#x00A0;3710.1&#x00A0;&#x00A0;&#x00A0;&#x00A0;3710.1&#x00A0;&#x00A0;100.00000&#x00A0;&#x00A0;200.00000&#x00A0;&#x00A0;0000
+&#x00A0;<br />&#x00A0;&#x00A0;VQ&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;51.60&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;13.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;3510.1&#x00A0;&#x00A0;&#x00A0;&#x00A0;3510.1&#x00A0;&#x00A0;100.00000&#x00A0;&#x00A0;200.00000&#x00A0;&#x00A0;0000
+&#x00A0;<br />
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;VLA&#x00A0;STANDARD&#x00A0;BANDS&#x00A0;-&#x00A0;VLBI&#x00A0;FIRSTLO&#x00A0;and&#x00A0;VLA&#x00A0;BANDPASSES
+&#x00A0;<br />VLABAND&#x00A0;FIRSTLO&#x00A0;A&#x00A0;&#x00A0;FIRSTLO&#x00A0;D&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;BANDPASS&#x00A0;A&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;BANDPASS&#x00A0;D
+&#x00A0;<br />&#x00A0;&#x00A0;CC&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;4260.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;4210.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;4860.10-&#x00A0;&#x00A0;4910.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;4810.10-&#x00A0;&#x00A0;4860.10
+&#x00A0;<br />&#x00A0;&#x00A0;UU&#x00A0;&#x00A0;&#x00A0;&#x00A0;15589.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;15539.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;14989.90-&#x00A0;14939.90&#x00A0;&#x00A0;&#x00A0;14939.90-&#x00A0;14889.90
+&#x00A0;<br />&#x00A0;&#x00A0;KK&#x00A0;&#x00A0;&#x00A0;&#x00A0;21860.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;21810.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;22460.10-&#x00A0;22510.10&#x00A0;&#x00A0;&#x00A0;22410.10-&#x00A0;22460.10
+&#x00A0;<br />&#x00A0;&#x00A0;LL&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;839.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;760.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1439.90-&#x00A0;&#x00A0;1489.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;1360.10-&#x00A0;&#x00A0;1410.10
+&#x00A0;<br />&#x00A0;&#x00A0;XX&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;9060.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;9110.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;8460.10-&#x00A0;&#x00A0;8410.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;8510.10-&#x00A0;&#x00A0;8460.10
+&#x00A0;<br />&#x00A0;&#x00A0;QQ&#x00A0;&#x00A0;&#x00A0;&#x00A0;42689.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;42739.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;43289.90-&#x00A0;43339.90&#x00A0;&#x00A0;&#x00A0;43339.90-&#x00A0;43389.90
+&#x00A0;<br />&#x00A0;&#x00A0;PP&#x00A0;&#x00A0;-274.06250&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;-280.00&#x00A0;&#x00A0;&#x00A0;325.93750-350.93750&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;320.00-&#x00A0;&#x00A0;&#x00A0;345.00
+&#x00A0;<br />&#x00A0;&#x00A0;44&#x00A0;&#x00A0;-526.98125&#x00A0;&#x00A0;-526.98125&#x00A0;&#x00A0;&#x00A0;&#x00A0;73.01875-123.01875&#x00A0;&#x00A0;&#x00A0;73.01875-123.01875
+&#x00A0;<br />&#x00A0;&#x00A0;4P&#x00A0;&#x00A0;-526.98125&#x00A0;&#x00A0;-274.06250&#x00A0;&#x00A0;&#x00A0;&#x00A0;73.01875-&#x00A0;98.01875&#x00A0;&#x00A0;325.93750-350.93750
+&#x00A0;<br />&#x00A0;&#x00A0;LP&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;839.90&#x00A0;&#x00A0;-274.06250&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1439.90-&#x00A0;&#x00A0;1489.90&#x00A0;&#x00A0;325.93750-350.93750
+&#x00A0;<br />&#x00A0;&#x00A0;18&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1039.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1010.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1639.90-&#x00A0;&#x00A0;1689.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;1610.10-&#x00A0;&#x00A0;1660.10
+&#x00A0;<br />&#x00A0;&#x00A0;HH&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;805.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;855.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1405.00-&#x00A0;&#x00A0;1455.00&#x00A0;&#x00A0;&#x00A0;&#x00A0;1455.00-&#x00A0;&#x00A0;1505.00
+&#x00A0;<br />&#x00A0;&#x00A0;VP&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;-277.40&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;-277.40&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;322.60-&#x00A0;&#x00A0;&#x00A0;347.60&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;322.60-&#x00A0;&#x00A0;&#x00A0;347.60
+&#x00A0;<br />&#x00A0;&#x00A0;VL&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1039.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1039.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1639.90-&#x00A0;&#x00A0;1689.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;1639.90-&#x00A0;&#x00A0;1689.90
+&#x00A0;<br />&#x00A0;&#x00A0;VC&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;4360.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;4360.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;4960.10-&#x00A0;&#x00A0;5010.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;4960.10-&#x00A0;&#x00A0;5010.10
+&#x00A0;<br />&#x00A0;&#x00A0;VX&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;9039.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;9039.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;8439.90-&#x00A0;&#x00A0;8389.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;8439.90-&#x00A0;&#x00A0;8389.90
+&#x00A0;<br />&#x00A0;&#x00A0;VU&#x00A0;&#x00A0;&#x00A0;&#x00A0;15989.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;15989.90&#x00A0;&#x00A0;&#x00A0;&#x00A0;15389.90-&#x00A0;15339.90&#x00A0;&#x00A0;&#x00A0;15389.90-&#x00A0;15339.90
+&#x00A0;<br />&#x00A0;&#x00A0;VK&#x00A0;&#x00A0;&#x00A0;&#x00A0;21610.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;21610.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;22210.10-&#x00A0;22260.10&#x00A0;&#x00A0;&#x00A0;22210.10-&#x00A0;22260.10
+&#x00A0;<br />&#x00A0;&#x00A0;VQ&#x00A0;&#x00A0;&#x00A0;&#x00A0;42510.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;42510.10&#x00A0;&#x00A0;&#x00A0;&#x00A0;43110.10-&#x00A0;43160.10&#x00A0;&#x00A0;&#x00A0;43110.10-&#x00A0;43160.10
+&#x00A0;<br />&#x00A0;Note&#x00A0;that&#x00A0;IF&#x00A0;A&#x00A0;and&#x00A0;C&#x00A0;are&#x00A0;usually&#x00A0;at&#x00A0;the&#x00A0;same&#x00A0;frequency&#x00A0;as&#x00A0;are&#x00A0;B&#x00A0;and&#x00A0;D.
+&#x00A0;<br />
+</div>
+                                                                                
+                                                                                
+<!--l. 20052--><p class="nopar" >
+                                                                                
+                                                                                
+<!--l. 20055--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSSECTAPEMANAGEMENTTapeManagement.html" >next</a>] [<a 
+href="labelSECOLDVLAOldVLA.html" >front</a>] [<a 
+href="labelAPPOBSOLETEOBSOLETESECTIONS.html#labelSECOLDVLAOldVLA.html" >up</a>] </p></div>
+<!--l. 20055--><p class="noindent" ><a 
+ id="taillabelSECOLDVLAOldVLA.html"></a>  
+</body></html> 

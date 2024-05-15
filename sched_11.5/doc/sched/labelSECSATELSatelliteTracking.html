@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Satellite Tracking</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 4631--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECCONFIGConfigurationStudies.html" >prev</a>] [<a 
+href="labelSECCONFIGConfigurationStudies.html#taillabelSECCONFIGConfigurationStudies.html" >prev-tail</a>] [<a 
+href="#taillabelSECSATELSatelliteTracking.html">tail</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECSATELSatelliteTracking.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">2.13   </span> <a 
+ id="x24-420002.13"></a>Satellite Tracking</h3>
+<!--l. 4633--><p class="noindent" >There was a project to use the VLBA to provide positional data to help navigate interplanetary
+spacecraft. For this project, the VLBA must be able to point at the spacecraft so the ability to do so
+was added to <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>as of March 2004. The spacecraft positions are obtained with the help of <span 
+class="cmsl-10">spice</span>
+files that are typically from JPL. In Dec. 2014, this capability was augumented to utilize TLE (Two
+Line Ephemeris) files.
+<!--l. 4641--><p class="noindent" >The NAIF software package from JPL is called to read the spice files and calculate positions. It is also
+used in processing the TLE files. The NAIF software significantly increases the size of a
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>distribution, and the satellite tracking capability is unlikely to be needed outside the AOC.
+Therefore the tracking capability is not included in the default <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>distribution.
+<!--l. 4648--><p class="noindent" >To use the tracking capability, a <a 
+href="labelSECSATINITSatelliteInitialization.html#x32-3000003.7"><span 
+class="cmtt-10">Satellite Initialization</span></a> section needs to be included in the main
+input file. That section contains a group of inputs for each satellite. There are four input parameters in
+each group:
+<!--l. 4654--><p class="noindent" >Note that the satellite routines also set the velocity for the satellite for use with <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-820003.1.2"><span 
+class="cmtt-10">DOPPLER</span></a>. The satellite
+frequencies can be specified with their rest frequencies in a <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1280003.1.2"><span 
+class="cmtt-10">LINEINIT</span></a> section.
+<!--l. 4661--><p class="noindent" >There seems to be an incompatibility between the NAIF software used for satellite tracking and the
+code used for tracking planets based on a JPL ephemeris that is used elsewhere in SCHED. It is best
+not to mix the two. The satellite ephemeris files typically also contain the planets so, if you wish to
+point at both satellites and planets, you can do it with the satellite files alone. Just don&#8217;t set
+<span 
+class="cmtt-10">ephfile</span>.
+<!--l. 4668--><p class="noindent" >Note that, according to notes in the code, this satellite tracking section of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>does not take into
+account diurnal aberration which it should, because it is also not taken into account in the on-line
+system. The planet section of sched does take it into account. This leads to different calculated
+positions when using the ephemeris and when using the satellite tracking. Some day, this should all
+be handled better, but the effect is under an arcsecond so it does not matter for pointing
+antennas.
+<!--l. 4677--><p class="noindent" >The items in the <span 
+class="cmtt-10">SATINIT </span>section are:
+<!--l. 4679--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x24-42002x1">
+     <span 
+class="cmtt-10">SATNAME:</span>
+     The
+     name
+     of
+     the
+     satellite.
+     This
+     is
+     only
+     used
+     internally
+     in
+     <span 
+class="cmcsc-10">SCHED</span>.
+                                                                                
+                                                                                
+     It
+     is
+     the
+     name
+     that
+     should
+     be
+     used
+     as
+     the
+     <span 
+class="cmtt-10">SOURCE</span>
+     in
+     the
+     scan
+     inputs.
+     This
+     name
+     is
+     not
+     sent
+     to
+     the
+     NAIF
+     software.
+     </li>
+     <li 
+  class="enumerate" id="x24-42004x2">
+     <span 
+class="cmtt-10">SATNUM:</span>
+     The
+     number,
+     used
+     in
+     the
+     spice
+     files,
+     for
+     the
+     satellite
+     (or
+     other
+     celestial
+     body,
+     for
+     that
+     matter).
+     This
+     number
+     is
+     assigned
+     by
+                                                                                
+                                                                                
+     JPL.
+     You
+     need
+     to
+     know
+     this
+     number
+     but
+     I&#8217;m
+     not
+     really
+     sure
+     how
+     you
+     get
+     it.
+     This
+     number
+     is
+     sent
+     to
+     the
+     NAIF
+     software
+     to
+     tell
+     it
+     which
+     satellite
+     to
+     process.
+     For
+     satellites,
+     these
+     numbers
+     are
+     negative.
+     They
+     are
+     positive
+     for
+     planets
+     etc.
+     </li>
+     <li 
+  class="enumerate" id="x24-42006x3">
+     <span 
+class="cmtt-10">KERFILE:</span>
+     A
+     <span 
+class="cmsl-10">spice</span>
+     kernel
+                                                                                
+                                                                                
+     file
+     that
+     gives
+     information
+     such
+     as
+     leap
+     seconds.
+     It
+     is
+     likely
+     to
+     have
+     the
+     extension
+     <span 
+class="cmsl-10">.tls</span>.
+     Standard
+     versions
+     at
+     NRAO
+     are
+     in
+     the
+     $PLANET_DATA
+     area.
+     </li>
+     <li 
+  class="enumerate" id="x24-42008x4">
+     <span 
+class="cmtt-10">SATFILE:</span>
+     The
+     <span 
+class="cmsl-10">spice</span>
+     file
+     for
+     the
+     satellite.
+     It
+     is
+     likely
+     to
+     have
+     the
+     extension
+     <span 
+class="cmsl-10">.bsp</span>.
+     Note
+     that
+     it
+     must
+     contain
+     the
+     satellite
+                                                                                
+                                                                                
+     (or
+     asteroid
+     or
+     whatever)
+     you
+     want
+     to
+     observe
+     AND
+     any
+     other
+     bodies
+     needed
+     to
+     calculate
+     the
+     vector
+     from
+     the
+     antenna
+     to
+     the
+     body.
+     That
+     will
+     usually
+     mean
+     that
+     the
+     Earth
+     should
+     be
+     included
+     and
+     might
+     require
+     others,
+     especially
+     if
+     the
+     satellite
+     is
+     orbiting
+     around
+     some
+     other
+     body.
+     </li>
+     <li 
+  class="enumerate" id="x24-42010x5">
+                                                                                
+                                                                                
+     <span 
+class="cmtt-10">TLEFILE:</span>
+     The
+     Two
+     Line
+     Ephemeris
+     file
+     for
+     the
+     satellite.
+     It
+     is
+     likely
+     to
+     have
+     the
+     extension
+     <span 
+class="cmsl-10">.bsp</span>.
+     </li></ol>
+<!--l. 4708--><p class="noindent" >When groups have been given for all satellites, give a line that contains the word <span 
+class="cmtt-10">ENDSAT </span>and a
+slash.
+<!--l. 4711--><p class="noindent" >If the above section is provided and one of the satellites is a source in the schedule, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will call
+the NAIF software once for a nominal position for the summary file etc, then again for every scan for
+every stations to get updated positions and rates. It will also calculate an approximate parallax
+correction for each station. This can amount to several arcseconds, and the calculation is believed to be
+good to an arcsecond or better. The scan/station dependent positions are written to the <span 
+class="cmsl-10">.crd </span>files for
+the VLBA. See the note below about VEX files.
+<!--l. 4721--><p class="noindent" >For a satellite (or any moving source, for that matter), <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>plotting can help you see where the
+object is going. In the RD (RA/Dec) plots, a line will be plotted for each scan. A likely use for this
+capability would be to obtain the transmission schedule for a satellite over some days or weeks, make a
+schedule with a scan for each period that it is transmitting, then make the RD plot and show the
+calibrators. This will help identify times when the satellite is both on and near a likely phase reference
+source.
+<!--l. 4730--><p class="noindent" >There is a <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>example, <a 
+href="examples/egsat.key" ><span 
+class="cmsl-10">egsat.com</span></a> that demonstrates the use of the satellite capability. Interested
+users are recommended to start with that example.
+<!--l. 4736--><p class="noindent" >The scheme for handling moving sources in VEX files is not yet established. However, to correlate such
+observations on the VLBA DiFX correlator, a Vex file is needed for all the information other than the
+positions. Thus VEX files can be written when there are moving positions, but several warnings will be
+written about the use of such files. The positions of the moving sources should be obtained from
+ephemeris information at correlation time, separately from the VEX file. For pointing, positions may or
+may not be good enough depending on the rates. Also note that solar system objects may require
+offset pointing positions between different stations and that is not described in the VEX
+file.
+                                                                                
+                                                                                
+<!--l. 4748--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECCONFIGConfigurationStudies.html" >prev</a>] [<a 
+href="labelSECCONFIGConfigurationStudies.html#taillabelSECCONFIGConfigurationStudies.html" >prev-tail</a>] [<a 
+href="labelSECSATELSatelliteTracking.html" >front</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECSATELSatelliteTracking.html" >up</a>] </p></div>
+<!--l. 4748--><p class="noindent" ><a 
+ id="taillabelSECSATELSatelliteTracking.html"></a>  
+</body></html> 

@@ -1,0 +1,2675 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Spectral Line Observations</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 3231--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECREFPOINTReferencePointing.html" >next</a>] [<a 
+href="labelSECWIDEWideBandObservingRDBEDBBCVLBAandMarkIVModes.html" >prev</a>] [<a 
+href="labelSECWIDEWideBandObservingRDBEDBBCVLBAandMarkIVModes.html#taillabelSECWIDEWideBandObservingRDBEDBBCVLBAandMarkIVModes.html" >prev-tail</a>] [<a 
+href="#taillabelSECLINESpectralLineObservations.html">tail</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECLINESpectralLineObservations.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">2.5   </span> <a 
+ id="x16-330002.5"></a>Spectral Line Observations</h3>
+<!--l. 3233--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can set observing frequencies for spectral line observations based on velocities provided in the
+source catalog and rest frequencies provided in a separate type of input. This option is invoked by
+specifying <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-820003.1.2"><span 
+class="cmtt-10">DOPPLER</span></a> and can be turned off with <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-820003.1.2"><span 
+class="cmtt-10">NODOP</span></a> (<span 
+class="cmtt-10">DOPCAL </span>is an obsolete form that was too easy to
+confuse with &#8220;DO PCAL&#8221;). If <span 
+class="cmtt-10">DOPPLER </span>is invoked, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>calculates the velocity of the center of the
+Earth with respect to the designated reference frame (<span 
+class="cmtt-10">VREF </span>in the direction of the source at the time of
+the middle of the project. From this velocity, the source velocity from the source catalog, and the rest
+frequency, the required observing center frequency is calculated. The antennas need to know
+the LO settings so <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>must know the bandwidth. The bandwidth will usually be
+obtained from the setup file. It may be provided for the scan with the <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-510003.1.2"><span 
+class="cmtt-10">BW</span></a> parameter for some
+systems, unfortunately not including the new digital backends such as the RDBE on the
+VLBA.
+<!--l. 3253--><p class="noindent" >The reference frames supported by <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>are the &#8220;Local Standard of Rest&#8221; or LSR <span 
+class="cmtt-10">VREF=L</span>,
+heliocentric <span 
+class="cmtt-10">VREF=H</span>, and geocentric <span 
+class="cmtt-10">VREF=G</span>.
+<!--l. 3257--><p class="noindent" >Note that channels assigned to the same BBC will be given the same frequency as the first
+channel on that BBC, no matter what velocities etc are given for the other channels. This will
+be the case when there are upper/lower sideband pairs. Their frequencies cannot be set
+independently. Because of the different sidebands, they will, however, cover different velocity
+ranges.
+<!--l. 3264--><p class="noindent" >The frequencies derived from the Doppler calculations have to be rounded off to a value that
+can be set on the available synthesizers. For the Mark&#x00A0;III/IV and legacy VLBA systems,
+frequencies can be set to the nearest 10 kHz. For the RDBE with the DDC personality
+on the VLBA, usable frequencies are multiples of 15.625 kHz. Note that, if there is a mix
+of systems with 10 kHz and 15.625 kHz steps, one should round to 250 kHz because that
+is the lowest value common to both. Other systems are different &#8212; VSOP, for example,
+can only be set to the nearest 1 MHz. The RDBE with the PFB personality can only do
+frequencies in 32 MHz steps, and those have LO dependent offsets &#8212; it is probably best to
+avoid <span 
+class="cmtt-10">DOPPLER </span>when using the PFB. The parameter <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-810003.1.2"><span 
+class="cmtt-10">DOPINCR</span></a> can be used to control the
+rounding.
+<!--l. 3278--><p class="noindent" >The Doppler calculations are for the center of the Earth for the middle of the project. This implies that
+the frequency for each source will be constant for the duration of the project. Experience
+over the years with spectral line VLBI has shown this to be the preferred observing mode
+since it minimizes the chances of mistakes at stations that do not have automatic frequency
+setting. The shifts of the resulting spectra of about a km per second that result from the
+rotation of the Earth can be removed in post-processing with the <span 
+class="cmcsc-10">CVEL </span>program in the
+NRAO spectral line software or with a task of the same name and with similar capability in
+<span 
+class="cmcsc-10">AIPS</span>.
+<!--l. 3289--><p class="noindent" >The LO sum used when Doppler calculations are requested are calculated by either the radio definition
+(<span 
+class="cmtt-10">VDEF=R </span>in the source catalog ) or the optical definition (<span 
+class="cmtt-10">VDEF=O </span>or <span 
+class="cmtt-10">VDEF=Z</span>). With the radio definition,
+the LO sum is calculated as RESTFREQ * (1 - v/c) - BW/2 where RESTFREQ is the
+line rest frequency from the line initialization input, c is the speed of light, and BW is the
+bandwidth (appropriately signed according to the sideband). With the optical definition,
+the LO sum is RESTFREQ / (1 + v/c) - BW/2. Typically velocities for radio spectral
+lines in galactic sources are given in the radio definition in the LSR frame. Extragalactic
+                                                                                
+                                                                                
+velocities, on the other hand, are typically in the optical definition in the heliocentric frame. The
+differences in the radio and optical definitions only matter at large (typically extragalactic)
+velocities.
+<!--l. 3303--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will accept redshifts if <span 
+class="cmtt-10">VDEF=Z </span>in place of velocities, but be very careful that you have
+adequate accuracy to calculate proper frequencies - the bandwidths are typically very much smaller
+than the observing frequency so the velocities must be accurate.
+<!--l. 3309--><p class="noindent" >Internally, if Doppler calculation is requested, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>calculates the desired observing
+frequencies and puts them in the same array that would be used if <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-990003.1.2"><span 
+class="cmtt-10">FREQ</span></a> were used. This will
+override any <span 
+class="cmtt-10">FREQ </span>specifications in the main schedule and any frequency specifications in the
+setup files. The frequencies of baseband converters will then be set properly based on the
+<a 
+href="labelSECSETUPSSetupFiles.html#x31-2650003.6.4"><span 
+class="cmtt-10">FIRSTLO</span></a> for the station. Please note that the setup files must still contain a complete, valid
+frequency specification. This is to allow validity checking and to allow <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to pick up
+default parameters from the <a 
+href="labelSECFRQCATFrequencyCatalog.html#x30-2450003.5">frequency catalog</a>. The frequency in the setup should be close
+enough to the desired observing frequency that only final tuning of the BBCs is needed to
+get the exact desired frequency. For the VLBA with its 500 MHz IFs, this is not a serious
+concern.
+<!--l. 3325--><p class="noindent" >The number of channels desired is set with <a 
+href="labelSECSETUPSSetupFiles.html#x31-2780003.6.4"><span 
+class="cmtt-10">NCHAN</span></a> in the setup file (<span 
+class="cmtt-10">NCHAN </span>in the main schedule is an
+obsolete parameter and is not used.). To calculate a frequency, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>must have, for each channel, a
+bandwidth, a velocity from the source catalog, and a rest frequency from the line initialization input
+information. If a value is missing for any channel of any parameter, the value of that parameter for
+channel 1 will be used. This avoids the need, for example, of specifying lots of bandwidths when they
+are all the same.
+<!--l. 3336--><p class="noindent" >For continuum sources mixed in with line sources, specify <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-820003.1.2"><span 
+class="cmtt-10">NODOP</span></a> for that scan to avoid the Doppler
+calculations.
+<!--l. 3340--><p class="noindent" >Often it is desired to observe a continuum source at the same frequency as a line source for bandpass
+calibration. This can be done by specifying the line source with <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-840003.1.2"><span 
+class="cmtt-10">DOPSRC</span></a> in the continuum source&#8217;s scan.
+The <span 
+class="cmtt-10">DOPSRC </span>will be used for the Doppler calculation.
+<!--l. 3347--><p class="noindent" >The important parameters in the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>keyin file for Doppler frequency calculation are listed below.
+Detailed descriptions are given with the descriptions of other <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>parameters.
+<!--l. 3351--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3353--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-820003.1.2"><span 
+class="cmtt-10">DOPPLER</span>
+     and
+     <span 
+class="cmtt-10">NODOP</span></a>
+     turn
+     the
+     Doppler
+     calculations
+     on
+     and
+     off.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3357--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-840003.1.2"><span 
+class="cmtt-10">DOPSRC</span></a>
+     is
+     used
+     to
+                                                                                
+                                                                                
+     specify
+     the
+     source,
+     if
+     it
+     is
+     different
+     from
+     the
+     scan
+     source,
+     for
+     which
+     the
+     Doppler
+     calculations
+     should
+     be
+     made.
+     This
+     is
+     useful
+     for
+     bandpass
+     calibration.
+     Warning
+     -
+     as
+     with
+     nearly
+     all
+     <span 
+class="cmcsc-10">SCHED</span>&#x00A0;variables,
+     it
+     defaults
+     to
+     the
+     previous
+     scan.
+     After
+     using
+     it,
+     be
+     sure
+     to
+     set
+     it
+     to
+     blank
+     or
+     to
+     the
+                                                                                
+                                                                                
+     next
+     source.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3364--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-810003.1.2"><span 
+class="cmtt-10">DOPINCR</span></a>
+     is
+     used
+     to
+     determine
+     the
+     level
+     of
+     rounding
+     of
+     frequencies
+     that
+     is
+     used.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3368--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1290003.1.2"><span 
+class="cmtt-10">LINENAME</span></a>
+     specifies
+     which
+     group
+     of
+     rest
+     frequencies
+     to
+     use.
+     It
+     must
+     match
+     one
+     of
+     the
+     sets
+     of
+     lines
+     named
+     with
+     <span 
+class="cmtt-10">LINESET</span>
+     in
+     the
+     <span 
+class="cmtt-10">LINEINIT</span>
+     input.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3373--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-510003.1.2"><span 
+class="cmtt-10">BW</span></a>
+                                                                                
+                                                                                
+     sets
+     the
+     bandwidth
+     for
+     the
+     scan
+     and
+     overrides
+     the
+     setup
+     file
+     value.
+     This
+     was
+     useful
+     for
+     switching
+     between
+     wideband
+     observations
+     on
+     calibrators
+     and
+     narrow
+     band
+     observations
+     on
+     line
+     sources.
+     The
+     value
+     in
+     the
+     setup
+     file
+     will
+     be
+     used
+     if
+     it
+     is
+     not
+     specified.
+     In
+     general,
+     it
+     is
+     a
+     good
+     idea
+     to
+                                                                                
+                                                                                
+     use
+     a
+     new
+     setup
+     file
+     when
+     changing
+     bandwidths
+     because
+     quite
+     a
+     few
+     other
+     parameters
+     also
+     change.
+     With
+     the
+     new
+     digital
+     back
+     ends,
+     oversampling
+     is
+     now
+     allowed
+     so
+     <span 
+class="cmtt-10">BW</span>
+     basically
+     doesn&#8217;t
+     work.
+     </dd><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 3386--><p class="noindent" ><a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1280003.1.2"><span 
+class="cmtt-10">LINEINIT</span></a>
+     indicates
+     that
+     after
+     the
+     next
+     &#8220;/&#8221;,
+     information
+     on
+     the
+     rest
+     frequencies
+     of
+     spectral
+     lines
+     will
+     be
+                                                                                
+                                                                                
+     given.
+     If
+     invoked,
+     the
+     rest
+     frequencies
+     will
+     be
+     read,
+     and
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will
+     return
+     to
+     reading
+     input
+     for
+     the
+     same
+     scan
+     that
+     it
+     was
+     on
+     before
+     the
+     &#8220;/&#8221;.
+     </dd></dl>
+<!--l. 3394--><p class="noindent" >The rest frequencies are specified in separate keyin inputs in the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>keyin file following a
+&#8220;/&#8221; if <span 
+class="cmtt-10">LINEINIT </span>was specified. There can be one rest frequency per channel, although any
+not specified default to the first which is often the desired behavior. There should be one
+velocity per channel in the source file for each source to be observed (other than continuum
+calibrators). Each group of lines has a name which is then referred to using <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1290003.1.2"><span 
+class="cmtt-10">LINENAME</span></a> in the scan
+input. The group can change with each scan, but be careful to change the setup file, too, if
+necessary. Up to 10 groups of lines are allowed. The parameters in the <span 
+class="cmtt-10">LINEINIT </span>group
+are:
+     <dl class="description"><dt class="description">
+<span 
+class="cmtt-10">LINESET</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">
+     Name
+     of
+     the
+     group
+     of
+     lines.
+     <span 
+class="cmtt-10">LINENAME</span>
+     in
+     the
+     scan
+     input
+                                                                                
+                                                                                
+     will
+     be
+     used
+     to
+     invoke
+     this
+     group.
+     <!--l. 3416--><p class="noindent" >
+                    <dl class="list2"><dt class="list">
+          </dt><dd 
+class="list">
+                    <!--l. 3416--><p class="noindent" ><span 
+class="cmbx-10">Argument:</span>
+                    Name
+                    of
+                    up
+                    to
+                    8
+                    characters.
+                    </dd><dt class="list">
+          </dt><dd 
+class="list">
+                    <!--l. 3416--><p class="noindent" ><span 
+class="cmbx-10">Options:</span>
+                    Any
+                    name.
+                    </dd><dt class="list">
+          </dt><dd 
+class="list">
+                    <!--l. 3416--><p class="noindent" ><span 
+class="cmbx-10">Default:</span>
+                    None
+                    </dd><dt class="list">
+          </dt><dd 
+class="list">
+                    <!--l. 3416--><p class="noindent" ><span 
+class="cmbx-10">Usage:</span>
+                    Defaults
+                    to
+                    previous
+                    value
+                    -
+                    don&#8217;t
+                    do
+                    it!
+                    </dd><dt class="list">
+          </dt><dd 
+class="list">
+                    <!--l. 3416--><p class="noindent" ><span 
+class="cmbx-10">Example:</span>
+                    <span 
+class="cmtt-10">LINESET=&#8217;H2O&#8217;</span></dd></dl>
+                                                                                
+                                                                                
+     </dd><dt class="description">
+<span 
+class="cmtt-10">RESTFREQ</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">Rest frequencies.
+     <!--l. 3426--><p class="noindent" >
+                    <dl class="list2"><dt class="list">
+          </dt><dd 
+class="list">
+                    <!--l. 3426--><p class="noindent" ><span 
+class="cmbx-10">Argument:</span>
+                    Up
+                    to
+                    one
+                    real
+                    number
+                    per
+                    channel.
+                    The
+                    first
+                    value
+                    will
+                    be
+                    used
+                    for
+                    any
+                    channels
+                    for
+                    which
+                    a
+                    value
+                    is
+                    not
+                    given.
+                    </dd><dt class="list">
+          </dt><dd 
+class="list">
+                    <!--l. 3426--><p class="noindent" ><span 
+class="cmbx-10">Options:</span>
+                    Any
+                    value.
+                    </dd><dt class="list">
+          </dt><dd 
+class="list">
+                    <!--l. 3426--><p class="noindent" ><span 
+class="cmbx-10">Default:</span>
+                    <span 
+class="cmtt-10">0</span>
+                    </dd><dt class="list">
+          </dt><dd 
+class="list">
+                    <!--l. 3426--><p class="noindent" ><span 
+class="cmbx-10">Usage:</span>
+                    Defaults
+                    to
+                    previous
+                                                                                
+                                                                                
+                    value.
+                    </dd><dt class="list">
+          </dt><dd 
+class="list">
+                    <!--l. 3426--><p class="noindent" ><span 
+class="cmbx-10">Example:</span>
+                    <span 
+class="cmtt-10">RESTFREQ=22235.08</span></dd></dl>
+     </dd><dt class="description">
+<span 
+class="cmtt-10">ENDLINES</span><span 
+class="cmbx-10">:</span> </dt><dd 
+class="description">This parameter, on a separate line with a &#8220;/&#8221;, ends the restfrequency inputs much like the
+     <span 
+class="cmtt-10">ENDCAT </span>parameter ends in-line source and station catalog inputs.
+     <!--l. 3438--><p class="noindent" >
+                    <dl class="list2"><dt class="list">
+          </dt><dd 
+class="list">
+                    <!--l. 3438--><p class="noindent" ><span 
+class="cmbx-10">Argument:</span>
+                    None.
+                    </dd><dt class="list">
+          </dt><dd 
+class="list">
+                    <!--l. 3438--><p class="noindent" ><span 
+class="cmbx-10">Options:</span>
+                    None.
+                    </dd><dt class="list">
+          </dt><dd 
+class="list">
+                    <!--l. 3438--><p class="noindent" ><span 
+class="cmbx-10">Default:</span>
+                    Not
+                    specified.
+                    </dd><dt class="list">
+          </dt><dd 
+class="list">
+                    <!--l. 3438--><p class="noindent" ><span 
+class="cmbx-10">Usage:</span>
+                    Defaults
+                    to
+                    previous
+                    value,
+                    but
+                    this
+                    has
+                    no
+                    effect
+                    since
+                    this
+                    will
+                    be
+                    the
+                    last
+                    line
+                                                                                
+                                                                                
+                    of
+                    the
+                    rest
+                    frequency
+                    input
+                    to
+                    be
+                    read.
+                    </dd><dt class="list">
+          </dt><dd 
+class="list">
+                    <!--l. 3438--><p class="noindent" ><span 
+class="cmbx-10">Example:</span>
+                    <span 
+class="cmtt-10">ENDLINES</span>
+                    <span 
+class="cmtt-10">/</span></dd></dl>
+     </dd></dl>
+<!--l. 3442--><p class="noindent" >A fairly extensive list of possible rest frequencies is given below. These frequencies are not guaranteed.
+If anyone finds an error, please notify Craig Walker (cwalkernrao.edu).
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-5">
+---------------------------------------------------------------
+&#x00A0;<br />lineinit&#x00A0;/
+&#x00A0;<br />!&#x00A0;&#x00A0;&#x00A0;Frequencies&#x00A0;from&#x00A0;Reid&#x00A0;and&#x00A0;Moran&#8217;s&#x00A0;Annual&#x00A0;Reviews&#x00A0;article&#x00A0;preprint.
+&#x00A0;<br />!&#x00A0;&#x00A0;&#x00A0;Do&#x00A0;not&#x00A0;keep&#x00A0;more&#x00A0;than&#x00A0;10&#x00A0;lines&#x00A0;in&#x00A0;a&#x00A0;SCHED&#x00A0;input&#x00A0;file.
+&#x00A0;<br />lineset=&#8217;OH1612&#8217;&#x00A0;&#x00A0;restfreq=1612.231&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;OH1665&#8217;&#x00A0;&#x00A0;restfreq=1665.402&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;OH1667&#8217;&#x00A0;&#x00A0;restfreq=1667.359&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;OH1720&#8217;&#x00A0;&#x00A0;restfreq=1720.530&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;OH4660&#8217;&#x00A0;&#x00A0;restfreq=4660.42&#x00A0;&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;OH4765&#8217;&#x00A0;&#x00A0;restfreq=4765.562&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;OH6030&#8217;&#x00A0;&#x00A0;restfreq=6030.747&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;OH6035&#8217;&#x00A0;&#x00A0;restfreq=6035.092&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;CH3OH&#8217;&#x00A0;&#x00A0;&#x00A0;restfreq=6668.5192&#x00A0;&#x00A0;/&#x00A0;&#x00A0;Breckenridge&#x00A0;and&#x00A0;Kukolich&#x00A0;ApJ&#x00A0;438.
+&#x00A0;<br />lineset=&#8217;CH3OH&#8217;&#x00A0;&#x00A0;&#x00A0;restfreq=12178.597&#x00A0;&#x00A0;/&#x00A0;&#x00A0;Breckenridge&#x00A0;and&#x00A0;Kukolich&#x00A0;ApJ&#x00A0;438.
+&#x00A0;<br />lineset=&#8217;OH13&#8217;&#x00A0;&#x00A0;&#x00A0;&#x00A0;restfreq=13441.417&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;NH3&#8217;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;restfreq=18499.393&#x00A0;&#x00A0;/&#x00A0;&#x00A0;Pratrap&#x00A0;Preprint.
+&#x00A0;<br />lineset=&#8217;CH3OH&#8217;&#x00A0;&#x00A0;&#x00A0;restfreq=19967.3961&#x00A0;/&#x00A0;&#x00A0;Menton&#x00A0;preprint.
+&#x00A0;<br />lineset=&#8217;H2O&#8217;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;restfreq=22235.08&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;CH3OH&#8217;&#x00A0;&#x00A0;&#x00A0;restfreq=23121.0242&#x00A0;/&#x00A0;&#x00A0;Menton&#x00A0;preprint.
+&#x00A0;<br />lineset=&#8217;CH3OH&#8217;&#x00A0;&#x00A0;&#x00A0;restfreq=25124.87&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;SiO425&#8217;&#x00A0;&#x00A0;restfreq=42519.3&#x00A0;&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;SiO428&#8217;&#x00A0;&#x00A0;restfreq=42820.54&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;SiO431&#8217;&#x00A0;&#x00A0;restfreq=43122.03&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;SiO862&#8217;&#x00A0;&#x00A0;restfreq=86243.35&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;SiO868&#8217;&#x00A0;&#x00A0;restfreq=86846.89&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;CH3OH&#8217;&#x00A0;&#x00A0;&#x00A0;restfreq=44069.43&#x00A0;&#x00A0;&#x00A0;/&#x00A0;&#x00A0;Bachiller&#x00A0;preprint&#x00A0;(SAO)
+&#x00A0;<br />lineset=&#8217;CH3OH&#8217;&#x00A0;&#x00A0;&#x00A0;restfreq=97980.97&#x00A0;&#x00A0;&#x00A0;/&#x00A0;&#x00A0;Plambeck&#x00A0;preprint&#x00A0;(SAO)
+&#x00A0;<br />lineset=&#8217;SiO1293&#8217;&#x00A0;restfreq=129363.26&#x00A0;&#x00A0;/
+&#x00A0;<br />!&#x00A0;some&#x00A0;more&#x00A0;from&#x00A0;VLA&#x00A0;OBSERVE
+&#x00A0;<br />lineset=&#8217;H&#8217;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;restfreq=1420.405752&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;H2CO4830&#8217;&#x00A0;restfreq=4829.656900&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;H2CO145&#8217;&#x00A0;&#x00A0;restfreq=14488.475000&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;NH3(1,1)&#8217;&#x00A0;restfreq=23694.495500&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;NH3(2,2)&#8217;&#x00A0;restfreq=23722.633600&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;NH3(3,3)&#8217;&#x00A0;restfreq=23870.129600&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;NH3(4,4)&#8217;&#x00A0;restfreq=24139.416900&#x00A0;&#x00A0;/
+&#x00A0;<br />lineset=&#8217;NH3(5,5)&#8217;&#x00A0;restfreq=24532.988700&#x00A0;&#x00A0;/
+&#x00A0;<br />endlines&#x00A0;/
+&#x00A0;<br />-----------------------------------------------------------------
+</div>
+<!--l. 3486--><p class="nopar" >
+<!--l. 3488--><p class="noindent" >The example below shows the <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input for a spectral line It is a modified version of the file used
+for a project by Phil Diamond in Dec 95. The modifications are to adjust for some of the new features
+of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>that were not available at the time the file was used. Note that it is not necessary to repeat
+the DUR and GAP specification every scan. However some users prefer to show these details and it
+certainly doesn&#8217;t hurt. Also, the bandwidth specification is the same as the setup file so it is not
+                                                                                
+                                                                                
+required (it used to be).
+<div class="verbatiminput">
+<span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;EXAMPLE</span><span 
+class="cmtt-10">&#x00A0;-</span><span 
+class="cmtt-10">&#x00A0;spectral</span><span 
+class="cmtt-10">&#x00A0;line</span><span 
+class="cmtt-10">&#x00A0;observations.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">overwrite</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;Note</span><span 
+class="cmtt-10">&#x00A0;added</span><span 
+class="cmtt-10">&#x00A0;Jan.</span><span 
+class="cmtt-10">&#x00A0;17,</span><span 
+class="cmtt-10">&#x00A0;2013</span><span 
+class="cmtt-10">&#x00A0;-</span><span 
+class="cmtt-10">&#x00A0;GBT</span><span 
+class="cmtt-10">&#x00A0;needs</span><span 
+class="cmtt-10">&#x00A0;pointing</span><span 
+class="cmtt-10">&#x00A0;which</span><span 
+class="cmtt-10">&#x00A0;isn&#8217;t</span><span 
+class="cmtt-10">&#x00A0;shown</span><span 
+class="cmtt-10">&#x00A0;here.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;Nov.</span><span 
+class="cmtt-10">&#x00A0;1,</span><span 
+class="cmtt-10">&#x00A0;2012.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Use</span><span 
+class="cmtt-10">&#x00A0;GBT</span><span 
+class="cmtt-10">&#x00A0;instead</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;VLA</span><span 
+class="cmtt-10">&#x00A0;which</span><span 
+class="cmtt-10">&#x00A0;can</span><span 
+class="cmtt-10">&#x00A0;no</span><span 
+class="cmtt-10">&#x00A0;longer</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;use</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;legacy</span><span 
+class="cmtt-10">&#x00A0;system.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Eventually</span><span 
+class="cmtt-10">&#x00A0;switch</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;RDBE/DDC</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;WIDAR.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;Also</span><span 
+class="cmtt-10">&#x00A0;switch</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;bit</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;removed</span><span 
+class="cmtt-10">&#x00A0;tpmode.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RCW.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;=================</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Cover</span><span 
+class="cmtt-10">&#x00A0;Information</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;====================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">EXPT</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;BD27</span><span 
+class="cmtt-10">&#x00A0;VLBA</span><span 
+class="cmtt-10">&#x00A0;format</span><span 
+class="cmtt-10">&#x00A0;7mm</span><span 
+class="cmtt-10">&#x00A0;line</span><span 
+class="cmtt-10">&#x00A0;1995</span><span 
+class="cmtt-10">&#x00A0;DEC</span><span 
+class="cmtt-10">&#x00A0;29</span><span 
+class="cmtt-10">&#x00A0;18:00</span><span 
+class="cmtt-10">&#x00A0;-&#x003E;</span><span 
+class="cmtt-10">&#x00A0;DEC</span><span 
+class="cmtt-10">&#x00A0;30</span><span 
+class="cmtt-10">&#x00A0;18:00</span><span 
+class="cmtt-10">&#x00A0;UT&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">EXPCODE</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;BD027&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">VERSION</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;1</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">PINAME</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;P.J.Diamond&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">ADDRESS1</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;NRAO&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">ADDRESS2</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;P.O.</span><span 
+class="cmtt-10">&#x00A0;Box</span><span 
+class="cmtt-10">&#x00A0;O&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">ADDRESS3</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;Socorro,</span><span 
+class="cmtt-10">&#x00A0;NM</span><span 
+class="cmtt-10">&#x00A0;87801,</span><span 
+class="cmtt-10">&#x00A0;USA&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">PHONE</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;1-505-835-7365</span><span 
+class="cmtt-10">&#x00A0;(work)</span><span 
+class="cmtt-10">&#x00A0;or</span><span 
+class="cmtt-10">&#x00A0;1-505-835-2095</span><span 
+class="cmtt-10">&#x00A0;(home)&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">OBSPHONE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;1-505-835-7365</span><span 
+class="cmtt-10">&#x00A0;(work)</span><span 
+class="cmtt-10">&#x00A0;or</span><span 
+class="cmtt-10">&#x00A0;1-505-835-2095</span><span 
+class="cmtt-10">&#x00A0;(home)&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">FAX</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;1-505-835-7027&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">EMAIL</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;pdiamond@nrao.edu</span><span 
+class="cmtt-10">&#x00A0;(internet)&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">OBSMODE</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;VLBA&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">OBSTYPE</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;VLBA&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==============</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Correlator</span><span 
+class="cmtt-10">&#x00A0;Information</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;==================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">correl</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;Socorro&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">coravg</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;4</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">corchan</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;256</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">cornant</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;10</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">corpol</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;off&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">corwtfn</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;uniform&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">corsrcs</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;standard&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">cortape</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;FTP</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">corship1</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;Athol</span><span 
+class="cmtt-10">&#x00A0;Kemball&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">corship2</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;P.</span><span 
+class="cmtt-10">&#x00A0;O.</span><span 
+class="cmtt-10">&#x00A0;Box</span><span 
+class="cmtt-10">&#x00A0;O&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">corship3</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;Socorro</span><span 
+class="cmtt-10">&#x00A0;NM</span><span 
+class="cmtt-10">&#x00A0;87801&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;====================</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Source</span><span 
+class="cmtt-10">&#x00A0;Catalog</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;====================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;This</span><span 
+class="cmtt-10">&#x00A0;has</span><span 
+class="cmtt-10">&#x00A0;sources</span><span 
+class="cmtt-10">&#x00A0;with</span><span 
+class="cmtt-10">&#x00A0;positions</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;mixed</span><span 
+class="cmtt-10">&#x00A0;equinoxes.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;It</span><span 
+class="cmtt-10">&#x00A0;is</span><span 
+class="cmtt-10">&#x00A0;normally</span><span 
+class="cmtt-10">&#x00A0;recommended</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;use</span><span 
+class="cmtt-10">&#x00A0;J2000.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Note</span><span 
+class="cmtt-10">&#x00A0;most</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;continuum</span><span 
+class="cmtt-10">&#x00A0;sources</span><span 
+class="cmtt-10">&#x00A0;below</span><span 
+class="cmtt-10">&#x00A0;could</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;picked</span><span 
+class="cmtt-10">&#x00A0;up</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;from</span><span 
+class="cmtt-10">&#x00A0;$SCHED/catalogs/sources.gsfc</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SRCCAT</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;3C273&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RA=12:26:33.2480</span><span 
+class="cmtt-10">&#x00A0;DEC=</span><span 
+class="cmtt-10">&#x00A0;02:19:43.290</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;3C279&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RA=12:53:35.8380</span><span 
+class="cmtt-10">&#x00A0;DEC=-05:31:08.040</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;3C345&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RA=16:41:17.6080</span><span 
+class="cmtt-10">&#x00A0;DEC=</span><span 
+class="cmtt-10">&#x00A0;39:54:10.820</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;3C454.3&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RA=22:51:29.52</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;DEC=</span><span 
+class="cmtt-10">&#x00A0;15:52:54.35</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;OJ287&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RA=08:51:57.2530</span><span 
+class="cmtt-10">&#x00A0;DEC=</span><span 
+class="cmtt-10">&#x00A0;20:17:58.440</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;1823+568&#8217;</span><span 
+class="cmtt-10">&#x00A0;RA=18:23:14.9490</span><span 
+class="cmtt-10">&#x00A0;DEC=</span><span 
+class="cmtt-10">&#x00A0;56:49:18.050</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;1334-127&#8217;</span><span 
+class="cmtt-10">&#x00A0;RA=13:34:59.8150</span><span 
+class="cmtt-10">&#x00A0;DEC=-12:42:09.900</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;1633+382&#8217;</span><span 
+class="cmtt-10">&#x00A0;RA=16:33:30.6280</span><span 
+class="cmtt-10">&#x00A0;DEC=</span><span 
+class="cmtt-10">&#x00A0;38:14:10.050</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;0420-014&#8217;</span><span 
+class="cmtt-10">&#x00A0;RA=04:20:43.5400</span><span 
+class="cmtt-10">&#x00A0;DEC=-01:27:28.660</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;1749+096&#8217;</span><span 
+class="cmtt-10">&#x00A0;RA=17:51:32.8185</span><span 
+class="cmtt-10">&#x00A0;DEC=</span><span 
+class="cmtt-10">&#x00A0;09:39:00.728</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;J2000&#8217;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;RAQR&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RA=23:41:14.269</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;DEC=-15:33:42.89</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;VEL</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;-27.0,</span><span 
+class="cmtt-10">&#x00A0;-27.0</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;RLEO&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RA=09:44:52.2</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;DEC=</span><span 
+class="cmtt-10">&#x00A0;11:39:40.8</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;VEL</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;-2.0,</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;-2.0</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;VYCMA&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RA=07:20:54.6</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;DEC=-25:40:12.2</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;VEL</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;20.0</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;VXSGR&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RA=18:05:02.9</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;DEC=-22:13:55.6</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;VEL</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;8.0</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;UHER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RA=16:23:35.0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;DEC=</span><span 
+class="cmtt-10">&#x00A0;19:00:18.0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;VEL</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;-15.0,</span><span 
+class="cmtt-10">&#x00A0;-15.0</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;IKTAU&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RA=03:50:43.7</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;DEC=</span><span 
+class="cmtt-10">&#x00A0;11:15:31.8</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;VEL</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;34.0,</span><span 
+class="cmtt-10">&#x00A0;34.0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;TXCAM&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RA=04:56:41.4</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;DEC=</span><span 
+class="cmtt-10">&#x00A0;56:06:29.9</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;VEL</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;9.0,</span><span 
+class="cmtt-10">&#x00A0;9.0</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;NMLCYG&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RA=20:46:25.59</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;DEC=</span><span 
+class="cmtt-10">&#x00A0;40:06:58.3</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;J2000&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;VEL</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;-5.0,</span><span 
+class="cmtt-10">&#x00A0;-5.0</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE=&#8217;SPER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;RA=02:19:15.1</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;DEC=+58:21:34.0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;EQUINOX=&#8217;B1950&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;VEL</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;-40.0,</span><span 
+class="cmtt-10">&#x00A0;-40.0</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">ENDCAT</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;====================</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Station</span><span 
+class="cmtt-10">&#x00A0;Catalog</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;===================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">stafile</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;$SCHED/catalogs/stations.dat&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">freqfile</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;$SCHED/catalogs/freq.dat&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==============</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Spectral</span><span 
+class="cmtt-10">&#x00A0;line</span><span 
+class="cmtt-10">&#x00A0;rest</span><span 
+class="cmtt-10">&#x00A0;frequecies</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;===========</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">LINEINIT</span><span 
+class="cmtt-10">&#x00A0;/</span>
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">lineset=&#8217;ccal&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;restfreq=43122.027,</span><span 
+class="cmtt-10">&#x00A0;43122.027,</span><span 
+class="cmtt-10">&#x00A0;43126.027,</span><span 
+class="cmtt-10">&#x00A0;43126.027,</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;43130.027,</span><span 
+class="cmtt-10">&#x00A0;43130.027,</span><span 
+class="cmtt-10">&#x00A0;43134.027,</span><span 
+class="cmtt-10">&#x00A0;43134.027</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">lineset=&#8217;prog&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;restfreq=43122.027,</span><span 
+class="cmtt-10">&#x00A0;43122.027</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">ENDLINES</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;====================</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Observing</span><span 
+class="cmtt-10">&#x00A0;setup</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;===================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;This</span><span 
+class="cmtt-10">&#x00A0;is</span><span 
+class="cmtt-10">&#x00A0;a</span><span 
+class="cmtt-10">&#x00A0;fairly</span><span 
+class="cmtt-10">&#x00A0;fully</span><span 
+class="cmtt-10">&#x00A0;specified</span><span 
+class="cmtt-10">&#x00A0;setup</span><span 
+class="cmtt-10">&#x00A0;file.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Note</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;VLBA</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;GBT</span><span 
+class="cmtt-10">&#x00A0;setsups</span><span 
+class="cmtt-10">&#x00A0;are</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;same</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;this</span><span 
+class="cmtt-10">&#x00A0;case.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setinit</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;bd27.set</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">nchan</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;8</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;samprate</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;8.0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bits</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bbfilter</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;4.0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;128</span><span 
+class="cmtt-10">&#x00A0;Mbps</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">format</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;VLBA1:1</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">bbc</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;1,</span><span 
+class="cmtt-10">&#x00A0;2,</span><span 
+class="cmtt-10">&#x00A0;3,</span><span 
+class="cmtt-10">&#x00A0;4,</span><span 
+class="cmtt-10">&#x00A0;5,</span><span 
+class="cmtt-10">&#x00A0;6,</span><span 
+class="cmtt-10">&#x00A0;7,</span><span 
+class="cmtt-10">&#x00A0;8</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">netside</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;U,</span><span 
+class="cmtt-10">&#x00A0;U,</span><span 
+class="cmtt-10">&#x00A0;U,</span><span 
+class="cmtt-10">&#x00A0;U,</span><span 
+class="cmtt-10">&#x00A0;U,</span><span 
+class="cmtt-10">&#x00A0;U,</span><span 
+class="cmtt-10">&#x00A0;U,</span><span 
+class="cmtt-10">&#x00A0;U</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">ifchan</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;R,</span><span 
+class="cmtt-10">&#x00A0;L,</span><span 
+class="cmtt-10">&#x00A0;R,</span><span 
+class="cmtt-10">&#x00A0;L,</span><span 
+class="cmtt-10">&#x00A0;R,</span><span 
+class="cmtt-10">&#x00A0;L,</span><span 
+class="cmtt-10">&#x00A0;R,</span><span 
+class="cmtt-10">&#x00A0;L</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Radio</span><span 
+class="cmtt-10">&#x00A0;Astronomy</span><span 
+class="cmtt-10">&#x00A0;allocation:</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;42400-43500</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">pcal</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;off&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">freqref</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;43150.99</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">freqoff</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;-8,-8,-4,-4,0,0,4,4</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">firstlo</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;42400.00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;fe(1)</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;7mm&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;fe(3)</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;7mm&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">synth(2)</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;7.6</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;synth(3)=</span><span 
+class="cmtt-10">&#x00A0;11.6</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;LO</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;Syn(2)</span><span 
+class="cmtt-10">&#x00A0;+</span><span 
+class="cmtt-10">&#x00A0;3*Syn(3)</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">station</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;VLBA&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;GBT_VLBA&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;rchan</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;A</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;lchan</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;C</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">endset</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;As</span><span 
+class="cmtt-10">&#x00A0;a</span><span 
+class="cmtt-10">&#x00A0;demonstration,</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;following</span><span 
+class="cmtt-10">&#x00A0;is</span><span 
+class="cmtt-10">&#x00A0;all</span><span 
+class="cmtt-10">&#x00A0;that</span><span 
+class="cmtt-10">&#x00A0;is</span><span 
+class="cmtt-10">&#x00A0;needed</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;get</span><span 
+class="cmtt-10">&#x00A0;an</span><span 
+class="cmtt-10">&#x00A0;equivalent</span><span 
+class="cmtt-10">&#x00A0;setup</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;above.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;It</span><span 
+class="cmtt-10">&#x00A0;is</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;same.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Note</span><span 
+class="cmtt-10">&#x00A0;that</span><span 
+class="cmtt-10">&#x00A0;both</span><span 
+class="cmtt-10">&#x00A0;turn</span><span 
+class="cmtt-10">&#x00A0;off</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;pulse</span><span 
+class="cmtt-10">&#x00A0;calibration</span><span 
+class="cmtt-10">&#x00A0;tones</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;which</span><span 
+class="cmtt-10">&#x00A0;can</span><span 
+class="cmtt-10">&#x00A0;mess</span><span 
+class="cmtt-10">&#x00A0;up</span><span 
+class="cmtt-10">&#x00A0;spectral</span><span 
+class="cmtt-10">&#x00A0;line</span><span 
+class="cmtt-10">&#x00A0;observations.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Neither</span><span 
+class="cmtt-10">&#x00A0;setup</span><span 
+class="cmtt-10">&#x00A0;uses</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;default</span><span 
+class="cmtt-10">&#x00A0;&#8217;format&#8217;</span><span 
+class="cmtt-10">&#x00A0;because</span><span 
+class="cmtt-10">&#x00A0;that</span><span 
+class="cmtt-10">&#x00A0;would</span><span 
+class="cmtt-10">&#x00A0;give</span><span 
+class="cmtt-10">&#x00A0;a</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;speedup</span><span 
+class="cmtt-10">&#x00A0;factor</span><span 
+class="cmtt-10">&#x00A0;on</span><span 
+class="cmtt-10">&#x00A0;correlation</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;correlator</span><span 
+class="cmtt-10">&#x00A0;output</span><span 
+class="cmtt-10">&#x00A0;data</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;rate</span><span 
+class="cmtt-10">&#x00A0;would</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;too</span><span 
+class="cmtt-10">&#x00A0;high.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Note</span><span 
+class="cmtt-10">&#x00A0;that</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;format</span><span 
+class="cmtt-10">&#x00A0;can</span><span 
+class="cmtt-10">&#x00A0;be</span><span 
+class="cmtt-10">&#x00A0;forced</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;with</span><span 
+class="cmtt-10">&#x00A0;either</span><span 
+class="cmtt-10">&#x00A0;&#8217;tpmode&#8217;</span><span 
+class="cmtt-10">&#x00A0;or</span><span 
+class="cmtt-10">&#x00A0;&#8217;format&#8217;.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">setinit</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;bd27a.set</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">nchan</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;8</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bits</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;bbfilter</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;4.0</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">pol</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;dual</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">pcal</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;off&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">band</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;7mm&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">endset</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;=================</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Initial</span><span 
+class="cmtt-10">&#x00A0;Scan</span><span 
+class="cmtt-10">&#x00A0;Information</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=============</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">STATIONS</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;VLBA_SC,</span><span 
+class="cmtt-10">&#x00A0;VLBA_HN,</span><span 
+class="cmtt-10">&#x00A0;VLBA_NL,</span><span 
+class="cmtt-10">&#x00A0;VLBA_FD,</span><span 
+class="cmtt-10">&#x00A0;VLBA_LA,</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;VLBA_PT,</span><span 
+class="cmtt-10">&#x00A0;VLBA_KP,</span><span 
+class="cmtt-10">&#x00A0;VLBA_OV,</span><span 
+class="cmtt-10">&#x00A0;VLBA_BR,</span><span 
+class="cmtt-10">&#x00A0;VLBA_MK,</span><span 
+class="cmtt-10">&#x00A0;GBT_VLBA</span>
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">YEAR</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;1995</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">MONTH</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;12</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">DAY</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;29</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">START</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;18:02:00</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">LINENAME</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;ccal&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;DOPPLER</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;========================</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;The</span><span 
+class="cmtt-10">&#x00A0;Scans</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=====================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;==========================================================</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SETUP</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;bd27a.set&#8217;</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;1749+096&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;DOPSRC</span><span 
+class="cmtt-10">&#x00A0;&#8217;SPER&#8217;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;SPER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;SPER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;SPER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SETUP</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;bd27.set&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Try</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;other</span><span 
+class="cmtt-10">&#x00A0;one.</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C454.3&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;DOPSRC</span><span 
+class="cmtt-10">&#x00A0;&#8217;SPER&#8217;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;SPER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;SPER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;SPER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;SPER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;3C454.3&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;DOPSRC</span><span 
+class="cmtt-10">&#x00A0;&#8217;SPER&#8217;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;SPER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;SPER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;SPER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;__________________________________</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;|</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;|</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;|</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Many</span><span 
+class="cmtt-10">&#x00A0;scans</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;same</span><span 
+class="cmtt-10">&#x00A0;style.</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;|</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;|__________________________________|</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br />
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;1749+096&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;DOPSRC</span><span 
+class="cmtt-10">&#x00A0;&#8217;UHER&#8217;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;UHER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;UHER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;UHER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;UHER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;1749+096&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;DOPSRC</span><span 
+class="cmtt-10">&#x00A0;&#8217;UHER&#8217;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;UHER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;UHER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;UHER&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;/</span>
+                                                                                
+                                                                                
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">SOURCE</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#8217;1749+096&#8217;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;GAP</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:02:00</span><span 
+class="cmtt-10">&#x00A0;DUR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;00:11:00</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;DOPSRC</span><span 
+class="cmtt-10">&#x00A0;&#8217;UHER&#8217;/</span>
+<span 
+class="cmtt-10">&#x00A0;</span><br /><span 
+class="cmtt-10">!</span><span 
+class="cmtt-10">&#x00A0;---------------------------------------------------------------------</span>
+</div>
+                                                                                
+                                                                                
+<!--l. 3500--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECREFPOINTReferencePointing.html" >next</a>] [<a 
+href="labelSECWIDEWideBandObservingRDBEDBBCVLBAandMarkIVModes.html" >prev</a>] [<a 
+href="labelSECWIDEWideBandObservingRDBEDBBCVLBAandMarkIVModes.html#taillabelSECWIDEWideBandObservingRDBEDBBCVLBAandMarkIVModes.html" >prev-tail</a>] [<a 
+href="labelSECLINESpectralLineObservations.html" >front</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECLINESpectralLineObservations.html" >up</a>] </p></div>
+<!--l. 3500--><p class="noindent" ><a 
+ id="taillabelSECLINESpectralLineObservations.html"></a>  
+</body></html> 

@@ -1,0 +1,8 @@
+This tarball was created 26-Sep-2018 and contains a very slightly
+modified version of the software from the previous packaging:
+
+o Updated the "banner" displayed by the program when executed.
+
+o The OSX binary was rebuilt using static linking to avoid the need
+  to install various unusual (for a Mac) shared libraries.
+

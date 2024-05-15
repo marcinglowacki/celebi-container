@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Scheduling Mark II Observations</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 20647--><div class="crosslinks"><p class="noindent">[<a 
+href="labelAPPHEADHeadPositionsandTrackAssignments.html" >next</a>] [<a 
+href="labelSECMKIIIMarkIIIObservations.html" >prev</a>] [<a 
+href="labelSECMKIIIMarkIIIObservations.html#taillabelSECMKIIIMarkIIIObservations.html" >prev-tail</a>] [<a 
+href="#taillabelSECMKIISchedulingMarkIIObservations.html">tail</a>] [<a 
+href="labelAPPOBSOLETEOBSOLETESECTIONS.html#labelSECMKIISchedulingMarkIIObservations.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">B.4   </span> <a 
+ id="x50-372000B.4"></a>Scheduling Mark II Observations</h3>
+<!--l. 20649--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>was originally written in about 1978 as the Caltech Package scheduling program for Mark&#x00A0;II
+VLBI. Most Mark&#x00A0;II observations done since then were scheduled with it. But the program is
+outlasting the system that it was designed to support. I began the process of removing Mark II from
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>when I learned that it is still in use in some parts of the world. Therefore, it is being retained
+for now.
+<!--l. 20657--><p class="noindent" >Mark&#x00A0;II recording systems have been removed from most active VLBI stations and the main Mark&#x00A0;II
+correlators are no longer operating. However, the system is not completely gone. An old Caltech
+correlator is being supported at Medicina and Mark&#x00A0;II recording systems are being supported at a
+few places. For these reasons, the Mark&#x00A0;II specific features of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>have not yet been
+removed.
+<!--l. 20665--><p class="noindent" >Mark&#x00A0;II observations typically use one of the Mark&#x00A0;III or VLBA data aquisition system baseband
+converters (called video converters in the Mark&#x00A0;III world). Therefore much of the setup
+information required for the wide band systems is also required for Mark&#x00A0;II, although only
+for a single channel. A very few parameters are available that are only for Mark&#x00A0;II and
+the descriptions of those parameters should be consulted. In the main program input, the
+only such parameter is <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2130003.1.2"><span 
+class="cmtt-10">TPREF</span></a> which helps get the tape changes synchronized. In the tape
+initialization parameters, parameter <span 
+class="cmtt-10">TPTIME </span>serves a similar purpose. The main schedule
+parameter <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-490003.1.2"><span 
+class="cmtt-10">AUTOTAPE</span></a> has special meaning for Mark&#x00A0;II observations. Other than these special
+cases, the parameters used for a Mark&#x00A0;II project are essentially the same as for a wide band
+experiment. Of course, parameters related to control of the wide band tape systems are not
+needed.
+<!--l. 20682--><p class="noindent" >Tape management for Mark&#x00A0;II observations is simpler than for wide band observations. Normally the
+tapes are run continuously for 4 hours per tape and then changed, usually by hand. Correlator
+operators normally prefer is all tapes are changed at the same time, which can be arranged using <a 
+href="labelSECSCHPARTheScheduleFile.html#x26-2130003.1.2"><span 
+class="cmtt-10">TPREF</span></a>
+or <span 
+class="cmtt-10">TPTIME</span>. The schedule should have scan breaks at the tape change times (this will be forced by
+<span 
+class="cmcsc-10">SCHED</span>, so tape changes might be requested at odd times if scan breaks don&#8217;t occur at the nominal 4
+hour intervals.
+<!--l. 20693--><p class="noindent" >
+                                                                                
+                                                                                
+<!--l. 20695--><p class="noindent" >Below is an example of a simple Mark II schedule. Be warned that this aspect of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is not being
+maintained because Mark 2 is no longer available at most stations. Also, this example is not being
+tested with each release.
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-51">
+&#x00A0;SIMPLE&#x00A0;EXAMPLE
+&#x00A0;<br />&#x00A0;--------------------------------------------------------------------
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;&#x00A0;&#x00A0;Cover&#x00A0;information:
+&#x00A0;<br />&#x00A0;EXPT&#x00A0;=&#x00A0;&#8217;Mark&#x00A0;II,&#x00A0;3C345,&#x00A0;May&#x00A0;1986&#8217;&#x00A0;&#x00A0;!&#x00A0;Any&#x00A0;description.
+&#x00A0;<br />&#x00A0;EXPCODE&#x00A0;=&#x00A0;&#8217;C85G&#8217;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Project&#x00A0;code.
+&#x00A0;<br />&#x00A0;VERSION&#x00A0;=&#x00A0;1&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Version&#x00A0;1&#x00A0;of&#x00A0;schedule
+&#x00A0;<br />&#x00A0;PINAME&#x00A0;=&#x00A0;&#8217;Craig&#x00A0;Walker&#8217;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Principal&#x00A0;Investigator&#8217;s&#x00A0;name.
+&#x00A0;<br />&#x00A0;ADDRESS1&#x00A0;=&#x00A0;&#8217;National&#x00A0;Radio&#x00A0;Astronomy&#x00A0;Observatory&#8217;&#x00A0;&#x00A0;!&#x00A0;Address
+&#x00A0;<br />&#x00A0;ADDRESS2&#x00A0;=&#x00A0;&#8217;P.&#x00A0;O.&#x00A0;Box&#x00A0;O&#8217;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Up&#x00A0;to&#x00A0;4&#x00A0;lines.
+&#x00A0;<br />&#x00A0;ADDRESS3&#x00A0;=&#x00A0;&#8217;Socorro,&#x00A0;New&#x00A0;Mexico,&#x00A0;87801&#8217;
+&#x00A0;<br />&#x00A0;ADDRESS4&#x00A0;=&#x00A0;&#8217;&#x00A0;U.S.A.&#x00A0;&#8217;
+&#x00A0;<br />&#x00A0;PHONE&#x00A0;&#x00A0;&#x00A0;&#x00A0;=&#x00A0;&#8217;505&#x00A0;835&#x00A0;7247&#x00A0;&#8217;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Telephone&#x00A0;number
+&#x00A0;<br />&#x00A0;OBSPHONE&#x00A0;=&#x00A0;&#8217;505&#x00A0;835&#x00A0;7247&#x00A0;&#8217;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Phone&#x00A0;number&#x00A0;during&#x00A0;observations.
+&#x00A0;<br />&#x00A0;EMAIL&#x00A0;&#x00A0;&#x00A0;&#x00A0;=&#x00A0;&#8217;Internet:&#x00A0;cwalker@nrao.edu&#8217;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Electronic&#x00A0;mail&#x00A0;address.
+&#x00A0;<br />&#x00A0;FAX&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;=&#x00A0;&#8217;505&#x00A0;835&#x00A0;7027&#x00A0;&#8217;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Phone&#x00A0;number&#x00A0;for&#x00A0;FAX.
+&#x00A0;<br />&#x00A0;TELEX&#x00A0;&#x00A0;&#x00A0;&#x00A0;=&#x00A0;&#8217;910-988-1710&#x00A0;&#8217;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Telex&#x00A0;number.
+&#x00A0;<br />&#x00A0;OBSMODE&#x00A0;&#x00A0;=&#x00A0;&#8217;6cm&#x00A0;&#x00A0;Mark~II&#x00A0;Standard&#x00A0;Setup&#8217;&#x00A0;&#x00A0;!&#x00A0;Observing&#x00A0;mode.
+&#x00A0;<br />&#x00A0;CORREL&#x00A0;&#x00A0;&#x00A0;=&#x00A0;&#8217;Caltech&#8217;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Correlator&#x00A0;to&#x00A0;ship&#x00A0;tapes&#x00A0;to.
+&#x00A0;<br />&#x00A0;NOTE1&#x00A0;&#x00A0;&#x00A0;&#x00A0;=&#x00A0;&#8217;You&#x00A0;can&#x00A0;put&#x00A0;any&#x00A0;comments&#x00A0;you&#x00A0;want&#x00A0;to&#x00A0;in&#x00A0;these&#x00A0;four&#x00A0;lines.&#8217;
+&#x00A0;<br />&#x00A0;NOTE2&#x00A0;&#x00A0;&#x00A0;&#x00A0;=&#x00A0;&#8217;&#x00A0;More&#x00A0;comments&#x00A0;&#8217;
+&#x00A0;<br />&#x00A0;NOTE3&#x00A0;&#x00A0;&#x00A0;&#x00A0;=&#x00A0;&#8217;&#x00A0;More&#x00A0;comments&#x00A0;&#8217;
+&#x00A0;<br />&#x00A0;NOTE4&#x00A0;&#x00A0;&#x00A0;&#x00A0;=&#x00A0;&#8217;&#x00A0;Last&#x00A0;of&#x00A0;the&#x00A0;comments&#8217;
+&#x00A0;<br />
+&#x00A0;<br />&#x00A0;!&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;Now&#x00A0;the&#x00A0;actual&#x00A0;schedule&#x00A0;information.
+&#x00A0;<br />&#x00A0;SRCFILE&#x00A0;=&#x00A0;sources.obs&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Source&#x00A0;catalog.
+&#x00A0;<br />&#x00A0;STAFILE&#x00A0;=&#x00A0;stations.dat&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Station&#x00A0;catalog.
+&#x00A0;<br />&#x00A0;SETUP&#x00A0;&#x00A0;&#x00A0;=&#x00A0;nug6cm.set&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Setup&#x00A0;file.
+&#x00A0;<br />&#x00A0;YEAR&#x00A0;=&#x00A0;1986&#x00A0;&#x00A0;MONTH=5&#x00A0;&#x00A0;DAY=11&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Date&#x00A0;of&#x00A0;first&#x00A0;stop&#x00A0;time.
+&#x00A0;<br />&#x00A0;STATIONS=BONN,BOLOGNA,HSTK,NRAO,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;VLA,VLBA_PT,OVRO&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Stations&#x00A0;list
+&#x00A0;<br />&#x00A0;VLAMODE=&#8217;VS&#8217;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Required&#x00A0;information&#x00A0;for&#x00A0;VLA
+&#x00A0;<br />&#x00A0;START&#x00A0;=&#x00A0;02:00:00&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Start&#x00A0;time&#x00A0;in&#x00A0;UT.
+&#x00A0;<br />&#x00A0;TPREF&#x00A0;=&#x00A0;1::&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Control&#x00A0;tape&#x00A0;change&#x00A0;times.
+&#x00A0;<br />&#x00A0;SOURCE&#x00A0;=&#x00A0;&#8217;3C345&#8217;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;Source&#x00A0;name.
+&#x00A0;<br />&#x00A0;DUR&#x00A0;=&#x00A0;30:00&#x00A0;&#x00A0;&#x00A0;REP&#x00A0;=&#x00A0;8&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;8&#x00A0;scans&#x00A0;of&#x00A0;30&#x00A0;minutes&#x00A0;each
+&#x00A0;<br />&#x00A0;/&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;End&#x00A0;of&#x00A0;first&#x00A0;group&#x00A0;of&#x00A0;scans.
+&#x00A0;<br />&#x00A0;SOURCE=&#8217;NRAO512&#8217;&#x00A0;&#x00A0;DUR=30:00&#x00A0;&#x00A0;/&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;!&#x00A0;One&#x00A0;scan&#x00A0;on&#x00A0;another&#x00A0;source.
+&#x00A0;<br />&#x00A0;SOURCE=&#8217;3C345&#8217;&#x00A0;&#x00A0;DUR=30:00&#x00A0;REP&#x00A0;9&#x00A0;/&#x00A0;&#x00A0;!&#x00A0;9&#x00A0;more&#x00A0;scans&#x00A0;on&#x00A0;main&#x00A0;source.
+&#x00A0;<br />&#x00A0;--------------------------------------------------------------------
+&#x00A0;<br />
+</div>
+<!--l. 20741--><p class="nopar" >
+<!--l. 20743--><p class="noindent" >
+                                                                                
+                                                                                
+<!--l. 20745--><p class="noindent" >Below is an example setup file for Mark II observations. This is the standard setup file <span 
+class="cmsl-10">nug6cm.set </span>and
+contains the correct information for the VLBA and VLA, which no longer have Mark II
+recording equipment. For a real Mark II observations, the stations involved would have to be
+added.
+                                                                                
+                                                                                
+<div class="verbatim" id="verbatim-52">
+---------------------------------------------------------------------
+&#x00A0;<br />&#x00A0;EXAMPLE:&#x00A0;&#x00A0;&#x00A0;Setup&#x00A0;file&#x00A0;for&#x00A0;Mark~II&#x00A0;observations&#x00A0;(1&#x00A0;channel)&#x00A0;at&#x00A0;6cm.
+&#x00A0;<br />&#x00A0;--------------------------------------------------------------------
+&#x00A0;<br />!&#x00A0;nug6cm.set
+&#x00A0;<br />!&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;Setup&#x00A0;file&#x00A0;produced&#x00A0;by&#x00A0;MAKESETUP.
+&#x00A0;<br />!&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;Modifications&#x00A0;will&#x00A0;be&#x00A0;lost&#x00A0;next&#x00A0;time&#x00A0;MAKESETUP&#x00A0;is&#x00A0;run.
+&#x00A0;<br />
+&#x00A0;<br />nchan&#x00A0;=&#x00A0;1&#x00A0;&#x00A0;bbfilter&#x00A0;=&#x00A0;2.0&#x00A0;format&#x00A0;=&#x00A0;MARKII
+&#x00A0;<br />bbc&#x00A0;=&#x00A0;1&#x00A0;netside&#x00A0;=&#x00A0;U
+&#x00A0;<br />ifchan&#x00A0;=&#x00A0;L
+&#x00A0;<br />!&#x00A0;&#x00A0;&#x00A0;&#x00A0;Radio&#x00A0;Astronomy&#x00A0;allocation:&#x00A0;4990-5000
+&#x00A0;<br />!&#x00A0;&#x00A0;&#x00A0;&#x00A0;Radio&#x00A0;Astnomomy&#x00A0;footnote:&#x00A0;&#x00A0;&#x00A0;4950-4990
+&#x00A0;<br />!&#x00A0;&#x00A0;&#x00A0;&#x00A0;VLA&#x00A0;50MHz&#x00A0;4960.1&#x00A0;to&#x00A0;5010.1&#x00A0;with&#x00A0;VC&#x00A0;mode.
+&#x00A0;<br />!&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;VLA&#x00A0;6cm&#x00A0;receiver&#x00A0;falling&#x00A0;off&#x00A0;at&#x00A0;high&#x00A0;end.
+&#x00A0;<br />freqref&#x00A0;&#x00A0;=&#x00A0;4990.99&#x00A0;&#x00A0;!&#x00A0;&#x00A0;Mark&#x00A0;II&#x00A0;network&#x00A0;standard.
+&#x00A0;<br />fe(1)&#x00A0;=&#x00A0;&#8217;6cm&#8217;&#x00A0;&#x00A0;&#x00A0;fe(3)&#x00A0;=&#x00A0;&#8217;6cm&#8217;&#x00A0;&#x00A0;&#x00A0;synth(2)&#x00A0;=&#x00A0;4.1
+&#x00A0;<br />firstlo&#x00A0;&#x00A0;=&#x00A0;4100.00
+&#x00A0;<br />station&#x00A0;&#x00A0;=&#x00A0;VLBA&#x00A0;&#x00A0;&#x00A0;rchan&#x00A0;=&#x00A0;A&#x00A0;&#x00A0;lchan&#x00A0;=&#x00A0;C&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />firstlo&#x00A0;&#x00A0;=&#x00A0;4360.10
+&#x00A0;<br />station&#x00A0;&#x00A0;=&#x00A0;VLA1&#x00A0;&#x00A0;&#x00A0;rchan&#x00A0;=&#x00A0;B&#x00A0;&#x00A0;lchan&#x00A0;=&#x00A0;D&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />station&#x00A0;&#x00A0;=&#x00A0;VLA27&#x00A0;&#x00A0;rchan&#x00A0;=&#x00A0;A&#x00A0;&#x00A0;lchan&#x00A0;=&#x00A0;C&#x00A0;&#x00A0;&#x00A0;/
+&#x00A0;<br />firstlo&#x00A0;&#x00A0;=&#x00A0;4260.0
+&#x00A0;<br />station&#x00A0;&#x00A0;=&#x00A0;GB_VLBA&#x00A0;&#x00A0;rchan&#x00A0;=&#x00A0;A&#x00A0;&#x00A0;lchan&#x00A0;=&#x00A0;C&#x00A0;&#x00A0;/
+&#x00A0;<br />station&#x00A0;=&#x00A0;&#8217;EB_VLBA&#8217;
+&#x00A0;<br />fe(1)=&#8217;6cm&#8217;&#x00A0;fe(3)=&#8217;6cm&#8217;
+&#x00A0;<br />firstlo&#x00A0;=&#x00A0;4100.0&#x00A0;&#x00A0;rchan=A&#x00A0;lchan=C&#x00A0;&#x00A0;/
+&#x00A0;<br />
+&#x00A0;<br />
+</div>
+<!--l. 20780--><p class="nopar" >
+                                                                                
+                                                                                
+<!--l. 20783--><p class="noindent" >END OF OLD TEXT.
+                                                                                
+                                                                                
+<!--l. 20788--><div class="crosslinks"><p class="noindent">[<a 
+href="labelAPPHEADHeadPositionsandTrackAssignments.html" >next</a>] [<a 
+href="labelSECMKIIIMarkIIIObservations.html" >prev</a>] [<a 
+href="labelSECMKIIIMarkIIIObservations.html#taillabelSECMKIIIMarkIIIObservations.html" >prev-tail</a>] [<a 
+href="labelSECMKIISchedulingMarkIIObservations.html" >front</a>] [<a 
+href="labelAPPOBSOLETEOBSOLETESECTIONS.html#labelSECMKIISchedulingMarkIIObservations.html" >up</a>] </p></div>
+<!--l. 20788--><p class="noindent" ><a 
+ id="taillabelSECMKIISchedulingMarkIIObservations.html"></a>  
+</body></html> 

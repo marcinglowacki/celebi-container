@@ -1,0 +1,276 @@
+  COVER INFORMATION 
+
+ Station:    ATCA      (Code At ) 
+ Experiment: LBA example, LBA DAS/Recorder only
+ Exp. Code:  lba     
+
+
+Schedule Version:       1.00
+Processed by SCHED version:  11.40  Release 11.4.  March 14, 2015
+
+PI:       Cormac Reynolds
+
+Address:  Curtin University
+ 
+ 
+ 
+
+Phone:    1111
+EMAIL:    c.reynolds@curtin.edu.au
+Fax:
+Phone during observation:
+
+Observing mode: LBA, 1.4 GHz continuum. 2X16 MHz band, dual pol
+
+Notes:
+ 
+ 
+ 
+
+Schedule for ATCA      (Code At )                                   Page   2
+               LBA example, LBA DAS/Recorder only
+  UP:  D => Below limits;  H => Below horizon mask;  W => still slewing at end;  blank => Up.
+  Early: Seconds between end of slew and start.   Dwell: On source seconds. 
+  Disk: GBytes recorded to this point.
+  TPStart:  Recording start time.  Frequencies are LO sum (band edge).
+  SYNC: Time correlator is expected to sync up.
+----------------------------------------------------------------------------------------
+Start UT  Source               Start / Stop                 Early    Disk   TPStart
+Stop UT                  LST      EL    AZ   HA  UP   ParA  Dwell   GBytes    SYNC
+----------------------------------------------------------------------------------------
+
+ --- Thu  10 Dec 2009   Day 344 ---
+
+ Next scan frequencies:  1384.00  1384.00  1400.00  1400.00  1416.00  1416.00  1432.00  1432.00
+ Next BBC frequencies:    684.00   684.00   700.00   700.00   716.00   716.00   732.00   732.00
+ Next scan bandwidths:     16.00    16.00    16.00    16.00    16.00    16.00    16.00    16.00
+
+15 00 00  0537-441     06 16 08  74.4 205.4  0.6      31.1     0        0   15 00 00
+15 10 00  ---          06 26 10  73.4 210.8  0.8      37.9   600       38   15 00 01
+
+15 10 00  0437-454     06 26 10  64.3 226.7  1.8      63.4   -32       38   No stop 
+15 12 00  ---          06 28 10  64.0 227.1  1.8      64.1    88       46   15 10 01
+
+15 12 00  0438-436     06 28 10  64.9 230.7  1.8      67.2   -11       46   No stop 
+15 17 00  ---          06 33 11  64.1 231.5  1.9      68.7   289       65   15 12 01
+
+15 17 00  0437-454     06 33 11  63.2 227.9  1.9      65.8   -11       65   No stop 
+15 19 00  ---          06 35 11  62.9 228.2  1.9      66.4   109       73   15 17 01
+
+15 19 00  0438-436     06 35 11  63.8 231.8  1.9      69.3   -11       73   No stop 
+15 24 00  ---          06 40 12  62.9 232.5  2.0      70.8   289       92   15 19 01
+
+15 24 00  0437-454     06 40 12  62.0 229.0  2.0      67.9   -11       92   No stop 
+15 26 00  ---          06 42 12  61.7 229.3  2.0      68.5   109      100   15 24 01
+
+15 26 00  0438-436     06 42 12  62.6 232.7  2.0      71.4   -11      100   No stop 
+15 31 00  ---          06 47 13  61.7 233.3  2.1      72.8   289      119   15 26 01
+
+15 31 00  0437-454     06 47 13  60.9 229.9  2.1      70.0   -11      119   No stop 
+15 33 00  ---          06 49 14  60.6 230.1  2.2      70.6   109      127   15 31 01
+
+15 33 00  0438-436     06 49 14  61.3 233.6  2.1      73.3   -11      127   No stop 
+15 38 00  ---          06 54 14  60.5 234.1  2.2      74.6   289      146   15 33 01
+
+15 38 00  0437-454     06 54 14  59.7 230.7  2.2      72.0   -11      146   No stop 
+15 40 00  ---          06 56 15  59.4 230.9  2.3      72.5   109      154   15 38 01
+
+15 40 00  0438-436     06 56 15  60.1 234.3  2.3      75.2   -11      154   No stop 
+15 45 00  ---          07 01 16  59.2 234.7  2.3      76.4   289      173   15 40 01
+
+15 45 00  0437-454     07 01 16  58.6 231.4  2.4      73.8   -11      173   No stop 
+15 47 00  ---          07 03 16  58.2 231.6  2.4      74.3   109      180   15 45 01
+
+15 47 00  0438-436     07 03 16  58.9 234.9  2.4      76.9   -11      180   No stop 
+15 52 00  ---          07 08 17  58.0 235.3  2.5      78.1   289      200   15 47 01
+
+15 52 00  0437-454     07 08 17  57.4 232.0  2.5      75.6   -11      200   No stop 
+15 54 00  ---          07 10 17  57.0 232.2  2.5      76.1   109      207   15 52 01
+Schedule for ATCA      (Code At )                                   Page   3
+               LBA example, LBA DAS/Recorder only
+  UP:  D => Below limits;  H => Below horizon mask;  W => still slewing at end;  blank => Up.
+  Early: Seconds between end of slew and start.   Dwell: On source seconds. 
+  Disk: GBytes recorded to this point.
+  TPStart:  Recording start time.  Frequencies are LO sum (band edge).
+  SYNC: Time correlator is expected to sync up.
+----------------------------------------------------------------------------------------
+Start UT  Source               Start / Stop                 Early    Disk   TPStart
+Stop UT                  LST      EL    AZ   HA  UP   ParA  Dwell   GBytes    SYNC
+----------------------------------------------------------------------------------------
+
+ --- Thu  10 Dec 2009   Day 344 ---
+
+15 54 00  0438-436     07 10 17  57.6 235.4  2.5      78.5   -11      207   No stop 
+15 59 00  ---          07 15 18  56.8 235.7  2.6      79.7   289      227   15 54 01
+
+15 59 00  0437-454     07 15 18  56.2 232.6  2.6      77.3   -11      227   No stop 
+16 01 00  ---          07 17 18  55.8 232.7  2.6      77.7   109      234   15 59 01
+
+16 01 00  0438-436     07 17 18  56.4 235.8  2.6      80.1   -11      234   No stop 
+16 06 00  ---          07 22 19  55.5 236.1  2.7      81.2   289      253   16 01 01
+
+16 06 00  0437-454     07 22 19  55.0 233.0  2.7      78.9   -11      253   No stop 
+16 08 00  ---          07 24 19  54.6 233.1  2.7      79.3   109      261   16 06 01
+
+16 08 00  0438-436     07 24 19  55.1 236.2  2.7      81.6   -11      261   No stop 
+16 13 00  ---          07 29 20  54.2 236.4  2.8      82.7   289      280   16 08 01
+
+16 13 00  0437-454     07 29 20  53.7 233.4  2.8      80.4   -11      280   No stop 
+16 15 00  ---          07 31 21  53.4 233.5  2.9      80.9   109      288   16 13 01
+
+16 15 00  0438-436     07 31 21  53.9 236.5  2.8      83.1   -10      288   No stop 
+16 20 00  ---          07 36 21  53.0 236.6  2.9      84.1   290      307   16 15 01
+
+16 20 00  0437-454     07 36 21  52.5 233.7  2.9      81.9   -10      307   No stop 
+16 22 00  ---          07 38 22  52.2 233.8  3.0      82.4   110      315   16 20 01
+
+16 22 00  0438-436     07 38 22  52.6 236.7  3.0      84.5   -10      315   No stop 
+16 27 00  ---          07 43 22  51.7 236.8  3.0      85.4   290      334   16 22 01
+
+16 27 00  0437-454     07 43 22  51.3 234.0  3.1      83.4   -10      334   No stop 
+16 29 00  ---          07 45 23  51.0 234.0  3.1      83.8   110      342   16 27 01
+
+16 29 00  0438-436     07 45 23  51.3 236.9  3.1      85.8   -10      342   No stop 
+16 34 00  ---          07 50 24  50.4 237.0  3.2      86.7   290      361   16 29 01
+
+16 34 00  0437-454     07 50 24  50.1 234.2  3.2      84.8   -10      361   No stop 
+16 36 00  ---          07 52 24  49.7 234.2  3.2      85.2   110      369   16 34 01
+
+16 36 00  0438-436     07 52 24  50.1 237.0  3.2      87.1   -10      369   No stop 
+16 41 00  ---          07 57 25  49.2 237.1  3.3      88.0   290      388   16 36 01
+
+16 41 00  0437-454     07 57 25  48.8 234.3  3.3      86.2   -10      388   No stop 
+16 43 00  ---          07 59 25  48.5 234.3  3.3      86.5   110      396   16 41 01
+
+16 43 00  0438-436     07 59 25  48.8 237.1  3.3      88.4   -10      396   No stop 
+16 48 00  ---          08 04 26  47.9 237.1  3.4      89.3   290      415   16 43 01
+Schedule for ATCA      (Code At )                                   Page   4
+               LBA example, LBA DAS/Recorder only
+  UP:  D => Below limits;  H => Below horizon mask;  W => still slewing at end;  blank => Up.
+  Early: Seconds between end of slew and start.   Dwell: On source seconds. 
+  Disk: GBytes recorded to this point.
+  TPStart:  Recording start time.  Frequencies are LO sum (band edge).
+  SYNC: Time correlator is expected to sync up.
+----------------------------------------------------------------------------------------
+Start UT  Source               Start / Stop                 Early    Disk   TPStart
+Stop UT                  LST      EL    AZ   HA  UP   ParA  Dwell   GBytes    SYNC
+----------------------------------------------------------------------------------------
+
+ --- Thu  10 Dec 2009   Day 344 ---
+
+16 48 00  0437-454     08 04 26  47.6 234.4  3.4      87.5   -10      415   No stop 
+16 50 00  ---          08 06 26  47.3 234.4  3.5      87.9   110      422   16 48 01
+
+16 50 00  0438-436     08 06 26  47.5 237.1  3.4      89.6   -10      422   No stop 
+16 55 00  ---          08 11 27  46.6 237.1  3.5      90.5   290      442   16 50 01
+
+16 55 00  0437-454     08 11 27  46.4 234.5  3.5      88.8   -10      442   No stop 
+16 57 00  ---          08 13 27  46.0 234.5  3.6      89.1   110      449   16 55 01
+
+16 57 00  0438-436     08 13 27  46.3 237.1  3.5      90.8   -10      449   No stop 
+17 02 00  ---          08 18 28  45.4 237.1  3.6      91.7   290      468   16 57 01
+
+17 02 00  0437-454     08 18 28  45.2 234.5  3.7      90.0   -10      468   No stop 
+17 04 00  ---          08 20 29  44.8 234.5  3.7      90.4   110      476   17 02 01
+
+17 04 00  0438-436     08 20 29  45.0 237.1  3.7      92.0   -10      476   No stop 
+17 09 00  ---          08 25 29  44.1 237.0  3.7      92.8   290      495   17 04 01
+
+17 09 00  0437-454     08 25 29  43.9 234.5  3.8      91.3   -10      495   No stop 
+17 11 00  ---          08 27 30  43.6 234.5  3.8      91.6   110      503   17 09 01
+
+17 11 00  0537-441     08 27 30  54.2 235.5  2.8      81.8   -36      503   No stop 
+17 21 00  ---          08 37 31  52.4 235.8  3.0      83.9   564      541   17 11 01
+
+
+SETUP FILE INFORMATION:
+   NOTE: If DOPPLER, FREQ, or BW were used, see the individual scans for the final BBC settings.
+
+
+ ======== Setup file: /users/cwalker/files/sched_work/setups/lba21cm-2p-4IF.set
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     at20cm
+
+   Setup group:    2         Station: ATCA              Total bit rate:   512
+   Format: LBA               Bits per sample: 2         Sample rate: 32.000
+   Number of channels:  8    DBE type:                  Speedup factor:   1.00
+
+   Disk used to record data.
+
+   1st LO=    700.00    700.00    700.00    700.00    700.00    700.00    700.00    700.00
+   Net SB=         U         U         U         U         U         U         U         U
+   IF SB =         U         U         U         U         U         U         U         U
+   Pol.  =      RCP       LCP       RCP       LCP       RCP       LCP       RCP       LCP 
+   BBC   =         1         2         1         2         3         4         3         4
+   BBC SB=         U         U         U         U         U         U         U         U
+   IF    =        2N        1N        2N        1N        2N        1N        2N        1N
+
+  The following frequency sets based on these setups were used.
+
+   Frequency Set:   2  Setup file default.  Used with PCAL = off
+   LO sum=   1384.00  1384.00  1400.00  1400.00  1416.00  1416.00  1432.00  1432.00
+   BBC fr=    684.00   684.00   700.00   700.00   716.00   716.00   732.00   732.00
+   Bandwd=     16.00    16.00    16.00    16.00    16.00    16.00    16.00    16.00
+    Matching frequency sets:   2
+
+   Track assignments are: 
+    track1=   0,  4,  2,  6,  8, 12, 10, 14
+    barrel=roll_off 
+
+ POSITIONS OF SOURCES USED IN RECORDING SCANS
+
+   Source                         Source position (RA/Dec)                        Error
+                        (B1950)             (J2000)             (Date)            (mas)
+
+ * 0437-454          04 37 30.649748   * 04 39 00.854673     04 39 21.352781       0.05
+   J0439-4522       -45 28 12.59284    *-45 22 22.56290     -45 21 10.18197        0.05
+   J0439-45          /users/cwalker/files/sched_work/catalogs/sources.gsfc
+                     GSFC 2015a astro solution, unpublished    642 observations.
+
+ * 0438-436          04 38 43.179140   * 04 40 17.179974     04 40 38.390857       0.67
+   J0440-4333       -43 38 53.54183    *-43 33 08.60436     -43 31 57.09639        0.77
+   J0440-43          /users/cwalker/files/sched_work/catalogs/sources.gsfc
+                     GSFC 2015a astro solution, unpublished    427 observations.
+
+ * 0537-441          05 37 21.071420   * 05 38 50.361555     05 39 10.593571       0.01
+   J0538-4405       -44 06 44.66625    *-44 05 08.93893     -44 04 44.64712        0.01
+   J0538-44          /users/cwalker/files/sched_work/catalogs/sources.gsfc
+                     GSFC 2015a astro solution, unpublished  32759 observations.
+
+
+
+SOURCE SCAN SUMMARY FOR SOURCES LISTED ABOVE
+
+     Scan hours are for recording scans only. 
+     Baseline hours are only counted for scans above horizon at both ends.
+  Source       Setup file             Frequency sets                  Observing hours
+                                   (duplicates not shown)              Scan  Baseline
+  0437-454   ps/lba21cm-2p-4IF.set 1 2 3 4                           0.600     4.807
+  0438-436   ps/lba21cm-2p-4IF.set 1 2 3 4                           1.417    13.144
+  0537-441   ps/lba21cm-2p-4IF.set 1 2 3 4                           0.333     3.195
+
+
+EFFECT OF SOLAR CORONA
+
+  The solar corona can cause unstable phases for sources too close to the Sun.
+  SCHED provides warnings at individual scans for distances less than 10 degrees.
+  The distance from the Sun to each source in this schedule is:
+    Source         Sun distance (deg) 
+   0437-454           111.3
+   0438-436           113.1
+   0537-441           112.7
+
+  Barry Clark estimates from predictions by Ketan Desai of IPM scattering sizes 
+  that the Sun will cause amplitude reductions on the  longest VLBA baselines 
+  at a solar distance of 60deg F^(-0.6) where F is in GHz. 
+  For common VLBI bands, this is: 
+       327 MHz        117. deg 
+       610 MHz         81. deg 
+       1.6 GHz         45. deg 
+       2.3 GHz         36. deg 
+       5.0 GHz         23. deg 
+       8.4 GHz         17. deg 
+      15.0 GHz         12. deg 
+      22.0 GHz          9. deg 
+      43.0 GHz          6. deg 
+

@@ -1,0 +1,130 @@
+\BOOKMARK [1][-]{section.0.1}{0.1 \040Important Notes - Please check these}{}% 1
+\BOOKMARK [1][-]{section.0.2}{0.2 Links to Manual Sections and to External Information.}{}% 2
+\BOOKMARK [0][-]{chapter.1}{1 INTRODUCTION}{}% 3
+\BOOKMARK [1][-]{section.1.1}{1.1 Overview}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.2}{1.2 Keyin Free-format Input}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.3}{1.3 \040SCHED Input and Output Files}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.4}{1.4 Examples}{chapter.1}% 7
+\BOOKMARK [2][-]{subsection.1.4.1}{1.4.1 A Basic VLBA Schedule.}{section.1.4}% 8
+\BOOKMARK [2][-]{subsection.1.4.2}{1.4.2 A Minimal Schedule for Planning.}{section.1.4}% 9
+\BOOKMARK [1][-]{section.1.5}{1.5 Plotting}{chapter.1}% 10
+\BOOKMARK [2][-]{subsection.1.5.1}{1.5.1 Keyin Input for Plotting \(obsolete\)}{section.1.5}% 11
+\BOOKMARK [0][-]{chapter.2}{2 INFORMATION AND ADVICE ON SPECIFIC TOPICS}{}% 12
+\BOOKMARK [1][-]{section.2.1}{2.1 Using SCHED for Project Planning}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.2}{2.2 Scheduling Tips}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Observing Strategy}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Scan Times}{section.2.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.3}{2.2.3 Dynamic Scheduling}{section.2.2}% 17
+\BOOKMARK [2][-]{subsection.2.2.4}{2.2.4 Management of Data Recordings}{section.2.2}% 18
+\BOOKMARK [1][-]{section.2.3}{2.3 Recording Systems.}{chapter.2}% 19
+\BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Recording Systems History and Background}{section.2.3}% 20
+\BOOKMARK [2][-]{subsection.2.3.2}{2.3.2 Recording Systems Control}{section.2.3}% 21
+\BOOKMARK [2][-]{subsection.2.3.3}{2.3.3 MARK5 and EVLBI}{section.2.3}% 22
+\BOOKMARK [2][-]{subsection.2.3.4}{2.3.4 VLBA}{section.2.3}% 23
+\BOOKMARK [2][-]{subsection.2.3.5}{2.3.5 MARK IV \(PCFS\)}{section.2.3}% 24
+\BOOKMARK [2][-]{subsection.2.3.6}{2.3.6 NON\205VLBA Telescopes with VLBA Recorders}{section.2.3}% 25
+\BOOKMARK [1][-]{section.2.4}{2.4 Wide Band Observing: RDBE, DBBC, VLBA and Mark IV Modes}{chapter.2}% 26
+\BOOKMARK [2][-]{subsection.2.4.1}{2.4.1 The RDBE system}{section.2.4}% 27
+\BOOKMARK [2][-]{subsection.2.4.2}{2.4.2 DBBC:}{section.2.4}% 28
+\BOOKMARK [2][-]{subsection.2.4.3}{2.4.3 OTHER DIGITAL BACKENDS:}{section.2.4}% 29
+\BOOKMARK [1][-]{section.2.5}{2.5 Spectral Line Observations}{chapter.2}% 30
+\BOOKMARK [1][-]{section.2.6}{2.6 Reference Pointing}{chapter.2}% 31
+\BOOKMARK [1][-]{section.2.7}{2.7 Multiple Phase Centers}{chapter.2}% 32
+\BOOKMARK [1][-]{section.2.8}{2.8 Automatic Insertion of Geodetic Segments}{chapter.2}% 33
+\BOOKMARK [1][-]{section.2.9}{2.9 Scheduling the VLA}{chapter.2}% 34
+\BOOKMARK [1][-]{section.2.10}{2.10 Special Concerns for Specific Observatories}{chapter.2}% 35
+\BOOKMARK [2][-]{subsection.2.10.1}{2.10.1 Green Bank Telescope.}{section.2.10}% 36
+\BOOKMARK [1][-]{section.2.11}{2.11 Single Dish VLBA Observing}{chapter.2}% 37
+\BOOKMARK [1][-]{section.2.12}{2.12 Configuration Studies}{chapter.2}% 38
+\BOOKMARK [1][-]{section.2.13}{2.13 Satellite Tracking}{chapter.2}% 39
+\BOOKMARK [0][-]{chapter.3}{3 THE SCHED INPUT FILES \(Includes parameter lists\)}{}% 40
+\BOOKMARK [1][-]{section.3.1}{3.1 The Schedule File}{chapter.3}% 41
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Summary List of SCHED Parameters}{section.3.1}% 42
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Details of SCHED Parameters}{section.3.1}% 43
+\BOOKMARK [1][-]{section.3.2}{3.2 Source Catalog}{chapter.3}% 44
+\BOOKMARK [1][-]{section.3.3}{3.3 Station Catalog and Locations Catalog}{chapter.3}% 45
+\BOOKMARK [1][-]{section.3.4}{3.4 Tape Initialization File}{chapter.3}% 46
+\BOOKMARK [2][-]{subsection.3.4.1}{3.4.1 Details of Tape Initialization Parameters}{section.3.4}% 47
+\BOOKMARK [1][-]{section.3.5}{3.5 Frequency Catalog}{chapter.3}% 48
+\BOOKMARK [2][-]{subsection.3.5.1}{3.5.1 List of Frequency File Parameters}{section.3.5}% 49
+\BOOKMARK [1][-]{section.3.6}{3.6 Setup Files}{chapter.3}% 50
+\BOOKMARK [2][-]{subsection.3.6.1}{3.6.1 Standard Setup Files}{section.3.6}% 51
+\BOOKMARK [2][-]{subsection.3.6.2}{3.6.2 Examples of Setup Files}{section.3.6}% 52
+\BOOKMARK [2][-]{subsection.3.6.3}{3.6.3 Summary List of Setup File Parameters}{section.3.6}% 53
+\BOOKMARK [2][-]{subsection.3.6.4}{3.6.4 Details of Setup File Parameters}{section.3.6}% 54
+\BOOKMARK [1][-]{section.3.7}{3.7 Satellite Initialization.}{chapter.3}% 55
+\BOOKMARK [0][-]{chapter.4}{4 INSTALLING, AND RUNNING SCHED}{}% 56
+\BOOKMARK [1][-]{section.4.1}{4.1 Installing SCHED}{chapter.4}% 57
+\BOOKMARK [1][-]{section.4.2}{4.2 Running SCHED}{chapter.4}% 58
+\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 Running SCHED under UNIX or LINUX}{section.4.2}% 59
+\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 Running SCHED on a VAX with VMS}{section.4.2}% 60
+\BOOKMARK [1][-]{section.4.3}{4.3 Distribution of Schedule Files}{chapter.4}% 61
+\BOOKMARK [1][-]{section.4.4}{4.4 Related Programs}{chapter.4}% 62
+\BOOKMARK [1][-]{section.4.5}{4.5 Release Instructions.}{chapter.4}% 63
+\BOOKMARK [0][-]{chapter.5}{5 RELEASE NOTES}{}% 64
+\BOOKMARK [1][-]{section.5.1}{5.1 Recent Releases}{chapter.5}% 65
+\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 Version 11.5 development}{section.5.1}% 66
+\BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 Version 11.4}{section.5.1}% 67
+\BOOKMARK [2][-]{subsection.5.1.3}{5.1.3 Version 11.3}{section.5.1}% 68
+\BOOKMARK [2][-]{subsection.5.1.4}{5.1.4 Version 11.2}{section.5.1}% 69
+\BOOKMARK [2][-]{subsection.5.1.5}{5.1.5 Version 11.0}{section.5.1}% 70
+\BOOKMARK [2][-]{subsection.5.1.6}{5.1.6 Version 10.2}{section.5.1}% 71
+\BOOKMARK [1][-]{section.5.2}{5.2 Old Releases}{chapter.5}% 72
+\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Version 10.1}{section.5.2}% 73
+\BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 Version 10.0}{section.5.2}% 74
+\BOOKMARK [2][-]{subsection.5.2.3}{5.2.3 Version 9.4}{section.5.2}% 75
+\BOOKMARK [2][-]{subsection.5.2.4}{5.2.4 Version 9.3}{section.5.2}% 76
+\BOOKMARK [2][-]{subsection.5.2.5}{5.2.5 Version 9.2}{section.5.2}% 77
+\BOOKMARK [2][-]{subsection.5.2.6}{5.2.6 Version 9.0}{section.5.2}% 78
+\BOOKMARK [2][-]{subsection.5.2.7}{5.2.7 Version 8.1}{section.5.2}% 79
+\BOOKMARK [2][-]{subsection.5.2.8}{5.2.8 Version 8.0}{section.5.2}% 80
+\BOOKMARK [2][-]{subsection.5.2.9}{5.2.9 Version 6.05}{section.5.2}% 81
+\BOOKMARK [2][-]{subsection.5.2.10}{5.2.10 Version 6.04}{section.5.2}% 82
+\BOOKMARK [2][-]{subsection.5.2.11}{5.2.11 Version 6.02 \(Released 29 July 2005\)}{section.5.2}% 83
+\BOOKMARK [2][-]{subsection.5.2.12}{5.2.12 Version 6.01}{section.5.2}% 84
+\BOOKMARK [2][-]{subsection.5.2.13}{5.2.13 Version 6.0 - Released March 8, 2005}{section.5.2}% 85
+\BOOKMARK [2][-]{subsection.5.2.14}{5.2.14 Release of 18 September 2003.}{section.5.2}% 86
+\BOOKMARK [2][-]{subsection.5.2.15}{5.2.15 Release of 02 July 2002.}{section.5.2}% 87
+\BOOKMARK [2][-]{subsection.5.2.16}{5.2.16 Release of 16 October 2001.}{section.5.2}% 88
+\BOOKMARK [2][-]{subsection.5.2.17}{5.2.17 Release of 12 February 2001.}{section.5.2}% 89
+\BOOKMARK [2][-]{subsection.5.2.18}{5.2.18 Release of 30 January 2001.}{section.5.2}% 90
+\BOOKMARK [2][-]{subsection.5.2.19}{5.2.19 Release of 12 January 2001.}{section.5.2}% 91
+\BOOKMARK [2][-]{subsection.5.2.20}{5.2.20 Release of 28 April 2000.}{section.5.2}% 92
+\BOOKMARK [2][-]{subsection.5.2.21}{5.2.21 Release of 1 July 1999.}{section.5.2}% 93
+\BOOKMARK [2][-]{subsection.5.2.22}{5.2.22 Release of 1 Dec. 1998.}{section.5.2}% 94
+\BOOKMARK [2][-]{subsection.5.2.23}{5.2.23 Release of 30 March 1998.}{section.5.2}% 95
+\BOOKMARK [2][-]{subsection.5.2.24}{5.2.24 Release of 18 Nov. 1997.}{section.5.2}% 96
+\BOOKMARK [2][-]{subsection.5.2.25}{5.2.25 Release of 18 August 1997.}{section.5.2}% 97
+\BOOKMARK [2][-]{subsection.5.2.26}{5.2.26 Release of 1 Aug. 1997}{section.5.2}% 98
+\BOOKMARK [2][-]{subsection.5.2.27}{5.2.27 Release of 10 Feb. 1997}{section.5.2}% 99
+\BOOKMARK [2][-]{subsection.5.2.28}{5.2.28 Release of 14 Jan. 1997}{section.5.2}% 100
+\BOOKMARK [2][-]{subsection.5.2.29}{5.2.29 Release of 4 Dec. 1996}{section.5.2}% 101
+\BOOKMARK [2][-]{subsection.5.2.30}{5.2.30 Release of 26 June 1996}{section.5.2}% 102
+\BOOKMARK [2][-]{subsection.5.2.31}{5.2.31 Release of 13 Apr 1996}{section.5.2}% 103
+\BOOKMARK [2][-]{subsection.5.2.32}{5.2.32 Release of 22 Feb 1996}{section.5.2}% 104
+\BOOKMARK [2][-]{subsection.5.2.33}{5.2.33 Release of 16 May 1995}{section.5.2}% 105
+\BOOKMARK [1][-]{section.5.3}{5.3 Wish List}{chapter.5}% 106
+\BOOKMARK [0][-]{appendix.A}{A APPENDICES}{}% 107
+\BOOKMARK [1][-]{section.A.1}{A.1 Station Codes}{appendix.A}% 108
+\BOOKMARK [1][-]{section.A.2}{A.2 Historical Notes}{appendix.A}% 109
+\BOOKMARK [0][-]{appendix.B}{B OBSOLETE SECTIONS}{}% 110
+\BOOKMARK [1][-]{section.B.1}{B.1 Old VLA}{appendix.B}% 111
+\BOOKMARK [2][-]{subsection.B.1.1}{B.1.1 VLBI at the VLA - old system}{section.B.1}% 112
+\BOOKMARK [2][-]{subsection.B.1.2}{B.1.2 VLA-Only Project Example}{section.B.1}% 113
+\BOOKMARK [2][-]{subsection.B.1.3}{B.1.3 Parameters Specific to the VLA}{section.B.1}% 114
+\BOOKMARK [2][-]{subsection.B.1.4}{B.1.4 VLA Standard Bands.}{section.B.1}% 115
+\BOOKMARK [1][-]{section.B.2}{B.2 Tape Management}{appendix.B}% 116
+\BOOKMARK [2][-]{subsection.B.2.1}{B.2.1 GENERAL CONCERNS}{section.B.2}% 117
+\BOOKMARK [2][-]{subsection.B.2.2}{B.2.2 TAPE HANDLING at SCAN BOUNDARIES}{section.B.2}% 118
+\BOOKMARK [2][-]{subsection.B.2.3}{B.2.3 TAPE LENGTHS and PASS TIMES}{section.B.2}% 119
+\BOOKMARK [2][-]{subsection.B.2.4}{B.2.4 NUMBER of PASSES}{section.B.2}% 120
+\BOOKMARK [2][-]{subsection.B.2.5}{B.2.5 READBACK TESTS}{section.B.2}% 121
+\BOOKMARK [2][-]{subsection.B.2.6}{B.2.6 TAPE CHANGES}{section.B.2}% 122
+\BOOKMARK [2][-]{subsection.B.2.7}{B.2.7 POSTPASSES}{section.B.2}% 123
+\BOOKMARK [2][-]{subsection.B.2.8}{B.2.8 AUTOMATIC TAPE ALLOCATION}{section.B.2}% 124
+\BOOKMARK [1][-]{section.B.3}{B.3 Mark III Observations}{appendix.B}% 125
+\BOOKMARK [1][-]{section.B.4}{B.4 Scheduling Mark II Observations}{appendix.B}% 126
+\BOOKMARK [1][-]{section.B.5}{B.5 Head Positions and Track Assignments}{appendix.B}% 127
+\BOOKMARK [1][-]{section.B.6}{B.6 S2}{appendix.B}% 128
+\BOOKMARK [1][-]{section.B.7}{B.7 Green Bank 140'.}{appendix.B}% 129
+\BOOKMARK [1][-]{section.B.8}{B.8 Installation on Mac OSX 10.3 in 2003.}{appendix.B}% 130

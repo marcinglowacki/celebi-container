@@ -1,0 +1,466 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Wide Band Observing: RDBE, DBBC, VLBA and Mark IV Modes</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 2843--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECLINESpectralLineObservations.html" >next</a>] [<a 
+href="labelSECRECSYSRecordingSystems.html" >prev</a>] [<a 
+href="labelSECRECSYSRecordingSystems.html#taillabelSECRECSYSRecordingSystems.html" >prev-tail</a>] [<a 
+href="#taillabelSECWIDEWideBandObservingRDBEDBBCVLBAandMarkIVModes.html">tail</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECWIDEWideBandObservingRDBEDBBCVLBAandMarkIVModes.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">2.4   </span> <a 
+ id="x15-290002.4"></a>Wide Band Observing: RDBE, DBBC, VLBA and Mark IV Modes</h3>
+<!--l. 2845--><p class="noindent" >This section covers the scheduling of wide bandwidth observations. With the older tape and MARK5A
+systems, that means 512 or 1024 Mbps using or using a large number of &#8221;tracks&#8221; on disk. With the
+digital backends (RDBE and DBBC) and newer recording systems (MARK5C for now, maybe
+MARK6 later), completely new systems are involved. The first couple of paragraphs below
+are about the old systems. Then the section goes into more detail about the new digital
+systems.
+<!--l. 2853--><p class="noindent" ><span 
+class="cmbx-10">OLD SYSTEMS:</span>
+<!--l. 2855--><p class="noindent" >With the Mark5A recording system, the maximum bit rate that can normally be recorded is 1024 Mbps
+on a Mark IV system and 512 Mbps on a VLBA system. These rates are recorded on a single module,
+unlike in the tape era when 2 drives or 2 heads were required.
+<!--l. 2860--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can make schedules for the 512 Mbps and 1Gbps modes. See the examples <a 
+href="examples/eg512.key" ><span 
+class="cmsl-10">eg512.key</span></a> for a
+VLBA only case and <a 
+href="examples/eg2head.key" ><span 
+class="cmsl-10">eg2head.key</span></a> for a PCFS (MarkIV) case. Since the advent of disk recordings, for
+the user, these modes are not much different from other modes. The VLBA telescope schedules indicate
+use of the wide band mode simply through the specification of track numbers above 64.
+Note that the two examples do either only VLBA or only Mark IV, but it is ok to mix
+them.
+<!--l. 2873--><p class="noindent" ><span 
+class="cmbx-10">NEW SYSTEMS:</span>
+<!--l. 2875--><p class="noindent" >New digital backends and a new recording system started to be used for science in 2012. These
+increase the available bit rate to significantly higher values. The RDBE/Mark5C system
+developed at Haystack and NRAO records 2048 Mbps. Higher rates may eventually be provided.
+The DBBC system, developed in Italy and also using the Mark5B or Mark5C recording
+systems, is being deployed on a similar time scale and has similar bandwidths. Other, even
+wider bandwidth, recording systems are under development but will not be discussed here
+yet.
+<!--l. 2885--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">2.4.1   </span> <a 
+ id="x15-300002.4.1"></a>The RDBE system</h4>
+<!--l. 2887--><p class="noindent" >The RDBE (Roach Digital Backend, where ROACH is the core board containing a large FPGA) is a
+module that takes in 2 analog IF signals, applies an anti-alias filter that passes 512 to 1024 MHz, sets
+the power levels, samples the signals at a 1024 MHz sample rate (8 bit samples at this stage),
+digitally filters the data to the final basebands, resamples the data to 2 bits, and formats it
+for recording. It takes the place of the IF distributers, baseband converters, samplers, and
+formatter (including pulse cal detectors) in the old VLBA system. The VLBA antennas have
+two RDBE systems each, allowing an increase in the number of channels, at least with the
+DDC personality (see below). In addition to allowing increased numbers of channels, the
+use of 2 RDBEs allows simultaneous access to all 4 VLBA IFs. That is useful for the S/X
+system and for the new 4-8 GHz system, for which two polarization pairs of output data are
+available.
+<!--l. 2902--><p class="noindent" >Control of the RDBE and Mark5C recorders is handled by a new VLBA control system running on a
+standard Linux computer. The new system software is based on the EVLA Executor. Schedule
+information is given to this computer by way of the VEX file, which is converted by operations to a
+Python script that is read by the Executor. All new hardware installed at the VLBA for the next few
+                                                                                
+                                                                                
+years will use this control system and, probably slowly, the old hardware will be switched over to
+it. In the meantime, both crd files and VEX files are needed to control the VLBA sites.
+When the new 4-8 GHz receiver was installed on the VLBA, a new RF switch controller was
+installed that affects all observing bands. Because of this, both the new and old control
+systems must be used to support observations with either the new or old recording systems.
+Note that the VEX file is also used by field system stations (EVN and others) for antenna
+control.
+<!--l. 2917--><p class="noindent" >The new control system at the site, and the DiFX correlator have a slightly different idea of when scans
+should start compared to the old systems. With the old system, the media are commanded to start at a
+time that is the same at all stations and is set as the nominal scan start time minus an offset given by
+<a 
+href="labelSECSCHPARTheScheduleFile.html#x26-1790003.1.2"><span 
+class="cmtt-10">PRESTART</span></a>. The Vex file shows that time as the uncommented &#8220;start&#8221; time of the scan. But the Vex file
+also has a station dependent offset for the start of good data. With <span 
+class="cmtt-10">DWELL </span>scheduling, that is usually
+zero. But if <span 
+class="cmtt-10">DURation </span>scheduling is used, it can be significant. That time is often referred to
+as the good-data time or on-source time. It depends on <span 
+class="cmcsc-10">SCHED</span>&#8217;s concept of slew times
+and settling times. The new systems do not start the media, or the correlation until that
+time.
+<!--l. 2932--><p class="noindent" ><span 
+class="cmbx-10">TERMINOLOGY:</span>
+<!--l. 2934--><p class="noindent" >Note that the terminology for the various signals has become rather confused. For backward
+compatibility in <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>, we call the final analog signal sent to the sampler at 512-1024 MHz the
+&#8220;IF&#8221;. That is broken into narrower bandwidths called &#8220;subbands&#8221; by a polyphase filter regardless of
+RDBE personality. There is no flexibility to move those subbands around in frequency. The final signal
+that is resampled to, usually, 2 bits and recorded is called the &#8220;baseband channel&#8221; for purposes of
+<span 
+class="cmcsc-10">SCHED</span>. The baseband channel might be a subband (PFB personality) or might be further frequency
+shifted and filtered from within a subband (DDC personality). This terminology differs somewhat from
+EVLA practice where a baseband is the final analog signal and the final filtered signal is a
+subband.
+<!--l. 2947--><p class="noindent" ><span 
+class="cmbx-10">RDBE PFB PERSONALITY:</span>
+<!--l. 2949--><p class="noindent" >The FPGA in the RDBE supports multiple personalities that can be swapped as needed. The first
+developed was the PFB personality that uses a polyphase filter to break each of the two 512 MHz IFs
+into 16 basebands of 32 MHz each, all lower sideband. Exactly 16 channels must be recorded, arbitrarily
+selected from the total of 32 provided from both inputs. This personality is selected by setting the <a 
+href="labelSECSETUPSSetupFiles.html#x31-2600003.6.4"><span 
+class="cmtt-10">DBE</span></a>
+parameter to <span 
+class="cmtt-10">RDBE</span><span 
+class="cmtt-10">_PFB </span>in the setup file. Of the 16 subbands of the polyphase filter from each IF, 15
+provide good data. The other is really 16 MHz from each end of the 512 MHz, and is not
+useful. It is made available for selection in cases where it is desired to have all 16 required
+channels in one polarization. More typically, 8 channels, constituting polarization pairs,
+will be selected from each IF input. This personality can only provide 32 MHz basebands
+at fixed frequencies within the IF for a total of 2 Gbps. Other than selecting the desired
+subbands, there is no tuning flexibility. Note that the PFB personality cannot be used on both
+RDBEs at a VLBA station because the required VDIF output is not available and because
+the required 2 Gbps per RDBE is beyond the capacity of the recording system if both are
+used.
+<!--l. 2970--><p class="noindent" ><span 
+class="cmbx-10">RDBE DDC PERSONALITY:</span>
+<!--l. 2972--><p class="noindent" >The second personality that is available is the DDC (Digital Down Converter). It is selected using the
+<a 
+href="labelSECSETUPSSetupFiles.html#x31-2600003.6.4"><span 
+class="cmtt-10">DBE</span></a> parameter set to <span 
+class="cmtt-10">RDBE</span><span 
+class="cmtt-10">_DDC </span>in the setup file. This personality provides up to 4 filters per RDBE and
+there are 2 RDBE units at each station. The filters can have frequencies that are multiples of 15.625
+MHz (see below). The bandwidths of the DDC filters can be any factor of 2 step between 1 and 128
+MHz.
+<!--l. 2981--><p class="noindent" >There is a complication forced by the use of a polyphase filter first step of filtration to get the clock rate
+down to values the FPGA can support. Such filters do not have flexible frequency ranges. This one
+splits the band into 3 segments, 512 to 640 MHz, 640 to 896 MHz, and 896 to 1024 MHz. Each
+baseband must be confined to one of those ranges. The &#8220;crossover&#8221; frequencies at the filter edges have a
+                                                                                
+                                                                                
+range of something like 4-10 MHz (to be determined) that is not really usable. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will issue a
+warning if an attempt is made to have a baseband cross one of these boundaries. Note that the
+polyphase filter to use will be determined by the frequency of the LO sum. It is possible that users of
+the 128 MHz bandwidth will want to offset slightly for better pulse cal performance and this will cause
+a tiny fraction of the band to get aliased. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will issue warnings, but this can be
+tolerated.
+<!--l. 2996--><p class="noindent" >The frequencies for the band edges in the DDC personality can be set to any multiple of
+256<span 
+class="cmmi-10">&#x2215;</span>(2<sup><span 
+class="cmr-7">32</span></sup>) MHz = 0<span 
+class="cmmi-10">.</span>0596046 Hz in principle. But values that are not integer Hz would cause
+problems elsewhere - mainly with returning to phase after changes. The smallest allowed value
+that qualifies is 15.625 kHz. One way to look at the allowed values is that they are N*125
+kHz plus 0, 15.625, 31.250, 46.875, 62.500, 78.125, 93.750, or 109.375 kHz. If working with
+other antennas with legacy systems, it will be necessary to stick to multiples of 10 kHz
+which is only possible with the DDC by using multiples of 250 kHz. /schedb will warn if
+the frequency is not a multiple of 250 kHz and will abort if it is not a multiple of 15.625
+kHz.
+<!--l. 3009--><p class="noindent" ><span 
+class="cmbx-10">VLBA TUNING RESTRICTIONS:</span>
+<!--l. 3011--><p class="noindent" >The overall LO/IF/RDBE system on the VLBA will have some significant tuning flexibility issues. The
+RDBE is an add on to the older system where the baseband converters, which could take only a
+small portion of the 500 MHz IF, provided the necessary flexibility. The LO/IF system that
+creates those IFs is based on synthesizers that have set points at N*500+-100 MHz. Now,
+with the ability to take all of an IF, that restricted tuning ability will become an issue,
+especially in conjunction with the lack of tuning ability for the PFB personality and the
+crossover points for the DDC. Essentially all frequencies can be reached using more than
+one LO setting, so no cases have been identified where a particular spectral line cannot be
+observed. But full tuning flexibility that might be desired is not there. Eventually we hope to
+upgrade the front end synthesizers to designs with more tuning options, and in fact design
+and prototyping of such a system has started, although deployment is not yet funded (Feb
+2012).
+<!--l. 3027--><p class="noindent" >Note that, for the initial /schedb implementation of the RDBE, the code to provide default channel
+frequencies based on the band has not yet been written. It is necessary to give the frequencies in
+the setup file. See the simple examples. The defaulting capability will be added eventually.
+But for now, the upper-edge baseband frequencies with PFB personality must be from the
+following list: 1040.0, 1008.0, 976.0, 944.0, 912.0, 880.0, 848.0, 816.0, 784.0, 752.0, 720.0,
+688.0, 656.0, 624.0, 592.0, 560.0. These can either be selected directly using the <span 
+class="cmtt-10">BBSYN </span>setup
+file parameter, or values of <span 
+class="cmtt-10">FREQREF </span>and <span 
+class="cmtt-10">FREQOFF </span>can be selected so that the difference
+between the desired baseband frequency and the signed sum of all other LOs is one of these
+values.
+<!--l. 3040--><p class="noindent" ><span 
+class="cmbx-10">EXAMPLES:</span>
+<!--l. 3042--><p class="noindent" >Example <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>input (<span 
+class="cmsl-10">.key) </span>files for observations using the new systems are:
+<!--l. 3045--><p class="noindent" ><a 
+href="examples/egrdbe2.key" ><span 
+class="cmsl-10">egrdbe2.key</span></a> which is a reasonably simple case with the VLBA and GBT.
+<!--l. 3048--><p class="noindent" ><a 
+href="examples/manual_1.key" ><span 
+class="cmsl-10">manual</span><span 
+class="cmsl-10">_1.key</span></a> shows a lot of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>inputs instead of taking the defaults. It uses the RDBE/DDC on
+the VLBA and WIDAR on the VLA1 (VLA1 not really offered yet, but VLA27 would be
+similar).
+<!--l. 3053--><p class="noindent" ><a 
+href="examples/rdbepfb.key" ><span 
+class="cmsl-10">rdbepfb.key</span></a> which is an even simpler case with just the VLBA and using a standard setup.
+<!--l. 3056--><p class="noindent" ><a 
+href="examples/eg3mm_rd2.key" ><span 
+class="cmsl-10">eg3mm</span><span 
+class="cmsl-10">_rd2.key</span></a> which shows how to do referencing pointing at 3mm, including using narrow band data
+on masers, when the RDBE is used with the PFB personality. It uses the crd input parameters
+to control the VLBA legacy hardware which produces the power data used for reference
+pointing.
+<!--l. 3062--><p class="noindent" ><a 
+href="examples/egddc.key" ><span 
+class="cmsl-10">egddc.key</span></a> which uses the DDC personality of the RDBE.
+<!--l. 3065--><p class="noindent" ><a 
+href="examples/egddc2.key" ><span 
+class="cmsl-10">egddc2.key</span></a> which uses the DDC personality with two RDBEs and 8 baseband channels.
+<!--l. 3068--><p class="noindent" ><a 
+href="examples/egcwide.key" ><span 
+class="cmsl-10">egcwide.key</span></a> which uses the PFB personality and observes using the new 4-8 GHz VLBA
+                                                                                
+                                                                                
+receiver with one dual polarization setup and one single polarization, widely split frequencies
+setup.
+<!--l. 3073--><p class="noindent" ><a 
+href="examples/jvla.key" ><span 
+class="cmsl-10">jvla.key</span></a> is an example that uses the PFB personality of the RDBE for joint observations with the GBT
+and VLA. There are only 512 Mbps at the VLA in this mode.
+<!--l. 3078--><p class="noindent" ><a 
+href="examples/vladdc.key" ><span 
+class="cmsl-10">vladdc.key</span></a> is an example that uses the DDC personality with the VLBA, VLA, and GBT with a full 2
+Gbps on all three.
+<!--l. 3082--><p class="noindent" ><a 
+href="examples/hsaddc.key" ><span 
+class="cmsl-10">hsaddc.key</span></a> is an all-singing, all-dancing HSA example with the VLBA, VLA, GBT, and
+Effelsberg. It exercises reference pointing at all sites, array phasing at the VLA, and Doppler
+tracking.
+<!--l. 3087--><p class="noindent" ><a 
+href="examples/pfbsettst.key" ><span 
+class="cmsl-10">pfbsettst.key</span></a> is a vehicle for testing all the new RDBE/MARK5C standard setup files that use the pfb
+personality. These are the setups that start with <span 
+class="cmsl-10">rdbe</span><span 
+class="cmsl-10">_pfb</span>.
+<!--l. 3092--><p class="noindent" ><a 
+href="examples/n2227.key" ><span 
+class="cmsl-10">n2227.key</span></a> is a sample USNO Earth Orientation observation using PT and MK.
+<!--l. 3096--><p class="noindent" ><span 
+class="cmbx-10">REFERENCE POINTING WITH THE RDBE:</span>
+<!--l. 3098--><p class="noindent" >See the <a 
+href="labelSECREFPOINTReferencePointing.html#x17-340002.6">Reference Pointing section</a> for much more information on how to do reference pointing.
+<!--l. 3102--><p class="noindent" >Reference pointing on the VLBA is handled by the legacy system using power measurements made by
+the old baseband converters (BBCs). When the main observations are using the RDBE,
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>tries to set the BBCs as closely as possible to the settings of the RDBE baseband
+channels. For bandwidths below 16 MHz, this can be done well for 8 channels, as long as the
+requested frequency is below 1000 MHz in the IF. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will select the center 8 channels if
+there are more from the RDBE (the PFB always gives 16). For wider bandwidth baseband
+channels, 16 MHz will be used and it will be centered on the RDBE channel. All this means
+that reference pointing, including using Doppler for setting frequencies and setting narrow
+bandwidths for masers can be done normally for the DDC personality. If such reference
+pointing must be done when using the PFB personality with it&#8217;s fixed 32 MHz baseband
+channels, it is best to set up the old system using the piggyback scheme as demonstrated in the
+example <a 
+href="examples/egrdbe.key" ><span 
+class="cmsl-10">egrdbe.key</span></a>. That requires separate runs of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>for the MARK5C and legacy
+systems.
+<!--l. 3121--><p class="noindent" ><span 
+class="cmbx-10">PARALLEL MARK5A and MARK5C RECORDINGS:</span>
+<!--l. 3123--><p class="noindent" >Normally when scheduling a project that uses the RDBE/MARK5C system, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>creates control
+files for the old system (<span 
+class="cmsl-10">.crd </span>files) that drive the telescope and other systems, but do not cause
+MARK5A recordings to be made. Since <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>does not have adequate bookkeeping to allow
+independent specification of frequencies for both systems in one pass, a reasonable choice of frequencies
+and bandwidths for the old system is made based on the capabilities of that system and the settings for
+the new system.
+<!--l. 3132--><p class="noindent" >During testing of the RDBE/MARK5C system, it is useful to have a parallel Mark5A recording. If the
+default choices of frequencies and bandwidths for the old system is adequate, <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can be told to
+make MARK5A recordings using parameter switch /htmlref<span 
+class="cmtt-10">DOMKA</span>MP:DOMKA. The only way to check
+what those settings are is to look at the output <span 
+class="cmsl-10">.crd </span>files. Because of the limited bookkeeping, that
+information does not appear in the <span 
+class="cmsl-10">.sum </span>file.
+<!--l. 3140--><p class="noindent" >If the user does not want to take the Mark5A setups provided by <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>with <span 
+class="cmtt-10">DOMKA</span>, then the run
+can be set up as a piggyback with separate setups for each system. The scheme for doing was mentioned
+above, and is described and demonstrated in example <a 
+href="examples/egrdbe.key" ><span 
+class="cmsl-10">egrdbe.key</span></a>.
+<!--l. 3147--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">2.4.2   </span> <a 
+ id="x15-310002.4.2"></a>DBBC:</h4>
+<!--l. 3149--><p class="noindent" >The DBBC in use at the EVN, LBA and many geodesy stations is also a system that samples at 512 or
+1024 MHz and digitally filters the signals to the desired bandwidths. But it has a different design
+where, like with the old BBCs, the frequency can be set flexibly anywhere in the IF band without
+concern about crossover frequencies etc. The DBBC design has a module for each output baseband, so
+they are more directly comparable to BBCs. Support for the DDC personality of the DBBC has been
+                                                                                
+                                                                                
+implemented in <span 
+class="cmcsc-10">SCHED</span>. The PFB personality has only skeleton support and should be used with
+care.
+<!--l. 3159--><p class="noindent" >The DDC personality is selected by default, and can be selected explicitly by setting the <a 
+href="labelSECSETUPSSetupFiles.html#x31-2600003.6.4"><span 
+class="cmtt-10">DBE</span></a> parameter
+to <span 
+class="cmtt-10">DBBC</span><span 
+class="cmtt-10">_DDC </span>in the setup file. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will also accept a value of <span 
+class="cmtt-10">DBBC</span><span 
+class="cmtt-10">_PFB </span>but this is not properly
+supported and will simply mimic the PFB personality of the RDBE (they are largely compatible).
+There are several different versions of the DBBC being deployed with slightly different components. The
+major difference is in the patching of IFs (aka conditioning modules) to particular BBCs (this may
+become fully switchable with future upgrades). Three variants are recognized by <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>&#8211; ASTRO,
+GEO, HYBRID. The variant is specified in the stations file with the <a 
+href="labelSECSTACATStationCatalogandLocationsCatalog.html#x28-2310003.3"><span 
+class="cmtt-10">DBBCVER</span></a> parameter. Each
+conditioning module (IF) has up to 4 switchable inputs. The signal available on each input is station
+dependent, so IF names (<a 
+href="labelSECFRQCATFrequencyCatalog.html#x30-2460003.5.1"><span 
+class="cmtt-10">IFNAME</span></a>, <a 
+href="labelSECSETUPSSetupFiles.html#x31-2700003.6.4"><span 
+class="cmtt-10">IFCHAN</span></a>) should be assigned with due reference to the particular
+station&#8217;s wiring.
+<!--l. 3175--><p class="noindent" >Support for the DBBC in <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is complicated by the multiplicity of versions, both in hardware
+configuration and firmware. There are up to 6 IF filters available, though only DBBC Version 3 (with
+the correct firmware) supports them all. The following table summarises the IF filters and which DBBC
+versions support them (this may require revision). <div class="table">
+                                                                                
+                                                                                
+<!--l. 3176--><p class="noindent" ><a 
+ id="x15-310011"></a><hr class="float"><div class="float" 
+>
+                                                                                
+                                                                                
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"></colgroup><colgroup id="TBL-2-3g"><col 
+id="TBL-2-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-1"  
+class="td11">IF Filter #</td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-2"  
+class="td11">  Frequency    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-3"  
+class="td11">              Availability                      </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-1"  
+class="td11">     2       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-2"  
+class="td11"> 10-512&#x00A0;MHz  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-3"  
+class="td11">           All DBBC versions                 </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-1"  
+class="td11"> 1 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-2"  
+class="td11"> 512-1024&#x00A0;MHz </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-3"  
+class="td11"> All DBBC versions</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-1"  
+class="td11">     4       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-2"  
+class="td11">1024-1536&#x00A0;MHz</td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-3"  
+class="td11">DBBC2 with upgraded firmware and DBBC3</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-1"  
+class="td11">     6       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-2"  
+class="td11"> 10-1024&#x00A0;MHz  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-3"  
+class="td11">                DBBC3                         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-6-1"  
+class="td11">     3       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-6-2"  
+class="td11">1536-2048&#x00A0;MHz</td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-6-3"  
+class="td11">                DBBC3                         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-7-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-7-1"  
+class="td11">     5       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-7-2"  
+class="td11">1150-1750&#x00A0;MHz</td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-7-3"  
+class="td11">                DBBC3                         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-8-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-8-1"  
+class="td11">          </td></tr></table></div>
+<br /> <div class="caption" 
+><span class="id">Table&#x00A0;2.1: </span><span  
+class="content">IF Filters available on the DBBC (version availabilities subject to confirmation!)</span></div><!--tex4ht:label?: x15-310011 -->
+                                                                                
+                                                                                
+</div><hr class="endfloat" />
+</div>
+<!--l. 3190--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will permit a schedule that uses any of the 6 IF filters, but will warn if one of the less
+commonly available ones (i.e. 3, 5, or 6) is used.
+<!--l. 3192--><p class="noindent" >Baseband filter widths of 1, 2, 4, 8, 16 or 32&#x00A0;MHz are possible. The 32&#x00A0;MHz mode is only available on
+later versions with the &#8216;e-series&#8217; firmware upgrade and places additional constraints on which BBCs
+may be selected. These constraints are not understood by SCHED so normal defaulting
+mechanisms will fail - you will need to explicitly specify the BBC selection to use the 32&#x00A0;MHz
+filters.
+<!--l. 3198--><p class="noindent" >The frequencies for the band edges in the DDC personality can be set to any multiple of 10 kHz.
+(There is also a binary tuning mode which allows band edges to be set to a multiple of
+1024<span 
+class="cmmi-10">&#x2215;</span>2<sup><span 
+class="cmr-7">31</span></sup> <span 
+class="cmmi-10">MHz</span> = 0<span 
+class="cmmi-10">.</span>476<span 
+class="cmmi-10">Hz</span>, but its use is not advised and it is not currently supported by
+<span 
+class="cmcsc-10">SCHED</span>.)
+<!--l. 3203--><p class="noindent" >Sampling is done with 2 bits at Nyquist rate only (1 bit sampling can be emulated by bitstream
+selection on the recorder, and <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will allow you to set nbits=1).
+<h4 class="subsectionHead"><span class="titlemark">2.4.3   </span> <a 
+ id="x15-320002.4.3"></a>OTHER DIGITAL BACKENDS:</h4>
+<!--l. 3211--><p class="noindent" >There is a variant on the RDBE being developed at Haystack for mm VLBI that has 4 input IFs and
+does not attempt any filtration. It simply samples and formats the data and sends it to the recorders. It
+can put out 8 Gbps. This device is not yet supported by SCHED.
+<!--l. 3216--><p class="noindent" >When the DAR is the RDBE, the output channels and all the input channel information given to
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>are written to the VEX file. But the crd files that control the old VLBA hardware also has to
+be told something. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>does not have a separate set of variables for all those configuration
+parameters, so it just does something reasonable. It sets the number of channels to the maximum
+of the number requested and 8. It sets the frequencies to cover the middle of the RDBE
+basebands and the sidebands to match the RDBE basebands. It sets the sample rate to
+the maximum of that requested and 32 Ms/s. It sets the channel bandwidth to the lesser
+of the request and 16 MHz. It only writes the first 4 pcal extraction requests (avoiding
+going into channel numbers that are too high). Recording on the Mark5A system is not
+requested.
+                                                                                
+                                                                                
+<!--l. 3231--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECLINESpectralLineObservations.html" >next</a>] [<a 
+href="labelSECRECSYSRecordingSystems.html" >prev</a>] [<a 
+href="labelSECRECSYSRecordingSystems.html#taillabelSECRECSYSRecordingSystems.html" >prev-tail</a>] [<a 
+href="labelSECWIDEWideBandObservingRDBEDBBCVLBAandMarkIVModes.html" >front</a>] [<a 
+href="labelCHPADVICEINFORMATIONANDADVICEONSPECIFICTOPICS.html#labelSECWIDEWideBandObservingRDBEDBBCVLBAandMarkIVModes.html" >up</a>] </p></div>
+<!--l. 3231--><p class="noindent" ><a 
+ id="taillabelSECWIDEWideBandObservingRDBEDBBCVLBAandMarkIVModes.html"></a>  
+</body></html> 

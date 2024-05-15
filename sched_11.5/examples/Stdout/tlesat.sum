@@ -1,0 +1,578 @@
+                    SUMMARY FILE FOR PROJECT: tlesat  
+
+COVER INFORMATION: 
+
+  Experiment: GPS obs for AGI
+  Exp. Code:  tlesat  
+  Start Day 342 is Mon   8 Dec 2014   MJD  56999          
+
+  Schedule Version:       1.00
+  Processed by SCHED version:  11.40  Release 11.4.  March 14, 2015
+
+  PI:       Walter Brisken
+
+  Address:  DSOC
+   
+   
+   
+
+  Phone:    651-644-1677
+  EMAIL:    wbrisken@nrao.edu
+  Fax:      575-835-2027
+  Phone during observation: 575-838-0502
+
+  Observing mode: GPS L2 and L1
+
+  Notes:
+   
+   
+   
+
+
+No cover letter provided.
+ 
+ 
+ALLOWED PREEMPTION TIMES
+ 
+ Dynamically scheduled VLBA projects can have optional scans at                 
+ the start and end designated by PREEMPT='EXTRA'.  These can be                 
+ used or not used to help with efficient meshing with previous                  
+ and following projects.  Only the core time range will be used                 
+ for the initial dynamic project selection.  DOSCANScan be used to              
+ restrict the scan range sent to the .vex, .oms, crd., sch., and                
+ .flag files.                                                                   
+ 
+ The schedule can also designate which scans can be preempted at                
+ PT and MK for daily USNO EOP observations using PREEMPT='OK'                   
+ or 'NO'.  For details, see the manual discussion of PREEMPT.                   
+ 
+ Time ranges available for USNO daily EOP observations at PT and MK:            
+  1    (342) 16:00:00  to  (342) 19:14:53
+ 
+ Project times summary:                                                         
+ Core start and stop:         (342) 16:00:00  to  (342) 19:14:53                
+ 
+
+CORRELATION REQUESTS (Defaults in parentheses):
+
+  Correlator (Required if recording):          VLBADIFX    (VLBA DiFX software correlator)
+  Correlator average time (2 sec):               1.000 sec.
+    Alternate average time (for spacecraft).     0.000 sec.
+  Output spectral channels per baseband (16):         128
+     Correlator FFT size (128):                       128
+  Number of antennas to be correlated:                  8
+  Polarization (ON):                           OFF
+  Correlator weighting function (UNIFORM):     UNIFORM
+  Distribution tape (DAT):                     FTP
+
+  Distribution format (FITS):                  FITS
+  Source positions from:
+  NOT SPECIFIED.
+  Shipping address for correlator output:
+      Walter Brisken
+
+
+
+
+  Correlator Notes: GPS correlation require Walters help
+      Near-field model required
+
+
+
+
+
+
+DERIVED INFORMATION FOR CORRELATION: 
+                                                All scans
+  Elapsed time for project (hours):                 3.25
+  Total time in scheduled scans (hours):            0.82
+  Total time in recording scans (hours):            0.82
+  Total baseline hours (recording scans):          35.90
+  Projected max correlator output rate (kB/s):     112.6
+  Projected correlator output data size (MB):      264.7
+ NOTES:  Above numbers assume the same correlator parameters are used for all data.
+         The correlator output data rate is for real-time processing.
+         Above numbers assume the same correlator parameters are used for all data.
+         The recordings for a scan are assumed to start at the scan START minus PRESTART.
+         Some stations (VLA, VLBA/MARK5C) wait for good data so the estimates may be high.
+
+
+
+STATIONS USED IN SCHEDULE:
+
+   Station  Code   Latitude Longitude  Elevation       X            Y            Z       Axis
+                                                                                       Offset
+
+   VLBA_BR   Br   48.13122  119.68328     250.   -2112065.206 -3705356.505  4726813.676  2.130
+   VLBA_FD   Fd   30.63503  103.94482    1606.   -1324009.327 -5332181.955  3231962.395  2.131
+   VLBA_HN   Hn   42.93361   71.98658     296.    1446374.866 -4447939.677  4322306.184  2.130
+   VLBA_KP   Kp   31.95630  111.61242    1902.   -1995678.840 -5037317.697  3357328.025  2.131
+   VLBA_LA   La   35.77512  106.24560    1962.   -1449752.584 -4975298.576  3709123.846  2.132
+   VLBA_MK   Mk   19.80139  155.45551    3763.   -5464075.185 -2495248.106  2148297.365  2.134
+   VLBA_NL   Nl   41.77142   91.57414     222.    -130872.499 -4762317.093  4226851.001  2.131
+   VLBA_OV   Ov   37.23165  118.27706    1196.   -2409150.402 -4478573.118  3838617.339  2.131
+   VLBA_PT   Pt   34.30102  108.11919    2365.   -1640953.938 -5014816.024  3575411.792  2.138
+   VLBA_SC   Sc   17.75658   64.58363     -15.    2607848.638 -5488069.536  1932739.733  2.135
+
+
+   Plate tectonic motion adjustments for MJD  56999
+   Station  Code      Station motions (m/yr)             Adjusted positions 
+                     X       Y       Z     MJD0        X            Y            Z 
+   VLBA_BR   Br  -0.0148  0.0005 -0.0072  56293  -2112065.235 -3705356.504  4726813.662
+   VLBA_FD   Fd  -0.0128  0.0005 -0.0045  56293  -1324009.351 -5332181.954  3231962.386
+   VLBA_HN   Hn  -0.0158 -0.0015  0.0043  56293   1446374.835 -4447939.680  4322306.192
+   VLBA_KP   Kp  -0.0137  0.0008 -0.0062  56293  -1995678.867 -5037317.695  3357328.013
+   VLBA_LA   La  -0.0144  0.0006 -0.0047  56293  -1449752.612 -4975298.575  3709123.837
+   VLBA_MK   Mk  -0.0144  0.0626  0.0323  56293  -5464075.213 -2495247.984  2148297.427
+   VLBA_NL   Nl  -0.0155  0.0015 -0.0021  56293   -130872.529 -4762317.090  4226850.997
+   VLBA_OV   Ov  -0.0186  0.0067 -0.0033  56293  -2409150.438 -4478573.105  3838617.332
+   VLBA_PT   Pt  -0.0146 -0.0002 -0.0052  56293  -1640953.967 -5014816.024  3575411.782
+   VLBA_SC   Sc   0.0071  0.0095  0.0123  56293   2607848.652 -5488069.518  1932739.756
+
+
+
+BASELINE LENGTHS (km)
+
+          Br    Fd    Hn    Kp    La    Mk    Nl    Ov    Pt    Sc
+
+   Br      0  2345  3657  1913  1757  4398  2300  1214  1806  5767
+   Fd   2345     0  3105   744   608  5134  1654  1508   564  4143
+   Hn   3657  3105     0  3623  3006  7502  1611  3885  3226  2853
+   Kp   1913   744  3623     0   652  4466  2075   845   417  4839
+   La   1757   608  3006   652     0  4970  1432  1088   236  4458
+   Mk   4398  5134  7502  4466  4970     0  6156  4015  4795  8611
+   Nl   2300  1654  1611  2075  1432  6156     0  2328  1663  3645
+   Ov   1214  1508  3885   845  1088  4015  2328     0   973  5460
+   Pt   1806   564  3226   417   236  4795  1663   973     0  4579
+   Sc   5767  4143  2853  4839  4458  8611  3645  5460  4579     0
+
+
+RECORDING SYSTEM AND CALIBRATION INFORMATION:
+
+  List of scan-dependent controls seen for recording timing.
+   MINPAUSE:    0.
+   PRESTART:   -5.
+
+  DISKS - Stations potentially recording on disks.
+   Station    Drive type   DAR     NBBC    Tsys
+   VLBA_BR      MARK5C     RDBE2    16     CONT
+   VLBA_FD      MARK5C     RDBE2    16     CONT
+   VLBA_HN      MARK5C     RDBE2    16     CONT
+   VLBA_KP      MARK5C     RDBE2    16     CONT
+   VLBA_LA      MARK5C     RDBE2    16     CONT
+   VLBA_MK      MARK5C     RDBE2    16     CONT
+   VLBA_NL      MARK5C     RDBE2    16     CONT
+   VLBA_OV      MARK5C     RDBE2    16     CONT
+   VLBA_PT      MARK5C     RDBE2    16     CONT
+   VLBA_SC      MARK5C     RDBE2    16     CONT
+
+
+
+
+EXPERIMENT SUMMARY:
+  Number of input scans:         49
+  Number of scans scheduled:     49
+  Number of stations:            10
+  Number of sources input:        3
+  Number of setup files used:     3
+
+
+STATION SCAN SUMMARIES:
+  Station  Control   Scans   Scan   Record  Record   Gbytes
+                            Hours   Hours   Scans
+  VLBA_BR    VLBA      45    0.75    0.69      45       10.
+  VLBA_FD    VLBA      48    0.80    0.73      48       11.
+  VLBA_HN    VLBA      33    0.55    0.50      33        7.
+  VLBA_KP    VLBA      49    0.82    0.75      49       11.
+  VLBA_LA    VLBA      46    0.77    0.70      46       10.
+  VLBA_MK    VLBA      49    0.82    0.75      49       11.
+  VLBA_NL    VLBA      41    0.68    0.63      41        9.
+  VLBA_OV    VLBA      48    0.80    0.73      48       11.
+  VLBA_PT    VLBA      47    0.78    0.72      47       10.
+  VLBA_SC    VLBA      22    0.37    0.34      22        5.
+
+  Notes on the station scan summaries: 
+
+    "Record Scans" are periods of recording with no gap.  The Mark5A disk systems 
+    have a limit of 1024 such scans.  There are often multiple projects on a disk pack.
+    If using MARK5A, try to keep above about 6 GB per record scan by using MINPAUSE 
+    and PRESTART to prevent short gaps.  However, also try to prevent record scans 
+    of more than an hour to minimize risk to data from playback problems.
+    MARK5C will have one observe scan per record scan and there is no limit to the number.
+
+
+    Recording started before scan start time   428 times.  See PRESTART and MINPAUSE.
+    They may have been kept running through short scan gaps.
+    The number can be large because each station/scan combination counts.
+
+
+
+
+
+ SETUP FILES:
+
+
+The following setup groups are the same as group   1 below.
+   2:VLBA_FD   3:VLBA_HN   4:VLBA_KP   5:VLBA_LA   6:VLBA_MK   7:VLBA_NL
+   8:VLBA_OV   9:VLBA_PT  10:VLBA_SC
+
+
+ ======== Setup file: gpsNarrow
+   Matching groups in /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat:
+     v20cm_1         FD and KP filtered below 1330. SC filtered above 1440
+
+   Setup group:    1         Station: VLBA_BR           Total bit rate:    32
+   Format: VDIF              Bits per sample: 2         Sample rate:  8.000
+   Number of channels:  2    DBE type: RDBE_DDC         Speedup factor:   1.00
+
+   Disk used to record data.
+
+   1st LO=   2100.00   2100.00
+   Net SB=         U         U
+   IF SB =         L         L
+   Pol.  =      RCP       RCP 
+   BBC   =         1         2
+   BBC SB=         L         L
+   IF    =        A         A 
+
+   VLBA FE=     20cm     omit     20cm     omit
+   VLBA Synth=  12.9      2.1     12.9
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   1  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   1225.50  1573.50
+   BBC fr=    874.50   526.50
+   Bandwd=      4.00     4.00
+   VLBA legacy crd files using  2 channels based on RDBE channels:   1  2
+   CRD fr=     874.50    526.50
+   CRD bw=       4.00      4.00
+    Matching frequency sets:   1   2   3   4   5   6   7   8   9  10
+
+   Track assignments are: 
+    track1=   1,  2
+    barrel=roll_off 
+
+
+ SCAN SUMMARY for experiment tlesat  GPS obs for AGI
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Average elevation.
+     Bottom item is: Seconds antenna is on source during scan. 0 shown if down, rise, or set
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 342 is Mon   8 Dec 2014   MJD  56999          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Br    Fd    Hn    Kp    La    Mk    Nl    Ov    Pt    Sc
+
+   1  342 16:00:00 J0117+8928    -    48    30    43    32    35    19    41    37    34    17
+      342 16:01:00 gpsNarrow     -    60    60    60    60    60    60    60    60    60    60
+
+   2  342 16:04:00 GPS18         -   ---D  ---D  ---D    4   ---D   26   ---D  ---D  ---D  ---D
+      342 16:05:00 -             -   ---D  ---D  ---D   60   ---D   60   ---D  ---D  ---D  ---D
+
+   3  342 16:08:00 GPS18         -   ---D    2   ---D    5   ---D   28   ---D    4H  ---D  ---D
+      342 16:09:00 -             -   ---D   60   ---D   60   ---D   60   ---D    0H  ---D  ---D
+
+   4  342 16:12:00 GPS18         -   ---D    4   ---D    7   ---D   29   ---D    5H    3H  ---D
+      342 16:13:00 -             -   ---D   60   ---D   60   ---D   60   ---D    0H    0H  ---D
+
+   5  342 16:16:00 GPS18         -   ---D    5   ---D    8     3    31   ---D    7     5   ---D
+      342 16:17:00 -             -   ---D   60   ---D   60    60    60   ---D   60    60   ---D
+
+   6  342 16:20:00 GPS21         -    29    17   ---D   24    19    72     8    30    21   ---D
+      342 16:21:00 -             -    60    60   ---D   60    60    60    60    60    60   ---D
+
+   7  342 16:24:00 GPS21         -    30    18   ---D   25    21    72     9    31    22   ---D
+      342 16:25:00 -             -    60    60   ---D   60    60    60    60    60    60   ---D
+
+   8  342 16:28:00 GPS21         -    32    19   ---D   26    22    72    10    33    23   ---D
+      342 16:29:00 -             -    60    60   ---D   60    60    60    60    60    60   ---D
+
+   9  342 16:32:00 GPS21         -    33    20   ---D   27    23    72    12    34    24   ---D
+      342 16:33:00 -             -    60    60   ---D   60    60    60    60    60    60   ---D
+
+  10  342 16:36:00 GPS18         -     5    13   ---D   16    10    39   ---D   15    13   ---D
+      342 16:37:00 -             -    60    60   ---D   60    60    60   ---D   60    60   ---D
+
+  11  342 16:40:00 GPS18         -     7    14   ---D   18    12    41   ---D   17    14   ---D
+      342 16:41:00 -             -    60    60   ---D   60    60    60   ---D   60    60   ---D
+
+  12  342 16:44:00 GPS18         -     9    16   ---D   20    13    43   ---D   18    16   ---D
+      342 16:45:00 -             -    60    60   ---D   60    60    60   ---D   60    60   ---D
+
+  13  342 16:48:00 GPS18         -    10    17   ---D   21    15    44   ---D   20    17   ---D
+      342 16:49:00 -             -    60    60   ---D   60    60    60   ---D   60    60   ---D
+
+  14  342 16:52:00 GPS21         -    41    25     4H   32    28    70    18    40    30   ---D
+      342 16:53:00 -             -    60    60     0H   60    60    60    60    60    60   ---D
+
+  15  342 16:56:00 GPS21         -    42    26     5    33    29    69    19    41    31   ---D
+      342 16:57:00 -             -    60    60    60    60    60    60    60    60    60   ---D
+
+  16  342 17:00:00 GPS21         -    44    27     7    34    31    68    20    42    32   ---D
+      342 17:01:00 -             -    60    60    60    60    60    60    60    60    60   ---D
+
+
+
+ SCAN SUMMARY for experiment tlesat  GPS obs for AGI
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Average elevation.
+     Bottom item is: Seconds antenna is on source during scan. 0 shown if down, rise, or set
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 342 is Mon   8 Dec 2014   MJD  56999          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Br    Fd    Hn    Kp    La    Mk    Nl    Ov    Pt    Sc
+
+  17  342 17:04:00 GPS21         -    45    28     8    35    32    67    22    43    33   ---D
+      342 17:05:00 gpsNarrow     -    60    60    60    60    60    60    60    60    60   ---D
+
+  18  342 17:08:52 GPS18         -    19    25   ---D   30    23    53     9    29    25   ---D
+      342 17:09:52 -             -    60    60   ---D   60    60    60    60    60    60   ---D
+
+  19  342 17:12:52 GPS18         -    21    27   ---D   31    25    55    11    31    27   ---D
+      342 17:13:52 -             -    60    60   ---D   60    60    60    60    60    60   ---D
+
+  20  342 17:16:52 GPS18         -    22    28   ---D   33    26    56    12    32    29   ---D
+      342 17:17:52 -             -    60    60   ---D   60    60    60    60    60    60   ---D
+
+  21  342 17:20:52 GPS18         -    24    29   ---D   34    28    58    14    34    30   ---D
+      342 17:21:52 -             -    60    60   ---D   60    60    60    60    60    60   ---D
+
+  22  342 17:24:52 GPS21         -    53    33    15    40    38    61    29    49    38   ---D
+      342 17:25:52 -             -    60    60    60    60    60    60    60    60    60   ---D
+
+  23  342 17:28:52 GPS21         -    55    34    17    41    39    59    30    50    39   ---D
+      342 17:29:52 -             -    60    60    60    60    60    60    60    60    60   ---D
+
+  24  342 17:32:52 GPS21         -    56    35    18    42    40    58    31    51    41   ---D
+      342 17:33:52 -             -    60    60    60    60    60    60    60    60    60   ---D
+
+  25  342 17:36:52 GPS21         -    58    36    19    43    41    57    33    52    42   ---D
+      342 17:37:52 -             -    60    60    60    60    60    60    60    60    60   ---D
+
+  26  342 17:41:53 GPS18         -    33    37     6    43    36    66    21    43    38   ---D
+      342 17:42:53 -             -    60    60    60    60    60    60    60    60    60   ---D
+
+  27  342 17:45:53 GPS18         -    35    38     7    44    37    67    22    45    40   ---D
+      342 17:46:53 -             -    60    60    60    60    60    60    60    60    60   ---D
+
+  28  342 17:49:53 GPS18         -    37    39     9    46    39    68    24    47    41   ---D
+      342 17:50:53 -             -    60    60    60    60    60    60    60    60    60   ---D
+
+  29  342 17:53:53 GPS18         -    39    41    10    47    40    69    25    48    43     3
+      342 17:54:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  30  342 17:57:53 GPS21         -    66    42    27    48    47    51    40    58    48     4
+      342 17:58:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  31  342 18:01:53 GPS21         -    67    43    29    49    49    50    42    59    49     5
+      342 18:02:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  32  342 18:05:53 GPS21         -    69    44    30    50    50    48    43    60    50     6
+      342 18:06:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+
+
+ SCAN SUMMARY for experiment tlesat  GPS obs for AGI
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Average elevation.
+     Bottom item is: Seconds antenna is on source during scan. 0 shown if down, rise, or set
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 342 is Mon   8 Dec 2014   MJD  56999          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Br    Fd    Hn    Kp    La    Mk    Nl    Ov    Pt    Sc
+
+  33  342 18:09:53 GPS21         -    70    45    32    51    51    47    45    61    51     8
+      342 18:10:53 gpsNarrow     -    60    60    60    60    60    60    60    60    60    60
+
+  34  342 18:13:53 GPS18         -    48    47    16    54    47    70    32    57    50     6
+      342 18:14:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  35  342 18:17:53 GPS18         -    50    48    17    55    49    70    34    58    51     7
+      342 18:18:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  36  342 18:21:53 GPS18         -    52    49    19    57    50    69    35    60    52     7
+      342 18:22:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  37  342 18:25:53 GPS18         -    53    50    20    58    51    69    36    62    54     8
+      342 18:26:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  38  342 18:29:53 GPS21         -    78    51    39    56    57    42    52    66    57    14
+      342 18:30:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  39  342 18:33:53 GPS21         -    79    52    41    58    59    41    54    66    58    16
+      342 18:34:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  40  342 18:37:53 GPS21         -    80    53    42    59    60    40    56    67    60    17
+      342 18:38:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  41  342 18:41:53 GPS21         -    82    55    44    60    61    39    57    68    61    19
+      342 18:42:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  42  342 18:45:53 GPS18         -    63    55    27    63    58    63    43    69    60    11
+      342 18:46:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  43  342 18:49:53 GPS18         -    64    56    28    64    59    62    45    71    61    12
+      342 18:50:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  44  342 18:53:53 GPS18         -    66    56    29    65    60    60    46    72    62    13
+      342 18:54:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  45  342 18:57:53 GPS18         -    68    57    31    66    61    59    47    73    63    13
+      342 18:58:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  46  342 19:01:53 GPS21         -    84    61    52    65    68    34    66    71    67    26
+      342 19:02:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  47  342 19:05:53 GPS21         -    83    62    53    65    69    33    68    72    68    27
+      342 19:06:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+  48  342 19:09:53 GPS21         -    82    64    55    66    71    32    69    72    69    29
+      342 19:10:53 -             -    60    60    60    60    60    60    60    60    60    60
+
+
+
+ SCAN SUMMARY for experiment tlesat  GPS obs for AGI
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Average elevation.
+     Bottom item is: Seconds antenna is on source during scan. 0 shown if down, rise, or set
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 342 is Mon   8 Dec 2014   MJD  56999          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Br    Fd    Hn    Kp    La    Mk    Nl    Ov    Pt    Sc
+
+  49  342 19:13:53 GPS21         -    81    65    56    67    72    31    71    72    70    30
+      342 19:14:53 gpsNarrow     -    60    60    60    60    60    60    60    60    60    60
+
+
+
+ TIME RANGE OF RECORDINGS and TOTAL BYTES:
+
+                Obs. start time.     Obs. end time.      Total 
+ Station          Day    Time         Day    Time        GBytes
+                     (UT)                 (UT)
+  VLBA_BR        342  16:00:00       342  19:14:53         10.0
+  VLBA_FD        342  16:00:00       342  19:14:53         10.6
+  VLBA_HN        342  16:00:00       342  19:14:53          7.3
+  VLBA_KP        342  16:00:00       342  19:14:53         10.8
+  VLBA_LA        342  16:00:00       342  19:14:53         10.2
+  VLBA_MK        342  16:00:00       342  19:14:53         10.8
+  VLBA_NL        342  16:00:00       342  19:14:53          9.1
+  VLBA_OV        342  16:00:00       342  19:14:53         10.6
+  VLBA_PT        342  16:00:00       342  19:14:53         10.4
+  VLBA_SC        342  16:00:00       342  19:14:53          4.9
+
+ POSITIONS OF SOURCES USED IN RECORDING SCANS
+     Catalog positions marked with *. 
+     Precession of date coordinates is based on stop time of first scan.
+     Names used in schedule marked with *. 
+     Observation date used in B1950/J2000 coordinate conversion (PRECDATE):  1979.900
+     No adjustments are made for rates (DRA, DDEC).
+
+   Source                         Source position (RA/Dec)                        Error
+                        (B1950)             (J2000)             (Date)            (mas)
+
+   0048+892          00 48 18.752643   * 01 17 16.402465     01 35 28.104823      62.41
+ * J0117+8928        89 12 41.96200    * 89 28 47.97531      89 33 41.80638        0.60
+                     /users/cwalker/files/sched_work/catalogs/sources.rfc
+                     rfc_2015a Petrov, 2015, unpublished.  46 observations
+
+ * GPS18             11 07 41.528041   * 11 10 05.965338     11 10 49.820805       0.00
+                    -32 06 02.11014    *-32 22 19.57099     -32 27 02.93200        0.00
+                     Satellite. Position is for scan 1, center Earth.
+                     Planetary motion used.  Ref. MJD:   56999.6667
+                        Rates: RA =  0.14770E+06 s/day   Dec =  0.18403E+07 arcsec/day
+                     KERFILE: /users/cwalker/PLANETDATA/Linux/naif0010.tls
+                     TLEFILE: gps18.tle
+
+ * GPS21             09 40 07.701493   * 09 42 49.956955     09 43 39.055153       0.00
+                     12 44 39.07306    * 12 30 54.56007      12 26 37.91410        0.00
+                     Satellite. Position is for scan 1, center Earth.
+                     Planetary motion used.  Ref. MJD:   56999.6667
+                        Rates: RA =  0.10529E+06 s/day   Dec =  0.20071E+07 arcsec/day
+                     KERFILE: /users/cwalker/PLANETDATA/Linux/naif0010.tls
+                     TLEFILE: gps21.tle
+
+
+
+SOURCE SCAN SUMMARY FOR SOURCES LISTED ABOVE
+
+     Scan hours are for recording scans only. 
+     Baseline hours are only counted for scans above horizon at both ends.
+  Source       Setup file             Frequency sets                  Observing hours
+                                   (duplicates not shown)              Scan  Baseline
+  J0117+8928 gpsNarrow             1                                 0.017     0.750
+  GPS18      gpsNarrow             1                                 0.400    12.183
+  GPS21      gpsNarrow             1                                 0.400    15.533
+
+
+EFFECT OF SOLAR CORONA
+
+  The solar corona can cause unstable phases for sources too close to the Sun.
+  SCHED provides warnings at individual scans for distances less than 10 degrees.
+  The distance from the Sun to each source in this schedule is:
+    Source         Sun distance (deg) 
+   J0117+8928         113.0
+   GPS18               76.2
+   GPS21              112.6
+
+  Barry Clark estimates from predictions by Ketan Desai of IPM scattering sizes 
+  that the Sun will cause amplitude reductions on the  longest VLBA baselines 
+  at a solar distance of 60deg F^(-0.6) where F is in GHz. 
+  For common VLBI bands, this is: 
+       327 MHz        117. deg 
+       610 MHz         81. deg 
+       1.6 GHz         45. deg 
+       2.3 GHz         36. deg 
+       5.0 GHz         23. deg 
+       8.4 GHz         17. deg 
+      15.0 GHz         12. deg 
+      22.0 GHz          9. deg 
+      43.0 GHz          6. deg 
+
+ SOURCE SEPARATIONS
+
+ Source separations in degrees for pairs closer than  30.00 degrees.
+
+
+
+CATALOGS, FILES, and CODE VERSIONS
+
+Catalogs: 
+  Station:   /users/cwalker/files/sched_work/catalogs/stations_RDBE.dat
+                 Version:  2015Mar03-18:50:14
+  Location:  /users/cwalker/files/sched_work/catalogs/locations.dat
+                 Version:  2015Feb26-16:00:00
+  Frequency: /users/cwalker/files/sched_work/catalogs/freq_RDBE.dat
+                 Version:  2015Mar03-18:50:14
+  Source:   /users/cwalker/files/sched_work/catalogs/sources.rfc
+                 Version:  Not given
+  Source2:  NONE
+                 Version:   ---
+
+
+Other external files: 
+  Ephemeris: NONE
+  PEAKFILE:  /users/cwalker/files/sched_work/catalogs/peak.cmd
+  MSGFILE:   /users/cwalker/files/sched_work/catalogs/messages.txt
+  SATNAME:   GPS18
+     TLEFILE:   gps1
+     KERFILE:   /users/cwalker/PLANETDATA/Linux/naif0010.tls
+  SATNAME:   GPS21
+     TLEFILE:   gps2
+     KERFILE:   /users/cwalker/PLANETDATA/Linux/naif0010.tls
+
+
+Code versions: 
+  Release version:           11.40  Release 11.4.  March 14, 2015
+  Version of VEX standard:   1.50
+  Version of VEX code:       0.87
+  Version of plot code:      1.06
+  Version of ephemeris code: 1.01
+  Version of PGPLOT:        v5.3.1
+
+This schedule produced on: Wed Mar 11 16:48:15 2015      

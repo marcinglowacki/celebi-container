@@ -1,0 +1,1229 @@
+VEX_rev = 1.5;
+*    SCHED vers: Release 11.4.  March 14, 2015
+*    VEX/SCHED:  1.5.87
+*    Other versions: Sched:  11.4  Plot: 1.06  JPL-ephem: 1.01
+*------------------------------------------------------------------------------
+*
+*   ++++  WARNING:  File contains moving sources 
+*          Do no use positions for correlation.
+*          Moving coordinates not described in VEX.
+*
+*------------------------------------------------------------------------------
+$GLOBAL;
+     ref $EXPER = tlesat;
+*                                                      +------------+
+*                         PI revision number:          |    1.0000  |
+*                                                      +------------+
+*    mode:       GPS L2 and L1
+*------------------------------------------------------------------------------
+$EXPER;
+*
+def tlesat;
+     exper_name = tlesat;
+     exper_description = "GPS obs for AGI";
+     PI_name = "Walter Brisken";
+     PI_email = wbrisken@nrao.edu;
+*    address:   DSOC
+*                
+*                
+*                
+*    phone:     651-644-1677
+*    during obs:575-838-0502
+*    fax:       575-835-2027
+*
+*    year, doy: 2014, 342
+*    date     : Mon  8 Dec 2014
+*    MJD      : 56999
+     exper_nominal_start=2014y342d16h00m00s;
+     exper_nominal_stop=2014y342d19h14m53s;
+*
+     target_correlator = VLBADIFX;
+*
+*    integr_time    :     1.000 s
+*    number_channels:   128
+*    number_antenna :  8
+*    cross_polarize : No
+*    weight_func    : UNIFORM
+*    distrib_medium : FTP
+*    distrib_format : FITS
+*    source_pos_cat : NOT SPECIFIED.
+*    distribute_to  : 
+*                     Walter Brisken
+*    corr_notes : 
+*               GPS correlation require Walters help
+*               Near-field model required
+*
+enddef;
+*------------------------------------------------------------------------------
+$MODE;
+*
+def gpsNarrow;
+     ref $PROCEDURES = Mode_01;
+     ref $FREQ = 1225.50MHz2x4MHz:Br:Fd:Hn:Kp:La:Mk:Nl:Ov:Pt:Sc;
+     ref $IF = LO@2100MHzRPolTone/1:Br:Fd:Hn:Kp:La:Mk:Nl:Ov:Pt:Sc;
+     ref $BBC = 2BBCs:Br:Fd:Hn:Kp:La:Mk:Nl:Ov:Pt:Sc;
+     ref $TRACKS = VDIF.2Ch2bit1to1:Br:Fd:Hn:Kp:La:Mk:Nl:Ov:Pt:Sc;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Br:Fd:Hn:Kp:La:Mk:Nl:Ov:Pt:Sc;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = UsbDetect:Br:Fd:Hn:Kp:La:Mk:Nl:Ov:Pt:Sc;
+enddef;
+*------------------------------------------------------------------------------
+$STATION;
+*
+def Br;
+     ref $SITE = VLBA_BR;
+     ref $ANTENNA = VLBA_BR;
+     ref $DAS = 2RDBE2+NONE<;
+enddef;
+*
+def Fd;
+     ref $SITE = VLBA_FD;
+     ref $ANTENNA = VLBA_FD;
+     ref $DAS = 2RDBE2+NONE<;
+enddef;
+*
+def Hn;
+     ref $SITE = VLBA_HN;
+     ref $ANTENNA = VLBA_HN;
+     ref $DAS = 2RDBE2+NONE<;
+enddef;
+*
+def Kp;
+     ref $SITE = VLBA_KP;
+     ref $ANTENNA = VLBA_KP;
+     ref $DAS = 2RDBE2+NONE<;
+enddef;
+*
+def La;
+     ref $SITE = VLBA_LA;
+     ref $ANTENNA = VLBA_LA;
+     ref $DAS = 2RDBE2+NONE<;
+enddef;
+*
+def Mk;
+     ref $SITE = VLBA_MK;
+     ref $ANTENNA = VLBA_MK;
+     ref $DAS = 2RDBE2+NONE<;
+enddef;
+*
+def Nl;
+     ref $SITE = VLBA_NL;
+     ref $ANTENNA = VLBA_NL;
+     ref $DAS = 2RDBE2+NONE<;
+enddef;
+*
+def Ov;
+     ref $SITE = VLBA_OV;
+     ref $ANTENNA = VLBA_OV;
+     ref $DAS = 2RDBE2+NONE<;
+enddef;
+*
+def Pt;
+     ref $SITE = VLBA_PT;
+     ref $ANTENNA = VLBA_PT;
+     ref $DAS = 2RDBE2+NONE<;
+enddef;
+*
+def Sc;
+     ref $SITE = VLBA_SC;
+     ref $ANTENNA = VLBA_SC;
+     ref $DAS = 2RDBE2+NONE<;
+enddef;
+*------------------------------------------------------------------------------
+$PROCEDURES;
+*
+def Mode_01;
+     procedure_name_prefix =  "01";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*------------------------------------------------------------------------------
+$SITE;
+*
+def VLBA_BR;
+     site_type = fixed;
+     site_name = VLBA_BR;
+     site_ID = Br;
+*    elev=  250.48 long= 119:40:59. lat= 48:07:52.4
+     site_position =-2112065.20620 m:-3705356.50480 m: 4726813.67590 m;
+     site_velocity = -0.014820   m/yr:  0.000510   m/yr: -0.007190  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 2013y001d;
+     site_position_epoch =   56293;
+     horizon_map_az =  0.0 deg:  5.0: 10.0: 15.0: 25.0: 30.0: 40.0: 45.0: 70.0:
+                                75.0:120.0:125.0:130.0:135.0:155.0:160.0:185.0:
+                               190.0:195.0:220.0:225.0:235.0:240.0:245.0:250.0:
+                               255.0:265.0:270.0:275.0:300.0:305.0:310.0:315.0:
+                               330.0:335.0:340.0:345.0:350.0:360.0;
+     horizon_map_el =  2.0 deg:  2.0:  3.0:  2.0:  2.0:  3.0:  3.0:  4.0:  4.0:
+                                 5.0:  5.0:  4.0:  4.0:  3.0:  3.0:  2.0:  2.0:
+                                 3.0:  4.0:  4.0:  3.0:  3.0:  4.0:  4.0:  5.0:
+                                 6.0:  6.0:  5.0:  6.0:  6.0:  5.0:  6.0:  5.0:
+                                 5.0:  4.0:  4.0:  3.0:  2.0:  2.0;
+enddef;
+*
+def VLBA_FD;
+     site_type = fixed;
+     site_name = VLBA_FD;
+     site_ID = Fd;
+*    elev= 1606.42 long= 103:56:41. lat= 30:38:06.1
+     site_position =-1324009.32660 m:-5332181.95470 m: 3231962.39490 m;
+     site_velocity = -0.012810   m/yr:  0.000480   m/yr: -0.004540  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 2013y001d;
+     site_position_epoch =   56293;
+     horizon_map_az =  0.0 deg:  5.0: 10.0: 15.0: 20.0: 30.0: 35.0: 40.0: 45.0:
+                                50.0: 55.0: 60.0: 65.0: 70.0: 75.0: 80.0: 85.0:
+                                90.0: 95.0:100.0:105.0:110.0:115.0:150.0:155.0:
+                               160.0:220.0:225.0:230.0:240.0:245.0:250.0:255.0:
+                               260.0:265.0:270.0:275.0:280.0:285.0:290.0:295.0:
+                               300.0:305.0:310.0:315.0:325.0:330.0:335.0:340.0:
+                               345.0:360.0;
+     horizon_map_el =  5.0 deg:  4.0:  5.0:  5.0:  3.0:  3.0:  2.0:  3.0:  2.0:
+                                 2.0:  3.0:  4.0:  7.0:  5.0:  4.0:  4.0:  5.0:
+                                 6.0:  6.0:  5.0:  4.0:  3.0:  2.0:  2.0:  3.0:
+                                 2.0:  2.0:  4.0:  2.0:  2.0:  3.0:  3.0:  4.0:
+                                 5.0:  5.0:  4.0:  4.0:  3.0:  3.0:  2.0:  2.0:
+                                 3.0:  4.0:  5.0:  4.0:  4.0:  5.0:  6.0:  6.0:
+                                 5.0:  5.0;
+enddef;
+*
+def VLBA_HN;
+     site_type = fixed;
+     site_name = VLBA_HN;
+     site_ID = Hn;
+*    elev=  295.57 long= 071:59:11. lat= 42:56:01.0
+     site_position = 1446374.86580 m:-4447939.67740 m: 4322306.18380 m;
+     site_velocity = -0.015770   m/yr: -0.001520   m/yr:  0.004250  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 2013y001d;
+     site_position_epoch =   56293;
+     horizon_map_az =  0.0 deg:  5.0: 30.0: 35.0: 40.0: 45.0: 65.0: 70.0: 80.0:
+                                85.0: 90.0: 95.0:100.0:105.0:110.0:115.0:120.0:
+                               125.0:130.0:135.0:140.0:145.0:150.0:155.0:160.0:
+                               165.0:170.0:190.0:195.0:200.0:205.0:210.0:220.0:
+                               225.0:230.0:235.0:240.0:245.0:250.0:255.0:270.0:
+                               275.0:290.0:295.0:315.0:320.0:325.0:330.0:335.0:
+                               345.0:350.0:355.0:360.0;
+     horizon_map_el =  6.0 deg:  6.0:  6.0:  4.0:  5.0:  4.0:  4.0:  5.0:  5.0:
+                                 4.0:  5.0:  4.0:  4.0:  5.0:  3.0:  4.0:  4.0:
+                                 5.0:  4.0:  6.0:  5.0:  7.0:  7.0:  5.0:  3.0:
+                                 5.0:  4.0:  4.0:  2.0:  5.0:  5.0:  6.0:  6.0:
+                                 5.0:  6.0:  4.0:  5.0:  5.0:  4.0:  5.0:  5.0:
+                                 4.0:  4.0:  5.0:  5.0:  6.0:  5.0:  5.0:  6.0:
+                                 6.0:  5.0:  5.0:  6.0;
+enddef;
+*
+def VLBA_KP;
+     site_type = fixed;
+     site_name = VLBA_KP;
+     site_ID = Kp;
+*    elev= 1901.99 long= 111:36:44. lat= 31:57:22.7
+     site_position =-1995678.84020 m:-5037317.69680 m: 3357328.02510 m;
+     site_velocity = -0.013740   m/yr:  0.000790   m/yr: -0.006170  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 2013y001d;
+     site_position_epoch =   56293;
+     horizon_map_az =  0.0 deg:  5.0: 45.0: 50.0: 55.0: 60.0: 65.0: 70.0: 75.0:
+                                80.0: 85.0: 90.0: 95.0:105.0:110.0:115.0:120.0:
+                               150.0:155.0:165.0:170.0:180.0:185.0:215.0:220.0:
+                               225.0:230.0:235.0:240.0:255.0:260.0:265.0:270.0:
+                               360.0;
+     horizon_map_el =  2.0 deg:  2.0:  2.0:  5.0:  6.0:  7.0:  7.0:  8.0:  8.0:
+                                 9.0:  6.0:  3.0:  2.0:  2.0:  3.0:  3.0:  2.0:
+                                 2.0:  3.0:  3.0:  2.0:  2.0:  3.0:  3.0:  4.0:
+                                 4.0:  5.0:  5.0:  4.0:  4.0:  3.0:  3.0:  2.0:
+                                 2.0;
+enddef;
+*
+def VLBA_LA;
+     site_type = fixed;
+     site_name = VLBA_LA;
+     site_ID = La;
+*    elev= 1962.43 long= 106:14:44. lat= 35:46:30.4
+     site_position =-1449752.58390 m:-4975298.57570 m: 3709123.84590 m;
+     site_velocity = -0.014400   m/yr:  0.000550   m/yr: -0.004710  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 2013y001d;
+     site_position_epoch =   56293;
+     horizon_map_az =  0.0 deg:  5.0: 75.0: 80.0: 85.0:130.0:135.0:145.0:150.0:
+                               250.0:255.0:300.0:305.0:315.0:320.0:340.0:345.0:
+                               360.0;
+     horizon_map_el =  2.0 deg:  2.0:  2.0:  3.0:  2.0:  2.0:  3.0:  3.0:  2.0:
+                                 2.0:  3.0:  3.0:  4.0:  4.0:  3.0:  3.0:  2.0:
+                                 2.0;
+enddef;
+*
+def VLBA_MK;
+     site_type = fixed;
+     site_name = VLBA_MK;
+     site_ID = Mk;
+*    elev= 3763.02 long= 155:27:19. lat= 19:48:05.0
+     site_position =-5464075.18470 m:-2495248.10550 m: 2148297.36490 m;
+     site_velocity = -0.014440   m/yr:  0.062640   m/yr:  0.032340  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 2013y001d;
+     site_position_epoch =   56293;
+     horizon_map_az =  0.0 deg:  5.0: 10.0: 15.0: 20.0:120.0:125.0:130.0:135.0:
+                               140.0:145.0:150.0:155.0:160.0:165.0:170.0:175.0:
+                               185.0:190.0:195.0:200.0:205.0:210.0:215.0:220.0:
+                               255.0:260.0:270.0:275.0:280.0:285.0:290.0:295.0:
+                               300.0:305.0:310.0:315.0:320.0:325.0:330.0:335.0:
+                               340.0:345.0:350.0:355.0:360.0;
+     horizon_map_el =  5.0 deg:  4.0:  3.0:  3.0:  2.0:  2.0:  4.0:  5.0:  5.0:
+                                 4.0:  4.0:  6.0:  8.0:  8.0: 11.0: 12.0: 13.0:
+                                13.0: 11.0: 11.0:  9.0:  7.0:  5.0:  3.0:  2.0:
+                                 2.0:  3.0:  3.0:  5.0:  6.0:  8.0: 10.0: 12.0:
+                                14.0: 12.0: 11.0:  9.0: 10.0: 11.0: 10.0: 12.0:
+                                14.0: 12.0:  9.0:  7.0:  5.0;
+enddef;
+*
+def VLBA_NL;
+     site_type = fixed;
+     site_name = VLBA_NL;
+     site_ID = Nl;
+*    elev=  222.24 long= 091:34:26. lat= 41:46:17.1
+     site_position = -130872.49870 m:-4762317.09250 m: 4226851.00140 m;
+     site_velocity = -0.015530   m/yr:  0.001460   m/yr: -0.002140  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 2013y001d;
+     site_position_epoch =   56293;
+     horizon_map_az =  0.0 deg:  5.0: 75.0: 80.0: 85.0:100.0:105.0:110.0:115.0:
+                               120.0:125.0:130.0:135.0:140.0:145.0:150.0:155.0:
+                               160.0:165.0:170.0:190.0:195.0:200.0:220.0:225.0:
+                               360.0;
+     horizon_map_el =  2.0 deg:  2.0:  2.0:  3.0:  6.0:  6.0:  8.0:  7.0:  7.0:
+                                 6.0:  7.0:  7.0:  6.0:  6.0:  7.0:  7.0:  6.0:
+                                 5.0:  4.0:  3.0:  3.0:  2.0:  3.0:  3.0:  2.0:
+                                 2.0;
+enddef;
+*
+def VLBA_OV;
+     site_type = fixed;
+     site_name = VLBA_OV;
+     site_ID = Ov;
+*    elev= 1196.31 long= 118:16:37. lat= 37:13:53.9
+     site_position =-2409150.40180 m:-4478573.11800 m: 3838617.33850 m;
+     site_velocity = -0.018570   m/yr:  0.006660   m/yr: -0.003330  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 2013y001d;
+     site_position_epoch =   56293;
+     horizon_map_az =  0.0 deg:  5.0: 10.0: 15.0: 20.0: 25.0: 30.0: 35.0: 40.0:
+                                45.0: 50.0: 60.0: 65.0: 70.0: 75.0: 80.0: 85.0:
+                                90.0: 95.0:100.0:105.0:110.0:115.0:120.0:125.0:
+                               130.0:145.0:150.0:155.0:175.0:180.0:185.0:190.0:
+                               195.0:200.0:205.0:210.0:230.0:235.0:240.0:245.0:
+                               250.0:260.0:265.0:270.0:280.0:285.0:290.0:295.0:
+                               300.0:305.0:310.0:350.0:355.0:360.0;
+     horizon_map_el =  3.0 deg:  5.0:  5.0:  7.0:  9.0: 10.0: 12.0: 13.0: 13.0:
+                                14.0: 15.0: 15.0: 13.0: 12.0: 11.0: 10.0:  9.0:
+                                 8.0:  7.0:  6.0:  6.0:  5.0:  4.0:  3.0:  3.0:
+                                 4.0:  4.0:  3.0:  2.0:  2.0:  3.0:  3.0:  4.0:
+                                 5.0:  5.0:  6.0:  7.0:  7.0:  6.0:  7.0:  8.0:
+                                 9.0:  9.0:  8.0:  7.0:  7.0:  5.0:  4.0:  4.0:
+                                 3.0:  3.0:  2.0:  2.0:  3.0:  3.0;
+enddef;
+*
+def VLBA_PT;
+     site_type = fixed;
+     site_name = VLBA_PT;
+     site_ID = Pt;
+*    elev= 2364.69 long= 108:07:09. lat= 34:18:03.7
+     site_position =-1640953.93830 m:-5014816.02370 m: 3575411.79160 m;
+     site_velocity = -0.014610   m/yr: -0.000210   m/yr: -0.005210  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 2013y001d;
+     site_position_epoch =   56293;
+     horizon_map_az =  0.0 deg:  5.0: 60.0: 65.0: 70.0: 75.0: 80.0: 85.0:165.0:
+                               170.0:180.0:185.0:190.0:195.0:200.0:240.0:245.0:
+                               250.0:255.0:265.0:270.0:275.0:280.0:285.0:360.0;
+     horizon_map_el =  2.0 deg:  2.0:  2.0:  3.0:  3.0:  2.0:  3.0:  2.0:  2.0:
+                                 3.0:  3.0:  4.0:  4.0:  3.0:  4.0:  4.0:  3.0:
+                                 4.0:  3.0:  3.0:  4.0:  3.0:  3.0:  2.0:  2.0;
+enddef;
+*
+def VLBA_SC;
+     site_type = fixed;
+     site_name = VLBA_SC;
+     site_ID = Sc;
+*    elev=  -15.02 long= 064:35:01. lat= 17:45:23.7
+     site_position = 2607848.63790 m:-5488069.53580 m: 1932739.73260 m;
+     site_velocity =  0.007130   m/yr:  0.009460   m/yr:  0.012310  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 2013y001d;
+     site_position_epoch =   56293;
+     horizon_map_az =  0.0 deg:  5.0: 10.0: 20.0: 25.0: 40.0: 45.0: 50.0: 55.0:
+                                60.0: 65.0: 70.0: 75.0: 80.0: 85.0: 95.0:100.0:
+                               105.0:110.0:115.0:120.0:125.0:130.0:135.0:140.0:
+                               145.0:150.0:155.0:160.0:165.0:175.0:180.0:185.0:
+                               190.0:200.0:205.0:210.0:215.0:220.0:230.0:235.0:
+                               240.0:245.0:250.0:260.0:265.0:270.0:275.0:280.0:
+                               360.0;
+     horizon_map_el =  2.0 deg:  2.0:  3.0:  3.0:  2.0:  2.0:  3.0:  3.0:  4.0:
+                                 6.0:  6.0:  8.0:  9.0:  9.0:  8.0:  8.0:  9.0:
+                                10.0: 12.0: 14.0: 16.0: 16.0: 15.0: 13.0: 13.0:
+                                12.0: 11.0: 11.0: 10.0:  9.0:  9.0: 11.0: 13.0:
+                                14.0: 14.0: 15.0: 13.0: 12.0: 10.0: 10.0:  9.0:
+                                 8.0:  8.0:  7.0:  7.0:  6.0:  4.0:  3.0:  2.0:
+                                 2.0;
+enddef;
+*------------------------------------------------------------------------------
+$ANTENNA;
+*
+def VLBA_BR;
+     axis_type = az : el;
+     antenna_motion = el :  29.0 deg/min :  6 sec;  *    0.250 deg/sec/sec
+     antenna_motion = az :  83.6 deg/min :  6 sec;  *    0.750 deg/sec/sec
+     pointing_sector = &ccw  : az : -90.00 deg:  90.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 1
+     pointing_sector = &n    : az :  90.00 deg: 270.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 2
+     pointing_sector = &cw   : az : 270.00 deg: 450.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 3
+     axis_offset =    2.12990 m;
+enddef;
+*
+def VLBA_FD;
+     axis_type = az : el;
+     antenna_motion = el :  30.5 deg/min :  6 sec;  *    0.250 deg/sec/sec
+     antenna_motion = az :  84.3 deg/min :  6 sec;  *    0.750 deg/sec/sec
+     pointing_sector = &ccw  : az : -90.00 deg:  90.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 1
+     pointing_sector = &n    : az :  90.00 deg: 270.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 2
+     pointing_sector = &cw   : az : 270.00 deg: 450.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 3
+     axis_offset =    2.13140 m;
+enddef;
+*
+def VLBA_HN;
+     axis_type = az : el;
+     antenna_motion = el :  26.7 deg/min :  6 sec;  *    0.250 deg/sec/sec
+     antenna_motion = az :  81.3 deg/min :  6 sec;  *    0.750 deg/sec/sec
+     pointing_sector = &ccw  : az : -90.00 deg:  90.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 1
+     pointing_sector = &n    : az :  90.00 deg: 270.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 2
+     pointing_sector = &cw   : az : 270.00 deg: 450.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 3
+     axis_offset =    2.13030 m;
+enddef;
+*
+def VLBA_KP;
+     axis_type = az : el;
+     antenna_motion = el :  29.4 deg/min :  6 sec;  *    0.250 deg/sec/sec
+     antenna_motion = az :  80.8 deg/min :  6 sec;  *    0.750 deg/sec/sec
+     pointing_sector = &ccw  : az : -90.00 deg:  90.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 1
+     pointing_sector = &n    : az :  90.00 deg: 270.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 2
+     pointing_sector = &cw   : az : 270.00 deg: 450.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 3
+     axis_offset =    2.13120 m;
+enddef;
+*
+def VLBA_LA;
+     axis_type = az : el;
+     antenna_motion = el :  29.5 deg/min :  6 sec;  *    0.250 deg/sec/sec
+     antenna_motion = az :  82.0 deg/min :  6 sec;  *    0.750 deg/sec/sec
+     pointing_sector = &ccw  : az : -90.00 deg:  90.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 1
+     pointing_sector = &n    : az :  90.00 deg: 270.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 2
+     pointing_sector = &cw   : az : 270.00 deg: 450.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 3
+     axis_offset =    2.13210 m;
+enddef;
+*
+def VLBA_MK;
+     axis_type = az : el;
+     antenna_motion = el :  28.3 deg/min :  6 sec;  *    0.250 deg/sec/sec
+     antenna_motion = az :  86.8 deg/min :  6 sec;  *    0.750 deg/sec/sec
+     pointing_sector = &ccw  : az : -90.00 deg:  90.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 1
+     pointing_sector = &n    : az :  90.00 deg: 270.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 2
+     pointing_sector = &cw   : az : 270.00 deg: 450.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 3
+     axis_offset =    2.13430 m;
+enddef;
+*
+def VLBA_NL;
+     axis_type = az : el;
+     antenna_motion = el :  28.7 deg/min :  6 sec;  *    0.250 deg/sec/sec
+     antenna_motion = az :  82.5 deg/min :  6 sec;  *    0.750 deg/sec/sec
+     pointing_sector = &ccw  : az : -90.00 deg:  90.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 1
+     pointing_sector = &n    : az :  90.00 deg: 270.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 2
+     pointing_sector = &cw   : az : 270.00 deg: 450.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 3
+     axis_offset =    2.13080 m;
+enddef;
+*
+def VLBA_OV;
+     axis_type = az : el;
+     antenna_motion = el :  28.7 deg/min :  6 sec;  *    0.250 deg/sec/sec
+     antenna_motion = az :  84.5 deg/min :  6 sec;  *    0.750 deg/sec/sec
+     pointing_sector = &ccw  : az : -90.00 deg:  90.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 1
+     pointing_sector = &n    : az :  90.00 deg: 270.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 2
+     pointing_sector = &cw   : az : 270.00 deg: 450.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 3
+     axis_offset =    2.13060 m;
+enddef;
+*
+def VLBA_PT;
+     axis_type = az : el;
+     antenna_motion = el :  29.3 deg/min :  6 sec;  *    0.250 deg/sec/sec
+     antenna_motion = az :  82.3 deg/min :  6 sec;  *    0.750 deg/sec/sec
+     pointing_sector = &ccw  : az : -90.00 deg:  90.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 1
+     pointing_sector = &n    : az :  90.00 deg: 270.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 2
+     pointing_sector = &cw   : az : 270.00 deg: 450.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 3
+     axis_offset =    2.13750 m;
+enddef;
+*
+def VLBA_SC;
+     axis_type = az : el;
+     antenna_motion = el :  28.5 deg/min :  6 sec;  *    0.250 deg/sec/sec
+     antenna_motion = az :  84.5 deg/min :  6 sec;  *    0.750 deg/sec/sec
+     pointing_sector = &ccw  : az : -90.00 deg:  90.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 1
+     pointing_sector = &n    : az :  90.00 deg: 270.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 2
+     pointing_sector = &cw   : az : 270.00 deg: 450.00 deg: el :  2.25 deg: 90.00 deg; * cable wrap zone 3
+     axis_offset =    2.13460 m;
+enddef;
+*------------------------------------------------------------------------------
+$DAS;
+*
+def 2RDBE2+NONE<;
+     record_transport_type = Mark5C;
+     electronics_rack_type = RDBE2;
+     number_drives = 2;
+     headstack = 1 :            : 0 ;
+     headstack = 2 :            : 1 ;
+     tape_motion = adaptive : 0 min: 0 min: 10 sec;
+enddef;
+*------------------------------------------------------------------------------
+$SOURCE;
+*
+def J0117+8928;
+     source_name = J0117+8928;
+*    this source had calibrator code: V
+*    alternate source name: 0048+892
+*    rfc_2015a Petrov, 2015, unpublished.  46 observations
+     ra = 01h17m16.4024650s; dec =  89d28'47.975310"; ref_coord_frame = J2000;
+*    ra = 00h48m18.7526429s; dec =  89d12'41.962000"; ref_coord_frame = B1950;
+*    ra = 01h35m28.1048231s; dec =  89d33'41.806378"; ref_coord_frame = Date;
+enddef;
+*
+def GPS18;
+     source_name = GPS18;
+*    this source had calibrator code: Z
+*    This source is a planet or satellite.  The motion is not handled in VEX.
+*    Do not use the position for pointing or correlation.
+     ra = 11h10m05.9653379s; dec = -32d22'19.570986"; ref_coord_frame = J2000;
+*    ra = 11h07m41.5280407s; dec = -32d06'02.110135"; ref_coord_frame = B1950;
+*    ra = 11h10m49.8208054s; dec = -32d27'02.932001"; ref_coord_frame = Date;
+*    velocity_wrt_Geo =       0.06 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def GPS21;
+     source_name = GPS21;
+*    this source had calibrator code: Z
+*    This source is a planet or satellite.  The motion is not handled in VEX.
+*    Do not use the position for pointing or correlation.
+     ra = 09h42m49.9569549s; dec =  12d30'54.560075"; ref_coord_frame = J2000;
+*    ra = 09h40m07.7014935s; dec =  12d44'39.073062"; ref_coord_frame = B1950;
+*    ra = 09h43m39.0551531s; dec =  12d26'37.914097"; ref_coord_frame = Date;
+*    velocity_wrt_Geo =       0.07 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*------------------------------------------------------------------------------
+$FREQ;
+*
+def 1225.50MHz2x4MHz;
+* mode =  1    stations =Br:Fd:Hn:Kp:La:Mk:Nl:Ov:Pt:Sc
+     sample_rate =   8.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  1225.50 MHz : U :   4.00 MHz : &CH01 : &BBC01 : &U_Cal; *Rcp
+     chan_def = :  1573.50 MHz : U :   4.00 MHz : &CH02 : &BBC02 : &U_Cal; *Rcp
+enddef;
+*------------------------------------------------------------------------------
+$IF;
+*
+def LO@2100MHzRPolTone/1;
+* mode =  1    stations =Br:Fd:Hn:Kp:La:Mk:Nl:Ov:Pt:Sc
+     if_def = &IF_A : A : R :  2100.00 MHz : L : 1 MHz ; *   12900.00   2100.00  20cm     0 NA
+enddef;
+*------------------------------------------------------------------------------
+$BBC;
+*
+def 2BBCs;
+* mode =  1    stations =Br:Fd:Hn:Kp:La:Mk:Nl:Ov:Pt:Sc
+     BBC_assign = &BBC01 :  1 : &IF_A;
+     BBC_assign = &BBC02 :  2 : &IF_A;
+enddef;
+*------------------------------------------------------------------------------
+$PHASE_CAL_DETECT;
+*
+def UsbDetect;
+* mode =  1    stations =Br:Fd:Hn:Kp:La:Mk:Nl:Ov:Pt:Sc
+     phase_cal_detect = &U_Cal :  1 :  4 :  0 :  2;
+enddef;
+*------------------------------------------------------------------------------
+$TRACKS;
+*
+def VDIF.2Ch2bit1to1;
+* mode =  1    stations =Br:Fd:Hn:Kp:La:Mk:Nl:Ov:Pt:Sc
+*    firmware_type = RDBE_DDC;
+*    format = VDIF, and fan-out = 1
+*    mode requires   8.00Mb/s/tr; stations using disks
+     track_frame_format = VDIF5032;
+     fanout_def =   : &CH01 : sign : 1:  1;
+     fanout_def =   : &CH01 :  mag : 1:  1;
+     fanout_def =   : &CH02 : sign : 1:  2;
+     fanout_def =   : &CH02 :  mag : 1:  2;
+enddef;
+*------------------------------------------------------------------------------
+$HEAD_POS;
+def DiskVoid;
+* mode =  1    stations =Br:Fd:Hn:Kp:La:Mk:Nl:Ov:Pt:Sc
+*     Head positions irrelevant for Disk: empty def
+enddef;
+*------------------------------------------------------------------------------
+$PASS_ORDER;
+*
+def DiskVoid;
+* mode =  1    stations =Br:Fd:Hn:Kp:La:Mk:Nl:Ov:Pt:Sc
+*     Pass orders irrelevant for Disk: empty def
+enddef;
+*------------------------------------------------------------------------------
+$ROLL;
+*
+def NoRoll;
+* mode =  1    stations =Br:Fd:Hn:Kp:La:Mk:Nl:Ov:Pt:Sc
+*    barrel-roll set to 'roll_off', so reverse-roll by  0 (1 head)
+     roll = off;
+enddef;
+*------------------------------------------------------------------------------
+$SCHED;
+* schedule section for experiment tlesat  
+* GPS obs for AGI                                                         
+scan No0001;
+*    start=2014y342d16h00m00s <= original start, modified for tape start.
+     start=2014y342d16h00m05s; mode=gpsNarrow; source=J0117+8928;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Br:    0 sec:   55 sec:    0.000 GB:   : &ccw  : 1;
+     station=Fd:    0 sec:   55 sec:    0.000 GB:   : &ccw  : 1;
+     station=Hn:    0 sec:   55 sec:    0.000 GB:   : &ccw  : 1;
+     station=Kp:    0 sec:   55 sec:    0.000 GB:   : &ccw  : 1;
+     station=La:    0 sec:   55 sec:    0.000 GB:   : &ccw  : 1;
+     station=Mk:    0 sec:   55 sec:    0.000 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    0.000 GB:   : &ccw  : 1;
+     station=Ov:    0 sec:   55 sec:    0.000 GB:   : &ccw  : 1;
+     station=Pt:    0 sec:   55 sec:    0.000 GB:   : &ccw  : 1;
+     station=Sc:    0 sec:   55 sec:    0.000 GB:   : &ccw  : 1;
+endscan;
+scan No0002;
+*    start=2014y342d16h04m00s <= original start, modified for tape start.
+     start=2014y342d16h04m05s; mode=gpsNarrow; source=GPS18;
+     station=Kp:    0 sec:   55 sec:    0.221 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    0.221 GB:   : &n    : 1;
+endscan;
+scan No0003;
+*    start=2014y342d16h08m00s <= original start, modified for tape start.
+     start=2014y342d16h08m05s; mode=gpsNarrow; source=GPS18;
+     station=Fd:    0 sec:   55 sec:    0.221 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    0.443 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    0.443 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    0.221 GB:   : &n    : 1;
+endscan;
+scan No0004;
+*    start=2014y342d16h12m00s <= original start, modified for tape start.
+     start=2014y342d16h12m05s; mode=gpsNarrow; source=GPS18;
+     station=Fd:    0 sec:   55 sec:    0.443 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    0.664 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    0.664 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    0.443 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    0.221 GB:   : &n    : 1;
+endscan;
+scan No0005;
+*    start=2014y342d16h16m00s <= original start, modified for tape start.
+     start=2014y342d16h16m05s; mode=gpsNarrow; source=GPS18;
+     station=Fd:    0 sec:   55 sec:    0.664 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    0.886 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    0.221 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    0.886 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    0.664 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    0.443 GB:   : &n    : 1;
+endscan;
+scan No0006;
+*    start=2014y342d16h20m00s <= original start, modified for tape start.
+     start=2014y342d16h20m05s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    0.221 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    0.886 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    1.107 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    0.443 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    1.107 GB:   : &cw   : 1;
+     station=Nl:    0 sec:   55 sec:    0.221 GB:   : &ccw  : 1;
+     station=Ov:    0 sec:   55 sec:    0.886 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    0.664 GB:   : &cw   : 1;
+endscan;
+scan No0007;
+*    start=2014y342d16h24m00s <= original start, modified for tape start.
+     start=2014y342d16h24m05s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    0.443 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    1.107 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    1.328 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    0.664 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    1.328 GB:   : &cw   : 1;
+     station=Nl:    0 sec:   55 sec:    0.443 GB:   : &ccw  : 1;
+     station=Ov:    0 sec:   55 sec:    1.107 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    0.886 GB:   : &cw   : 1;
+endscan;
+scan No0008;
+*    start=2014y342d16h28m00s <= original start, modified for tape start.
+     start=2014y342d16h28m05s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    0.664 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    1.328 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    1.550 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    0.886 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    1.550 GB:   : &cw   : 1;
+     station=Nl:    0 sec:   55 sec:    0.664 GB:   : &ccw  : 1;
+     station=Ov:    0 sec:   55 sec:    1.328 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    1.107 GB:   : &cw   : 1;
+endscan;
+scan No0009;
+*    start=2014y342d16h32m00s <= original start, modified for tape start.
+     start=2014y342d16h32m05s; mode=gpsNarrow; source=GPS21;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Br:    0 sec:   55 sec:    0.886 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    1.550 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    1.771 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    1.107 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    1.771 GB:   : &cw   : 1;
+     station=Nl:    0 sec:   55 sec:    0.886 GB:   : &ccw  : 1;
+     station=Ov:    0 sec:   55 sec:    1.550 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    1.328 GB:   : &cw   : 1;
+endscan;
+scan No0010;
+*    start=2014y342d16h36m00s <= original start, modified for tape start.
+     start=2014y342d16h36m05s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    1.107 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    1.771 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    1.993 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    1.328 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    1.993 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    1.771 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    1.550 GB:   : &n    : 1;
+endscan;
+scan No0011;
+*    start=2014y342d16h40m00s <= original start, modified for tape start.
+     start=2014y342d16h40m05s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    1.328 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    1.993 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    2.214 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    1.550 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    2.214 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    1.993 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    1.771 GB:   : &n    : 1;
+endscan;
+scan No0012;
+*    start=2014y342d16h44m00s <= original start, modified for tape start.
+     start=2014y342d16h44m05s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    1.550 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    2.214 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    2.435 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    1.771 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    2.435 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    2.214 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    1.993 GB:   : &n    : 1;
+endscan;
+scan No0013;
+*    start=2014y342d16h48m00s <= original start, modified for tape start.
+     start=2014y342d16h48m05s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    1.771 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    2.435 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    2.657 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    1.993 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    2.657 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    2.435 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    2.214 GB:   : &n    : 1;
+endscan;
+scan No0014;
+*    start=2014y342d16h52m00s <= original start, modified for tape start.
+     start=2014y342d16h52m05s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    1.993 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    2.657 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    0.221 GB:   : &ccw  : 1;
+     station=Kp:    0 sec:   55 sec:    2.878 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    2.214 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    2.878 GB:   : &cw   : 1;
+     station=Nl:    0 sec:   55 sec:    1.107 GB:   : &ccw  : 1;
+     station=Ov:    0 sec:   55 sec:    2.657 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    2.435 GB:   : &cw   : 1;
+endscan;
+scan No0015;
+*    start=2014y342d16h56m00s <= original start, modified for tape start.
+     start=2014y342d16h56m05s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    2.214 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    2.878 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    0.443 GB:   : &ccw  : 1;
+     station=Kp:    0 sec:   55 sec:    3.100 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    2.435 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    3.100 GB:   : &cw   : 1;
+     station=Nl:    0 sec:   55 sec:    1.328 GB:   : &ccw  : 1;
+     station=Ov:    0 sec:   55 sec:    2.878 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    2.657 GB:   : &cw   : 1;
+endscan;
+scan No0016;
+*    start=2014y342d17h00m00s <= original start, modified for tape start.
+     start=2014y342d17h00m05s; mode=gpsNarrow; source=GPS21;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Br:    0 sec:   55 sec:    2.435 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    3.100 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    0.664 GB:   : &ccw  : 1;
+     station=Kp:    0 sec:   55 sec:    3.321 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    2.657 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    3.321 GB:   : &cw   : 1;
+     station=Nl:    0 sec:   55 sec:    1.550 GB:   : &ccw  : 1;
+     station=Ov:    0 sec:   55 sec:    3.100 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    2.878 GB:   : &cw   : 1;
+endscan;
+scan No0017;
+*    start=2014y342d17h04m00s <= original start, modified for tape start.
+     start=2014y342d17h04m05s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    2.657 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    3.321 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    0.886 GB:   : &ccw  : 1;
+     station=Kp:    0 sec:   55 sec:    3.543 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    2.878 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    3.543 GB:   : &cw   : 1;
+     station=Nl:    0 sec:   55 sec:    1.771 GB:   : &ccw  : 1;
+     station=Ov:    0 sec:   55 sec:    3.321 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    3.100 GB:   : &cw   : 1;
+endscan;
+scan No0018;
+*    start=2014y342d17h08m52s <= original start, modified for tape start.
+     start=2014y342d17h08m57s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    2.878 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    3.543 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    3.764 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    3.100 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    3.764 GB:   : &n    : 1;
+     station=Nl:    0 sec:   55 sec:    1.993 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    3.543 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    3.321 GB:   : &n    : 1;
+endscan;
+scan No0019;
+*    start=2014y342d17h12m52s <= original start, modified for tape start.
+     start=2014y342d17h12m57s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    3.100 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    3.764 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    3.985 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    3.321 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    3.985 GB:   : &n    : 1;
+     station=Nl:    0 sec:   55 sec:    2.214 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    3.764 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    3.543 GB:   : &n    : 1;
+endscan;
+scan No0020;
+*    start=2014y342d17h16m52s <= original start, modified for tape start.
+     start=2014y342d17h16m57s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    3.321 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    3.985 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    4.207 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    3.543 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    4.207 GB:   : &n    : 1;
+     station=Nl:    0 sec:   55 sec:    2.435 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    3.985 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    3.764 GB:   : &n    : 1;
+endscan;
+scan No0021;
+*    start=2014y342d17h20m52s <= original start, modified for tape start.
+     start=2014y342d17h20m57s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    3.543 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    4.207 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    4.428 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    3.764 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    4.428 GB:   : &n    : 1;
+     station=Nl:    0 sec:   55 sec:    2.657 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    4.207 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    3.985 GB:   : &n    : 1;
+endscan;
+scan No0022;
+*    start=2014y342d17h24m52s <= original start, modified for tape start.
+     start=2014y342d17h24m57s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    3.764 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:    4.428 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    1.107 GB:   : &ccw  : 1;
+     station=Kp:    0 sec:   55 sec:    4.650 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    3.985 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    4.650 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    2.878 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    4.428 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    4.207 GB:   : &cw   : 1;
+endscan;
+scan No0023;
+*    start=2014y342d17h28m52s <= original start, modified for tape start.
+     start=2014y342d17h28m57s; mode=gpsNarrow; source=GPS21;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Br:    0 sec:   55 sec:    3.985 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:    4.650 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    1.328 GB:   : &ccw  : 1;
+     station=Kp:    0 sec:   55 sec:    4.871 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    4.207 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    4.871 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    3.100 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    4.650 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    4.428 GB:   : &cw   : 1;
+endscan;
+scan No0024;
+*    start=2014y342d17h32m52s <= original start, modified for tape start.
+     start=2014y342d17h32m57s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    4.207 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:    4.871 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    1.550 GB:   : &ccw  : 1;
+     station=Kp:    0 sec:   55 sec:    5.092 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    4.428 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    5.092 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    3.321 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    4.871 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    4.650 GB:   : &cw   : 1;
+endscan;
+scan No0025;
+*    start=2014y342d17h36m52s <= original start, modified for tape start.
+     start=2014y342d17h36m57s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    4.428 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:    5.092 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    1.771 GB:   : &ccw  : 1;
+     station=Kp:    0 sec:   55 sec:    5.314 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    4.650 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    5.314 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    3.543 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    5.092 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    4.871 GB:   : &cw   : 1;
+endscan;
+scan No0026;
+*    start=2014y342d17h41m53s <= original start, modified for tape start.
+     start=2014y342d17h41m58s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    4.650 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    5.314 GB:   : &n    : 1;
+     station=Hn:    0 sec:   55 sec:    1.993 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    5.535 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    4.871 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    5.535 GB:   : &n    : 1;
+     station=Nl:    0 sec:   55 sec:    3.764 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    5.314 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    5.092 GB:   : &n    : 1;
+endscan;
+scan No0027;
+*    start=2014y342d17h45m53s <= original start, modified for tape start.
+     start=2014y342d17h45m58s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    4.871 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    5.535 GB:   : &n    : 1;
+     station=Hn:    0 sec:   55 sec:    2.214 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    5.757 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    5.092 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    5.757 GB:   : &n    : 1;
+     station=Nl:    0 sec:   55 sec:    3.985 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    5.535 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    5.314 GB:   : &n    : 1;
+endscan;
+scan No0028;
+*    start=2014y342d17h49m53s <= original start, modified for tape start.
+     start=2014y342d17h49m58s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    5.092 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    5.757 GB:   : &n    : 1;
+     station=Hn:    0 sec:   55 sec:    2.435 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    5.978 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    5.314 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    5.978 GB:   : &n    : 1;
+     station=Nl:    0 sec:   55 sec:    4.207 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    5.757 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    5.535 GB:   : &n    : 1;
+endscan;
+scan No0029;
+*    start=2014y342d17h53m53s <= original start, modified for tape start.
+     start=2014y342d17h53m58s; mode=gpsNarrow; source=GPS18;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Br:    0 sec:   55 sec:    5.314 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    5.978 GB:   : &n    : 1;
+     station=Hn:    0 sec:   55 sec:    2.657 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    6.199 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    5.535 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    6.199 GB:   : &n    : 1;
+     station=Nl:    0 sec:   55 sec:    4.428 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    5.978 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    5.757 GB:   : &n    : 1;
+     station=Sc:    0 sec:   55 sec:    0.221 GB:   : &cw   : 1;
+endscan;
+scan No0030;
+*    start=2014y342d17h57m53s <= original start, modified for tape start.
+     start=2014y342d17h57m58s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    5.535 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:    6.199 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    2.878 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    6.421 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    5.757 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    6.421 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    4.650 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    6.199 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    5.978 GB:   : &cw   : 1;
+     station=Sc:    0 sec:   55 sec:    0.443 GB:   : &cw   : 1;
+endscan;
+scan No0031;
+*    start=2014y342d18h01m53s <= original start, modified for tape start.
+     start=2014y342d18h01m58s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    5.757 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:    6.421 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    3.100 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    6.642 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    5.978 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    6.642 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    4.871 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    6.421 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    6.199 GB:   : &cw   : 1;
+     station=Sc:    0 sec:   55 sec:    0.664 GB:   : &cw   : 1;
+endscan;
+scan No0032;
+*    start=2014y342d18h05m53s <= original start, modified for tape start.
+     start=2014y342d18h05m58s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    5.978 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:    6.642 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    3.321 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    6.864 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    6.199 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    6.864 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    5.092 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    6.642 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    6.421 GB:   : &cw   : 1;
+     station=Sc:    0 sec:   55 sec:    0.886 GB:   : &cw   : 1;
+endscan;
+scan No0033;
+*    start=2014y342d18h09m53s <= original start, modified for tape start.
+     start=2014y342d18h09m58s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    6.199 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:    6.864 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    3.543 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    7.085 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    6.421 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    7.085 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    5.314 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    6.864 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    6.642 GB:   : &cw   : 1;
+     station=Sc:    0 sec:   55 sec:    1.107 GB:   : &cw   : 1;
+endscan;
+scan No0034;
+*    start=2014y342d18h13m53s <= original start, modified for tape start.
+     start=2014y342d18h13m58s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    6.421 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    7.085 GB:   : &n    : 1;
+     station=Hn:    0 sec:   55 sec:    3.764 GB:   : &n    : 1;
+     station=Kp:    0 sec:   55 sec:    7.306 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    6.642 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    7.306 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    5.535 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    7.085 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    6.864 GB:   : &n    : 1;
+     station=Sc:    0 sec:   55 sec:    1.328 GB:   : &cw   : 1;
+endscan;
+scan No0035;
+*    start=2014y342d18h17m53s <= original start, modified for tape start.
+     start=2014y342d18h17m58s; mode=gpsNarrow; source=GPS18;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Br:    0 sec:   55 sec:    6.642 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    7.306 GB:   : &n    : 1;
+     station=Hn:    0 sec:   55 sec:    3.985 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    7.528 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    6.864 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    7.528 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    5.757 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    7.306 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    7.085 GB:   : &n    : 1;
+     station=Sc:    0 sec:   55 sec:    1.550 GB:   : &cw   : 1;
+endscan;
+scan No0036;
+*    start=2014y342d18h21m53s <= original start, modified for tape start.
+     start=2014y342d18h21m58s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    6.864 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    7.528 GB:   : &n    : 1;
+     station=Hn:    0 sec:   55 sec:    4.207 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    7.749 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    7.085 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    7.749 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    5.978 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    7.528 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    7.306 GB:   : &n    : 1;
+     station=Sc:    0 sec:   55 sec:    1.771 GB:   : &cw   : 1;
+endscan;
+scan No0037;
+*    start=2014y342d18h25m53s <= original start, modified for tape start.
+     start=2014y342d18h25m58s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    7.085 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    7.749 GB:   : &n    : 1;
+     station=Hn:    0 sec:   55 sec:    4.428 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    7.971 GB:   : &n    : 1;
+     station=La:    0 sec:   55 sec:    7.306 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    7.971 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    6.199 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    7.749 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    7.528 GB:   : &n    : 1;
+     station=Sc:    0 sec:   55 sec:    1.993 GB:   : &cw   : 1;
+endscan;
+scan No0038;
+*    start=2014y342d18h29m53s <= original start, modified for tape start.
+     start=2014y342d18h29m58s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    7.306 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:    7.971 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    4.650 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    8.192 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    7.528 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    8.192 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    6.421 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    7.971 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    7.749 GB:   : &cw   : 1;
+     station=Sc:    0 sec:   55 sec:    2.214 GB:   : &cw   : 1;
+endscan;
+scan No0039;
+*    start=2014y342d18h33m53s <= original start, modified for tape start.
+     start=2014y342d18h33m58s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    7.528 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:    8.192 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    4.871 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    8.414 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    7.749 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    8.414 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    6.642 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    8.192 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    7.971 GB:   : &cw   : 1;
+     station=Sc:    0 sec:   55 sec:    2.435 GB:   : &cw   : 1;
+endscan;
+scan No0040;
+*    start=2014y342d18h37m53s <= original start, modified for tape start.
+     start=2014y342d18h37m58s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    7.749 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:    8.414 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    5.092 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    8.635 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    7.971 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    8.635 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    6.864 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    8.414 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    8.192 GB:   : &cw   : 1;
+     station=Sc:    0 sec:   55 sec:    2.657 GB:   : &cw   : 1;
+endscan;
+scan No0041;
+*    start=2014y342d18h41m53s <= original start, modified for tape start.
+     start=2014y342d18h41m58s; mode=gpsNarrow; source=GPS21;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Br:    0 sec:   55 sec:    7.971 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:    8.635 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    5.314 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    8.856 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    8.192 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    8.856 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    7.085 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    8.635 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    8.414 GB:   : &cw   : 1;
+     station=Sc:    0 sec:   55 sec:    2.878 GB:   : &cw   : 1;
+endscan;
+scan No0042;
+*    start=2014y342d18h45m53s <= original start, modified for tape start.
+     start=2014y342d18h45m58s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    8.192 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    8.856 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    5.535 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    9.078 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    8.414 GB:   : &n    : 1;
+     station=Mk:    0 sec:   55 sec:    9.078 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    7.306 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    8.856 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    8.635 GB:   : &n    : 1;
+     station=Sc:    0 sec:   55 sec:    3.100 GB:   : &cw   : 1;
+endscan;
+scan No0043;
+*    start=2014y342d18h49m53s <= original start, modified for tape start.
+     start=2014y342d18h49m58s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    8.414 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    9.078 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    5.757 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    9.299 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    8.635 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    9.299 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    7.528 GB:   : &n    : 1;
+     station=Ov:    0 sec:   55 sec:    9.078 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    8.856 GB:   : &cw   : 1;
+     station=Sc:    0 sec:   55 sec:    3.321 GB:   : &cw   : 1;
+endscan;
+scan No0044;
+*    start=2014y342d18h53m53s <= original start, modified for tape start.
+     start=2014y342d18h53m58s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    8.635 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    9.299 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    5.978 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    9.521 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    8.856 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    9.521 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    7.749 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    9.299 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    9.078 GB:   : &cw   : 1;
+     station=Sc:    0 sec:   55 sec:    3.543 GB:   : &cw   : 1;
+endscan;
+scan No0045;
+*    start=2014y342d18h57m53s <= original start, modified for tape start.
+     start=2014y342d18h57m58s; mode=gpsNarrow; source=GPS18;
+     station=Br:    0 sec:   55 sec:    8.856 GB:   : &n    : 1;
+     station=Fd:    0 sec:   55 sec:    9.521 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    6.199 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    9.742 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    9.078 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    9.742 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    7.971 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    9.521 GB:   : &n    : 1;
+     station=Pt:    0 sec:   55 sec:    9.299 GB:   : &cw   : 1;
+     station=Sc:    0 sec:   55 sec:    3.764 GB:   : &cw   : 1;
+endscan;
+scan No0046;
+*    start=2014y342d19h01m53s <= original start, modified for tape start.
+     start=2014y342d19h01m58s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    9.078 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:    9.742 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    6.421 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:    9.963 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    9.299 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:    9.963 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    8.192 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    9.742 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    9.521 GB:   : &cw   : 1;
+     station=Sc:    0 sec:   55 sec:    3.985 GB:   : &cw   : 1;
+endscan;
+scan No0047;
+*    start=2014y342d19h05m53s <= original start, modified for tape start.
+     start=2014y342d19h05m58s; mode=gpsNarrow; source=GPS21;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Br:    0 sec:   55 sec:    9.299 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:    9.963 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    6.642 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:   10.185 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    9.521 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:   10.185 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    8.414 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:    9.963 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    9.742 GB:   : &cw   : 1;
+     station=Sc:    0 sec:   55 sec:    4.207 GB:   : &cw   : 1;
+endscan;
+scan No0048;
+*    start=2014y342d19h09m53s <= original start, modified for tape start.
+     start=2014y342d19h09m58s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    9.521 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:   10.185 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    6.864 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:   10.406 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    9.742 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:   10.406 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    8.635 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:   10.185 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:    9.963 GB:   : &cw   : 1;
+     station=Sc:    0 sec:   55 sec:    4.428 GB:   : &cw   : 1;
+endscan;
+scan No0049;
+*    start=2014y342d19h13m53s <= original start, modified for tape start.
+     start=2014y342d19h13m58s; mode=gpsNarrow; source=GPS21;
+     station=Br:    0 sec:   55 sec:    9.742 GB:   : &cw   : 1;
+     station=Fd:    0 sec:   55 sec:   10.406 GB:   : &cw   : 1;
+     station=Hn:    0 sec:   55 sec:    7.085 GB:   : &cw   : 1;
+     station=Kp:    0 sec:   55 sec:   10.628 GB:   : &cw   : 1;
+     station=La:    0 sec:   55 sec:    9.963 GB:   : &cw   : 1;
+     station=Mk:    0 sec:   55 sec:   10.628 GB:   : &ccw  : 1;
+     station=Nl:    0 sec:   55 sec:    8.856 GB:   : &cw   : 1;
+     station=Ov:    0 sec:   55 sec:   10.406 GB:   : &cw   : 1;
+     station=Pt:    0 sec:   55 sec:   10.185 GB:   : &cw   : 1;
+     station=Sc:    0 sec:   55 sec:    4.650 GB:   : &cw   : 1;
+endscan;

@@ -1,0 +1,1338 @@
+!*  Schedule for VLBA_HN   *!
+!*  Experiment ptg2     *!
+!* Schedule Version:       1.00 *!
+!* Processed by SCHED version:  11.40  Release 11.4.  March 14, 2015 *!
+!* PI:       Operations *!
+!* Address:  AOC *!
+!*  *!
+!*  *!
+!*  *!
+!* Phone:    505 835 7251 *!
+!* EMAIL:    vlbaops@nrao.edu *!
+!* Fax:      505 835 7027 *!
+!* Phone during observation: 505 835 7251 *!
+!* Observing mode: Multi-frequency pointing observations. *!
+!* Notes: *!
+!*  *!
+!*  *!
+!*  *!
+!*  Start at 00h44m55s     Fri, 2012 Jun 22  Day of year  174   *!
+program=ptg2    
+media=(1,none)
+
+!* The first scan is preceeded by a setup scan *!
+!* that ends at the start time of the first scan  *!
+
+!* --- Scan from 00h44m55s to 00h50m45s   Fri, 2012 Jun 22 --- *!
+sname='CYGA'  ra=19h59m28.910149s  dec= 40d44'15.76902"  qual=999  calib=' '
+maxcaltime= 120
+fe=(2,90cm),(4,90cm)
+fexfer=(2,norm)
+noise=(1,low-s),(2,low-s),(3,low-s),(4,low-s)
+synth=( 1,15.4),( 2,15.4),( 3,15.4)
+logging=STANDARD
+nchan= 4
+format=NONE
+ifdistr=(1,0),(2,0),(3,0),(4,0)
+baseband=(1,1),(2,2),(3,3),(4,4)
+ifchan=(1,B),(2,D),(3,B),(4,D)
+sideband=(1,U),(2,U),(3,U),(4,U)
+bits=(1,2),(2,2),(3,2),(4,2)
+period=(1,1),(2,1),(3,1),(4,1)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+azcolim=   0.00  elcolim=   0.00
+bbsynth=( 1,824.49),( 2,824.49),( 3,608.99),( 4,608.99)
+bbfilter=(1,4M),(2,4M),(3,4M),(4,4M)
+pcal=1MHZ
+pcalxbit1=(1,S1),(2,S3),(3,S1),(4,S3),(5,S1),(6,S2),(7,S3),(8,S4)
+pcalxbit2=(1,S2),(2,S4),(3,S2),(4,S4),(5,M1),(6,M2),(7,M3),(8,M4)
+pcalxfreq1=(1,510),(2,10),(3,2510),(4,3010),(5,0),(6,0),(7,0),(8,0)
+pcalxfreq2=(1,510),(2,10),(3,2510),(4,3010),(5,0),(6,0),(7,0),(8,0)
+  date = 2012Jun22
+stop=00h44m55s   !NEXT!        
+qual=  0
+azcolim= -30.00 elcolim=   0.00 dur=  15s
+stop=00h50m45s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=-180.00 dur=  15s  !NEXT!
+qual= 11 azcolim= -30.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=  30.00 !NEXT!
+qual= 14 azcolim= 180.00 !NEXT!
+qual= 22 elcolim= -60.00 !NEXT!
+qual= 21 elcolim= -30.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=  30.00 !NEXT!
+qual= 24 elcolim=  60.00 azcolim=-180.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 00h50m59s to 00h56m49s   Fri, 2012 Jun 22 --- *!
+sname='DR21'  ra=20h39m01.208159s  dec= 42d19'34.78182"  qual=  0  calib=' '
+fe=(2,1cm),(4,1cm)
+synth=( 1, 9.1),( 2, 6.1),( 3,12.4)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,728.49),( 2,728.49),( 3,778.49),( 4,778.49)
+bbfilter=(1,16M),(2,16M),(3,16M),(4,16M)
+pcalxfreq1=(2,510),(3,13510),(4,13510)
+pcalxfreq2=(2,510),(3,13510),(4,13510)
+azcolim=  -1.00 elcolim=   0.00 dur=  33s
+stop=00h56m49s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -6.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -1.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   1.00 !NEXT!
+qual= 14 azcolim=   6.00 !NEXT!
+qual= 22 elcolim=  -2.00 !NEXT!
+qual= 21 elcolim=  -1.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   1.00 !NEXT!
+qual= 24 elcolim=   2.00 azcolim=  -6.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 00h56m49s to 01h02m40s   Fri, 2012 Jun 22 --- *!
+sname='DR21'  ra=20h39m01.208159s  dec= 42d19'34.78182"  qual=  0  calib=' '
+synth=( 1, 8.9),( 2, 5.9),( 3,14.1)
+nchan= 2
+level=(1,-1),(2,-1)
+bbsynth=( 1,793.49),( 2,793.49)
+pcalxbit1=(2,S1),(4,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxbit2=(2,S2),(3,M1),(4,M2),(5,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxfreq1=(2,13510),(3,0),(4,0),(5,1510)
+pcalxfreq2=(2,13510),(3,0),(4,0),(5,1510)
+azcolim=  -1.00 elcolim=   0.00 dur=  21s
+stop=01h02m40s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -6.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -1.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   1.00 !NEXT!
+qual= 14 azcolim=   6.00 !NEXT!
+qual= 22 elcolim=  -2.00 !NEXT!
+qual= 21 elcolim=  -1.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   1.00 !NEXT!
+qual= 24 elcolim=   2.00 azcolim=  -6.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 01h02m40s to 01h08m31s   Fri, 2012 Jun 22 --- *!
+sname='DR21'  ra=20h39m01.208159s  dec= 42d19'34.78182"  qual=  0  calib=' '
+fe=(2,2cm),(4,2cm)
+synth=( 1,14.6),( 2,10.9),( 3,10.9)
+level=(1,-1),(2,-1)
+bbsynth=( 1,754.99),( 2,754.99)
+pcalxfreq1=(1,10),(2,13010),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(5,1010)
+azcolim=  -1.50 elcolim=   0.00 dur=  21s
+stop=01h08m31s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -9.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -1.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   1.50 !NEXT!
+qual= 14 azcolim=   9.00 !NEXT!
+qual= 22 elcolim=  -3.00 !NEXT!
+qual= 21 elcolim=  -1.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   1.50 !NEXT!
+qual= 24 elcolim=   3.00 azcolim=  -9.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 01h08m31s to 01h14m22s   Fri, 2012 Jun 22 --- *!
+sname='DR21'  ra=20h39m01.208159s  dec= 42d19'34.78182"  qual=  0  calib=' '
+fe=(1,7mm),(3,7mm)
+synth=( 1, 3.9),( 2, 7.6),( 3,11.6)
+nchan= 4
+baseband=(3,3),(4,4)
+ifchan=(1,A),(2,C),(3,A),(4,C)
+sideband=(3,U),(4,U)
+bits=(3,2),(4,2)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,715.99),( 2,715.99),( 3,815.99),( 4,815.99)
+bbfilter=(3,16M),(4,16M)
+pcalxbit1=(2,S3),(4,S3),(6,S2),(7,S3),(8,S4)
+pcalxbit2=(2,S4),(3,S2),(4,S4),(5,M1),(6,M2),(7,M3),(8,M4)
+pcalxfreq1=(2,10),(3,13010),(4,13010),(5,0)
+pcalxfreq2=(2,10),(3,13010),(4,13010),(5,0)
+azcolim=  -0.50 elcolim=   0.00 dur=  21s
+stop=01h14m22s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -3.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -0.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   0.50 !NEXT!
+qual= 14 azcolim=   3.00 !NEXT!
+qual= 22 elcolim=  -1.00 !NEXT!
+qual= 21 elcolim=  -0.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   0.50 !NEXT!
+qual= 24 elcolim=   1.00 azcolim=  -3.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 01h17m00s to 01h22m50s   Fri, 2012 Jun 22 --- *!
+sname='RLEO'  ra=09h47m33.490000s  dec= 11d25'43.99000"  qual=  0  calib='L'
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,716.09),( 2,716.09),( 3,816.07),( 4,816.07)
+bbfilter=(1,2M),(2,2M),(3,2M),(4,2M)
+pcalxfreq1=(1,910),(2,930),(3,1910),(4,1930)
+pcalxfreq2=(1,910),(2,930),(3,1910),(4,1930)
+azcolim=  -0.50 elcolim=   0.00 dur= 178s
+stop=01h22m50s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -3.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -0.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   0.50 !NEXT!
+qual= 14 azcolim=   3.00 !NEXT!
+qual= 22 elcolim=  -1.00 !NEXT!
+qual= 21 elcolim=  -0.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   0.50 !NEXT!
+qual= 24 elcolim=   1.00 azcolim=  -3.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 01h23m56s to 01h29m46s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+fe=(2,90cm),(4,90cm)
+synth=( 1,15.4),( 2,15.4),( 3,15.4)
+ifchan=(1,B),(2,D),(3,B),(4,D)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,824.49),( 2,824.49),( 3,608.99),( 4,608.99)
+bbfilter=(1,4M),(2,4M),(3,4M),(4,4M)
+pcalxfreq1=(1,510),(2,10),(3,2510),(4,3010)
+pcalxfreq2=(1,510),(2,10),(3,2510),(4,3010)
+azcolim= -30.00 elcolim=   0.00 dur=  86s
+stop=01h29m46s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=-180.00 dur=  15s  !NEXT!
+qual= 11 azcolim= -30.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=  30.00 !NEXT!
+qual= 14 azcolim= 180.00 !NEXT!
+qual= 22 elcolim= -60.00 !NEXT!
+qual= 21 elcolim= -30.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=  30.00 !NEXT!
+qual= 24 elcolim=  60.00 azcolim=-180.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 01h29m46s to 01h35m37s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+fe=(2,4cm),(4,4cm)
+synth=( 1, 7.6),( 2,15.1),( 3,15.1)
+nchan= 2
+level=(1,-1),(2,-1)
+bbsynth=( 1,810.99),( 2,810.99)
+bbfilter=(1,16M),(2,16M)
+pcalxbit1=(2,S1),(4,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxbit2=(2,S2),(3,M1),(4,M2),(5,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxfreq1=(1,10),(2,13010),(3,0),(4,0),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(3,0),(4,0),(5,1010)
+azcolim=  -2.50 elcolim=   0.00 dur=  21s
+stop=01h35m37s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -15.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -2.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   2.50 !NEXT!
+qual= 14 azcolim=  15.00 !NEXT!
+qual= 22 elcolim=  -5.00 !NEXT!
+qual= 21 elcolim=  -2.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   2.50 !NEXT!
+qual= 24 elcolim=   5.00 azcolim= -15.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 01h35m37s to 01h41m28s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+fe=(1,20cm),(3,20cm)
+synth=( 1,14.6),( 2,-2.4),( 3,14.6)
+nchan= 4
+baseband=(3,3),(4,4)
+ifchan=(1,A),(2,C),(3,A),(4,C)
+sideband=(1,L),(2,L),(3,L),(4,L)
+bits=(3,2),(4,2)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,969.51),( 2,969.51),( 3,749.51),( 4,749.51)
+bbfilter=(3,16M),(4,16M)
+pcalxbit1=(2,S3),(4,S3),(6,S2),(7,S3),(8,S4)
+pcalxbit2=(2,S4),(3,S2),(4,S4),(5,M1),(6,M2),(7,M3),(8,M4)
+pcalxfreq1=(1,510),(2,510),(3,13510),(4,13510),(5,0)
+pcalxfreq2=(1,510),(2,510),(3,13510),(4,13510),(5,0)
+azcolim= -15.00 elcolim=   0.00 dur=  21s
+stop=01h41m28s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -90.00 dur=  15s  !NEXT!
+qual= 11 azcolim= -15.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=  15.00 !NEXT!
+qual= 14 azcolim=  90.00 !NEXT!
+qual= 22 elcolim= -30.00 !NEXT!
+qual= 21 elcolim= -15.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=  15.00 !NEXT!
+qual= 24 elcolim=  30.00 azcolim= -90.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 01h41m28s to 01h47m19s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+fe=(1,6cm),(3,6cm)
+synth=( 1,13.6),( 2, 4.1),( 3,13.6)
+nchan= 2
+sideband=(1,U),(2,U)
+level=(1,-1),(2,-1)
+bbsynth=( 1,884.99),( 2,884.99)
+pcalxbit1=(2,S1),(4,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxbit2=(2,S2),(3,M1),(4,M2),(5,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxfreq1=(1,10),(2,13010),(3,0),(4,0),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(3,0),(4,0),(5,1010)
+azcolim=  -6.00 elcolim=   0.00 dur=  21s
+stop=01h47m19s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -36.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -6.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   6.00 !NEXT!
+qual= 14 azcolim=  36.00 !NEXT!
+qual= 22 elcolim= -12.00 !NEXT!
+qual= 21 elcolim=  -6.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   6.00 !NEXT!
+qual= 24 elcolim=  12.00 azcolim= -36.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 01h47m19s to 01h53m10s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+synth=( 1,15.6),( 2, 5.9),( 3,15.6)
+level=(1,-1),(2,-1)
+bbsynth=( 1,760.49),( 2,760.49)
+pcalxfreq1=(1,510),(2,13510),(5,1510)
+pcalxfreq2=(1,510),(2,13510),(5,1510)
+azcolim=  -5.00 elcolim=   0.00 dur=  21s
+stop=01h53m10s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -30.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -5.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   5.00 !NEXT!
+qual= 14 azcolim=  30.00 !NEXT!
+qual= 22 elcolim= -10.00 !NEXT!
+qual= 21 elcolim=  -5.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   5.00 !NEXT!
+qual= 24 elcolim=  10.00 azcolim= -30.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 01h53m10s to 01h59m01s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+fe=(1,13cm),(3,13cm)
+synth=( 1,15.4),( 2,-3.1),( 3,15.4)
+sideband=(1,L),(2,L)
+level=(1,-1),(2,-1)
+bbsynth=( 1,839.01),( 2,839.01)
+pcalxfreq1=(1,10),(2,13010),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(5,1010)
+azcolim=  -9.00 elcolim=   0.00 dur=  21s
+stop=01h59m01s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -54.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -9.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   9.00 !NEXT!
+qual= 14 azcolim=  54.00 !NEXT!
+qual= 22 elcolim= -18.00 !NEXT!
+qual= 21 elcolim=  -9.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   9.00 !NEXT!
+qual= 24 elcolim=  18.00 azcolim= -54.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 01h59m01s to 02h04m52s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+fe=(2,4cm),(4,4cm)
+synth=( 1, 7.6),( 2,-3.1),( 3,12.6)
+nchan= 4
+baseband=(3,3),(4,4)
+ifchan=(1,B),(2,D),(3,A),(4,C)
+sideband=(1,U),(2,U),(3,L),(4,L)
+bits=(3,2),(4,2)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,810.99),( 2,810.99),( 3,839.01),( 4,839.01)
+bbfilter=(3,16M),(4,16M)
+pcalxbit1=(2,S3),(4,S3),(6,S2),(7,S3),(8,S4)
+pcalxbit2=(2,S4),(3,S2),(4,S4),(5,M1),(6,M2),(7,M3),(8,M4)
+pcalxfreq1=(2,10),(3,13010),(4,13010),(5,0)
+pcalxfreq2=(2,10),(3,13010),(4,13010),(5,0)
+azcolim=  -2.50 elcolim=   0.00 dur=  21s
+stop=02h04m52s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -36.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -2.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   2.50 !NEXT!
+qual= 14 azcolim=  36.00 !NEXT!
+qual= 22 elcolim=  -5.00 !NEXT!
+qual= 21 elcolim=  -2.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   2.50 !NEXT!
+qual= 24 elcolim=   5.00 azcolim= -36.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 02h04m52s to 02h10m43s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+fe=(2,1cm),(4,1cm)
+synth=( 1, 9.1),( 2, 6.1),( 3,12.4)
+ifchan=(3,B),(4,D)
+sideband=(3,U),(4,U)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,728.49),( 2,728.49),( 3,778.49),( 4,778.49)
+pcalxfreq1=(1,510),(2,510),(3,13510),(4,13510)
+pcalxfreq2=(1,510),(2,510),(3,13510),(4,13510)
+azcolim=  -1.00 elcolim=   0.00 dur=  21s
+stop=02h10m43s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -6.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -1.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   1.00 !NEXT!
+qual= 14 azcolim=   6.00 !NEXT!
+qual= 22 elcolim=  -2.00 !NEXT!
+qual= 21 elcolim=  -1.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   1.00 !NEXT!
+qual= 24 elcolim=   2.00 azcolim=  -6.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 02h10m43s to 02h16m34s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+synth=( 1, 8.9),( 2, 5.9),( 3,14.1)
+nchan= 2
+level=(1,-1),(2,-1)
+bbsynth=( 1,793.49),( 2,793.49)
+pcalxbit1=(2,S1),(4,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxbit2=(2,S2),(3,M1),(4,M2),(5,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxfreq1=(2,13510),(3,0),(4,0),(5,1510)
+pcalxfreq2=(2,13510),(3,0),(4,0),(5,1510)
+azcolim=  -1.00 elcolim=   0.00 dur=  21s
+stop=02h16m34s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -6.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -1.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   1.00 !NEXT!
+qual= 14 azcolim=   6.00 !NEXT!
+qual= 22 elcolim=  -2.00 !NEXT!
+qual= 21 elcolim=  -1.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   1.00 !NEXT!
+qual= 24 elcolim=   2.00 azcolim=  -6.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 02h16m34s to 02h22m25s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+fe=(2,2cm),(4,2cm)
+synth=( 1,14.6),( 2,10.9),( 3,10.9)
+level=(1,-1),(2,-1)
+bbsynth=( 1,754.99),( 2,754.99)
+pcalxfreq1=(1,10),(2,13010),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(5,1010)
+azcolim=  -1.50 elcolim=   0.00 dur=  21s
+stop=02h22m25s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -9.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -1.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   1.50 !NEXT!
+qual= 14 azcolim=   9.00 !NEXT!
+qual= 22 elcolim=  -3.00 !NEXT!
+qual= 21 elcolim=  -1.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   1.50 !NEXT!
+qual= 24 elcolim=   3.00 azcolim=  -9.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 02h22m46s to 02h28m36s   Fri, 2012 Jun 22 --- *!
+sname='3C273'  ra=12h29m06.699700s  dec= 02d03'08.59000"  qual=  0  calib=' '
+fe=(1,7mm),(3,7mm)
+synth=( 1, 3.9),( 2, 7.6),( 3,11.6)
+nchan= 4
+baseband=(3,3),(4,4)
+ifchan=(1,A),(2,C),(3,A),(4,C)
+sideband=(3,U),(4,U)
+bits=(3,2),(4,2)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,715.99),( 2,715.99),( 3,815.99),( 4,815.99)
+bbfilter=(3,16M),(4,16M)
+pcalxbit1=(2,S3),(4,S3),(6,S2),(7,S3),(8,S4)
+pcalxbit2=(2,S4),(3,S2),(4,S4),(5,M1),(6,M2),(7,M3),(8,M4)
+pcalxfreq1=(2,10),(3,13010),(4,13010),(5,0)
+pcalxfreq2=(2,10),(3,13010),(4,13010),(5,0)
+azcolim=  -0.50 elcolim=   0.00 dur=  41s
+stop=02h28m36s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -3.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -0.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   0.50 !NEXT!
+qual= 14 azcolim=   3.00 !NEXT!
+qual= 22 elcolim=  -1.00 !NEXT!
+qual= 21 elcolim=  -0.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   0.50 !NEXT!
+qual= 24 elcolim=   1.00 azcolim=  -3.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 02h28m54s to 02h34m44s   Fri, 2012 Jun 22 --- *!
+sname='SATURN'  ra=13h27m27.124891s  dec=-06d22'57.82051"  qual=  0  calib='P'
+ epochd=2012Jun22 epocht=02h28m59s dra=     -1.82 ddec=     -7.19
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+azcolim=  -0.50 elcolim=   0.00 dur=  37s
+stop=02h34m44s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -3.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -0.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   0.50 !NEXT!
+qual= 14 azcolim=   3.00 !NEXT!
+qual= 22 elcolim=  -1.00 !NEXT!
+qual= 21 elcolim=  -0.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   0.50 !NEXT!
+qual= 24 elcolim=   1.00 azcolim=  -3.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 02h36m38s to 02h42m28s   Fri, 2012 Jun 22 --- *!
+sname='CYGA'  ra=19h59m28.910149s  dec= 40d44'15.76902"  qual=  0  calib=' '
+   dra=0.0  ddec=0.0 
+fe=(2,90cm),(4,90cm)
+synth=( 1,15.4),( 2,15.4),( 3,15.4)
+ifchan=(1,B),(2,D),(3,B),(4,D)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,824.49),( 2,824.49),( 3,608.99),( 4,608.99)
+bbfilter=(1,4M),(2,4M),(3,4M),(4,4M)
+pcalxfreq1=(1,510),(3,2510),(4,3010)
+pcalxfreq2=(1,510),(3,2510),(4,3010)
+azcolim= -30.00 elcolim=   0.00 dur= 134s
+stop=02h42m28s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=-180.00 dur=  15s  !NEXT!
+qual= 11 azcolim= -30.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=  30.00 !NEXT!
+qual= 14 azcolim= 180.00 !NEXT!
+qual= 22 elcolim= -60.00 !NEXT!
+qual= 21 elcolim= -30.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=  30.00 !NEXT!
+qual= 24 elcolim=  60.00 azcolim=-180.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 02h42m45s to 02h48m35s   Fri, 2012 Jun 22 --- *!
+sname='DR21'  ra=20h39m01.208159s  dec= 42d19'34.78182"  qual=  0  calib=' '
+fe=(2,1cm),(4,1cm)
+synth=( 1, 9.1),( 2, 6.1),( 3,12.4)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,728.49),( 2,728.49),( 3,778.49),( 4,778.49)
+bbfilter=(1,16M),(2,16M),(3,16M),(4,16M)
+pcalxfreq1=(2,510),(3,13510),(4,13510)
+pcalxfreq2=(2,510),(3,13510),(4,13510)
+azcolim=  -1.00 elcolim=   0.00 dur=  36s
+stop=02h48m35s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -6.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -1.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   1.00 !NEXT!
+qual= 14 azcolim=   6.00 !NEXT!
+qual= 22 elcolim=  -2.00 !NEXT!
+qual= 21 elcolim=  -1.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   1.00 !NEXT!
+qual= 24 elcolim=   2.00 azcolim=  -6.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 02h48m35s to 02h54m26s   Fri, 2012 Jun 22 --- *!
+sname='DR21'  ra=20h39m01.208159s  dec= 42d19'34.78182"  qual=  0  calib=' '
+synth=( 1, 8.9),( 2, 5.9),( 3,14.1)
+nchan= 2
+level=(1,-1),(2,-1)
+bbsynth=( 1,793.49),( 2,793.49)
+pcalxbit1=(2,S1),(4,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxbit2=(2,S2),(3,M1),(4,M2),(5,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxfreq1=(2,13510),(3,0),(4,0),(5,1510)
+pcalxfreq2=(2,13510),(3,0),(4,0),(5,1510)
+azcolim=  -1.00 elcolim=   0.00 dur=  21s
+stop=02h54m26s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -6.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -1.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   1.00 !NEXT!
+qual= 14 azcolim=   6.00 !NEXT!
+qual= 22 elcolim=  -2.00 !NEXT!
+qual= 21 elcolim=  -1.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   1.00 !NEXT!
+qual= 24 elcolim=   2.00 azcolim=  -6.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 02h54m26s to 03h00m17s   Fri, 2012 Jun 22 --- *!
+sname='DR21'  ra=20h39m01.208159s  dec= 42d19'34.78182"  qual=  0  calib=' '
+fe=(2,2cm),(4,2cm)
+synth=( 1,14.6),( 2,10.9),( 3,10.9)
+level=(1,-1),(2,-1)
+bbsynth=( 1,754.99),( 2,754.99)
+pcalxfreq1=(1,10),(2,13010),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(5,1010)
+azcolim=  -1.50 elcolim=   0.00 dur=  21s
+stop=03h00m17s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -9.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -1.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   1.50 !NEXT!
+qual= 14 azcolim=   9.00 !NEXT!
+qual= 22 elcolim=  -3.00 !NEXT!
+qual= 21 elcolim=  -1.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   1.50 !NEXT!
+qual= 24 elcolim=   3.00 azcolim=  -9.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 03h00m17s to 03h06m08s   Fri, 2012 Jun 22 --- *!
+sname='DR21'  ra=20h39m01.208159s  dec= 42d19'34.78182"  qual=  0  calib=' '
+fe=(1,7mm),(3,7mm)
+synth=( 1, 3.9),( 2, 7.6),( 3,11.6)
+nchan= 4
+baseband=(3,3),(4,4)
+ifchan=(1,A),(2,C),(3,A),(4,C)
+sideband=(3,U),(4,U)
+bits=(3,2),(4,2)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,715.99),( 2,715.99),( 3,815.99),( 4,815.99)
+bbfilter=(3,16M),(4,16M)
+pcalxbit1=(2,S3),(4,S3),(6,S2),(7,S3),(8,S4)
+pcalxbit2=(2,S4),(3,S2),(4,S4),(5,M1),(6,M2),(7,M3),(8,M4)
+pcalxfreq1=(2,10),(3,13010),(4,13010),(5,0)
+pcalxfreq2=(2,10),(3,13010),(4,13010),(5,0)
+azcolim=  -0.50 elcolim=   0.00 dur=  21s
+stop=03h06m08s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -3.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -0.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   0.50 !NEXT!
+qual= 14 azcolim=   3.00 !NEXT!
+qual= 22 elcolim=  -1.00 !NEXT!
+qual= 21 elcolim=  -0.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   0.50 !NEXT!
+qual= 24 elcolim=   1.00 azcolim=  -3.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 03h07m03s to 03h12m53s   Fri, 2012 Jun 22 --- *!
+sname='RCAS'  ra=23h58m24.734000s  dec= 51d23'19.57000"  qual=  0  calib='L'
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,721.39),( 2,721.39),( 3,821.39),( 4,821.39)
+bbfilter=(1,2M),(2,2M),(3,2M),(4,2M)
+pcalxfreq1=(1,610),(2,610),(3,1610),(4,1610)
+pcalxfreq2=(1,610),(2,610),(3,1610),(4,1610)
+azcolim=  -0.50 elcolim=   0.00 dur=  75s
+stop=03h12m53s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -3.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -0.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   0.50 !NEXT!
+qual= 14 azcolim=   3.00 !NEXT!
+qual= 22 elcolim=  -1.00 !NEXT!
+qual= 21 elcolim=  -0.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   0.50 !NEXT!
+qual= 24 elcolim=   1.00 azcolim=  -3.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 03h15m38s to 03h21m28s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+fe=(2,90cm),(4,90cm)
+synth=( 1,15.4),( 2,15.4),( 3,15.4)
+ifchan=(1,B),(2,D),(3,B),(4,D)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,824.49),( 2,824.49),( 3,608.99),( 4,608.99)
+bbfilter=(1,4M),(2,4M),(3,4M),(4,4M)
+pcalxfreq1=(1,510),(2,10),(3,2510),(4,3010)
+pcalxfreq2=(1,510),(2,10),(3,2510),(4,3010)
+azcolim= -30.00 elcolim=   0.00 dur= 185s
+stop=03h21m28s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=-180.00 dur=  15s  !NEXT!
+qual= 11 azcolim= -30.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=  30.00 !NEXT!
+qual= 14 azcolim= 180.00 !NEXT!
+qual= 22 elcolim= -60.00 !NEXT!
+qual= 21 elcolim= -30.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=  30.00 !NEXT!
+qual= 24 elcolim=  60.00 azcolim=-180.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 03h21m28s to 03h27m19s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+fe=(2,4cm),(4,4cm)
+synth=( 1, 7.6),( 2,15.1),( 3,15.1)
+nchan= 2
+level=(1,-1),(2,-1)
+bbsynth=( 1,810.99),( 2,810.99)
+bbfilter=(1,16M),(2,16M)
+pcalxbit1=(2,S1),(4,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxbit2=(2,S2),(3,M1),(4,M2),(5,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxfreq1=(1,10),(2,13010),(3,0),(4,0),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(3,0),(4,0),(5,1010)
+azcolim=  -2.50 elcolim=   0.00 dur=  21s
+stop=03h27m19s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -15.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -2.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   2.50 !NEXT!
+qual= 14 azcolim=  15.00 !NEXT!
+qual= 22 elcolim=  -5.00 !NEXT!
+qual= 21 elcolim=  -2.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   2.50 !NEXT!
+qual= 24 elcolim=   5.00 azcolim= -15.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 03h27m19s to 03h33m10s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+fe=(1,20cm),(3,20cm)
+synth=( 1,14.6),( 2,-2.4),( 3,14.6)
+nchan= 4
+baseband=(3,3),(4,4)
+ifchan=(1,A),(2,C),(3,A),(4,C)
+sideband=(1,L),(2,L),(3,L),(4,L)
+bits=(3,2),(4,2)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,969.51),( 2,969.51),( 3,749.51),( 4,749.51)
+bbfilter=(3,16M),(4,16M)
+pcalxbit1=(2,S3),(4,S3),(6,S2),(7,S3),(8,S4)
+pcalxbit2=(2,S4),(3,S2),(4,S4),(5,M1),(6,M2),(7,M3),(8,M4)
+pcalxfreq1=(1,510),(2,510),(3,13510),(4,13510),(5,0)
+pcalxfreq2=(1,510),(2,510),(3,13510),(4,13510),(5,0)
+azcolim= -15.00 elcolim=   0.00 dur=  21s
+stop=03h33m10s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -90.00 dur=  15s  !NEXT!
+qual= 11 azcolim= -15.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=  15.00 !NEXT!
+qual= 14 azcolim=  90.00 !NEXT!
+qual= 22 elcolim= -30.00 !NEXT!
+qual= 21 elcolim= -15.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=  15.00 !NEXT!
+qual= 24 elcolim=  30.00 azcolim= -90.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 03h33m10s to 03h39m01s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+fe=(1,6cm),(3,6cm)
+synth=( 1,13.6),( 2, 4.1),( 3,13.6)
+nchan= 2
+sideband=(1,U),(2,U)
+level=(1,-1),(2,-1)
+bbsynth=( 1,884.99),( 2,884.99)
+pcalxbit1=(2,S1),(4,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxbit2=(2,S2),(3,M1),(4,M2),(5,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxfreq1=(1,10),(2,13010),(3,0),(4,0),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(3,0),(4,0),(5,1010)
+azcolim=  -6.00 elcolim=   0.00 dur=  21s
+stop=03h39m01s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -36.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -6.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   6.00 !NEXT!
+qual= 14 azcolim=  36.00 !NEXT!
+qual= 22 elcolim= -12.00 !NEXT!
+qual= 21 elcolim=  -6.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   6.00 !NEXT!
+qual= 24 elcolim=  12.00 azcolim= -36.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 03h39m01s to 03h44m52s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+synth=( 1,15.6),( 2, 5.9),( 3,15.6)
+level=(1,-1),(2,-1)
+bbsynth=( 1,760.49),( 2,760.49)
+pcalxfreq1=(1,510),(2,13510),(5,1510)
+pcalxfreq2=(1,510),(2,13510),(5,1510)
+azcolim=  -5.00 elcolim=   0.00 dur=  21s
+stop=03h44m52s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -30.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -5.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   5.00 !NEXT!
+qual= 14 azcolim=  30.00 !NEXT!
+qual= 22 elcolim= -10.00 !NEXT!
+qual= 21 elcolim=  -5.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   5.00 !NEXT!
+qual= 24 elcolim=  10.00 azcolim= -30.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 03h44m52s to 03h50m43s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+fe=(1,13cm),(3,13cm)
+synth=( 1,15.4),( 2,-3.1),( 3,15.4)
+sideband=(1,L),(2,L)
+level=(1,-1),(2,-1)
+bbsynth=( 1,839.01),( 2,839.01)
+pcalxfreq1=(1,10),(2,13010),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(5,1010)
+azcolim=  -9.00 elcolim=   0.00 dur=  21s
+stop=03h50m43s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -54.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -9.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   9.00 !NEXT!
+qual= 14 azcolim=  54.00 !NEXT!
+qual= 22 elcolim= -18.00 !NEXT!
+qual= 21 elcolim=  -9.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   9.00 !NEXT!
+qual= 24 elcolim=  18.00 azcolim= -54.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 03h50m43s to 03h56m34s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+fe=(2,4cm),(4,4cm)
+synth=( 1, 7.6),( 2,-3.1),( 3,12.6)
+nchan= 4
+baseband=(3,3),(4,4)
+ifchan=(1,B),(2,D),(3,A),(4,C)
+sideband=(1,U),(2,U),(3,L),(4,L)
+bits=(3,2),(4,2)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,810.99),( 2,810.99),( 3,839.01),( 4,839.01)
+bbfilter=(3,16M),(4,16M)
+pcalxbit1=(2,S3),(4,S3),(6,S2),(7,S3),(8,S4)
+pcalxbit2=(2,S4),(3,S2),(4,S4),(5,M1),(6,M2),(7,M3),(8,M4)
+pcalxfreq1=(2,10),(3,13010),(4,13010),(5,0)
+pcalxfreq2=(2,10),(3,13010),(4,13010),(5,0)
+azcolim=  -2.50 elcolim=   0.00 dur=  21s
+stop=03h56m34s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -36.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -2.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   2.50 !NEXT!
+qual= 14 azcolim=  36.00 !NEXT!
+qual= 22 elcolim=  -5.00 !NEXT!
+qual= 21 elcolim=  -2.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   2.50 !NEXT!
+qual= 24 elcolim=   5.00 azcolim= -36.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 03h56m34s to 04h02m25s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+fe=(2,1cm),(4,1cm)
+synth=( 1, 9.1),( 2, 6.1),( 3,12.4)
+ifchan=(3,B),(4,D)
+sideband=(3,U),(4,U)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,728.49),( 2,728.49),( 3,778.49),( 4,778.49)
+pcalxfreq1=(1,510),(2,510),(3,13510),(4,13510)
+pcalxfreq2=(1,510),(2,510),(3,13510),(4,13510)
+azcolim=  -1.00 elcolim=   0.00 dur=  21s
+stop=04h02m25s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -6.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -1.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   1.00 !NEXT!
+qual= 14 azcolim=   6.00 !NEXT!
+qual= 22 elcolim=  -2.00 !NEXT!
+qual= 21 elcolim=  -1.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   1.00 !NEXT!
+qual= 24 elcolim=   2.00 azcolim=  -6.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 04h02m25s to 04h08m16s   Fri, 2012 Jun 22 --- *!
+sname='3C274'  ra=12h30m49.423000s  dec= 12d23'28.04000"  qual=  0  calib=' '
+synth=( 1, 8.9),( 2, 5.9),( 3,14.1)
+nchan= 2
+level=(1,-1),(2,-1)
+bbsynth=( 1,793.49),( 2,793.49)
+pcalxbit1=(2,S1),(4,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxbit2=(2,S2),(3,M1),(4,M2),(5,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxfreq1=(2,13510),(3,0),(4,0),(5,1510)
+pcalxfreq2=(2,13510),(3,0),(4,0),(5,1510)
+azcolim=  -1.00 elcolim=   0.00 dur=  21s
+stop=04h08m16s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -6.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -1.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   1.00 !NEXT!
+qual= 14 azcolim=   6.00 !NEXT!
+qual= 22 elcolim=  -2.00 !NEXT!
+qual= 21 elcolim=  -1.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   1.00 !NEXT!
+qual= 24 elcolim=   2.00 azcolim=  -6.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 04h10m27s to 04h16m17s   Fri, 2012 Jun 22 --- *!
+sname='CYGA'  ra=19h59m28.910149s  dec= 40d44'15.76902"  qual=  0  calib=' '
+fe=(2,90cm),(4,90cm)
+synth=( 1,15.4),( 2,15.4),( 3,15.4)
+nchan= 4
+baseband=(3,3),(4,4)
+ifchan=(3,B),(4,D)
+sideband=(3,U),(4,U)
+bits=(3,2),(4,2)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,824.49),( 2,824.49),( 3,608.99),( 4,608.99)
+bbfilter=(1,4M),(2,4M),(3,4M),(4,4M)
+pcalxbit1=(2,S3),(4,S3),(6,S2),(7,S3),(8,S4)
+pcalxbit2=(2,S4),(3,S2),(4,S4),(5,M1),(6,M2),(7,M3),(8,M4)
+pcalxfreq1=(2,10),(3,2510),(4,3010),(5,0)
+pcalxfreq2=(2,10),(3,2510),(4,3010),(5,0)
+azcolim= -30.00 elcolim=   0.00 dur= 150s
+stop=04h16m17s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=-180.00 dur=  15s  !NEXT!
+qual= 11 azcolim= -30.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=  30.00 !NEXT!
+qual= 14 azcolim= 180.00 !NEXT!
+qual= 22 elcolim= -60.00 !NEXT!
+qual= 21 elcolim= -30.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=  30.00 !NEXT!
+qual= 24 elcolim=  60.00 azcolim=-180.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 04h16m35s to 04h22m25s   Fri, 2012 Jun 22 --- *!
+sname='DR21'  ra=20h39m01.208159s  dec= 42d19'34.78182"  qual=  0  calib=' '
+fe=(2,1cm),(4,1cm)
+synth=( 1, 9.1),( 2, 6.1),( 3,12.4)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,728.49),( 2,728.49),( 3,778.49),( 4,778.49)
+bbfilter=(1,16M),(2,16M),(3,16M),(4,16M)
+pcalxfreq1=(2,510),(3,13510),(4,13510)
+pcalxfreq2=(2,510),(3,13510),(4,13510)
+azcolim=  -1.00 elcolim=   0.00 dur=  37s
+stop=04h22m25s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -6.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -1.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   1.00 !NEXT!
+qual= 14 azcolim=   6.00 !NEXT!
+qual= 22 elcolim=  -2.00 !NEXT!
+qual= 21 elcolim=  -1.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   1.00 !NEXT!
+qual= 24 elcolim=   2.00 azcolim=  -6.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 04h22m25s to 04h28m16s   Fri, 2012 Jun 22 --- *!
+sname='DR21'  ra=20h39m01.208159s  dec= 42d19'34.78182"  qual=  0  calib=' '
+synth=( 1, 8.9),( 2, 5.9),( 3,14.1)
+nchan= 2
+level=(1,-1),(2,-1)
+bbsynth=( 1,793.49),( 2,793.49)
+pcalxbit1=(2,S1),(4,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxbit2=(2,S2),(3,M1),(4,M2),(5,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxfreq1=(2,13510),(3,0),(4,0),(5,1510)
+pcalxfreq2=(2,13510),(3,0),(4,0),(5,1510)
+azcolim=  -1.00 elcolim=   0.00 dur=  21s
+stop=04h28m16s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -6.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -1.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   1.00 !NEXT!
+qual= 14 azcolim=   6.00 !NEXT!
+qual= 22 elcolim=  -2.00 !NEXT!
+qual= 21 elcolim=  -1.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   1.00 !NEXT!
+qual= 24 elcolim=   2.00 azcolim=  -6.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 04h28m16s to 04h34m07s   Fri, 2012 Jun 22 --- *!
+sname='DR21'  ra=20h39m01.208159s  dec= 42d19'34.78182"  qual=  0  calib=' '
+fe=(2,2cm),(4,2cm)
+synth=( 1,14.6),( 2,10.9),( 3,10.9)
+level=(1,-1),(2,-1)
+bbsynth=( 1,754.99),( 2,754.99)
+pcalxfreq1=(1,10),(2,13010),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(5,1010)
+azcolim=  -1.50 elcolim=   0.00 dur=  21s
+stop=04h34m07s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -9.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -1.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   1.50 !NEXT!
+qual= 14 azcolim=   9.00 !NEXT!
+qual= 22 elcolim=  -3.00 !NEXT!
+qual= 21 elcolim=  -1.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   1.50 !NEXT!
+qual= 24 elcolim=   3.00 azcolim=  -9.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 04h34m07s to 04h39m58s   Fri, 2012 Jun 22 --- *!
+sname='DR21'  ra=20h39m01.208159s  dec= 42d19'34.78182"  qual=  0  calib=' '
+fe=(1,7mm),(3,7mm)
+synth=( 1, 3.9),( 2, 7.6),( 3,11.6)
+nchan= 4
+baseband=(3,3),(4,4)
+ifchan=(1,A),(2,C),(3,A),(4,C)
+sideband=(3,U),(4,U)
+bits=(3,2),(4,2)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,715.99),( 2,715.99),( 3,815.99),( 4,815.99)
+bbfilter=(3,16M),(4,16M)
+pcalxbit1=(2,S3),(4,S3),(6,S2),(7,S3),(8,S4)
+pcalxbit2=(2,S4),(3,S2),(4,S4),(5,M1),(6,M2),(7,M3),(8,M4)
+pcalxfreq1=(2,10),(3,13010),(4,13010),(5,0)
+pcalxfreq2=(2,10),(3,13010),(4,13010),(5,0)
+azcolim=  -0.50 elcolim=   0.00 dur=  21s
+stop=04h39m58s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -3.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -0.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   0.50 !NEXT!
+qual= 14 azcolim=   3.00 !NEXT!
+qual= 22 elcolim=  -1.00 !NEXT!
+qual= 21 elcolim=  -0.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   0.50 !NEXT!
+qual= 24 elcolim=   1.00 azcolim=  -3.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 04h41m04s to 04h46m54s   Fri, 2012 Jun 22 --- *!
+sname='RCAS'  ra=23h58m24.734000s  dec= 51d23'19.57000"  qual=  0  calib='L'
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,721.39),( 2,721.39),( 3,821.39),( 4,821.39)
+bbfilter=(1,2M),(2,2M),(3,2M),(4,2M)
+pcalxfreq1=(1,610),(2,610),(3,1610),(4,1610)
+pcalxfreq2=(1,610),(2,610),(3,1610),(4,1610)
+azcolim=  -0.50 elcolim=   0.00 dur=  86s
+stop=04h46m54s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=  -3.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -0.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   0.50 !NEXT!
+qual= 14 azcolim=   3.00 !NEXT!
+qual= 22 elcolim=  -1.00 !NEXT!
+qual= 21 elcolim=  -0.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   0.50 !NEXT!
+qual= 24 elcolim=   1.00 azcolim=  -3.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 04h48m17s to 04h54m07s   Fri, 2012 Jun 22 --- *!
+sname='CYGA'  ra=19h59m28.910149s  dec= 40d44'15.76902"  qual=  0  calib=' '
+fe=(2,90cm),(4,90cm)
+synth=( 1,15.4),( 2,15.4),( 3,15.4)
+ifchan=(1,B),(2,D),(3,B),(4,D)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,824.49),( 2,824.49),( 3,608.99),( 4,608.99)
+bbfilter=(1,4M),(2,4M),(3,4M),(4,4M)
+pcalxfreq1=(1,510),(2,10),(3,2510),(4,3010)
+pcalxfreq2=(1,510),(2,10),(3,2510),(4,3010)
+azcolim= -30.00 elcolim=   0.00 dur= 103s
+stop=04h54m07s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim=-180.00 dur=  15s  !NEXT!
+qual= 11 azcolim= -30.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=  30.00 !NEXT!
+qual= 14 azcolim= 180.00 !NEXT!
+qual= 22 elcolim= -60.00 !NEXT!
+qual= 21 elcolim= -30.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=  30.00 !NEXT!
+qual= 24 elcolim=  60.00 azcolim=-180.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 04h58m32s to 05h04m22s   Fri, 2012 Jun 22 --- *!
+sname='3C454.3'  ra=22h53m57.749205s  dec= 16d08'53.52285"  qual=  0  calib=' '
+fe=(2,4cm),(4,4cm)
+synth=( 1, 7.6),( 2,15.1),( 3,15.1)
+nchan= 2
+level=(1,-1),(2,-1)
+bbsynth=( 1,810.99),( 2,810.99)
+bbfilter=(1,16M),(2,16M)
+pcalxbit1=(2,S1),(4,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxbit2=(2,S2),(3,M1),(4,M2),(5,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxfreq1=(1,10),(2,13010),(3,0),(4,0),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(3,0),(4,0),(5,1010)
+azcolim=  -2.50 elcolim=   0.00 dur= 285s
+stop=05h04m22s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -15.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -2.50 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   2.50 !NEXT!
+qual= 14 azcolim=  15.00 !NEXT!
+qual= 22 elcolim=  -5.00 !NEXT!
+qual= 21 elcolim=  -2.50 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   2.50 !NEXT!
+qual= 24 elcolim=   5.00 azcolim= -15.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 05h04m22s to 05h10m13s   Fri, 2012 Jun 22 --- *!
+sname='3C454.3'  ra=22h53m57.749205s  dec= 16d08'53.52285"  qual=  0  calib=' '
+fe=(1,20cm),(3,20cm)
+synth=( 1,14.6),( 2,-2.4),( 3,14.6)
+nchan= 4
+baseband=(3,3),(4,4)
+ifchan=(1,A),(2,C),(3,A),(4,C)
+sideband=(1,L),(2,L),(3,L),(4,L)
+bits=(3,2),(4,2)
+level=(1,-1),(2,-1),(3,-1),(4,-1)
+bbsynth=( 1,969.51),( 2,969.51),( 3,749.51),( 4,749.51)
+bbfilter=(3,16M),(4,16M)
+pcalxbit1=(2,S3),(4,S3),(6,S2),(7,S3),(8,S4)
+pcalxbit2=(2,S4),(3,S2),(4,S4),(5,M1),(6,M2),(7,M3),(8,M4)
+pcalxfreq1=(1,510),(2,510),(3,13510),(4,13510),(5,0)
+pcalxfreq2=(1,510),(2,510),(3,13510),(4,13510),(5,0)
+azcolim= -15.00 elcolim=   0.00 dur=  21s
+stop=05h10m13s   !NEXT! 
+level=(1,256),(2,256),(3,256),(4,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -90.00 dur=  15s  !NEXT!
+qual= 11 azcolim= -15.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=  15.00 !NEXT!
+qual= 14 azcolim=  90.00 !NEXT!
+qual= 22 elcolim= -30.00 !NEXT!
+qual= 21 elcolim= -15.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=  15.00 !NEXT!
+qual= 24 elcolim=  30.00 azcolim= -90.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 05h10m13s to 05h16m04s   Fri, 2012 Jun 22 --- *!
+sname='3C454.3'  ra=22h53m57.749205s  dec= 16d08'53.52285"  qual=  0  calib=' '
+fe=(1,6cm),(3,6cm)
+synth=( 1,13.6),( 2, 4.1),( 3,13.6)
+nchan= 2
+sideband=(1,U),(2,U)
+level=(1,-1),(2,-1)
+bbsynth=( 1,884.99),( 2,884.99)
+pcalxbit1=(2,S1),(4,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxbit2=(2,S2),(3,M1),(4,M2),(5,S2),(6,OFF),(7,OFF),(8,OFF)
+pcalxfreq1=(1,10),(2,13010),(3,0),(4,0),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(3,0),(4,0),(5,1010)
+azcolim=  -6.00 elcolim=   0.00 dur=  21s
+stop=05h16m04s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -36.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -6.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   6.00 !NEXT!
+qual= 14 azcolim=  36.00 !NEXT!
+qual= 22 elcolim= -12.00 !NEXT!
+qual= 21 elcolim=  -6.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   6.00 !NEXT!
+qual= 24 elcolim=  12.00 azcolim= -36.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 05h16m04s to 05h21m55s   Fri, 2012 Jun 22 --- *!
+sname='3C454.3'  ra=22h53m57.749205s  dec= 16d08'53.52285"  qual=  0  calib=' '
+synth=( 1,15.6),( 2, 5.9),( 3,15.6)
+level=(1,-1),(2,-1)
+bbsynth=( 1,760.49),( 2,760.49)
+pcalxfreq1=(1,510),(2,13510),(5,1510)
+pcalxfreq2=(1,510),(2,13510),(5,1510)
+azcolim=  -5.00 elcolim=   0.00 dur=  21s
+stop=05h21m55s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -30.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -5.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   5.00 !NEXT!
+qual= 14 azcolim=  30.00 !NEXT!
+qual= 22 elcolim= -10.00 !NEXT!
+qual= 21 elcolim=  -5.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   5.00 !NEXT!
+qual= 24 elcolim=  10.00 azcolim= -30.00
+ !LOOP BACK!
+ !NEXT!
+
+!* --- Scan from 05h21m55s to 05h27m46s   Fri, 2012 Jun 22 --- *!
+sname='3C454.3'  ra=22h53m57.749205s  dec= 16d08'53.52285"  qual=  0  calib=' '
+fe=(1,13cm),(3,13cm)
+synth=( 1,15.4),( 2,-3.1),( 3,15.4)
+sideband=(1,L),(2,L)
+level=(1,-1),(2,-1)
+bbsynth=( 1,839.01),( 2,839.01)
+pcalxfreq1=(1,10),(2,13010),(5,1010)
+pcalxfreq2=(1,10),(2,13010),(5,1010)
+azcolim=  -9.00 elcolim=   0.00 dur=  21s
+stop=05h27m46s   !NEXT! 
+level=(1,256),(2,256)
+qual= 30  dur=  30s     !NEXT!
+  !BEGIN LOOP!
+qual= 12 azcolim= -54.00 dur=  15s  !NEXT!
+qual= 11 azcolim=  -9.00 !NEXT!
+qual= 10 azcolim=   0.00 !NEXT!
+qual= 13 azcolim=   9.00 !NEXT!
+qual= 14 azcolim=  54.00 !NEXT!
+qual= 22 elcolim= -18.00 !NEXT!
+qual= 21 elcolim=  -9.00 azcolim=   0.00 !NEXT!
+qual= 20 elcolim=   0.00 !NEXT!
+qual= 23 elcolim=   9.00 !NEXT!
+qual= 24 elcolim=  18.00 azcolim= -54.00
+ !LOOP BACK!
+ !NEXT!
+     !QUIT! 

@@ -1,0 +1,1543 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Installing SCHED</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,3,sec-filename --> 
+<meta name="src" content="sched.tex"> 
+<meta name="date" content="2018-09-17 11:11:00"> 
+<link rel="stylesheet" type="text/css" href="sched.css"> 
+</head><body 
+>
+<!--l. 13871--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECRUNSCHEDRunningSCHED.html" >next</a>] [<a 
+href="#taillabelSECINSTALLInstallingSCHED.html">tail</a>] [<a 
+href="labelCHPSYSTEMINSTALLINGANDRUNNINGSCHED.html#labelSECINSTALLInstallingSCHED.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">4.1   </span> <a 
+ id="x34-3020004.1"></a>Installing SCHED</h3>
+<!--l. 13873--><p class="noindent" >This section is only needed if you do not have access to an installed copy of <span 
+class="cmcsc-10">SCHED</span>.
+<!--l. 13876--><p class="noindent" >It is important that users obtain and use the latest version of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>when scheduling observations.
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is evolving with time to add new features, to correct bugs, to keep up with hardware changes,
+and to enhance its ability to prevent errors from being made in schedules, based on experience.
+There are typically one or two releases each year and they are announced on the VLBI
+email exploder. At institutions where there are several VLBI users, someone should be in
+charge of making sure that the latest version is available. When that option is not available,
+the user should check that he/she has the latest version before attempting to schedule a
+project.
+<!--l. 13887--><p class="noindent" >The <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>software, catalogs, auxiliary files, and documentation all reside in subdirectories under a
+parent directory. Installing <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>involves unpacking the tar file of the distribution into such a
+directory. If a canned executable is available for your type of computer, it can hopefully, used as is.
+Otherwise it will be necessary to compile the program. The <span 
+class="cmtt-10">SCHED </span>environment variable should be set to
+the root directory where <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is installed. The <span 
+class="cmcsc-10">PGPLOT </span>subroutine library is required. See below
+if you need to install it.
+<!--l. 13897--><p class="noindent" >The installation can be tested using the <span 
+class="cmsl-10">Verify </span>script in the <span 
+class="cmsl-10">examples </span>subdirectory. That script runs all
+the examples and compares the results with results obtained at the time the release was
+created.
+<!--l. 13902--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>is written in FORTRAN 77 using only a few common extensions from the standard.
+Development has occurred on a variety of machines including VAXes, PCs, SUNs and Macs. Current
+development is done under Linux and Mac OSX, with pre-release testing on a Sun. Old versions were
+tested on Hp, SGI, IBM (AIX), and DEC Alpha, but such machines are no longer being used for
+<span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>as far as I know. A big &#8220;thank you&#8221; to Franco Tinarelli at Bologna for performing many of
+these tests. Machine dependent code has been isolated in special subdirectories under the <span 
+class="cmsl-10">src/Cit </span>code
+directory. There are very few. All other FORTRAN files should compile without changes on a wide
+variety of machines. Note, however, that all current testing is under one or another flavor of
+unix. There has been no recent testing under other operating systems. This will only change
+if there is pressure to do so. Please inform the developers if you install it on something
+else.
+<!--l. 13918--><p class="noindent" >Note that the usual fortran compiler on unix machines (including Macs) these days are those from the
+GNU Project. In the past, the compiler was g77. That works with gcc versions 3 and lower. But
+development of g77 is long finished. For gcc 4 and higher, you must use gfortran which was written from
+scratch. We are in the process of switching the support of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to gfortran and have done so for
+                                                                                
+                                                                                
+various architectures as can be seen in the configure scripts. For some older versions, we may not bother
+switching, but simply stop supporting, for example, 32 bit machines. By stop supporting, we mean not
+provide configure scripts or test before releases. It is likely you could still use such machines. We will
+also need to migrate the <span 
+class="cmtt-10">spice </span>code for spacecraft tracking before we can abandon g77
+completely.
+<!--l. 13931--><p class="noindent" >If you plan to support <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>under more than one computer architecture, you may wish to have
+subdirectories under bin and point to the appropriate one in the PATH environment variable. Or you
+may wish to have entirely separate installations.
+<!--l. 13936--><p class="noindent" >To install <span 
+class="cmcsc-10">SCHED</span>, the following steps can be followed. Users of anything but unix or linux (who don&#8217;t
+exist as far as we know) will have to make some modifications.
+<!--l. 13940--><p class="noindent" >Users of Mac OSX will need to have X windows and the compiler installed. Also for full
+functionallity, pgplot should be installed. There are some more details at the end of this
+section.
+     <dl class="description"><dt class="description">
+<span 
+class="cmbx-10">Environment and PATH (unix systems):</span> </dt><dd 
+class="description">
+     Set
+     the
+     environment
+     variable
+     SCHED
+     to
+     the
+     base
+     directory
+     under
+     which
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>will
+     be
+     installed.
+     To
+     do
+     this
+     type,
+     for
+     example,
+     either
+     <span 
+class="cmtt-10">setenv</span>
+     <span 
+class="cmtt-10">SCHED</span>
+     <span 
+class="cmtt-10">/users/cwalker/sched</span>
+     or
+     <span 
+class="cmtt-10">export</span>
+     <span 
+class="cmtt-10">SCHED=/users/cwalker/sched</span>
+     depending
+     on
+     the
+     shell
+     you
+     use.
+     Add
+                                                                                
+                                                                                
+     the
+     bin
+     subdirectory
+     to
+     your
+     PATH,
+     be
+     prepared
+     to
+     specify
+     the
+     full
+     path
+     name
+     when
+     you
+     run
+     the
+     program,
+     or
+     put
+     a
+     copy
+     of
+     the
+     binary
+     (or
+     a
+     link
+     to
+     it)
+     in
+     some
+     directory
+     that
+     is
+     in
+     your
+     PATH.
+     If
+     the
+     plotting
+     capabilities
+     are
+     used,
+     which
+     is
+     highly
+     recommended,
+     <span 
+class="cmsl-10">PGPLOT</span>
+     will
+                                                                                
+                                                                                
+     need
+     to
+     have
+     been
+     installed
+     and
+     the
+     environment
+     variables
+     <span 
+class="cmtt-10">PGPLOT</span><span 
+class="cmtt-10">_DIR</span>
+     and
+     maybe
+     <span 
+class="cmtt-10">PGPLOT</span><span 
+class="cmtt-10">_FONT</span>
+     will
+     need
+     to
+     be
+     set.
+     In
+     Socorro,
+     the
+     path
+     and
+     environment
+     variables
+     can
+     be
+     established
+     by
+     adding
+     <span 
+class="cmtt-10">setup</span><span 
+class="cmtt-10">_vlba</span>
+     and
+     <span 
+class="cmtt-10">setup</span><span 
+class="cmtt-10">_pgplot</span>
+     to
+     your
+     <span 
+class="cmsl-10">.tcshrc.Linux</span>
+     (or
+     equivalent
+     file
+     for
+     other
+     shells).
+     </dd><dt class="description">
+<span 
+class="cmbx-10">ftp the tar file:</span> </dt><dd 
+class="description">
+     Use
+     anonymous
+     ftp
+     to
+     ftp.aoc.nrao.edu
+                                                                                
+                                                                                
+     (user
+     &#8221;anonymous&#8221;,
+     password
+     should
+     be
+     your
+     full
+     email
+     address).
+     <span 
+class="cmtt-10">cd</span>
+     to
+     pub/sched.
+     Tell
+     ftp
+     to
+     do
+     binary
+     file
+     transfers
+     (type
+     <span 
+class="cmtt-10">binary</span>).
+     List
+     the
+     tar
+     files
+     and
+     subdirectories
+     present.
+     The
+     latest
+     version
+     will
+     be
+     in
+     a
+     subdirectory
+     with
+     the
+     highest
+     version
+     number.
+     Go
+     to
+     that
+     subdirectory
+     and
+     copy
+     the
+     <span 
+class="cmsl-10">sched.¡version¿.tar.gz</span>
+     to
+     your
+                                                                                
+                                                                                
+     <span 
+class="cmsl-10">$SCHED</span>
+     directory.
+     As
+     of
+     Version
+     8.0,
+     that
+     tar
+     file
+     contains
+     everything
+     except
+     the
+     binaries
+     for
+     the
+     common
+     architectures.
+     There
+     will
+     also
+     be
+     a
+     binaries
+     subdirectory
+     which
+     has
+     subdirectories
+     for
+     several
+     architectures
+     which
+     are
+     obvious
+     from
+     their
+     names
+     (&#8221;spice&#8221;
+     in
+     the
+     name
+     implies
+     a
+     version
+     with
+     satellite
+     tracking
+     enabled,
+     which
+     may
+     only
+                                                                                
+                                                                                
+     work
+     at
+     the
+     AOC).
+     Inside
+     the
+     architecture
+     subdirectory
+     is
+     an
+     executable
+     version
+     of
+     <span 
+class="cmcsc-10">SCHED</span>.
+     If
+     one
+     of
+     these
+     works
+     for
+     you,
+     you
+     can
+     skip
+     compiling
+     the
+     program
+     and
+     just
+     use
+     it.
+     </dd><dt class="description">
+<span 
+class="cmbx-10">Unpack the tar file:</span> </dt><dd 
+class="description">
+     To
+     unpack
+     the
+     tar
+     file,
+     type
+     <span 
+class="cmtt-10">tar</span>
+     <span 
+class="cmtt-10">-xvf</span>
+     <span 
+class="cmtt-10">&#x003C;filename&#x003E;</span>
+     <span 
+class="cmtt-10">--gunzip</span>
+     while
+     in
+     the
+     <span 
+class="cmsl-10">$SCHED</span>
+     directory.
+     This
+                                                                                
+                                                                                
+     will
+     unload
+     all
+     files
+     from
+     the
+     tar
+     file,
+     creating
+     the
+     necessary
+     subdirectory
+     structure
+     in
+     the
+     process.
+     A
+     <span 
+class="cmsl-10">README</span>
+     file
+     will
+     appear
+     in
+     the
+     top
+     level
+     directory
+     which
+     contains
+     useful
+     information
+     on
+     the
+     directory
+     structure
+     and
+     on
+     installing
+     <span 
+class="cmcsc-10">SCHED</span>.
+     <!--l. 13983--><p class="noindent" >Note
+     that,
+     after
+     this
+     step,
+     a
+     local
+     html
+     version
+     of
+     this
+     manual
+     will
+                                                                                
+                                                                                
+     be
+     available
+     in
+     the
+     doc/sched/sched.html
+     under
+     the
+     parent
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>directory
+     (<span 
+class="cmsl-10">$SCHED</span>).
+     Your
+     browser
+     will
+     probably
+     run
+     much
+     faster
+     pointing
+     at
+     that
+     version
+     than
+     at
+     the
+     version
+     at
+     NRAO.
+     </dd><dt class="description">
+<span 
+class="cmbx-10">Try the binary for your system:</span> </dt><dd 
+class="description">
+     If
+     you
+     downloaded
+     an
+     executable
+     file,
+     put
+     it
+     in
+     the
+     <span 
+class="cmsl-10">$SCHED/bin</span>
+     directory.
+     Note
+     that
+     we
+     are
+     at
+     a
+     time
+     of
+                                                                                
+                                                                                
+     change
+     in
+     the
+     computer
+     world
+     so
+     there
+     are
+     a
+     lot
+     of
+     options,
+     not
+     all
+     of
+     which
+     are
+     covered.
+     Intel
+     and
+     equivalent
+     machines
+     are
+     changing
+     from
+     32
+     to
+     64
+     bit.
+     GNU
+     fortran
+     is
+     switching
+     from
+     g77
+     (with
+     gcc
+     version
+     3.x
+     and
+     below)
+     to
+     gfortran
+     (with
+     gcc
+     version
+     4+).
+     Macs
+     have
+     moved
+     from
+                                                                                
+                                                                                
+     PPC
+     chips
+     to
+     Intel
+     chips.
+     And
+     some
+     versions
+     of
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>are
+     set
+     up
+     to
+     do
+     satellite
+     tracking
+     with
+     extra
+     software
+     not
+     normally
+     distributed
+     with
+     the
+     package.
+     The
+     architectures
+     covered
+     are
+     what
+     are
+     immediately
+     available
+     to
+     the
+     developers.
+     The
+     subdirectories
+     are
+     LINUX64
+     (64
+     bit
+     Intel
+     based
+     Linux
+     using
+     g77),
+     LINUX64SPICE
+     (like
+     LINUX64
+     but
+                                                                                
+                                                                                
+     enabled
+     for
+     spacecraft
+     tracking),
+     and
+     OSX_INTEL
+     (Intel
+     based
+     Mac
+     with
+     gfortran).
+     For
+     a
+     while,
+     there
+     may
+     also
+     be
+     one
+     or
+     more
+     of
+     LINUX
+     (32
+     bit
+     Intel
+     based
+     Linux
+     using
+     g77),
+     OSXPPC
+     (PPC
+     based
+     Mac
+     using
+     gfortran),
+     and
+     SUN
+     (SUN
+     workstation
+     running
+     Solaris
+     using
+     f77).
+     If
+     one
+     of
+     the
+     binaries
+     works
+     for
+                                                                                
+                                                                                
+     you,
+     use
+     it.
+     If
+     not,
+     you
+     will
+     need
+     to
+     recompile.
+     </dd><dt class="description">
+<span 
+class="cmcsc-10">PGPLOT:</span> </dt><dd 
+class="description">
+     If
+     the
+     plotting
+     capabilities
+     are
+     desired
+     (believe
+     me
+     &#8212;
+     you
+     want
+     them),
+     you
+     should
+     make
+     the
+     <span 
+class="cmcsc-10">PGPLOT</span>
+     libraries
+     and
+     the
+     font
+     file
+     available.
+     Check
+     if
+     your
+     system
+     already
+     has
+     them.
+     That
+     is
+     fairly
+     likely
+     at
+     astronomy
+     sites.
+                                                                                
+                                                                                
+     If
+     not,
+     they
+     can
+     be
+     obtained
+     from
+     many
+     repositories
+     of
+     open
+     source
+     code.
+     But
+     if
+     that
+     doesn&#8217;t
+     work,
+     as
+     of
+     July
+     2011,
+     <span 
+class="cmcsc-10">PGPLOT</span>
+     <span 
+class="cmcsc-10">5.3.1</span>
+     (which
+     is
+     not
+     obviously
+     available
+     on
+     the
+     <span 
+class="cmsl-10">PGPLOT</span>
+     website)
+     is
+     included
+     with
+     the
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>distribution
+     in
+     the
+     <span 
+class="cmsl-10">$SCHED/PGPLOT</span>
+     subdirectory.
+     Simplified
+     instructions
+     for
+     installation
+     are
+     given
+     in
+     <span 
+class="cmtt-10">$SCHED/PGPLOT/README</span><span 
+class="cmtt-10">_PGPLOT</span>.
+     There
+                                                                                
+                                                                                
+     is
+     extensive
+     information
+     on
+     <span 
+class="cmcsc-10">PGPLOT</span>
+     available
+     from
+     the
+     WWW
+     page
+     at
+     <a 
+href="http://astro.caltech.edu/~{}tjp/pgplot/" >http://www.astro.caltech.edu/&#x02DC;tjp/pgplot/</a>.
+     Those
+     web
+     pages
+     are
+     also
+     included
+     with
+     the
+     <span 
+class="cmsl-10">PGPLOT</span>
+     distribution.
+     Note
+     that
+     <span 
+class="cmcsc-10">PGPLOT</span>
+     should
+     be
+     built
+     with
+     the
+     same
+     compiler
+     and
+     machine
+     architecture
+     as
+     <span 
+class="cmcsc-10">SCHED</span>for
+     everything
+     to
+     function
+     properly.
+     <!--l. 14023--><p class="noindent" >Robert
+     Mutel
+     provided
+     the
+     following
+     suggestion
+     if
+     you
+     are
+     running
+                                                                                
+                                                                                
+     into
+     problems
+     on
+     a
+     MAC
+     with
+     the
+     use
+     of
+     the
+     pgplot
+     libraries
+     (complaints
+     about
+     being
+     a
+     FAT
+     file):
+     Edit
+     the
+     PGPLOT
+     makefile
+     to
+     eliminate
+     the
+     ranlib
+     indexing
+     steps,
+     and
+     add
+     a
+     &#8217;s&#8217;
+     option
+     to
+     the
+     ar
+     steps
+     (this
+     is
+     equivalent
+     to
+     indexing
+     with
+     ranlib,
+     but
+     ranlib
+     chokes
+     because
+     it
+     cannot
+     read
+                                                                                
+                                                                                
+     &#8217;fat&#8217;
+     libraries,
+     which
+     contain
+     both
+     32bit
+     and
+     64
+     bit
+     versions
+     of
+     the
+     routines.
+     &#8217;Fat&#8217;
+     libraries
+     seem
+     to
+     be
+     created
+     by
+     default
+     by
+     ar,
+     at
+     least
+     in
+     the
+     recent
+     Mac
+     OSX
+     release.
+     </dd><dt class="description">
+<span 
+class="cmbx-10">Compiling the program:</span> </dt><dd 
+class="description">
+     If
+     you
+     need
+     to
+     compile
+     <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>,
+     you
+     will
+     need
+     to
+     construct
+     an
+     appropriate
+     Makefile
+     and
+     run
+                                                                                
+                                                                                
+     make.
+     There
+     is
+     a
+     template
+     Makefile
+     (<span 
+class="cmsl-10">Makefile.master</span>)
+     showing
+     lots
+     of
+     possible
+     options
+     and
+     a
+     number
+     of
+     simple
+     scripts
+     that
+     edit
+     the
+     template
+     to
+     build
+     Makefiles
+     for
+     specific
+     cases
+     using
+     the
+     line
+     editor
+     sed.
+     You
+     can
+     either
+     modify
+     the
+     template
+     Makefile
+     or
+     one
+     of
+     the
+     scripts
+     to
+     match
+     your
+     system
+     configuration.
+     Basically
+                                                                                
+                                                                                
+     what
+     you
+     need
+     to
+     do
+     with
+     the
+     required
+     edits
+     is
+     tell
+     make
+     what
+     FORTRAN
+     compiler
+     you
+     use
+     and
+     where
+     various
+     required
+     libraries
+     reside.
+     There
+     are
+     lots
+     of
+     comments
+     in
+     the
+     template
+     Makefile
+     to
+     guide
+     the
+     process.
+     Once
+     ready,
+     run
+     make.
+     Many
+     routines
+     are
+     compiled
+     so
+     it
+     will
+     take
+     a
+     few
+     minutes.
+                                                                                
+                                                                                
+     Under
+     gfortran,
+     there
+     will
+     be
+     some
+     warnings
+     that
+     can
+     be
+     ignored,
+     especially
+     about
+     character
+     variables
+     being
+     truncated.
+     <!--l. 14046--><p class="noindent" >There
+     is
+     some
+     oddity
+     that
+     has
+     been
+     seen
+     on
+     Mac
+     OSX
+     (May
+     2008)
+     where
+     it
+     is
+     not
+     equivalent
+     to
+     just
+     type
+     <span 
+class="cmtt-10">make</span>
+     when
+     the
+     Makefile
+     is
+     what
+     you
+     want
+     and
+     typing,
+     for
+     example,
+     <span 
+class="cmtt-10">make</span>
+                                                                                
+                                                                                
+     <span 
+class="cmtt-10">-f</span>
+     <span 
+class="cmtt-10">Makefile.MacOSX</span>.
+     The
+     latter
+     doesn&#8217;t
+     seem
+     to
+     work
+     with
+     what
+     look
+     to
+     be
+     problems
+     finding
+     libraries.
+     We
+     don&#8217;t
+     understand
+     it.
+     <!--l. 14052--><p class="noindent" >Note
+     that
+     the
+     Makefile
+     requires
+     the
+     use
+     of
+     GNU
+     make.
+     Check
+     for
+     GNU
+     make
+     on
+     your
+     system.
+     It
+     is
+     installed
+     on
+     many
+     if
+     not
+     most
+     and
+     is
+     the
+     standard
+     make
+     under
+                                                                                
+                                                                                
+     Linux
+     and
+     OSX.
+     If
+     you
+     don&#8217;t
+     have
+     it,
+     it
+     can
+     be
+     obtained
+     from
+     prep.ai.mit.edu.
+     Also
+     a
+     version
+     (probably
+     not
+     current)
+     is
+     available
+     in
+     the
+     same
+     ftp
+     area
+     as
+     <span 
+class="cmcsc-10">SCHED</span>.
+     <!--l. 14058--><p class="noindent" ><span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>can
+     be
+     compiled
+     with
+     or
+     without
+     the
+     plotting
+     capabilities.
+     It
+     is
+     highly
+     recommended
+     that
+     you
+     compile
+     with
+     those
+     capabilites.
+     To
+     do
+     so,
+                                                                                
+                                                                                
+     you
+     will
+     need
+     <span 
+class="cmcsc-10">PGPLOT</span>
+     (version
+     5.2
+     or
+     later)
+     installed
+     on
+     your
+     system.
+     See
+     above
+     for
+     more
+     information
+     on
+     getting
+     <span 
+class="cmcsc-10">PGPLOT</span>
+     if
+     you
+     don&#8217;t
+     already
+     have
+     it.
+     <!--l. 14064--><p class="noindent" >There
+     is
+     also
+     a
+     stub
+     for
+     the
+     routines
+     related
+     to
+     use
+     of
+     the
+     JPL
+     ephemeris,
+     in
+     case
+     that
+     code
+     causes
+     problems.
+     The
+     JPL
+     routines
+     are
+                                                                                
+                                                                                
+     used
+     for
+     observations
+     of
+     planets,
+     which
+     are
+     probably
+     only
+     of
+     interest
+     for
+     single-dish
+     testing
+     of
+     the
+     VLBA
+     by
+     staff.
+     Using
+     the
+     stub
+     requires
+     changing
+     some
+     comments
+     in
+     the
+     <span 
+class="cmsl-10">Makefile</span>.
+     Similarly,
+     there
+     is
+     a
+     stub
+     to
+     avoid
+     using
+     the
+     NAIF
+     software
+     related
+     to
+     satellite
+     tracking.
+     The
+     normal
+     user
+     will
+     use
+     that
+     stub
+                                                                                
+                                                                                
+     because
+     the
+     NAIF
+     libraries
+     are
+     not
+     normally
+     distributed
+     with
+     <span 
+class="cmcsc-10">SCHED</span>.
+     </dd><dt class="description">
+<span 
+class="cmbx-10">Testing:</span> </dt><dd 
+class="description">
+     The
+     examples
+     in
+     the
+     <span 
+class="cmsl-10">examples</span>
+     subdirectory
+     can
+     be
+     used
+     to
+     test
+     the
+     code
+     once
+     it
+     has
+     been
+     installed.
+     A
+     few
+     outputs
+     from
+     each
+     example
+     are
+     stored
+     in
+     the
+     <span 
+class="cmsl-10">Stdout</span>
+     subdirectory.
+     For
+     unix
+     systems,
+     the
+     routine
+     <span 
+class="cmsl-10">Verify</span>
+     can
+                                                                                
+                                                                                
+     be
+     used
+     to
+     run
+     all
+     of
+     the
+     examples
+     and
+     compare
+     results
+     with
+     those
+     in
+     <span 
+class="cmsl-10">Stdout</span>.
+     The
+     output
+     from
+     <span 
+class="cmsl-10">Verify</span>
+     will
+     be
+     in
+     the
+     file
+     <span 
+class="cmsl-10">testruns.out</span>.
+     Any
+     differences
+     are
+     in
+     the
+     output
+     from
+     diff.
+     It
+     is
+     common
+     to
+     have
+     differences
+     in
+     items
+     such
+     as
+     source
+     positions
+     in
+     the
+     last
+     significant
+     figure.
+     Different
+                                                                                
+                                                                                
+     machines
+     handle
+     rounding
+     differently.
+     Such
+     differences
+     can
+     be
+     ignored.
+     Any
+     more
+     serious
+     differences
+     are
+     cause
+     for
+     concern.
+     </dd></dl>
+<!--l. 14087--><p class="noindent" >Some VAX FORTRAN features that are commonly supported by other FORTRAN compilers remain in
+the code. These features are supported by all of the compilers that we are aware of that are being used
+for <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>currently. They include long variable names, in-line comments, and <span 
+class="cmtt-10">END DO</span>. If you have
+problems with these features, please email <span 
+class="cmsl-10">cwalker@nrao.edu</span>. Considerable use was made of the
+SLALIB (STARLINK) routines for precession, etc. These routines use long variable names so removing
+this non-standard feature would not be easy. (email permission to use the FORTRAN SLALIB routines
+has been obtained from P. Wallace, although the version under the GNU license was installed in March
+2013).
+<!--l. 14099--><p class="noindent" >If the code or any other files are moved from a unix or VMS machine to a machine using DOS or
+Windows, beware that the end-of-line characters are different. At least on SUN and Linux, a pair of
+utilities unix2dos and dos2unix can be used to fix the files. As of Dec. 2009, SCHED under Unix and
+Unix-like operating systems can read DOS format files.
+<!--l. 14106--><p class="noindent" >We are always interested in hearing about people&#8217;s experiences installing <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>on various machines.
+If you have problems, or even success on machines other than those listed earlier, please let us know
+(email to cwalker@nrao.edu). We would be especially interested if someone ports <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>to a
+non-unix, or unix-like (eg Linux) operating system. <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>was supported under VMS and DOS in
+the past and the coding style hasn&#8217;t changed, so a port to such operating systems would probably not
+be difficult.
+<!--l. 14115--><p class="noindent" >A recent experience installing <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>on a MacOSX 10.5.4 system showed the need to be
+careful about compiler versions. That version of OSX uses version 4.0.1 of the gcc compiler.
+You have to use gfortran, a Fortran 95 compiler, with gcc versions above 4.0 and g77 with
+lower gcc versions. PGPLOT was loaded from the Fink, as were both g77 and gfortran, and
+the PGPLOT was first built with gfortran. The build of SCHED only went smoothly after
+switching to gfortran for <span 
+class="cmcsc-10">SCHED</span>. There will be similar issues wherever the switch from
+gcc 3 to 4 occurs. For some details of my first install of <span 
+class="cmcsc-10">SCHED</span><span 
+class="cmcsc-10">&#x00A0;</span>on a Mac in 2003, see
+Appendix&#x00A0;<a 
+href="labelAPPMac2003InstallationonMacOSX103in2003.html#x54-376000B.8">B.8<!--tex4ht:ref: APP:Mac2003 --></a>.
+                                                                                
+                                                                                
+<!--l. 14127--><div class="crosslinks"><p class="noindent">[<a 
+href="labelSECRUNSCHEDRunningSCHED.html" >next</a>] [<a 
+href="labelSECINSTALLInstallingSCHED.html" >front</a>] [<a 
+href="labelCHPSYSTEMINSTALLINGANDRUNNINGSCHED.html#labelSECINSTALLInstallingSCHED.html" >up</a>] </p></div>
+<!--l. 14127--><p class="noindent" ><a 
+ id="taillabelSECINSTALLInstallingSCHED.html"></a>  
+</body></html> 

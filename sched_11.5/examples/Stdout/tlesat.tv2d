@@ -1,0 +1,41 @@
+#  Template v2d file for DiFX correlation of tlesat
+
+vex = tlesat.vex.obs
+antennas = BR, FD, HN, KP, LA, MK, NL, OV, PT, SC
+ANTENNA BR { }
+ANTENNA FD { }
+ANTENNA HN { }
+ANTENNA KP { }
+ANTENNA LA { }
+ANTENNA MK { }
+ANTENNA NL { }
+ANTENNA OV { }
+ANTENNA PT { }
+ANTENNA SC { }
+
+# The nChan should never be less than 128.
+# For numbers of channels < 128, set specAvg so nChan/specAvg
+# gives the desired number of channels
+SETUP default
+{
+  tInt =  1.000
+  nFFTChan =    128
+  nChan = 128
+  doPolar = False # No cross hand correlations
+}
+
+# This, along with SETUP default above, should always be done
+RULE default
+{
+  setup = default
+}
+
+#  SETUP place holders (commented)
+# SETUP gpsWide {}
+# SETUP gpsNarrow {}
+# SETUP sxWide {}
+
+# Sources (pointing centers) with recorded data but no offset pointing centers:
+SOURCE J0117+8928 { calCode = V }
+SOURCE GPS18 { calCode = Z }
+SOURCE GPS21 { calCode = Z }

@@ -1,0 +1,378 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\toclikechapter{}{\csname a:TocLink\endcsname{2}{x2-1000}{QQ2-2-1}{Contents}}{3}\relax 
+\doTocEntry\tocsection{0.1}{\csname a:TocLink\endcsname{3}{x3-20000.1}{QQ2-3-2}{ Important Notes - Please check these}}{6}\relax 
+\doTocEntry\tocsection{0.2}{\csname a:TocLink\endcsname{4}{x4-30000.2}{QQ2-4-3}{Links to Manual Sections and to External Information.}}{15}\relax 
+\doTocEntry\tocchapter{1}{\csname a:TocLink\endcsname{5}{x5-40001}{QQ2-5-4}{INTRODUCTION}}{28}\relax 
+\doTocEntry\tocsection{1.1}{\csname a:TocLink\endcsname{6}{x6-50001.1}{QQ2-6-5}{Overview}}{28}\relax 
+\doTocEntry\tocsection{1.2}{\csname a:TocLink\endcsname{7}{x7-60001.2}{QQ2-7-6}{Keyin Free-format Input}}{30}\relax 
+\doTocEntry\tocsection{1.3}{\csname a:TocLink\endcsname{8}{x8-70001.3}{QQ2-8-7}{ SCHED Input and Output Files}}{34}\relax 
+\doTocEntry\tocsection{1.4}{\csname a:TocLink\endcsname{9}{x9-80001.4}{QQ2-9-8}{Examples}}{73}\relax 
+\doTocEntry\tocsubsection{1.4.1}{\csname a:TocLink\endcsname{9}{x9-90001.4.1}{QQ2-9-9}{A Basic VLBA Schedule.}}{124}\relax 
+\doTocEntry\tocsubsection{1.4.2}{\csname a:TocLink\endcsname{9}{x9-100001.4.2}{QQ2-9-10}{A Minimal Schedule for Planning.}}{127}\relax 
+\doTocEntry\tocsection{1.5}{\csname a:TocLink\endcsname{10}{x10-110001.5}{QQ2-10-11}{Plotting}}{130}\relax 
+\doTocEntry\tocsubsection{1.5.1}{\csname a:TocLink\endcsname{10}{x10-120001.5.1}{QQ2-10-12}{Keyin Input for Plotting (obsolete)}}{132}\relax 
+\doTocEntry\tocchapter{2}{\csname a:TocLink\endcsname{11}{x11-130002}{QQ2-11-13}{INFORMATION AND ADVICE ON SPECIFIC TOPICS}}{137}\relax 
+\doTocEntry\tocsection{2.1}{\csname a:TocLink\endcsname{12}{x12-140002.1}{QQ2-12-14}{Using SCHED for Project Planning}}{137}\relax 
+\doTocEntry\tocsection{2.2}{\csname a:TocLink\endcsname{13}{x13-150002.2}{QQ2-13-15}{Scheduling Tips}}{139}\relax 
+\doTocEntry\tocsubsection{2.2.1}{\csname a:TocLink\endcsname{13}{x13-160002.2.1}{QQ2-13-16}{Observing Strategy}}{139}\relax 
+\doTocEntry\tocsubsection{2.2.2}{\csname a:TocLink\endcsname{13}{x13-170002.2.2}{QQ2-13-17}{Scan Times}}{179}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{13}{x13-180002.2.2}{QQ2-13-18}{Dealing with Formatter Reconfigurations}}{188}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{13}{x13-190002.2.2}{QQ2-13-19}{Adjusting the Scan or Recording Start Time}}{188}\relax 
+\doTocEntry\tocsubsection{2.2.3}{\csname a:TocLink\endcsname{13}{x13-200002.2.3}{QQ2-13-20}{Dynamic Scheduling}}{190}\relax 
+\doTocEntry\tocsubsection{2.2.4}{\csname a:TocLink\endcsname{13}{x13-210002.2.4}{QQ2-13-21}{Management of Data Recordings}}{190}\relax 
+\doTocEntry\tocsection{2.3}{\csname a:TocLink\endcsname{14}{x14-220002.3}{QQ2-14-22}{Recording Systems.}}{192}\relax 
+\doTocEntry\tocsubsection{2.3.1}{\csname a:TocLink\endcsname{14}{x14-230002.3.1}{QQ2-14-23}{Recording Systems History and Background}}{192}\relax 
+\doTocEntry\tocsubsection{2.3.2}{\csname a:TocLink\endcsname{14}{x14-240002.3.2}{QQ2-14-24}{Recording Systems Control}}{193}\relax 
+\doTocEntry\tocsubsection{2.3.3}{\csname a:TocLink\endcsname{14}{x14-250002.3.3}{QQ2-14-25}{MARK5 and EVLBI}}{194}\relax 
+\doTocEntry\tocsubsection{2.3.4}{\csname a:TocLink\endcsname{14}{x14-260002.3.4}{QQ2-14-26}{VLBA}}{195}\relax 
+\doTocEntry\tocsubsection{2.3.5}{\csname a:TocLink\endcsname{14}{x14-270002.3.5}{QQ2-14-27}{MARK\nobreakspace  {}IV (PCFS)}}{195}\relax 
+\doTocEntry\tocsubsection{2.3.6}{\csname a:TocLink\endcsname{14}{x14-280002.3.6}{QQ2-14-28}{NON--VLBA Telescopes with VLBA Recorders}}{199}\relax 
+\doTocEntry\tocsection{2.4}{\csname a:TocLink\endcsname{15}{x15-290002.4}{QQ2-15-29}{Wide Band Observing: RDBE, DBBC, VLBA and Mark IV Modes}}{200}\relax 
+\doTocEntry\tocsubsection{2.4.1}{\csname a:TocLink\endcsname{15}{x15-300002.4.1}{QQ2-15-30}{The RDBE system}}{200}\relax 
+\doTocEntry\tocsubsection{2.4.2}{\csname a:TocLink\endcsname{15}{x15-310002.4.2}{QQ2-15-31}{DBBC:}}{203}\relax 
+\doTocEntry\toclot{2.1}{\csname a:TocLink\endcsname{15}{x15-310011}{}{\ignorespaces IF Filters available on the DBBC (version availabilities subject to confirmation!)}}{table}\relax 
+\doTocEntry\tocsubsection{2.4.3}{\csname a:TocLink\endcsname{15}{x15-320002.4.3}{QQ2-15-33}{OTHER DIGITAL BACKENDS:}}{207}\relax 
+\doTocEntry\tocsection{2.5}{\csname a:TocLink\endcsname{16}{x16-330002.5}{QQ2-16-34}{Spectral Line Observations}}{208}\relax 
+\doTocEntry\tocsection{2.6}{\csname a:TocLink\endcsname{17}{x17-340002.6}{QQ2-17-35}{Reference Pointing}}{225}\relax 
+\doTocEntry\tocsection{2.7}{\csname a:TocLink\endcsname{18}{x18-350002.7}{QQ2-18-36}{Multiple Phase Centers}}{239}\relax 
+\doTocEntry\tocsection{2.8}{\csname a:TocLink\endcsname{19}{x19-360002.8}{QQ2-19-37}{Automatic Insertion of Geodetic Segments}}{241}\relax 
+\doTocEntry\tocsection{2.9}{\csname a:TocLink\endcsname{20}{x20-370002.9}{QQ2-20-38}{Scheduling the VLA}}{244}\relax 
+\doTocEntry\tocsection{2.10}{\csname a:TocLink\endcsname{21}{x21-380002.10}{QQ2-21-39}{Special Concerns for Specific Observatories}}{247}\relax 
+\doTocEntry\tocsubsection{2.10.1}{\csname a:TocLink\endcsname{21}{x21-390002.10.1}{QQ2-21-40}{Green Bank Telescope.}}{247}\relax 
+\doTocEntry\tocsection{2.11}{\csname a:TocLink\endcsname{22}{x22-400002.11}{QQ2-22-41}{Single Dish VLBA Observing}}{248}\relax 
+\doTocEntry\tocsection{2.12}{\csname a:TocLink\endcsname{23}{x23-410002.12}{QQ2-23-42}{Configuration Studies}}{267}\relax 
+\doTocEntry\tocsection{2.13}{\csname a:TocLink\endcsname{24}{x24-420002.13}{QQ2-24-43}{Satellite Tracking}}{270}\relax 
+\doTocEntry\tocchapter{3}{\csname a:TocLink\endcsname{25}{x25-430003}{QQ2-25-44}{THE SCHED INPUT FILES (Includes parameter lists)}}{278}\relax 
+\doTocEntry\tocsection{3.1}{\csname a:TocLink\endcsname{26}{x26-440003.1}{QQ2-26-45}{The Schedule File}}{278}\relax 
+\doTocEntry\tocsubsection{3.1.1}{\csname a:TocLink\endcsname{26}{x26-450003.1.1}{QQ2-26-46}{Summary List of SCHED Parameters}}{280}\relax 
+\doTocEntry\tocsubsection{3.1.2}{\csname a:TocLink\endcsname{26}{x26-460003.1.2}{QQ2-26-47}{Details of SCHED Parameters}}{323}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-470003.1.2}{QQ2-26-48}{ {\tt  ADDRESS1, ADDRESS2, ADDRESS3} and {\tt  ADDRESS4}}}{323}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-480003.1.2}{QQ2-26-49}{{\tt  AUTOPEAK}}}{324}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-490003.1.2}{QQ2-26-50}{{\tt  AUTOTAPE}}}{326}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-500003.1.2}{QQ2-26-51}{\tt  AZCOLIM}}{329}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-510003.1.2}{QQ2-26-52}{{\tt  BW}}}{330}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-520003.1.2}{QQ2-26-53}{{\tt  CALTIME}}}{332}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-530003.1.2}{QQ2-26-54}{{\tt  CENTERS}}}{333}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-540003.1.2}{QQ2-26-55}{{\tt  COMMENT}}}{335}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-550003.1.2}{QQ2-26-56}{{\tt  CORAVG}}}{336}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-560003.1.2}{QQ2-26-57}{{\tt  CORAVG2}}}{338}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-570003.1.2}{QQ2-26-58}{{\tt  CORCHAN}}}{340}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-580003.1.2}{QQ2-26-59}{{\tt  CORDFMT}}}{342}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-590003.1.2}{QQ2-26-60}{{\tt  CORNANT}}}{343}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-600003.1.2}{QQ2-26-61}{ {\tt  CORNOTE1, CORNOTE2, CORNOTE3,} and {\tt  CORNOTE4}}}{345}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-610003.1.2}{QQ2-26-62}{{\tt  CORPOL}}}{346}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-620003.1.2}{QQ2-26-63}{{\tt  CORREL}}}{347}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-630003.1.2}{QQ2-26-64}{{\tt  CORSRCS}}}{350}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-640003.1.2}{QQ2-26-65}{ {\tt  CORSHIP1, CORSHIP2, CORSHIP3,} and {\tt  CORSHIP4}}}{351}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-650003.1.2}{QQ2-26-66}{{\tt  CORTAPE}}}{353}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-660003.1.2}{QQ2-26-67}{{\tt  CORWTFN}}}{354}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-670003.1.2}{QQ2-26-68}{{\tt  COVERLET}}}{360}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-680003.1.2}{QQ2-26-69}{{\tt  CRDBW}}}{361}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-690003.1.2}{QQ2-26-70}{{{\tt  CRDDOP} and {\tt  CRDNODOP}}}}{363}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-700003.1.2}{QQ2-26-71}{{\tt  CRDLINE}}}{364}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-710003.1.2}{QQ2-26-72}{{\tt  CRDCH1}}}{365}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-720003.1.2}{QQ2-26-73}{{\tt  CRDNCH}}}{367}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-730003.1.2}{QQ2-26-74}{{\tt  CRDFREQ}}}{368}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-740003.1.2}{QQ2-26-75}{{\tt  CRDSETCH}}}{370}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-750003.1.2}{QQ2-26-76}{{\tt  DATAPATH}}}{372}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-760003.1.2}{QQ2-26-77}{{\tt  DAY}}}{374}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-770003.1.2}{QQ2-26-78}{{\tt  DEBUG}}}{375}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-780003.1.2}{QQ2-26-79}{{\tt  DODOWN}}}{375}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-790003.1.2}{QQ2-26-80}{{\tt  DOMKA}}}{376}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-800003.1.2}{QQ2-26-81}{{\tt  DOPCAL}}}{377}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-810003.1.2}{QQ2-26-82}{{\tt  DOPINCR}}}{377}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-820003.1.2}{QQ2-26-83}{{\tt  DOPPLER} and {\tt  NODOP}}}{379}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-830003.1.2}{QQ2-26-84}{{\tt  DOSCANS}}}{380}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-840003.1.2}{QQ2-26-85}{{\tt  DOPSRC}}}{382}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-850003.1.2}{QQ2-26-86}{{\tt  DOSTA}}}{383}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-860003.1.2}{QQ2-26-87}{{\tt  DOVEX}}}{384}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-870003.1.2}{QQ2-26-88}{{\tt  DURation}}}{386}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-880003.1.2}{QQ2-26-89}{{\tt  DWELL}}}{387}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-890003.1.2}{QQ2-26-90}{\tt  ELCOLIM}}{391}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-900003.1.2}{QQ2-26-91}{{\tt  EMAIL}}}{392}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-910003.1.2}{QQ2-26-92}{{\tt  EPHFILE}}}{393}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-920003.1.2}{QQ2-26-93}{{\tt  EXIT}}}{394}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-930003.1.2}{QQ2-26-94}{{\tt  EXPT}}}{395}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-940003.1.2}{QQ2-26-95}{{\tt  EXPCODE}}}{396}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-950003.1.2}{QQ2-26-96}{{\tt  FASTFOR}}}{398}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-960003.1.2}{QQ2-26-97}{{\tt  FAX}}}{399}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-970003.1.2}{QQ2-26-98}{\tt  FOCOFF}}{400}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-980003.1.2}{QQ2-26-99}{\tt  FOCUS}}{402}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-990003.1.2}{QQ2-26-100}{{\tt  FREQ}}}{403}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1000003.1.2}{QQ2-26-101}{{\tt  FREQFILE}}}{404}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1010003.1.2}{QQ2-26-102}{{\tt  FREQLIST}}}{404}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1020003.1.2}{QQ2-26-103}{{\tt  GAP}}}{404}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1030003.1.2}{QQ2-26-104}{{\tt  GEOBACK}}}{406}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1040003.1.2}{QQ2-26-105}{{\tt  GEOHIEL}}}{408}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1050003.1.2}{QQ2-26-106}{{\tt  GEOLOWEL}}}{409}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1060003.1.2}{QQ2-26-107}{{\tt  GEOPRT}}}{410}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1070003.1.2}{QQ2-26-108}{{\tt  GEOSEG}}}{412}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1080003.1.2}{QQ2-26-109}{{\tt  GEOSLEW}}}{413}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1090003.1.2}{QQ2-26-110}{{\tt  GEOSLOW}}}{414}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1100003.1.2}{QQ2-26-111}{{\tt  GEOSRCS}}}{415}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1110003.1.2}{QQ2-26-112}{{\tt  GEOSREP}}}{419}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1120003.1.2}{QQ2-26-113}{{\tt  GEOTRIES}}}{420}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1130003.1.2}{QQ2-26-114}{{\tt  GRABTO}}}{422}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1140003.1.2}{QQ2-26-115}{{\tt  GRABTIME}}}{424}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1150003.1.2}{QQ2-26-116}{{\tt  GRABGAP}}}{426}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1160003.1.2}{QQ2-26-117}{{\tt  GRIDMIN}}}{427}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1170003.1.2}{QQ2-26-118}{{\tt  GRIDMAX}}}{428}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1180003.1.2}{QQ2-26-119}{{\tt  GRIDMEAS}}}{429}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1190003.1.2}{QQ2-26-120}{{\tt  GRIDNR}}}{430}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1200003.1.2}{QQ2-26-121}{{\tt  GRIDNT}}}{431}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1210003.1.2}{QQ2-26-122}{{\tt  GRIDSTEP}}}{432}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1220003.1.2}{QQ2-26-123}{{\tt  GRIDVLA}}}{434}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1230003.1.2}{QQ2-26-124}{{\tt  GRIDW0}}}{435}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1240003.1.2}{QQ2-26-125}{{\tt  GROUP}}}{436}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1250003.1.2}{QQ2-26-126}{{\tt  HIGROUP}}}{437}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1260003.1.2}{QQ2-26-127}{{\tt  IATUTC}}}{438}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1270003.1.2}{QQ2-26-128}{{\tt  INTENTs}}}{439}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1280003.1.2}{QQ2-26-129}{{\tt  LINEINIT}}}{444}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1290003.1.2}{QQ2-26-130}{{\tt  LINENAME}}}{445}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1300003.1.2}{QQ2-26-131}{{\tt  LINEPG}}}{446}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1310003.1.2}{QQ2-26-132}{{\tt  LOCFILE}}}{447}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1320003.1.2}{QQ2-26-133}{{\tt  LST}}}{448}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1330003.1.2}{QQ2-26-134}{{\tt  MAPLIM}}}{450}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1340003.1.2}{QQ2-26-135}{{\tt  MINPAUSE}}}{451}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1350003.1.2}{QQ2-26-136}{{\tt  MONTH}}}{453}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1360003.1.2}{QQ2-26-137}{{\tt  NCHAN}}}{454}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1370003.1.2}{QQ2-26-138}{{\tt  NOSETUP}}}{454}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1380003.1.2}{QQ2-26-139}{{\tt  NOTE1, NOTE2, NOTE3, and NOTE4}}}{455}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1390003.1.2}{QQ2-26-140}{{\tt  OBSMODE}}}{457}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1400003.1.2}{QQ2-26-141}{{\tt  OBSPHONE}}}{458}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1410003.1.2}{QQ2-26-142}{{\tt  OBSTYPE}}}{459}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1420003.1.2}{QQ2-26-143}{{\tt  OPDUR}}}{469}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1430003.1.2}{QQ2-26-144}{{\tt  OPELPRIO}}}{471}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1440003.1.2}{QQ2-26-145}{{\tt  OPHA}}}{472}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1450003.1.2}{QQ2-26-146}{{\tt  OPHMAXDT}}}{473}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1460003.1.2}{QQ2-26-147}{{\tt  OPHAWID}}}{476}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1470003.1.2}{QQ2-26-148}{{\tt  OPHAWT}}}{477}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1480003.1.2}{QQ2-26-149}{{\tt  OPHASTA}}}{478}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1490003.1.2}{QQ2-26-150}{{\tt  OPHLIMTI}}}{479}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1500003.1.2}{QQ2-26-151}{{\tt  OPHLIMWT}}}{481}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1510003.1.2}{QQ2-26-152}{{\tt  OPMINSEP}}}{482}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1520003.1.2}{QQ2-26-153}{{\tt  OPMISS}}}{483}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1530003.1.2}{QQ2-26-154}{{\tt  OPMINEL}}}{484}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1540003.1.2}{QQ2-26-155}{{\tt  OPMINANT}}}{485}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1550003.1.2}{QQ2-26-156}{{\tt  OPNOSUB}}}{486}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1560003.1.2}{QQ2-26-157}{{\tt  OPPRTLEV}}}{487}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1570003.1.2}{QQ2-26-158}{{\tt  OPSKIP}}}{489}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1580003.1.2}{QQ2-26-159}{{\tt  OPSLEWTI}}}{490}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1590003.1.2}{QQ2-26-160}{{\tt  OPSLEWWT}}}{492}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1600003.1.2}{QQ2-26-161}{{\tt  OPTMODE}}}{493}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1610003.1.2}{QQ2-26-162}{{\tt  OPTLOWT}}}{532}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1620003.1.2}{QQ2-26-163}{{\tt  OPTSLEW}}}{533}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1630003.1.2}{QQ2-26-164}{{\tt  OVERRIDE}}}{534}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1640003.1.2}{QQ2-26-165}{{\tt  OVERwrit}}}{534}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1650003.1.2}{QQ2-26-166}{{\tt  PCAL}}}{535}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1660003.1.2}{QQ2-26-167}{{\tt  PCENTERS}}}{537}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1670003.1.2}{QQ2-26-168}{{\tt  PEAK} and {\tt  NOPEAK}}}{538}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1680003.1.2}{QQ2-26-169}{{\tt  PEAKFILE}}}{539}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1690003.1.2}{QQ2-26-170}{{\tt  PEAKINIT}}}{541}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1700003.1.2}{QQ2-26-171}{{\tt  PHONE}}}{541}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1710003.1.2}{QQ2-26-172}{{\tt  PINAME}}}{542}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1720003.1.2}{QQ2-26-173}{{\tt  PKWATCH}}}{543}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1730003.1.2}{QQ2-26-174}{{\tt  PLOT}}}{544}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1740003.1.2}{QQ2-26-175}{{\tt  POINT}}}{545}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1750003.1.2}{QQ2-26-176}{{\tt  PN3DB} and {\tt  NOPN3DB}}}{547}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1760003.1.2}{QQ2-26-177}{{\tt  PRECDATE}}}{548}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1770003.1.2}{QQ2-26-178}{{\tt  PREEMPT}}}{550}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1780003.1.2}{QQ2-26-179}{{\tt  PRESCAN}}}{552}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1790003.1.2}{QQ2-26-180}{{\tt  PRESTART}}}{554}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1800003.1.2}{QQ2-26-181}{{\tt  PTDUR}}}{556}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1810003.1.2}{QQ2-26-182}{{\tt  PTSLEW}}}{557}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1820003.1.2}{QQ2-26-183}{{\tt  PTVLBA} and {\tt  NOPTVLBA}}}{557}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1830003.1.2}{QQ2-26-184}{{\tt  QUAL}}}{559}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1840003.1.2}{QQ2-26-185}{{\tt  RECord} and {\tt  NORECord}}}{560}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1850003.1.2}{QQ2-26-186}{{\tt  REPeat}}}{561}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1860003.1.2}{QQ2-26-187}{{\tt  REVERSE}}}{562}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1870003.1.2}{QQ2-26-188}{{\tt  REWIND}}}{563}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1880003.1.2}{QQ2-26-189}{\tt  ROTATION}}{565}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1890003.1.2}{QQ2-26-190}{\tt  ROTPAT}}{566}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1900003.1.2}{QQ2-26-191}{\tt  ROTOFF}}{567}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1910003.1.2}{QQ2-26-192}{\tt  SCANTAG}}{569}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1920003.1.2}{QQ2-26-193}{\tt  SCHedule}}{570}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1930003.1.2}{QQ2-26-194}{{\tt  SETINIT}}}{571}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1940003.1.2}{QQ2-26-195}{{\tt  SETUP}}}{573}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1950003.1.2}{QQ2-26-196}{{\tt  SOURCE}}}{574}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1960003.1.2}{QQ2-26-197}{{\tt  SRCCAT}}}{575}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1970003.1.2}{QQ2-26-198}{{\tt  SRCFILE}}}{577}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1980003.1.2}{QQ2-26-199}{{\tt  SRCFILE2}}}{578}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-1990003.1.2}{QQ2-26-200}{{\tt  STACAT}}}{579}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2000003.1.2}{QQ2-26-201}{{\tt  STAFILE}}}{580}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2010003.1.2}{QQ2-26-202}{{\tt  START}}}{581}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2020003.1.2}{QQ2-26-203}{{\tt  STATions}}}{582}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2030003.1.2}{QQ2-26-204}{{\tt  STOP}}}{584}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2040003.1.2}{QQ2-26-205}{{\tt  SUMITEM}}}{585}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2050003.1.2}{QQ2-26-206}{{\tt  TANT1 and TANT2}}}{595}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2060003.1.2}{QQ2-26-207}{{\tt  TANTSTA1 and TANTSTA2}}}{596}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2070003.1.2}{QQ2-26-208}{{\tt  TAPE}}}{598}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2080003.1.2}{QQ2-26-209}{{\tt  TAPEFILE}}}{600}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2090003.1.2}{QQ2-26-210}{{\tt  TAPEINI}}}{601}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2100003.1.2}{QQ2-26-211}{{\tt  TAPESYNC}}}{602}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2110003.1.2}{QQ2-26-212}{{\tt  TAVLBA} and {\tt  NOTAVLBA}}}{603}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2120003.1.2}{QQ2-26-213}{{\tt  TELEX}}}{604}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2130003.1.2}{QQ2-26-214}{{\tt  TPREF}}}{605}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2140003.1.2}{QQ2-26-215}{{\tt  TSYS} and {\tt  NOTSYS}}}{606}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2150003.1.2}{QQ2-26-216}{{\tt  UVMFS}}}{608}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2160003.1.2}{QQ2-26-217}{{\tt  VERSION}}}{609}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2170003.1.2}{QQ2-26-218}{{\tt  VEXTEST}}}{611}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2180003.1.2}{QQ2-26-219}{{\tt  VLABAND} and {\tt  VLABW}}}{612}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2190003.1.2}{QQ2-26-220}{{\tt  VLAINTEG}}}{612}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2200003.1.2}{QQ2-26-221}{{\tt  VLAMODE}}}{613}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2210003.1.2}{QQ2-26-222}{{\tt  VLAPEAK}}}{616}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2220003.1.2}{QQ2-26-223}{{\tt  VLAPTIME}}}{620}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2230003.1.2}{QQ2-26-224}{{\tt  VLATSYS and VLANTSYS}}}{621}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2240003.1.2}{QQ2-26-225}{{\tt  VLAPSRC}}}{622}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2250003.1.2}{QQ2-26-226}{{\tt  VLARFANT}}}{624}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2260003.1.2}{QQ2-26-227}{{\tt  VLATYPE}}}{625}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2270003.1.2}{QQ2-26-228}{{\tt  VLAUSERN}}}{626}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2280003.1.2}{QQ2-26-229}{{\tt  WRAP24}}}{627}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{26}{x26-2290003.1.2}{QQ2-26-230}{{\tt  YEAR}}}{628}\relax 
+\doTocEntry\tocsection{3.2}{\csname a:TocLink\endcsname{27}{x27-2300003.2}{QQ2-27-231}{Source Catalog}}{630}\relax 
+\doTocEntry\tocsection{3.3}{\csname a:TocLink\endcsname{28}{x28-2310003.3}{QQ2-28-232}{Station Catalog and Locations Catalog}}{657}\relax 
+\doTocEntry\tocsection{3.4}{\csname a:TocLink\endcsname{29}{x29-2320003.4}{QQ2-29-233}{Tape Initialization File}}{699}\relax 
+\doTocEntry\tocsubsection{3.4.1}{\csname a:TocLink\endcsname{29}{x29-2330003.4.1}{QQ2-29-234}{Details of Tape Initialization Parameters}}{706}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{29}{x29-2340003.4.1}{QQ2-29-235}{{\tt  MEDIA}}}{706}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{29}{x29-2350003.4.1}{QQ2-29-236}{{\tt  NDRIVES}}}{708}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{29}{x29-2360003.4.1}{QQ2-29-237}{{\tt  NHEADPOS}}}{709}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{29}{x29-2370003.4.1}{QQ2-29-238}{{\tt  OBSCODE}}}{711}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{29}{x29-2380003.4.1}{QQ2-29-239}{{\tt  TPSTA}}}{712}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{29}{x29-2390003.4.1}{QQ2-29-240}{{\tt  TPDRIVE}}}{714}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{29}{x29-2400003.4.1}{QQ2-29-241}{{\tt  TPINDEX}}}{715}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{29}{x29-2410003.4.1}{QQ2-29-242}{{\tt  TPLENGTH}}}{716}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{29}{x29-2420003.4.1}{QQ2-29-243}{{\tt  DENSITY}}}{717}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{29}{x29-2430003.4.1}{QQ2-29-244}{{\tt  TPTIME}}}{719}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{29}{x29-2440003.4.1}{QQ2-29-245}{{\tt  HEADMODE}}}{720}\relax 
+\doTocEntry\tocsection{3.5}{\csname a:TocLink\endcsname{30}{x30-2450003.5}{QQ2-30-246}{Frequency Catalog}}{722}\relax 
+\doTocEntry\tocsubsection{3.5.1}{\csname a:TocLink\endcsname{30}{x30-2460003.5.1}{QQ2-30-247}{List of Frequency File Parameters}}{722}\relax 
+\doTocEntry\tocsection{3.6}{\csname a:TocLink\endcsname{31}{x31-2470003.6}{QQ2-31-248}{Setup Files}}{741}\relax 
+\doTocEntry\tocsubsection{3.6.1}{\csname a:TocLink\endcsname{31}{x31-2480003.6.1}{QQ2-31-249}{Standard Setup Files}}{742}\relax 
+\doTocEntry\tocsubsection{3.6.2}{\csname a:TocLink\endcsname{31}{x31-2490003.6.2}{QQ2-31-250}{Examples of Setup Files}}{751}\relax 
+\doTocEntry\tocsubsection{3.6.3}{\csname a:TocLink\endcsname{31}{x31-2500003.6.3}{QQ2-31-251}{Summary List of Setup File Parameters}}{756}\relax 
+\doTocEntry\tocsubsection{3.6.4}{\csname a:TocLink\endcsname{31}{x31-2510003.6.4}{QQ2-31-252}{Details of Setup File Parameters}}{769}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2520003.6.4}{QQ2-31-253}{{\tt  AZCOLIM}}}{770}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2530003.6.4}{QQ2-31-254}{{\tt  BAND}}}{770}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2540003.6.4}{QQ2-31-255}{{\tt  BARREL}}}{773}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2550003.6.4}{QQ2-31-256}{{\tt  BBFILTER}}}{776}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2560003.6.4}{QQ2-31-257}{{\tt  BBC}}}{778}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2570003.6.4}{QQ2-31-258}{{\tt  BBSYN}}}{779}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2580003.6.4}{QQ2-31-259}{{\tt  BBSYN2}}}{782}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2590003.6.4}{QQ2-31-260}{{\tt  BITS}}}{783}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2600003.6.4}{QQ2-31-261}{{\tt  DBE}}}{784}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2610003.6.4}{QQ2-31-262}{{\tt  DUALX}}}{795}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2620003.6.4}{QQ2-31-263}{{\tt  ELCOLIM}}}{796}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2630003.6.4}{QQ2-31-264}{{\tt  FE}}}{797}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2640003.6.4}{QQ2-31-265}{{\tt  FIRMFILE}}}{800}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2650003.6.4}{QQ2-31-266}{{\tt  FIRSTLO}}}{801}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2660003.6.4}{QQ2-31-267}{{\tt  FORMAT}}}{803}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2670003.6.4}{QQ2-31-268}{{\tt  FREQOFF}}}{812}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2680003.6.4}{QQ2-31-269}{{\tt  FREQREF}}}{813}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2690003.6.4}{QQ2-31-270}{{\tt  FRSWITCH}}}{815}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2700003.6.4}{QQ2-31-271}{{\tt  IFCHAN}}}{816}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2710003.6.4}{QQ2-31-272}{{\tt  IFDIST}}}{818}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2720003.6.4}{QQ2-31-273}{{\tt  LCHAN} and {\tt  RCHAN}}}{820}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2730003.6.4}{QQ2-31-274}{{\tt  LEVEL}}}{821}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2740003.6.4}{QQ2-31-275}{{\tt  LOGGING}}}{822}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2750003.6.4}{QQ2-31-276}{{\tt  LCP50CM} and {\tt  RCP50CM}}}{824}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2760003.6.4}{QQ2-31-277}{{\tt  M4PATCH}}}{824}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2770003.6.4}{QQ2-31-278}{{\tt  MODETEST}}}{827}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2780003.6.4}{QQ2-31-279}{{\tt  NCHAN}}}{828}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2790003.6.4}{QQ2-31-280}{{\tt  NETSIDE}}}{829}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2800003.6.4}{QQ2-31-281}{{\tt  NOISE}}}{830}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2810003.6.4}{QQ2-31-282}{{\tt  NOISEFRQ}}}{832}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2820003.6.4}{QQ2-31-283}{{\tt  PERIOD}}}{833}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2830003.6.4}{QQ2-31-284}{{\tt  PCAL}}}{834}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2840003.6.4}{QQ2-31-285}{{\tt  PCALFR1} and {\tt  PCALFR2}}}{835}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2850003.6.4}{QQ2-31-286}{{\tt  PCALXB1} and {\tt  PCALXB2}}}{837}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2860003.6.4}{QQ2-31-287}{{\tt  POL}}}{839}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2870003.6.4}{QQ2-31-288}{{\tt  PTINCR}}}{841}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2880003.6.4}{QQ2-31-289}{{\tt  PTOFF}}}{842}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2890003.6.4}{QQ2-31-290}{{\tt  SAMPRATE}}}{843}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2900003.6.4}{QQ2-31-291}{{\tt  SIDEBAND}}}{844}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2910003.6.4}{QQ2-31-292}{{\tt  STATION}}}{845}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2920003.6.4}{QQ2-31-293}{ {\tt  STRING1, STRING2, STRING3,} and {\tt  STRING4}}}{847}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2930003.6.4}{QQ2-31-294}{{\tt  SWTCHDUR}}}{848}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2940003.6.4}{QQ2-31-295}{{\tt  SYNTH}}}{849}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2950003.6.4}{QQ2-31-296}{{\tt  TPMODE}}}{851}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2960003.6.4}{QQ2-31-297}{{\tt  TPSPEED}}}{852}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2970003.6.4}{QQ2-31-298}{{\tt  TPSPEEDH}}}{853}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2980003.6.4}{QQ2-31-299}{{\tt  TPSPEEDL}}}{858}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{31}{x31-2990003.6.4}{QQ2-31-300}{ {\tt  TRACK1, TRACK2, ... , TRACK7,} and {\tt  TRACK8}}}{860}\relax 
+\doTocEntry\tocsection{3.7}{\csname a:TocLink\endcsname{32}{x32-3000003.7}{QQ2-32-301}{Satellite Initialization.}}{862}\relax 
+\doTocEntry\tocchapter{4}{\csname a:TocLink\endcsname{33}{x33-3010004}{QQ2-33-302}{INSTALLING, AND RUNNING SCHED}}{865}\relax 
+\doTocEntry\tocsection{4.1}{\csname a:TocLink\endcsname{34}{x34-3020004.1}{QQ2-34-303}{Installing SCHED}}{865}\relax 
+\doTocEntry\tocsection{4.2}{\csname a:TocLink\endcsname{35}{x35-3030004.2}{QQ2-35-304}{Running SCHED}}{892}\relax 
+\doTocEntry\tocsubsection{4.2.1}{\csname a:TocLink\endcsname{35}{x35-3040004.2.1}{QQ2-35-305}{Running SCHED under UNIX or LINUX}}{892}\relax 
+\doTocEntry\tocsubsection{4.2.2}{\csname a:TocLink\endcsname{35}{x35-3050004.2.2}{QQ2-35-306}{Running SCHED on a VAX with VMS}}{894}\relax 
+\doTocEntry\tocsection{4.3}{\csname a:TocLink\endcsname{36}{x36-3060004.3}{QQ2-36-307}{Distribution of Schedule Files}}{897}\relax 
+\doTocEntry\tocsection{4.4}{\csname a:TocLink\endcsname{37}{x37-3070004.4}{QQ2-37-308}{Related Programs}}{898}\relax 
+\doTocEntry\tocsection{4.5}{\csname a:TocLink\endcsname{38}{x38-3080004.5}{QQ2-38-309}{Release Instructions.}}{900}\relax 
+\doTocEntry\tocchapter{5}{\csname a:TocLink\endcsname{39}{x39-3090005}{QQ2-39-310}{RELEASE NOTES}}{936}\relax 
+\doTocEntry\tocsection{5.1}{\csname a:TocLink\endcsname{40}{x40-3100005.1}{QQ2-40-311}{Recent Releases}}{937}\relax 
+\doTocEntry\tocsubsection{5.1.1}{\csname a:TocLink\endcsname{40}{x40-3110005.1.1}{QQ2-40-312}{Version 11.5 development}}{937}\relax 
+\doTocEntry\tocsubsection{5.1.2}{\csname a:TocLink\endcsname{40}{x40-3120005.1.2}{QQ2-40-313}{Version 11.4}}{937}\relax 
+\doTocEntry\tocsubsection{5.1.3}{\csname a:TocLink\endcsname{40}{x40-3130005.1.3}{QQ2-40-314}{Version 11.3}}{964}\relax 
+\doTocEntry\tocsubsection{5.1.4}{\csname a:TocLink\endcsname{40}{x40-3140005.1.4}{QQ2-40-315}{Version 11.2}}{981}\relax 
+\doTocEntry\tocsubsection{5.1.5}{\csname a:TocLink\endcsname{40}{x40-3150005.1.5}{QQ2-40-316}{Version 11.0}}{1029}\relax 
+\doTocEntry\tocsubsection{5.1.6}{\csname a:TocLink\endcsname{40}{x40-3160005.1.6}{QQ2-40-317}{Version 10.2}}{1068}\relax 
+\doTocEntry\tocsection{5.2}{\csname a:TocLink\endcsname{41}{x41-3170005.2}{QQ2-41-318}{Old Releases}}{1086}\relax 
+\doTocEntry\tocsubsection{5.2.1}{\csname a:TocLink\endcsname{41}{x41-3180005.2.1}{QQ2-41-319}{Version 10.1}}{1086}\relax 
+\doTocEntry\tocsubsection{5.2.2}{\csname a:TocLink\endcsname{41}{x41-3190005.2.2}{QQ2-41-320}{Version 10.0}}{1110}\relax 
+\doTocEntry\tocsubsection{5.2.3}{\csname a:TocLink\endcsname{41}{x41-3200005.2.3}{QQ2-41-321}{Version 9.4}}{1123}\relax 
+\doTocEntry\tocsubsection{5.2.4}{\csname a:TocLink\endcsname{41}{x41-3210005.2.4}{QQ2-41-322}{Version 9.3}}{1156}\relax 
+\doTocEntry\tocsubsection{5.2.5}{\csname a:TocLink\endcsname{41}{x41-3220005.2.5}{QQ2-41-323}{Version 9.2}}{1164}\relax 
+\doTocEntry\tocsubsection{5.2.6}{\csname a:TocLink\endcsname{41}{x41-3230005.2.6}{QQ2-41-324}{Version 9.0}}{1177}\relax 
+\doTocEntry\tocsubsection{5.2.7}{\csname a:TocLink\endcsname{41}{x41-3240005.2.7}{QQ2-41-325}{Version 8.1}}{1191}\relax 
+\doTocEntry\tocsubsection{5.2.8}{\csname a:TocLink\endcsname{41}{x41-3250005.2.8}{QQ2-41-326}{Version 8.0}}{1198}\relax 
+\doTocEntry\tocsubsection{5.2.9}{\csname a:TocLink\endcsname{41}{x41-3260005.2.9}{QQ2-41-327}{Version 6.05}}{1217}\relax 
+\doTocEntry\tocsubsection{5.2.10}{\csname a:TocLink\endcsname{41}{x41-3270005.2.10}{QQ2-41-328}{Version 6.04}}{1219}\relax 
+\doTocEntry\tocsubsection{5.2.11}{\csname a:TocLink\endcsname{41}{x41-3280005.2.11}{QQ2-41-329}{Version 6.02 (Released 29 July 2005)}}{1236}\relax 
+\doTocEntry\tocsubsection{5.2.12}{\csname a:TocLink\endcsname{41}{x41-3290005.2.12}{QQ2-41-330}{Version 6.01}}{1245}\relax 
+\doTocEntry\tocsubsection{5.2.13}{\csname a:TocLink\endcsname{41}{x41-3300005.2.13}{QQ2-41-331}{Version 6.0 - Released March 8, 2005}}{1247}\relax 
+\doTocEntry\tocsubsection{5.2.14}{\csname a:TocLink\endcsname{41}{x41-3310005.2.14}{QQ2-41-332}{Release of 18 September 2003.}}{1274}\relax 
+\doTocEntry\tocsubsection{5.2.15}{\csname a:TocLink\endcsname{41}{x41-3320005.2.15}{QQ2-41-333}{Release of 02 July 2002.}}{1286}\relax 
+\doTocEntry\tocsubsection{5.2.16}{\csname a:TocLink\endcsname{41}{x41-3330005.2.16}{QQ2-41-334}{Release of 16 October 2001.}}{1298}\relax 
+\doTocEntry\tocsubsection{5.2.17}{\csname a:TocLink\endcsname{41}{x41-3340005.2.17}{QQ2-41-335}{Release of 12 February 2001.}}{1310}\relax 
+\doTocEntry\tocsubsection{5.2.18}{\csname a:TocLink\endcsname{41}{x41-3350005.2.18}{QQ2-41-336}{Release of 30 January 2001.}}{1319}\relax 
+\doTocEntry\tocsubsection{5.2.19}{\csname a:TocLink\endcsname{41}{x41-3360005.2.19}{QQ2-41-337}{Release of 12 January 2001.}}{1325}\relax 
+\doTocEntry\tocsubsection{5.2.20}{\csname a:TocLink\endcsname{41}{x41-3370005.2.20}{QQ2-41-338}{Release of 28 April 2000.}}{1348}\relax 
+\doTocEntry\tocsubsection{5.2.21}{\csname a:TocLink\endcsname{41}{x41-3380005.2.21}{QQ2-41-339}{Release of 1 July 1999.}}{1361}\relax 
+\doTocEntry\tocsubsection{5.2.22}{\csname a:TocLink\endcsname{41}{x41-3390005.2.22}{QQ2-41-340}{Release of 1 Dec. 1998.}}{1380}\relax 
+\doTocEntry\tocsubsection{5.2.23}{\csname a:TocLink\endcsname{41}{x41-3400005.2.23}{QQ2-41-341}{Release of 30 March 1998.}}{1393}\relax 
+\doTocEntry\tocsubsection{5.2.24}{\csname a:TocLink\endcsname{41}{x41-3410005.2.24}{QQ2-41-342}{Release of 18 Nov. 1997.}}{1407}\relax 
+\doTocEntry\tocsubsection{5.2.25}{\csname a:TocLink\endcsname{41}{x41-3420005.2.25}{QQ2-41-343}{Release of 18 August 1997.}}{1421}\relax 
+\doTocEntry\tocsubsection{5.2.26}{\csname a:TocLink\endcsname{41}{x41-3430005.2.26}{QQ2-41-344}{Release of 1 Aug. 1997}}{1426}\relax 
+\doTocEntry\tocsubsection{5.2.27}{\csname a:TocLink\endcsname{41}{x41-3440005.2.27}{QQ2-41-345}{Release of 10 Feb. 1997}}{1448}\relax 
+\doTocEntry\tocsubsection{5.2.28}{\csname a:TocLink\endcsname{41}{x41-3450005.2.28}{QQ2-41-346}{Release of 14 Jan. 1997}}{1452}\relax 
+\doTocEntry\tocsubsection{5.2.29}{\csname a:TocLink\endcsname{41}{x41-3460005.2.29}{QQ2-41-347}{Release of 4 Dec. 1996}}{1461}\relax 
+\doTocEntry\tocsubsection{5.2.30}{\csname a:TocLink\endcsname{41}{x41-3470005.2.30}{QQ2-41-348}{Release of 26 June 1996}}{1492}\relax 
+\doTocEntry\tocsubsection{5.2.31}{\csname a:TocLink\endcsname{41}{x41-3480005.2.31}{QQ2-41-349}{Release of 13 Apr 1996}}{1498}\relax 
+\doTocEntry\tocsubsection{5.2.32}{\csname a:TocLink\endcsname{41}{x41-3490005.2.32}{QQ2-41-350}{Release of 22 Feb 1996}}{1500}\relax 
+\doTocEntry\tocsubsection{5.2.33}{\csname a:TocLink\endcsname{41}{x41-3500005.2.33}{QQ2-41-351}{Release of 16 May 1995}}{1522}\relax 
+\doTocEntry\tocsection{5.3}{\csname a:TocLink\endcsname{42}{x42-3510005.3}{QQ2-42-352}{Wish List}}{1527}\relax 
+\doTocEntry\tocappendix{A}{\csname a:TocLink\endcsname{43}{x43-352000A}{QQ2-43-353}{APPENDICES}}{1572}\relax 
+\doTocEntry\tocsection{A.1}{\csname a:TocLink\endcsname{44}{x44-353000A.1}{QQ2-44-354}{Station Codes}}{1572}\relax 
+\doTocEntry\tocsection{A.2}{\csname a:TocLink\endcsname{45}{x45-354000A.2}{QQ2-45-355}{Historical Notes}}{1576}\relax 
+\doTocEntry\tocappendix{B}{\csname a:TocLink\endcsname{46}{x46-355000B}{QQ2-46-356}{OBSOLETE SECTIONS}}{1579}\relax 
+\doTocEntry\tocsection{B.1}{\csname a:TocLink\endcsname{47}{x47-356000B.1}{QQ2-47-357}{Old VLA}}{1579}\relax 
+\doTocEntry\tocsubsection{B.1.1}{\csname a:TocLink\endcsname{47}{x47-357000B.1.1}{QQ2-47-358}{VLBI at the VLA - old system}}{1580}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{47}{x47-358000B.1.1}{QQ2-47-359}{An Example}}{1582}\relax 
+\doTocEntry\tocsubsection{B.1.2}{\csname a:TocLink\endcsname{47}{x47-359000B.1.2}{QQ2-47-360}{VLA-Only Project Example}}{1582}\relax 
+\doTocEntry\tocsubsection{B.1.3}{\csname a:TocLink\endcsname{47}{x47-360000B.1.3}{QQ2-47-361}{Parameters Specific to the VLA}}{1583}\relax 
+\doTocEntry\tocsubsection{B.1.4}{\csname a:TocLink\endcsname{47}{x47-361000B.1.4}{QQ2-47-362}{VLA Standard Bands.}}{1602}\relax 
+\doTocEntry\tocsection{B.2}{\csname a:TocLink\endcsname{48}{x48-362000B.2}{QQ2-48-363}{Tape Management}}{1606}\relax 
+\doTocEntry\tocsubsection{B.2.1}{\csname a:TocLink\endcsname{48}{x48-363000B.2.1}{QQ2-48-364}{GENERAL CONCERNS}}{1606}\relax 
+\doTocEntry\tocsubsection{B.2.2}{\csname a:TocLink\endcsname{48}{x48-364000B.2.2}{QQ2-48-365}{TAPE HANDLING at SCAN BOUNDARIES}}{1607}\relax 
+\doTocEntry\tocsubsection{B.2.3}{\csname a:TocLink\endcsname{48}{x48-365000B.2.3}{QQ2-48-366}{TAPE LENGTHS and PASS TIMES}}{1607}\relax 
+\doTocEntry\tocsubsection{B.2.4}{\csname a:TocLink\endcsname{48}{x48-366000B.2.4}{QQ2-48-367}{NUMBER of PASSES}}{1610}\relax 
+\doTocEntry\tocsubsection{B.2.5}{\csname a:TocLink\endcsname{48}{x48-367000B.2.5}{QQ2-48-368}{READBACK TESTS}}{1612}\relax 
+\doTocEntry\tocsubsection{B.2.6}{\csname a:TocLink\endcsname{48}{x48-368000B.2.6}{QQ2-48-369}{TAPE CHANGES}}{1613}\relax 
+\doTocEntry\tocsubsection{B.2.7}{\csname a:TocLink\endcsname{48}{x48-369000B.2.7}{QQ2-48-370}{POSTPASSES}}{1613}\relax 
+\doTocEntry\tocsubsection{B.2.8}{\csname a:TocLink\endcsname{48}{x48-370000B.2.8}{QQ2-48-371}{AUTOMATIC TAPE ALLOCATION}}{1614}\relax 
+\doTocEntry\tocsection{B.3}{\csname a:TocLink\endcsname{49}{x49-371000B.3}{QQ2-49-372}{Mark\nobreakspace  {}III Observations}}{1616}\relax 
+\doTocEntry\tocsection{B.4}{\csname a:TocLink\endcsname{50}{x50-372000B.4}{QQ2-50-373}{Scheduling Mark II Observations}}{1618}\relax 
+\doTocEntry\tocsection{B.5}{\csname a:TocLink\endcsname{51}{x51-373000B.5}{QQ2-51-374}{Head Positions and Track Assignments}}{1624}\relax 
+\doTocEntry\tocsection{B.6}{\csname a:TocLink\endcsname{52}{x52-374000B.6}{QQ2-52-375}{S2}}{1630}\relax 
+\doTocEntry\tocsection{B.7}{\csname a:TocLink\endcsname{53}{x53-375000B.7}{QQ2-53-376}{Green Bank 140'.}}{1636}\relax 
+\doTocEntry\tocsection{B.8}{\csname a:TocLink\endcsname{54}{x54-376000B.8}{QQ2-54-377}{Installation on Mac OSX 10.3 in 2003.}}{1637}\relax 

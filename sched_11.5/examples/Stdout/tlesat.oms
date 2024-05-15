@@ -1,0 +1,220 @@
+
+No cover letter provided.
+
+BEGIN = PROJECT_INFO
+
+    PROJECT_CODE       = tlesat  
+    TITLE              = GPS obs for AGI
+    PI_NAME            = Walter Brisken
+    PI_ADDRESS         = DSOC
+    PI_PHONE           = 651-644-1677
+    PI_OBS_PHONE       = 575-838-0502
+    PI_EMAIL           = wbrisken@nrao.edu
+    PI_FAX             = 575-835-2027
+    START              = 2014-342/16:00:00
+    STOP               = 2014-342/19:14:53
+    CORRELATOR         = VLBADIFX
+
+END = PROJECT_INFO
+
+
+BEGIN = STATION_SETUP
+
+    STATION            = VLBA    
+    RECORD_SCANS       =   49
+    RECORD_HOURS       =   0.82
+    FE                 =  20cm omit 20cm omit
+    NUM_CHANNELS       =    2
+    FORMAT             = VDIF    
+    SPEEDUP            =  1.00
+    IF                 =  A  A   
+    BBC_SB             =  L  L   
+    NET_SB             =  U  U   
+    POL                =  R  R   
+
+    BEGIN = FREQUENCY_SET
+
+        LO_SUM         =   1225.50  1573.50
+        BBC_FREQUENCY  =    874.50   526.50
+        BANDWIDTH      =      4.00     4.00
+
+    END = FREQUENCY_SET
+
+END = STATION_SETUP
+
+BEGIN = STATION_INFO
+
+    STATION_ID         = BR 
+    STATION_NAME       = VLBA_BR 
+    TAPES              =   0
+    PASSES             =    0
+    DISK               =    10.0
+    START              = 2014-342/16:00:00
+    STOP               = 2014-342/19:14:53
+
+END = STATION_INFO
+
+
+BEGIN = STATION_INFO
+
+    STATION_ID         = FD 
+    STATION_NAME       = VLBA_FD 
+    TAPES              =   0
+    PASSES             =    0
+    DISK               =    10.6
+    START              = 2014-342/16:00:00
+    STOP               = 2014-342/19:14:53
+
+END = STATION_INFO
+
+
+BEGIN = STATION_INFO
+
+    STATION_ID         = HN 
+    STATION_NAME       = VLBA_HN 
+    TAPES              =   0
+    PASSES             =    0
+    DISK               =     7.3
+    START              = 2014-342/16:00:00
+    STOP               = 2014-342/19:14:53
+
+END = STATION_INFO
+
+
+BEGIN = STATION_INFO
+
+    STATION_ID         = KP 
+    STATION_NAME       = VLBA_KP 
+    TAPES              =   0
+    PASSES             =    0
+    DISK               =    10.8
+    START              = 2014-342/16:00:00
+    STOP               = 2014-342/19:14:53
+
+END = STATION_INFO
+
+
+BEGIN = STATION_INFO
+
+    STATION_ID         = LA 
+    STATION_NAME       = VLBA_LA 
+    TAPES              =   0
+    PASSES             =    0
+    DISK               =    10.2
+    START              = 2014-342/16:00:00
+    STOP               = 2014-342/19:14:53
+
+END = STATION_INFO
+
+
+BEGIN = STATION_INFO
+
+    STATION_ID         = MK 
+    STATION_NAME       = VLBA_MK 
+    TAPES              =   0
+    PASSES             =    0
+    DISK               =    10.8
+    START              = 2014-342/16:00:00
+    STOP               = 2014-342/19:14:53
+
+END = STATION_INFO
+
+
+BEGIN = STATION_INFO
+
+    STATION_ID         = NL 
+    STATION_NAME       = VLBA_NL 
+    TAPES              =   0
+    PASSES             =    0
+    DISK               =     9.1
+    START              = 2014-342/16:00:00
+    STOP               = 2014-342/19:14:53
+
+END = STATION_INFO
+
+
+BEGIN = STATION_INFO
+
+    STATION_ID         = OV 
+    STATION_NAME       = VLBA_OV 
+    TAPES              =   0
+    PASSES             =    0
+    DISK               =    10.6
+    START              = 2014-342/16:00:00
+    STOP               = 2014-342/19:14:53
+
+END = STATION_INFO
+
+
+BEGIN = STATION_INFO
+
+    STATION_ID         = PT 
+    STATION_NAME       = VLBA_PT 
+    TAPES              =   0
+    PASSES             =    0
+    DISK               =    10.4
+    START              = 2014-342/16:00:00
+    STOP               = 2014-342/19:14:53
+
+END = STATION_INFO
+
+
+BEGIN = STATION_INFO
+
+    STATION_ID         = SC 
+    STATION_NAME       = VLBA_SC 
+    TAPES              =   0
+    PASSES             =    0
+    DISK               =     4.9
+    START              = 2014-342/16:00:00
+    STOP               = 2014-342/19:14:53
+
+END = STATION_INFO
+
+
+BEGIN = SOURCE_INFO
+
+    SOURCE_NAME       = J0117+8928
+    CAL_CODE          = V
+    SOURCE_RA         = 01h17m16.402465s
+    SOURCE_DEC        = 89d28'47.97531"
+
+END = SOURCE_INFO
+
+BEGIN = SOURCE_INFO
+
+    SOURCE_NAME       = GPS18
+    CAL_CODE          = Z
+    SOURCE_RA         = 11h10m05.965338s
+    SOURCE_DEC        = -32d22'19.57099"
+
+END = SOURCE_INFO
+
+BEGIN = SOURCE_INFO
+
+    SOURCE_NAME       = GPS21
+    CAL_CODE          = Z
+    SOURCE_RA         = 09h42m49.956955s
+    SOURCE_DEC        = 12d30'54.56007"
+
+END = SOURCE_INFO
+
+BEGIN = CORRELATOR_PARAMETERS
+
+    POLARIZATION      = NO 
+    TIME_AVERAGE      =    1.000000
+    TWEAK_INT_TIME    = YES 
+    FFT_SIZE          =      256
+    SPECTRAL_AVERAGE  =    1
+    WINDOW            = UNIFORM         
+    OUTPUT_TAPE       = FTP             
+    OUTPUT_FORMAT     = FITS    
+    SHIPPING          = Walter Brisken
+    NOTE              = GPS correlation require Walters help
+    NOTE              = Near-field model required
+    DATA_OUTPUT_RATE  =   112.64
+    DATA_SET_SIZE     =    264.7
+    SOURCE_POS_ORIGIN = NOT SPECIFIED.
+
+END = CORRELATOR_PARAMETERS
+

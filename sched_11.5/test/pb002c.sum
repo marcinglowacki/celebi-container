@@ -1,0 +1,429 @@
+                    SUMMARY FILE FOR PROJECT: pb002c  
+
+COVER INFORMATION: 
+
+  Experiment: rincon
+  Exp. Code:  pb002c  
+  Start Day 100 is Tue  10 Apr 2018   MJD  58218          
+
+  Schedule Version:       1.00
+  Processed by SCHED version:  11.50  Development version 11.5. Started Apr. 2
+
+  PI:       Walter Brisken
+
+  Address:  DSOC
+   
+   
+   
+
+  Phone:    505-234-5912
+  EMAIL:    wbrisken@lbo.us
+  Fax:      575-835-2027
+  Phone during observation: 575-835-7133
+
+  Observing mode: DDC
+
+  Notes:
+   
+   
+   
+
+
+No cover letter provided.
+
+CORRELATION REQUESTS (Defaults in parentheses):
+
+  Correlator (Required if recording):          VLBADIFX    (VLBA DiFX software correlator)
+  Correlator average time (2 sec):               1.000 sec.
+    Alternate average time (for spacecraft).     0.000 sec.
+  Output spectral channels per baseband (16):         128
+     Correlator FFT size (128):                       128
+  Number of antennas to be correlated:                  8
+  Polarization (ON):                           OFF
+  Correlator weighting function (UNIFORM):     UNIFORM
+  Distribution tape (DAT):                     FTP
+
+  Distribution format (FITS):                  FITS
+  Source positions from:
+  NOT SPECIFIED.
+  Shipping address for correlator output:
+      Walter Brisken
+
+
+
+
+  Correlator Notes: No correlation needed, but data copy desired
+
+
+
+
+
+
+
+DERIVED INFORMATION FOR CORRELATION: 
+                                                All scans
+  Elapsed time for project (hours):                 4.00
+  Total time in scheduled scans (hours):            4.00
+  Total time in recording scans (hours):            4.00
+  Total baseline hours (recording scans):           4.00
+  Projected max correlator output rate (kB/s):       2.0
+  Projected correlator output data size (MB):       29.5
+ NOTES:  Above numbers assume the same correlator parameters are used for all data.
+         The 'baseline hours' include the autocorrelations (for data size calculations).
+         The correlator output data rate is for real-time processing.
+         Above numbers assume the same correlator parameters are used for all data.
+         The recordings for a scan are assumed to start at the scan START minus PRESTART.
+         Some stations (VLA, VLBA/MARK5C) wait for good data so the estimates may be high.
+
+
+
+STATIONS USED IN SCHEDULE:
+
+   Station  Code   Latitude Longitude  Elevation       X            Y            Z       Axis
+                                                                                       Offset
+
+   VLBA_KP   Kp   31.95630  111.61242    1902.   -1995678.840 -5037317.697  3357328.025  2.131
+
+
+   Plate tectonic motion adjustments for MJD  58218
+   Station  Code      Station motions (m/yr)             Adjusted positions 
+                     X       Y       Z     MJD0        X            Y            Z 
+   VLBA_KP   Kp  -0.0137  0.0008 -0.0062  56293  -1995678.913 -5037317.693  3357327.993
+
+
+RECORDING SYSTEM AND CALIBRATION INFORMATION:
+
+  List of scan-dependent controls seen for recording timing.
+   MINPAUSE:    0.
+   PRESTART:   -5.
+
+  DISKS - Stations potentially recording on disks.
+   Station    Drive type   DAR     NBBC    Tsys
+   VLBA_KP      MARK5C     RDBE2    16     CONT
+
+
+
+
+EXPERIMENT SUMMARY:
+  Number of input scans:         24
+  Number of scans scheduled:     24
+  Number of stations:             1
+  Number of sources input:        5
+  Number of setup files used:     1
+
+
+STATION SCAN SUMMARIES:
+  Station  Control   Scans   Scan   Record  Record   Gbytes
+                            Hours   Hours   Scans
+  VLBA_KP    VLBA      24    4.00    3.58      24      830.
+
+  Notes on the station scan summaries: 
+
+    "Record Scans" are periods of recording with no gap.  The Mark5A disk systems 
+    have a limit of 1024 such scans.  There are often multiple projects on a disk pack.
+    If using MARK5A, try to keep above about 6 GB per record scan by using MINPAUSE 
+    and PRESTART to prevent short gaps.  However, also try to prevent record scans 
+    of more than an hour to minimize risk to data from playback problems.
+    MARK5C will have one observe scan per record scan and there is no limit to the number.
+
+
+    Recording started before scan start time    24 times.  See PRESTART and MINPAUSE.
+    They may have been kept running through short scan gaps.
+    The number can be large because each station/scan combination counts.
+
+
+
+
+
+ SETUP FILES:
+
+
+ ======== Setup file: DDC1
+   Matching groups in /home/orion/lbo/sched/trunk/sched/catalogs/freq_RDBE.dat:
+     v20cm_1         FD and KP filtered below 1330. SC filtered above 1440
+
+   Setup group:    1         Station: VLBA_KP           Total bit rate:   512
+   Format: VDIF              Bits per sample: 2         Sample rate:128.000
+   Number of channels:  2    DBE type: RDBE_DDC         Speedup factor:   1.00
+
+   Disk used to record data.
+
+   1st LO=   2100.00   2100.00
+   Net SB=         U         U
+   IF SB =         L         L
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         L         L
+   IF    =        A         C 
+
+   VLBA FE=     20cm     omit     20cm     omit
+   VLBA Synth=  12.9      2.1     12.9
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   1  Setup file default.  Used with PCAL = off
+   LO sum=   1524.00  1524.00
+   BBC fr=    576.00   576.00
+   Bandwd=     64.00    64.00
+   VLBA legacy crd files using  2 channels based on RDBE channels:   1  2
+   CRD fr=     552.00    552.00
+   CRD bw=      16.00     16.00
+    Matching frequency sets:   1
+
+   Frequency Set:   2  Setup file default.  Used with PCAL = 1MHz
+   LO sum=   1524.00  1524.00
+   BBC fr=    576.00   576.00
+   Bandwd=     64.00    64.00
+   VLBA legacy crd files using  2 channels based on RDBE channels:   1  2
+   CRD fr=     552.01    552.01
+   CRD bw=      16.00     16.00
+    Matching frequency sets:   2
+
+   Track assignments are: 
+    track1=   1,  2
+    barrel=roll_off 
+
+
+ SCAN SUMMARY for experiment pb002c  rincon
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Average elevation.
+     Bottom item is: Seconds antenna is on source during scan. 0 shown if down, rise, or set
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 100 is Tue  10 Apr 2018   MJD  58218          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Kp
+
+   1  100 15:30:00 PRN16         -    55
+      100 15:40:00 DDC1          -   600
+
+   2  100 15:40:00 3C454.3       -    66
+      100 15:50:00 -             -   574
+
+   3  100 15:50:00 PRN133        -    49
+      100 16:00:00 -             -   555
+
+   4  100 16:00:00 PRN135        -    46
+      100 16:10:00 -             -   550
+
+   5  100 16:10:00 3C454.3       -    70
+      100 16:20:00 -             -   532
+
+   6  100 16:20:00 PRN133        -    49
+      100 16:30:00 -             -   547
+
+   7  100 16:30:00 PRN16         -    57
+      100 16:40:00 -             -   522
+
+   8  100 16:40:00 3C454.3       -    74
+      100 16:50:00 -             -   523
+
+   9  100 16:50:00 PRN133        -    50
+      100 17:00:00 -             -   542
+
+  10  100 17:00:00 PRN16         -    47
+      100 17:10:00 -             -   510
+
+  11  100 17:10:00 3C454.3       -    74
+      100 17:20:00 -             -   491
+
+  12  100 17:20:00 PRN133        -    50
+      100 17:30:00 -             -   543
+
+  13  100 17:30:00 PRN135        -    45
+      100 17:40:00 -             -   549
+
+  14  100 17:40:00 3C454.3       -    72
+      100 17:50:00 -             -   536
+
+  15  100 17:50:00 PRN133        -    51
+      100 18:00:00 -             -   548
+
+  16  100 18:00:00 PRN08         -    37
+      100 18:10:00 -             -   562
+
+
+
+ SCAN SUMMARY for experiment pb002c  rincon
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Average elevation.
+     Bottom item is: Seconds antenna is on source during scan. 0 shown if down, rise, or set
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day 100 is Tue  10 Apr 2018   MJD  58218          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Kp
+
+  17  100 18:10:00 PRN135        -    45
+      100 18:20:00 DDC1          -   529
+
+  18  100 18:20:00 PRN133        -    51
+      100 18:30:00 -             -   545
+
+  19  100 18:30:00 PRN08         -    46
+      100 18:40:00 -             -   559
+
+  20  100 18:40:00 3C454.3       -    62
+      100 18:50:00 -             -   500
+
+  21  100 18:50:00 PRN133        -    51
+      100 19:00:00 -             -   527
+
+  22  100 19:00:00 PRN08         -    51
+      100 19:10:00 -             -   543
+
+  23  100 19:10:00 3C454.3       -    57
+      100 19:20:00 -             -   477
+
+  24  100 19:20:00 PRN133        -    52
+      100 19:30:00 -             -   521
+
+
+
+ TIME RANGE OF RECORDINGS and TOTAL BYTES:
+
+                Obs. start time.     Obs. end time.      Total 
+ Station          Day    Time         Day    Time        GBytes
+                     (UT)                 (UT)
+  VLBA_KP        100  15:30:00       100  19:30:00        829.6
+
+ POSITIONS OF SOURCES USED IN RECORDING SCANS
+     Catalog positions marked with *. 
+     Precession of date coordinates is based on stop time of first scan.
+     Names used in schedule marked with *. 
+     Observation date used in B1950/J2000 coordinate conversion (PRECDATE):  1979.900
+     No adjustments are made for rates (DRA, DDEC).
+
+   Source                         Source position (RA/Dec)                        Error
+                        (B1950)             (J2000)             (Date)            (mas)
+
+ * 3C454.3           22 51 29.519738   * 22 53 57.747938     22 54 50.189873       0.67
+   J2253+1608        15 52 54.34810    * 16 08 53.56093      16 14 30.66457        0.70
+   2251+158          /home/orion/lbo/sched/trunk/sched/catalogs/sources.gsfc
+   J2253+16          GSFC 2015a astro solution, unpublished  40748 observations.
+
+ * PRN16             22 50 37.692386   * 22 53 06.302605     22 53 58.878947       0.00
+                     14 39 17.97773    * 14 55 16.10153      15 00 53.02240        0.00
+                     Satellite. Position is for scan 1, center Earth.
+                     Planetary motion used.  Ref. MJD:   58218.6458
+                        Rates: RA =  0.10439E+06 s/day   Dec =  0.21773E+07 arcsec/day
+                     KERFILE: current.tls
+                     TLEFILE: prn016.tle
+
+ * PRN133            22 09 49.978267   * 22 12 24.699199     22 13 19.497005       0.00
+                    -01 53 17.84590    *-01 38 26.65194     -01 33 09.29879        0.00
+                     Satellite. Position is for scan 1, center Earth.
+                     Planetary motion used.  Ref. MJD:   58218.6458
+                        Rates: RA =  0.86619E+05 s/day   Dec =  0.57501E+05 arcsec/day
+                     KERFILE: current.tls
+                     TLEFILE: prn133.tle
+
+ * PRN135            19 49 39.411482   * 19 52 13.310236     19 53 08.516206       0.00
+                    -00 10 22.51151    *-00 02 36.10989      00 00 11.56519        0.00
+                     Satellite. Position is for scan 1, center Earth.
+                     Planetary motion used.  Ref. MJD:   58218.6458
+                        Rates: RA =  0.86643E+05 s/day   Dec = -0.28102E+04 arcsec/day
+                     KERFILE: current.tls
+                     TLEFILE: prn135.tle
+
+ * PRN08             21 33 05.074990   * 21 36 30.786704     21 37 42.931567       0.00
+                    -52 48 42.16862    *-52 35 14.32431     -52 30 10.16094        0.00
+                     Satellite. Position is for scan 1, center Earth.
+                     Planetary motion used.  Ref. MJD:   58218.6458
+                        Rates: RA =  0.26666E+06 s/day   Dec =  0.95772E+06 arcsec/day
+                     KERFILE: current.tls
+                     TLEFILE: prn008.tle
+
+
+
+SOURCE SCAN SUMMARY FOR SOURCES LISTED ABOVE
+
+     Scan hours are for recording scans only. 
+     Baseline hours are only counted for scans above horizon at both ends.
+  Source       Setup file             Frequency sets                  Observing hours
+                                   (duplicates not shown)              Scan  Baseline
+  3C454.3    DDC1                  1 2                               1.167     0.000
+  PRN16      DDC1                  1                                 0.500     0.000
+  PRN133     DDC1                  1                                 1.333     0.000
+  PRN135     DDC1                  1                                 0.500     0.000
+  PRN08      DDC1                  1                                 0.500     0.000
+
+
+EFFECT OF SOLAR CORONA
+
+  The solar corona can cause unstable phases for sources too close to the Sun.
+  SCHED provides warnings at individual scans for distances less than 10 degrees.
+  The distance from the Sun to each source in this schedule is:
+    Source         Sun distance (deg) 
+   3C454.3             35.6
+   PRN16               35.6
+   PRN133              46.8
+   PRN135              81.0
+   PRN08               76.4
+
+  Barry Clark estimates from predictions by Ketan Desai of IPM scattering sizes 
+  that the Sun will cause amplitude reductions on the  longest VLBA baselines 
+  at a solar distance of 60deg F^(-0.6) where F is in GHz. 
+  For common VLBI bands, this is: 
+       327 MHz        117. deg 
+       610 MHz         81. deg 
+       1.6 GHz         45. deg 
+       2.3 GHz         36. deg 
+       5.0 GHz         23. deg 
+       8.4 GHz         17. deg 
+      15.0 GHz         12. deg 
+      22.0 GHz          9. deg 
+      43.0 GHz          6. deg 
+
+ SOURCE SEPARATIONS
+
+ Source separations in degrees for pairs closer than  30.00 degrees.
+
+     3C454.3       PRN16           1.2443
+     3C454.3       PRN133         20.5349
+     PRN16         PRN133         19.3809
+
+
+CATALOGS, FILES, and CODE VERSIONS
+
+Catalogs: 
+  Station:   /home/orion/lbo/sched/trunk/sched/catalogs/stations_RDBE.dat
+                 Version:  2015Mar03-18:50:14
+  Location:  /home/orion/lbo/sched/trunk/sched/catalogs/locations.dat
+                 Version:  2015Feb26-16:00:00
+  Frequency: /home/orion/lbo/sched/trunk/sched/catalogs/freq_RDBE.dat
+                 Version:  2015Mar03-18:50:14
+  Source:   /home/orion/lbo/sched/trunk/sched/catalogs/sources.gsfc
+                 Version:  Not given
+  Source2:  NONE
+                 Version:   ---
+
+
+Other external files: 
+  Ephemeris: NONE
+  PEAKFILE:  /home/orion/lbo/sched/trunk/sched/catalogs/peak.cmd
+  MSGFILE:   /home/orion/lbo/sched/trunk/sched/catalogs/messages.txt
+  SATNAME:   PRN08
+     TLEFILE:   prn0
+     KERFILE:   current.tls
+  SATNAME:   PRN16
+     TLEFILE:   prn0
+     KERFILE:   current.tls
+  SATNAME:   PRN133
+     TLEFILE:   prn1
+     KERFILE:   current.tls
+  SATNAME:   PRN135
+     TLEFILE:   prn1
+     KERFILE:   current.tls
+
+
+Code versions: 
+  Release version:           11.50  Development version 11.5. Started Apr. 2
+  Version of VEX standard:   1.50
+  Version of VEX code:       0.87
+  Version of plot code:      1.06
+  Version of ephemeris code: 1.01
+  Version of PGPLOT:        v5.3.1
+
+This schedule produced on: Thu May 10 12:10:23 2018      

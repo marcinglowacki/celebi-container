@@ -1,0 +1,291 @@
+  COVER INFORMATION 
+
+ Station:    VLBA_KP   (Code Kp ) 
+ Experiment: novme satellite test 1
+ Exp. Code:  to999   
+
+
+Schedule Version:       1.00
+Processed by SCHED version:  11.50  Development version 11.5. Started Apr. 2
+
+PI:       Walter Brisken
+
+Address:  DSOC
+ 
+ 
+ 
+
+Phone:    505-234-5912
+EMAIL:    wbrisken@lbo.us
+Fax:      575-835-2027
+Phone during observation: 575-835-7133
+
+Observing mode: DDC
+
+Notes:
+ 
+ 
+ 
+
+Schedule for VLBA_KP   (Code Kp )                                   Page   2
+               novme satellite test 1
+  UP:  D => Below limits;  H => Below horizon mask;  W => still slewing at end;  blank => Up.
+  Early: Seconds between end of slew and start.   Dwell: On source seconds. 
+  Disk: GBytes recorded to this point.
+  TPStart:  Recording start time.  Frequencies are LO sum (band edge).
+  SYNC: Time correlator is expected to sync up.
+----------------------------------------------------------------------------------------
+Start UT  Source               Start / Stop                 Early    Disk   TPStart
+Stop UT                  LST      EL    AZ   HA  UP   ParA  Dwell   GBytes    SYNC
+----------------------------------------------------------------------------------------
+
+ --- Tue  26 Jun 2018   Day 177 ---
+
+ Next scan frequencies:  1524.00  1524.00
+ Next BBC frequencies:    576.00   576.00
+ Next scan bandwidths:     64.00    64.00
+
+18 30 00  0528+134     05 22 53  71.5 173.1 -0.2      -6.1     0        0   18 30 00
+18 31 00  ---          05 23 53  71.5 173.8 -0.1      -5.4    60        4   18 30 00
+
+18 32 04  GALAXY15     05 24 58  46.2 216.6  1.6      30.5     5        4   18 32 04
+18 33 04  ---          05 25 58  46.1 216.9  1.6      30.8    60        8   18 32 04
+
+ Next scan frequencies:  4072.25  4072.25
+ Next BBC frequencies:    672.25   672.25
+ Next scan bandwidths:    128.00   128.00
+
+18 34 09  0528+134     05 27 03  71.6 176.2 -0.1      -3.3     5        8   18 34 09
+18 35 09  ---          05 28 03  71.6 177.0 -0.1      -2.6    60       15   18 34 09
+
+18 36 13  GALAXY15     05 29 07  46.2 216.6  1.6      30.5     4       15   18 36 13
+18 37 13  ---          05 30 07  46.1 216.9  1.6      30.8    60       23   18 36 13
+
+ Next scan frequencies:  1524.00  1524.00
+ Next BBC frequencies:    576.00   576.00
+ Next scan bandwidths:     64.00    64.00
+
+18 38 17  0528+134     05 31 12  71.6 179.4  0.0      -0.5     4       23   18 38 17
+18 39 17  ---          05 32 12  71.6 180.2  0.0       0.2    60       27   18 38 17
+
+18 40 21  GALAXY15     05 33 16  46.2 216.6  1.6      30.5     4       27   18 40 21
+18 41 21  ---          05 34 16  46.1 216.9  1.6      30.8    60       31   18 40 21
+
+ Next scan frequencies:  4072.25  4072.25
+ Next BBC frequencies:    672.25   672.25
+ Next scan bandwidths:    128.00   128.00
+
+18 42 25  0528+134     05 35 20  71.6 182.6  0.1       2.3     4       31   18 42 25
+18 43 25  ---          05 36 20  71.6 183.4  0.1       2.9    60       39   18 42 25
+
+18 44 28  GALAXY15     05 37 24  46.2 216.6  1.6      30.5     4       39   18 44 28
+18 45 28  ---          05 38 24  46.1 216.9  1.6      30.8    60       46   18 44 28
+
+ Next scan frequencies:  1524.00  1524.00
+ Next BBC frequencies:    576.00   576.00
+ Next scan bandwidths:     64.00    64.00
+
+18 46 32  0528+134     05 39 27  71.5 185.8  0.1       5.0     3       46   18 46 32
+18 47 32  ---          05 40 28  71.5 186.5  0.1       5.7    60       50   18 46 32
+
+18 48 35  GALAXY15     05 41 31  46.2 216.6  1.6      30.5     3       50   18 48 35
+18 49 35  ---          05 42 31  46.1 216.9  1.6      30.8    60       54   18 48 35
+Schedule for VLBA_KP   (Code Kp )                                   Page   3
+               novme satellite test 1
+  UP:  D => Below limits;  H => Below horizon mask;  W => still slewing at end;  blank => Up.
+  Early: Seconds between end of slew and start.   Dwell: On source seconds. 
+  Disk: GBytes recorded to this point.
+  TPStart:  Recording start time.  Frequencies are LO sum (band edge).
+  SYNC: Time correlator is expected to sync up.
+----------------------------------------------------------------------------------------
+Start UT  Source               Start / Stop                 Early    Disk   TPStart
+Stop UT                  LST      EL    AZ   HA  UP   ParA  Dwell   GBytes    SYNC
+----------------------------------------------------------------------------------------
+
+ --- Tue  26 Jun 2018   Day 177 ---
+
+ Next scan frequencies:  4072.25  4072.25
+ Next BBC frequencies:    672.25   672.25
+ Next scan bandwidths:    128.00   128.00
+
+18 50 37  0528+134     05 43 34  71.4 188.9  0.2       7.7     3       54   18 50 37
+18 51 37  ---          05 44 34  71.4 189.6  0.2       8.4    60       62   18 50 37
+
+18 52 40  GALAXY15     05 45 36  46.2 216.6  1.6      30.5     3       62   18 52 40
+18 53 40  ---          05 46 36  46.1 216.9  1.6      30.8    60       70   18 52 40
+
+ Next scan frequencies:  1524.00  1524.00
+ Next BBC frequencies:    576.00   576.00
+ Next scan bandwidths:     64.00    64.00
+
+18 54 42  0528+134     05 47 39  71.2 191.9  0.3      10.4     3       70   18 54 42
+18 55 42  ---          05 48 39  71.2 192.7  0.3      11.0    60       73   18 54 42
+
+18 56 43  GALAXY15     05 49 41  46.2 216.6  1.6      30.5     3       73   18 56 43
+18 57 43  ---          05 50 41  46.1 216.9  1.6      30.8    60       77   18 56 43
+
+ Next scan frequencies:  4072.25  4072.25
+ Next BBC frequencies:    672.25   672.25
+ Next scan bandwidths:    128.00   128.00
+
+18 58 45  0528+134     05 51 42  71.0 194.9  0.3      13.0     3       77   18 58 45
+18 59 45  ---          05 52 43  71.0 195.7  0.3      13.6    60       85   18 58 45
+
+19 00 46  GALAXY15     05 53 44  46.2 216.6  1.6      30.5     2       85   19 00 46
+19 01 46  ---          05 54 44  46.1 216.9  1.6      30.8    60       93   19 00 46
+
+ Next scan frequencies:  1524.00  1524.00
+ Next BBC frequencies:    576.00   576.00
+ Next scan bandwidths:     64.00    64.00
+
+19 02 46  0528+134     05 55 45  70.8 197.8  0.4      15.5     2       93   19 02 46
+19 03 46  ---          05 56 45  70.7 198.6  0.4      16.1    60       97   19 02 46
+
+19 04 47  GALAXY15     05 57 45  46.2 216.6  1.6      30.5     2       97   19 04 47
+19 05 47  ---          05 58 45  46.1 216.9  1.6      30.8    60      100   19 04 47
+
+ Next scan frequencies:  4072.25  4072.25
+ Next BBC frequencies:    672.25   672.25
+ Next scan bandwidths:    128.00   128.00
+
+19 06 46  0528+134     05 59 45  70.5 200.7  0.5      17.9     2      100   19 06 46
+19 07 46  ---          06 00 46  70.4 201.4  0.5      18.5    60      108   19 06 46
+
+19 08 46  GALAXY15     06 01 45  46.2 216.6  1.6      30.5     2      108   19 08 46
+19 09 46  ---          06 02 45  46.1 216.9  1.6      30.8    60      116   19 08 46
+
+
+SETUP FILE INFORMATION:
+   NOTE: If DOPPLER, FREQ, or BW were used, see the individual scans for the final BBC settings.
+
+
+ ======== Setup file: DDC1
+   Matching groups in /home/orion/lbo/sched/trunk/sched/catalogs/freq_RDBE.dat:
+     v20cm_1         FD and KP filtered below 1330. SC filtered above 1440
+
+   Setup group:    1         Station: VLBA_KP           Total bit rate:   512
+   Format: VDIF              Bits per sample: 2         Sample rate:128.000
+   Number of channels:  2    DBE type: RDBE_DDC         Speedup factor:   1.00
+
+   Disk used to record data.
+
+   1st LO=   2100.00   2100.00
+   Net SB=         U         U
+   IF SB =         L         L
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         L         L
+   IF    =        A         C 
+
+   VLBA FE=     20cm     omit     20cm     omit
+   VLBA Synth=  12.9      2.1     12.9
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   1  Setup file default.  Used with PCAL = off
+   LO sum=   1524.00  1524.00
+   BBC fr=    576.00   576.00
+   Bandwd=     64.00    64.00
+   VLBA legacy crd files using  2 channels based on RDBE channels:   1  2
+   CRD fr=     552.00    552.00
+   CRD bw=      16.00     16.00
+    Matching frequency sets:   1   2
+
+   Track assignments are: 
+    track1=   1,  2
+    barrel=roll_off 
+
+
+ ======== Setup file: DDC2
+   Matching groups in /home/orion/lbo/sched/trunk/sched/catalogs/freq_RDBE.dat:
+     vc_a            Potential problems above 4150 see note in freq file.
+
+   Setup group:    3         Station: VLBA_KP           Total bit rate:  1024
+   Format: VDIF              Bits per sample: 2         Sample rate:256.000
+   Number of channels:  2    DBE type: RDBE_DDC         Speedup factor:   1.00
+
+   Disk used to record data.
+
+   1st LO=   3400.00   3400.00
+   Net SB=         U         U
+   IF SB =         U         U
+   Pol.  =      RCP       LCP 
+   BBC   =         1         2
+   BBC SB=         U         U
+   IF    =        A         C 
+
+   VLBA FE=     6cm      omit     6cm      omit
+   VLBA Synth=  15.9      3.4     15.9
+
+  The following frequency sets based on these setups were used.
+     See the crd files for VLBA legacy system setups and pcal detection details.
+
+   Frequency Set:   3  Setup file default.  Used with PCAL = off
+   LO sum=   4072.25  4072.25
+   BBC fr=    672.25   672.25
+   Bandwd=    128.00   128.00
+   VLBA legacy crd files using  2 channels based on RDBE channels:   1  2
+   CRD fr=     728.25    728.25
+   CRD bw=      16.00     16.00
+    Matching frequency sets:   3   4
+
+   Track assignments are: 
+    track1=   1,  2
+    barrel=roll_off 
+
+ POSITIONS OF SOURCES USED IN RECORDING SCANS
+
+   Source                         Source position (RA/Dec)                        Error
+                        (B1950)             (J2000)             (Date)            (mas)
+
+ * 0528+134          05 28 06.759216   * 05 30 56.416747     05 31 56.888421       0.21
+   J0530+1331        13 29 42.28885    * 13 31 55.14952      13 32 34.02804        0.24
+   J0530+13          /home/orion/lbo/sched/trunk/sched/catalogs/sources.gsfc
+                     GSFC 2015a astro solution, unpublished 135789 observations.
+
+ * GALAXY15          03 53 48.689780   * 03 56 22.338043     03 57 17.240422       0.00
+                    -00 10 21.97693    *-00 01 42.41034      00 01 19.76385        0.00
+                     Satellite. Position is for scan 1, center Earth.
+                     Planetary motion used.  Ref. MJD:   58295.7708
+                        Rates: RA =  0.86662E+05 s/day   Dec =  0.23847E+04 arcsec/day
+                     KERFILE: current.tls
+                     TLEFILE: galaxy15.tle
+
+
+
+SOURCE SCAN SUMMARY FOR SOURCES LISTED ABOVE
+
+     Scan hours are for recording scans only. 
+     Baseline hours are only counted for scans above horizon at both ends.
+  Source       Setup file             Frequency sets                  Observing hours
+                                   (duplicates not shown)              Scan  Baseline
+  0528+134   DDC1                  1                                 0.083     0.083
+             DDC2                  3                                 0.083     0.083
+  GALAXY15   DDC1                  1                                 0.083     0.083
+             DDC2                  3                                 0.083     0.083
+
+
+EFFECT OF SOLAR CORONA
+
+  The solar corona can cause unstable phases for sources too close to the Sun.
+  SCHED provides warnings at individual scans for distances less than 10 degrees.
+  The distance from the Sun to each source in this schedule is:
+    Source         Sun distance (deg) 
+   0528+134            15.4
+   GALAXY15            42.2
+
+  Barry Clark estimates from predictions by Ketan Desai of IPM scattering sizes 
+  that the Sun will cause amplitude reductions on the  longest VLBA baselines 
+  at a solar distance of 60deg F^(-0.6) where F is in GHz. 
+  For common VLBI bands, this is: 
+       327 MHz        117. deg 
+       610 MHz         81. deg 
+       1.6 GHz         45. deg 
+       2.3 GHz         36. deg 
+       5.0 GHz         23. deg 
+       8.4 GHz         17. deg 
+      15.0 GHz         12. deg 
+      22.0 GHz          9. deg 
+      43.0 GHz          6. deg 
+

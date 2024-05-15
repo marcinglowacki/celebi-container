@@ -1,0 +1,31 @@
+#  Template v2d file for DiFX correlation of to999
+
+vex = to999.vex.obs
+antennas = KP, LA
+ANTENNA KP { }
+ANTENNA LA { }
+
+# The nChan should never be less than 128.
+# For numbers of channels < 128, set specAvg so nChan/specAvg
+# gives the desired number of channels
+SETUP default
+{
+  tInt =  1.000
+  nFFTChan =    128
+  nChan = 128
+  doPolar = False # No cross hand correlations
+}
+
+# This, along with SETUP default above, should always be done
+RULE default
+{
+  setup = default
+}
+
+#  SETUP place holders (commented)
+# SETUP DDC1 {}
+# SETUP DDC2 {}
+
+# Sources (pointing centers) with recorded data but no offset pointing centers:
+SOURCE 0528+134 { calCode = V }
+SOURCE GALAXY15 { calCode = Z }

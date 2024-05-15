@@ -1,0 +1,184 @@
+!  Apriori edit data for egsat
+!  The format is appropriate for UVFLG in AIPS.
+!  There is one flag per station per scan covering time from start of tape 
+!    motion to antenna arrival on source, if that is a positive interval.
+!  These flags are not needed when there are monitor data flags (eg VLBA).
+! 
+opcode = 'FLAG'
+dtimrang = 1  timeoff = 0 
+ant_name='Sc' timerang= 15,19,59,54,  15,20,00,00  reason='Slewing expected.' /
+ant_name='Sc' timerang= 15,20,00,59,  15,20,01,09  reason='Slewing expected.' /
+ant_name='Sc' timerang= 15,20,01,59,  15,20,02,09  reason='Slewing expected.' /
+ant_name='Sc' timerang= 15,20,02,59,  15,20,03,09  reason='Slewing expected.' /
+ant_name='Sc' timerang= 15,20,03,59,  15,20,04,09  reason='Slewing expected.' /
+ant_name='Sc' timerang= 15,20,04,59,  15,20,05,09  reason='Slewing expected.' /
+ant_name='Sc' timerang= 15,20,05,59,  15,20,06,09  reason='Slewing expected.' /
+ant_name='Sc' timerang= 15,20,06,59,  15,20,07,09  reason='Slewing expected.' /
+ant_name='Sc' timerang= 15,20,07,59,  15,20,08,09  reason='Slewing expected.' /
+ant_name='Sc' timerang= 15,20,08,59,  15,20,09,09  reason='Slewing expected.' /
+ant_name='Sc' timerang= 15,20,09,59,  15,20,10,09  reason='Slewing expected.' /
+ant_name='Sc' timerang= 15,20,10,59,  15,20,11,09  reason='Slewing expected.' /
+ant_name='Sc' timerang= 15,20,11,59,  15,20,12,09  reason='Slewing expected.' /
+ant_name='Sc' timerang= 15,20,12,59,  15,20,13,09  reason='Slewing expected.' /
+ant_name='Sc' timerang= 15,20,13,59,  15,20,14,09  reason='Slewing expected.' /
+ant_name='Sc' timerang= 15,20,14,59,  15,20,15,09  reason='Slewing expected.' /
+
+ant_name='Hn' timerang= 15,19,59,54,  15,20,00,00  reason='Slewing expected.' /
+ant_name='Hn' timerang= 15,20,00,59,  15,20,01,09  reason='Slewing expected.' /
+ant_name='Hn' timerang= 15,20,01,59,  15,20,02,09  reason='Slewing expected.' /
+ant_name='Hn' timerang= 15,20,02,59,  15,20,03,09  reason='Slewing expected.' /
+ant_name='Hn' timerang= 15,20,03,59,  15,20,04,09  reason='Slewing expected.' /
+ant_name='Hn' timerang= 15,20,04,59,  15,20,05,09  reason='Slewing expected.' /
+ant_name='Hn' timerang= 15,20,05,59,  15,20,06,09  reason='Slewing expected.' /
+ant_name='Hn' timerang= 15,20,06,59,  15,20,07,09  reason='Slewing expected.' /
+ant_name='Hn' timerang= 15,20,07,59,  15,20,08,09  reason='Slewing expected.' /
+ant_name='Hn' timerang= 15,20,08,59,  15,20,09,09  reason='Slewing expected.' /
+ant_name='Hn' timerang= 15,20,09,59,  15,20,10,09  reason='Slewing expected.' /
+ant_name='Hn' timerang= 15,20,10,59,  15,20,11,09  reason='Slewing expected.' /
+ant_name='Hn' timerang= 15,20,11,59,  15,20,12,09  reason='Slewing expected.' /
+ant_name='Hn' timerang= 15,20,12,59,  15,20,13,09  reason='Slewing expected.' /
+ant_name='Hn' timerang= 15,20,13,59,  15,20,14,09  reason='Slewing expected.' /
+ant_name='Hn' timerang= 15,20,14,59,  15,20,15,09  reason='Slewing expected.' /
+
+ant_name='Nl' timerang= 15,19,59,54,  15,20,00,00  reason='Slewing expected.' /
+ant_name='Nl' timerang= 15,20,00,59,  15,20,01,09  reason='Slewing expected.' /
+ant_name='Nl' timerang= 15,20,01,59,  15,20,02,08  reason='Slewing expected.' /
+ant_name='Nl' timerang= 15,20,02,59,  15,20,03,09  reason='Slewing expected.' /
+ant_name='Nl' timerang= 15,20,03,59,  15,20,04,09  reason='Slewing expected.' /
+ant_name='Nl' timerang= 15,20,04,59,  15,20,05,09  reason='Slewing expected.' /
+ant_name='Nl' timerang= 15,20,05,59,  15,20,06,09  reason='Slewing expected.' /
+ant_name='Nl' timerang= 15,20,06,59,  15,20,07,09  reason='Slewing expected.' /
+ant_name='Nl' timerang= 15,20,07,59,  15,20,08,09  reason='Slewing expected.' /
+ant_name='Nl' timerang= 15,20,08,59,  15,20,09,09  reason='Slewing expected.' /
+ant_name='Nl' timerang= 15,20,09,59,  15,20,10,09  reason='Slewing expected.' /
+ant_name='Nl' timerang= 15,20,10,59,  15,20,11,09  reason='Slewing expected.' /
+ant_name='Nl' timerang= 15,20,11,59,  15,20,12,09  reason='Slewing expected.' /
+ant_name='Nl' timerang= 15,20,12,59,  15,20,13,09  reason='Slewing expected.' /
+ant_name='Nl' timerang= 15,20,13,59,  15,20,14,09  reason='Slewing expected.' /
+ant_name='Nl' timerang= 15,20,14,59,  15,20,15,09  reason='Slewing expected.' /
+
+ant_name='Fd' timerang= 15,19,59,54,  15,20,00,00  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,00,59,  15,20,01,08  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,01,59,  15,20,02,08  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,02,59,  15,20,03,08  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,03,59,  15,20,04,08  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,04,59,  15,20,05,08  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,05,59,  15,20,06,08  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,06,59,  15,20,07,08  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,07,59,  15,20,08,08  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,08,59,  15,20,09,08  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,09,59,  15,20,10,08  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,10,59,  15,20,11,08  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,11,59,  15,20,12,08  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,12,59,  15,20,13,08  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,13,59,  15,20,14,08  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,14,59,  15,20,15,08  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,16,59,  15,20,17,47  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,17,59,  15,20,18,07  reason='Slewing expected.' /
+ant_name='Fd' timerang= 15,20,18,59,  15,20,19,07  reason='Slewing expected.' /
+
+ant_name='La' timerang= 15,19,59,54,  15,20,00,00  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,00,59,  15,20,01,08  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,01,59,  15,20,02,08  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,02,59,  15,20,03,08  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,03,59,  15,20,04,08  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,04,59,  15,20,05,08  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,05,59,  15,20,06,08  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,06,59,  15,20,07,08  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,07,59,  15,20,08,08  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,08,59,  15,20,09,08  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,09,59,  15,20,10,08  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,10,59,  15,20,11,08  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,11,59,  15,20,12,08  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,12,59,  15,20,13,08  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,13,59,  15,20,14,08  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,14,59,  15,20,15,08  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,16,59,  15,20,17,47  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,17,59,  15,20,18,07  reason='Slewing expected.' /
+ant_name='La' timerang= 15,20,18,59,  15,20,19,07  reason='Slewing expected.' /
+
+ant_name='Pt' timerang= 15,19,59,54,  15,20,00,00  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,00,59,  15,20,01,08  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,01,59,  15,20,02,08  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,02,59,  15,20,03,08  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,03,59,  15,20,04,08  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,04,59,  15,20,05,08  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,05,59,  15,20,06,08  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,06,59,  15,20,07,08  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,07,59,  15,20,08,08  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,08,59,  15,20,09,08  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,09,59,  15,20,10,08  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,10,59,  15,20,11,08  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,11,59,  15,20,12,08  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,12,59,  15,20,13,08  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,13,59,  15,20,14,08  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,14,59,  15,20,15,08  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,16,59,  15,20,17,48  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,17,59,  15,20,18,07  reason='Slewing expected.' /
+ant_name='Pt' timerang= 15,20,18,59,  15,20,19,07  reason='Slewing expected.' /
+
+ant_name='Kp' timerang= 15,19,59,54,  15,20,00,00  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,00,59,  15,20,01,08  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,01,59,  15,20,02,08  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,02,59,  15,20,03,08  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,03,59,  15,20,04,08  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,04,59,  15,20,05,08  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,05,59,  15,20,06,08  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,06,59,  15,20,07,08  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,07,59,  15,20,08,08  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,08,59,  15,20,09,08  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,09,59,  15,20,10,08  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,10,59,  15,20,11,08  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,11,59,  15,20,12,08  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,12,59,  15,20,13,08  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,13,59,  15,20,14,08  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,14,59,  15,20,15,08  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,16,59,  15,20,17,50  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,17,59,  15,20,18,07  reason='Slewing expected.' /
+ant_name='Kp' timerang= 15,20,18,59,  15,20,19,07  reason='Slewing expected.' /
+
+ant_name='Ov' timerang= 15,19,59,54,  15,20,00,00  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,00,59,  15,20,01,08  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,01,59,  15,20,02,08  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,02,59,  15,20,03,08  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,03,59,  15,20,04,08  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,04,59,  15,20,05,08  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,05,59,  15,20,06,08  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,06,59,  15,20,07,08  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,07,59,  15,20,08,08  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,08,59,  15,20,09,08  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,09,59,  15,20,10,08  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,10,59,  15,20,11,08  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,11,59,  15,20,12,08  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,12,59,  15,20,13,08  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,13,59,  15,20,14,08  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,14,59,  15,20,15,08  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,16,59,  15,20,17,43  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,17,59,  15,20,18,07  reason='Slewing expected.' /
+ant_name='Ov' timerang= 15,20,18,59,  15,20,19,07  reason='Slewing expected.' /
+
+ant_name='Br' timerang= 15,19,59,54,  15,20,00,00  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,00,59,  15,20,01,08  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,01,59,  15,20,02,08  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,02,59,  15,20,03,08  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,03,59,  15,20,04,08  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,04,59,  15,20,05,08  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,05,59,  15,20,06,08  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,06,59,  15,20,07,08  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,07,59,  15,20,08,08  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,08,59,  15,20,09,08  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,09,59,  15,20,10,08  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,10,59,  15,20,11,08  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,11,59,  15,20,12,08  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,12,59,  15,20,13,08  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,13,59,  15,20,14,08  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,14,59,  15,20,15,08  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,16,59,  15,20,17,40  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,17,59,  15,20,18,07  reason='Slewing expected.' /
+ant_name='Br' timerang= 15,20,18,59,  15,20,19,07  reason='Slewing expected.' /
+
+ant_name='Mk' timerang= 15,20,15,54,  15,20,16,01  reason='Slewing expected.' /
+ant_name='Mk' timerang= 15,20,16,59,  15,20,17,07  reason='Slewing expected.' /
+ant_name='Mk' timerang= 15,20,17,59,  15,20,18,07  reason='Slewing expected.' /
+ant_name='Mk' timerang= 15,20,18,59,  15,20,19,07  reason='Slewing expected.' /
+
