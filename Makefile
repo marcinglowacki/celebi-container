@@ -126,10 +126,10 @@ LPGPLOT = $(PGPLOT_DIR)
 # For linker:  (LPGPLOT not needed for all).
 #   If there are missing items, consider adding -lz
 
- LDPGPLOT = -L$(LPGPLOT) -lpgplot
+# LDPGPLOT = -L$(LPGPLOT) -lpgplot
 
 #  Some options - will be set in the configure scripts, but you can change:
-#LDPGPLOT = -lpgplot -lpng       # pgplot, png, z in the standard load path.
+LDPGPLOT = -lpgplot -lpng       # pgplot, png, z in the standard load path.
                                  #  This when png included in drivers.list.
 #LDPGPLOT =                      # No library needed with stub.
 #LDPGPLOT = -lpgplot  -lpng -lz  # If png lib separate and pgplot is in the

@@ -23,6 +23,12 @@ RUN apt-get remove -y gcc && \
 # Installing openmpi (Installs openmpi 4.0.3 )
 RUN apt-get update
 RUN apt install -y libopenmpi-dev
+#NEW - openmpi 4.1.5
+#COPY openmpi-4.1.5.tar.gz .
+#RUN gunzip -c openmpi-4.1.5.tar.gz | tar xf - && \
+#    cd openmpi-4.1.5 && \
+#    ./configure --prefix=/usr/local CC=gcc-9 CXX=g++-9 && \
+#    make all install 
 
 # IPP installation
 RUN apt install -y software-properties-common &&\
@@ -52,7 +58,7 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
 # # Compiled binaries available and environmental 
 # # variables will be adjusted
 
-COPY sched_11.5 /opt/sched_11.5/
+COPY sched_11.8 /opt/sched_11.8/
 RUN apt install -y pgplot5
 #Installing ipython using requirements.txt
 #RUN pip install ipython==7.20.0
@@ -103,6 +109,8 @@ ADD .AIPSRC .AIPSRC
 RUN wget ftp://ftp.aoc.nrao.edu/pub/software/aips/31DEC23/install.pl \
   && chmod 755 install.pl \
   && ./install.pl -n
+#COPY install.pl .
+#RUN ./install.pl -n
 
 USER root
 RUN apt-get update &&\
@@ -122,19 +130,32 @@ RUN chmod -R 777  /usr/local/aips/*
 # ENTRYPOINT ["/opt/sourcing.sh"]
 #RUN useradd -md /usr/local/aips -s /bin/bash -G aipsgroup vkompell
 
-# Compiling Sched_11.5
+# Compiling Sched_11.8
 
 RUN apt-get -y clean &&\
     apt-get install -y libpng-dev &&\
     apt-get install -y libx11-dev
 
-COPY Makefile /opt/sched_11.5/src/
+COPY Makefile /opt/sched_11.8/src/
 
-RUN export PGPLOT_DIR=/usr/lib/pgplot5 &&\
-    cd /opt/sched_11.5/src/ &&\
-    make clean &&\
-    make 
-RUN chmod -R 777 /opt/sched_11.5
+#RUN export PGPLOT_DIR=/usr/lib/pgplot5 &&\
+#    cd /opt/sched_11.8/src/ &&\
+#    make clean &&\
+#    make 
+#RUN chmod -R 777 /opt/sched_11.8
+RUN apt-get install -y git
+RUN apt-get install -y gfortran
+RUN cd /opt \ 
+     && git clone https://github.com/jive-vlbi/sched.git pySCHED \
+     && cd pySCHED \
+     && git checkout numpy-1.24.3 \
+	 && pip install --only-binary pyqt5 pyqt5 \
+	 && pip install . 
+#	 && cd src \
+#	 #&& python sched.py
+COPY difx-test.key /opt/
+RUN cd /opt/pySCHED/src/ \
+	 && python sched.py -k /opt/difx-test.key
 
 #Installing dependences for a portable older CASA
 RUN apt-get install -y libfreetype6 libsm6 libxi6 libxrender1 libxrandr2 libxfixes3 \
@@ -169,13 +190,25 @@ COPY virtualtrunk/setup.bash /opt/difx/
 
 RUN chmod +x /opt/difx/setup.bash && \
     chmod +x /opt/difx/install-difx
-
+	
 # You can only source if the shell is /bin/bash
-SHELL ["/bin/bash", "-c"]
-
 # Compiling DiFX
+
+#weird conflict
+#RUN apt-get remove -y g++ \
+#   && apt-get install -y g++
+#RUN apt-get install -y autotools-dev
+#RUN apt-get install -y automake
+#RUN apt-get install -y autoconf
+#RUN apt-get install -y libtool
+#RUN apt-get install -y libc6-dev
+#RUN apt-get install -y libtool-bin
+#RUN apt-get install -y gfortran
+#RUN apt-get install -y subversion build-essential python autotools-dev autoconf libtool libfftw3-dev pkg-config libexpat1-dev openmpi-bin libgsl-dev bison flex
+
+SHELL ["/bin/bash", "-c"]
 RUN source /opt/difx/setup.bash && \
-    /opt/difx/install-difx
+    /opt/difx/install-difx 
 SHELL ["/bin/sh", "-c"]
 
 #######################################
