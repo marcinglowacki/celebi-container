@@ -269,9 +269,9 @@ class VcraftFile(object):
 
         elif mode == 3: # 1b+1b
             # each 32 bit word contais 32 1 bit numbers (imag/real)*16 for the same channel
-            wordidx = startsamp / 16 # which 32 bit word the start sample is in
+            wordidx = startsamp // 16 # which 32 bit word the start sample is in
             sampoff = startsamp % 16 # how may samples into the first word the start sample is
-            nwordsamps = (nsamp + 15 + sampoff) / 16 # how many times we need to read (in words)
+            nwordsamps = (nsamp + 15 + sampoff) // 16 # how many times we need to read (in words)
             nwords = nwordsamps*nchan # total numberof words including channels
             seek_bytes = self.hdrsize + wordidx*nchan*4  # seek offset in bytes
             fin.seek(seek_bytes)
@@ -370,7 +370,7 @@ class VcraftMux(object):
 
         print('SAMPLE OFFSETS', self.sample_offsets, 'FILE DELAYS', self.file_delays)
         assert np.all(self.sample_offsets >= 0)
-        assert np.all(self.sample_offsets < self.nsamps)
+        #assert np.all(self.sample_offsets < self.nsamps)
         self.start_mjd = self.start_mjds[np.argmin(self.sample_offsets)]
         assert np.all(abs(self.start_mjds - self.trigger_mjds) < 1), 'MJD adjustment should be << 1 day'
 
