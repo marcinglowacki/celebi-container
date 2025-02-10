@@ -33,7 +33,7 @@ RUN apt install -y libopenmpi-dev
 # IPP installation
 RUN apt install -y software-properties-common &&\
     apt install -y pip &&\
-    pip install --timeout=300 ipp-static
+    pip install --timeout=600 ipp-static
 #Installing gsl
 RUN apt install -y pkg-config
 RUN apt install -y libgsl-dev
@@ -177,6 +177,16 @@ RUN pip install \
     casalogger==1.0.17 \
     casafeather==0.0.20
 
+#SPICE install 
+RUN apt-get install -y csh 
+RUN cd /opt/source/ && \
+    wget https://naif.jpl.nasa.gov/pub/naif/toolkit//C/PC_Linux_GCC_64bit/packages/cspice.tar.Z &&\
+    tar xvzf cspice.tar.Z &&\
+    cd cspice/ &&\
+    ./makeall.csh &&\
+    export CSPICEDIR="pwd"
+
+
 # Installing DiFX (from git)
 # For DiFX both source files and binaries are needed
 # Moving DiFX installation files downloaded using svn co 
@@ -208,8 +218,14 @@ RUN chmod +x /opt/difx/setup.bash && \
 
 SHELL ["/bin/bash", "-c"]
 RUN source /opt/difx/setup.bash && \
-    /opt/difx/install-difx 
+    mkdir /opt/difx/build && \
+	export CSPICEDIR=/opt/source/cspice/ && \
+    cd /opt/difx/build && \
+    /opt/difx/install-difx --withspice=$CSPICEDIR
 SHELL ["/bin/sh", "-c"]
+
+#enables running update_eop in the auxfiles directory from the container as a full version, not a shortened one
+RUN sed -i 's/EOP=usno500_finals.erp/EOP=usno_finals.erp/g' /usr/local/difx/bin/update_eop
 
 #######################################
 #installing other things as of Jan 2024
@@ -253,6 +269,13 @@ RUN pip install ephem
 #update eops - first install curl
 RUN apt-get update && apt-get install -y curl
 RUN /opt/difx/utilities/misc/update_eop
+
+#Installing fdifx
+RUN cd /opt/source/ && \
+	git clone https://github.com/tdial2000/fdifx.git && \	
+	cd fdifx/ && \
+	gcc -shared -Wl,-soname,cDiFX -o cDiFX.so -fPIC cDiFX.c 
+	
 
 COPY setup_proc_container /opt/
 RUN  chmod +x /opt/setup_proc_container
